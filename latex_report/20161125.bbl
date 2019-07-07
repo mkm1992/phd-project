@@ -1,0 +1,65 @@
+\begin{thebibliography}{10}
+
+\bibitem{369}
+A.~Checko, H.~L. Christiansen, Y.~Yan, L.~Scolari, G.~Kardaras, M.~S. Berger,
+  and L.~Dittmann, ``Cloud ran for mobile networks—a technology overview,''
+  {\em IEEE Communications surveys \& tutorials}, vol.~17, no.~1, pp.~405--426,
+  2015.
+
+\bibitem{1111}
+S.-H. Park, O.~Simeone, O.~Sahin, and S.~S. Shitz, ``Fronthaul compression for
+  cloud radio access networks: Signal processing advances inspired by network
+  information theory,'' {\em IEEE Signal Processing Magazine}, vol.~31, no.~6,
+  pp.~69--79, 2014.
+
+\bibitem{33}
+P.-R. Li, T.-S. Chang, and K.-T. Feng, ``Energy-efficient power allocation for
+  distributed large-scale mimo cloud radio access networks,'' in {\em 2014 IEEE
+  Wireless Communications and Networking Conference (WCNC)}, pp.~1856--1861,
+  2014.
+
+\bibitem{55}
+Y.-C. Tsou, P.-R. Li, J.-H. Chu, and K.-T. Feng, ``Joint clusterization and
+  power allocation for cloud radio access networks,'' in {\em Vehicular
+  Technology Conference (VTC Fall), 2015 IEEE 82nd}, pp.~1--5, 2015.
+
+\bibitem{22}
+O.~Simeone, J.~Kang, J.~Kang, and S.~Shamai, ``Cloud radio access networks:
+  Uplink channel estimation and downlink precoding,'' {\em Signal Processing
+  for 5G: Algorithms and Implementations}, pp.~429--455, 2016.
+
+\bibitem{44}
+J.~Kang, O.~Simeone, J.~Kang, and S.~Shamai, ``Joint precoding and fronthaul
+  optimization for c-rans in ergodic fading channels,'' in {\em 2015 IEEE
+  International Conference on Communication Workshop (ICCW)}, pp.~2683--2688,
+  2015.
+
+\bibitem{66}
+J.~Kang, O.~Simeone, J.~Kang, and S.~S. Shitz, ``Joint signal and channel state
+  information compression for the backhaul of uplink network mimo systems,''
+  {\em IEEE Transactions on Wireless Communications}, vol.~13, no.~3,
+  pp.~1555--1567, 2014.
+
+\bibitem{77}
+C.~Yoon and D.-H. Cho, ``Energy efficient beamforming and power allocation in
+  dynamic tdd based c-ran system,'' {\em IEEE Communications Letters}, vol.~19,
+  no.~10, pp.~1806--1809, 2015.
+
+\bibitem{cell}
+G.~Interdonato, H.~Q. Ngo, E.~G. Larsson, and P.~Frenger, ``On the performance
+  of cell-free massive mimo with short-term power constraints,'' in {\em
+  Computer Aided Modelling and Design of Communication Links and Networks
+  (CAMAD), 2016 IEEE 21st International Workshop on}, pp.~225--230, IEEE, 2016.
+
+\bibitem{88}
+H.~Q. Ngo, A.~Ashikhmin, H.~Yang, E.~G. Larsson, and T.~L. Marzetta,
+  ``Cell-free massive mimo versus small cells,'' {\em arXiv preprint
+  arXiv:1602.08232}, 2016.
+
+\bibitem{11}
+M.~Peng, K.~Zhang, J.~Jiang, J.~Wang, and W.~Wang, ``Energy-efficient resource
+  assignment and power allocation in heterogeneous cloud radio access
+  networks,'' {\em IEEE Transactions on Vehicular Technology}, vol.~64, no.~11,
+  pp.~5275--5287, 2015.
+
+\end{thebibliography}

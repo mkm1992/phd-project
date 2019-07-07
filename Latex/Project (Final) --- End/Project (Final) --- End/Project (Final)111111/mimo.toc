@@ -1,0 +1,39 @@
+\contentsline {section}{فهرست مطالب}{2}{section*.1}
+\contentsline {section}{فهرست تصاویر}{5}{section*.2}
+\contentsline {section}{\numberline {1} مقدمه ای بر نسل پنجم مخابرات }{6}{section.1}
+\contentsline {subsection}{\numberline {1.1}مقدمه ای بر \lr {5G} }{6}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}تاریخچه مخابرات}{6}{subsection.1.2}
+\contentsline {section}{\numberline {2}مقدمه ای بر شبکه ی رادیویی نسل پنجم مخابرات}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}مقدمه ای بر \lr {C-RAN}}{8}{subsection.2.1}
+\contentsline {section}{\numberline {3}ساختار شبکه های مختلف }{9}{section.3}
+\contentsline {subsection}{\numberline {3.1}پیش زمینه ها}{10}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}ساختار سنتی ایستگاه پایه }{10}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2} ساختار ایستگاه پایه و واحد رادیویی}{10}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}تعریف مسئله}{11}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}ساختار \lr {C-RAN}}{11}{subsubsection.3.2.1}
+\contentsline {section}{\numberline {4}مزایای شبکه ی \lr {C-RAN}}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1}توانایی تطبیق پذیری با ترافیک غیر یکنواخت }{14}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}صرفه جویی در هزینه و مصرف انرژی }{15}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}سهولت در ارتقا دادن و نگهداری از شبکه}{15}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}کاهش چشمگیر تداخل از طریق پردازش واحد باند پایه }{15}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}افزایش توان و کاهش تاخیر}{16}{subsection.4.5}
+\contentsline {section}{\numberline {5}چالشها و مشکلات در برخورد با ساختار \lr {C-RAN} }{17}{section.5}
+\contentsline {subsection}{\numberline {5.1}دو چالش مهم مربوط به \lr {fronthaul}}{17}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}نحوه ی مشارکت \lr {BBU} ها نحوه ی اتصال و خوشه بندی}{18}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}نیاز به پهنای باند وسیعتر و تاخیر دقیق و کمتر}{18}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}محدودیت ظرفیت در \lr {backhaul}}{19}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}نیاز به شبکه های انتقال ازران}{19}{subsection.5.5}
+\contentsline {section}{\numberline {6}شبکه های دسترسی رادیویی ابری نا متجانس (\lr {H-CRAN})}{20}{section.6}
+\contentsline {subsection}{\numberline {6.1}ساختار شبکه ی \lr {H-CRAN}}{20}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}چالشهای پیش روی \lr {H-CRAN}}{22}{subsection.6.2}
+\contentsline {section}{\numberline {7}\lr {C-RAN}و \lr {H-CRAN} }{23}{section.7}
+\contentsline {subsection}{\numberline {7.1}تفاوت و شباهت های این دو ساختار}{23}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}مشکلات پیش روی این دو ساختار}{23}{subsection.7.2}
+\contentsline {section}{\numberline {8}ارائه ی پیشنهاد سیستم جایگزین (\lr {F-RAN})}{23}{section.8}
+\contentsline {subsection}{\numberline {8.1}ساختار سیستمهای \lr {F-RAN}}{24}{subsection.8.1}
+\contentsline {section}{\numberline {9}برخی از کاربردهای شبکه ی \lr {C-RAN} }{25}{section.9}
+\contentsline {subsection}{\numberline {9.1} تخصیص منابع مبتنی بر مدولاسیون \lr {OFDM}}{25}{subsection.9.1}
+\contentsline {section}{\numberline {10}تخصیص توان و خوشه بندی شبکه های رادیویی ابری}{27}{section.10}
+\contentsline {section}{\numberline {11}نتیجه گیری}{29}{section.11}
+\contentsline {section}{\numberline {12}خلاصه ای از فصلهای آتی}{30}{section.12}
+\contentsline {section}{مراجع}{31}{section*.3}
