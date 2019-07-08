@@ -6,7 +6,6 @@ Created on Sun Jul  7 14:46:43 2019
 """
 import numpy as np
 import os 
-import var
+from var import *
+from channel import *
 #############
-
-execfile("var.py 1")
