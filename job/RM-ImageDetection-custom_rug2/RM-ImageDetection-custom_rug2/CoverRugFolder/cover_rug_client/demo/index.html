@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<script type="text/javascript" src="js/jquery.hotspot.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+
+    	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js'></script>
+		<script type='text/javascript' src='source/jquery.tag.js'></script>
+		<link media="screen" rel="stylesheet" href="css/jquery.tag.css" type="text/css" />
+		<link media="screen" rel="stylesheet" href="css/jquery-ui.custom.css" type="text/css" />
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge, chrome = 1">
+		<link href="css/demo.css" rel="stylesheet">
+		
+
+	</head>
+
+	<body>
+		<h1> Rug and Carpet</h1>
+
+
+		<div id="hotspotImg" class="responsive-hotspot-wrap row">
+			<p>Click on the picture to start tagging</p>
+			<pre>$("#img").tag()</pre>
+			<img src="im1.png" class="img-responsive" alt="" width="600" height="800">
+			    <div class="hot-spot" x="150" y="600">
+                <div class="circle"></div>
+                <div class="tooltip">
+                    <div class="img-row">
+                        <img src="https://rmimages2.blob.core.windows.net/radici/Castello/CASTELLO3_3X4_11/Radici_702883033440_702883033440_d9fd4986280e497e1028f0661fdd16e083a0be1c0b8c7fe81c14bbb2f171ba91.jpg" alt="Jurong Lake Gardens #1" width="100" height="150"  onclick="sendToServer('https://rmimages2.blob.core.windows.net/radici/Castello/CASTELLO3_3X4_11/Radici_702883033440_702883033440_d9fd4986280e497e1028f0661fdd16e083a0be1c0b8c7fe81c14bbb2f171ba91.jpg')">
+                        <img src="https://rmimages2.blob.core.windows.net/radici/Castello/CASTELLO3_3X4_11/Radici_702883033440_702883033440_d9fd4986280e497e1028f0661fdd16e083a0be1c0b8c7fe81c14bbb2f171ba91.jpg" alt="Jurong Lake Gardens #1" width="100" height="150"  onclick="sendToServer('https://rmimages2.blob.core.windows.net/radici/Castello/CASTELLO3_3X4_11/Radici_702883033440_702883033440_d9fd4986280e497e1028f0661fdd16e083a0be1c0b8c7fe81c14bbb2f171ba91.jpg')">
+                        <img src="https://rmimages2.blob.core.windows.net/radici/Castello/CASTELLO3_3X4_11/Radici_702883036700_702883036700_80771fd3dd9973e52470432f4bf8519d61df6e0c09605ef09492fe17b9dd63cd.jpg" alt="Jurong Lake Gardens #1" width="100" height="150"  onclick="sendToServer('https://rmimages2.blob.core.windows.net/radici/Castello/CASTELLO3_3X4_11/Radici_702883036700_702883036700_80771fd3dd9973e52470432f4bf8519d61df6e0c09605ef09492fe17b9dd63cd.jpg')">
+                        <img src="https://rmimages2.blob.core.windows.net/radici/Castello/CASTELLO3_3X4_11/Radici_702883036854_702883036854_6e2ad574a67cc69f9e28be96ae2ceee1917655539e00675e9ffb7b71acc0202e.jpg" alt="Jurong Lake Gardens #1" width="100" height="150"  onclick="sendToServer('https://rmimages2.blob.core.windows.net/radici/Castello/CASTELLO3_3X4_11/Radici_702883036854_702883036854_6e2ad574a67cc69f9e28be96ae2ceee1917655539e00675e9ffb7b71acc0202e.jpg')">
+                        <img src="https://rmimages2.blob.core.windows.net/radici/Alba/ALBA3_3X4_11/simple_Radici_Alba_1769_Black_true_PtA51R1CGyHNe2Wwn4M2.jpg" alt="Jurong Lake Gardens #1" width="100" height="150" onclick="sendToServer('https://rmimages2.blob.core.windows.net/radici/Alba/ALBA3_3X4_11/simple_Radici_Alba_1769_Black_true_PtA51R1CGyHNe2Wwn4M2.jpg')">
+                    </div>
+                    <div class="text-row">
+                      <h4>Rug</h4>
+                      <p>Price</p>
+
+
+						<button onclick="myFunction()">Link of Rugs</button>
+
+
+						<input type="text" id="txt_url" value="https://rmimages2.blob.core.windows.net/radici/Iseo/ISEO3_3X4_11/Radici_702883589862_702883589862_40b014d7a13ce09c94c62951bce51a3b614765a1ff43bb8e8b568016a6e5c1ac_S.jpg"/>
+    
+   						 <input type="button" value="submit" onclick="sendToServer1()" />
+
+						<script>
+						function myFunction() {
+						  window.open("http://radiciusa.com/frontend/ecatalog/Radici?category=583199f0fee39def05ef0ad9_1_text_1_1&category=58585b933b9e419c07a4ce9e_1_text_1_2&productType=configurable_78_text_1","Ratting","width=550,height=500,0,status=0,");
+						}
+						</script>
+
+
+
+                    </div>
+                </div>
+            </div>
+         </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+		<script>
+			$(document).ready(function(){
+				$("#img1").tag();
+			});
+			
+		</script>
+
+
+    <script src="js/jquery.hotspot.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/demo.js"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<img src="" >
+
+
+
+
+
+	</body>
+</html>

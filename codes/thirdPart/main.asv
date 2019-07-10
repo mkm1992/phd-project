@@ -1,7 +1,0 @@
-clc
-clear all
-N_service = 2;
-Dmax = 100;
-N_resource = 3; % cpu, ram, storage
-demand_service = rand(N_service,N_resource)*Dmax;
-resource_server = r
