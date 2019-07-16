@@ -17,7 +17,9 @@ for i =  N_service:-1:1
     if resourceShare(j)<0 
         j = j -1;
     end
-    mappingVar(i,j) = 1;
+    if j>0
+        mappingVar(i,j) = 1;
+    end
 end
 
 
