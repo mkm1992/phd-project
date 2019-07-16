@@ -10,14 +10,14 @@ demand_service = sort(demand_service);
 resource_server = rand(N_server,N_resource)*Rmax;
 resource_server = sort(resource_server);
 mappingVar = zeros(N_service, N_server, N_resource);
-j = N_server;
+j = N_service;
 resourceShare = resource_server;
 for i =  N_service:-1:1
     resourceShare(j)= resourceShare(j)-demand_service(i);
-    if resourceShare(j)<0 
-        j = j -1;
-    end
+    if resourceShare(j)>0
     mappingVar(i,j) = 1;
+    
+    
 end
 
 
