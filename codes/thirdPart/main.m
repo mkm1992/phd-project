@@ -2,13 +2,18 @@ clc
 clear all
 N_service = 10;
 N_server = 7;
-Dmax = 100;
-Rmax = 200;
-N_resource = 1; % cpu, ram, storage
-demand_service = rand(N_service,N_resource)*Dmax;
-demand_service = sort(demand_service);
-resource_server = rand(N_server,N_resource)*Rmax;
-resource_server = sort(resource_server);
+Dmax = [1000, 10];
+Rmax = [2000, 20];
+N_resource = 2; % cpu, ram, storage
+demand_service = rand(N_service,N_resource);
+resource_server = rand(N_server,N_resource);
+for i = 1:N_resource
+    demand_service(:,i) = demand_service(:,i)*Dmax(i); 
+    resource_server(:,i) = resource_server(:,i)*Rmax(i);
+end
+weight = [1, 100];
+demand_service1 = sorting(demand_service, N_resource, weight, N_service);
+resource_server1 = sorting(resource_server, N_resource, weight, N_server);
 mappingVar = zeros(N_service, N_server, N_resource);
 i = N_service;
 i1 = ones(1,N_service);
