@@ -4,8 +4,8 @@ function [sort_vector] = sorting(vector, N_resource, weight ,len)
          weightSumVector(:) = vector(:,i)*weight(i) + weightSumVector(:);
     end
     weightSumVector = [weightSumVector, vector];
-    sort_vector = sort(weightSumVector,1);
-    
+    [~,idx] = sort(weightSumVector(:,1));
+    sort_vector = weightSumVector(idx,:);
 
 end
 
