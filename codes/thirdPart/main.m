@@ -4,7 +4,7 @@ clear all
 N_service = 10;
 N_server = 7;
 Dmax = [1000, 10, 100];
-Rmax = [3000, 30, 100];
+Rmax = [3000, 30, 300];
 N_resource = 3; % cpu, ram, storage
 demand_service = rand(N_service,N_resource);
 resource_server = rand(N_server,N_resource);

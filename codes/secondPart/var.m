@@ -1,5 +1,5 @@
 R = 500;
-S = 5;
+Service = 5;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
 N0 = db2pow(n0)/1000;
@@ -10,21 +10,13 @@ Pmax = db2pow(Pt)/1000;
 Rt = .1*BW;%0.1*BW; 
 Ut = 5;
 K = Ut;
-r = zeros(1,K);
+r = zeros(Service,K);
+N_PRB = 128;
 %%
 M = 100;
-Mmin=100;
-Mstep=10;
-Mmax=100;
-Umin =2;
-Umax = 20;
-Ustep = 2;
 Smin=2;
 Sstep=1;
 Smax=5;
-Pmin=1;
-Pstep=10;
-Pmmax=151;
 Pmm=10^-15;
 %Us = floor((Ut_max-Ut_min)/Ut_step)+1;
 %%
@@ -33,11 +25,13 @@ count_max = 10;
 thresh = 1e-10;
 var_q = 1e-4;
 Cmax = 5;
+Poptimal= zeros(count_max,iter_max,K, Service);
+eta = zeros(count_max,iter_max);
 %%
 %eta = zeros(count_max,iter_max,floor((Mmax-Mmin)/Mstep)+1);
 %rrate= zeros(count_max,iter_max,floor((Mmax-Mmin)/Mstep)+1);
-Poptimal= zeros(count_max,iter_max,floor((Mmax-Mmin)/Mstep)+1,K, S);
-eta = zeros(count_max,iter_max,floor((Smax-Smin)/Sstep)+1);
+%Poptimal= zeros(count_max,iter_max,floor((Mmax-Mmin)/Mstep)+1,K, Service);
+%eta = zeros(count_max,iter_max,floor((Smax-Smin)/Sstep)+1);
 %rrate= zeros(count_max,iter_max,floor((Pmmax-Pmin)/Pstep)+1);
 %eta = zeros(count_max,iter_max,floor((Umax-Umin)/Ustep)+1);
 %Poptimal= zeros(count_max,iter_max,floor((Umax-Umin)/Ustep)+1,K, S);
