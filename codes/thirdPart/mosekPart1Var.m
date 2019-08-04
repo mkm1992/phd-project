@@ -1,8 +1,8 @@
 function milo1()
 clear prob
-N_service = 5;
-N_server = 3;
-Dmax = 100;
+N_service = 3;
+N_server = 2;
+Dmax = 60;
 Rmax = 200;
 N_resource = 1; % cpu, ram, storage
 demand_service = rand(N_service,N_resource)*Dmax;
@@ -11,7 +11,7 @@ mappingVar = zeros(N_service, N_server, N_resource);
 mappingVar1 = reshape(mappingVar,1,N_service*N_server);
 %%
 prob.c = ones(1,N_service*N_server);
-prob.a = [[demand_service', zeros(1,2*length(demand_service))];[zeros(1,2*length(demand_service)), demand_service'];[zeros(1,2*length(demand_service)), demand_service']]; 
+prob.a =  [repmat(demand_service',N_server)];
 prob.blc = zeros(1,N_server);
 prob.buc = resource_server';
 prob.blx = zeros(1,N_service*N_server);
