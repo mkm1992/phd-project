@@ -11,7 +11,7 @@ mappingVar = zeros(N_service, N_server, N_resource);
 mappingVar1 = reshape(mappingVar,1,N_service*N_server);
 %%
 prob.c = ones(1,N_service*N_server);
-prob.a =  [repmat(demand_service',N_server)];
+prob.a =  [[demand_service',zeros(1,3)];[zeros(1,3),demand_service']];
 prob.blc = zeros(1,N_server);
 prob.buc = resource_server';
 prob.blx = zeros(1,N_service*N_server);

@@ -6,3 +6,5 @@ end
 ro = 0;
 %v = H*(H'*H+ro*eye(K*S))^(-1);
 PrecodingMat(:,:) = PrecodingMat(:,:)/norm(PrecodingMat(:,:));
+
+    
