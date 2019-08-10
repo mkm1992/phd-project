@@ -1,3 +1,4 @@
+%% Physical layer
 R = 500;
 N_Service = 2;
 N_Slice =  2;
@@ -24,5 +25,13 @@ BBU_map = zeros(N_BBU, N_Slice);
 Crrh = zeros(1, N_rrh);
 Prrh = zeros(1,N_rrh);
 var_q = 1e-4;
-%%
-
+%% VNF MAC LAYER
+N_VNF = 10;
+VNF2Slice = zeros(N_VNF, N_Slice);
+mu1 = 10* Rt;
+alpha_m1  = Rt;
+mu2 = 10* Rt;
+alpha_m2  = Rt;
+lamda = Rt/10;
+delay_thresh = 9.2593e-06;
+Delay_Service = zeros();
