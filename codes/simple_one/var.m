@@ -17,10 +17,12 @@ service2slice = zeros(N_Service, N_Slice);
 Ut2Service = zeros(N_Ut, N_Service);
 Ut_map = zeros(N_Ut, N_PRB);
 rate = zeros(1, N_Ut);
-Popt = zeros(1, N_Ut);
+Popt = ones(1, N_Ut)*Pmax;
 iter_max =10;
 N_BBU = 2;
 BBU_map = zeros(N_BBU, N_Slice);
-Copt = zeros(N_BBU, N_rrh);
+Crrh = zeros(1, N_rrh);
+Prrh = zeros(1,rrh);
+var_q = 1e-4;
 %%
 
