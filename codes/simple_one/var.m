@@ -22,7 +22,7 @@ iter_max =10;
 N_BBU = 2;
 BBU_map = zeros(N_BBU, N_Slice);
 Crrh = zeros(1, N_rrh);
-Prrh = zeros(1,rrh);
+Prrh = zeros(1,N_rrh);
 var_q = 1e-4;
 %%
 

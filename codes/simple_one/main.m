@@ -6,4 +6,5 @@ for iter =1:iter_max
     run precoding 
     run interference
     run rate
+    run FronthaulCap
 end
