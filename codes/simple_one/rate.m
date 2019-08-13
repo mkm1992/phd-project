@@ -5,3 +5,5 @@ for i = 1:N_Ut
         rate_UE =0;
     end
 end
+
+

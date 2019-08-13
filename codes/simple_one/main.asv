@@ -7,5 +7,5 @@ for iter =1:iter_max
     run interference
     run rate
     run FronthaulCap
-    run FindDelay % assume that each service just map to one slice if not transmission delay must recalculate
+    run FindDelay % assume that each service just map to one slice if not transmission delay m
 end
