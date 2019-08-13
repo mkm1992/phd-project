@@ -1,6 +1,0 @@
-
-for i = 1:N_Slice
-
- Delay_Service1 = 1/(mu1- alpha_m1/sum(VNF2Slice1(:,i)));
- Delay_Service2 =  1/(mu2- alpha_m2/sum(VNF2Slice1(:,i)));
-end
