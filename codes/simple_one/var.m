@@ -1,7 +1,7 @@
 %% Physical layer
 R = 500;
-N_Service = 6;
-N_Slice =  7;
+N_Service = 2;
+N_Slice =  3;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
 N0 = db2pow(n0)/1000;
@@ -11,7 +11,6 @@ Pt = 23;
 Pmax = db2pow(Pt)/1000;
 Rt = .1*BW;%0.1*BW; 
 N_PRB = 8;
-
 N_rrh = 3;
 imax = 1;
 NumOfUtInService = randi([1 3],1, N_Service);
@@ -40,9 +39,9 @@ mu2 = 10* Rt;
 alpha_m2  = Rt;
 lamda = Rt/10000;
 delay_thresh = 9.2593e-06;
-Delay_Slice1 = zeros(N_Service,1);
-Delay_Slice2 = zeros(N_Service,1);
-Delay_Transmission = zeros(N_Service,1);
+Delay_Slice1 = zeros(N_Slice,1);
+Delay_Slice2 = zeros(N_Slice,1);
+Delay_Transmission = zeros(N_Slice,1);
 delay_max = 3e-4;
 priority_service = ones(1,N_Service);
 Delay_Slice = zeros(1,N_Slice);

@@ -8,7 +8,7 @@ for i = 1: N_Ut
             if Ut_map(i,j)==1 
                 for t = 1 : N_Ut
                     if i~=t && Ut_map(t,j)==1 && sum(rrh2Ut(:,t)) > 0
-                        Intf(i) = Intf(i) + Popt(t)*abs((PrecodingMat(:,t)')*ChannelGain(:,t))^2;
+                        Intf(i) = Intf(i) + Popt(t)*abs((PrecodingMat(:,t)')*(ChannelGain(:,t).*rrh2Ut(:,t)))^2;
                     end
                 end
             end

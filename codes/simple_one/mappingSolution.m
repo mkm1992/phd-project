@@ -21,10 +21,13 @@ mapStatusService = ones(1,N_Service);
 mapStatusSlice = ones(1,N_Slice);
 run channel
 run precoding
+count  = 0;
 for jj = N_Slice:-1:1
     if mapStatusSlice(jj)==1
     for ii = N_Service:-1:1
+         
         if mapStatusService(ii)==1
+            count = count +1;
             service2slice(ii,jj)=1;
             run mappingOtherParameter
             run MapPRB2UT
