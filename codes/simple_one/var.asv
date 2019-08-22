@@ -11,14 +11,13 @@ Pt = 23;
 Pmax = db2pow(Pt)/1000;
 Rt = .1*BW;%0.1*BW; 
 N_PRB = 8;
-
+N_Ut = 10;
 N_rrh = 3;
 imax = 1;
-NumOfUtInService = randi([1 3],1, N_Service);
-N_Ut = sum(NumOfUtInService);
+NumOfUtInService = randi([1 20],1, N_Service);
 rrh2slice = randi([0 imax],N_rrh, N_Slice); %not map 1 -->true 
 service2slice = zeros(N_Service, N_Slice);    %randi([0 imax],N_Service, N_Slice); %2 we want to find this!!!!!
-Ut2Service = zeros(sum(NumOfUtInService),N_Service); %3 -->true
+Ut2Service = zeros(sum(NumOfUtInService),) %3 -->true
 PRB2Slice = randi([0 imax],N_PRB, N_Slice); %4 
 Ut_map = zeros(N_Ut, N_PRB);  % map it
 Popt = ones(1, N_Ut)*Pmax/N_Ut;

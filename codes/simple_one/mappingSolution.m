@@ -40,7 +40,7 @@ for jj = N_Slice:-1:1
             PrrhSlice = Prrh_service(Prrh_service>0);
             if all(rateService(:)>Rt) && Delay_Slice(jj) < delay_max && all(PrrhSlice(:)<Pmax) && all(CrrhSlice(:)<C_thresh)
                 all(rateService(:)>Rt)
-                rateService
+            
                 mapStatusService(ii) =0;
                 mapStatusSlice(jj) = 0;
                 break
@@ -51,3 +51,11 @@ for jj = N_Slice:-1:1
     end
     end
 end
+%run channel
+run precoding 
+%run mappingOtherParameter
+%run MapPRB2UT
+run interference
+run rate
+run FronthaulCap
+run FindDelay

@@ -9,21 +9,11 @@ while any(sum(rrh2slice,1)<1) || any(sum(rrh2slice,2)<1)
     end
 end
 %% map ut 2 service
-Ut2Service = randi([0 imax],N_Ut, N_Service);
-num_map = 0;
-while any(sum(Ut2Service,1)<1) || any(sum(Ut2Service,2)<1)
-    Ut2Service = randi([0 imax],N_Ut, N_Service);
-    num_map = num_map+1;
-    if num_map >30
-        break;
-    end
-end
-sum_UT = sum(Ut2Service,2);
-for kk = 1:N_Ut
-   if  sum_UT(kk)>1
-       rand_int = randi([1 2],1);
-       Ut2Service(kk,rand_int)= 0;
-   end
+k = 1;
+Ut2Service = zeros(sum(NumOfUtInService),N_Service);
+for i=1:N_Service
+    Ut2Service(k:k+NumOfUtInService(i)-1,i) = 1;
+    k = k+NumOfUtInService(i);
 end
 %% map PRB to Slice
 PRB2Slice = randi([0 imax],N_PRB, N_Slice);
