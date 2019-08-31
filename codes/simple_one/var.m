@@ -1,6 +1,6 @@
 %% Physical layer
 R = 500;
-N_Service = 2;
+N_Service = 3;
 N_Slice =  3;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
@@ -13,7 +13,7 @@ Rt = .1*BW;%0.1*BW;
 N_PRB = 8;
 N_rrh = 3;
 imax = 1;
-NumOfUtInService = randi([1 3],1, N_Service);
+NumOfUtInService = randi([1 10],1, N_Service);
 N_Ut = sum(NumOfUtInService);
 rrh2slice = randi([0 imax],N_rrh, N_Slice); %not map 1 -->true 
 service2slice = zeros(N_Service, N_Slice);    %randi([0 imax],N_Service, N_Slice); %2 we want to find this!!!!!

@@ -1,4 +1,4 @@
-Ut2Slice = modifiedMat(Ut2Service*service2slice);
+Ut2Slice =Ut2Service*service2slice;% modifiedMat(Ut2Service*service2slice);
 Rtot_Slice = rate_UE * Ut2Slice;
 for i = 1:N_Slice
  Delay_Transmission(i) = 1/(Rtot_Slice(i)-lamda) ;

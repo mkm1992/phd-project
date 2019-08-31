@@ -4,7 +4,7 @@ run var
 for iter =1:iter_max
     run channel
     run precoding 
-    run mappingOtherParameter
+    run mappingOtherParameter 
     run MapPRB2UT
     run interference
     run rate
