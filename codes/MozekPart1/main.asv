@@ -55,7 +55,7 @@ ro = 0;
 %v = H*(H'*H+ro*eye(K*S))^(-1);
 PrecodingMat(:,:) = PrecodingMat(:,:)/norm(PrecodingMat(:,:));
 %% 
-rate_UE = zeros(1,N_Ut);
+
 P_UE = zeros(N_Ut, N_Slice, N_Service);
 eta_UE = zeros(1,N_Ut);
 for i = 1:N_Ut
@@ -69,18 +69,20 @@ for i = 1:N_Ut
     eta_UE(i) = P_UE(i)- (BW*N0)*(exp(Rt/BW)-1);
 end
 %%
+P_UE1 = reshape(P_UE,N_Ut,N_Slice*N_Service);
+%%
 sumR = sum(P_UE,1);
 sumR =permute(sumR,[2,3,1]);
-P_UE_reshaped = reshape(sumR,1,N_Slice*N_Service);
-prob.c = P_UE_reshaped;
-prob.a =  [[demand_service',zeros(1,3)];[zeros(1,3),demand_service']];
-prob.blc = zeros(1,N_server);
-prob.buc = resource_server';
+sumR_reshaped = reshape(sumR,1,N_Slice*N_Service);
+prob.c = sumR_reshaped;
+prob.a =  P_UE1;
+prob.blc = (BW*N0)*(exp(Rt/BW)-1)*ones(1,N_Ut)*1000;
+prob.buc = inf*ones(1,N_Ut);
 prob.blx = zeros(1,N_Service*N_Slice);
 prob.bux = ones(1,N_Service*N_Slice);
 % Specify indexes of variables that are integer
 % constrained.
-prob.ints.sub = 1:N_service*N_server;
+prob.ints.sub = 1:N_Service*N_Slice;
 [r,res] = mosekopt('maximize',prob);
 try
 % Display the optimal solution.

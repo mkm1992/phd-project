@@ -55,7 +55,7 @@ ro = 0;
 %v = H*(H'*H+ro*eye(K*S))^(-1);
 PrecodingMat(:,:) = PrecodingMat(:,:)/norm(PrecodingMat(:,:));
 %% 
-rate_UE = zeros(1,N_Ut);
+
 P_UE = zeros(N_Ut, N_Slice, N_Service);
 eta_UE = zeros(1,N_Ut);
 for i = 1:N_Ut
@@ -76,7 +76,7 @@ sumR =permute(sumR,[2,3,1]);
 sumR_reshaped = reshape(sumR,1,N_Slice*N_Service);
 prob.c = sumR_reshaped;
 prob.a =  P_UE1;
-prob.blc = (BW*N0)*(exp(Rt/BW)-1)*ones(1,N_Ut);
+prob.blc = (BW*N0)*(exp(Rt/BW)-1)*ones(1,N_Ut)*1000;
 prob.buc = inf*ones(1,N_Ut);
 prob.blx = zeros(1,N_Service*N_Slice);
 prob.bux = ones(1,N_Service*N_Slice);
