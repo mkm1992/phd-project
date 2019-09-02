@@ -20,7 +20,7 @@ N_Ut = sum(NumOfUtInService);
 rrh2slice = randi([0 imax],N_rrh, N_Slice); %not map 1 -->true 
 service2slice = zeros(N_Service, N_Slice);    %randi([0 imax],N_Service, N_Slice); %2 we want to find this!!!!!
 Ut2Service = zeros(sum(NumOfUtInService),N_Service); %3 -->true
-PRB2Slice = randi([0 imax],N_PRB, N_Slice); %4 
+
 Ut_map = zeros(N_Ut, N_PRB);  % map it
 Popt = ones(1, N_Ut)*Pmax/N_Ut;
 iter_max =1;
@@ -92,57 +92,14 @@ for i=1:N_Service
     k = k+NumOfUtInService(i);
 end
 % map PRB to Slice
-PRB2Slice = randi([0 imax],N_PRB, N_Slice);
-num_map = 0;
-while any(sum(PRB2Slice,1)<1) || any(sum(PRB2Slice,2)<1)
-    PRB2Slice = randi([0 imax],N_PRB, N_Slice);
-    num_map = num_map+1;
-    if num_map >10
-        PRB2Slice = ones(N_PRB, N_Slice);
-    end
-end
-%% MapPRB2UT
+PRB2Slice = ones(N_PRB, N_Slice);
+% MapPRB2UT
 for j = 1:N_Ut
     numberPRB = randi([1 N_PRB],1, 1);
     Ut_map(j,numberPRB) =1;
 end
 %%
 Intf = zeros(N_Ut,1);
-rrh2ut1 = rrh2slice *transpose(service2slice)*transpose(Ut2Service);
-rrh2Ut = rrh2ut1;% modifiedMat(rrh2ut1);
-for i = 1: N_Ut
-    if sum(rrh2Ut(:,i)) > 0
-        Intf(i) = Intf(i) + var_q*abs((ChannelGain(:,i)')*ChannelGain(:,i));
-        for j = 1:N_PRB
-            if Ut_map(i,j)==1 
-                for t = 1 : N_Ut
-                    if i~=t && Ut_map(t,j)==1 && sum(rrh2Ut(:,t)) > 0
-                        Intf(i) = Intf(i) + Popt(t)*abs((PrecodingMat(:,t)')*(ChannelGain(:,t).*rrh2Ut(:,t)))^2;
-                    end
-                end
-            end
-        end
-    end
-end
 
-%%
-run rate
-run FronthaulCap
-run FindDelay
-prob.c = ones(1,N_Service*N_Slice);
-prob.a =  [[demand_service',zeros(1,3)];[zeros(1,3),demand_service']];
-prob.blc = zeros(1,N_server);
-prob.buc = resource_server';
-prob.blx = zeros(1,N_service*N_server);
-prob.bux = ones(1,N_service*N_server);
-% Specify indexes of variables that are integer
-% constrained.
-prob.ints.sub = 1:N_service*N_server;
-[r,res] = mosekopt('maximize',prob);
-try
-% Display the optimal solution. 
-res.sol.int
-res.sol.int.xx'
-catch
-fprintf('MSKERROR: Could not get solution')
-end
+
+
