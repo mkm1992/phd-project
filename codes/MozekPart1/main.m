@@ -14,6 +14,8 @@ Pt = 23;
 Pmax = db2pow(Pt)/1000;
 Rt = .1*BW;%0.1*BW; 
 Popt = ones(1, N_Ut)*Pmax/N_Ut;
+var_q = 1e-5;
+C_thresh = 10*Rt;
 %% ut to service
 k = 1;
 Ut2Service = zeros(sum(NumOfUtInService),N_Service);
@@ -55,9 +57,8 @@ ro = 0;
 %v = H*(H'*H+ro*eye(K*S))^(-1);
 PrecodingMat(:,:) = PrecodingMat(:,:)/norm(PrecodingMat(:,:));
 %% 
-
 P_UE = zeros(N_Ut, N_Slice, N_Service);
-eta_UE = zeros(1,N_Ut);
+%eta_UE = zeros(1,N_Ut);
 for i = 1:N_Ut
     for j = 1:N_rrh
         for t = 1:N_Slice
@@ -66,18 +67,34 @@ for i = 1:N_Ut
             end
         end
     end
-    eta_UE(i) = P_UE(i)- (BW*N0)*(exp(Rt/BW)-1);
+    %eta_UE(i) = P_UE(i)- (BW*N0)*(exp(Rt/BW)-1);
 end
 %%
+P_rrh = zeros(N_rrh, N_Slice, N_Service);
+SNR_rrh = zeros(N_rrh, N_Slice, N_Service);
+for j = 1:N_rrh
+    for i = 1:N_Ut
+        for t = 1:N_Slice
+            for z = 1:N_Service
+                P_rrh(j,t,z) =  P_rrh(j,t,z) +Ut2Service(i,z)* rrh2slice(j,t)*(Popt(i)*abs(PrecodingMat(j,i))^2);
+                SNR_rrh(j,t,z) =  SNR_rrh(j,t,z) +Ut2Service(i,z)* rrh2slice(j,t)*(Popt(i)*abs(PrecodingMat(j,i))^2)/var_q;
+            end
+        end
+    end
+end
+
+%%
 P_UE1 = reshape(P_UE,N_Ut,N_Slice*N_Service);
+P_rrh1 = reshape(P_rrh,N_rrh, N_Slice*N_Service);
+SNR_rrh1 = reshape(SNR_rrh,N_rrh, N_Slice*N_Service);
 %%
 sumR = sum(P_UE,1);
 sumR =permute(sumR,[2,3,1]);
 sumR_reshaped = reshape(sumR,1,N_Slice*N_Service);
 prob.c = sumR_reshaped;
-prob.a =  P_UE1;
-prob.blc = (BW*N0)*(exp(Rt/BW)-1)*ones(1,N_Ut)*1000;
-prob.buc = inf*ones(1,N_Ut);
+prob.a =  [P_UE1; P_rrh1;SNR_rrh1];
+prob.blc = [(BW*N0)*(exp(Rt/BW)-1)*ones(1,N_Ut)*1000, zeros(1,N_rrh), zeros(1,N_rrh)];
+prob.buc = [inf*ones(1,N_Ut), Pmax*ones(1,N_rrh)-var_q, 2^(C_thresh-1)*ones(1,N_rrh)];
 prob.blx = zeros(1,N_Service*N_Slice);
 prob.bux = ones(1,N_Service*N_Slice);
 % Specify indexes of variables that are integer
