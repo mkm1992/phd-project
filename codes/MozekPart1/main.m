@@ -56,7 +56,7 @@ end
 ro = 0;
 %v = H*(H'*H+ro*eye(K*S))^(-1);
 PrecodingMat(:,:) = PrecodingMat(:,:)/norm(PrecodingMat(:,:));
-%% 
+%% PUe in snr
 P_UE = zeros(N_Ut, N_Slice, N_Service);
 %eta_UE = zeros(1,N_Ut);
 for i = 1:N_Ut
@@ -69,7 +69,7 @@ for i = 1:N_Ut
     end
     %eta_UE(i) = P_UE(i)- (BW*N0)*(exp(Rt/BW)-1);
 end
-%%
+%% prrh & crrh
 P_rrh = zeros(N_rrh, N_Slice, N_Service);
 SNR_rrh = zeros(N_rrh, N_Slice, N_Service);
 for j = 1:N_rrh
@@ -82,7 +82,26 @@ for j = 1:N_rrh
         end
     end
 end
+%% interference
+Intf = zeros(N_Ut, N_Slice, N_Service);
+for tt = 1:N_Slice
+    for z = 1:N_Service
+        for i = 1: N_Ut
 
+                Intf(i,tt,z) = Intf(i,tt,z) + var_q*abs((ChannelGain(:,i)')*ChannelGain(:,i));
+                for j = 1:N_PRB
+                    if Ut_map(i,j)==1 
+                        for t = 1 : N_Ut
+                            if i~=t && Ut_map(t,j)==1 && sum(rrh2Ut(:,t)) > 0
+                                Intf(i,z,tt) = Intf(i,z,tt) + Popt(t)*abs((PrecodingMat(:,t)')*(ChannelGain(:,t).*rrh2Ut(:,t)))^2;
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    
+end
 %%
 P_UE1 = reshape(P_UE,N_Ut,N_Slice*N_Service);
 P_rrh1 = reshape(P_rrh,N_rrh, N_Slice*N_Service);
