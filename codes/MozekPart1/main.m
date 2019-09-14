@@ -2,10 +2,10 @@ function milo1()
 clear prob
 %%
 R = 500;
-N_Service = 2;
+N_Service = 10;
 NumOfUtInService = randi([1 10],1, N_Service);
 N_Ut = sum(NumOfUtInService);
-N_Slice =  2;
+N_Slice =  12;
 N_rrh = 2;
 BW = 120*1e3;  
 N_PRB = 8;
@@ -15,8 +15,8 @@ Pt = 23;
 Pmax = db2pow(Pt)/1000;
 Rt = .1*BW;%0.1*BW; 
 Popt = ones(1, N_Ut)*Pmax/N_Ut;
-var_q = 1e-5;
-C_thresh = 10*Rt;
+var_q = 1e-6;
+C_thresh = 30*Rt;
 %% ut to service
 k = 1;
 Ut2Service = zeros(sum(NumOfUtInService),N_Service);
