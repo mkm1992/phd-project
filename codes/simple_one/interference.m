@@ -1,6 +1,7 @@
 Intf = zeros(N_Ut,1);
 rrh2ut1 = rrh2slice *transpose(service2slice)*transpose(Ut2Service);
 rrh2Ut = modifiedMat(rrh2ut1);
+ChannelGain = ChannelGain .* rrh2Ut;
 for i = 1: N_Ut
     if sum(rrh2Ut(:,i)) > 0
         Intf(i) = Intf(i) + var_q*abs((ChannelGain(:,i)')*ChannelGain(:,i));
