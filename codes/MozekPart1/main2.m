@@ -132,7 +132,7 @@ for tt = 1:N_Slice
     end
 end
 %% Delay initialize
-delay_thresh = 9.2593e-05;
+delay_thresh = 9.2593e-06;
 Delay_Slice1 = zeros(N_Slice,1);
 Delay_Slice2 = zeros(N_Slice,1);
 Delay_Transmission = zeros(N_Slice,N_Service);
