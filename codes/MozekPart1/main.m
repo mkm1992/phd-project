@@ -2,10 +2,10 @@ function milo1()
 clear prob
 %%
 R = 500;
-N_Service = 10;
+N_Service = 2;
 NumOfUtInService = randi([1 10],1, N_Service);
 N_Ut = sum(NumOfUtInService);
-N_Slice =  12;
+N_Slice =  5;
 N_rrh = 2;
 BW = 120*1e3;  
 N_PRB = 8;
@@ -132,7 +132,7 @@ for tt = 1:N_Slice
     end
 end
 %% Delay initialize
-delay_thresh = 9.2593e-08;
+delay_thresh = 9.2593e-05;
 Delay_Slice1 = zeros(N_Slice,1);
 Delay_Slice2 = zeros(N_Slice,1);
 Delay_Transmission = zeros(N_Slice,N_Service);
@@ -161,13 +161,18 @@ P_UE1 = reshape(P_UE,N_Ut,N_Slice*N_Service);
 P_rrh1 = reshape(P_rrh,N_rrh, N_Slice*N_Service);
 SNR_rrh1 = reshape(SNR_rrh,N_rrh, N_Slice*N_Service);
 %%
+q1 = zeros(N_Service, N_Slice*N_Service);
+for i=1:N_Service
+    q1(i,(i-1)*N_Slice+1:i*N_Slice)=1;
+end
+%%
 sumR = sum(P_UE,1);
 sumR =permute(sumR,[2,3,1]);
 sumR_reshaped = reshape(sumR,1,N_Slice*N_Service);
 prob.c = sumR_reshaped;
-prob.a =  [P_UE1-(Intf11+Intf22)*(exp(Rt/BW)-1); P_rrh1;SNR_rrh1;P_UE1-(Intf11+Intf22+BW*N0)*(exp(mean(Delay_Slice)+lamda)-1)];
-prob.blc = [(BW*N0)*(exp(Rt/BW)-1)*ones(1,N_Ut)*1000, zeros(1,N_rrh), zeros(1,N_rrh),zeros(1,N_Ut)];
-prob.buc = [inf*ones(1,N_Ut), Pmax*ones(1,N_rrh)-var_q, 2^(C_thresh-1)*ones(1,N_rrh),inf*ones(1,N_Ut)];
+prob.a =  [P_UE1-(Intf11+Intf22)*(exp(Rt/BW)-1); P_rrh1;SNR_rrh1;P_UE1-(Intf11+Intf22+BW*N0)*(exp(mean(Delay_Slice)+lamda)-1);q1];
+prob.blc = [(BW*N0)*(exp(Rt/BW)-1)*ones(1,N_Ut)*1000, zeros(1,N_rrh), zeros(1,N_rrh),zeros(1,N_Ut),zeros(1,N_Service)];
+prob.buc = [inf*ones(1,N_Ut), Pmax*ones(1,N_rrh)-var_q, 2^(C_thresh-1)*ones(1,N_rrh),inf*ones(1,N_Ut),ones(1,N_Service)];
 prob.blx = zeros(1,N_Service*N_Slice);
 prob.bux = ones(1,N_Service*N_Slice);
 % Specify indexes of variables that are integer
