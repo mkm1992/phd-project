@@ -5,18 +5,18 @@ R = 500;
 N_Service = 2;
 NumOfUtInService = randi([1 10],1, N_Service);
 N_Ut = sum(NumOfUtInService);
-N_Slice =  5;
+N_Slice =  3;
 N_rrh = 2;
 BW = 120*1e3;  
 N_PRB = 8;
 n0 = -174; %dbm
 N0 = db2pow(n0)/1000;
-Pt = 23;
+Pt = 40;
 Pmax = db2pow(Pt)/1000;
-Rt = .1*BW;%0.1*BW; 
+Rt = .01*BW;%0.1*BW; 
 Popt = ones(1, N_Ut)*Pmax/N_Ut;
 var_q = 1e-9;
-C_thresh = 30*Rt;
+C_thresh = 30*Rt/BW;
 %% ut to service
 k = 1;
 Ut2Service = zeros(sum(NumOfUtInService),N_Service);
@@ -115,6 +115,7 @@ for tt = 1:N_Slice
         end
     end
 end
+%Intf1 = zeros(N_Ut, N_Slice, N_Service);
 %% interference 2
 Intf2 = zeros(N_Ut, N_Slice, N_Service);
 for tt = 1:N_Slice
@@ -131,6 +132,7 @@ for tt = 1:N_Slice
         end
     end
 end
+Intf2 = zeros(N_Ut, N_Slice, N_Service);
 %% Delay initialize
 delay_thresh = 9.2593e-05;
 Delay_Slice1 = zeros(N_Slice,1);
@@ -171,8 +173,8 @@ sumR =permute(sumR,[2,3,1]);
 sumR_reshaped = reshape(sumR,1,N_Slice*N_Service);
 prob.c = sumR_reshaped;
 prob.a =  [P_UE1-(Intf11+Intf22)*(2^(Rt/BW)-1); P_rrh1;SNR_rrh1;P_UE1-(Intf11+Intf22+BW*N0)*(2^(max(Delay_Slice)+lamda)-1);q1];
-prob.blc = [(BW*N0)*(2^(Rt/BW)-1)*ones(1,N_Ut)*1000, zeros(1,N_rrh), zeros(1,N_rrh),zeros(1,N_Ut),zeros(1,N_Service)];
-prob.buc = [inf*ones(1,N_Ut), Pmax*ones(1,N_rrh)-var_q, 2^(C_thresh-1)*ones(1,N_rrh),inf*ones(1,N_Ut),ones(1,N_Service)];
+prob.blc = [(BW*N0)*(2^(Rt/BW)-1)*ones(1,N_Ut), zeros(1,N_rrh), zeros(1,N_rrh),zeros(1,N_Ut),zeros(1,N_Service)];
+prob.buc = [inf*ones(1,N_Ut), 10*Pmax*ones(1,N_rrh)-var_q, 2^(C_thresh-1)*ones(1,N_rrh),inf*ones(1,N_Ut),ones(1,N_Service)];
 prob.blx = zeros(1,N_Service*N_Slice);
 prob.bux = ones(1,N_Service*N_Slice);
 % Specify indexes of variables that are integer
