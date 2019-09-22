@@ -1,7 +1,7 @@
 %% Physical layer
 R = 500;
-N_Service = 3;
-N_Slice =  3;
+N_Service = 5;
+N_Slice =  5;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
 N0 = db2pow(n0)/1000;
@@ -27,7 +27,7 @@ BBU_map = zeros(N_BBU, N_Slice);
 Crrh = zeros(1, N_rrh);
 Prrh = zeros(1,N_rrh);
 var_q = 1e-5;
-C_thresh = 10*Rt;
+C_thresh = 10*Rt/BW;
 %% VNF MAC LAYER
 N_VNF1 = 10;
 VNF2Slice1 = randi([0 imax],N_VNF1, N_Slice); %5

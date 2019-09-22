@@ -2,10 +2,10 @@ function milo1()
 clear prob
 %%
 R = 500;
-N_Service = 2;
+N_Service = 5;
 NumOfUtInService = randi([1 10],1, N_Service);
 N_Ut = sum(NumOfUtInService);
-N_Slice =  2;
+N_Slice =  5;
 N_rrh = 4;
 BW = 120*1e3;  
 N_PRB = 100;
@@ -194,6 +194,8 @@ try
 % Display the optimal solution.
 res.sol.int
 res.sol.int.xx'
+disp('solution')
+disp(reshape(res.sol.int.xx',N_Slice,N_Service))
 catch
 fprintf('MSKERROR: Could not get solution')
 end
