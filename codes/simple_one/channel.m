@@ -12,3 +12,4 @@ for i=1:N_rrh
        ChannelGain(i,j) = (loss(i,j)^0.5)/sqrt(2)*(randn(1)+1i*randn(1));
     end
 end
+ChannelGain2 = ChannelGain;

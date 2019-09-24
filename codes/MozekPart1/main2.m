@@ -2,13 +2,13 @@ function milo1()
 clear prob
 %%
 R = 500;
-N_Service = 5;
+N_Service = 2;
 NumOfUtInService = randi([1 10],1, N_Service);
 N_Ut = sum(NumOfUtInService);
-N_Slice =  5;
+N_Slice =  2;
 N_rrh = 4;
 BW = 120*1e3;  
-N_PRB = 100;
+N_PRB = 10;
 n0 = -174; %dbm
 N0 = db2pow(n0)/1000;
 Pt = 30;

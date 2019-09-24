@@ -29,7 +29,7 @@ Pmm=10^-15;
 %Us = floor((Ut_max-Ut_min)/Ut_step)+1;
 %%
 iter_max =30;
-count_max = 10;
+count_max = 100;
 thresh = 1e-10;
 var_q = 1e-4;
 Cmax = 5;

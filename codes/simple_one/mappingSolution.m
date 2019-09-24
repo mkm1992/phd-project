@@ -10,7 +10,7 @@ sort_UtService = Ut2Service(:,idx);
 W_PRB = 3;
 W_RRH = 2;
 W_VNF = 1;
-Priot_Slice = sum(PRB2Slice,1)*W_PRB + sum(rrh2slice,1)*W_RRH + (sum(VNF2Slice1,1)+sum(VNF2Slice2,1))*W_VNF;
+Priot_Slice = sum(rrh2slice,1)*W_RRH + (sum(VNF2Slice1,1)+sum(VNF2Slice2,1))*W_VNF; % sum(PRB2Slice,1)*W_PRB 
 [~,idx1] = sort(Priot_Slice);
 sort_PRB2Slice = PRB2Slice(:,idx1);
 sort_rrh2slice = rrh2slice(:,idx1);
@@ -55,6 +55,7 @@ for jj = N_Slice:-1:1
     end
 end
 %run channel
+ChannelGain = ChannelGain2;
 run precoding 
 %run mappingOtherParameter
 %run MapPRB2UT

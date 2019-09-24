@@ -1,16 +1,16 @@
 %% Physical layer
 R = 500;
-N_Service = 5;
-N_Slice =  5;
+N_Service = 2;
+N_Slice =  2;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
 N0 = db2pow(n0)/1000;
 Pc1 = 10; %watt
 Pc  = db2pow(Pc1)/1000;
-Pt = 23;
+Pt = 30;
 Pmax = db2pow(Pt)/1000;
 Rt = .1*BW;%0.1*BW; 
-N_PRB = 8;
+N_PRB = 10;
 N_rrh = 3;
 imax = 1;
 NumOfUtInService = randi([1 10],1, N_Service);
