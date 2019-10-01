@@ -46,20 +46,25 @@ Please observe the conference page limits.
 In this section, first, we present the downlink (DL) of O-RAN System. Then we obtain achievable rate and delays.
 Afterward, the main problem is expressed.
 \subsection{System Model}
-Suppose that there are $S$ Slices Serving $V$ Services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single antenna users that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $N_s$ PRBs. Each RRH $r \in \{1,2,...,R \}$ is connected to BBU pool via an optical fiber link with limited fronthaul capacity. Also each RRH and PRB can serve more than one slice. It is considered that in BBU, the system has 2 processing layer consists of $M_1$ homogeneous VMs in first layer and $M_2$ homogeneous VMs in second layer.
+Suppose that there are $S$ Slices Serving $V$ Services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single antenna users that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $N_s$ PRBs. All the RRHs in a slice that is mapped to a service, transmit signals to all the UEs in specific service. Each RRH $r \in \{1,2,...,R \}$ is connected to BBU pool via an optical fiber link with limited fronthaul capacity. Also each RRH and PRB can serve more than one slice. It is considered that in BBU, the system has 2 processing layer consists of $M_1$ homogeneous VMs in first layer and $M_2$ homogeneous VMs in second layer.
 \subsection{Achievable Rate}
 In this subsection, the Achievable Rate is obtained as below.
 The achievable data rate for $i^{th}$ UE in $v^{th}$ service can be written as 
-\begin{equation}
-R_{u(v,i)} = B \log_2({1+ \rho_{u(v,i)}})
+\begin{equation}\label{eq1}
+\mathcal{R}_{u(v,i)} = B \log_2({1+ \rho_{u(v,i)}})
 \end{equation}
-where $\rho_{u(v,i)}$ is obtained from 
-\begin{equation}
-\rho_{u(v,i)} =  \frac{P_{u(v,i)}}{BN_0 + I_{u(v,i)}}
+where $B$ is the bandwidth of system and $\rho_{u(v,i)}$ is the SNR of $i^{th}$ UE in $v^{th}$ service which is obtained from 
+\begin{equation}\label{eq2}
+\rho_{u(v,i)} =  \frac{P_{u(v,i)}\sum_{s=1}^{N_s}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{vs}}{BN_0 + I_{u(v,i)}}
 \end{equation}
+Where, $P_{u(v,i)}$ represents the transmitted power allocated by RRHs to $i^{th}$ UE in $v^{th}$ service. Also, 
+$\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of wireless link from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the the transmit beamforming vector from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. More over, $BN_0$ denotes the power of guassian additive noise and $I_{u(v,i)}$ is the power of interfering signals. 
+To obtain SNR as formulated in equation \eqref{eq2}, let $\bold{y}_{U_v}$ be the received signal's vector of all users in $v^{th}$ service which is given by equation \eqref{eq3}
+\begin{equation}\label{eq3}
+\bold{y}_{U_v} = \sum_{k=1}^{N_k}\sum_{s = 1}^{N_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{R}_s}+ \boldsymbol{q}_{R_s}) \zeta_{U_v,k}+ \boldsymbol{z}_{\mathcal{U}_v}
+\end{equation}
+where, $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power. Furthermore, $\zeta_{U_v,k} \in \{0,1\}$ is a binary parameter that map Physical Resource Blocks(PRB) to UE. 
   
-
-
 \section*{References}
 
 Please number citations consecutively within brackets \cite{b1}. The 

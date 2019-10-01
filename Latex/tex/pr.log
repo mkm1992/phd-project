@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  29 SEP 2019 17:05
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  1 OCT 2019 16:57
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -327,6 +327,20 @@ LaTeX Font Warning: Font shape `TU/ptm/m/sc' undefined
 (Font)              using `TU/ptm/m/n' instead on input line 41.
 
 
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 58.
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 65--67
+\TU/ptm/m/sc/10 where, $[][]$ is the additive Gaussian noise $[] \U/msa/m/n/10 
+v
+ []
+
+[1
+
+
+]
+
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
 
@@ -337,8 +351,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[1
-
+[2
 
 ] (./pr.aux)
 
@@ -346,12 +359,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3419 strings out of 492970
- 48835 string characters out of 6137298
- 127913 words of memory out of 5000000
- 7410 multiletter control sequences out of 15000+600000
- 9174 words of font info for 48 fonts, out of 8000000 for 9000
+ 3440 strings out of 492970
+ 49033 string characters out of 6137298
+ 128913 words of memory out of 5000000
+ 7422 multiletter control sequences out of 15000+600000
+ 11931 words of font info for 57 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 30i,11n,35p,568b,304s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,11n,35p,674b,304s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on pr.pdf (1 page).
+Output written on pr.pdf (2 pages).
