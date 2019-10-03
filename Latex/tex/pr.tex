@@ -79,7 +79,7 @@ The channel vector from the RRH of  $s^{th}$ slice to the $i^{th}$ UE in the $v^
 \boldsymbol{h}_{\mathcal{R}_s,u_{(s,i)}} = \boldsymbol{\beta}^\frac{1}{2}_{\mathcal{R}_s,u_{(v,i)}} \boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}},
 \end{equation}
 where $\boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{\mathcal{U}_v})$ indicates the fast fading and flat fading channel vector and $\boldsymbol{\beta}_{\mathcal{R}_s,u_{(v,i)}}=\text{diag}(a_{r_{(s,1),u_{(v,i)}}},\ldots,a_{r_{(s,\mathcal{R}_s),u_{(v,i)}}})$
-represents the large scale fading matrix.
+represents the large scale fading matrix. Here, it is assumed we have perfect channel state information(CSI).
 \\
 Moreover, $\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v} = [\boldsymbol{w}_{\mathcal{R}_s,u(v,1)},...,\boldsymbol{w}_{\mathcal{R}_s,u(v,U_v)}] \in \mathbb{C}^{{R}_s\times U_v} $ is the zero forcing beamforming vector to minimize the interference which is indicated as follow
 \begin{equation}
@@ -105,7 +105,13 @@ As a result the user data capacity on the fronthual link between BBU and the $j^
 \begin{equation}
 C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{vs}}{ \sigma_{q_{r(s,j)}}^2})},
 \end{equation}
-It is assumed that we have two processing layer in BBU of O-RAN system. as we mentioned before, we have $M_1$ VMs in the first layer and $M_2$ VMs in second layer. Each VM in both layers map to one or more slices. So in $s^{th}$ slice, there are $M_{s_1}$ VMs in first layer and $M_{s_2}$ VMs in second layer. Each VM in first and second layer has computational capacity that is  equal to $\mu_1$ and $\mu_2$ respectively. 
+Suppose that we have two processing layer in BBU of O-RAN system. As it is mentioned before, we have $M_1$ VMs in the first layer and $M_2$ VMs in second layer. Each VM in both layers map to one or more slices. So in $s^{th}$ slice, there are $M_{s_1}$ VMs in first layer and $M_{s_2}$ VMs in second layer. Each VM in first and second layer has computational capacity that is  equal to $\mu_1$ and $\mu_2$ respectively. \\
+Let the packet arrival of UEs have a Poisson Process with arrival rate $\lambda_{u(v,i)}$ for $i^{th}$ UE in $v^{th}$ service. 
+Therefore, the mean arrival data rate of UEs in $s^{th}$ slice is 
+$\alpha_s = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{vs}\lambda_{u(v,i)}$.  
+It is assumed that there are dispatchers in each layer for each slice to divide the incoming traffic to VMs.
+Suppose the baseband processing of each VM is depicted as a M/M/1 processing queue.
+
 \section*{References}
 
 Please number citations consecutively within brackets \cite{b1}. The 
