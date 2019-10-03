@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  1 OCT 2019 16:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  3 OCT 2019 16:43
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -83,9 +83,48 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
+(c:/texlive/2018/texmf-dist/tex/latex/stackengine/stackengine.sty
+Package: stackengine 2017/02/13 v4.01\ Stacking text and objects in convenient 
+ways
+
+(c:/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count95
+)
+(c:/texlive/2018/texmf-dist/tex/generic/listofitems/listofitems.sty
+(c:/texlive/2018/texmf-dist/tex/generic/listofitems/listofitems.tex
+\loi_nestcnt=\count96
+)
+Package: listofitems 2018/03/13 v1.53 Grab items in lists using user-specified 
+sep char (CT)
+)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count97
+\calc@Bcount=\count98
+\calc@Adimen=\dimen126
+\calc@Bdimen=\dimen127
+\calc@Askip=\skip44
+\calc@Bskip=\skip45
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count99
+\calc@Cskip=\skip46
+)
+\c@@stackindex=\count100
+\@boxshift=\skip47
+\stack@tmplength=\skip48
+\temp@stkl=\skip49
+\@stackedboxwidth=\skip50
+\@addedbox=\box28
+\@anchorbox=\box29
+\stackedbox=\box30
+\@centerbox=\box31
+\c@ROWcellindex@=\count101
+)
 (c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip44
+\@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
 (c:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -94,49 +133,49 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
-\ex@=\dimen126
+\ex@=\dimen128
 ))
 (c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen127
+\pmbraise@=\dimen129
 )
 (c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count95
+\inf@bad=\count102
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count96
-\leftroot@=\count97
+\uproot@=\count103
+\leftroot@=\count104
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count98
-\DOTSCASE@=\count99
+\classnum@=\count105
+\DOTSCASE@=\count106
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box28
-\strutbox@=\box29
-\big@size=\dimen128
+\Mathstrutbox@=\box32
+\strutbox@=\box33
+\big@size=\dimen130
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count100
-\c@MaxMatrixCols=\count101
+\macc@depth=\count107
+\c@MaxMatrixCols=\count108
 \dotsspace@=\muskip10
-\c@parentequation=\count102
-\dspbrk@lvl=\count103
+\c@parentequation=\count109
+\dspbrk@lvl=\count110
 \tag@help=\toks16
-\row@=\count104
-\column@=\count105
-\maxfields@=\count106
+\row@=\count111
+\column@=\count112
+\maxfields@=\count113
 \andhelp@=\toks17
-\eqnshift@=\dimen129
-\alignsep@=\dimen130
-\tagshift@=\dimen131
-\tagwidth@=\dimen132
-\totwidth@=\dimen133
-\lineht@=\dimen134
+\eqnshift@=\dimen131
+\alignsep@=\dimen132
+\tagshift@=\dimen133
+\tagwidth@=\dimen134
+\totwidth@=\dimen135
+\lineht@=\dimen136
 \@envbody=\toks18
-\multlinegap=\skip45
-\multlinetaggap=\skip46
+\multlinegap=\skip52
+\multlinetaggap=\skip53
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
@@ -151,27 +190,16 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(c:/texlive/2018/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
 
-(c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
 (c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
 )
-\c@ALC@unique=\count107
-\c@ALC@line=\count108
-\c@ALC@rem=\count109
-\c@ALC@depth=\count110
-\ALC@tlm=\skip47
-\algorithmicindent=\skip48
-)
-(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
-
 (c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
@@ -186,8 +214,81 @@ Package graphics Info: Driver file: xetex.def on input line 99.
 (c:/texlive/2018/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen135
-\Gin@req@width=\dimen136
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+)
+\epsfxsize=\dimen139
+\epsfysize=\dimen140
+)
+(c:/texlive/2018/texmf-dist/tex/latex/psfrag/psfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count114
+\pfg@scount=\count115
+\pfg@temp=\write3
+)
+(c:/texlive/2018/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen141
+\captionmargin@=\dimen142
+\captionwidth=\dimen143
+\caption@tempdima=\dimen144
+\caption@indent=\dimen145
+\caption@parindent=\dimen146
+\caption@hangindent=\dimen147
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\norma
+lfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace
+ {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptio
+nsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspac
+e \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\nor
+malfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\n
+ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
+ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
+\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
+\fi .
+\c@ContinuedFloat=\count116
+)
+\c@KVtest=\count117
+\sf@farskip=\skip54
+\sf@captopadj=\dimen148
+\sf@capskip=\skip55
+\sf@nearskip=\skip56
+\c@subfigure=\count118
+\c@subfigure@save=\count119
+\c@lofdepth=\count120
+\c@subtable=\count121
+\c@subtable@save=\count122
+\c@lotdepth=\count123
+\sf@top=\skip57
+\sf@bottom=\skip58
+) (c:/texlive/2018/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count124
+\c@ALC@line=\count125
+\c@ALC@rem=\count126
+\c@ALC@depth=\count127
+\ALC@tlm=\skip59
+\algorithmicindent=\skip60
 )
 (c:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
@@ -289,57 +390,74 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (./pr.aux)
 \openout1 = `pr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 15.
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    ... okay on input line 15.
 
 -- Lines per column: 56 (exact).
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 31.
-LaTeX Font Info:    Try loading font information for U+msa on input line 31.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 34.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 31.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Font Warning: Font shape `TU/ptm/m/sc' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 41.
+(Font)              using `TU/ptm/m/n' instead on input line 44.
 
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 58.
+d on input line 61.
 
 
-Underfull \hbox (badness 1454) in paragraph at lines 65--67
-\TU/ptm/m/sc/10 where, $[][]$ is the additive Gaussian noise $[] \U/msa/m/n/10 
-v
+Underfull \hbox (badness 2762) in paragraph at lines 80--85
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]; [] ; a[]\OT1/cmr/m/n/10 )$ \TU/ptm/m/s
+c/10 represents the large
  []
 
-[1
+
+Underfull \hbox (badness 2781) in paragraph at lines 80--85
+\TU/ptm/m/sc/10 Moreover, $[][] \OT1/cmr/m/n/10 = [[][]\OML/cmm/m/it/10 ; :::; 
+[][]\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 2
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 96--101
+\TU/ptm/m/sc/10 where, $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/
+10 j[][][][]j[]$ \TU/ptm/m/sc/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -351,20 +469,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2
-
-] (./pr.aux)
+[2] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3440 strings out of 492970
- 49033 string characters out of 6137298
- 128913 words of memory out of 5000000
- 7422 multiletter control sequences out of 15000+600000
+ 5361 strings out of 492970
+ 79889 string characters out of 6137298
+ 170753 words of memory out of 5000000
+ 9309 multiletter control sequences out of 15000+600000
  11931 words of font info for 57 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 30i,11n,35p,674b,304s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,27n,42p,921b,304s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on pr.pdf (2 pages).

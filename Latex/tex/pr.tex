@@ -2,7 +2,10 @@
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
+\usepackage{stackengine}
+\def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfig}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -58,13 +61,51 @@ where $B$ is the bandwidth of system and $\rho_{u(v,i)}$ is the SNR of $i^{th}$ 
 \rho_{u(v,i)} =  \frac{P_{u(v,i)}\sum_{s=1}^{N_s}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{vs}}{BN_0 + I_{u(v,i)}}
 \end{equation}
 Where, $P_{u(v,i)}$ represents the transmitted power allocated by RRHs to $i^{th}$ UE in $v^{th}$ service. Also, 
-$\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of wireless link from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the the transmit beamforming vector from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. More over, $BN_0$ denotes the power of guassian additive noise and $I_{u(v,i)}$ is the power of interfering signals. 
-To obtain SNR as formulated in equation \eqref{eq2}, let $\bold{y}_{U_v}$ be the received signal's vector of all users in $v^{th}$ service which is given by equation \eqref{eq3}
+$\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of wireless link from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the the transmit beamforming vector from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. Moreover, $BN_0$ denotes the power of guassian additive noise and $I_{u(v,i)}$ is the power of interfering signals. 
+To obtain SNR as formulated in equation \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service which is given by equation \eqref{eq3}
 \begin{equation}\label{eq3}
 \bold{y}_{U_v} = \sum_{k=1}^{N_k}\sum_{s = 1}^{N_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{R}_s}+ \boldsymbol{q}_{R_s}) \zeta_{U_v,k}+ \boldsymbol{z}_{\mathcal{U}_v}
 \end{equation}
-where, $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power. Furthermore, $\zeta_{U_v,k} \in \{0,1\}$ is a binary parameter that map Physical Resource Blocks(PRB) to UE. 
-  
+where $\boldsymbol{x}_{ \mathcal{R}_s} = [x_{ r_{(s,1)}},...,x_{ r_{(s,\mathcal{R}_s)}}]^T \in \mathbb{C}^{{R}_s } $ depicts the transmitted symbol vector for the $s$-th set of Network slice,  $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power.
+In addition, $\boldsymbol{q}_{R_s} \in \mathbb{C}^{{R}_s }  $ indicates the quantization noise which is made from signal compression in BBU.
+\\
+Furthermore, $\zeta_{U_v,k} \delequal \{\zeta_{u(v,1),k},\zeta_{u(v,2),k},...,\zeta_{u(v,N_{U_v}),k}\}$,
+$\zeta_{u(v,i),k} \in \{0,1\}$ is a binary parameter that map Physical Resource Blocks(PRB) to UE.
+Also as defined before, $\boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}=\left[\boldsymbol{h}_{\mathcal{R}_s,u_{(v,1)}},\ldots,\boldsymbol{h}_{\mathcal{R}_s,v_{(v,\mathcal{U}_v)}}\right]^T  \in \mathbb{C}^{{R}_s\times {U}_v }$ 
+shows the channel matrix between RRH set $\mathcal{R}_s$ to UE set
+$\mathcal{U}_v$. 
+The channel vector from the RRH of  $s^{th}$ slice to the $i^{th}$ UE in the $v^{th}$ service $\boldsymbol{h}_{\mathcal{R}_s,u_{(v,i)}}\in \mathbb{C}^{{R}_s}$ is modeled as below
+\begin{equation}
+\boldsymbol{h}_{\mathcal{R}_s,u_{(s,i)}} = \boldsymbol{\beta}^\frac{1}{2}_{\mathcal{R}_s,u_{(v,i)}} \boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}},
+\end{equation}
+where $\boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{\mathcal{U}_v})$ indicates the fast fading and flat fading channel vector and $\boldsymbol{\beta}_{\mathcal{R}_s,u_{(v,i)}}=\text{diag}(a_{r_{(s,1),u_{(v,i)}}},\ldots,a_{r_{(s,\mathcal{R}_s),u_{(v,i)}}})$
+represents the large scale fading matrix.
+\\
+Moreover, $\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v} = [\boldsymbol{w}_{\mathcal{R}_s,u(v,1)},...,\boldsymbol{w}_{\mathcal{R}_s,u(v,U_v)}] \in \mathbb{C}^{{R}_s\times U_v} $ is the zero forcing beamforming vector to minimize the interference which is indicated as follow
+\begin{equation}
+\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v} = \boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}^H \boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v})^{-1}
+\end{equation}
+Hence, the interference power of $i^{th}$ UE in $v^{th}$ service can be represented as follow
+\begin{equation}
+\begin{split}
+ I_{u_{(v,i)}} &= 
+ \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{N_s}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u_{(v,l)}}a_{vs}\zeta_{u_(v,i),n}\zeta_{u_(v,l),n}}_{\text{(intra-service interference)}}\\
+&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{N_s}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u_{(y,l)}}a_{ys} \zeta_{u_(v,i),n}\zeta_{u_(y,l),n}}_{\text{(inter-service interference)}}\\
+&+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r_{(s,j)}}^2 |\boldsymbol{h}_{r_{(s,j)}, u_{(v,i)}}|^2 a_{vs}}_{\text{(quantization noise interference)}}.
+\end{split}
+\end{equation}
+where, $\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(v,l)}}|^2$
+and $\gamma_{2} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(y,l)}}|^2$.
+let $\bar{p}_{r_{(s,j)}}$ denote the power of transmitted signal from $j^{th}$ RRH in $s^{th}$ slice.
+from equation \eqref{eq3} we have
+\begin{equation}
+\bar{p}_{r_{(s,j)}} = \sum_{v=1}^{V}\boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   \boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}}^H a_{vs} + \sigma_{q_{r(s,j)}}^2.
+\end{equation}
+As a result the user data capacity on the fronthual link between BBU and the $j^{th}$ RRH in $s^{th}$ slice is formulated as below
+\begin{equation}
+C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{vs}}{ \sigma_{q_{r(s,j)}}^2})},
+\end{equation}
+It is assumed that we have two processing layer in BBU of O-RAN system. as we mentioned before, we have $M_1$ VMs in the first layer and $M_2$ VMs in second layer. Each VM in both layers map to one or more slices. So in $s^{th}$ slice, there are $M_{s_1}$ VMs in first layer and $M_{s_2}$ VMs in second layer. Each VM in first and second layer has computational capacity that is  equal to $\mu_1$ and $\mu_2$ respectively. 
 \section*{References}
 
 Please number citations consecutively within brackets \cite{b1}. The 
