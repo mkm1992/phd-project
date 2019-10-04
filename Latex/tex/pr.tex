@@ -105,12 +105,43 @@ As a result the user data capacity on the fronthual link between BBU and the $j^
 \begin{equation}
 C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{vs}}{ \sigma_{q_{r(s,j)}}^2})},
 \end{equation}
+\subsection{Mean Delay}
 Suppose that we have two processing layer in BBU of O-RAN system. As it is mentioned before, we have $M_1$ VMs in the first layer and $M_2$ VMs in second layer. Each VM in both layers map to one or more slices. So in $s^{th}$ slice, there are $M_{s_1}$ VMs in first layer and $M_{s_2}$ VMs in second layer. Each VM in first and second layer has computational capacity that is  equal to $\mu_1$ and $\mu_2$ respectively. \\
 Let the packet arrival of UEs have a Poisson Process with arrival rate $\lambda_{u(v,i)}$ for $i^{th}$ UE in $v^{th}$ service. 
-Therefore, the mean arrival data rate of UEs in $s^{th}$ slice is 
-$\alpha_s = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{vs}\lambda_{u(v,i)}$.  
+Therefore, the mean arrival data rate of UEs in $s^{th}$ slice in the first layer is 
+$\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{vs}\lambda_{u(v,i)}$.  
+Furthermore, the mean arrival rate of second layer is approximately equal to the mean arrival rate of first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the arrival packets of second layer which is processed in first layer is still Poisson with rate $\alpha_{s}$  
 It is assumed that there are dispatchers in each layer for each slice to divide the incoming traffic to VMs.
 Suppose the baseband processing of each VM is depicted as a M/M/1 processing queue.
+Each packet is routed by one of VMs of slices. So the mean delay of slice $s$ which is related to incoming traffic rate routed to
+each VM in first layer can be written as follow
+\begin{equation}
+d_{s_1} = \frac{1}{\mu_1 - \alpha_{s}/{M_{s_1}}}
+\end{equation}
+Also, the delay in $s^{th}$ slice in second layer can be formulated as below
+\begin{equation}
+d_{s_2} = \frac{1}{\mu_2 - \alpha_{s}/{M_{s_2}}}
+\end{equation}
+In addition, the arrival data rate to the queue of wireless transmission
+ is equal to the arrival data rate of dispatcher.
+Moreover, it is assumed that the service time of transmission queue for each slice $s$ has 
+ an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue. Therefore, 
+the mean delay of transmission layer is 
+\begin{equation}
+d_{s_{tr}} = \frac{1}{R_{{tot}_s} - \alpha_{s}}
+\end{equation}
+Where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{vs}R_{u(v,i)}$.
+\subsection{Physical Resource}
+Assume that for simplicity, each VM is mapped to one virtual network function (VNF). Each VNF requires
+physical resources which contain RAM, Memory and CPU.
+Let, the required resources for VNF $f$ in slice $s$ is represented by
+\begin{equation}
+\Omega_{(f,s)} = \{\Omega_{R_{f,s}}, \Omega_{M_{f,s}}, \Omega_{C_{f,s}} \}
+\end{equation} 
+Where, $\Omega_{R_{f,s}}, \Omega_{M_{f,s}}, \Omega_{C_{f,s}}$ indicate the amount of required RAM, Memory and CPU.
+Also, in the Core Network(CN), there are $N_{D}$ data centers(DC), which served VNFs. Each DC contains several servers that supply VNF's needs.
+The amount of RAM, Memory and CPU is denoted respectively by $\tau_{R_{j}}, \tau_{M_{j}}$ and $\tau_{C_{j}} $ for $j^{th}$ DC.
+\subsection{Problem Formulation}
 
 \section*{References}
 
