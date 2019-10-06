@@ -2,16 +2,20 @@
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
+\usepackage{mathtools} 
 \usepackage{stackengine}
 \def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfig}
-\usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+
 \begin{document}
 
 \title{Joint Power Allocation and Network Slicing In an End to End O-RAN System
@@ -131,8 +135,12 @@ the mean delay of transmission layer is
 d_{s_{tr}} = \frac{1}{R_{{tot}_s} - \alpha_{s}}
 \end{equation}
 Where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{vs}R_{u(v,i)}$.
+We define a new parameter which indicates mean delay of each slice
+\begin{equation}
+D_{s} = d_{s_1} + d_{s_2} + d_{s_{tr}} \forall s
+\end{equation} 
 \subsection{Physical Resource}
-Assume that for simplicity, each VM is mapped to one virtual network function (VNF). Each VNF requires
+Assume each VM is mapped to one virtual network function (VNF) for simplicity. Each VNF requires
 physical resources which contain RAM, Memory and CPU.
 Let, the required resources for VNF $f$ in slice $s$ is represented by
 \begin{equation}
@@ -141,8 +149,89 @@ Let, the required resources for VNF $f$ in slice $s$ is represented by
 Where, $\Omega_{R_{f,s}}, \Omega_{M_{f,s}}, \Omega_{C_{f,s}}$ indicate the amount of required RAM, Memory and CPU.
 Also, in the Core Network(CN), there are $N_{D}$ data centers(DC), which served VNFs. Each DC contains several servers that supply VNF's needs.
 The amount of RAM, Memory and CPU is denoted respectively by $\tau_{R_{j}}, \tau_{M_{j}}$ and $\tau_{C_{j}} $ for $j^{th}$ DC.
-\subsection{Problem Formulation}
-
+\begin{equation*}
+\tau_j = \{\tau_{R_{j}}, \tau_{M_{j}}, \tau_{C_{j}} \}
+\end{equation*}
+\subsection{Problem Statement}
+One of the most important parameters to estimate the optimality of the system is energy efficiency which is represented as sum-rate to sum-power as follow
+\begin{equation}
+\eta(\boldsymbol{P},\boldsymbol{A}) := \frac{\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} }{\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}} = \frac{R_{tot}(\boldsymbol{P},\boldsymbol{A})}{P_{r_{tot}}(\boldsymbol{P},\boldsymbol{A})},
+\end{equation}
+Assume the power consumption of baseband processing at each data center that is mapped to VMs of a slice is depicted as
+$\phi$. So the total power can be represented as  
+\begin{equation*}
+\phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}x_{s,d}\phi
+\end{equation*} 
+Where, $x_{s,d}$ is a binary variable which indicates whether $d^{th}$ data-center is mapped to VNFs of $s^{th}$ slice or not.\\
+In this paper, the main goal is to simultaneously maximize sum-rate and minimize sum-power with the presence of constraints which is written as follow, 
+\begin{subequations}
+\begin{alignat}{4}
+\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{X} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})+\frac{1}{\phi_{tot}(\boldsymbol{X})} \\
+\text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i,   \\
+&p_{u_{(v,k)}}  \geq 0  &&\quad \forall v, \forall k, \\
+&\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{max} && \quad \forall v, \forall k, \\                                 
+&C_{r_{(s,i)}} \leq C_{r_{(s,i)}}^{max}  &&\quad \forall s, \forall i, \\
+&D_{s} \leq D_{s}^{th}  &&\quad \forall s, \\
+& \sum_{s=1}^{S}a_{vs} \geq 1 &&\quad \forall s, \\
+& \sum_{d=1}^{D_c}\sum_{v=1}^{V}x_{s,d}a_{vs} \geq 1\times\sum_{v=1}^{V}a_{vs} &&\quad \forall s, \\
+& \sum_{f=1}^{F_s}\Omega_{(f,s)} \leq  \sum_{d=1}^{D_c} x_{s,d} \tau_d                       && \quad \forall f, \forall s 
+\end{alignat}
+\label{constraints}
+\end{subequations}
+Where,$\boldsymbol{P} =[p_{u(v,k)}]  \forall v , \forall k $, $\boldsymbol{A} =[a_{vs}]  \forall v , \forall s $ and $\boldsymbol{X} =[x_{s,d}]  \forall s , \forall d $.
+The main optimizaiton problem which is formulated as \eqref{constraints} can be decomposed into two independent optimization problem. The First and main problem is
+\begin{subequations}
+\begin{alignat}{4}
+\max\limits_{\boldsymbol{P}, \boldsymbol{A} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})\\
+\text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i,   \\
+&p_{u_{(v,k)}}  \geq 0  &&\quad \forall v, \forall k, \\
+&\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{max} && \quad \forall v, \forall k, \\                                 
+&C_{r_{(s,i)}} \leq C_{r_{(s,i)}}^{max}  &&\quad \forall s, \forall i, \\
+&D_{s} \leq D_{s}^{th}  &&\quad \forall s
+\end{alignat}
+\label{constraints1}
+\end{subequations}
+and the second problem is 
+\begin{subequations}
+\begin{alignat}{4}
+\min\limits_{\boldsymbol{X} }   \quad &   \phi_{tot}(\boldsymbol{X})\\
+\text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i,   \\
+& \sum_{s=1}^{S}a_{vs} \geq 1 &&\quad \forall s, \\
+& \sum_{d=1}^{D_c}\sum_{v=1}^{V}x_{s,d}a_{vs} \geq 1\times\sum_{v=1}^{V}a_{vs} &&\quad \forall s, \\
+& \sum_{f=1}^{F_s}\Omega_{(f,s)} \leq  \sum_{d=1}^{D_c} x_{s,d} \tau_d                       && \quad \forall f, \forall s 
+\end{alignat}
+\label{constraints2}
+\end{subequations}
+\subsection{Proposed Method}
+In this subsection, the proposed method is applied to solve the optimization problem. 
+\subsubsection{First Sub-Problem}
+In this part, we want to solve \eqref{constraints1}. Since the problem is non-convex, iterative algorithm is applied.
+To solve the problem and obtain optimum $\boldsymbol{A}$ and $\boldsymbol{P}$ we divide problem \eqref{constraints1} to 
+two different part that iteratively solve. 
+Firstly, we want to obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = \boldsymbol{P}_{max}$ in the problem \eqref{constraints1}. This part of problem is solved in two different method. The first method is using MOSEK and second method is a heuristic method.
+The details of heuristic algorithm are represented in \textbf{Algorithm} \eqref{alg}.  
+\begin{algorithm}
+\caption{Mapping Slice to Service}\label{alg}
+\begin{algorithmic}[1]
+\State Sort Services according to their priority and the number of Users in the services and their requirements.
+\State Sort Slices according to the number of PRBs and number of RRHs and VMs  and their max of Capacities of resources. 
+\State Set the maximum number of iterations $I_{max}$, convergence condition $\epsilon_{\eta}$  and the initial value $\eta^{(1)} = 0$
+\State Set the iteration index $i = 1$ and begin the iteration (Outer
+Loop).
+\For {$ 1\leq i \leq  Imax$}
+\State Solve the resource allocation problem with $\eta^{(i)}$ (Inner Loop);
+\State Obtain $P^{(i)}, R_{total}^{(i)}, P_{RRH}^{(i)}$
+\If {$ R_{total}(\boldsymbol{P}^{(i)}) - \eta^{(i)} P_{RRH}(\boldsymbol{P}^{(i)}) < \epsilon_{\eta} $} 
+\State Set $\boldsymbol{P}^*= \boldsymbol{P}^{(i)} $   and  $ \eta^{*} =\eta^{(i)} $;
+\State break;
+\Else
+\State Set $\eta^{(i)}= \frac{R_{total}(\boldsymbol{P}^{(i))}}{P_{RRH}(\boldsymbol{P}^{(i))}}$ and $i= i+1$;
+\EndIf 
+\State \textbf{end if}
+\EndFor 
+\State \textbf{end for}
+\end{algorithmic}
+\end{algorithm}
 \section*{References}
 
 Please number citations consecutively within brackets \cite{b1}. The 
