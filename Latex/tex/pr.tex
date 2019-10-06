@@ -68,13 +68,13 @@ Where, $P_{u(v,i)}$ represents the transmitted power allocated by RRHs to $i^{th
 $\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of wireless link from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the the transmit beamforming vector from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. Moreover, $BN_0$ denotes the power of guassian additive noise and $I_{u(v,i)}$ is the power of interfering signals. 
 To obtain SNR as formulated in equation \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service which is given by equation \eqref{eq3}
 \begin{equation}\label{eq3}
-\bold{y}_{U_v} = \sum_{k=1}^{N_k}\sum_{s = 1}^{N_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{R}_s}+ \boldsymbol{q}_{R_s}) \zeta_{U_v,k}+ \boldsymbol{z}_{\mathcal{U}_v}
+\bold{y}_{U_v} = \sum_{k=1}^{N_k}\sum_{s = 1}^{N_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{R}_s}+ \boldsymbol{q}_{R_s}) \zeta_{U_v,k,s}+ \boldsymbol{z}_{\mathcal{U}_v}
 \end{equation}
 where $\boldsymbol{x}_{ \mathcal{R}_s} = [x_{ r_{(s,1)}},...,x_{ r_{(s,\mathcal{R}_s)}}]^T \in \mathbb{C}^{{R}_s } $ depicts the transmitted symbol vector for the $s$-th set of Network slice,  $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power.
 In addition, $\boldsymbol{q}_{R_s} \in \mathbb{C}^{{R}_s }  $ indicates the quantization noise which is made from signal compression in BBU.
 \\
-Furthermore, $\zeta_{U_v,k} \delequal \{\zeta_{u(v,1),k},\zeta_{u(v,2),k},...,\zeta_{u(v,N_{U_v}),k}\}$,
-$\zeta_{u(v,i),k} \in \{0,1\}$ is a binary parameter that map Physical Resource Blocks(PRB) to UE.
+Furthermore, $\zeta_{U_v,k,s} \delequal \{\zeta_{u(v,1),k,s},\zeta_{u(v,2),k,s},...,\zeta_{u(v,N_{U_v}),k,s}\}$,
+$\zeta_{u(v,i),k,s} \in \{0,1\}$ is a binary parameter that map Physical Resource Blocks(PRB) to UE.
 Also as defined before, $\boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}=\left[\boldsymbol{h}_{\mathcal{R}_s,u_{(v,1)}},\ldots,\boldsymbol{h}_{\mathcal{R}_s,v_{(v,\mathcal{U}_v)}}\right]^T  \in \mathbb{C}^{{R}_s\times {U}_v }$ 
 shows the channel matrix between RRH set $\mathcal{R}_s$ to UE set
 $\mathcal{U}_v$. 
@@ -82,7 +82,7 @@ The channel vector from the RRH of  $s^{th}$ slice to the $i^{th}$ UE in the $v^
 \begin{equation}
 \boldsymbol{h}_{\mathcal{R}_s,u_{(s,i)}} = \boldsymbol{\beta}^\frac{1}{2}_{\mathcal{R}_s,u_{(v,i)}} \boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}},
 \end{equation}
-where $\boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{\mathcal{U}_v})$ indicates the fast fading and flat fading channel vector and $\boldsymbol{\beta}_{\mathcal{R}_s,u_{(v,i)}}=\text{diag}(a_{r_{(s,1),u_{(v,i)}}},\ldots,a_{r_{(s,\mathcal{R}_s),u_{(v,i)}}})$
+where $\boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{\mathcal{U}_v})$ indicates the fast fading and flat fading channel vector and $\boldsymbol{\beta}_{\mathcal{R}_s,u_{(v,i)}}=\text{diag}(b_{r_{(s,1),u_{(v,i)}}},\ldots,b_{r_{(s,\mathcal{R}_s),u_{(v,i)}}})$
 represents the large scale fading matrix. Here, it is assumed we have perfect channel state information(CSI).
 \\
 Moreover, $\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v} = [\boldsymbol{w}_{\mathcal{R}_s,u(v,1)},...,\boldsymbol{w}_{\mathcal{R}_s,u(v,U_v)}] \in \mathbb{C}^{{R}_s\times U_v} $ is the zero forcing beamforming vector to minimize the interference which is indicated as follow
@@ -93,8 +93,8 @@ Hence, the interference power of $i^{th}$ UE in $v^{th}$ service can be represen
 \begin{equation}
 \begin{split}
  I_{u_{(v,i)}} &= 
- \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{N_s}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u_{(v,l)}}a_{vs}\zeta_{u_(v,i),n}\zeta_{u_(v,l),n}}_{\text{(intra-service interference)}}\\
-&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{N_s}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u_{(y,l)}}a_{ys} \zeta_{u_(v,i),n}\zeta_{u_(y,l),n}}_{\text{(inter-service interference)}}\\
+ \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{N_s}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u_{(v,l)}}a_{vs}\zeta_{u_(v,i),n,s}\zeta_{u_(v,l),n,s}}_{\text{(intra-service interference)}}\\
+&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{N_s}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u_{(y,l)}}a_{ys} \zeta_{u_(v,i),n,s}\zeta_{u_(y,l),n,s}}_{\text{(inter-service interference)}}\\
 &+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r_{(s,j)}}^2 |\boldsymbol{h}_{r_{(s,j)}, u_{(v,i)}}|^2 a_{vs}}_{\text{(quantization noise interference)}}.
 \end{split}
 \end{equation}
@@ -160,25 +160,25 @@ One of the most important parameters to estimate the optimality of the system is
 Assume the power consumption of baseband processing at each data center that is mapped to VMs of a slice is depicted as
 $\phi$. So the total power can be represented as  
 \begin{equation*}
-\phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}x_{s,d}\phi
+\phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi
 \end{equation*} 
-Where, $x_{s,d}$ is a binary variable which indicates whether $d^{th}$ data-center is mapped to VNFs of $s^{th}$ slice or not.\\
+Where, $y_{s,d}$ is a binary variable which indicates whether $d^{th}$ data-center is mapped to VNFs of $s^{th}$ slice or not.\\
 In this paper, the main goal is to simultaneously maximize sum-rate and minimize sum-power with the presence of constraints which is written as follow, 
 \begin{subequations}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{X} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})+\frac{1}{\phi_{tot}(\boldsymbol{X})} \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{y} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})+\frac{1}{\phi_{tot}(\boldsymbol{Y})} \\
 \text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i,   \\
 &p_{u_{(v,k)}}  \geq 0  &&\quad \forall v, \forall k, \\
 &\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{max} && \quad \forall v, \forall k, \\                                 
 &C_{r_{(s,i)}} \leq C_{r_{(s,i)}}^{max}  &&\quad \forall s, \forall i, \\
 &D_{s} \leq D_{s}^{th}  &&\quad \forall s, \\
 & \sum_{s=1}^{S}a_{vs} \geq 1 &&\quad \forall s, \\
-& \sum_{d=1}^{D_c}\sum_{v=1}^{V}x_{s,d}a_{vs} \geq 1\times\sum_{v=1}^{V}a_{vs} &&\quad \forall s, \\
-& \sum_{f=1}^{F_s}\Omega_{(f,s)} \leq  \sum_{d=1}^{D_c} x_{s,d} \tau_d                       && \quad \forall f, \forall s 
+& \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{vs} \geq 1\times\sum_{v=1}^{V}a_{vs} &&\quad \forall s, \\
+& \sum_{f=1}^{F_s}\Omega_{(f,s)} \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_d                       && \quad \forall f, \forall s 
 \end{alignat}
 \label{constraints}
 \end{subequations}
-Where,$\boldsymbol{P} =[p_{u(v,k)}]  \forall v , \forall k $, $\boldsymbol{A} =[a_{vs}]  \forall v , \forall s $ and $\boldsymbol{X} =[x_{s,d}]  \forall s , \forall d $.
+Where,$\boldsymbol{P} =[p_{u(v,k)}]  \forall v , \forall k $, $\boldsymbol{A} =[a_{vs}]  \forall v , \forall s $ and $\boldsymbol{Y} =[y_{s,d}]  \forall s , \forall d $.
 The main optimizaiton problem which is formulated as \eqref{constraints} can be decomposed into two independent optimization problem. The First and main problem is
 \begin{subequations}
 \begin{alignat}{4}
@@ -194,11 +194,11 @@ The main optimizaiton problem which is formulated as \eqref{constraints} can be 
 and the second problem is 
 \begin{subequations}
 \begin{alignat}{4}
-\min\limits_{\boldsymbol{X} }   \quad &   \phi_{tot}(\boldsymbol{X})\\
+\min\limits_{\boldsymbol{y} }   \quad &   \phi_{tot}(\boldsymbol{Y})\\
 \text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i,   \\
 & \sum_{s=1}^{S}a_{vs} \geq 1 &&\quad \forall s, \\
-& \sum_{d=1}^{D_c}\sum_{v=1}^{V}x_{s,d}a_{vs} \geq 1\times\sum_{v=1}^{V}a_{vs} &&\quad \forall s, \\
-& \sum_{f=1}^{F_s}\Omega_{(f,s)} \leq  \sum_{d=1}^{D_c} x_{s,d} \tau_d                       && \quad \forall f, \forall s 
+& \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{vs} \geq 1\times\sum_{v=1}^{V}a_{vs} &&\quad \forall s, \\
+& \sum_{f=1}^{F_s}\Omega_{(f,s)} \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_d                       && \quad \forall f, \forall s 
 \end{alignat}
 \label{constraints2}
 \end{subequations}
@@ -215,9 +215,7 @@ The details of heuristic algorithm are represented in \textbf{Algorithm} \eqref{
 \begin{algorithmic}[1]
 \State Sort Services according to their priority and the number of Users in the services and their requirements.
 \State Sort Slices according to the number of PRBs and number of RRHs and VMs  and their max of Capacities of resources. 
-\State Set the maximum number of iterations $I_{max}$, convergence condition $\epsilon_{\eta}$  and the initial value $\eta^{(1)} = 0$
-\State Set the iteration index $i = 1$ and begin the iteration (Outer
-Loop).
+\State Set the maximum number of iterations $I_{max}$
 \For {$ 1\leq i \leq  Imax$}
 \State Solve the resource allocation problem with $\eta^{(i)}$ (Inner Loop);
 \State Obtain $P^{(i)}, R_{total}^{(i)}, P_{RRH}^{(i)}$

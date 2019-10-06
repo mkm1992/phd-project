@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  6 OCT 2019 15:31
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  6 OCT 2019 17:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -480,8 +480,32 @@ Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 65.
 
 
-Underfull \hbox (badness 2762) in paragraph at lines 84--89
-[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]; [] ; a[]\OT1/cmr/m/n/10 )$ \TU/ptm/m/s
+Underfull \hbox (badness 2384) in paragraph at lines 72--82
+\TU/ptm/m/sc/10 where $[][] \OT1/cmr/m/n/10 = [\OML/cmm/m/it/10 x[]; :::; x[]\O
+T1/cmr/m/n/10 ][] \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 C[]$ \TU/ptm/m/sc/10 depicts
+
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 72--82
+\TU/ptm/m/sc/10 the transmitted symbol vector for the $\OML/cmm/m/it/10 s$\TU/p
+tm/m/sc/10 -th set of
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 72--82
+\TU/ptm/m/sc/10 Network slice, $[][]$ is the additive Gaussian noise
+ []
+
+
+Overfull \hbox (13.18506pt too wide) in paragraph at lines 72--82
+\TU/ptm/m/sc/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/
+cmm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\TU/ptm/m/sc/10 ,
+ []
+
+
+Underfull \hbox (badness 3930) in paragraph at lines 84--89
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 b[]; [] ; b[]\OT1/cmr/m/n/10 )$ \TU/ptm/m/s
 c/10 represents the large
  []
 
