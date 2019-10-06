@@ -14,7 +14,12 @@
 \usepackage[noend]{algpseudocode}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-    
+\allowdisplaybreaks
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}   
 
 \begin{document}
 
@@ -53,7 +58,7 @@ Please observe the conference page limits.
 In this section, first, we present the downlink (DL) of O-RAN System. Then we obtain achievable rate and delays.
 Afterward, the main problem is expressed.
 \subsection{System Model}
-Suppose that there are $S$ Slices Serving $V$ Services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single antenna users that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $N_s$ PRBs. All the RRHs in a slice that is mapped to a service, transmit signals to all the UEs in specific service. Each RRH $r \in \{1,2,...,R \}$ is connected to BBU pool via an optical fiber link with limited fronthaul capacity. Also each RRH and PRB can serve more than one slice. It is considered that in BBU, the system has 2 processing layer consists of $M_1$ homogeneous VMs in first layer and $M_2$ homogeneous VMs in second layer.
+Suppose that there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single antenna users that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $N_s$ PRBs. All the RRHs in a slice that is mapped to a service, transmit signals to all the UEs in specific service. Each RRH $r \in \{1,2,...,R \}$ is connected to BBU pool via an optical fiber link with limited fronthaul capacity. Also each RRH and PRB can serve more than one slice. It is considered that in BBU, the system has two processing layer consists of $M_1$ homogeneous VMs in first layer and $M_2$ homogeneous VMs in second layer.
 \subsection{Achievable Rate}
 In this subsection, the Achievable Rate is obtained as below.
 The achievable data rate for $i^{th}$ UE in $v^{th}$ service can be written as 
@@ -110,7 +115,8 @@ As a result the user data capacity on the fronthual link between BBU and the $j^
 C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{vs}}{ \sigma_{q_{r(s,j)}}^2})},
 \end{equation}
 \subsection{Mean Delay}
-Suppose that we have two processing layer in BBU of O-RAN system. As it is mentioned before, we have $M_1$ VMs in the first layer and $M_2$ VMs in second layer. Each VM in both layers map to one or more slices. So in $s^{th}$ slice, there are $M_{s_1}$ VMs in first layer and $M_{s_2}$ VMs in second layer. Each VM in first and second layer has computational capacity that is  equal to $\mu_1$ and $\mu_2$ respectively. \\
+Suppose that we have two processing layer in BBU of O-RAN system. The lower layer is consist of PHY and MAC and the upper layer is consist of RLC, PDCP and SDAP.\newline   
+As it is mentioned before, we have $M_1$ VMs in the first layer and $M_2$ VMs in second layer. Each VM in both layers map to one or more slices. So in $s^{th}$ slice, there are $M_{s_1}$ VMs in first layer and $M_{s_2}$ VMs in second layer. Each VM in first and second layer has computational capacity that is  equal to $\mu_1$ and $\mu_2$ respectively. \\
 Let the packet arrival of UEs have a Poisson Process with arrival rate $\lambda_{u(v,i)}$ for $i^{th}$ UE in $v^{th}$ service. 
 Therefore, the mean arrival data rate of UEs in $s^{th}$ slice in the first layer is 
 $\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{vs}\lambda_{u(v,i)}$.  
@@ -167,25 +173,32 @@ In this paper, the main goal is to simultaneously maximize sum-rate and minimize
 \begin{subequations}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{y} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})+\frac{1}{\phi_{tot}(\boldsymbol{Y})} \\
-\text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i,   \\
-&p_{u_{(v,k)}}  \geq 0  &&\quad \forall v, \forall k, \\
-&\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{max} && \quad \forall v, \forall k, \\                                 
-&C_{r_{(s,i)}} \leq C_{r_{(s,i)}}^{max}  &&\quad \forall s, \forall i, \\
-&D_{s} \leq D_{s}^{th}  &&\quad \forall s, \\
-& \sum_{s=1}^{S}a_{vs} \geq 1 &&\quad \forall s, \\
-& \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{vs} \geq 1\times\sum_{v=1}^{V}a_{vs} &&\quad \forall s, \\
-& \sum_{f=1}^{F_s}\Omega_{(f,s)} \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_d                       && \quad \forall f, \forall s 
+\text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i, 
+ \label{c11} \\
+&p_{u_{(v,k)}}  \geq 0  &&\quad \forall v, \forall k,\label{c12} \\
+&\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{min} && \quad \forall v, \forall k,\label{c13} \\                                 
+&C_{r_{(s,i)}} \leq C_{r_{(s,i)}}^{max}  &&\quad \forall s, \forall i, \label{c14}\\
+&D_{s} \leq D_{s}^{th}  &&\quad \forall s,\label{c15} \\
+& \sum_{s=1}^{S}a_{vs} \geq 1 &&\quad \forall s, \label{c21} \\
+& \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{vs} \geq 1\times\sum_{v=1}^{V}a_{vs} &&\quad \forall s,\label{c23} \\
+& \sum_{f=1}^{F_s}\Omega_{\mathfrak{z}(f,s)} \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_d                      
+ && \quad \forall f, \forall s  \label{c22}
 \end{alignat}
 \label{constraints}
 \end{subequations}
-Where,$\boldsymbol{P} =[p_{u(v,k)}]  \forall v , \forall k $, $\boldsymbol{A} =[a_{vs}]  \forall v , \forall s $ and $\boldsymbol{Y} =[y_{s,d}]  \forall s , \forall d $.
+Where,$\boldsymbol{P} =[p_{u(v,k)}]  \forall v , \forall k $, $\boldsymbol{A} =[a_{vs}]  \forall v , \forall s $ and $\boldsymbol{Y} =[y_{s,d}]  \forall s , \forall d $. 
+Equation \eqref{c11}, \eqref{c12} indicates respectively that the power of each RRH do not exceed the maximum power and power of each UE is a positive integer value. Also \eqref{c13} shows that the rate of each UE is more than a threshold. \eqref{c14} and \eqref{c15} depicts respectively that the capacity of fronthaul link is limited and the delay of receiving signal should be less than a threshold.  
+Furthermore, \eqref{c21}
+ensure that each service is mapped to one or more slice.
+Also, \eqref{c23} guarantee that each slice (VNFs in two layers of slice) has been placed to one or more physical resources (DC). Moreover, in \eqref{c22}  $\mathfrak{z}\in \{M,R,C\}$, which supports 
+that we have enough physical resource for VNFs of each slice.\newline 
 The main optimizaiton problem which is formulated as \eqref{constraints} can be decomposed into two independent optimization problem. The First and main problem is
 \begin{subequations}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{A} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})\\
 \text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i,   \\
 &p_{u_{(v,k)}}  \geq 0  &&\quad \forall v, \forall k, \\
-&\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{max} && \quad \forall v, \forall k, \\                                 
+&\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{min} && \quad \forall v, \forall k, \\                                 
 &C_{r_{(s,i)}} \leq C_{r_{(s,i)}}^{max}  &&\quad \forall s, \forall i, \\
 &D_{s} \leq D_{s}^{th}  &&\quad \forall s
 \end{alignat}
@@ -202,66 +215,48 @@ and the second problem is
 \end{alignat}
 \label{constraints2}
 \end{subequations}
-\subsection{Proposed Method}
-In this subsection, the proposed method is applied to solve the optimization problem. 
-\subsubsection{First Sub-Problem}
-In this part, we want to solve \eqref{constraints1}. Since the problem is non-convex, iterative algorithm is applied.
+\subsection{Proposed Method For Problem \eqref{constraints1}}
+In this subsection, the proposed method is applied to solve the optimization problem.
+We want to solve \eqref{constraints1}. Since the problem is non-convex, iterative algorithm is applied.
 To solve the problem and obtain optimum $\boldsymbol{A}$ and $\boldsymbol{P}$ we divide problem \eqref{constraints1} to 
-two different part that iteratively solve. 
-Firstly, we want to obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = \boldsymbol{P}_{max}$ in the problem \eqref{constraints1}. This part of problem is solved in two different method. The first method is using MOSEK and second method is a heuristic method.
+two different part that can be solved iteratively.  
+\subsubsection{First Sub-Problem}
+Firstly, we need to obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = \boldsymbol{P}_{max}$ in the problem \eqref{constraints1} and updating this parameter at the end of each iteration. Two different method is applied to acquire $\boldsymbol{A}$. The first method is using MOSEK and second method is a heuristic algorithm.
 The details of heuristic algorithm are represented in \textbf{Algorithm} \eqref{alg}.  
 \begin{algorithm}
 \caption{Mapping Slice to Service}\label{alg}
 \begin{algorithmic}[1]
-\State Sort Services according to their priority and the number of Users in the services and their requirements.
-\State Sort Slices according to the number of PRBs and number of RRHs and VMs  and their max of Capacities of resources. 
-\State Set the maximum number of iterations $I_{max}$
-\For {$ 1\leq i \leq  Imax$}
-\State Solve the resource allocation problem with $\eta^{(i)}$ (Inner Loop);
-\State Obtain $P^{(i)}, R_{total}^{(i)}, P_{RRH}^{(i)}$
-\If {$ R_{total}(\boldsymbol{P}^{(i)}) - \eta^{(i)} P_{RRH}(\boldsymbol{P}^{(i)}) < \epsilon_{\eta} $} 
-\State Set $\boldsymbol{P}^*= \boldsymbol{P}^{(i)} $   and  $ \eta^{*} =\eta^{(i)} $;
-\State break;
+\State Sort services according to their priority, the number of UEs in it and their requirements in descending order.
+\State Sort slices according to the number of PRBs, RRHs and VNFs in two layers and the Capacity of their resources in descending order. 
+\For {$ 1\leq i \leq  S$}
+\For {$ 1\leq j \leq  V$}
+\State Set $a_{ij} = 1$
+\State Obtain Parameters of System
+\If {conditions \eqref{c11}, \eqref{c12}, \eqref{c13} and \eqref{c14} is not applied} 
+\State Set $a_{ij} = 0$;
 \Else
-\State Set $\eta^{(i)}= \frac{R_{total}(\boldsymbol{P}^{(i))}}{P_{RRH}(\boldsymbol{P}^{(i))}}$ and $i= i+1$;
+\State break from inner loop;
 \EndIf 
 \State \textbf{end if}
 \EndFor 
 \State \textbf{end for}
+\EndFor 
+\State \textbf{end for}
 \end{algorithmic}
 \end{algorithm}
-\section*{References}
+\subsubsection{Second Sub-Problem}
+In this part, by assuming that $\boldsymbol{A}$ is fixed, the optimal power of UEs in each service is achieved.
+\begin{theorem}\label{t2}
+ $\eta^*$ which is the optimum energy efficiency can be achieved if
+\begin{equation}\label{q2}
+\begin{split}
+&\max \limits_{\boldsymbol{P}} (R_{tot}(\boldsymbol{P}) - \eta^* P_{r_{tot}}(\boldsymbol{P}))=\\
+& R_{total}(\boldsymbol{P}^*) - \eta^* P_{r_{tot}}(\boldsymbol{P}^*) =0.
+\end{split}
+\end{equation}
+\end{theorem}
+Using Lagrangian function and iterative algorithm, can solve this subproblem. 
+%\section*{References}
 
-Please number citations consecutively within brackets \cite{b1}. The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
-
-Number footnotes separately in superscripts. Place the actual footnote at 
-the bottom of the column in which it was cited. Do not put footnotes in the 
-abstract or reference list. Use letters for table footnotes.
-
-Unless there are six authors or more give all authors' names; do not use 
-``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
-Capitalize only the first word in a paper title, except for proper nouns and 
-element symbols.
-
-For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation \cite{b6}.
-
-\begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-\end{thebibliography}
-\vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
 
 \end{document}
