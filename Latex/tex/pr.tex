@@ -105,6 +105,7 @@ Hence, the interference power of $i^{th}$ UE in $v^{th}$ service can be represen
 \end{equation}
 where, $\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(v,l)}}|^2$
 and $\gamma_{2} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(y,l)}}|^2$.
+It is assumed that interference signal applied from UEs with same PRB.
 let $\bar{p}_{r_{(s,j)}}$ denote the power of transmitted signal from $j^{th}$ RRH in $s^{th}$ slice.
 from equation \eqref{eq3} we have
 \begin{equation}
@@ -217,11 +218,11 @@ and the second problem is
 \end{subequations}
 \subsection{Proposed Method For Problem \eqref{constraints1}}
 In this subsection, the proposed method is applied to solve the optimization problem.
-We want to solve \eqref{constraints1}. Since the problem is non-convex, iterative algorithm is applied.
+We want to solve \eqref{constraints1}. Since the problem is non-convex and NP-Hard iterative algorithm is applied.
 To solve the problem and obtain optimum $\boldsymbol{A}$ and $\boldsymbol{P}$ we divide problem \eqref{constraints1} to 
 two different part that can be solved iteratively.  
 \subsubsection{First Sub-Problem}
-Firstly, we need to obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = \boldsymbol{P}_{max}$ in the problem \eqref{constraints1} and updating this parameter at the end of each iteration. Two different method is applied to acquire $\boldsymbol{A}$. The first method is using MOSEK and second method is a heuristic algorithm.
+Firstly, we need to obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P}$ in the problem \eqref{constraints1} and updating this parameter at the end of each iteration. Two different method is applied to acquire $\boldsymbol{A}$. The first method is using MOSEK and second method is a heuristic algorithm.
 The details of heuristic algorithm are represented in \textbf{Algorithm} \eqref{alg}.  
 \begin{algorithm}
 \caption{Mapping Slice to Service}\label{alg}
@@ -255,7 +256,30 @@ In this part, by assuming that $\boldsymbol{A}$ is fixed, the optimal power of U
 \end{split}
 \end{equation}
 \end{theorem}
-Using Lagrangian function and iterative algorithm, can solve this subproblem. 
+This subproblem can  be solved using Lagrangian function and iterative algorithm. 
+Since, Interference is a function of power of UEs, for simplicity, we assume an upper bound for interference (the worst-case) as follow
+\begin{equation}
+\begin{split}
+ \bar{I}_{u_{(v,i)}} &= 
+ \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{N_s}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{max} a_{vs}\zeta_{u_(v,i),n,s}\zeta_{u_(v,l),n,s}}_{\text{(intra-service interference)}}\\
+&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{N_s}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{max}   a_{ys} \zeta_{u_(v,i),n,s}\zeta_{u_(y,l),n,s}}_{\text{(inter-service interference)}}\\
+&+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r_{(s,j)}}^2 |\boldsymbol{h}_{r_{(s,j)}, u_{(v,i)}}|^2 a_{vs}}_{\text{(quantization noise interference)}}.
+\end{split}
+\end{equation}
+where, $\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(v,l)}}|^2$
+and $\gamma_{2} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(y,l)}}|^2$.\newline
+Lagrangian function is written as follow
+\begin{equation}
+\begin{split}
+\mathcal{L}(\boldsymbol{P}; \boldsymbol{\lambda}, \boldsymbol{\mu}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}) & = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v}\mathcal{\bar{R}}_{u_{(v,k)}} 
+- \eta \sum\limits_{v=1}^{V} \sum\limits_{i=1}^{\mathcal{R}_s}\bar{p}_{r_{(s,i)}}\\
+&+\sum\limits_{s=1}^{S} \sum\limits_{k=1}^{U_v} \lambda_{u_{(v,k)}} (\mathcal{\bar{R}}_{d_{(s,k)}}-\mathcal{R}_{u_{(v,k)}}^{max})\\
+&- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \mu_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-P_{max})\\
+&- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \xi_{r_{(s,i)}} (C_{r_{(s,i)}}-C_{r_{(s,i)}}^{max}).\\ 
+&- \sum\limits_{s=1}^{S}  \kappa_{r_{(s,i)}} (D_{s}-D_{s}^{max}).\\ 
+\end{split}
+\end{equation}
+
 %\section*{References}
 
 
