@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  10 OCT 2019 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  11 OCT 2019 23:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -669,26 +669,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+<c2.pdf, id=1, 794.97pt x 614.295pt>
+File: c2.pdf Graphic file (type pdf)
+<use c2.pdf>
+Package pdftex.def Info: c2.pdf  used on input line 66.
+(pdftex.def)             Requested size: 357.7332pt x 276.43019pt.
 
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 75.
-
-
-Overfull \hbox (7.93452pt too wide) in paragraph at lines 82--92
-\OT1/ptm/m/n/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/
-cmm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\OT1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 2980) in paragraph at lines 94--99
-\OT1/ptm/m/n/10 ing and flat fad-ing chan-nel vec-tor and $[][] \OT1/cmr/m/n/10
- =
- []
-
-
-Underfull \hbox (badness 3758) in paragraph at lines 94--99
-\OT1/ptm/m/n/10 Moreover, $[][] \OT1/cmr/m/n/10 = [[][]\OML/cmm/m/it/10 ; :::; 
-[][]\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 2
+Overfull \hbox (105.7332pt too wide) in paragraph at lines 66--67
+ [][] 
  []
 
 [1
@@ -697,23 +685,49 @@ Non-PDF special ignored!
 {c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 110--117
+ <./c2.pdf>]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 90.
+
+
+Overfull \hbox (7.93452pt too wide) in paragraph at lines 97--107
+\OT1/ptm/m/n/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/
+cmm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\OT1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 109--114
+\OT1/ptm/m/n/10 ing and flat fad-ing chan-nel vec-tor and $[][] \OT1/cmr/m/n/10
+ =
+ []
+
+
+Underfull \hbox (badness 3758) in paragraph at lines 109--114
+\OT1/ptm/m/n/10 Moreover, $[][] \OT1/cmr/m/n/10 = [[][]\OML/cmm/m/it/10 ; :::; 
+[][]\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--132
 \OT1/ptm/m/n/10 where, $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/
 10 j[][][][]j[]$ \OT1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 110--117
+Underfull \hbox (badness 7030) in paragraph at lines 125--132
 \OMS/cmsy/m/n/10 j[][][][]j[]$\OT1/ptm/m/n/10 . It is as-sumed that in-ter-fer-
 ence
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for U+euf on input line 185.
+LaTeX Font Info:    Try loading font information for U+euf on input line 200.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [3]
+Underfull \vbox (badness 5302) has occurred while \output is active []
+
+ [4]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -725,42 +739,40 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] [5
-
-] (./pr.aux) ) 
+[5] (./pr.aux) ) 
 Here is how much of TeX's memory you used:
- 7412 strings out of 492649
- 111401 string characters out of 6133384
- 214579 words of memory out of 5000000
- 11161 multiletter control sequences out of 15000+600000
+ 7420 strings out of 492649
+ 111511 string characters out of 6133384
+ 216587 words of memory out of 5000000
+ 11168 multiletter control sequences out of 15000+600000
  45688 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,27n,42p,921b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/
-cmmib5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmi
-b7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:
-/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/20
-18/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
-s/euler/eufm10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/eule
-r/eufm7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
-m10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/20
-18/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on pr.pdf (5 pages, 239360 bytes).
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextr
+a/cmmib5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
+mib7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/euler/eufm10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/eu
+ler/eufm7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/tim
+es/utmri8a.pfb>
+Output written on pr.pdf (5 pages, 894786 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 918 PDF objects out of 1000 (max. 8388607)
+ 814 compressed objects within 9 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -57,8 +57,23 @@ O-RAN, Network Slicing, Energy Efficiency, Data Center
 \end{IEEEkeywords}
 
 \section{Introduction}
-
-
+Recently, O-RAN which is the integration and expansion of C-RAN and xRAN is expected to be a key technology for 5G to enhance RAN performance and solve the challenges in a best way.  
+There are two main ideas here: According to real-time analytics which is used for artificial intelligence system is evolving the radio access networks to make them more open and smarter than previous generations. Furthermore, O-RAN can virtualize elements of the network with  appropriate interfaces. \newline
+The core idea driving C-RAN is to split radio remote head (RRH) and baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-pool, providing unified baseband signal processing with powerful computing capabilities. Moreover, in O-RAN technology, this separation is implemented.\newline
+xRAN technology has three fundamental feature. Control plane is decoupled from User plane. In addition, a modular eNB software stack is built to operate on common-off-the-shelf (COTS) hardware. Moreover, open north-bound and south-bound interfaces is introduced.
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale=0.45]{c2}
+  \caption{Network sliced O-RAN system}
+  \label{fig:c11}
+\end{figure} 
+Responsibility of wireless systems of the fifth generation covers a wide range types of services. In order to provide the requirement of these services, Network Slicing (NS) is implemented to virtualize the common physical network into several logical end-to-end networks. \newline
+To communicate between BBU-pool and RRHs, fronthaul interface which is fiber link is assumed with limited capacity. Compression of message which is passed through these links, is a consequence of limited fronthaul capacity.\\
+In BBU-Pool, using cloud-computing, enhance performance of system by virtualizing resources
+into virtual machines (VMs).
+Each VM has a computing processor which is mapped to Virtual Network Functions (VNFs) which is processed arrival data. Also VNFs are mapped to physical resource through NS technique. \newline
+In this paper, in figure \eqref{fig:c11}, the downlink of O-RAN system is assumed. UEs are divided to different groups according to 
+their service requirements. Also RAN is decoupled to slices to provides services needs. Optimal power allocation and joint mapping slices to services is applied. In addition, mapping slices to physical resources is considered too.
 \section{System Model and Problem Formulation}
 In this section, first, we present the downlink (DL) of O-RAN System. Then we obtain achievable rate and delays.
 Afterward, the main problem is expressed.
