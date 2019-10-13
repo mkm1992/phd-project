@@ -73,7 +73,7 @@ In BBU-Pool, using cloud-computing, enhance performance of system by virtualizin
 into virtual machines (VMs).
 Each VM has a computing processor which is mapped to Virtual Network Functions (VNFs) which is processed arrival data. Also VNFs are mapped to physical resource through NS technique. \newline
 In this paper, in figure \eqref{fig:c11}, the downlink of O-RAN system is assumed. UEs are divided to different groups according to 
-their service requirements. Also RAN is decoupled to slices to provides services needs. Optimal power allocation and joint mapping slices to services is applied. In addition, mapping slices to physical resources is considered too.
+their service requirements. Also RAN is decoupled to slices to provide services needs. Optimal power allocation and joint mapping slices to services is applied. In addition, mapping slices to physical resources is considered too.
 \section{System Model and Problem Formulation}
 In this section, first, we present the downlink (DL) of O-RAN System. Then we obtain achievable rate and delays.
 Afterward, the main problem is expressed.
@@ -142,7 +142,7 @@ As it is mentioned before, we have $M_1$ VMs in the first layer and $M_2$ VMs in
 Let the packet arrival of UEs have a Poisson Process with arrival rate $\lambda_{u(v,i)}$ for $i^{th}$ UE in $v^{th}$ service. 
 Therefore, the mean arrival data rate of UEs in $s^{th}$ slice in the first layer is 
 $\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{vs}\lambda_{u(v,i)}$.  
-Furthermore, the mean arrival rate of second layer is approximately equal to the mean arrival rate of first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the arrival packets of second layer which is processed in first layer is still Poisson with rate $\alpha_{s}$  
+Furthermore, the mean arrival rate of second layer is approximately equal to the mean arrival rate of first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the arrival packets of second layer which is processed in first layer is still Poisson with rate $\alpha_{s}$. 
 It is assumed that there are dispatchers in each layer for each slice to divide the incoming traffic to VMs.
 Suppose the baseband processing of each VM is depicted as a M/M/1 processing queue.
 Each packet is routed by one of VMs of slices. So the mean delay of slice $s$ which is related to incoming traffic rate routed to
@@ -181,7 +181,7 @@ Moreover total amount of required RAM, Memory and CPU of all VNFs in a slice is 
 \end{equation}
 Where, $F_s = M_{s_1} + M_{s_2}$ is the total number of VNFs in slice $s$.
 \newline
-Also, in the Core Network (CN), there are $N_{D}$ data centers(DC), which served VNFs. Each DC contains several servers that supply VNF's needs.
+Also, in the Core Network (CN), there are $D_c$ data centers (DC), which served VNFs. Each DC contains several servers that supply VNF's needs.
 The amount of RAM, Memory and CPU is denoted respectively by $\tau_{R_{j}}, \tau_{M_{j}}$ and $\tau_{C_{j}} $ for $j^{th}$ DC.
 \begin{equation*}
 \tau_j = \{\tau_{R_{j}}, \tau_{M_{j}}, \tau_{C_{j}} \}
