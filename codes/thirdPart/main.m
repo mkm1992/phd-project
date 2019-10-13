@@ -1,8 +1,8 @@
 clc
 clear all
 %% define variables
-N_service = 10;
-N_server = 7;
+N_service = 4;
+N_server = 5;
 Dmax = [1000, 10, 100];
 Rmax = [3000, 30, 300];
 N_resource = 3; % cpu, ram, storage
@@ -68,9 +68,16 @@ for j= 1: N_server
     if all(sum_vector(:,i)< resource_server1(j,2:4)') && temp(j)==0
         temp(i) = 0;
         temp(j) = 1;
+        for tt =1:N_service
+            if mappingVar(tt,i)==1
+               mappingVar(tt,j)=1;
+               mappingVar(tt,i)=0;
+            end
+        end
         i = i+1;
     end
 end    
-
- disp(sum_vector)
- disp(resource_server1(:,2:4)')
+sum_vector1 = demand_service1(:,2:4)'*mappingVar;
+sum(sum_vector1,2)
+disp(sum_vector)
+disp(resource_server1(:,2:4)'*makeone(sum(mappingVar))')
