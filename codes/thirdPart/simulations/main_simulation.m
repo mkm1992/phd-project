@@ -5,6 +5,7 @@ run var
 for count = 1: counter_max
     kk = 1;
     for N_service = N_service_min:N_service_step:N_service_max 
+        N_server = ceil(N_service * 1.2);
         run sort_map
         run moreVM
         run remap_server
@@ -68,9 +69,9 @@ plot(N_service_min:N_service_step:N_service_max ,wmeanRes)
 hold on
 plot(N_service_min:N_service_step:N_service_max ,wmeanRes1)
 figure;
-plot(N_service_min:N_service_step:N_service_max ,wmeanVec./wmeanCons)
+plot(N_service_min:N_service_step:N_service_max ,wmeanVec./(wmeanCons+wmeanRes))
 hold on
-plot(N_service_min:N_service_step:N_service_max ,wmeanVec1./wmeanCons1)
+plot(N_service_min:N_service_step:N_service_max ,wmeanVec1./(wmeanCons1+wmeanRes1))
 figure;
 plot(N_service_min:N_service_step:N_service_max ,wmeanCons./wmeanVec)
 hold on
