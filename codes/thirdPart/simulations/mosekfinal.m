@@ -63,5 +63,7 @@ prob.bux = ones(1,N_service*N_server++N_server);
 % constrained.
 prob.ints.sub = 1:N_service*N_server+N_server;
 [r,res] = mosekopt('minimize',prob);
-transpose(res.sol.int.xx)
-sum(res.sol.int.xx)
+mapvec = transpose(res.sol.int.xx);
+%sum(res.sol.int.xx)
+mapMat = reshape(mapvec(1:N_service*N_server),N_server',N_service);
+map1 = mapMat';

@@ -1,17 +1,4 @@
-clc
-clear all
-close all
 clear prob
-N_service = 4;
-N_server = 3;
-Dmax = [1000, 10, 100];
-Rmax = [3000, 30, 300];
-N_resource = 3; % cpu, ram, storage
-demand_service = rand(N_service,N_resource);
-resource_server = rand(N_server,N_resource);
-demand_service = demand_service.*Dmax; 
-resource_server = resource_server.*Rmax;
-%%
 G = zeros(N_service , N_server * N_service+N_server );
 G1 = zeros(N_service , N_server * N_service + +N_server, N_resource);
 for i = 1: N_service 
@@ -63,5 +50,7 @@ prob.bux = ones(1,N_service*N_server++N_server);
 % constrained.
 prob.ints.sub = 1:N_service*N_server+N_server;
 [r,res] = mosekopt('minimize',prob);
-transpose(res.sol.int.xx)
-sum(res.sol.int.xx)
+mapvec = transpose(res.sol.int.xx);
+%sum(res.sol.int.xx)
+mapMat = reshape(mapvec(1:N_service*N_server),N_server',N_service);
+map1 = mapMat';
