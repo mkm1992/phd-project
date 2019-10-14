@@ -26,9 +26,9 @@ k =1;
 for i = 1: N_server 
     for j = 1:  N_server * N_service
         if mod(j,N_server)==i-1
-            F((i-1)*(N_resource)+1:i*N_resource,j)=1;
+            F(i,k:k+N_resource-1)=1;
         end
-
+        k = k+1;
     end
 end
 %%
