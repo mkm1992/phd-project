@@ -51,8 +51,10 @@ for i = 1 :N_resource
      wmeanRes1 = meanRes1(i,:)*weight(i) + wmeanRes1;
 end
 %%
-
-%plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd1,2))
+figure;
+plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd,2))
+hold on
+plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd1,2))
 figure;
 plot(N_service_min:N_service_step:N_service_max ,wmeanCons)
 hold on
