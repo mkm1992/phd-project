@@ -43,14 +43,14 @@ end
 prob.c = [ones(1,N_service*N_server),-1*ones(1, N_server)];
 prob.a =  [G;F1;T];
 prob.blc = [zeros(1,N_service),zeros(1,N_server*N_resource),zeros(1,N_server)];
-prob.buc = [ones(1,N_service)*2,Res,ones(1,N_server)];
+prob.buc = [ones(1,N_service),Res,ones(1,N_server)];
 prob.blx = zeros(1,N_service*N_server+N_server);
 prob.bux = ones(1,N_service*N_server++N_server);
 % Specify indexes of variables that are integer
 % constrained.
 prob.ints.sub = 1:N_service*N_server+N_server;
 
-data.maxtime = 10.0;
+data.maxtime = 1;
 callback.iterhandle = data;
 [r,res] = mosekopt('maximize',prob,[],callback);
 mapvec = transpose(res.sol.int.xx);

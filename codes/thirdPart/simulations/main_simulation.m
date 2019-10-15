@@ -7,8 +7,19 @@ for count = 1: counter_max
     for N_service = N_service_min:N_service_step:N_service_max 
         N_server = ceil(N_service * 1.2);
         run sort_map
-        run moreVM
-        run remap_server
+        %run moreVM
+        %run remap_server
+        %%
+        sum_vector = demand_service1(:,2:4)'*mappingVar;
+        temp = zeros(1,N_server);
+        for j= 1: N_server
+            if all(sum_vector(:,j)>0)
+                temp(j)= 1;
+            end
+        end
+        
+        %%
+        NumService(kk,count) = sum(sum(mappingVar));
         NumServerEnd(kk,count) = sum(temp);
         sum_vector1 = demand_service1(:,2:4)'*mappingVar;
         sum_sumVec(:,kk,count) =  sum(sum_vector1,2);
@@ -20,7 +31,7 @@ for count = 1: counter_max
         sum_sumVec1(:,kk,count) =  sum(sum_vector12,2);
         sum_ConsResource1(:,kk,count) = resource_server'*makeone(sum(map1))';
         sum_ResResource1(:,kk,count) = resource_server'*(1-makeone(sum(map1))');
-        
+        NumService1(kk,count) = sum(sum(map1));
         
         kk = kk +1;
     end
@@ -52,6 +63,10 @@ for i = 1 :N_resource
      wmeanRes1 = meanRes1(i,:)*weight(i) + wmeanRes1;
 end
 %%
+figure;
+plot(N_service_min:N_service_step:N_service_max ,mean(NumService,2))
+hold on
+plot(N_service_min:N_service_step:N_service_max ,mean(NumService1,2))
 figure;
 plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd,2))
 hold on
