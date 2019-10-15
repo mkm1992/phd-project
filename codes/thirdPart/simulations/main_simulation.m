@@ -5,7 +5,7 @@ run var
 for count = 1: counter_max
     kk = 1;
     for N_service = N_service_min:N_service_step:N_service_max 
-        N_server = ceil(N_service * 1.2);
+        %N_server = ceil(N_service * 1.2);
         run sort_map
         %run moreVM
         %run remap_server

@@ -1,7 +1,7 @@
 counter_max = 1;
 N_service_min = 3;
-N_service_max = 63;
-N_service_step = 10;
+N_service_max = 18;
+N_service_step = 3;
 lenfinder = N_service_min:N_service_step:N_service_max;
 len1 = length(lenfinder);
 N_server = 3;
