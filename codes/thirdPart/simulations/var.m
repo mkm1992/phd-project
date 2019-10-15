@@ -1,12 +1,12 @@
-counter_max = 1;
-N_service_min = 2;
-N_service_max = 20;
-N_service_step = 3;
+counter_max = 100;
+N_service_min = 5;
+N_service_max = 30;
+N_service_step = 6;
 lenfinder = N_service_min:N_service_step:N_service_max;
 len1 = length(lenfinder);
 N_server = 10;
 Dmax = [1000, 10, 100];
-Rmax = [3000, 30, 300];
+Rmax = [7000, 70, 700];
 N_resource = 3; % cpu, ram, storage
 NumServerEnd = zeros(len1,counter_max);
 sum_sumVec = zeros(N_resource,len1,counter_max);

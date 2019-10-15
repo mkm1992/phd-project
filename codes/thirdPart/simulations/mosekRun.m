@@ -40,16 +40,19 @@ for i=1:N_server
     end
 end
 %%
-prob.c = [zeros(1,N_service*N_server),ones(1, N_server)];
+prob.c = [ones(1,N_service*N_server),-1*ones(1, N_server)];
 prob.a =  [G;F1;T];
-prob.blc = [ones(1,N_service),zeros(1,N_server*N_resource),zeros(1,N_server)];
+prob.blc = [zeros(1,N_service),zeros(1,N_server*N_resource),zeros(1,N_server)];
 prob.buc = [ones(1,N_service)*2,Res,ones(1,N_server)];
 prob.blx = zeros(1,N_service*N_server+N_server);
 prob.bux = ones(1,N_service*N_server++N_server);
 % Specify indexes of variables that are integer
 % constrained.
 prob.ints.sub = 1:N_service*N_server+N_server;
-[r,res] = mosekopt('minimize',prob);
+
+data.maxtime = 10.0;
+callback.iterhandle = data;
+[r,res] = mosekopt('maximize',prob,[],callback);
 mapvec = transpose(res.sol.int.xx);
 %sum(res.sol.int.xx)
 mapMat = reshape(mapvec(1:N_service*N_server),N_server',N_service);
