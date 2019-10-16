@@ -51,19 +51,19 @@ prob.bux = ones(1,N_service*N_server++N_server);
 prob.ints.sub = 1:N_service*N_server+N_server;
 %%
 % Define user defined handle.
-% [r,res]             = mosekopt('echo(0) symbcon');                 
-% data.maxtime        = 10.0;
-% data.symbcon        = res.symbcon;
-% 
-% callback.iter       = 'callback_handler';	% Defined in callback_handler.m
-% callback.iterhandle = data;[r,res] = mosekopt('maximize echo(0)',prob,[],callback); 
+[r,res]             = mosekopt('echo(0) symbcon');                 
+data.maxtime        = 10.0;
+data.symbcon        = res.symbcon;
+
+callback.iter       = 'callback_handler';	% Defined in callback_handler.m
+callback.iterhandle = data;[r,res] = mosekopt('maximize echo(0)',prob,[],callback); 
 
 
 % Perform the optimization.
 %%
-data.maxtime = 1;
-callback.iterhandle = data;
-[r,res] = mosekopt('maximize',prob,[],callback);
+% data.maxtime = 1;
+% callback.iterhandle = data;
+% [r,res] = mosekopt('maximize',prob,[],callback);
 mapvec = transpose(res.sol.int.xx);
 %sum(res.sol.int.xx)
 mapMat = reshape(mapvec(1:N_service*N_server),N_server',N_service);

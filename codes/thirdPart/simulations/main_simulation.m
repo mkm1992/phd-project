@@ -63,31 +63,32 @@ for i = 1 :N_resource
      wmeanRes1 = meanRes1(i,:)*weight(i) + wmeanRes1;
 end
 %%
+xx = N_service_min:N_service_step:N_service_max;
 figure;
-plot(N_service_min:N_service_step:N_service_max ,mean(NumService,2))
+plot(N_service_min:N_service_step:N_service_max ,mean(NumService,2)./xx')
 hold on
-plot(N_service_min:N_service_step:N_service_max ,mean(NumService1,2))
-figure;
-plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd,2))
-hold on
-plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd1,2))
-figure;
-plot(N_service_min:N_service_step:N_service_max ,wmeanCons)
-hold on
-plot(N_service_min:N_service_step:N_service_max ,wmeanCons1)
-figure;
-plot(N_service_min:N_service_step:N_service_max ,wmeanVec)
-hold on
-plot(N_service_min:N_service_step:N_service_max ,wmeanVec1)
-figure;
-plot(N_service_min:N_service_step:N_service_max ,wmeanRes)
-hold on
-plot(N_service_min:N_service_step:N_service_max ,wmeanRes1)
-figure;
-plot(N_service_min:N_service_step:N_service_max ,wmeanVec./(wmeanCons+wmeanRes))
-hold on
-plot(N_service_min:N_service_step:N_service_max ,wmeanVec1./(wmeanCons1+wmeanRes1))
-figure;
-plot(N_service_min:N_service_step:N_service_max ,wmeanCons./wmeanVec)
-hold on
-plot(N_service_min:N_service_step:N_service_max ,wmeanCons1./wmeanVec1)
+plot(N_service_min:N_service_step:N_service_max ,mean(NumService1,2)./xx')
+% figure;
+% plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd,2))
+% hold on
+% plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd1,2))
+% figure;
+% plot(N_service_min:N_service_step:N_service_max ,wmeanCons)
+% hold on
+% plot(N_service_min:N_service_step:N_service_max ,wmeanCons1)
+% figure;
+% plot(N_service_min:N_service_step:N_service_max ,wmeanVec)
+% hold on
+% plot(N_service_min:N_service_step:N_service_max ,wmeanVec1)
+% figure;
+% plot(N_service_min:N_service_step:N_service_max ,wmeanRes)
+% hold on
+% plot(N_service_min:N_service_step:N_service_max ,wmeanRes1)
+% figure;
+% plot(N_service_min:N_service_step:N_service_max ,wmeanVec./(wmeanCons+wmeanRes))
+% hold on
+% plot(N_service_min:N_service_step:N_service_max ,wmeanVec1./(wmeanCons1+wmeanRes1))
+% figure;
+% plot(N_service_min:N_service_step:N_service_max ,wmeanCons./wmeanVec)
+% hold on
+% plot(N_service_min:N_service_step:N_service_max ,wmeanCons1./wmeanVec1)
