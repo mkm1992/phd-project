@@ -19,7 +19,7 @@ for count = 1: counter_max
         end
         
         %%
-        NumService(kk,count) = sum(sum(mappingVar));
+        NumService(kk,count) = sum(makeone(sum(mappingVar')));
         NumServerEnd(kk,count) = sum(temp);
         sum_vector1 = demand_service1(:,2:4)'*mappingVar;
         sum_sumVec(:,kk,count) =  sum(sum_vector1,2);

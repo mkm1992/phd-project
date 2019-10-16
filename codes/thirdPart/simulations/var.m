@@ -1,4 +1,4 @@
-counter_max = 10;
+counter_max = 1;
 N_service_min = 3;
 N_service_max = 63;
 N_service_step = 10;
