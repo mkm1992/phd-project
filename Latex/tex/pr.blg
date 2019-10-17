@@ -7,45 +7,45 @@ Warning--entry type for "orant" isn't style-file defined
 --line 120 of file ref.bib
 Warning--entry type for "xran" isn't style-file defined
 --line 137 of file ref.bib
-You've used 11 entries,
+You've used 12 entries,
             1876 wiz_defined-function locations,
-            537 strings with 5481 characters,
-and the built_in function-call counts, 3389 in all, are:
-= -- 342
-> -- 125
+            545 strings with 5661 characters,
+and the built_in function-call counts, 3772 in all, are:
+= -- 385
+> -- 136
 < -- 0
-+ -- 46
-- -- 35
-* -- 241
-:= -- 459
-add.period$ -- 11
-call.type$ -- 11
-change.case$ -- 11
++ -- 50
+- -- 38
+* -- 269
+:= -- 508
+add.period$ -- 12
+call.type$ -- 12
+change.case$ -- 12
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 169
-empty$ -- 321
-format.name$ -- 35
-if$ -- 830
+cite$ -- 12
+duplicate$ -- 188
+empty$ -- 354
+format.name$ -- 38
+if$ -- 925
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 9
-newline$ -- 36
-num.names$ -- 10
-pop$ -- 42
+int.to.str$ -- 12
+missing$ -- 10
+newline$ -- 39
+num.names$ -- 11
+pop$ -- 43
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 129
+skip$ -- 146
 stack$ -- 0
-substring$ -- 272
-swap$ -- 77
+substring$ -- 312
+swap$ -- 88
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 34
-width$ -- 13
-write$ -- 108
+while$ -- 38
+width$ -- 14
+write$ -- 119
 (There were 2 warnings)

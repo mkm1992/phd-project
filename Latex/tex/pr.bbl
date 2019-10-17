@@ -24,6 +24,14 @@ M.~K. Motalleb, A.~Kabiri, and M.~J. Emadi, ``Optimal power allocation for
   Iranian Conference on Electrical Engineering (ICEE)}, pp.~1978--1982, IEEE,
   2017.
 
+\bibitem{xran}
+``xran forum merges with c-ran alliance to form oran alliance,'' 2018.
+
+\bibitem{ns1}
+X.~Zhou, R.~Li, T.~Chen, and H.~Zhang, ``Network slicing as a service: enabling
+  enterprises' own software-defined cellular networks,'' {\em IEEE
+  Communications Magazine}, vol.~54, no.~7, pp.~146--153, 2016.
+
 \bibitem{luong2018novel}
 P.~Luong, C.~Despins, F.~Gagnon, and L.-N. Tran, ``A novel energy-efficient
   resource allocation approach in limited fronthaul virtualized c-rans,'' in
@@ -36,14 +44,6 @@ P.~Luong, F.~Gagnon, C.~Despins, and L.-N. Tran, ``Joint virtual computing and
   Transactions on Wireless Communications}, vol.~17, no.~4, pp.~2602--2617,
   2018.
 
-\bibitem{xran}
-``xran forum merges with c-ran alliance to form oran alliance,'' 2018.
-
-\bibitem{ns1}
-X.~Zhou, R.~Li, T.~Chen, and H.~Zhang, ``Network slicing as a service: enabling
-  enterprises' own software-defined cellular networks,'' {\em IEEE
-  Communications Magazine}, vol.~54, no.~7, pp.~146--153, 2016.
-
 \bibitem{lee2018dynamic}
 Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
   multitenant heterogeneous cloud radio access networks,'' {\em IEEE
@@ -55,5 +55,10 @@ P.-R. Li, T.-S. Chang, and K.-T. Feng, ``Energy-efficient power allocation for
   distributed large-scale mimo cloud radio access networks,'' in {\em 2014 IEEE
   Wireless Communications and Networking Conference (WCNC)}, pp.~1856--1861,
   IEEE, 2014.
+
+\bibitem{aaa}
+D.~W.~K. Ng, E.~S. Lo, and R.~Schober, ``Energy-efficient resource allocation
+  for secure ofdma systems,'' {\em IEEE Transactions on Vehicular Technology},
+  vol.~61, no.~6, pp.~2572--2585, 2012.
 
 \end{thebibliography}
