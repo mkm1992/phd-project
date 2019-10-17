@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  17 OCT 2019 14:20
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  17 OCT 2019 14:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -558,14 +558,10 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 202.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [3] [4]
-File: fig1.eps Graphic file (type eps)
-<fig1.eps>
-
-Overfull \hbox (262.42188pt too wide) in paragraph at lines 387--388
- [][] 
- []
-
-[5] (./pr.bbl)
+File: fig3.eps Graphic file (type eps)
+<fig3.eps>
+ [5]
+(./pr.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
