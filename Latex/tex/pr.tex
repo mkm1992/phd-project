@@ -59,12 +59,8 @@ O-RAN, Network Slicing, Energy Efficiency, Data Center
 \section{Introduction}
 Recently, O-RAN which is the integration and expansion of C-RAN and xRAN is expected to be a key technology for 5G to enhance RAN performance and solve the challenges in a best way.  
 The Idea of O-RAN comes from two opinion. Firstly, according to real-time analytic used for artificial intelligence system, the radio access networks must be evolved to be more open and smarter than previous generations. Furthermore, O-RAN can virtualize elements of the network with  appropriate interfaces \cite{orant}. \newline
-The core idea driving C-RAN is to split radio remote head (RRH) and baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-pool, providing unified baseband signal processing with powerful computing capabilities. Moreover, in O-RAN technology, this separation is implemented\cite{cran1}.
-To communicate between BBU-pool and RRHs, fronthaul interface which is fiber link is assumed with limited capacity. Compression of message which is passed through these links, is a consequence of limited fronthaul capacity\cite{frdl,simeone2016cloud}.
-In BBU-Pool, using cloud-computing, enhance performance of system by virtualizing resources
-into virtual machines (VMs).
-Each VM has a computing processor which is mapped to Virtual Network Functions (VNFs) which is processed arrival data. Also VNFs are mapped to physical resource through NS technique\cite{frdl,luong2018novel,luong2018novel1}. 
-\newline
+The core idea driving C-RAN is to split radio remote head (RRH) and baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities. Moreover, in O-RAN technology, this separation is implemented\cite{cran1}.
+To communicate between BBU-Pool and RRHs, fronthaul interface which is fiber link is assumed with limited capacity. Compression of message which is passed through these links, is a consequence of limited fronthaul capacity\cite{frdl,simeone2016cloud,motalleb2017optimal}.\newline
 xRAN technology ,released in April 2018 as a next generation of RAN, has three fundamental features. Control plane is decoupled from User plane. In addition, a modular eNB software stack is built to operate on common-off-the-shelf (COTS) hardware. Moreover, open north-bound and south-bound interfaces is introduced\cite{xran}.
 \begin{figure}[H]
   \centering
@@ -72,33 +68,43 @@ xRAN technology ,released in April 2018 as a next generation of RAN, has three f
   \caption{Network sliced O-RAN system}
   \label{fig:c11}
 \end{figure} 
-Responsibility of wireless systems of the fifth generation covers a wide range types of services. In order to provide the requirement of these services, NS is implemented to virtualize the common physical network into several logical end-to-end networks. Three different types of NS is introduced in \cite{ns1} contains Core Slicing, RAN Slicing and Core-RAN Slicing. In Core-RAN Slicing, each slice of RAN is mapped to slices of Core. Each slice of RAN consists of RRHs, PRB   
-\newline
+To evolve servicing in 5G, separation of elements of software and hardware of network is deployed in network functions virtualization (NFV) technology. In this technology, the functionality of networks is virtualized and divided to blocks of virtual network function (VNF).
+Responsibility of wireless systems of the fifth generation covers a wide range types of services. In order to provide the requirement of these services, NS is implemented to virtualize the common physical network into several logical end-to-end networks. Three different types of NS is introduced in \cite{ns1} contains Core Slicing, RAN Slicing and Core-RAN Slicing. In Core-RAN Slicing, each slice of RAN is mapped to slices of Core. Also, UEs classified to group of services according to their requirements. In addition, each service is connected to one or more Core-RAN slices base on the resource of slices.
+Using cloud-computing in BBU-Pool, enhance performance of system by virtualizing resources
+into virtual machines (VMs).
+Each VM has a computing processor mapped to Virtual Network Functions (VNFs) which processed arrival data. Also VNFs are mapped to physical resource through NS technique\cite{frdl,luong2018novel,luong2018novel1}. 
+\newline  
+In \cite{lee2018dynamic}, dynamic network slicing is considered in Heterogeneous CRAN (H-CRAN) to maximize the weighted sum rate. Moreover, in \cite{frdl,luong2018novel,luong2018novel1} minimization of cost obtained by power consumption and cloud processing is applied. Limited fronthaul capacity is considered. Also processing delay of each VM and wireless transmission delay is bounded.\newline  
+In this paper, as  depicted in figure \ref{fig:c11}, the downlink of O-RAN system is assumed. UEs are divided to different groups according to 
+their service requirements. Also RAN is decoupled to slices to provide services needs. Optimal power allocation and joint connecting slices to services is applied. In addition, mapping slices to physical resources is taken to account.
 
-In this paper, as  depicted in figure \eqref{fig:c11}, the downlink of O-RAN system is assumed. UEs are divided to different groups according to 
-their service requirements. Also RAN is decoupled to slices to provide services needs. Optimal power allocation and joint mapping slices to services is applied. In addition, mapping slices to physical resources is considered too.
+
 \section{System Model and Problem Formulation}
 In this section, first, we present the downlink (DL) of O-RAN System. Then we obtain achievable rate and delays.
 Afterward, the main problem is expressed.
 \subsection{System Model}
-Suppose that there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single antenna users that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $N_s$ PRBs. All the RRHs in a slice that is mapped to a service, transmit signals to all the UEs in specific service. Each RRH $r \in \{1,2,...,R \}$ is connected to BBU pool via an optical fiber link with limited fronthaul capacity. Also each RRH and PRB can serve more than one slice. It is considered that in BBU, the system has two processing layer consists of $M_1$ homogeneous VMs in first layer and $M_2$ homogeneous VMs in second layer.
+Suppose that there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single antenna users that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $N_s$ Physical Resource Blocks (PRBs) as it is defined in standard of LTE that the bandwidth (BW) of channel is divided to PRBs in time series \cite{lee2018dynamic}. All RRHs in a slice that is mapped to a service, transmit signals cooperatively to all the UEs in specific service \cite{motalleb2017optimal,mimoCran}. Each RRH $r \in \{1,2,...,R \}$ is connected to BBU pool via an optical fiber link with limited fronthaul capacity.
+Suppose that we have two processing layer in BBU-Pool of O-RAN system. The lower layer is consist of PHY and MAC and the upper layer is consist of RLC, PDCP and SDAP.
+Assume, we have $M_1$ VMs in the first layer and $M_2$ VMs in second layer.
+for simplicity, suppose ach VM is connected to a VNF.
+Each VNF in both layers maps to one or more slices. So in $s^{th}$ slice, there are $M_{s_1}$ VNFs in first layer and $M_{s_2}$ VNFs in second layer. All VNFs in first and second layer has computational capacity that is  equal to $\mu_1$ and $\mu_2$ respectively. 
+Also RRHs and PRBs can serve more than one slices. 
 \subsection{Achievable Rate}
-In this subsection, the Achievable Rate is obtained as below.
 The achievable data rate for $i^{th}$ UE in $v^{th}$ service can be written as 
 \begin{equation}\label{eq1}
-\mathcal{R}_{u(v,i)} = B \log_2({1+ \rho_{u(v,i)}})
+\mathcal{R}_{u(v,i)} = B \log_2({1+ \rho_{u(v,i)}});
 \end{equation}
-where $B$ is the bandwidth of system and $\rho_{u(v,i)}$ is the SNR of $i^{th}$ UE in $v^{th}$ service which is obtained from 
+Where $B$ is the bandwidth of system and $\rho_{u(v,i)}$ is the SNR of $i^{th}$ UE in $v^{th}$ service which is obtained from 
 \begin{equation}\label{eq2}
-\rho_{u(v,i)} =  \frac{p_{u(v,i)}\sum_{s=1}^{N_s}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{vs}}{BN_0 + I_{u(v,i)}}
+\rho_{u(v,i)} =  \frac{p_{u(v,i)}\sum_{s=1}^{N_s}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{vs}}{BN_0 + I_{u(v,i)}};
 \end{equation}
-Where, $p_{u(v,i)}$ represents the transmitted power allocated by RRHs to $i^{th}$ UE in $v^{th}$ service. Also, 
-$\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of wireless link from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the the transmit beamforming vector from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. Moreover, $BN_0$ denotes the power of guassian additive noise and $I_{u(v,i)}$ is the power of interfering signals. 
-To obtain SNR as formulated in equation \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service which is given by equation \eqref{eq3}
+Where, $p_{u(v,i)}$ represents the transmition power allocated by RRHs to $i^{th}$ UE in $v^{th}$ service. Also, 
+$\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of wireless link from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the the transmit beamforming vector from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. Moreover, $BN_0$ denotes the power of Guassian additive noise and $I_{u(v,i)}$ is the power of interfering signals. 
+To obtain SNR as formulated in \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service which is given by \eqref{eq3}
 \begin{equation}\label{eq3}
-\bold{y}_{U_v} = \sum_{k=1}^{N_k}\sum_{s = 1}^{N_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{R}_s}+ \boldsymbol{q}_{R_s}) \zeta_{U_v,k,s}+ \boldsymbol{z}_{\mathcal{U}_v}
+\bold{y}_{U_v} = \sum_{k=1}^{N_k}\sum_{s = 1}^{N_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{R}_s}+ \boldsymbol{q}_{R_s}) \zeta_{U_v,k,s}+ \boldsymbol{z}_{\mathcal{U}_v};
 \end{equation}
-where $\boldsymbol{x}_{ \mathcal{R}_s} = [x_{ r_{(s,1)}},...,x_{ r_{(s,\mathcal{R}_s)}}]^T \in \mathbb{C}^{{R}_s } $ depicts the transmitted symbol vector for the $s$-th set of Network slice,  $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power.
+Where $\boldsymbol{x}_{ \mathcal{R}_s} = [x_{ r_{(s,1)}},...,x_{ r_{(s,\mathcal{R}_s)}}]^T \in \mathbb{C}^{{R}_s } $ depicts the transmitted symbol vector for the $s$-th set of Network slice,  $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power.
 In addition, $\boldsymbol{q}_{R_s} \in \mathbb{C}^{{R}_s }  $ indicates the quantization noise which is made from signal compression in BBU.
 \\
 Furthermore, $\zeta_{U_v,k,s} \delequal \{\zeta_{u(v,1),k,s},\zeta_{u(v,2),k,s},...,\zeta_{u(v,N_{U_v}),k,s}\}$,
@@ -140,8 +146,6 @@ As a result the user data capacity on the fronthual link between BBU and the $j^
 C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{vs}}{ \sigma_{q_{r(s,j)}}^2})},
 \end{equation}
 \subsection{Mean Delay}
-Suppose that we have two processing layer in BBU of O-RAN system. The lower layer is consist of PHY and MAC and the upper layer is consist of RLC, PDCP and SDAP.\newline   
-As it is mentioned before, we have $M_1$ VMs in the first layer and $M_2$ VMs in second layer. Each VM in both layers map to one or more slices. So in $s^{th}$ slice, there are $M_{s_1}$ VMs in first layer and $M_{s_2}$ VMs in second layer. Each VM in first and second layer has computational capacity that is  equal to $\mu_1$ and $\mu_2$ respectively. \\
 Let the packet arrival of UEs have a Poisson Process with arrival rate $\lambda_{u(v,i)}$ for $i^{th}$ UE in $v^{th}$ service. 
 Therefore, the mean arrival data rate of UEs in $s^{th}$ slice in the first layer is 
 $\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{vs}\lambda_{u(v,i)}$.  

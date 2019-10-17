@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{orant}
 I.~Scales, ``The open ran (oran) alliance formed to lever open 5g for
@@ -17,6 +17,12 @@ J.~Tang, W.~P. Tay, T.~Q. Quek, and B.~Liang, ``System cost minimization in
 O.~Simeone, J.~Kang, J.~Kang, and S.~Shamai, ``Cloud radio access networks:
   Uplink channel estimation and downlink precoding,'' {\em arXiv preprint
   arXiv:1608.07358}, 2016.
+
+\bibitem{motalleb2017optimal}
+M.~K. Motalleb, A.~Kabiri, and M.~J. Emadi, ``Optimal power allocation for
+  distributed mimo c-ran system with limited fronthaul capacity,'' in {\em 2017
+  Iranian Conference on Electrical Engineering (ICEE)}, pp.~1978--1982, IEEE,
+  2017.
 
 \bibitem{luong2018novel}
 P.~Luong, C.~Despins, F.~Gagnon, and L.-N. Tran, ``A novel energy-efficient
@@ -37,5 +43,17 @@ P.~Luong, F.~Gagnon, C.~Despins, and L.-N. Tran, ``Joint virtual computing and
 X.~Zhou, R.~Li, T.~Chen, and H.~Zhang, ``Network slicing as a service: enabling
   enterprises' own software-defined cellular networks,'' {\em IEEE
   Communications Magazine}, vol.~54, no.~7, pp.~146--153, 2016.
+
+\bibitem{lee2018dynamic}
+Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
+  multitenant heterogeneous cloud radio access networks,'' {\em IEEE
+  Transactions on Wireless Communications}, vol.~17, no.~4, pp.~2146--2161,
+  2018.
+
+\bibitem{mimoCran}
+P.-R. Li, T.-S. Chang, and K.-T. Feng, ``Energy-efficient power allocation for
+  distributed large-scale mimo cloud radio access networks,'' in {\em 2014 IEEE
+  Wireless Communications and Networking Conference (WCNC)}, pp.~1856--1861,
+  IEEE, 2014.
 
 \end{thebibliography}
