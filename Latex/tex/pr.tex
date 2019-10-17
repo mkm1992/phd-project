@@ -72,9 +72,10 @@ xRAN technology ,released in April 2018 as a next generation of RAN, has three f
   \caption{Network sliced O-RAN system}
   \label{fig:c11}
 \end{figure} 
-Responsibility of wireless systems of the fifth generation covers a wide range types of services. In order to provide the requirement of these services, NS is implemented to virtualize the common physical network into several logical end-to-end networks. Three different types of NS is introduced in \cite{ns1} contains Core Slicing, RAN Slicing and Core-RAN Slicing. In Core-RAN Slicing, each slice of RAN is mapped to slices of Core.    
+Responsibility of wireless systems of the fifth generation covers a wide range types of services. In order to provide the requirement of these services, NS is implemented to virtualize the common physical network into several logical end-to-end networks. Three different types of NS is introduced in \cite{ns1} contains Core Slicing, RAN Slicing and Core-RAN Slicing. In Core-RAN Slicing, each slice of RAN is mapped to slices of Core. Each slice of RAN consists of RRHs, PRB   
 \newline
-In this paper, as  mentioned in figure \eqref{fig:c11}, the downlink of O-RAN system is assumed. UEs are divided to different groups according to 
+
+In this paper, as  depicted in figure \eqref{fig:c11}, the downlink of O-RAN system is assumed. UEs are divided to different groups according to 
 their service requirements. Also RAN is decoupled to slices to provide services needs. Optimal power allocation and joint mapping slices to services is applied. In addition, mapping slices to physical resources is considered too.
 \section{System Model and Problem Formulation}
 In this section, first, we present the downlink (DL) of O-RAN System. Then we obtain achievable rate and delays.
@@ -384,7 +385,7 @@ To achieve optimum $\boldsymbol{Y}$ heuristic algorithm and Mosek is applied. Th
 In this section, Simulation and numerical results for the main problem are depicted.
 \begin{figure}[H]
   \centering
-    \includegraphics[width=\linewidth]{fig3}
+    \includegraphics[width=\linewidth]{f1}
   \caption{algorithm}
   \label{fig:c11}
 \end{figure} 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  17 OCT 2019 14:37
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  17 OCT 2019 16:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -503,63 +503,68 @@ Overfull \hbox (51.08325pt too wide) in paragraph at lines 71--72
  [][] 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
 [1
 
 
 ]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 92.
+d on input line 93.
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 99--109
+Underfull \hbox (badness 2384) in paragraph at lines 100--110
 \TU/ptm/m/sc/10 where $[][] \OT1/cmr/m/n/10 = [\OML/cmm/m/it/10 x[]; :::; x[]\O
 T1/cmr/m/n/10 ][] \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 C[]$ \TU/ptm/m/sc/10 depicts
 
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 99--109
+Underfull \hbox (badness 1648) in paragraph at lines 100--110
 \TU/ptm/m/sc/10 the transmitted symbol vector for the $\OML/cmm/m/it/10 s$\TU/p
 tm/m/sc/10 -th set of
  []
 
 
-Underfull \hbox (badness 2269) in paragraph at lines 99--109
+Underfull \hbox (badness 2269) in paragraph at lines 100--110
 \TU/ptm/m/sc/10 Network slice, $[][]$ is the additive Gaussian noise
  []
 
 
-Overfull \hbox (13.18506pt too wide) in paragraph at lines 99--109
+Overfull \hbox (13.18506pt too wide) in paragraph at lines 100--110
 \TU/ptm/m/sc/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/
 cmm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\TU/ptm/m/sc/10 ,
  []
 
 
-Underfull \hbox (badness 3930) in paragraph at lines 111--116
+Underfull \hbox (badness 3930) in paragraph at lines 112--117
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 b[]; [] ; b[]\OT1/cmr/m/n/10 )$ \TU/ptm/m/s
 c/10 represents the large
  []
 
 
-Underfull \hbox (badness 2781) in paragraph at lines 111--116
+Underfull \hbox (badness 2781) in paragraph at lines 112--117
 \TU/ptm/m/sc/10 Moreover, $[][] \OT1/cmr/m/n/10 = [[][]\OML/cmm/m/it/10 ; :::; 
 [][]\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 2
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--134
+Underfull \hbox (badness 10000) in paragraph at lines 128--135
 \TU/ptm/m/sc/10 where, $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/
 10 j[][][][]j[]$ \TU/ptm/m/sc/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for U+euf on input line 202.
+LaTeX Font Info:    Try loading font information for U+euf on input line 203.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [3] [4]
-File: fig3.eps Graphic file (type eps)
-<fig3.eps>
+File: f1.eps Graphic file (type eps)
+<f1.eps>
  [5]
 (./pr.bbl)
 
@@ -585,7 +590,7 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  6467 strings out of 492970
- 97319 string characters out of 6137298
+ 97313 string characters out of 6137298
  204348 words of memory out of 5000000
  10363 multiletter control sequences out of 15000+600000
  12639 words of font info for 60 fonts, out of 8000000 for 9000

@@ -7,8 +7,8 @@ for count = 1: counter_max
     for N_service = N_service_min:N_service_step:N_service_max 
         %N_server = ceil(N_service * 1.2);
         run sort_map
-        %run moreVM
-        %run remap_server
+        run moreVM
+        run remap_server
         %%
         sum_vector = demand_service1(:,2:4)'*mappingVar;
         temp = zeros(1,N_server);
@@ -73,9 +73,9 @@ plot(N_service_min:N_service_step:N_service_max ,mean(NumService1,2)./xx')
 % hold on
 % plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd1,2))
 % figure;
-% plot(N_service_min:N_service_step:N_service_max ,wmeanCons)
-% hold on
-% plot(N_service_min:N_service_step:N_service_max ,wmeanCons1)
+plot(N_service_min:N_service_step:N_service_max ,wmeanCons)
+hold on
+plot(N_service_min:N_service_step:N_service_max ,wmeanCons1)
 % figure;
 % plot(N_service_min:N_service_step:N_service_max ,wmeanVec)
 % hold on
