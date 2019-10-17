@@ -1,0 +1,41 @@
+\begin{thebibliography}{1}
+
+\bibitem{orant}
+I.~Scales, ``The open ran (oran) alliance formed to lever open 5g for
+  ‘other’ technologies? and much more...,'' 2018.
+
+\bibitem{cran1}
+J.~Wu, Z.~Zhang, Y.~Hong, and Y.~Wen, ``Cloud radio access network (c-ran): a
+  primer,'' {\em IEEE Network}, vol.~29, no.~1, pp.~35--41, 2015.
+
+\bibitem{frdl}
+J.~Tang, W.~P. Tay, T.~Q. Quek, and B.~Liang, ``System cost minimization in
+  cloud ran with limited fronthaul capacity,'' {\em IEEE Transactions on
+  Wireless Communications}, vol.~16, no.~5, pp.~3371--3384, 2017.
+
+\bibitem{simeone2016cloud}
+O.~Simeone, J.~Kang, J.~Kang, and S.~Shamai, ``Cloud radio access networks:
+  Uplink channel estimation and downlink precoding,'' {\em arXiv preprint
+  arXiv:1608.07358}, 2016.
+
+\bibitem{luong2018novel}
+P.~Luong, C.~Despins, F.~Gagnon, and L.-N. Tran, ``A novel energy-efficient
+  resource allocation approach in limited fronthaul virtualized c-rans,'' in
+  {\em 2018 IEEE 87th Vehicular Technology Conference (VTC Spring)}, pp.~1--6,
+  IEEE, 2018.
+
+\bibitem{luong2018novel1}
+P.~Luong, F.~Gagnon, C.~Despins, and L.-N. Tran, ``Joint virtual computing and
+  radio resource allocation in limited fronthaul green c-rans,'' {\em IEEE
+  Transactions on Wireless Communications}, vol.~17, no.~4, pp.~2602--2617,
+  2018.
+
+\bibitem{xran}
+``xran forum merges with c-ran alliance to form oran alliance,'' 2018.
+
+\bibitem{ns1}
+X.~Zhou, R.~Li, T.~Chen, and H.~Zhang, ``Network slicing as a service: enabling
+  enterprises' own software-defined cellular networks,'' {\em IEEE
+  Communications Magazine}, vol.~54, no.~7, pp.~146--153, 2016.
+
+\end{thebibliography}
