@@ -1,15 +1,17 @@
 clear prob
+demand_service2 = demand_service1(:,2:4);
+resource_server2 = resource_server1(:,2:4);
 G = zeros(N_service , N_server * N_service+N_server );
 G1 = zeros(N_service , N_server * N_service + +N_server, N_resource);
 for i = 1: N_service 
     for j = 1: N_server
         G(i,(N_server)*(i-1) + j) = 1;
-        G1(i,(N_server)*(i-1) + j,:) = demand_service(i,:);
+        G1(i,(N_server)*(i-1) + j,:) = demand_service2(i,:);
     end
 end
 %%
 F = zeros(N_server*N_resource , (N_server * N_service) +N_server );
-deman_n = repmat(demand_service',N_server');
+deman_n = repmat(demand_service2',N_server');
 for i = 1: N_server 
     for j = 1:  N_server * N_service
         if mod(j,N_server)== mod(i,N_server)
@@ -24,7 +26,7 @@ Res = zeros(1,N_server*N_resource);
 k =1;
 for i = 1: N_server 
     for tt=1:N_resource
-       Res(k) = resource_server(i,tt);
+       Res(k) = resource_server2(i,tt);
        k = k+1;
     end
 end

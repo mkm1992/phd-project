@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  17 OCT 2019 23:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  19 OCT 2019 18:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -561,11 +561,7 @@ Package: amsthm 2017/10/31 v2.20.4
 \c@lemma=\count136
 \c@proposition=\count137
 \c@corollary=\count138
- (./pr.aux
-
-LaTeX Warning: Label `fig:f1' multiply defined.
-
-)
+ (./pr.aux)
 \openout1 = `pr.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -582,7 +578,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 25.
- (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 25.
@@ -727,35 +724,33 @@ Package epstopdf Info: Source file: <f1.eps>
 (epstopdf)                    size: 12722 bytes
 (epstopdf)             Command: <repstopdf --outfile=f1-eps-converted-to.pdf f1
 .eps>
-(epstopdf)             \includegraphics on input line 411.
+(epstopdf)             \includegraphics on input line 432.
 Package epstopdf Info: Output file is already uptodate.
 <f1-eps-converted-to.pdf, id=868, 511.9125pt x 392.46625pt>
 File: f1-eps-converted-to.pdf Graphic file (type pdf)
 <use f1-eps-converted-to.pdf>
-Package pdftex.def Info: f1-eps-converted-to.pdf  used on input line 411.
+Package pdftex.def Info: f1-eps-converted-to.pdf  used on input line 432.
 (pdftex.def)             Requested size: 252.0pt x 193.19644pt.
 Package epstopdf Info: Source file: <f2.eps>
 (epstopdf)                    date: 2019-10-17 23:12:29
 (epstopdf)                    size: 23556 bytes
 (epstopdf)             Output file: <f2-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-10-17 23:10:11
-(epstopdf)                    size: 13042 bytes
+(epstopdf)                    date: 2019-10-17 23:12:44
+(epstopdf)                    size: 13050 bytes
 (epstopdf)             Command: <repstopdf --outfile=f2-eps-converted-to.pdf f2
 .eps>
-(epstopdf)             \includegraphics on input line 418.
-runsystem(repstopdf --outfile=f2-eps-converted-to.pdf f2.eps)...executed safely
- (allowed).
-
-Package epstopdf Info: Result file: <f2-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-10-17 23:12:44
-(epstopdf)                    size: 13050 bytes.
+(epstopdf)             \includegraphics on input line 439.
+Package epstopdf Info: Output file is already uptodate.
 <f2-eps-converted-to.pdf, id=869, 646.415pt x 419.5675pt>
 File: f2-eps-converted-to.pdf Graphic file (type pdf)
 <use f2-eps-converted-to.pdf>
-Package pdftex.def Info: f2-eps-converted-to.pdf  used on input line 418.
+Package pdftex.def Info: f2-eps-converted-to.pdf  used on input line 439.
 (pdftex.def)             Requested size: 252.0pt x 163.56664pt.
 
-(./pr.bbl)
+(./pr.bbl
+Underfull \vbox (badness 2237) has occurred while \output is active []
+
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -767,44 +762,42 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6 <./f1-eps-converted-to.pdf> <./f2-eps-converted-to.pdf>] (./pr.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[6 <./f1-eps-converted-to.pdf> <./f2-eps-converted-to.pdf>] (./pr.aux) ) 
 Here is how much of TeX's memory you used:
- 7481 strings out of 492649
- 112240 string characters out of 6133384
- 216681 words of memory out of 5000000
- 11205 multiletter control sequences out of 15000+600000
+ 7483 strings out of 492649
+ 112257 string characters out of 6133384
+ 216659 words of memory out of 5000000
+ 11207 multiletter control sequences out of 15000+600000
  50105 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,27n,42p,921b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.p
-fb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><
-c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/201
-8/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm
-10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb>
-<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/
-texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texl
-ive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dis
-t/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw
-/times/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
->
-Output written on pr.pdf (6 pages, 946324 bytes).
+{c:/tex
+live/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pf
+b><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2018/texmf-dis
+t/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2018/texmf
+-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/2018/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2018/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2018/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmbi
+8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive
+/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on pr.pdf (6 pages, 962142 bytes).
 PDF statistics:
- 962 PDF objects out of 1000 (max. 8388607)
- 830 compressed objects within 9 object streams
+ 970 PDF objects out of 1000 (max. 8388607)
+ 836 compressed objects within 9 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

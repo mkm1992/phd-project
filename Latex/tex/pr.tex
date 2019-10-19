@@ -346,7 +346,7 @@ Here, the algorithm of solving sub-problem A is shown in \textbf{Algorithm} \eqr
 \end{algorithm}
 \subsection{Sub-Problem B}
 In this subsection, we want to solve  \eqref{constraints2} which is the placement of virtual resources to physical resource in order to minimize the number of using DCs. 
-To achieve optimum $\boldsymbol{Y}$ heuristic algorithm and Mosek is applied. The details of heuristic algorithm is written in \textbf{Algorithm} \eqref{alg3}. In this algorithm, firstly we sort slices and DCs according to their sum-weighted of their requirements. Secondly, we start mapping from the most needs slices to the DC which has the most physical resources. After mapping DCs to slices, if some slices are not admitted, we start admitting residual slices to more than one DCs. At the end, if DC with the lowest physical resources is free and can served instead of DC with highest physical resource, the slices remapped to new DC with lowest physical resource since it has lowest power consumption.  
+To achieve optimum $\boldsymbol{Y}$ heuristic algorithm and Mosek is applied. The details of heuristic algorithm is written in \textbf{Algorithm} \eqref{alg3}. In this algorithm, firstly we sort slices and DCs according to their sum-weighted of their requirements. Secondly, we start mapping from the most needed slices to the DC with the most physical resources. After mapping DCs to slices, if some slices are not admitted, we start admitting residual slices to more than one DCs. At the end, if DC with the lowest physical resources is free and can served instead of DC with highest physical resource, the slices remapped to new DC with lowest physical resource since it has lowest power consumption.  
 if a slice does not admit to a specific DC, it is remain for next placement. In next placement the residual slices, map to more than one DC according to their requirements.
 \begin{algorithm}
 \caption{Plecement of Physical resources into Virtual resources}\label{alg3}
@@ -393,19 +393,40 @@ if a slice does not admit to a specific DC, it is remain for next placement. In 
   \hline
   Parameter & Value \\ [0.5ex] 
   \hline\hline
-  Noise power & -174dBm\\
+  Mean of CPU for DCs & 25.6GHz\\
   \hline
-  Bandwidth & 10MHZ \\
+  Mean of RAM for DCs & 128G\\
   \hline
- Maxmimun transmit Power & 23dBm \\
+ Mean of Memory for DCs & 10T \\
   \hline
-  Minimum data rate &  1Mbits/sec \\ [1ex] 
+   Mean of CPU for Slices & 3.2GHz\\
+  \hline
+  Mean of RAM for Slices & 16G\\
+  \hline
+ Mean of Memory for Slices & 1T \\ [1ex] 
   \hline
  \end{tabular}
  \end{center}
  \end{table}
 In this section, Simulation and numerical results for the main problem are depicted.
-In fig. \ref{fig:f1}, the ratio of admitted slices that connected to just one DC is demonstrated for two different number of DCs with different number of slices (the parameters for simulation listed in table \ref{table:1}). When number of DCs are low, proposed method and optimal method have approximately same ratio of admitted slices.   
+In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two different number of DCs with different number of slices (the parameters for simulation listed in table \ref{table:1} and \ref{table:2}). In this simulation, it is assumed that each slice can be served by just one DC and it is not admitted by more than one DC. Proposed method is based on Algorithm \ref{alg3} and optimal method is done by MOSEK toolbox. 
+ \begin{table}[H]
+ \caption {Simulation Parameter} \label{table:2} 
+ \begin{center}
+  \begin{tabular}{||c c ||} 
+  \hline
+  Parameter & Value \\ [0.5ex] 
+  \hline\hline
+   $w_C$ & 320\\
+  \hline
+  $w_R$  & 64\\
+  \hline
+ $w_M$  & 1 \\ [1ex] 
+  \hline
+ \end{tabular}
+ \end{center}
+ \end{table}
+When we have two DCs, proposed method and optimal method have approximately same ratio of admitted slices. But by increasing the number of DCs to five, performance of proposed method reduced.
 \begin{figure}[H]
   \centering
     \includegraphics[width=\linewidth]{f1}
@@ -417,7 +438,7 @@ In fig. \ref{fig:f1}, the ratio of admitted slices that connected to just one DC
   \centering
     \includegraphics[width=\linewidth]{f2}
   \caption{Normalized resource consumption vs. Number of slices}
-  \label{fig:f1}
+  \label{fig:f2}
 \end{figure} 
 \bibliographystyle{ieeetr}
 \bibliography{ref}

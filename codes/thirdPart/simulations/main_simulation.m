@@ -5,7 +5,7 @@ run var
 for count = 1: counter_max
     kk = 1;
     for N_service = N_service_min:N_service_step:N_service_max 
-        %N_server = ceil(N_service * 1.2);
+        N_server = ceil(N_service * 2);
         run sort_map
         run moreVM
         run remap_server
@@ -26,6 +26,7 @@ for count = 1: counter_max
         sum_ConsResource(:,kk,count) = resource_server1(:,2:4)'*makeone(sum(mappingVar))';
         sum_ResResource(:,kk,count) = resource_server1(:,2:4)'*(1-makeone(sum(mappingVar))');
         run mosekRun
+        %run remap_server1
         NumServerEnd1(kk,count) = sum(mapvec(1:N_service*N_server));
         sum_vector12 = demand_service'*map1;
         sum_sumVec1(:,kk,count) =  sum(sum_vector12,2);
