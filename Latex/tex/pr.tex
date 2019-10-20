@@ -1,6 +1,7 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage[T1]{fontenc}
 \usepackage{cite}
 \usepackage{mathtools} 
 \usepackage{stackengine}
@@ -386,7 +387,9 @@ if a slice does not admit to a specific DC, it is remain for next placement. In 
 \end{algorithmic}
 \end{algorithm}
 \section{Simulation}
- \begin{table}[H]
+In this section, Simulation and numerical results for the main problem are depicted.
+In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two different number of DCs with different number of slices (the parameters for simulation listed in table \ref{table:1} and \ref{table:2}). In this simulation, it is assumed that each slice can be served by just one DC and it is not admitted by more than one DC. Proposed method is based on Algorithm \ref{alg3} and optimal method is done by MOSEK toolbox.
+ \begin{table}
  \caption {Simulation Parameter} \label{table:1} 
  \begin{center}
   \begin{tabular}{||c c ||} 
@@ -408,9 +411,9 @@ if a slice does not admit to a specific DC, it is remain for next placement. In 
  \end{tabular}
  \end{center}
  \end{table}
-In this section, Simulation and numerical results for the main problem are depicted.
-In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two different number of DCs with different number of slices (the parameters for simulation listed in table \ref{table:1} and \ref{table:2}). In this simulation, it is assumed that each slice can be served by just one DC and it is not admitted by more than one DC. Proposed method is based on Algorithm \ref{alg3} and optimal method is done by MOSEK toolbox. 
- \begin{table}[H]
+When we have two DCs, proposed method and optimal method have approximately same ratio of admitted slices. But by increasing the number of DCs to five, performance of proposed method reduced. Using five DCs, the difference between 
+proposed method and optimal method in worst case (44 slices) is about $23$ percentage. 
+ \begin{table}
  \caption {Simulation Parameter} \label{table:2} 
  \begin{center}
   \begin{tabular}{||c c ||} 
@@ -426,20 +429,19 @@ In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two diffe
  \end{tabular}
  \end{center}
  \end{table}
-When we have two DCs, proposed method and optimal method have approximately same ratio of admitted slices. But by increasing the number of DCs to five, performance of proposed method reduced.
 \begin{figure}[H]
   \centering
-    \includegraphics[width=\linewidth]{f1}
+    \includegraphics[width=\linewidth]{f11}
   \caption{Ratio of Admitted Slices connected to just one DC vs. Total slices}
   \label{fig:f1}
 \end{figure} 
-
+In Fig. \ref{fig:f2}, the normalized resource consumption is depicted due to the number of slices (the parameters for simulation listed in table \ref{table:1} and \ref{table:2}). In this simulation, it is assumed that number of DCs is completely enough to cover all slices. The optimality of placement of DCs to slices is measured. It is shown that how much resources of active DCs are not used. For ten slices, the difference between optimal solution and proposed solution is about $15$ percent. 
 \begin{figure}[H]
   \centering
-    \includegraphics[width=\linewidth]{f2}
-  \caption{Normalized resource consumption vs. Number of slices}
+    \includegraphics[width=\linewidth]{fig2_last}
+  \caption{Normalized Resource Consumption vs. Number of Slices}
   \label{fig:f2}
 \end{figure} 
-\bibliographystyle{ieeetr}
+\bibliographystyle{IEEEtran}
 \bibliography{ref}
 \end{document}

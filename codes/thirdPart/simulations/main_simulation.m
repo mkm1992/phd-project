@@ -26,7 +26,7 @@ for count = 1: counter_max
         sum_ConsResource(:,kk,count) = resource_server1(:,2:4)'*makeone(sum(mappingVar))';
         sum_ResResource(:,kk,count) = resource_server1(:,2:4)'*(1-makeone(sum(mappingVar))');
         run mosekRun
-        %run remap_server1
+        run remap_server1
         NumServerEnd1(kk,count) = sum(mapvec(1:N_service*N_server));
         sum_vector12 = demand_service'*map1;
         sum_sumVec1(:,kk,count) =  sum(sum_vector12,2);
