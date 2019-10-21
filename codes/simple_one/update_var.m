@@ -1,7 +1,7 @@
-mu_step = 0.1*Pmax/sqrt(count_power);
-kr_step = .1*(2^C_thresh * var_q)/sqrt(count_power);
-lambdar_step = 0.1*Rt/sqrt(count_power);
-tr_step = 0.1*(1/(delay_max-mean(Delay_Slice))+lamda)/sqrt(count_power);
+mu_step = 0.01*Pmax/sqrt(count_power);
+kr_step = 10*(2^C_thresh * var_q)/sqrt(count_power);
+lambdar_step = 10*Rt/sqrt(count_power);
+tr_step = 1*(1/(delay_max-mean(Delay_Slice))+lamda)/sqrt(count_power);
 Ut2Slice = Ut2Service*service2slice;
 for ki=1:N_Ut
     lambda_r(ki)= max(0,lambda_r(ki) - lambdar_step* (rate_UE(ki) - Rt));
