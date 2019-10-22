@@ -1,4 +1,4 @@
-counter_max = 25;
+counter_max = 20;
 lambda_r = ones(1,N_Ut)*Rt;
 mu = ones(1,N_rrh)*Pmax/100;
 Kr = ones(1,N_rrh)*(2^C_thresh * var_q)/1000;

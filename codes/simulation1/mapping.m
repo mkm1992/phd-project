@@ -1,7 +1,4 @@
-% map slice to service
-% clear all
-% clc
-%run var
+%% map slice to service
 %% sort service
 Priot_Service = (sum(Ut2Service,1)).^priority_service;
 [~,idx] = sort(Priot_Service);
@@ -24,8 +21,7 @@ run precoding
 count  = 0;
 for jj = N_Slice:-1:1
     if mapStatusSlice(jj)==1
-    for ii = N_Service:-1:1
-         
+    for ii = 1:N_Service
         if mapStatusService(ii)==1
             count = count +1;
             service2slice(ii,jj)=1;
@@ -54,11 +50,8 @@ for jj = N_Slice:-1:1
     end
     end
 end
-%run channel
 ChannelGain = ChannelGain2;
 run precoding 
-%run mappingOtherParameter
-%run MapPRB2UT
 run interference
 run rate
 run FronthaulCap

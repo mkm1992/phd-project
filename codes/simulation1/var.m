@@ -1,7 +1,7 @@
 %% Physical layer
-R = 500;
-N_Service = 5;
-N_Slice =  6;
+R = 10;
+N_Service = 3;
+N_Slice =  10;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
 N0 = db2pow(n0)/1000;
@@ -11,12 +11,9 @@ Pt = 30;
 Pmax = db2pow(Pt)/1000;
 Rt = .1*BW;%0.1*BW; 
 N_PRB = 10;
-N_rrh = 3;
-N_rrh_max = 50;
-N_rrh_min = 10;
-N_rrh_step = 10;
+N_rrh = 10;
 imax = 1;
-NumOfUtInService = randi([1 10],1, N_Service);
+NumOfUtInService = randi([1 N_var],1, N_Service);
 N_Ut = sum(NumOfUtInService);
 rrh2slice = randi([0 imax],N_rrh, N_Slice); %not map 1 -->true 
 service2slice = zeros(N_Service, N_Slice);    %randi([0 imax],N_Service, N_Slice); %2 we want to find this!!!!!
@@ -29,7 +26,7 @@ N_BBU = 2;
 BBU_map = zeros(N_BBU, N_Slice);
 Crrh = zeros(1, N_rrh);
 Prrh = zeros(1,N_rrh);
-var_q = 1e-5;
+var_q = 1e-7;
 C_thresh = 10*Rt/BW;
 %% VNF MAC LAYER
 N_VNF1 = 10;
