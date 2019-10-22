@@ -6,7 +6,7 @@ N_min = 2;
 N_step = 10;
 N_max = 42;
 counter_max = 1;
-iter_max = 1;
+iter_max = 100;
 numVar = N_min:N_step:N_max ;
 etha = zeros(length(numVar),iter_max,counter_max);
 %% loops
