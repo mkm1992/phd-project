@@ -42,7 +42,7 @@ for jj = N_Slice:-1:1
             Prrh_service = Prrh' .* rrh2slice(:,jj);
             PrrhSlice = Prrh_service(Prrh_service>0);
             if all(rateService(:)>Rt) && Delay_Slice(jj) < delay_max && all(PrrhSlice(:)<Pmax) && all(CrrhSlice(:)<C_thresh)
-                all(rateService(:)>Rt)
+               % all(rateService(:)>Rt)
             
                 mapStatusService(ii) =0;
                 mapStatusSlice(jj) = 0;

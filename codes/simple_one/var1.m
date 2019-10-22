@@ -2,6 +2,7 @@
 R = 500;
 N_Service = 5;
 N_Slice =  10;
+N_rrh = 10;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
 N0 = db2pow(n0)/1000;
@@ -13,6 +14,7 @@ Rt = .1*BW;%0.1*BW;
 N_PRB = 10;
 imax = 1;
 NumOfUtInService = randi([1 5],1, N_Service);
+NumOfUtInService = UEN*ones(1,N_Service);
 N_Ut = sum(NumOfUtInService);
 rrh2slice = randi([0 imax],N_rrh, N_Slice); 
 Crrh = zeros(1, N_rrh);
@@ -48,7 +50,7 @@ delay_max = 3e-4;
 priority_service = ones(1,N_Service);
 Delay_Slice = zeros(1,N_Slice);
 %%
-lambda_r = ones(1,N_Ut)*Rt;
-mu = ones(1,N_rrh)*Pmax/100;
-Kr = ones(1,N_rrh)*(2^C_thresh * var_q)/1000;
+lambda_r = ones(1,N_Ut)*Rt/100;
+mu = ones(1,N_rrh)*Pmax*100;
+Kr = ones(1,N_rrh)*(2^(C_thresh/10) * var_q)*1000;
 tr = ones(1,N_Ut)*(1/(delay_max-mean(Delay_Slice))+lamda)/10; 

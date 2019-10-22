@@ -3,10 +3,10 @@ clc
 close all
 %% variables
 N_min = 2;
-N_step = 10;
-N_max = 42;
+N_step = 2;
+N_max = 10;
 counter_max = 1;
-iter_max = 100;
+iter_max = 30;
 numVar = N_min:N_step:N_max ;
 etha = zeros(length(numVar),iter_max,counter_max);
 %% loops
@@ -24,9 +24,10 @@ for N_var = N_min:N_step:N_max
                 run parameter
                 maximize error
                 subject to
-                Prrh(:) <= Pmax*15;
+                Prrh(:) <= Pmax*10;
                 %Prrh(:) <= 2^C_thresh * var_q *100;
                 Popt(:) > 0; 
+                Popt(:) < Pmax*5;
                 rate_UE(:) > Rt;  
                 rate_UE(:) >1/(delay_max-mean(Delay_Slice1+Delay_Slice2))
             cvx_end

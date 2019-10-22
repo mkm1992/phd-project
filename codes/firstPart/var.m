@@ -13,9 +13,9 @@ K = Ut;
 r = zeros(1,K);
 %%
 M = 100;
-Mmin=100;
+Mmin=10;
 Mstep=10;
-Mmax=100;
+Mmax=50;
 Umin =2;
 Umax = 20;
 Ustep = 2;
@@ -28,8 +28,8 @@ Pmmax=151;
 Pmm=10^-15;
 %Us = floor((Ut_max-Ut_min)/Ut_step)+1;
 %%
-iter_max =30;
-count_max = 100;
+iter_max =10;
+count_max = 25;
 thresh = 1e-10;
 var_q = 1e-4;
 Cmax = 5;

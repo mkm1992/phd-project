@@ -67,7 +67,7 @@ eta1 = permute(ettta,[3,1,2]);
 %ratte = mean(rrate(:,:,:),2);
 %rate2 = permute(ratte,[3,1,2]);
 plot(1:count_max, eta1(1,:) ,'-* b')
-%figure;
-%plot(Mmin:Mstep:Mmax,eta1(:,count_max),'-*r')
+figure;
+plot(Mmin:Mstep:Mmax,eta1(:,count_max),'-*r')
 %rate2(:,count_max)
 eta1(:,count_max)
