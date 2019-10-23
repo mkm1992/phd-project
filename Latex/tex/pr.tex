@@ -46,22 +46,31 @@ email address}
 
 \begin{abstract}
 Many major telecommunication companies confirmed the unification of the xRAN Group with the C-RAN Alliance to establish a global 'carrier-led' effort to bring greater transparency of Open-RAN 
-(O-RAN), to the next-generation of radio access network. \newline
-To increase energy efficiency and optimize allocation of resources, Network Slicing (NS) is considered as a best method in 5G in order to virtualize the common physical network into several logical end-to-end networks. Every slice consists of a part of core network resources, network functions, and radio access network resources as a functional end-to end network. \newline
-In this paper, we elaborates joint NS in RAN and Core of O-RAN system and investigate optimal power 
-of each User Equipment (UE) to jointly maximize Energy Efficiency and minimize consumption power of physical resources in a downlink channel. The problem is formulated as a mixed integer optimization problem that can be decompose into two independent sub-problems for RAN and Core since sub-problems are independent. 
-Heuristic algorithms is proposed to each of sub-problems to solved the first sub-problem in order to simultaneously map slices to services and optimize power and the second sub-problem in order to map slices to physical resources and minimize number of active Data Centers (DC).
+(O-RAN), to the next-generation of radio access network. 
+
+
+To increase energy efficiency and optimize allocation of resources, Network Slicing (NS) is considered as a best method in 5G in order to virtualize the common physical network into several logical end-to-end networks. Every slice consists of a part of core network resources, network functions, and radio access network resources as a functional end-to end network. 
+
+
+In this paper, we elaborates joint NS in RAN and Core of O-RAN system to investigate power 
+of each User Equipment (UE), connect slices to services and physical Data Centers (DC) to slices to jointly maximize Energy Efficiency and minimize consumption power of physical resources in a downlink channel. The problem is formulated as a mixed integer optimization problem that can be decomposed into two independent sub-problems due to the fact that sub-problems are independent. 
+Heuristic algorithms is proposed to each of sub-problems to solved the first sub-problem in order to simultaneously connect slices to services and optimize power and for the second sub-problem to connect slices to physical resources and minimize number of active DCs.
 \end{abstract}
 
 \begin{IEEEkeywords}
-O-RAN, Network Slicing, Energy Efficiency, Data Center
+O-RAN, Network Slicing, Energy Efficiency, Data Center (DC)
 \end{IEEEkeywords}
 
 \section{Introduction}
 Recently, O-RAN which is the integration and expansion of C-RAN and xRAN is expected to be a key technology for 5G to enhance RAN performance and solve the challenges in a best way.  
-The Idea of O-RAN comes from two opinion. Firstly, according to real-time analytic used for artificial intelligence system, the radio access networks must be evolved to be more open and smarter than previous generations. Furthermore, O-RAN can virtualize elements of the network with  appropriate interfaces \cite{orant}. \newline
-The core idea driving C-RAN is to split radio remote head (RRH) and baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities. Moreover, in O-RAN technology, this separation is implemented\cite{cran1}.
-To communicate between BBU-Pool and RRHs, fronthaul interface which is fiber link is assumed with limited capacity. Compression of message which is passed through these links, is a consequence of limited fronthaul capacity\cite{frdl,simeone2016cloud,motalleb2017optimal}.\newline
+The Idea of O-RAN comes from two opinion. Firstly, according to real-time analytic used for artificial intelligence system, the radio access networks must be evolved to be more open and smarter than previous generations. Furthermore, O-RAN can virtualize elements of the network with  appropriate interfaces \cite{orant}.
+In innovative O-RAN system, the programmable RAN software is decoupled from hardware which can be simply run on any specific processing platforms, in order to be more flexible for mobile network operators (MNOs) specially for mobile virtual network operators (MVNOs)\cite{oran1}. 
+
+
+The core idea of C-RAN is to split radio remote head (RRH) and baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities. Moreover, in O-RAN technology, this separation is implemented\cite{cran1}.
+To communicate between BBU-Pool and RRHs, fronthaul interface which is fiber link is assumed with limited capacity. Compression of message which is passed through these links, is a consequence of limited fronthaul capacity\cite{frdl,simeone2016cloud,motalleb2017optimal}.
+
+
 xRAN technology ,released in April 2018 as a next generation of RAN, has three fundamental features. Control plane is decoupled from User plane. In addition, a modular eNB software stack is built to operate on common-off-the-shelf (COTS) hardware. Moreover, open north-bound and south-bound interfaces is introduced\cite{xran}.
 \begin{figure}[H]
   \centering
@@ -71,20 +80,24 @@ xRAN technology ,released in April 2018 as a next generation of RAN, has three f
 \end{figure} 
 To evolve servicing in 5G, separation of elements of software and hardware of network is deployed in network functions virtualization (NFV) technology. In this technology, the functionality of networks is virtualized and divided to blocks of virtual network function (VNF).
 Responsibility of wireless systems of the fifth generation covers a wide range types of services. In order to provide the requirement of these services, NS is implemented to virtualize the common physical network into several logical end-to-end networks. Three different types of NS is introduced in \cite{ns1} contains Core Slicing, RAN Slicing and Core-RAN Slicing. In Core-RAN Slicing, each slice of RAN is mapped to slices of Core. Also, UEs classified to group of services according to their requirements. In addition, each service is connected to one or more Core-RAN slices base on the resource of slices.
-Using cloud-computing in BBU-Pool, enhance performance of system by virtualizing resources
+Using cloud-computing in BBU-Pool, performance of system is enhanced by virtualizing resources
 into virtual machines (VMs).
-Each VM has a computing processor mapped to Virtual Network Functions (VNFs) which processed arrival data. Also VNFs are mapped to physical resource through NS technique\cite{frdl,luong2018novel,luong2018novel1}. 
-\newline  
-In \cite{lee2018dynamic}, dynamic network slicing is considered in Heterogeneous CRAN (H-CRAN) to maximize the weighted sum rate. Moreover, in \cite{frdl,luong2018novel,luong2018novel1} minimization of cost obtained by power consumption and cloud processing is applied. Limited fronthaul capacity is considered. Also processing delay of each VM and wireless transmission delay is bounded.\newline  
+Each VM has a computing processor mapped to Virtual Network Functions (VNFs) which processed arrival data. Also VNFs are mapped to physical resources through NS techniques\cite{frdl,luong2018novel,luong2018novel1}. 
+
+
+Compression of messages passed through fronthaul link due to the limited capacity of these link is considered in \cite{simeone2016cloud,1111}. 
+In \cite{lee2018dynamic}, dynamic network slicing is considered in Heterogeneous CRAN (H-CRAN) to maximize the weighted sum rate. Moreover, in \cite{frdl,luong2018novel,luong2018novel1} minimization of cost obtained by power consumption, also cloud processing and limited fronthaul capacity is considered. Furthermore, processing delay of each VM and wireless transmission delay is bounded.
+
+ 
 In this paper, as  depicted in figure \ref{fig:c11}, the downlink of O-RAN system is assumed. UEs are divided to different groups according to 
-their service requirements. Also RAN is decoupled to slices to provide services needs. Optimal power allocation and joint connecting slices to services is applied. In addition, mapping slices to physical resources is taken to account.
+their service requirements. Also RAN is decoupled to slices to provide requirements of services. Optimal power allocation and joint connecting slices to services is applied. In addition, connecting slices to physical resources is taken to account.
 
 
 \section{System Model and Problem Formulation}
 In this section, first, we present the downlink (DL) of O-RAN System. Then we obtain achievable rate and delays.
 Afterward, the main problem is expressed.
 \subsection{System Model}
-Suppose that there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single antenna users that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $K_s$ Physical Resource Blocks (PRBs) as it is defined in standard of LTE that the bandwidth (BW) of channel is divided to PRBs in time series \cite{lee2018dynamic}. All RRHs in a slice that is mapped to a service, transmit signals cooperatively to all the UEs in specific service \cite{motalleb2017optimal,mimoCran}. Each RRH $r \in \{1,2,...,R \}$ is connected to BBU pool via an optical fiber link with limited fronthaul capacity.
+Suppose that there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single antenna user equipments (UEs) that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $K_s$ Physical Resource Blocks (PRBs) as it is defined in standard of LTE that the bandwidth (BW) of channel is divided to PRBs in time series \cite{lee2018dynamic}. All RRHs in a slice that is mapped to a service, transmit signals cooperatively to all the UEs in specific service \cite{motalleb2017optimal,mimoCran}. Each RRH $r \in \{1,2,...,R \}$ is connected to BBU pool via an optical fiber link with limited fronthaul capacity.
 Suppose we have two processing layer in BBU-Pool of O-RAN system. The lower layer is consist of high-PHY and MAC and the upper layer is consist of RLC, PDCP and SDAP.
 Assume, we have $M_1$ VMs in the first layer and $M_2$ VMs in second layer.
 For simplicity, suppose each VM is connected to a VNF.

@@ -2,11 +2,11 @@ clear all
 clc
 close all
 %% variables
-N_min = 0.5;
-N_step = 0.5;
-N_max = 2;
+N_min = 5;
+N_step = 5;
+N_max = 25;
 counter_max = 1;
-iter_max = 1;
+iter_max = 25;
 numVar = N_min:N_step:N_max ;
 etha = zeros(length(numVar),iter_max,counter_max);
 %% loops

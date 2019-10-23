@@ -28,6 +28,13 @@ I.~Scales. (2018) The open ran (oran) alliance formed to lever open 5g for
   \url{https://www.telecomtv.com/content/mwc/the-open-ran-oran-alliance-formed-to-lever-open-5g-for-other-technologies-and-much-more-16429}
 \BIBentrySTDinterwordspacing
 
+\bibitem{oran1}
+\BIBentryALTinterwordspacing
+B.~Fletcher. (2019) Vodafone initiates first open ran trials in the u.k.,
+  challenging traditional vendors. [Online]. Available:
+  \url{https://www.fiercewireless.com/tech/vodafone-initiates-first-open-ran-trials-uk-challenging-traditional-vendors}
+\BIBentrySTDinterwordspacing
+
 \bibitem{cran1}
 J.~Wu, Z.~Zhang, Y.~Hong, and Y.~Wen, ``Cloud radio access network (c-ran): a
   primer,'' \emph{IEEE Network}, vol.~29, no.~1, pp. 35--41, 2015.
@@ -71,6 +78,12 @@ P.~Luong, F.~Gagnon, C.~Despins, and L.-N. Tran, ``Joint virtual computing and
   radio resource allocation in limited fronthaul green c-rans,'' \emph{IEEE
   Transactions on Wireless Communications}, vol.~17, no.~4, pp. 2602--2617,
   2018.
+
+\bibitem{1111}
+S.-H. Park, O.~Simeone, O.~Sahin, and S.~S. Shitz, ``Fronthaul compression for
+  cloud radio access networks: Signal processing advances inspired by network
+  information theory,'' \emph{IEEE Signal Processing Magazine}, vol.~31, no.~6,
+  pp. 69--79, 2014.
 
 \bibitem{lee2018dynamic}
 Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
