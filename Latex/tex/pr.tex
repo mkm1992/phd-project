@@ -49,12 +49,12 @@ Many major telecommunication companies confirmed the unification of the xRAN Gro
 (O-RAN) for the fifth generation of wireless technology. 
 
 
-To increase energy efficiency and optimize allocation of resources, Network Slicing (NS) is considered as a best method for the fifth generation (5G) in order to virtualize the common physical network into several logical end-to-end networks. Every slice consists of a part of core network resources, network functions, and radio access network resources as a functional end-to end network. 
+To increase nergy efficiency and optimize allocation of resources, Network Slicing (NS) is considered as a best method for the fifth generation (5G) in order to virtualize the common physical network into several logical end-to-end networks. Every slice consists of a part of core network resources, network functions, and radio access network resources as a functional end-to end network. 
 
 
-In this paper, we elaborates joint NS in RAN and Core of O-RAN system to investigate power 
-of each User Equipment (UE), connect slices to services and also connect physical Data Centers (DC) to slices to jointly maximize Energy Efficiency and minimize consumption power of RRHs and the cost of  physical resources in a downlink channel. The problem is formulated as a mixed integer optimization problem that can be decomposed into two independent sub-problems due to the fact that sub-problems are independent. 
-Heuristic algorithms is proposed to each of sub-problems in order to simultaneously connect slices to services, optimize power consumption and connect slices to physical resources to minimize cost of active DCs.
+In this paper, we elaborate joint NS in RAN and Core of O-RAN system to investigate power 
+of each User Equipment (UE), connect slices to services and also connect physical Data Centers (DC) to slices to jointly maximize energy efficiency and minimize consumption power of RRHs and the cost of  physical resources in a downlink channel. The problem is formulated as a mixed integer optimization problem that can be decomposed into two independent sub-problems due to the fact that sub-problems are independent. 
+Heuristic algorithms is proposed to each of sub-problems in order to simultaneously connect slices to services, optimize power consumption and connect slices to physical resources to minimize cost of total DCs.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -67,8 +67,8 @@ The Idea of O-RAN comes from two opinion. Firstly, according to real-time analyt
 In innovative O-RAN system, the programmable RAN software is decoupled from hardware which can be simply run on any specific processing platforms, in order to be more flexible for MNOs specially for mobile virtual network operators (MVNOs)\cite{oran1}. 
 
 
-The core idea of C-RAN is to split radio remote head (RRH) and baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities. Moreover, in O-RAN technology, this separation is implemented\cite{cran1}.
-To communicate between BBU-Pool and RRHs, fronthaul interface which is fiber link is assumed with limited capacity. Compression of message which is passed through these links, is a consequence of limited fronthaul capacity\cite{frdl,simeone2016cloud,motalleb2017optimal}.
+The core idea of C-RAN is to separate radio remote head (RRH) from baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities. Moreover, in O-RAN technology, this separation is implemented\cite{cran1}.
+To communicate between BBU-Pool and RRHs, fronthaul fiber link interface is assumed with limited capacity. Compression of messages passed through these links, is a consequence of limited fronthaul capacity\cite{frdl,simeone2016cloud,motalleb2017optimal}.
 
 
 xRAN technology ,released in April 2018 as a next generation of RAN, has three fundamental features. Control plane is decoupled from User plane. In addition, a modular eNB software stack is built to operate on common-off-the-shelf (COTS) hardware. Moreover, open north-bound and south-bound interfaces is introduced\cite{xran}.
@@ -79,7 +79,7 @@ xRAN technology ,released in April 2018 as a next generation of RAN, has three f
   \label{fig:c11}
 \end{figure} 
 To evolve servicing in 5G, separation of elements of software and hardware of network is deployed in network functions virtualization (NFV) technology. In this technology, the functionality of networks is virtualized and divided to blocks of virtual network function (VNF).
-Responsibility of wireless systems of the fifth generation covers a wide range types of services. In order to provide the requirement of these services, NS is implemented to virtualize the common physical network into several logical end-to-end networks. Three different types of NS is introduced in \cite{ns1} contains Core Slicing, RAN Slicing and Core-RAN Slicing. In Core-RAN Slicing, each slice of RAN is mapped to slices of Core. Also, UEs classified to group of services according to their requirements. In addition, each service is connected to one or more Core-RAN slices base on the resource of slices.
+Responsibility of wireless systems of the fifth generation covers a wide range types of services. In order to provide the requirements of these services, NS is implemented to virtualize the common physical network into several logical end-to-end networks. Three different types of NS is introduced in \cite{ns1} contains Core Slicing, RAN Slicing and Core-RAN Slicing. In Core-RAN Slicing, each slice of RAN is mapped to slices of Core. Also, UEs classified to group of services according to their requirements. In addition, each service is connected to one or more Core-RAN slices based on the resource of slices.
 Using cloud-computing in BBU-Pool, performance of system is enhanced by virtualizing resources
 into virtual machines (VMs).
 Each VM has a computing processor mapped to Virtual Network Functions (VNFs) which processed arrival data. Also VNFs are mapped to physical resources through NS techniques\cite{frdl,luong2018novel,luong2018novel1}. 
