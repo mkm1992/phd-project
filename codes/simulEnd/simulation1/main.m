@@ -2,11 +2,11 @@ clear all
 clc
 close all
 %% variables
-N_min = 10;
+N_min = 2;
 N_step = 2;
 N_max = 10;
 counter_max = 1;
-iter_max = 3;
+iter_max = 25;
 numVar = N_min:N_step:N_max ;
 etha = zeros(length(numVar),iter_max,counter_max);
 etha1 = zeros(length(numVar),iter_max,counter_max);
@@ -19,18 +19,18 @@ for N_var = N_min:N_step:N_max
         run var
         eta0 = 0;
         run mapping
-        run mapping2
+        run mapping1
         for  count_power=1:counter_max  
-             cvx_begin
+            cvx_begin
                 variable Popt(1,N_Ut)
                 run parameter
                 maximize error
                 subject to
-                Prrh(:) <= 10*Pmax;
+                Prrh(:) <= Pmax*5;
                 %Prrh(:) <= 2^C_thresh * var_q *100;
                 Popt(:) > 0; 
-                Popt(:) < Pmax*3;
-                rate_UE(:) > Rt;  
+                Popt(:) < Pmax/10;
+                rate_UE(:) > Rt*100;  
                 rate_UE(:) >1/(delay_max-mean(Delay_Slice1+Delay_Slice2))
             cvx_end
             eta0 = double(R1)/double(P1);
@@ -38,7 +38,6 @@ for N_var = N_min:N_step:N_max
             run rate
             etha(nr,iter,count_power) = sum(rate_UE)/(sum(Prrh));
         end
-        %%
         eta01 = 0;
         for  count_power=1:counter_max  
             cvx_begin
@@ -46,11 +45,11 @@ for N_var = N_min:N_step:N_max
                 run parameter1
                 maximize error
                 subject to
-                Prrh(:) <= 10*Pmax;
+                Prrh(:) <= 5*Pmax;
                 %Prrh(:) <= 2^C_thresh * var_q *100;
                 Popt(:) > 0; 
-                Popt(:) < Pmax*3;
-                rate_UE(:) > Rt;  
+                Popt(:) < Pmax/10;
+                rate_UE(:) > Rt*100;  
                 rate_UE(:) >1/(delay_max-mean(Delay_Slice1+Delay_Slice2))
             cvx_end
             eta01 = double(R11)/double(P11);

@@ -45,16 +45,16 @@ email address}
 \maketitle
 
 \begin{abstract}
-Many major telecommunication companies confirmed the unification of the xRAN Group with the C-RAN Alliance to establish a global 'carrier-led' effort to bring greater transparency of Open-RAN 
-(O-RAN), to the next-generation of radio access network. 
+Many major telecommunication companies confirmed the unification of the xRAN Group with the C-RAN Alliance to establish a more flexible and openness radio access network which is the Open-RAN 
+(O-RAN) for the fifth generation of wireless technology. 
 
 
-To increase energy efficiency and optimize allocation of resources, Network Slicing (NS) is considered as a best method in 5G in order to virtualize the common physical network into several logical end-to-end networks. Every slice consists of a part of core network resources, network functions, and radio access network resources as a functional end-to end network. 
+To increase energy efficiency and optimize allocation of resources, Network Slicing (NS) is considered as a best method for the fifth generation (5G) in order to virtualize the common physical network into several logical end-to-end networks. Every slice consists of a part of core network resources, network functions, and radio access network resources as a functional end-to end network. 
 
 
 In this paper, we elaborates joint NS in RAN and Core of O-RAN system to investigate power 
-of each User Equipment (UE), connect slices to services and physical Data Centers (DC) to slices to jointly maximize Energy Efficiency and minimize consumption power of physical resources in a downlink channel. The problem is formulated as a mixed integer optimization problem that can be decomposed into two independent sub-problems due to the fact that sub-problems are independent. 
-Heuristic algorithms is proposed to each of sub-problems to solved the first sub-problem in order to simultaneously connect slices to services and optimize power and for the second sub-problem to connect slices to physical resources and minimize number of active DCs.
+of each User Equipment (UE), connect slices to services and also connect physical Data Centers (DC) to slices to jointly maximize Energy Efficiency and minimize consumption power of RRHs and the cost of  physical resources in a downlink channel. The problem is formulated as a mixed integer optimization problem that can be decomposed into two independent sub-problems due to the fact that sub-problems are independent. 
+Heuristic algorithms is proposed to each of sub-problems in order to simultaneously connect slices to services, optimize power consumption and connect slices to physical resources to minimize cost of active DCs.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -62,9 +62,9 @@ O-RAN, Network Slicing, Energy Efficiency, Data Center (DC)
 \end{IEEEkeywords}
 
 \section{Introduction}
-Recently, O-RAN which is the integration and expansion of C-RAN and xRAN is expected to be a key technology for 5G to enhance RAN performance and solve the challenges in a best way.  
-The Idea of O-RAN comes from two opinion. Firstly, according to real-time analytic used for artificial intelligence system, the radio access networks must be evolved to be more open and smarter than previous generations. Furthermore, O-RAN can virtualize elements of the network with  appropriate interfaces \cite{orant}.
-In innovative O-RAN system, the programmable RAN software is decoupled from hardware which can be simply run on any specific processing platforms, in order to be more flexible for mobile network operators (MNOs) specially for mobile virtual network operators (MVNOs)\cite{oran1}. 
+Recently, O-RAN which is the integration and expansion of C-RAN and xRAN is expected to be a key technology for 5G to enhance RAN performance and solve the part of challenges of mobile network operators (MNOs) in a best way.  
+The Idea of O-RAN comes from two opinion. Firstly, according to real-time analytic used for artificial intelligence system, the radio access networks must be evolved to be more intelligent and flexible than before. Furthermore, O-RAN can virtualize elements of the network with  appropriate interfaces \cite{orant}.
+In innovative O-RAN system, the programmable RAN software is decoupled from hardware which can be simply run on any specific processing platforms, in order to be more flexible for MNOs specially for mobile virtual network operators (MVNOs)\cite{oran1}. 
 
 
 The core idea of C-RAN is to split radio remote head (RRH) and baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities. Moreover, in O-RAN technology, this separation is implemented\cite{cran1}.
