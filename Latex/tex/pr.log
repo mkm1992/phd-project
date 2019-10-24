@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  24 OCT 2019 14:29
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  24 OCT 2019 16:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -541,8 +541,8 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-File: c3.pdf Graphic file (type pdf)
-<use c3.pdf>
+File: c4.pdf Graphic file (type pdf)
+<use c4.pdf>
 
 Overfull \hbox (51.08325pt too wide) in paragraph at lines 77--78
  [][] 
@@ -557,25 +557,31 @@ Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 113.
 
 
-Overfull \hbox (7.93452pt too wide) in paragraph at lines 121--137
+Overfull \hbox (16.23387pt too wide) detected at line 121
+\OT1/cmr/bx/n/10 y[] \OT1/cmr/m/n/10 = [] [] [][]([][][][][][] + [][])\OML/cmm/
+m/it/10 ^^P[]a[] \OT1/cmr/m/n/10 + [][];
+ []
+
+
+Overfull \hbox (7.93452pt too wide) in paragraph at lines 121--139
 \T1/ptm/m/n/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/c
 mm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\T1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 3758) in paragraph at lines 121--137
+Underfull \hbox (badness 3758) in paragraph at lines 121--139
 \T1/ptm/m/n/10 Moreover, $[][] \OT1/cmr/m/n/10 = [[][]\OML/cmm/m/it/10 ; :::; [
 ][]\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 2
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 148--155
+Underfull \hbox (badness 10000) in paragraph at lines 150--158
 \T1/ptm/m/n/10 Where, $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/1
 0 j[][][][]j[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
  []
 
 Missing character: There is no ’ in font ptmr8t!
-LaTeX Font Info:    Try loading font information for U+euf on input line 221.
+LaTeX Font Info:    Try loading font information for U+euf on input line 224.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [3] [4]
