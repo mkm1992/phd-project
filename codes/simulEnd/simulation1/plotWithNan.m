@@ -19,4 +19,14 @@ for i =1:iter_max
         end
     end
 end
-plot( N_min:N_step:N_max , y(1,:)./y(2,:))      
+plot( N_min:N_step:N_max , y(1,:)./y(2,:))   
+%%
+b1 = y1(1,:)./y1(2,:);
+b = y(1,:)./y(2,:);
+plot( N_min:N_step:N_max , a1/BW)
+hold on
+plot( N_min:N_step:N_max , a/BW) 
+%%
+plot( N_min:N_step:N_max , b1/BW)
+hold on
+plot( N_min:N_step:N_max , b/BW) 
