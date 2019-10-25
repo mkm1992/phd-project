@@ -41,6 +41,6 @@ delay_thresh = 9.2593e-06;
 Delay_Slice1 = zeros(N_Slice,1);
 Delay_Slice2 = zeros(N_Slice,1);
 Delay_Transmission = zeros(N_Slice,1);
-delay_max = 3e-4;
+delay_max = 1e-4;
 priority_service = ones(1,N_Service);
 Delay_Slice = zeros(1,N_Slice);

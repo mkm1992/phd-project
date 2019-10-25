@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  24 OCT 2019 23:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  25 OCT 2019 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -778,12 +778,12 @@ Package epstopdf Info: Source file: <figure11.eps>
 (epstopdf)                    size: 13807 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure11-eps-converted-to.
 pdf figure11.eps>
-(epstopdf)             \includegraphics on input line 440.
+(epstopdf)             \includegraphics on input line 444.
 Package epstopdf Info: Output file is already uptodate.
 <figure11-eps-converted-to.pdf, id=862, 534.99875pt x 429.605pt>
 File: figure11-eps-converted-to.pdf Graphic file (type pdf)
 <use figure11-eps-converted-to.pdf>
-Package pdftex.def Info: figure11-eps-converted-to.pdf  used on input line 440.
+Package pdftex.def Info: figure11-eps-converted-to.pdf  used on input line 444.
 
 (pdftex.def)             Requested size: 252.0pt x 202.36012pt.
 Package epstopdf Info: Source file: <f111.eps>
@@ -794,12 +794,12 @@ Package epstopdf Info: Source file: <f111.eps>
 (epstopdf)                    size: 17784 bytes
 (epstopdf)             Command: <repstopdf --outfile=f111-eps-converted-to.pdf 
 f111.eps>
-(epstopdf)             \includegraphics on input line 487.
+(epstopdf)             \includegraphics on input line 491.
 Package epstopdf Info: Output file is already uptodate.
 <f111-eps-converted-to.pdf, id=863, 511.9125pt x 392.46625pt>
 File: f111-eps-converted-to.pdf Graphic file (type pdf)
 <use f111-eps-converted-to.pdf>
-Package pdftex.def Info: f111-eps-converted-to.pdf  used on input line 487.
+Package pdftex.def Info: f111-eps-converted-to.pdf  used on input line 491.
 (pdftex.def)             Requested size: 252.0pt x 193.19644pt.
 Package epstopdf Info: Source file: <fig2_last.eps>
 (epstopdf)                    date: 2019-10-21 19:43:23
@@ -809,18 +809,15 @@ Package epstopdf Info: Source file: <fig2_last.eps>
 (epstopdf)                    size: 12941 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig2_last-eps-converted-to
 .pdf fig2_last.eps>
-(epstopdf)             \includegraphics on input line 494.
+(epstopdf)             \includegraphics on input line 498.
 Package epstopdf Info: Output file is already uptodate.
 <fig2_last-eps-converted-to.pdf, id=864, 511.9125pt x 392.46625pt>
 File: fig2_last-eps-converted-to.pdf Graphic file (type pdf)
 <use fig2_last-eps-converted-to.pdf>
-Package pdftex.def Info: fig2_last-eps-converted-to.pdf  used on input line 494
+Package pdftex.def Info: fig2_last-eps-converted-to.pdf  used on input line 498
 .
 (pdftex.def)             Requested size: 252.0pt x 193.19644pt.
- [5]
-Underfull \vbox (badness 5548) has occurred while \output is active []
-
- [6 <./figure11-eps-converted-to.pdf>] (./pr.bbl
+ [5] [6 <./figure11-eps-converted-to.pdf>] (./pr.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 26--30
 \T1/ptm/m/n/8 https://www.telecomtv.com/content/mwc/the-open-ran-oran-alliance-
 
@@ -858,7 +855,7 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  7795 strings out of 492649
  115332 string characters out of 6133384
- 218874 words of memory out of 5000000
+ 217874 words of memory out of 5000000
  11506 multiletter control sequences out of 15000+600000
  121974 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -885,7 +882,7 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2018/texmf-dist/
 fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/ti
 mes/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c
 :/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (7 pages, 570198 bytes).
+Output written on pr.pdf (7 pages, 570318 bytes).
 PDF statistics:
  987 PDF objects out of 1000 (max. 8388607)
  850 compressed objects within 9 object streams

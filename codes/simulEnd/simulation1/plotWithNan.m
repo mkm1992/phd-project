@@ -7,7 +7,7 @@ for i =1:iter_max
         end
     end
 end
-plot( N_min:N_step:N_max , y1(1,:)./y1(2,:))  
+plot( N_min:N_step:N_max , y1(1,:)./y1(2,:)/BW)  
 
 hold on
 y = zeros(2,nr);
@@ -19,7 +19,7 @@ for i =1:iter_max
         end
     end
 end
-plot( N_min:N_step:N_max , y(1,:)./y(2,:))   
+plot( N_min:N_step:N_max , y(1,:)./y(2,:)/BW)   
 %%
 b1 = y1(1,:)./y1(2,:);
 b = y(1,:)./y(2,:);

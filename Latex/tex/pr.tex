@@ -425,23 +425,27 @@ Parameter & Value \\ [0.5ex]
   \hline
   Bandwidth & 120 KHZ \\
   \hline
- Maxmimun transmit Power & 30dBm \\
+ Maxmimun transmit Power of each RRH & 40dBm \\
   \hline
-  Minimum delay &  30msec \\
+   Maxmimun transmit Power of each UE & 30dBm \\
   \hline
-  Minimum data rate &  1Mbits/sec \\ [1ex] 
+  Minimum delay &  300usec \\
+  \hline
+  Maximum fronthaul capacity  & 20bits/sec/Hz \\ 
+   \hline
+  Minimum data rate &  120 kbits/sec \\ [1ex] 
   \hline
  \end{tabular}
  \end{center}
  \end{table}
-In Fig. \ref{fig:f1a}, energy efficiency is depicted for two different numbers of services with the different mean number of UEs in each service (the parameters for simulation listed in table \ref{table:1a}). The optimal method is $0.016$ bits/J/Hz better than the proposed method for $V = 6$ and $E[U_v] = 10$, and also, $0.011$ bits/J/Hz better than the proposed method for $V = 3$ and, $E[U_v] = 10$. As it is shown, the Energy Efficiency is increased as mean number of UEs rises.
+In Fig. \ref{fig:f1a}, energy efficiency is depicted for two different numbers of services with the different mean number of UEs in each service (the parameters for simulation listed in table \ref{table:1a}). The optimal method is $0.016$ bits/J/Hz better than the proposed method for $V = 6$ and $E[U_v] = 10$, and also, $0.011$ bits/J/Hz better than the proposed method for $V = 3$ and, $E[U_v] = 10$. As it is shown, the Energy Efficiency is increased as a mean number of UEs rises.
 \begin{figure}%[H]
   \centering
     \includegraphics[width=\linewidth]{figure11}
   \caption{Energy Efficiency vs. Mean Number of UEs in each Service}
   \label{fig:f1a}
 \end{figure} 
-In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two different numbers of DCs with the different number of slices (the parameters for simulation listed in table \ref{table:1} and \ref{table:2}). In this simulation, it is assumed that  just one DC can serve each slice, and it is not admitted by more than one DC. The proposed method is based on Algorithm \ref{alg3}, and optimal method is done by the MOSEK toolbox.
+In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two different numbers of DCs with the different number of slices (the parameters for simulation listed in table \ref{table:1} and \ref{table:2}). In this simulation, it is assumed that  just one DC can serve each slice, and it is not admitted by more than one DC. The proposed method is based on Algorithm \ref{alg3}, and the optimal method is done by the MOSEK toolbox.
  \begin{table}
  \caption {Simulation Parameter} \label{table:1} 
  \begin{center}
@@ -465,7 +469,7 @@ In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two diffe
  \end{center}
  \end{table}
 When we have two DCs, the proposed method and optimal method have approximately the same ratio of admitted slices. But by increasing the number of DCs to five, the performance of the proposed method reduced. Using five DCs, the difference between the
-proposed method and the optimal method in worst case (44 slices) is about $23$ percentage. 
+proposed method and the optimal method in the worst case (44 slices) is about $23$ percentage. 
  \begin{table}
  \caption {Simulation Parameter} \label{table:2} 
  \begin{center}
@@ -497,9 +501,9 @@ In Fig. \ref{fig:f2}, the normalized resource consumption is depicted due to the
 \end{figure} 
 \section{Conclusion}
 In this paper, joint network slicing and power allocation is considered in an end to end O-RAN system.
-It is assumed that UEs are classified based on their service requirements. Also, there are number of slices served the services. Each slice, is consist of PRBs, RRHs, and VNFs that run on VMs. The limited fronthaul capacity is considered for the fiber links between RRHs and BBU-pool.
-The target is to maximize sum rate and minimize power consumption and energy cost of data centers simultaneously.
-The problem is decomposed into two sub-problems. Each sub-problems are solved separately by a heuristic algorithm. For the sub-problem A, energy efficiency vs. mean number of UEs in each service is depicted. The energy efficiency  exceeded by increasing mean number of UEs in each service. For the sub-problem B, two figures are shown. In the first one, the ratio of admitted slices that connect to just one DC, for different number of slices is denoted. In second figure, the normalized resource consumption of DCs is depicted. In each figure, heuristic algorithm is compared with the optimal method and the difference between them is discussed.
+It is assumed that UEs are classified based on their service requirements. Also, there is a number of slices served the services. Each slice, is consist of PRBs, RRHs, and VNFs that run on VMs. The limited fronthaul capacity is considered for the fiber links between RRHs and BBU-pool.
+The target is to maximize the sum-rate and minimize the power consumption and energy cost of data centers simultaneously.
+The problem is decomposed into two sub-problems. Each sub-problems are solved separately by a heuristic algorithm. For the sub-problem A, energy efficiency vs. mean number of UEs in each service is depicted. The energy efficiency  exceeded by increasing the mean number of UEs in each service. For the sub-problem B, two figures are shown. In the first one, the ratio of admitted slices that connect to just one DC, for a different number of slices is denoted. In the second figure, the normalized resource consumption of DCs is depicted. In each figure, the heuristic algorithm is compared with the optimal method and the difference between them is discussed.
 
  
 \bibliographystyle{IEEEtran}
