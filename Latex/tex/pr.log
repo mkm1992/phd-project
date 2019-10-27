@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  27 OCT 2019 14:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  27 OCT 2019 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -740,28 +740,28 @@ Non-PDF special ignored!
 ]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 133.
+d on input line 142.
 
 [2 <./c6.pdf>]
-Overfull \hbox (16.23387pt too wide) detected at line 141
+Overfull \hbox (16.23387pt too wide) detected at line 150
 \OT1/cmr/bx/n/10 y[] \OT1/cmr/m/n/10 = [] [] [][]([][][][][][] + [][])\OML/cmm/
 m/it/10 ^^P[]a[] \OT1/cmr/m/n/10 + [][];
  []
 
 
-Underfull \hbox (badness 3758) in paragraph at lines 141--159
+Underfull \hbox (badness 3758) in paragraph at lines 150--168
 \T1/ptm/m/n/10 Moreover, $[][] \OT1/cmr/m/n/10 = [[][]\OML/cmm/m/it/10 ; :::; [
 ][]\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 2
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--178
+Underfull \hbox (badness 10000) in paragraph at lines 179--187
 \T1/ptm/m/n/10 where, $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/1
 0 j[][][][]j[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
  []
 
 [3]
-LaTeX Font Info:    Try loading font information for U+euf on input line 243.
+LaTeX Font Info:    Try loading font information for U+euf on input line 253.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [4] [5]
@@ -773,12 +773,12 @@ Package epstopdf Info: Source file: <figure11.eps>
 (epstopdf)                    size: 13807 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure11-eps-converted-to.
 pdf figure11.eps>
-(epstopdf)             \includegraphics on input line 457.
+(epstopdf)             \includegraphics on input line 467.
 Package epstopdf Info: Output file is already uptodate.
-<figure11-eps-converted-to.pdf, id=867, 534.99875pt x 429.605pt>
+<figure11-eps-converted-to.pdf, id=859, 534.99875pt x 429.605pt>
 File: figure11-eps-converted-to.pdf Graphic file (type pdf)
 <use figure11-eps-converted-to.pdf>
-Package pdftex.def Info: figure11-eps-converted-to.pdf  used on input line 457.
+Package pdftex.def Info: figure11-eps-converted-to.pdf  used on input line 467.
 
 (pdftex.def)             Requested size: 252.0pt x 202.36012pt.
 Package epstopdf Info: Source file: <f111.eps>
@@ -789,12 +789,12 @@ Package epstopdf Info: Source file: <f111.eps>
 (epstopdf)                    size: 17784 bytes
 (epstopdf)             Command: <repstopdf --outfile=f111-eps-converted-to.pdf 
 f111.eps>
-(epstopdf)             \includegraphics on input line 504.
+(epstopdf)             \includegraphics on input line 514.
 Package epstopdf Info: Output file is already uptodate.
-<f111-eps-converted-to.pdf, id=868, 511.9125pt x 392.46625pt>
+<f111-eps-converted-to.pdf, id=860, 511.9125pt x 392.46625pt>
 File: f111-eps-converted-to.pdf Graphic file (type pdf)
 <use f111-eps-converted-to.pdf>
-Package pdftex.def Info: f111-eps-converted-to.pdf  used on input line 504.
+Package pdftex.def Info: f111-eps-converted-to.pdf  used on input line 514.
 (pdftex.def)             Requested size: 252.0pt x 193.19644pt.
 Package epstopdf Info: Source file: <fig2_last.eps>
 (epstopdf)                    date: 2019-10-21 19:43:23
@@ -804,15 +804,17 @@ Package epstopdf Info: Source file: <fig2_last.eps>
 (epstopdf)                    size: 12941 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig2_last-eps-converted-to
 .pdf fig2_last.eps>
-(epstopdf)             \includegraphics on input line 511.
+(epstopdf)             \includegraphics on input line 521.
 Package epstopdf Info: Output file is already uptodate.
-<fig2_last-eps-converted-to.pdf, id=869, 511.9125pt x 392.46625pt>
+<fig2_last-eps-converted-to.pdf, id=861, 511.9125pt x 392.46625pt>
 File: fig2_last-eps-converted-to.pdf Graphic file (type pdf)
 <use fig2_last-eps-converted-to.pdf>
-Package pdftex.def Info: fig2_last-eps-converted-to.pdf  used on input line 511
+Package pdftex.def Info: fig2_last-eps-converted-to.pdf  used on input line 521
 .
 (pdftex.def)             Requested size: 252.0pt x 193.19644pt.
- [6 <./figure11-eps-converted-to.pdf>] (./pr.bbl
+ [6]
+(./pr.bbl [7 <./figure11-eps-converted-to.pdf> <./f111-eps-converted-to.pdf> <.
+/fig2_last-eps-converted-to.pdf>]
 Underfull \hbox (badness 2409) in paragraph at lines 60--64
 []\T1/ptm/m/n/8 (2018) xran fo-rum merges with c-ran al-liance
  []
@@ -827,7 +829,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--64
 \T1/ptm/m/n/8 https://www.businesswire.com/news/home/20180227005673/en/xRAN-
  []
 
-[7 <./f111-eps-converted-to.pdf> <./fig2_last-eps-converted-to.pdf>])
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -845,7 +847,7 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  7799 strings out of 492649
  115385 string characters out of 6133384
- 213918 words of memory out of 5000000
+ 218918 words of memory out of 5000000
  11510 multiletter control sequences out of 15000+600000
  121974 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -872,10 +874,10 @@ ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/
 /texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/
 type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (8 pages, 571947 bytes).
+Output written on pr.pdf (8 pages, 572878 bytes).
 PDF statistics:
- 992 PDF objects out of 1000 (max. 8388607)
- 852 compressed objects within 9 object streams
+ 984 PDF objects out of 1000 (max. 8388607)
+ 844 compressed objects within 9 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

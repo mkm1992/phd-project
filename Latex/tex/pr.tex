@@ -110,9 +110,18 @@ a M/M/1 queue. In \cite{guo2016exploiting}, M/D/1 queue is modeled for transmiss
 
 In this paper, as  depicted in figure \ref{fig:c11}, the downlink of the O-RAN system is assumed. UEs are divided to different groups according to 
 their service requirements. Also RAN is decoupled to slices to provide requirements of services. Optimal power allocation and joint mapping slices to services are applied. In addition, mapping slices to physical resources is taken to account.\newline
-In \ref{systemmodel}, system model which contains obtaining achievable rates, processing and transmission delay, and physical resources is expressed. Also, problem statements is explained and decomposed to two
+The contribution of the paper is expressed as follow:
+\begin{itemize}
+\item In this paper, joint RAN slicing and resource allocation is considered in an end to end O-RAN system.
+\item UEs are categorized into different class of services based on their service requirements. RAN which contains RRHs, PRBs, and VNFs ,in the two layer of processing, are classified into different group of slices.  
+\item The problem is decomposed into two independent sub-problems. 
+\item Heuristic algorithms are applied for the sub-problems to efficiently obtain the solution.
+\end{itemize}
+
+The rest of the paper is organized as follows. In Section \ref{systemmodel}, system model which contains obtaining achievable rates, processing and transmission delay, and physical resources is expressed. Also, problem statements is explained and decomposed to two
 different sub-problems. 
-In \ref{proposedmethod}, heuristic algorithms for the sub-problems is presented. In \ref{simul}, numerical results, is depicted for the sub-problems.
+In Section \ref{proposedmethod}, heuristic algorithms for the sub-problems is presented. In Section \ref{simul}, numerical results, is depicted for the sub-problems.
+
 
 \section{System Model and Problem Formulation}\label{systemmodel}
 In this section, first, we first present the system model, Then we obtain achievable rates and delays for the downlink (DL) of the O-RAN architecture.
@@ -190,14 +199,15 @@ $\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where, $
 Furthermore, the mean arrival data rate of the second layer which contains MAC and HY/PHY is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$. 
 It is assumed there are dispatchers in each layer for each slice to divide the incoming traffic to VNFs equally. Each dispatcher first processes the incoming traffic and divides equally to each VNF  \cite{frdl,luong2018novel,luong2018novel1}.
 Suppose the baseband processing of each VNF is depicted as a M/M/1 processing queue.
-Each packet is processed by one of the VNFs of slices. So the mean delay of the $s^{th}$ slice in the first layer which is modeled as M/M/1 queue from queuing theory is formulated as
+Each packet is processed by one of the VNFs of slices. So the mean delay of the $s^{th}$ slice in the first and the second layer, which is modeled as M/M/1 queue from queuing theory, is formulated as follow
+,respectively
 \begin{equation}
-d_{s_1} = \frac{1}{\mu_1 - \alpha_{s}/{M_{s_1}}}.
+\begin{split}
+d_{s_1} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s_1}}} \\
+d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s_2}}}.
+\end{split}
 \end{equation}
-Also, the delay of $s^{th}$ slice in the second layer is
-\begin{equation}
-d_{s_2} = \frac{1}{\mu_2 - \alpha_{s}/{M_{s_2}}}.
-\end{equation}
+where, $\mu_1$ and $\mu_2$ is the computational capacity of the first and the second layer respectively.
 In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice as a result of wireless transmission. The arrival data rate of wireless transmission
  is equal to the arrival data rate of dispatchers (used as a traffic divider) for each slice divide traffic data and transmit divided traffic to VNFs.
 Moreover, it is assumed that the service time of transmission queue for each slice $s$ has 
