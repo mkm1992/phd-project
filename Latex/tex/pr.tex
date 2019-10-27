@@ -24,6 +24,7 @@
 \newtheorem{corollary}{Corollary}   
 \newcommand{\diag}{\mathop{\mathrm{diag}}}
 \DeclareMathOperator{\E}{\mathbb{E}}
+
 \begin{document}
 
 \title{Joint Power Allocation and Network Slicing In an End to End O-RAN System
@@ -113,7 +114,7 @@ In this paper, as  depicted in figure \ref{fig:c11}, the downlink of the O-RAN s
 their service requirements. Also RAN is decoupled to slices to provide requirements of services. Optimal power allocation and joint mapping slices to services are applied. In addition, mapping slices to physical resources is taken to account.\newline
 The contribution of the paper is expressed as follow:
 \begin{itemize}
-\item In this paper, joint RAN slicing and resource allocation is considered in an end to end O-RAN system.
+\item In this paper, joint network slicing and resource allocation is considered in an end to end O-RAN system.
 \item UEs are categorized into different class of services based on their service requirements. RAN which contains RRHs, PRBs, and VNFs ,in the two layer of processing, are classified into different group of slices.  
 \item The problem is decomposed into two independent sub-problems. 
 \item Heuristic algorithms are applied for the sub-problems to efficiently obtain the solution.
@@ -147,8 +148,10 @@ $\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of 
 \newline 
 To obtain SNR as formulated in \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service
 \begin{equation}\label{eq3}
-\bold{y}_{U_v} = \sum_{s = 1}^{S}\sum_{k=1}^{K_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{U}_v}+ \boldsymbol{q}_{R_s}) \zeta_{U_v,k,s} a_{v,s}+ \boldsymbol{z}_{\mathcal{U}_v};
+\bold{y}_{U_v} = \sum_{s = 1}^{S}\sum_{k=1}^{K_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v} \
+\mathfrak{y}_{R_s}\zeta_{U_v,k,s} a_{v,s}+ \boldsymbol{z}_{\mathcal{U}_v},
 \end{equation}
+where, $\mathfrak{y}_{R_s} = \boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{U}_v}+ \boldsymbol{q}_{\mathcal{R}_s}$
 Where $\boldsymbol{x}_{ \mathcal{U}_v} = [x_{ u_{(v,1)}},...,x_{ u_{(v,\mathcal{U}_v)}}]^T \in \mathbb{C}^{{R}_s } $ depicts the transmitted symbol vector of UEs in $v^{th}$ set of service,  $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power.
 In addition, $\boldsymbol{q}_{R_s} \in \mathbb{C}^{{R}_s }  $ indicates the quantization noise which, is made from signal compression in BBU.
 Besides, $\boldsymbol{P}_{U_v} = \diag{(p_{u_{(v,1)}}, ..., p_{u_{(v,\mathcal{U}_v)}})}$.
@@ -208,7 +211,8 @@ d_{s_1} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}} \\
 d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s,2}}}.
 \end{split}
 \end{equation}
-where, $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layer respectively, due to the fact that the service time of each data packet has an exponential distribution for $\mu_i>\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$.
+where, $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layer respectively, due to the fact that the service time of each data packet has an exponential distribution for $\mu_i>\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$. Besides, $\alpha_{s}$ is the data arrival rate which is divided 
+by dispatcher before arriving to VNFs. So the data arrival rate of each VNF in each layer of slice $s$ is $\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$.
 In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice as a result of wireless transmission . The arrival data rate of wireless transmission
  is equal to the arrival data rate of dispatchers (used as a traffic divider) for each slice \cite{frdl}.
 Moreover, it is assumed that the service time of transmission queue for each slice $s$ has 
@@ -239,30 +243,27 @@ The amount of memory, storage and CPU is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$
 \begin{equation*}
 \tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}} \};
 \end{equation*}
-Also we define a weighted parameter of $\tau_j$ as follow
-\begin{equation}\label{wt}
-\begin{split}
-\hat{\Omega}_{s}^{tot} &= w_R \bar{\Omega}_{R_s}^{tot} + w_M \bar{\Omega}_{M_s}^{tot} + w_C \bar{\Omega}_{C_s}^{tot} \\
-\hat{\tau}_j &= w_R \tau_{R_{j}} + w_M \tau_{M_{j}} + w_C \tau_{C_{j}},
-\end{split}
-\end{equation}
-Where, $\boldsymbol{w} = \{w_R, w_M, w_C\}$ is the weight of memory, storage and CPU that is used for Algorithm \ref{alg3}.
 In this system model, the placement of physical DC resources to VNFs is considered. $y_{s,d}$ is a binary variable indicates whether $d^{th}$ DC is connected to VNFs of $s^{th}$ slice or not.
 \subsection{Problem Statement}
 One of the most important parameters to measure the optimality of the system is energy efficiency which is represented as a sum-rate to sum-power 
 \begin{equation}
-\eta(\boldsymbol{P},\boldsymbol{A}) := \frac{\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} }{\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}} = \frac{\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A})}{P_{r_{tot}}(\boldsymbol{P},\boldsymbol{A})},
+\eta(\boldsymbol{P},\boldsymbol{A}) := \frac{\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} }{\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}} = \frac{\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A})}{P_r^{{tot}}(\boldsymbol{P},\boldsymbol{A})},
 \end{equation}
-where, $\sum\limits_{s=1}^{S}\sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}$ is the total power consumption of all RRHs in all slices. Also, $\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} $ is the toal rates of all UEs applied for all types of services. 
+where, $P_r^{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{s=1}^{S}\sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}$ is the total power consumption of all RRHs in all slices. Also, $\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} $ is the toal rates of all UEs applied for all types of services. 
 Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
-$\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as  
+$\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as 
 \begin{equation*}
-\phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d} - \E{[\phi]}\sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} .
+\phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d}.
 \end{equation*} 
+Also, a cost function for the placement of VNFs into DCs is defined as 
+\begin{equation}\label{eqpsi}
+ \psi_{tot} = \phi_{tot} - \nu \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s}
+\end{equation}
+where, $\nu$ is a design variable to value between the first term of \eqref{eqpsi} which is the total power consumption of physical resources and the second term that is shown the amount of admitted slices to have physical resources.   
 Our goal is to maximize sum-rate and minimize sum-power (the total power of all RRHs and the total power consumption of baseband processing at all DCs) simultaneously, with the presence of constraints which is written as follow, 
 \begin{subequations}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{Y} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})+\frac{1}{\phi_{tot}(\boldsymbol{Y})} \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{Y} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})+\frac{1}{\psi_{tot}(\boldsymbol{Y})} \\
 \text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i, 
  \label{c11} \\
 &p_{u_{(v,k)}}  \geq 0  &&\quad \forall v, \forall k,\label{c12} \\
@@ -271,19 +272,20 @@ Our goal is to maximize sum-rate and minimize sum-power (the total power of all 
 &D_{s} \leq D_{s}^{max}  &&\quad \forall s,\label{c15} \\
 & \sum_{s=1}^{S}a_{v,s} \geq 1 &&\quad \forall s, \label{c21} \\
 & \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} &&\quad \forall s,\label{c23} \\
-& \bar{\Omega}_{\mathfrak{z}(s)}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z}(f,s)} \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_{\mathfrak{z}_d}                      
- && \quad \forall \mathfrak{z}, \forall s; \label{c22}
+ &\bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_{\mathfrak{z}_d}                     
+ && \quad  \forall s, \forall \mathfrak{z}\in \mathcal{E}; \label{c22}
 \end{alignat}
 \label{constraints}
 \end{subequations}
-Where,$\boldsymbol{P} =[p_{u(v,k)}]  \forall v , \forall k $, is the matrix of power for UEs, $\boldsymbol{A} =[a_{v,s}]  \forall v , \forall s $ denotes the binary variable for connecting slices to services and $\boldsymbol{Y} =[y_{s,d}]   \forall s ,  \forall d $ is a binary variable shown whether 
+where, $\boldsymbol{P} =[p_{u(v,k)}] \:\: \forall v , \forall k $, is the matrix of power for UEs, $\boldsymbol{A} =[a_{v,s}] \:\: \forall v , \forall s $ denotes the binary variable for connecting slices to services and $\boldsymbol{Y} =[y_{s,d}]  \:\: \forall s ,  \forall d $ is a binary variable shown whether 
 the physical DC is connected to a VNFs of a slice or not. 
-\eqref{c11} and \eqref{c12} indicate that the power of each RRH do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. Also \eqref{c13} shows that the rate of each UE is more than a threshold. \eqref{c14} and \eqref{c15} depicts that the capacity of the fronthaul link is limited, and the delay of receiving signal should be less than a threshold, respectively.  
+\eqref{c11} and \eqref{c12} indicate that the power of each RRH do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. Also \eqref{c13} shows that the rate of each UE is more than a threshold. \eqref{c14} and \eqref{c15} expressed the limited capacity of the fronthaul link, and the limited delay of receiving signal, respectively.  
 Furthermore, \eqref{c21}
-ensures that each service is connected to one or more slices.
-Also, \eqref{c23} guarantees that each slice (VNFs in two layers of slices) has been placed to one or more physical resources of DCs. Moreover, \eqref{c22}  $\mathfrak{z}\in \{M,R,C\}$, supports 
+ensures that each service is connected to at least one slice.
+Also, \eqref{c23}, guarantees that each slice (VNFs in two layers of slices) has been placed to one or more physical resources of DCs. Moreover, in \eqref{c22}  $\mathcal{E} = \{M,S,C\}$ and the constraint supports 
 that we have enough physical resources for VNFs of each slice.\newline 
-The main optimizaiton problem which, is formulated as \eqref{constraints}, can be decomposed into two independent optimization problems A and B since the variables can be obtained independently. Problem A is defined as 
+The optimizaiton problem in \eqref{constraints}, can be decomposed into two independent optimization problems A and B since the variables can be obtained independently and respectively. In problem A, 
+the variables $\boldsymbol{P}$ and $ \boldsymbol{A}$ is obtained. The problem A is as follow
 \begin{subequations}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{A} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})\\
@@ -296,24 +298,26 @@ The main optimizaiton problem which, is formulated as \eqref{constraints}, can b
 \end{alignat} 
 \label{constraints1}
 \end{subequations}
-Problem B is 
+In problem B, $ \boldsymbol{Y}$ is obtained. The problem B is
 \begin{subequations}
 \begin{alignat}{4}
-\min\limits_{\boldsymbol{y} }   \quad &   \phi_{tot}(\boldsymbol{Y})\\
+\min\limits_{\boldsymbol{y} }   \quad &   \psi_{tot}(\boldsymbol{Y})\\
 \text{subject to} \quad & \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} &&\quad \forall s, \\
-&  \bar{\Omega}_{\mathfrak{z}(s)}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z}(f,s)} \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_{\mathfrak{z}_d}                      
- && \quad \forall \mathfrak{z}, \forall s. \label{eqomega}
+ &\bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_{\mathfrak{z}_d}                     
+ && \quad  \forall s, \forall \mathfrak{z}\in \mathcal{E};  \label{eqomega}
 \end{alignat}
 \label{constraints2}
 \end{subequations}
-\section{Proposed Method}\label{proposedmethod}
+\section{Hueristic Method}\label{proposedmethod}
 In this subsection, the proposed method is applied to solve the optimization problem.
 We want to solve \eqref{constraints1}. Since the problem is non-convex and NP-Hard, iterative algorithm is applied.
 To solve the problem and obtain $\boldsymbol{A}$ and $\boldsymbol{P}$ we divide problem \eqref{constraints1} into 
-two different part that can be solved iteratively.  
+two different part that can be solved iteratively. 
+Firstly, in the first part of sub-problem A, we need to obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = P_{max}$ in the problem \eqref{constraints1}. Also we fixed $\eta = 0$. Afterward, by achieving $\boldsymbol{A}$, in the second part, we just need to acquire $\boldsymbol{P}$. This part of the problem can be approximated and converted to a convex problem, so the problem can be solved by convex methods. After solving $\boldsymbol{P}$, $\eta$ is updated. Then in the next iteration, with new $\boldsymbol{P}$     
+and $\eta$ the two parts of the problems is solved until the algorithm converged. 
 \subsection{First Part of Sub-Problem A}\label{firstsub}
-Firstly, we need to obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P}$ in the problem \eqref{constraints1} and updating this parameter at the end of each iteration. Two different methods are applied to acquire $\boldsymbol{A}$. 
-The details of the heuristic algorithm are represented in \textbf{Algorithm} \eqref{alg}.  
+Two different methods are applied to acquire $\boldsymbol{A}$. 
+The details of the heuristic algorithm are represented in algorithm \ref{alg}.  
 \begin{algorithm}
 \caption{Mapping Slice to Service}\label{alg}
 \begin{algorithmic}[1]
@@ -347,11 +351,12 @@ In this part, by assuming that $\boldsymbol{A}$ is fixed, the power of UEs in ea
 \end{equation}
 \end{theorem}
 \begin{proof}
-See \cite{aaa}, Appendix A
+See \cite[Appendix A]{aaa}
 \end{proof}
-The second subproblem can  be solved using the Lagrangian function and iterative algorithm. 
-Since, Interference is a function of the power of UEs, for simplicity, we assume an upper bound $\bar{I}_{u_{(v,i)}}$ for interference (the worst-case). 
-In order to make \eqref{constraints1} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cc14} and \eqref{cc15}.
+The second sub-problem can  be solved using the Lagrangian function and iterative algorithm. 
+Since, Interference is a function of the power of UEs, to make it tractable, we assume an upper bound $\bar{I}_{u_{(v,i)}}$ for interference (the worst-case). 
+In order to make \eqref{constraints1} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cc14} and \eqref{cc15} ($p_{r_{(s,i)}} = \sigma_{q_{r(s,j)}}^2\times 2^{C_{r_{(s,i)}}}$ and $1/(D_{s}- d_{s_1} + d_{s_2})+\alpha_s$ respectively ).
+Assume $\boldsymbol{\lambda}$, $\boldsymbol{\mu}$, $\boldsymbol{\xi}$, and $\boldsymbol{ \kappa}$ are the matrix of Lagrangian multipliers that have non-zero positive elements.
 The Lagrangian function is written as follow
 \begin{equation}\label{lagrang}
 \begin{split}
@@ -359,27 +364,28 @@ The Lagrangian function is written as follow
 - \eta \sum\limits_{v=1}^{V} \sum\limits_{i=1}^{\mathcal{R}_s}\bar{p}_{r_{(s,i)}}\\
 &+\sum\limits_{s=1}^{S} \sum\limits_{k=1}^{U_v} \lambda_{u_{(v,k)}} (\mathcal{\bar{R}}_{d_{(s,k)}}-\mathcal{R}_{u_{(v,k)}}^{max})\\
 &- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \mu_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-P_{max})\\
-&- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \xi_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-\sigma_{q_{r(s,j)}}^2 2^{C_{r_{(s,i)}}^{max}}).\\ 
+&- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \xi_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-\sigma_{q_{r(s,i)}}^2 2^{C_{r_{(s,i)}}^{max}}).\\ 
 &+ \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v} \kappa_{u_{(v,k)}} \sum\limits_{s=1}^{S}(R_{u_{(v,k)}} -\mathfrak{D_s})a_{v,s}.\\ 
 \end{split}
 \end{equation}
-Where, $\mathfrak{D_s}=\frac{1}{D_{s}^{max}-d_{s_1}-d_{s_2}}+\alpha_s$. Also, $\boldsymbol{\lambda}$, $\boldsymbol{\mu}$, $\boldsymbol{\xi}$, and $\boldsymbol{ \kappa}$ are the matrix of Lagrangian multipliers that have non-zero positive elements. Optimal power is obtained from equation \eqref{lagrang} as follow
+where, $\mathfrak{D_s}=\frac{1}{D_{s}^{max}-d_{s_1}-d_{s_2}}+\alpha_s$. Optimal power is obtained from  \eqref{lagrang} 
 \begin{equation}
 p_{u(v,i)}^{*} = [\frac{\mathfrak{y}_{u(v,i)}\mathfrak{w}_{u(v,i)}-\mathfrak{x}_{u(v,i)}\mathfrak{z}_{u(v,i)}}{\mathfrak{x}_{u(v,i)}\mathfrak{w}_{u(v,i)} }]^+
 \end{equation}
 where, $\mathfrak{y}_{u(v,i)}= (\lambda_{u(v,i)}+\kappa_{u_{(v,k)}}+1)\frac{B}{Ln_2}$ and 
 $\mathfrak{w}_{u(v,i)} = \sum_{s=1}^{S}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{v,s}$. Also 
 $\mathfrak{z}_{u(v,i)} = BN_0 + \bar{I}_{u(v,i)}$ and $\mathfrak{x}_{u(v,i)} = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} ( \mu_{r_{u(s,i)}} + \xi_{r_{(s,i)}}+\eta)||w_{r_{(s,j)},u_{(v,i)}}||^2$. 
-By using sub-gradient method, the optimal power $\boldsymbol{P}$ is obtained. 
+By using sub-gradient method, the optimal power $\boldsymbol{P}$ is obtained \cite{mimoCran}. 
 %\section*{References}
 \subsection{Solving two part of Sub-problem A iteratively}
-In \eqref{firstsub} and \eqref{secondsub}, the details of solving each part of the subproblem are depicted. 
-Firstly, by the fixing power of each UE, $\boldsymbol{A}$ is obtained using Algorithm \eqref{alg}. Then by using the sub-gradient method, \eqref{secondsub} is solved and iteratively solves these problems until variables converge.
-Here, the algorithm of solving sub-problem A is shown in \textbf{Algorithm} \eqref{alg2}
+In \eqref{firstsub} and \eqref{secondsub}, the details of solving each part of the sub-problem are depicted. 
+Firstly, we obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = P_{max}$ in the problem \eqref{constraints1} and using algorithm \eqref{alg}. Also we fixed $\eta = 0$. Afterward, by achieving $\boldsymbol{A}$, in the second part, we acquire $\boldsymbol{P}$ using the sub-gradient method. After solving $\boldsymbol{P}$, $\eta$ is updated. Then in the next iteration, with new $\boldsymbol{P}$     
+and $\eta$ the two parts of the problems is solved until the algorithm converged. 
+Here, the algorithm of solving sub-problem A is shown in algorithm \eqref{alg2}
 \begin{algorithm}
 \caption{Joint Network Slicing and Power Allocation}\label{alg2}
 \begin{algorithmic}[1]
-\State Set the maximum number of iterations $I_{max}$, convergence condition $\epsilon_{\eta}$  and the initial value $\eta^{(1)} = 0$
+\State Set the maximum number of iterations $I_{max}$, convergence condition $\epsilon_{\eta}$  and the initial value $\eta^{(1)} = 0$ 
 \State Set $\boldsymbol{P} = \boldsymbol{P}_{max}$
 \For {$counter \gets 1$ to $I_{max}$}
 \State Achieve $\boldsymbol{A}$ by applying Algorithm \eqref{alg}
@@ -396,44 +402,53 @@ Here, the algorithm of solving sub-problem A is shown in \textbf{Algorithm} \eqr
 \end{algorithmic}
 \end{algorithm}
 \subsection{Sub-Problem B}
-In this subsection, we want to solve  \eqref{constraints2}, which is the placement of virtual resources to physical resources in order to minimize the number of using DCs. 
-To achieve optimum $\boldsymbol{Y}$ heuristic algorithm is applied. The details of the heuristic algorithm are written in \textbf{Algorithm} \eqref{alg3}. In this algorithm, firstly, we sort slices and DCs according to their sum weighted of their requirements. Secondly, we start mapping from the most needed slices to the DC with the most physical resources. After mapping DCs to slices, if some slices are not admitted, we start admitting remaining slices to more than one DCs. In the end, if DC with the lowest physical resources is free and can be served instead of DC with the highest physical resource, the slices remapped to new DC with the lowest physical resource since it has the lowest power consumption.  
+In this subsection, we would like to solve  \eqref{constraints2}, which is the placement of virtual resources to physical resources in order to minimize the cost function $\psi_{tot}$. 
+To achieve optimum $\boldsymbol{Y}$ heuristic algorithm is applied. The details of the heuristic algorithm are written in algorithm \eqref{alg3}. In this algorithm, firstly, we sort slices and DCs according to their sum-weighted of their requirements (line \ref{31} and line \ref{32} of algorithm \ref{alg3}).
+We define a weighted parameter for $\Omega_{\mathfrak{z},s}^{tot}$ and $\tau_j^\mathfrak{z}$ as follow
+\begin{equation}\label{wt}
+\begin{split}
+\hat{\Omega}_{s}^{tot} &= w_M \bar{\Omega}_{M,s}^{tot} + w_S \bar{\Omega}_{S,s}^{tot} + w_C \bar{\Omega}_{C,s}^{tot} \\
+\hat{\tau}_j &= w_M \tau_{{j}}^M + w_S \tau_{{j}}^S + w_C \tau_{{j}}^C,
+\end{split}
+\end{equation}
+where, $\boldsymbol{w} = \{w_M, w_S, w_C\}$ is the weight of memory, storage and CPU.
+Secondly, we start mapping from the most needed slices to the DC with the most physical resources (from line \ref{33} to line \ref{34} of algorithm \ref{alg3}). After mapping DCs to slices, if some slices are not admitted, we start admitting remaining slices to more than one DCs (from line \ref{35} to line \ref{36} of algorithm \ref{alg3}). At the end, if DC with the lowest physical resources is free and can be served instead of DC with the highest physical resource, the slices remapped to new DC with the lowest physical resource since it has the lowest power consumption (line \ref{37} of algorithm \ref{alg3}).  
 If a slice does not admit to a specific DC, it remains for the next placement. In next placement the remaining slices, map to more than one DC according to their requirements.
 \begin{algorithm}
 \caption{Plecement of Physical resources into Virtual resources}\label{alg3}
 \begin{algorithmic}[1]
-\State Sort Slices according to $\hat{\Omega}_{s}^{tot} , \forall s$ in descending order.
-\State Sort DCs according to $\hat{\tau}_j , \forall j$ in descending order. 
+\State Sort Slices according to $\hat{\Omega}_{s}^{tot} , \forall s$ in descending order.\label{31}
+\State Sort DCs according to $\hat{\tau}_j , \forall j$ in descending order. \label{32}
 \State $\boldsymbol{Y} = \boldsymbol{0}$
-\For {$d \gets 1$ to $D_c$}
+\For {$d \gets 1$ to $D_c$}\label{33}
 \For {$s \gets 1$ to $S$}
 \If {$\sum_{d=1}^{D_c}y_{s,d}==0$ and $\bar{\Omega}_{\mathfrak{z}(s)}^{tot} \leq \tau_{\mathfrak{z}_j} \forall \mathfrak{z}, \forall s$  } 
 \State Set $y_{s,d} = 1$;
-\State {$\tau_j$ $\gets$ {$\tau_j - \bar{\Omega}_{s}^{tot}$}}
+\State {$\tau_j^{\mathfrak{z}}$ $\gets$ {$\tau_j^{\mathfrak{z}} - \bar{\Omega}_{\mathfrak{z},s}^{tot}$}} $\mathfrak{z}\in \{M,S,C\}$
 \EndIf 
 \State \textbf{end if}
 \EndFor 
 \State \textbf{end for}
 \EndFor 
-\State \textbf{end for}
-\State  $\{ind_{remaining} = s|({\sum_{d=1}^{D_c}y_{s,d}==0})\}$
+\State \textbf{end for} \label{34}
+\State  $ind_{rem} = \{s|({\sum_{d=1}^{D_c}y_{s,d}==0})\}$ \label{35}
 \State Sort remaining amount of DCs same as before in descending order.
 \State Sort remaining slices same as before in descending order.
-\For {$r \gets 1$ to $S_{remaining}$}
+\For {$r \gets 1$ to $S_{rem}$}
 \For {$n \gets 1$ to $D_c$}
 \State Set $y_{s,d} = 1$;
-\State {$\bar{\Omega}_{s}^{tot}$ $\gets$ {$\bar{\Omega}_{s}^{tot}- \tau_j$}}
+\State {$\bar{\Omega}_{{\mathfrak{z}},s}^{tot}$ $\gets$ {$\bar{\Omega}_{{\mathfrak{z}},s}^{tot}- \tau_j^{\mathfrak{z}}$}}
 \If {$\bar{\Omega}_{s}^{tot}==0$}
 \State Set $y_{s,d} = 1$;
-\State {$\tau_j$ $\gets$ {$\tau_j - \bar{\Omega}_{s}^{tot}$}}
+\State {$\tau_j^{\mathfrak{z}}$ $\gets$ {$\tau_j^{\mathfrak{z}} - \bar{\Omega}_{\mathfrak{z},s}^{tot}$}} $\mathfrak{z}\in \{M,S,C\}$
 \State {break inner loop}
 \EndIf 
 \State \textbf{end if}
 \EndFor 
 \State \textbf{end for}
 \EndFor 
-\State \textbf{end for}
-\State Remapping DCs must be done to prevent wasting Energy
+\State \textbf{end for} \label{36}
+\State Remapping DCs must be done to prevent wasting Energy \label{37}
 \end{algorithmic}
 \end{algorithm}
 \section{Numerical Results}\label{simul}
@@ -462,14 +477,15 @@ Parameter & Value \\ [0.5ex]
  \end{tabular}
  \end{center}
  \end{table}
-In Fig. \ref{fig:f1a}, energy efficiency is depicted for two different numbers of services with the different mean number of UEs in each service (the parameters for simulation listed in table \ref{table:1a}). The optimal method is $0.016$ bits/J/Hz better than the proposed method for $V = 6$ and $E[U_v] = 10$, and also, $0.011$ bits/J/Hz better than the proposed method for $V = 3$ and, $E[U_v] = 10$. As it is shown, the Energy Efficiency is increased as a mean number of UEs rises.
+In Fig. \ref{fig:f1a}, energy efficiency is depicted for two different numbers of services with the different mean number of UEs in each service (the parameters for simulation listed in table \ref{table:1a}). The optimal method is obtained by using MOSEK toolbox to obtain $\boldsymbol{A}$ and CVX toolbox to obtain $\boldsymbol{P}$ and iteratively updates $\boldsymbol{A}$, $\eta$ and $\boldsymbol{P}$. The optimal method is $0.016$ bits/J/Hz better than the proposed method for $V = 6$ and $E[U_v] = 10$, and also, $0.011$ bits/J/Hz better than the proposed method for $V = 3$ and, $E[U_v] = 10$. As it is shown, the Energy Efficiency is increased as a mean number of UEs rises.
 \begin{figure}%[H]
   \centering
     \includegraphics[width=\linewidth]{figure11}
   \caption{Energy Efficiency vs. Mean Number of UEs in each Service}
   \label{fig:f1a}
 \end{figure} 
-In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two different numbers of DCs with the different number of slices (the parameters for simulation listed in table \ref{table:1} and \ref{table:2}). In this simulation, it is assumed that  just one DC can serve each slice, and it is not admitted by more than one DC. The proposed method is based on Algorithm \ref{alg3}, and the optimal method is done by the MOSEK toolbox.
+In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two different numbers of DCs with the different number of slices (the parameters for simulation listed in table \ref{table:1} and also we set $w_C = 320$, $w_S = 100$, $w_M =1$). In this simulation, it is assumed that  just one DC can serve each slice, and it is not admitted by more than one DC. The proposed method is based on Algorithm \ref{alg3}, and the optimal method is done by the MOSEK toolbox.
+\begin{small}
  \begin{table}
  \caption {Simulation Parameter} \label{table:1} 
  \begin{center}
@@ -477,46 +493,31 @@ In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two diffe
   \hline
   Parameter & Value \\ [0.5ex] 
   \hline\hline
-  Mean of CPU for DCs & 25.6GHz\\
+  Mean of CPU for DCs & 320GHz\\
   \hline
-  Mean of RAM for DCs & 128G\\
+  Mean of Memory for DCs & 1T\\
   \hline
- Mean of Memory for DCs & 10T \\
+ Mean of Storage for DCs & 100T \\
   \hline
-   Mean of CPU for Slices & 3.2GHz\\
+   Mean of CPU for Slices & 32GHz\\
   \hline
-  Mean of RAM for Slices & 16G\\
+  Mean of Memory for Slices & 100G\\
   \hline
- Mean of Memory for Slices & 1T \\ [1ex] 
+ Mean of Storage for Slices & 10T \\ [1ex] 
   \hline
  \end{tabular}
  \end{center}
  \end{table}
+\end{small}
 When we have two DCs, the proposed method and optimal method have approximately the same ratio of admitted slices. But by increasing the number of DCs to five, the performance of the proposed method reduced. Using five DCs, the difference between the
 proposed method and the optimal method in the worst case (44 slices) is about $23$ percentage. 
- \begin{table}
- \caption {Simulation Parameter} \label{table:2} 
- \begin{center}
-  \begin{tabular}{||c c ||} 
-  \hline
-  Parameter & Value \\ [0.5ex] 
-  \hline\hline
-   $w_C$ & 320\\
-  \hline
-  $w_R$  & 64\\
-  \hline
- $w_M$  & 1 \\ [1ex] 
-  \hline
- \end{tabular}
- \end{center}
- \end{table}
 \begin{figure}%[H]
   \centering
     \includegraphics[width=\linewidth]{f111}
   \caption{Ratio of Admitted Slices connected to just one DC vs. Total slices}
   \label{fig:f1}
 \end{figure} 
-In Fig. \ref{fig:f2}, the normalized resource consumption is depicted due to the number of slices (the parameters for simulation listed in table \ref{table:1} and \ref{table:2}). In this simulation, it is assumed that the number of DCs is entirely enough to cover all slices. The optimality of the placement of DCs to slices is measured. It is shown that how much resources of active DCs are not used. For ten slices, the difference between the optimal solution and the proposed solution is about $15$ percent. 
+In Fig. \ref{fig:f2}, the normalized resource consumption is depicted due to the number of slices (the parameters for simulation listed in table \ref{table:1} and also we set $w_C = 320$, $w_S = 100$, $w_M =1$). In this simulation, it is assumed that the number of DCs is entirely enough to cover all slices. The optimality of the placement of DCs to slices is measured. It is shown that how much resources of active DCs are not used. For ten slices, the difference between the optimal solution and the proposed solution is about $15$ percent. 
 \begin{figure}%[H]
   \centering
     \includegraphics[width=\linewidth]{fig2_last}
