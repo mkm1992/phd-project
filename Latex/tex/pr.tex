@@ -23,6 +23,7 @@
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}   
 \newcommand{\diag}{\mathop{\mathrm{diag}}}
+\DeclareMathOperator{\E}{\mathbb{E}}
 \begin{document}
 
 \title{Joint Power Allocation and Network Slicing In an End to End O-RAN System
@@ -74,10 +75,10 @@ The idea of O-RAN comes from two opinions. Firstly, according to real-time analy
 In an innovative O-RAN system, the programmable RAN software is decoupled from hardware, which can be run on any specific processing platforms, in order to be more flexible for mobile network operators MNOs especially for mobile virtual network operators (MVNOs)\cite{oran1}. 
 Openness is the specific feature of O-RAN. Open interface is one of the most crucial properties for O-RAN to enable MNOs and MVNOs, to define their own services.
 The concept of software defined network (SDN), which is the separation of control plane (CP), from user plane (UP), is deployed in an intelligent O-RAN architecture. The seperation of CP/UP is developed  through the E1 interface. Moreover, this separation, promote RRM by defining Non-RT
-and Near-RT) RAN Intelligent Controller (RIC) with the A1 and E2 interfaces .
+and Near-RT) RAN Intelligent Controller (RIC) with the A1 and E2 interfaces.
 O-RAN introduced interfaces such as open fronthaul interface that maps DU and RRU, an E2 interface, and an A1 interface between orchestration/NMS layer containing the non-real-time RIC
 (RIC non-RT) function and the eNB/gNB containing the near-real-time RIC
-(RIC near-RT) function.\cite{oranpaper}
+(RIC near-RT) function \cite{oranpaper}.
 
 The core idea of C-RAN is to split the radio remote head (RRH) from baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities \cite{cran1}.
 To communicate between BBU-Pool and RRHs, the fronthaul fiber link interface, is assumed with limited capacity. The compression of a message passed through these links is a consequence of limited fronthaul capacity\cite{frdl,simeone2016cloud,motalleb2017optimal}.
@@ -118,17 +119,17 @@ The contribution of the paper is expressed as follow:
 \item Heuristic algorithms are applied for the sub-problems to efficiently obtain the solution.
 \end{itemize}
 
-The rest of the paper is organized as follows. In Section \ref{systemmodel}, system model which contains obtaining achievable rates, processing and transmission delay, and physical resources is expressed. Also, problem statements is explained and decomposed to two
+The rest of the paper is organized as follows. In Section \ref{systemmodel}, system model which contains obtaining achievable rates, processing and transmission delay, and physical data center resources is expressed. Also, problem statements is explained and decomposed to two
 different sub-problems. 
 In Section \ref{proposedmethod}, heuristic algorithms for the sub-problems is presented. In Section \ref{simul}, numerical results, is depicted for the sub-problems.
 
 
 \section{System Model and Problem Formulation}\label{systemmodel}
-In this section, first, we first present the system model, Then we obtain achievable rates and delays for the downlink (DL) of the O-RAN architecture.
-Afterward, the main problem is expressed.
+In this section, first, we first present the system model, Then we obtain achievable rates and delays for the downlink (DL) of the O-RAN architecture. Afterward, we explained physical data center resources.
+Finally, the main problem is expressed.
 \subsection{System Model}
 Suppose there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single-antenna user equipments (UEs) that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $K_s$ Physical Resource Blocks (PRBs). All RRHs in a slice that is mapped to a service, transmit signals cooperatively to all the UEs in specific service \cite{motalleb2017optimal,mimoCran}. Each RRH $r \in \{1,2,...,R \}$ is mapped to BBU pool via an optical fiber link with limited fronthaul capacity.
-Suppose we have two processing layers in the BBU-Pool of O-RAN system which contain VNFs. The lower layer consist of high-PHY and MAC, and the upper layer consist of RLC, PDCP and SDAP.
+Suppose we have two processing layers in the BBU-Pool of O-RAN system which contain VNFs. The lower layer consist of high-PHY, MAC, and RLC, and the upper layer consist of RRC, PDCP and SDAP.
 Assume we have $M_1$ VNFs in the first layer and $M_2$ VNFs in the second layer for processing data .
 Each VNF in both layers connects to one or more slices. So in $s^{th}$ slice, there are $M_{s,1}$ VNFs in the first layer and $M_{s,2}$ VNFs in the second layer. All VNFs in first and second layer has the computational capacity that is  equal to $\mu_1$ and $\mu_2$, respectively. 
 Also, RRHs and PRBs can serve more than one slices. 
@@ -144,7 +145,7 @@ where $B$ is the bandwidth of system and $\rho_{u(v,i)}$ is the SNR of $i^{th}$ 
 where $p_{u(v,i)}$ represents the transmission power allocated by RRHs to $i^{th}$ UE in $v^{th}$ service, and 
 $\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of a wireless link from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the  transmit beamforming vector from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. Moreover, $BN_0$ denotes the power of Gaussian additive noise, and $I_{u(v,i)}$ is the power of interfering signals. Moreover, $a_{v,s} \in \{0,1\}$ is a binary variable that illustrates whether slice $s$ is mapped to service $v$ or not. If $a_{v,s} =1$ then, $v^{th}$ service is mapped to $s^{th}$ slice; otherwise, it is not mapped.
 \newline 
-To obtain SNR as formulated in \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service which is given by \eqref{eq3}
+To obtain SNR as formulated in \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service
 \begin{equation}\label{eq3}
 \bold{y}_{U_v} = \sum_{s = 1}^{S}\sum_{k=1}^{K_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{U}_v}+ \boldsymbol{q}_{R_s}) \zeta_{U_v,k,s} a_{v,s}+ \boldsymbol{z}_{\mathcal{U}_v};
 \end{equation}
@@ -191,52 +192,52 @@ Nevertheless, the rate of users on the fronthual link between BBU-Pool and the $
 \begin{equation}
 C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s}}{ \sigma_{q_{r(s,j)}}^2})},
 \end{equation}
-where, $a_{v,s}$ is a binary variable denotes which the slice $s$ is mapped to service $v$ or not .
+where, $a_{v,s}$ is a binary variable denotes whether the slice $s$ is mapped to service $v$ or not .
 \subsection{Mean Delay}
 Let the packet arrival of UEs have a Poisson Process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service. 
 Therefore, the mean arrival data rate of UEs map to $s^{th}$ slice in the first layer of the O-RAN which contains SDAP, PDCP, and RLC is 
 $\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where, $a_{v,s}$ is a binary variable which indicates whether the $v^{th}$ service is mapped to the $s^{th}$ slice or not. 
 Furthermore, the mean arrival data rate of the second layer which contains MAC and HY/PHY is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$. 
-It is assumed there are dispatchers in each layer for each slice to divide the incoming traffic to VNFs equally. Each dispatcher first processes the incoming traffic and divides equally to each VNF  \cite{frdl,luong2018novel,luong2018novel1}.
+It is assumed there are dispatchers in each layer for each slice to divide the incoming traffic to VNFs equally. The dispatcher processes the incoming traffic and divides it equally to processed by VNFs  \cite{frdl,luong2018novel,luong2018novel1}.
 Suppose the baseband processing of each VNF is depicted as a M/M/1 processing queue.
 Each packet is processed by one of the VNFs of slices. So the mean delay of the $s^{th}$ slice in the first and the second layer, which is modeled as M/M/1 queue from queuing theory, is formulated as follow
 ,respectively
 \begin{equation}
 \begin{split}
-d_{s_1} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s_1}}} \\
-d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s_2}}}.
+d_{s_1} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}} \\
+d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s,2}}}.
 \end{split}
 \end{equation}
-where, $\mu_1$ and $\mu_2$ is the computational capacity of the first and the second layer respectively.
-In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice as a result of wireless transmission. The arrival data rate of wireless transmission
- is equal to the arrival data rate of dispatchers (used as a traffic divider) for each slice divide traffic data and transmit divided traffic to VNFs.
+where, $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layer respectively, due to the fact that the service time of each data packet has an exponential distribution for $\mu_i>\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$.
+In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice as a result of wireless transmission . The arrival data rate of wireless transmission
+ is equal to the arrival data rate of dispatchers (used as a traffic divider) for each slice \cite{frdl}.
 Moreover, it is assumed that the service time of transmission queue for each slice $s$ has 
- an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue \cite{frdl,luong2018novel,luong2018novel1}. Therefore, 
+ an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue \cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. Therefore, 
 the mean delay of the transmission layer is 
 \begin{equation}
 d_{s_{tr}} = \frac{1}{R_{{tot}_s} - \alpha_{s}};
 \end{equation}
-Where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$.
+where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$ is the total achievable rate of each slice that is mapped to specific service.
 Mean delay of each slice is
 \begin{equation}
 D_{s} = d_{s_1} + d_{s_2} + d_{s_{tr}} \forall s.
 \end{equation} 
 \subsection{Physical Data Center Resource}
 Each VNF requires
-physical resources that contain RAM, Memory, and CPU.
-Let, the required resources for VNF $f$ in slice $s$ is represented by a three-dimensional vector as follow
+physical resources that contain memory, storage and CPU.
+Let the required resources for VNF $f$ in slice $s$ is represented by a three-dimensional vector as follow
 \begin{equation}
-\bar{\Omega}_{(f,s)} = \{\Omega_{R_{f,s}}, \Omega_{M_{f,s}}, \Omega_{C_{f,s}} \};
+\bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f \};
 \end{equation} 
-Where,$\bar{\Omega}_{(f,s)}\in \mathbb{C}^{3}$ and $\Omega_{R_{f,s}}, \Omega_{M_{f,s}}, \Omega_{C_{f,s}}$ indicate the amount of required RAM, Memory, and CPU, respectively.
-Moreover total amount of required RAM, Memory, and CPU of all VNFs of a slice is a three-dimensional vector which is defined as
+where, $\bar{\Omega}_{s}^f\in \mathbb{C}^{3}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f$ indicate the amount of required memory, storage, and CPU, respectively.
+Moreover the total amount of required memory, storage and CPU of all VNFs of a slice is a three-dimensional vector which is defined as
 \begin{equation}
-\bar{\Omega}_{s}^{tot} = \sum_{f=1}^{M_{s_1} + M_{s_2}}\bar{\Omega}_{(f,s)};
+\bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{M_{s_1} + M_{s_2}}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C\};
 \end{equation}
-Also, there are $D_c$ data centers (DC), which served VNFs. Each DC contains several servers that supply VNF's requirements.
-The amount of RAM, Memory, and CPU is denoted by $\tau_{R_{j}}, \tau_{M_{j}}$and $\tau_{C_{j}} $ for $j^{th}$ DC, respectively.
+Also, there are $D_c$ data centers (DC), serving VNFs. Each DC contains several servers that supply VNF's requirements.
+The amount of memory, storage and CPU is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$and $\tau_{C_{j}} $ for $j^{th}$ DC, respectively.
 \begin{equation*}
-\tau_j = \{\tau_{R_{j}}, \tau_{M_{j}}, \tau_{C_{j}} \};
+\tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}} \};
 \end{equation*}
 Also we define a weighted parameter of $\tau_j$ as follow
 \begin{equation}\label{wt}
@@ -245,20 +246,20 @@ Also we define a weighted parameter of $\tau_j$ as follow
 \hat{\tau}_j &= w_R \tau_{R_{j}} + w_M \tau_{M_{j}} + w_C \tau_{C_{j}},
 \end{split}
 \end{equation}
-Where, $\boldsymbol{w} = \{w_R, w_M, w_C\}$ is the weight of RAM, Memory, and CPU that is used for Algorithm \ref{alg3}.
+Where, $\boldsymbol{w} = \{w_R, w_M, w_C\}$ is the weight of memory, storage and CPU that is used for Algorithm \ref{alg3}.
 In this system model, the placement of physical DC resources to VNFs is considered. $y_{s,d}$ is a binary variable indicates whether $d^{th}$ DC is connected to VNFs of $s^{th}$ slice or not.
 \subsection{Problem Statement}
-One of the most important parameters to estimate the optimality of the system is energy efficiency which is represented as a sum-rate to sum-power 
+One of the most important parameters to measure the optimality of the system is energy efficiency which is represented as a sum-rate to sum-power 
 \begin{equation}
 \eta(\boldsymbol{P},\boldsymbol{A}) := \frac{\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} }{\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}} = \frac{\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A})}{P_{r_{tot}}(\boldsymbol{P},\boldsymbol{A})},
 \end{equation}
-Where, $\sum\limits_{s=1}^{S}\sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}$ is the total power consumption of all RRHs in all slices. Also, $\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} $ is the toal rates of all UEs applied for all types of services. 
+where, $\sum\limits_{s=1}^{S}\sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}$ is the total power consumption of all RRHs in all slices. Also, $\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} $ is the toal rates of all UEs applied for all types of services. 
 Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
 $\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as  
 \begin{equation*}
-\phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d}.
+\phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d} - \E{[\phi]}\sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} .
 \end{equation*} 
-In this paper, the main goal is to maximize sum-rate and minimize sum-power (the total power of all RRHs and the total power consumption of baseband processing at all DCs) simultaneously, with the presence of constraints which is written as follow, 
+Our goal is to maximize sum-rate and minimize sum-power (the total power of all RRHs and the total power consumption of baseband processing at all DCs) simultaneously, with the presence of constraints which is written as follow, 
 \begin{subequations}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{Y} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})+\frac{1}{\phi_{tot}(\boldsymbol{Y})} \\
@@ -435,7 +436,7 @@ If a slice does not admit to a specific DC, it remains for the next placement. I
 \State Remapping DCs must be done to prevent wasting Energy
 \end{algorithmic}
 \end{algorithm}
-\section{Simulation}\label{simul}
+\section{Numerical Results}\label{simul}
 In this section, simulation and numerical results for the main problem are depicted.
  \begin{table}
  \caption {Simulation Parameter} \label{table:1a} 
