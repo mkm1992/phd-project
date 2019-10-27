@@ -21,18 +21,18 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{orant}
-\BIBentryALTinterwordspacing
-I.~Scales. (2018) The open ran (oran) alliance formed to lever open 5g for
-  ‘other’ technologies? and much more... [Online]. Available:
-  \url{https://www.telecomtv.com/content/mwc/the-open-ran-oran-alliance-formed-to-lever-open-5g-for-other-technologies-and-much-more-16429}
-\BIBentrySTDinterwordspacing
-
 \bibitem{oran1}
 \BIBentryALTinterwordspacing
 B.~Fletcher. (2019) Vodafone initiates first open ran trials in the u.k.,
   challenging traditional vendors. [Online]. Available:
   \url{https://www.fiercewireless.com/tech/vodafone-initiates-first-open-ran-trials-uk-challenging-traditional-vendors}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oranpaper}
+\BIBentryALTinterwordspacing
+I.~Scales. (2018) The open ran (oran) alliance formed to lever open 5g for
+  ‘other’ technologies? and much more... [Online]. Available:
+  \url{https://www.o-ran.org/resources}
 \BIBentrySTDinterwordspacing
 
 \bibitem{cran1}
@@ -62,6 +62,12 @@ M.~K. Motalleb, A.~Kabiri, and M.~J. Emadi, ``Optimal power allocation for
   \url{https://www.businesswire.com/news/home/20180227005673/en/xRAN-Forum-Merges-C-RAN-Alliance-Form-ORAN}
 \BIBentrySTDinterwordspacing
 
+\bibitem{lee2018dynamic}
+Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
+  multitenant heterogeneous cloud radio access networks,'' \emph{IEEE
+  Transactions on Wireless Communications}, vol.~17, no.~4, pp. 2146--2161,
+  2018.
+
 \bibitem{ns1}
 X.~Zhou, R.~Li, T.~Chen, and H.~Zhang, ``Network slicing as a service: enabling
   enterprises' own software-defined cellular networks,'' \emph{IEEE
@@ -85,11 +91,10 @@ S.-H. Park, O.~Simeone, O.~Sahin, and S.~S. Shitz, ``Fronthaul compression for
   information theory,'' \emph{IEEE Signal Processing Magazine}, vol.~31, no.~6,
   pp. 69--79, 2014.
 
-\bibitem{lee2018dynamic}
-Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
-  multitenant heterogeneous cloud radio access networks,'' \emph{IEEE
-  Transactions on Wireless Communications}, vol.~17, no.~4, pp. 2146--2161,
-  2018.
+\bibitem{guo2016exploiting}
+K.~Guo, M.~Sheng, J.~Tang, T.~Q. Quek, and Z.~Qiu, ``Exploiting hybrid
+  clustering and computation provisioning for green c-ran,'' \emph{IEEE Journal
+  on Selected Areas in Communications}, vol.~34, no.~12, pp. 4063--4076, 2016.
 
 \bibitem{mimoCran}
 P.-R. Li, T.-S. Chang, and K.-T. Feng, ``Energy-efficient power allocation for

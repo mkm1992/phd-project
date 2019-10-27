@@ -22,7 +22,7 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}   
-
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
 \begin{document}
 
 \title{Joint Power Allocation and Network Slicing In an End to End O-RAN System
@@ -59,8 +59,8 @@ To increase enrgy efficiency and optimize the allocation of resources, Network S
 
 
 In this paper, we elaborate joint NS in RAN and Core of O-RAN system to investigate the power 
-of each User Equipment (UE), connect slices to services and also connect physical Data Centers (DC) to slices to jointly maximize energy efficiency and minimize consumption power of RRHs and the cost of  physical resources in a downlink channel. The problem is formulated as a mixed-integer optimization problem that can be decomposed into two independent sub-problems due to the fact that sub-problems are independent. 
-Heuristic algorithms are proposed to each of sub-problems in order to connect slices to services, optimize power consumption and connect slices to physical resources to minimize the cost of total DCs simultaneously.
+of each User Equipment (UE), map slices to services and also map physical Data Centers (DC) to slices to jointly maximize energy efficiency and minimize consumption power of RRHs and the cost of  physical resources in a downlink channel. The problem is formulated as a mixed-integer optimization problem that can be decomposed into two independent sub-problems due to the fact that sub-problems are independent. 
+Heuristic algorithms are proposed to each of sub-problems in order to map slices to services, optimize power consumption and map slices to physical resources to minimize the cost of total DCs simultaneously.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -68,58 +68,72 @@ O-RAN, Network Slicing, Energy Efficiency, Data Center (DC)
 \end{IEEEkeywords}
 
 \section{Introduction}
-Recently, O-RAN, which is the integration and expansion of C-RAN and xRAN, is expected to be a key technology for 5G to enhance RAN performance and solve the part of challenges of mobile network operators (MNOs) in the best way.  
-The Idea of O-RAN comes from two opinions. Firstly, according to real-time analytic used for artificial intelligence systems, the radio access networks must be evolved to be more intelligent and flexible than before. Furthermore, O-RAN can virtualize elements of the network with  appropriate interfaces \cite{orant}.
-In an innovative O-RAN system, the programmable RAN software is decoupled from hardware, which can be run on any specific processing platforms, in order to be more flexible for MNOs especially for mobile virtual network operators (MVNOs)\cite{oran1}. 
+O-RAN, which is the integration and expansion of C-RAN and xRAN, is expected to be a key technology in 5G Network, to enhance RAN performance.  
+The idea of O-RAN comes from two opinions. Firstly, according to real-time analytic used for artificial intelligence systems, the radio access networks must be evolved to be more intelligent and flexible than before. Also O-RAN uses deep learning techniques to develop smarter layers in its architecture.
+ Furthermore, O-RAN can virtualize elements of the network with  appropriate interfaces.
+In an innovative O-RAN system, the programmable RAN software is decoupled from hardware, which can be run on any specific processing platforms, in order to be more flexible for mobile network operators MNOs especially for mobile virtual network operators (MVNOs)\cite{oran1}. 
+Openness is the specific feature of O-RAN. Open interface is one of the most crucial properties for O-RAN to enable MNOs and MVNOs, to define their own services.
+The concept of software defined network (SDN), which is the separation of control plane (CP), from user plane (UP), is deployed in an intelligent O-RAN architecture. The seperation of CP/UP is developed  through the E1 interface. Moreover, this separation, promote RRM by defining Non-RT
+and Near-RT) RAN Intelligent Controller (RIC) with the A1 and E2 interfaces .
+O-RAN introduced interfaces such as open fronthaul interface that maps DU and RRU, an E2 interface, and an A1 interface between orchestration/NMS layer containing the non-real-time RIC
+(RIC non-RT) function and the eNB/gNB containing the near-real-time RIC
+(RIC near-RT) function.\cite{oranpaper}
 
-
-The core idea of C-RAN is to split the radio remote head (RRH) from baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities. Moreover, in O-RAN technology, this separation is implemented\cite{cran1}.
+The core idea of C-RAN is to split the radio remote head (RRH) from baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities \cite{cran1}.
 To communicate between BBU-Pool and RRHs, the fronthaul fiber link interface, is assumed with limited capacity. The compression of a message passed through these links is a consequence of limited fronthaul capacity\cite{frdl,simeone2016cloud,motalleb2017optimal}.
 
 
 xRAN technology, released in April 2018 as the next generation of RAN, has three fundamental features. The Control plane is decoupled from User plane. Besides, a modular eNB software stack is built to operate on common-off-the-shelf (COTS) hardware. Moreover, open north-bound and south-bound interfaces are introduced\cite{xran}.
-\begin{figure}[H]
+
+
+\begin{figure}
   \centering
-    \includegraphics[scale=0.55]{c5}
+    \includegraphics[scale=0.55]{c6}
   \caption{Network sliced O-RAN system}
   \label{fig:c11}
 \end{figure} 
 To evolve servicing in 5G, separation of elements of software and hardware of network is deployed in network functions virtualization (NFV) technology. In this technology, the functionality of networks is virtualized and divided into blocks of virtual network function (VNF).
-The responsibility of wireless systems of the fifth generation covers wide range types of services. In order to provide the requirements of these services, NS is implemented to virtualize the shared physical network into several logical end-to-end networks. Three different types of NS are introduced in \cite{ns1} contains Core Slicing, RAN Slicing and Core-RAN Slicing. In Core-RAN Slicing, each slice of RAN is mapped to slices of Core. Also, UEs classified into a group of services according to their requirements. In addition, each service is connected to one or more Core-RAN slices based on the resource of slices.
+The responsibility of wireless systems of the fifth generation covers wide range types of services. In order to provide the requirements of these services, network slicing (NS) is implemented to virtualize the shared physical network into several logical end-to-end networks. 
+In the NS, a specific physical network hardware, run multiple virtual networks. Each virtual network is 
+defined as a slice of network \cite{lee2018dynamic}.
+Three different types of NS are introduced in \cite{ns1} contains Core Slicing, RAN Slicing and Core-RAN Slicing. In Core-RAN Slicing, each slice of RAN is mapped to slices of Core. Also, UEs classified into a group of services according to their requirements. In addition, each service is mapped to one or more Core-RAN slices based on the resource of slices.
 Using cloud-computing in BBU-Pool, the performance of the system is enhanced by virtualizing resources
 into virtual machines (VMs).
 Each VM has a computing processor in order to be run by the Virtual Network Functions (VNFs) which processed arrival data. Also, VNFs are mapped to physical resources through NS techniques\cite{frdl,luong2018novel,luong2018novel1}. 
 
 
 The compression of messages passed through the fronthaul link due to the limited capacity of these links is considered in \cite{simeone2016cloud,1111}. 
-In \cite{lee2018dynamic}, dynamic network slicing is considered in Heterogeneous CRAN (H-CRAN) to maximize the weighted sum rate. Moreover, in \cite{frdl,luong2018novel,luong2018novel1} minimization of cost obtained by power consumption, also cloud processing and limited fronthaul capacity is considered. Furthermore, processing delay of each VM and wireless transmission delay is bounded.
+In \cite{motalleb2017optimal} power allocation in C-RAN architecture, with limited fronthaul capacity in clustered network is studied.
+In \cite{lee2018dynamic}, dynamic network slicing is considered in Heterogeneous CRAN (H-CRAN) to maximize the weighted sum-rate. Also, two level network slicing (upper and lower level) is done. The admission of UEs is maximized using the heuristic algorithms. In addition, the allocation of BBU capacity to UEs is considered.\newline
+In \cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting} minimization of cost obtained by power consumption, also cloud processing and limited power for each RRH is considered. Furthermore, the processing delay of each VM and wireless transmission delay taken account. In \cite{frdl}, the processing and transmission delay is modeled as 
+a M/M/1 queue. In \cite{guo2016exploiting}, M/D/1 queue is modeled for transmission delay.
 
- 
 In this paper, as  depicted in figure \ref{fig:c11}, the downlink of the O-RAN system is assumed. UEs are divided to different groups according to 
-their service requirements. Also RAN is decoupled to slices to provide requirements of services. Optimal power allocation and joint connecting slices to services are applied. In addition, connecting slices to physical resources is taken to account.
+their service requirements. Also RAN is decoupled to slices to provide requirements of services. Optimal power allocation and joint mapping slices to services are applied. In addition, mapping slices to physical resources is taken to account.\newline
+In \ref{systemmodel}, system model which contains obtaining achievable rates, processing and transmission delay, and physical resources is expressed. Also, problem statements is explained and decomposed to two
+different sub-problems. 
+In \ref{proposedmethod}, heuristic algorithms for the sub-problems is presented. In \ref{simul}, numerical results, is depicted for the sub-problems.
 
-
-\section{System Model and Problem Formulation}
-In this section, first, we present the downlink (DL) of the O-RAN System. Then we obtain achievable rates and delays.
+\section{System Model and Problem Formulation}\label{systemmodel}
+In this section, first, we first present the system model, Then we obtain achievable rates and delays for the downlink (DL) of the O-RAN architecture.
 Afterward, the main problem is expressed.
 \subsection{System Model}
-Suppose there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single-antenna user equipments (UEs) that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $K_s$ Physical Resource Blocks (PRBs) as it is defined in the standard of LTE that the bandwidth (BW) of the channel is divided to PRBs in time series \cite{lee2018dynamic}. All RRHs in a slice that is connected to a service, transmit signals cooperatively to all the UEs in specific service \cite{motalleb2017optimal,mimoCran}. Each RRH $r \in \{1,2,...,R \}$ is connected to BBU pool via an optical fiber link with limited fronthaul capacity.
-Suppose we have two processing layers in the BBU-Pool of O-RAN system. The lower layer is consist of high-PHY and MAC, and the upper layer is consist of RLC, PDCP and SDAP.
-Assume we have $M_1$ VMs in the first layer and $M_2$ VMs in the second layer for processing data .
-For simplicity, suppose each VNF run on a VM and there is a one-to-one connection between VNFs and VMs.
-Each VNF in both layers connects to one or more slices. So in $s^{th}$ slice, there are $M_{s_1}$ VNFs in the first layer and $M_{s_2}$ VNFs in the second layer. All VNFs in first and second layer has the computational capacity that is  equal to $\mu_1$ and $\mu_2$, respectively. 
+Suppose there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $, consists of $U_v$ single-antenna user equipments (UEs) that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RRHs and $K_s$ Physical Resource Blocks (PRBs). All RRHs in a slice that is mapped to a service, transmit signals cooperatively to all the UEs in specific service \cite{motalleb2017optimal,mimoCran}. Each RRH $r \in \{1,2,...,R \}$ is mapped to BBU pool via an optical fiber link with limited fronthaul capacity.
+Suppose we have two processing layers in the BBU-Pool of O-RAN system which contain VNFs. The lower layer consist of high-PHY and MAC, and the upper layer consist of RLC, PDCP and SDAP.
+Assume we have $M_1$ VNFs in the first layer and $M_2$ VNFs in the second layer for processing data .
+Each VNF in both layers connects to one or more slices. So in $s^{th}$ slice, there are $M_{s,1}$ VNFs in the first layer and $M_{s,2}$ VNFs in the second layer. All VNFs in first and second layer has the computational capacity that is  equal to $\mu_1$ and $\mu_2$, respectively. 
 Also, RRHs and PRBs can serve more than one slices. 
-\subsection{Achievable Rate}
-The achievable data rate for $i^{th}$ UE in $v^{th}$ service can be written as 
+\subsection{The Achievable Rate}
+The achievable data rate for the $i^{th}$ UE in the $v^{th}$ service can be written as 
 \begin{equation}\label{eq1}
-\mathcal{R}_{u(v,i)} = B \log_2({1+ \rho_{u(v,i)}});
+\mathcal{R}_{u(v,i)} = B \log_2({1+ \rho_{u(v,i)}}),
 \end{equation}
-Where $B$ is the bandwidth of system and $\rho_{u(v,i)}$ is the SNR of $i^{th}$ UE in $v^{th}$ service which is obtained from 
+where $B$ is the bandwidth of system and $\rho_{u(v,i)}$ is the SNR of $i^{th}$ UE in $v^{th}$ service which is obtained from 
 \begin{equation}\label{eq2}
-\rho_{u(v,i)} =  \frac{p_{u(v,i)}\sum_{s=1}^{S}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{v,s}}{BN_0 + I_{u(v,i)}};
+\rho_{u(v,i)} =  \frac{p_{u(v,i)}\sum_{s=1}^{S}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{v,s}}{BN_0 + I_{u(v,i)}},
 \end{equation}
-Where $p_{u(v,i)}$ represents the transmission power allocated by RRHs to $i^{th}$ UE in $v^{th}$ service, also, 
-$\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of a wireless link from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the  transmit beamforming vector from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. Moreover, $BN_0$ denotes the power of Gaussian additive noise, and $I_{u(v,i)}$ is the power of interfering signals. Moreover, $a_{v,s} \in \{0,1\}$ is a binary variable that illustrates whether slice $s$ is connected to service $v$ or not. If $a_{v,s} =1$ then, $v^{th}$ service is connected to $s^{th}$ slice; otherwise, it is not connected.
+where $p_{u(v,i)}$ represents the transmission power allocated by RRHs to $i^{th}$ UE in $v^{th}$ service, and 
+$\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of a wireless link from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the  transmit beamforming vector from RRHs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. Moreover, $BN_0$ denotes the power of Gaussian additive noise, and $I_{u(v,i)}$ is the power of interfering signals. Moreover, $a_{v,s} \in \{0,1\}$ is a binary variable that illustrates whether slice $s$ is mapped to service $v$ or not. If $a_{v,s} =1$ then, $v^{th}$ service is mapped to $s^{th}$ slice; otherwise, it is not mapped.
 \newline 
 To obtain SNR as formulated in \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service which is given by \eqref{eq3}
 \begin{equation}\label{eq3}
@@ -127,10 +141,10 @@ To obtain SNR as formulated in \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U
 \end{equation}
 Where $\boldsymbol{x}_{ \mathcal{U}_v} = [x_{ u_{(v,1)}},...,x_{ u_{(v,\mathcal{U}_v)}}]^T \in \mathbb{C}^{{R}_s } $ depicts the transmitted symbol vector of UEs in $v^{th}$ set of service,  $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power.
 In addition, $\boldsymbol{q}_{R_s} \in \mathbb{C}^{{R}_s }  $ indicates the quantization noise which, is made from signal compression in BBU.
-Besides, $\boldsymbol{P}_{U_v} = diag(p_{u_{(v,1)}}, ..., p_{u_{(v,\mathcal{U}_v)}})$.
+Besides, $\boldsymbol{P}_{U_v} = \diag{(p_{u_{(v,1)}}, ..., p_{u_{(v,\mathcal{U}_v)}})}$.
 \newline
-Furthermore, $\zeta_{U_v,k,s} \delequal \{\zeta_{u(v,1),k,s},\zeta_{u(v,2),k,s},...,\zeta_{u(v,N_{U_v}),k,s}\}$,
-$\zeta_{u(v,i),k,s} \in \{0,1\}$ is a binary parameter, demonstrates whether $i^{th}$ UE in $v^{th}$ service can transmit its signals through $k^{th}$ PRB and also this PRB belongs to $s^{th}$ slice or not.
+Furthermore, $\zeta_{k,s}^{U_v} \delequal \{\zeta_{k,s}^{u(v,1)},\zeta_{k,s}^{u(v,2)},...,\zeta_{k,s}^{u(v,N_{U_v})}\}$,
+$\zeta_{k,s}^{u(v,i)} \in \{0,1\}$ is a binary parameter, which demonstrates whether $i^{th}$ UE in $v^{th}$ service can transmit its signals through $k^{th}$ PRB and also this PRB belongs to $s^{th}$ slice or not.
 $\boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}=\left[\boldsymbol{h}_{\mathcal{R}_s,u_{(v,1)}},\ldots,\boldsymbol{h}_{\mathcal{R}_s,v_{(v,\mathcal{U}_v)}}\right]^T  \in \mathbb{C}^{{R}_s\times {U}_v }$ 
 shows the channel matrix between RRH set $\mathcal{R}_s$ to UE set
 $\mathcal{U}_v$, besides. 
@@ -154,7 +168,7 @@ Hence, the interference power of $i^{th}$ UE in $v^{th}$ service can be represen
 &+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r_{(s,j)}}^2 |\boldsymbol{h}_{r_{(s,j)}, u_{(v,i)}}|^2 a_{v,s}}_{\text{(quantization noise interference)}}.
 \end{split}
 \end{equation}
-Where, $\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(v,l)}}|^2$
+where, $\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(v,l)}}|^2$
 and $\gamma_{2} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(y,l)}}|^2$. Moreover,
 ${\sigma_q}_{r_{(s,j)}}$ is the variance of quantization noise of $j^{th}$ RRH in $s^{th}$ slice.
 As it is clear, Interference signal for each UE is comming from UEs using the same PRB.
@@ -164,20 +178,19 @@ from \eqref{eq3} we have,
 \begin{equation}
 \bar{p}_{r_{(s,j)}} = \sum_{v=1}^{V}\boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   \boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s} + \sigma_{q_{r(s,j)}}^2.
 \end{equation}
-As a result the rate of users on the fronthual link between BBU-Pool and the $j^{th}$ RRH in $s^{th}$ slice is formulated as 
+Nevertheless, the rate of users on the fronthual link between BBU-Pool and the $j^{th}$ RRH in $s^{th}$ slice is formulated as \cite{simeone2016cloud, 1111}
 \begin{equation}
 C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s}}{ \sigma_{q_{r(s,j)}}^2})},
 \end{equation}
-Where, $a_{v,s}$ is a binary variable denotes whether the slice $s$ is connected to service $v$ or not \cite{simeone2016cloud, 1111}.
+where, $a_{v,s}$ is a binary variable denotes which the slice $s$ is mapped to service $v$ or not .
 \subsection{Mean Delay}
-Let the packet arrival of UEs have a Poisson Process with arrival rate $\lambda_{u(v,i)}$ for $i^{th}$ UE of $v^{th}$ service. 
-Therefore, the mean arrival data rate of UEs connect to $s^{th}$ slice in the first layer is 
-$\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$.  
-Furthermore, the mean arrival data rate of the second layer is approximately equal to the mean arrival data rate of first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$. 
-It is assumed there are dispatchers in each layer for each slice to divide the incoming traffic to VNFs \cite{frdl,luong2018novel,luong2018novel1}.
+Let the packet arrival of UEs have a Poisson Process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service. 
+Therefore, the mean arrival data rate of UEs map to $s^{th}$ slice in the first layer of the O-RAN which contains SDAP, PDCP, and RLC is 
+$\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where, $a_{v,s}$ is a binary variable which indicates whether the $v^{th}$ service is mapped to the $s^{th}$ slice or not. 
+Furthermore, the mean arrival data rate of the second layer which contains MAC and HY/PHY is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$. 
+It is assumed there are dispatchers in each layer for each slice to divide the incoming traffic to VNFs equally. Each dispatcher first processes the incoming traffic and divides equally to each VNF  \cite{frdl,luong2018novel,luong2018novel1}.
 Suppose the baseband processing of each VNF is depicted as a M/M/1 processing queue.
-Each packet is routed by one of VNFs of slices. So the mean delay of slice $s$ which is related to incoming traffic rate routed to
-each VNF in the first layer can be written as follow
+Each packet is processed by one of the VNFs of slices. So the mean delay of the $s^{th}$ slice in the first layer which is modeled as M/M/1 queue from queuing theory is formulated as
 \begin{equation}
 d_{s_1} = \frac{1}{\mu_1 - \alpha_{s}/{M_{s_1}}}.
 \end{equation}
@@ -282,7 +295,7 @@ Problem B is
 \end{alignat}
 \label{constraints2}
 \end{subequations}
-\section{Proposed Method For Problem \eqref{constraints1}}
+\section{Proposed Method}\label{proposedmethod}
 In this subsection, the proposed method is applied to solve the optimization problem.
 We want to solve \eqref{constraints1}. Since the problem is non-convex and NP-Hard, iterative algorithm is applied.
 To solve the problem and obtain $\boldsymbol{A}$ and $\boldsymbol{P}$ we divide problem \eqref{constraints1} into 
@@ -412,7 +425,7 @@ If a slice does not admit to a specific DC, it remains for the next placement. I
 \State Remapping DCs must be done to prevent wasting Energy
 \end{algorithmic}
 \end{algorithm}
-\section{Simulation}
+\section{Simulation}\label{simul}
 In this section, simulation and numerical results for the main problem are depicted.
  \begin{table}
  \caption {Simulation Parameter} \label{table:1a} 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  25 OCT 2019 11:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  27 OCT 2019 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -721,13 +721,13 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<c5.pdf, id=1, 551.05875pt x 523.9575pt>
-File: c5.pdf Graphic file (type pdf)
-<use c5.pdf>
-Package pdftex.def Info: c5.pdf  used on input line 83.
+<c6.pdf, id=1, 551.05875pt x 523.9575pt>
+File: c6.pdf Graphic file (type pdf)
+<use c6.pdf>
+Package pdftex.def Info: c6.pdf  used on input line 91.
 (pdftex.def)             Requested size: 303.08324pt x 288.17752pt.
 
-Overfull \hbox (51.08324pt too wide) in paragraph at lines 83--84
+Overfull \hbox (51.08324pt too wide) in paragraph at lines 91--92
  [][] 
  []
 
@@ -737,39 +737,34 @@ Non-PDF special ignored!
 {c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./c5.pdf>]
+]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 119.
+d on input line 133.
 
-
-Overfull \hbox (16.23387pt too wide) detected at line 127
+[2 <./c6.pdf>]
+Overfull \hbox (16.23387pt too wide) detected at line 141
 \OT1/cmr/bx/n/10 y[] \OT1/cmr/m/n/10 = [] [] [][]([][][][][][] + [][])\OML/cmm/
 m/it/10 ^^P[]a[] \OT1/cmr/m/n/10 + [][];
  []
 
 
-Overfull \hbox (7.93452pt too wide) in paragraph at lines 127--145
-\T1/ptm/m/n/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/c
-mm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\T1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 3758) in paragraph at lines 127--145
+Underfull \hbox (badness 3758) in paragraph at lines 141--159
 \T1/ptm/m/n/10 Moreover, $[][] \OT1/cmr/m/n/10 = [[][]\OML/cmm/m/it/10 ; :::; [
 ][]\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 2
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 156--164
-\T1/ptm/m/n/10 Where, $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/1
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--178
+\T1/ptm/m/n/10 where, $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/1
 0 j[][][][]j[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
  []
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 230.
-(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
+[3]
+LaTeX Font Info:    Try loading font information for U+euf on input line 243.
+ (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [3] [4]
+) [4] [5]
 Package epstopdf Info: Source file: <figure11.eps>
 (epstopdf)                    date: 2019-10-24 22:20:26
 (epstopdf)                    size: 26755 bytes
@@ -778,12 +773,12 @@ Package epstopdf Info: Source file: <figure11.eps>
 (epstopdf)                    size: 13807 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure11-eps-converted-to.
 pdf figure11.eps>
-(epstopdf)             \includegraphics on input line 444.
+(epstopdf)             \includegraphics on input line 457.
 Package epstopdf Info: Output file is already uptodate.
-<figure11-eps-converted-to.pdf, id=862, 534.99875pt x 429.605pt>
+<figure11-eps-converted-to.pdf, id=867, 534.99875pt x 429.605pt>
 File: figure11-eps-converted-to.pdf Graphic file (type pdf)
 <use figure11-eps-converted-to.pdf>
-Package pdftex.def Info: figure11-eps-converted-to.pdf  used on input line 444.
+Package pdftex.def Info: figure11-eps-converted-to.pdf  used on input line 457.
 
 (pdftex.def)             Requested size: 252.0pt x 202.36012pt.
 Package epstopdf Info: Source file: <f111.eps>
@@ -794,12 +789,12 @@ Package epstopdf Info: Source file: <f111.eps>
 (epstopdf)                    size: 17784 bytes
 (epstopdf)             Command: <repstopdf --outfile=f111-eps-converted-to.pdf 
 f111.eps>
-(epstopdf)             \includegraphics on input line 491.
+(epstopdf)             \includegraphics on input line 504.
 Package epstopdf Info: Output file is already uptodate.
-<f111-eps-converted-to.pdf, id=863, 511.9125pt x 392.46625pt>
+<f111-eps-converted-to.pdf, id=868, 511.9125pt x 392.46625pt>
 File: f111-eps-converted-to.pdf Graphic file (type pdf)
 <use f111-eps-converted-to.pdf>
-Package pdftex.def Info: f111-eps-converted-to.pdf  used on input line 491.
+Package pdftex.def Info: f111-eps-converted-to.pdf  used on input line 504.
 (pdftex.def)             Requested size: 252.0pt x 193.19644pt.
 Package epstopdf Info: Source file: <fig2_last.eps>
 (epstopdf)                    date: 2019-10-21 19:43:23
@@ -809,21 +804,15 @@ Package epstopdf Info: Source file: <fig2_last.eps>
 (epstopdf)                    size: 12941 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig2_last-eps-converted-to
 .pdf fig2_last.eps>
-(epstopdf)             \includegraphics on input line 498.
+(epstopdf)             \includegraphics on input line 511.
 Package epstopdf Info: Output file is already uptodate.
-<fig2_last-eps-converted-to.pdf, id=864, 511.9125pt x 392.46625pt>
+<fig2_last-eps-converted-to.pdf, id=869, 511.9125pt x 392.46625pt>
 File: fig2_last-eps-converted-to.pdf Graphic file (type pdf)
 <use fig2_last-eps-converted-to.pdf>
-Package pdftex.def Info: fig2_last-eps-converted-to.pdf  used on input line 498
+Package pdftex.def Info: fig2_last-eps-converted-to.pdf  used on input line 511
 .
 (pdftex.def)             Requested size: 252.0pt x 193.19644pt.
- [5] [6 <./figure11-eps-converted-to.pdf>] (./pr.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 26--30
-\T1/ptm/m/n/8 https://www.telecomtv.com/content/mwc/the-open-ran-oran-alliance-
-
- []
-
-
+ [6 <./figure11-eps-converted-to.pdf>] (./pr.bbl
 Underfull \hbox (badness 2409) in paragraph at lines 60--64
 []\T1/ptm/m/n/8 (2018) xran fo-rum merges with c-ran al-liance
  []
@@ -838,7 +827,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--64
 \T1/ptm/m/n/8 https://www.businesswire.com/news/home/20180227005673/en/xRAN-
  []
 
-)
+[7 <./f111-eps-converted-to.pdf> <./fig2_last-eps-converted-to.pdf>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -850,42 +839,43 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7 <./f111-eps-converted-to.pdf> <./fig2_last-eps-converted-to.pdf>] (./pr.aux)
- ) 
+[8
+
+] (./pr.aux) ) 
 Here is how much of TeX's memory you used:
- 7795 strings out of 492649
- 115332 string characters out of 6133384
- 217874 words of memory out of 5000000
- 11506 multiletter control sequences out of 15000+600000
+ 7799 strings out of 492649
+ 115385 string characters out of 6133384
+ 213918 words of memory out of 5000000
+ 11510 multiletter control sequences out of 15000+600000
  121974 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,27n,42p,921b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><c:/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/texlive/2018/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.p
-fb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2018/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2018/texmf-dist/
-fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/ti
-mes/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c
-:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (7 pages, 570318 bytes).
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
+fb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><c:/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><
+c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on pr.pdf (8 pages, 571947 bytes).
 PDF statistics:
- 987 PDF objects out of 1000 (max. 8388607)
- 850 compressed objects within 9 object streams
+ 992 PDF objects out of 1000 (max. 8388607)
+ 852 compressed objects within 9 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
