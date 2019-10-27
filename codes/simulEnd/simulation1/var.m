@@ -1,6 +1,6 @@
 %% Physical layer
 R = 500;
-N_Service = 3;
+N_Service = 6;
 N_Slice =  30;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
