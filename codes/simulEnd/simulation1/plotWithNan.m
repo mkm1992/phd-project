@@ -1,7 +1,7 @@
 y1 = zeros(2,nr);
 for i =1:iter_max
     for j=1:nr
-        if isnan(etha(j,i))==0
+        if isnan(etha(j,i))==0 && etha1(j,i)>0 
             y1(1,j)=y1(1,j)+etha(j,i);
             y1(2,j)= y1(2,j)+1;
         end
@@ -13,7 +13,7 @@ hold on
 y = zeros(2,nr);
 for i =1:iter_max
     for j=1:nr
-        if isnan(etha1(j,i))==0
+        if isnan(etha1(j,i))==0 && etha1(j,i)>0 
             y(1,j)=y(1,j)+etha1(j,i);
             y(2,j)= y(2,j)+1;
         end
