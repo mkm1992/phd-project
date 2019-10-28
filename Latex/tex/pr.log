@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  28 OCT 2019 22:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  29 OCT 2019 00:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -573,83 +573,109 @@ Package: amsthm 2017/10/31 v2.20.4
 \c@lemma=\count136
 \c@proposition=\count137
 \c@corollary=\count138
- (./pr.aux)
+
+(c:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count139
+\Gm@cntv=\count140
+\c@Gm@tempcnt=\count141
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks30
+) (./pr.aux)
 \openout1 = `pr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
 
--- Lines per column: 56 (exact).
+-- Lines per column: 57 (approximate, difference = 9.79243pt).
 (c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count139
-\scratchdimen=\dimen156
+\scratchcounter=\count142
+\scratchdimen=\dimen164
 \scratchbox=\box36
-\nofMPsegments=\count140
-\nofMParguments=\count141
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count142
-\MPscratchDim=\dimen157
-\MPnumerator=\count143
-\makeMPintoPDFobject=\count144
-\everyMPtoPDFconversion=\toks31
+\nofMPsegments=\count143
+\nofMParguments=\count144
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count145
+\MPscratchDim=\dimen165
+\MPnumerator=\count146
+\makeMPintoPDFobject=\count147
+\everyMPtoPDFconversion=\toks32
 ) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -686,10 +712,6 @@ Package etexcmds Info: Could not find \expanded.
 (c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
@@ -710,60 +732,116 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<c6.pdf, id=1, 551.05875pt x 523.9575pt>
-File: c6.pdf Graphic file (type pdf)
-<use c6.pdf>
-Package pdftex.def Info: c6.pdf  used on input line 95.
-(pdftex.def)             Requested size: 303.08324pt x 288.17752pt.
 
-Overfull \hbox (51.08324pt too wide) in paragraph at lines 95--96
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(50.58878pt, 513.11745pt, 50.58878pt)
+* v-part:(T,H,B)=(50.58878pt, 693.79243pt, 50.58878pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=513.11745pt
+* \textheight=693.79243pt
+* \oddsidemargin=-21.68121pt
+* \evensidemargin=-21.68121pt
+* \topmargin=-52.24883pt
+* \headheight=12.0pt
+* \headsep=18.56761pt
+* \topskip=12.0pt
+* \footskip=40.5821pt
+* \marginparwidth=20.0pt
+* \marginparsep=10.0pt
+* \columnsep=31.29802pt
+* \skip\footins=10.79993pt plus 4.79993pt minus 2.39996pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<c7.pdf, id=1, 794.97pt x 614.295pt>
+File: c7.pdf Graphic file (type pdf)
+<use c7.pdf>
+Package pdftex.def Info: c7.pdf  used on input line 96.
+(pdftex.def)             Requested size: 437.23485pt x 337.86328pt.
+
+Overfull \hbox (196.32513pt too wide) in paragraph at lines 96--97
  [][] 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 102.
+LaTeX Font Info:    Try loading font information for U+msa on input line 103.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 102.
+LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Underfull \vbox (badness 2005) has occurred while \output is active []
+
+ [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 {c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 129.
+d on input line 130.
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 137.
+LaTeX Font Info:    Try loading font information for U+euf on input line 138.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 3000) in paragraph at lines 138--157
-\T1/ptm/m/n/10 where $\U/euf/m/n/10 y[] \OT1/cmr/m/n/10 = [][][][][][] + [][]$ 
-\T1/ptm/m/n/10 and $[][] \OT1/cmr/m/n/10 =
+Underfull \hbox (badness 6592) in paragraph at lines 139--158
+\T1/ptm/m/n/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/c
+mm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\T1/ptm/m/n/10 ,
  []
 
-
-Underfull \hbox (badness 3758) in paragraph at lines 138--157
-\T1/ptm/m/n/10 Moreover, $[][] \OT1/cmr/m/n/10 = [[][]\OML/cmm/m/it/10 ; :::; [
-][]\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 2
- []
-
-[2 <./c6.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 168--176
+[2 <./c7.pdf, page is rotated 90 degrees>]
+Underfull \hbox (badness 10000) in paragraph at lines 169--177
 \T1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
  j[][][][]j[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
  []
 
-[3] [4] [5]
+
+Underfull \hbox (badness 1354) in paragraph at lines 169--177
+\T1/ptm/m/n/10 PRB. If we re-place $\OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 and $\
+OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 by $\OML/cmm/m/it/10 P[]$\T1/ptm/m/n/10 , a
+n
+ []
+
+[3] [4]
+Overfull \hbox (9.04622pt too wide) detected at line 329
+[]\OT1/cmr/m/n/10 (\U/euf/m/n/10 R[]\OT1/cmr/m/n/10 ([]) \OMS/cmsy/m/n/10 ^^@ \
+OML/cmm/m/it/10 ^^Q[]P[]\OT1/cmr/m/n/10 ([])) = \U/euf/m/n/10 R[]\OT1/cmr/m/n/1
+0 ([][]) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^Q[]P[]\OT1/cmr/m/n/10 ([][]) =
+ 0\OML/cmm/m/it/10 :
+ []
+
+
+Overfull \hbox (8.30817pt too wide) detected at line 347
+[]
+ []
+
+
+Underfull \hbox (badness 4341) in paragraph at lines 351--357
+\T1/ptm/m/n/10 where, $\U/euf/m/n/10 y[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 ^^
+U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^T[] \OT1/cmr/m/n/10 + 1)[]$ \T1/ptm/m/
+n/10 and
+ []
+
+[5]
 Package epstopdf Info: Source file: <fig1_last.eps>
 (epstopdf)                    date: 2019-10-28 21:43:21
 (epstopdf)                    size: 23894 bytes
@@ -774,12 +852,12 @@ Package epstopdf Info: Source file: <fig1_last.eps>
 .pdf fig1_last.eps>
 (epstopdf)             \includegraphics on input line 458.
 Package epstopdf Info: Output file is already uptodate.
-<fig1_last-eps-converted-to.pdf, id=858, 534.99875pt x 429.605pt>
+<fig1_last-eps-converted-to.pdf, id=81, 534.99875pt x 429.605pt>
 File: fig1_last-eps-converted-to.pdf Graphic file (type pdf)
 <use fig1_last-eps-converted-to.pdf>
 Package pdftex.def Info: fig1_last-eps-converted-to.pdf  used on input line 458
 .
-(pdftex.def)             Requested size: 252.0pt x 202.36012pt.
+(pdftex.def)             Requested size: 240.90971pt x 193.45155pt.
 Package epstopdf Info: Source file: <f112.eps>
 (epstopdf)                    date: 2019-10-28 15:40:18
 (epstopdf)                    size: 41868 bytes
@@ -790,11 +868,11 @@ Package epstopdf Info: Source file: <f112.eps>
 f112.eps>
 (epstopdf)             \includegraphics on input line 491.
 Package epstopdf Info: Output file is already uptodate.
-<f112-eps-converted-to.pdf, id=859, 655.44875pt x 443.6575pt>
+<f112-eps-converted-to.pdf, id=82, 655.44875pt x 443.6575pt>
 File: f112-eps-converted-to.pdf Graphic file (type pdf)
 <use f112-eps-converted-to.pdf>
 Package pdftex.def Info: f112-eps-converted-to.pdf  used on input line 491.
-(pdftex.def)             Requested size: 252.0pt x 170.5751pt.
+(pdftex.def)             Requested size: 240.90971pt x 163.06755pt.
 Package epstopdf Info: Source file: <fig22_last.eps>
 (epstopdf)                    date: 2019-10-28 15:40:18
 (epstopdf)                    size: 22904 bytes
@@ -805,25 +883,31 @@ Package epstopdf Info: Source file: <fig22_last.eps>
 o.pdf fig22_last.eps>
 (epstopdf)             \includegraphics on input line 498.
 Package epstopdf Info: Output file is already uptodate.
-<fig22_last-eps-converted-to.pdf, id=860, 655.44875pt x 443.6575pt>
+<fig22_last-eps-converted-to.pdf, id=83, 655.44875pt x 443.6575pt>
 File: fig22_last-eps-converted-to.pdf Graphic file (type pdf)
 <use fig22_last-eps-converted-to.pdf>
 Package pdftex.def Info: fig22_last-eps-converted-to.pdf  used on input line 49
 8.
-(pdftex.def)             Requested size: 252.0pt x 170.5751pt.
+(pdftex.def)             Requested size: 240.90971pt x 163.06755pt.
  [6 <./fig1_last-eps-converted-to.pdf>] (./pr.bbl
-Underfull \hbox (badness 2409) in paragraph at lines 46--50
+Underfull \hbox (badness 1571) in paragraph at lines 46--50
 []\T1/ptm/m/n/8 (2018) xran fo-rum merges with c-ran al-liance
  []
 
 
-Underfull \hbox (badness 6220) in paragraph at lines 46--50
+Underfull \hbox (badness 4291) in paragraph at lines 46--50
 \T1/ptm/m/n/8 to form oran al-liance. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--50
+Overfull \hbox (7.64029pt too wide) in paragraph at lines 46--50
 \T1/ptm/m/n/8 https://www.businesswire.com/news/home/20180227005673/en/xRAN-
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 89--93
+[]\T1/ptm/m/n/8 P. Se-hier, P. Chan-clou, N. Ben-za-oui, D. Chen, K. Ket-tunen,
+
  []
 
 )
@@ -839,44 +923,40 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 [7 <./f112-eps-converted-to.pdf> <./fig22_last-eps-converted-to.pdf>] (./pr.aux
-)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) ) 
 Here is how much of TeX's memory you used:
- 7787 strings out of 492649
- 115086 string characters out of 6133384
- 216010 words of memory out of 5000000
- 11499 multiletter control sequences out of 15000+600000
+ 8272 strings out of 492649
+ 122166 string characters out of 6133384
+ 226029 words of memory out of 5000000
+ 11973 multiletter control sequences out of 15000+600000
  116417 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,27n,42p,986b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1
-/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c
-:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><c:/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pf
-b><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2
-018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fon
-ts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/time
-s/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (7 pages, 566853 bytes).
+ 44i,27n,42p,986b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><
+c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><c:/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.p
+fb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/
+texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on pr.pdf (7 pages, 374216 bytes).
 PDF statistics:
- 975 PDF objects out of 1000 (max. 8388607)
- 839 compressed objects within 9 object streams
+ 198 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
