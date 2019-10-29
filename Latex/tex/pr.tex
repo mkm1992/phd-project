@@ -62,7 +62,7 @@
 \begin{abstract}
 Many major telecommunication companies confirmed the unification of the xRAN Group with the C-RAN Alliance to establish a more flexible and openness radio access network which is the Open-RAN
 (ORAN) for the fifth generation of wireless technology. To increase energy efficiency and optimize the allocation of resources, Network Slicing (NS) is considered as the best method for the fifth generation (5G) in order to virtualize the common physical network into several logical end-to-end networks. Every slice consists of a part of core network resources, network functions, and radio access network resources as a functional end-to-end network. In this paper, we elaborate joint NS in RAN and Core of ORAN system to investigate the power
-of each User Equipment (UE), map slices to services and also map physical Data Centers (DC) to slices to jointly maximize energy efficiency and minimize consumption power of RUs and the cost of  physical resources in a downlink channel. The problem is formulated as a mixed-integer optimization problem that can be decomposed into two independent sub-problems due to the fact that sub-problems are independent.
+of each User Equipment (UE), map slices to services and also map physical Data Centers (DC) to slices to jointly maximize energy efficiency and minimize consumption power of RUs and the cost of  physical resources in a downlink channel. The problem is formulated as a mixed-integer optimization problem that can be decomposed into two independent sub-problems.
 Heuristic algorithms are proposed to each of sub-problems in order to map slices to services, optimize power consumption and map slices to physical resources to minimize the cost of total DCs simultaneously.
 \end{abstract}
 
@@ -75,12 +75,12 @@ Open RAN (ORAN), as the integration and expansion of C-RAN and xRAN, is expected
 
 ORAN virtualizes the elements of the radio access networks, separate them and define appropriate open interfaces for connection of these elements. Moreover, ORAN uses machine learning techniques to develop smarter RAN layers in its architecture. In an innovative ORAN system, the programmable RAN software is decoupled from hardware \cite{oran1}. Open interface is one of the most crucial properties for ORAN to enable mobile network operators (MNOs) to define their own services.
 The concept of software defined network (SDN), which is the separation of control plane from user plane, is deployed in an intelligent ORAN architecture. Moreover, this separation promotes RRM to use non-realtime (RT) and near-realtime (NRT) RAN Intelligent Controller (RIC).
-In the ORAN architecture, distributed unit (DU) is a logical node hosting RLC/MAC/High-PHY layer.
-Moreover, central unit (CU) is a logical node hosting RRC, SDAP and PDCP. Also, radio unit (RU)  is a logical node hosting LOW-PHY layer and
+In the ORAN architecture, distributed unit (DU) is a logical node having RLC/MAC/High-PHY layer.
+Moreover, central unit (CU) is a logical node having RRC, SDAP and PDCP. Also, radio unit (RU) is a logical node having LOW-PHY layer and
 RF processing \cite{oranpaper}.
-ORAN introduces interfaces such as open fronthaul interface that connects DU and RU(i.e., E2 interface), and an A1 interface between orchestration/NMS layer containing the non-real-time RIC (RIC non-RT) function and the eNB/gNB containing the near-real-time RIC (RIC near-RT) function.
+ORAN introduces interfaces such as open fronthaul interface that connects DU and RU (i.e., E2 interface), and an A1 interface between orchestration/NMS layer containing the non-real-time RIC (RIC non-RT) function and the eNB/gNB containing the near-real-time RIC (RIC near-RT) function.
 
-To evolve servicing in 5G networks, separation of elements of software and hardware of network is employed and is referred to as network functions virtualization (NFV). Virtual network function (VNF) are functional blocks of the system in this case. 5G networks are expected to host several services with different requirements simultaneously. Network slicing is considered as a solution for such demand. A network slice is a logical end-to-end network which provide service with specific requirements. Multiple network slices run on the same physical network infrastructure which are managed and operate independently \cite{lee2018dynamic}. Slicing can be defined for the RAN, for the core network or both of these networks \cite{ns1}.
+To evolve servicing in 5G networks, separation of elements of software and hardware of network is employed and referred as network functions virtualization (NFV). Virtual network function (VNF) are functional blocks of the system in this case. 5G networks are expected to host several services with different requirements simultaneously. Network slicing is considered as a solution for such demand. A network slice is a logical end-to-end network which provide service with specific requirements. Multiple network slices run on the same physical network infrastructure which are managed and operate independently \cite{lee2018dynamic}. Slicing can be defined for the RAN, for the core network or both of these networks \cite{ns1}.
 
 Based on their type of request, UEs are classified into various services, where UEs in the same service have similar service requests. In addition, each service is mapped to one or more slices based on the resources of the slices. Each VNF of the ORAN is mapped to one or some virtual machines (VMs) in the data center. For simplicity of analysis and without loss of generality, we assume a VNF is mapped to one VM and requires specific physical resources including storage, memory, and processing \cite{frdl,luong2018novel,luong2018novel1}.
 
@@ -98,7 +98,7 @@ In \cite{oran12},  the ORAN architecture is studied. The eight work groups is di
   \label{fig:c11}
 \end{figure}
 
-In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The RAN is divided to three layers including RU, DU, and CU with open interfaces. DU and CU are running on general purpose data centers. UEs are divided to different services according to their service requirements. RAN resources are decoupled to slices to provide requirements of services. Optimal power allocation and joint mapping of slices to services are applied. In addition, mapping slices to physical resources is taken to account. The contribution of the paper is expressed as follow:
+In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The RAN is divided into three layers including RU, DU, and CU with open interfaces. DU and CU are running on general purpose data centers. UEs are divided to different services according to their service requirements. RAN resources are decoupled to slices to provide requirements of services. Optimal power allocation and joint mapping of slices to services are applied. In addition, mapping slices to physical resources is taken to account. The contribution of the paper is expressed as follow:
 \begin{itemize}
 \item In this paper, joint network slicing and resource allocation is considered in an end to end ORAN system.
 \item UEs are categorized into different class of services based on their service requirements. RAN which contains RUs, PRBs, and VNFs ,in the two layer of processing, are classified into different group of slices.
@@ -116,8 +116,9 @@ In this section, first, we  present the system model. Then, we obtain achievable
 Finally, the main problem is expressed.
 \subsection{System Model}
 Suppose there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $ consists of $U_v$
-single-antenna user equipments (UEs) that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RUs and $K_s$ physical resource blocks (PRBs), one DU and one CU that contains VNFs. All RUs in a slice, that is mapped to a service, transmit signals cooperatively to all the UEs in a specific service \cite{motalleb2017optimal,mimoCran}. Each RU $r \in \{1,2,...,R \}$ is mapped to a DU via an optical fiber link with limited fronthaul capacity.
-There are two processing layers one in the DU and one on the CU of ORAN system, each represented with a VNF. The lower layer (i.e., DU) consists of high-PHY, MAC, and RLC, and the upper layer (i.e., CU) consists of RRC, PDCP and SDAP. Assume we have $M_1$ VNFs in the DU layer and $M_2$ VNFs in the CU layer for processing data.
+single-antenna user equipments (UEs) that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RUs and $K_s$ physical resource blocks (PRBs), one DU and one CU that contains VNFs.
+Slices can have shared resources. All RUs in a slice, that is mapped to a service, transmit signals cooperatively to all the UEs in a specific service \cite{motalleb2017optimal,mimoCran}. Each RU $r \in \{1,2,...,R \}$ is mapped to a DU via an optical fiber link with limited fronthaul capacity.
+There are two processing layers one in the DU and one in the CU of ORAN system, each represented with a VNF. The lower layer (i.e., DU) consists of high-PHY, MAC, and RLC, and the upper layer (i.e., CU) consists of RRC, PDCP and SDAP. Assume we have $M_1$ VNFs in the DU layer and $M_2$ VNFs in the CU layer for processing data.
 Each VNF in both layers belongs to one or more slices. So, in the $s^{th}$ slice, there are $M_{s,1}$ VNFs in the DU layer and $M_{s,2}$ VNFs in the CU layer. The VNFs in the DU and CU layers have the computational capacity that is  equal to $\mu_1$ and $\mu_2$, respectively.
 Also, RUs and PRBs can serve more than one slices.
 \subsection{The Achievable Rate}
@@ -184,7 +185,6 @@ C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \bolds
 where, $a_{v,s}$ is a binary variable denotes whether the slice $s$ is mapped to service $v$ or not .
 
 \subsection{Mean Delay}
-
 Assume the packet arrival of UEs follows  a Poisson process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service.
 Therefore, the mean arrival data rate of UEs mapped to the $s^{th}$ slice in the CU layer is $\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where $a_{v,s}$ is a binary variable which indicates whether the $v^{th}$ service is mapped to the $s^{th}$ slice or not.
 Furthermore, the mean arrival data rate of the DU layer is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$.
@@ -197,11 +197,11 @@ d_{s_1} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}},\\
 d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s,2}}}.
 \end{split}
 \end{equation}
-where $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layers respectively.%, due to the fact that the service time of each data packet has an exponential distribution for $\mu_i>\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$. 
+where $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layers respectively.
 Besides, $\alpha_{s}$ is the  arrival rate which is divided
 by load balancer before arriving to the VNFs. The  arrival rate of each VNF in each layer of the slice $s$ is $\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$.
 In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice on the  wireless link. The arrival data rate of wireless link
- is equal to the arrival data rate of dispatchers (used as a traffic divider) for each slice \cite{frdl}.
+ is equal to the arrival data rate of load balancers for each slice \cite{frdl}.
 Moreover, it is assumed that the service time of transmission queue for each slice $s$ has
  an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue \cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. Therefore,
 the mean delay of the transmission layer is
@@ -264,14 +264,14 @@ Our goal is to maximize sum-rate and minimize sum-power (the total power of all 
 \label{constraints}
 \end{subequations}
 where $\boldsymbol{P} =[p_{u(v,k)}] \:\: \forall v , \forall k $, is the matrix of power for UEs, $\boldsymbol{A} =[a_{v,s}] \:\: \forall v , \forall s $ denotes the binary variable for connecting slices to services and $\boldsymbol{Y} =[y_{s,d}]  \:\: \forall s ,  \forall d $ is a binary variable shown whether
-the physical DC is connected to a VNFs of a slice or not.
+the physical DC is mapped to a VNFs of a slice or not.
 \eqref{c11}, and \eqref{c12}, indicate that the power of each RU do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. Also \eqref{c13} shows that the rate of each UE is more than a threshold. \eqref{c14} and \eqref{c15} expressed the limited capacity of the fronthaul link, and the limited delay of receiving signal, respectively.
 Furthermore, \eqref{c21}
-ensures that each service is connected to at least one slice.
+ensures that each service is mapped to at least one slice.
 Also, \eqref{c23}, guarantees that each slice (VNFs in two layers of slices) has been placed to one or more physical resources of DCs. Moreover, in \eqref{c22}  $\mathcal{E} = \{M,S,C\}$ and the constraint supports
 that we have enough physical resources for VNFs of each slice.\newline
-The optimization problem in \eqref{constraints} can be decomposed into two independent optimization problems A and B since the variables can be obtained independently and respectively. In problem A,
-the variables $\boldsymbol{P}$ and $ \boldsymbol{A}$ is obtained. The problem A is as follow
+The optimization problem in \eqref{constraints} can be decomposed into two independent optimization problems A and B since the variables can be obtained independently and respectively. Firstly we need to solve problem A. After obtaining $\boldsymbol{P}$ and $ \boldsymbol{A}$, problem B can be solved by having the value of $ \boldsymbol{A}$. 
+The problem A is as follow
 \begin{subequations}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{A} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})\\
@@ -298,7 +298,7 @@ In problem B, $ \boldsymbol{Y}$ is obtained. The problem B is
 In this subsection, a heuristic  method is proposed to solve the problem in \eqref{constraints1} which is non-convex and computationally hard. To make it tractable, we divide problem \eqref{constraints1} into
 two different part that can be solved iteratively.
 In the first part of sub-problem A, we obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = P_{max}$ in \eqref{constraints1}. Also, we set $\eta = 0$. Afterward, by achieving $\boldsymbol{A}$, in the second part, we find $\boldsymbol{P}$ by using \eqref{constraints1}. This part of the problem can be approximated and converted to a convex problem, so the problem can be solved by convex methods. After solving $\boldsymbol{P}$, $\eta$ is updated. Then in the next iteration, with new $\boldsymbol{P}$
-and $\eta$, the two parts of the problems are solved. We repeat this procedure until the algorithm is converged.
+and $\eta$, the two parts of the problems are solved. We repeat this procedure until the algorithm  converges.
 \subsection{First Part of Sub-Problem A}\label{firstsub}
 Two different methods are applied to acquire $\boldsymbol{A}$.
 The details of the heuristic algorithm are represented in algorithm \ref{alg}.
@@ -306,7 +306,7 @@ The details of the heuristic algorithm are represented in algorithm \ref{alg}.
 \caption{Mapping Slice to Service}\label{alg}
 \begin{algorithmic}[1]
 \State Sort services according to the number of UEs in it and their requirements in the descending order.
-\State Sort slices according to the weighted linear combination of number of PRBs, RUs and VNFs in two layers and the Capacity of their resources in the descending order.
+\State Sort slices according to the weighted linear combination of number of PRBs, RUs and VNFs in two layers and the capacity of their resources in the descending order.
 \For {$i \gets 1$ to $S$}
 \For {$j \gets 1$ to $V$}
 \State Set $a_{i,j} = 1$
@@ -341,16 +341,16 @@ The second sub-problem can  be solved using the Lagrangian function and iterativ
 Since, Interference is a function of the power of UEs, to make it tractable, we assume an upper bound $\bar{I}_{u_{(v,i)}}$ for interference. In order to make \eqref{constraints1} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cc14} and \eqref{cc15} ($p_{r_{(s,i)}} = \sigma_{q_{r(s,j)}}^2\times 2^{C_{r_{(s,i)}}}$ and $1/(D_{s}- d_{s_1} + d_{s_2})+\alpha_s$ respectively).
 Assume $\boldsymbol{\lambda}$, $\boldsymbol{\mu}$, $\boldsymbol{\xi}$, and $\boldsymbol{ \kappa}$ are the matrix of Lagrangian multipliers that have non-zero positive elements.
 The Lagrangian function is written as follow
-\begin{equation}\label{lagrang}
-\begin{split}
+\begin{subequations}\label{lagrang}
+\begin{alignat}{4}
 \mathcal{L}(\boldsymbol{P}; \boldsymbol{\lambda}, \boldsymbol{\chi}, \boldsymbol{\mu}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}) & = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v}\mathcal{\bar{R}}_{u_{(v,k)}}
 - \eta \sum\limits_{v=1}^{V} \sum\limits_{i=1}^{\mathcal{R}_s}\bar{p}_{r_{(s,i)}}\\
 &+\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v} \lambda_{u_{(v,k)}} (\mathcal{\bar{R}}_{u_{(v,k)}}-\mathcal{R}_{u_{(v,k)}}^{max})\\
 &- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \mu_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-P_{max})\\
 &- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \xi_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-\sigma_{q_{r(s,i)}}^2 2^{C_{r_{(s,i)}}^{max}}).\\
-&+ \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v} \kappa_{u_{(v,k)}} \sum\limits_{s=1}^{S}(R_{u_{(v,k)}} -\mathfrak{D_s})a_{v,s}.\\
-\end{split}
-\end{equation}
+&+ \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v} \kappa_{u_{(v,k)}} \sum\limits_{s=1}^{S}(R_{u_{(v,k)}} -\mathfrak{D_s})a_{v,s}.
+\end{alignat}
+\end{subequations}
 where, $\mathfrak{D_s}=\frac{1}{D_{s}^{max}-d_{s_1}-d_{s_2}}+\alpha_s$. Optimal power is obtained from  \eqref{lagrang}
 \begin{equation}
 p_{u(v,i)}^{*} = [\frac{\mathfrak{y}_{u(v,i)}\mathfrak{w}_{u(v,i)}-\mathfrak{x}_{u(v,i)}\mathfrak{z}_{u(v,i)}}{\mathfrak{x}_{u(v,i)}\mathfrak{w}_{u(v,i)} }]^+
@@ -362,8 +362,8 @@ By using sub-gradient method, the optimal power $\boldsymbol{P}$ is obtained \ci
 %\section*{References}
 \subsection{Solving two part of Sub-problem A iteratively}
 In \eqref{firstsub} and \eqref{secondsub}, the details of solving each part of the sub-problem are depicted.
-Firstly, we obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = P_{max}$ in the problem \eqref{constraints1} and using algorithm \eqref{alg}. Also we fixed $\eta = 0$. Afterward, by achieving $\boldsymbol{A}$, in the second part, we acquire $\boldsymbol{P}$ using the sub-gradient method. After solving $\boldsymbol{P}$, $\eta$ is updated. Then in the next iteration, with new $\boldsymbol{P}$
-and $\eta$ the two parts of the problems is solved until the algorithm converged.
+Firstly, we obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = P_{max}$ in the problem \eqref{constraints1} and using algorithm \eqref{alg}. Also we fixed $\eta = 0$. Afterward, $\boldsymbol{A}$ is achieved from algorithm \ref{alg}. Then, in the second part, we acquire $\boldsymbol{P}$ using the sub-gradient method. After solving $\boldsymbol{P}$, $\eta$ is updated. Then in the next iteration, with new $\boldsymbol{P}$
+and $\eta$ the two parts of the problems is solved until the algorithm converges.
 Here, the algorithm of solving sub-problem A is shown in algorithm \eqref{alg2}
 \begin{algorithm}
 \caption{Joint Network Slicing and Power Allocation}\label{alg2}
@@ -395,8 +395,7 @@ We define a weighted parameter for $\Omega_{\mathfrak{z},s}^{tot}$ and $\tau_j^\
 \end{split}
 \end{equation}
 where, $\boldsymbol{w} = \{w_M, w_S, w_C\}$ is the weight of memory, storage and CPU.
-Secondly, we start mapping from the most needed slices to the DC with the most physical resources (from line \ref{33} to line \ref{34} of algorithm \ref{alg3}). After mapping DCs to slices, if some slices are not admitted, we start admitting remaining slices to more than one DCs (from line \ref{35} to line \ref{36} of algorithm \ref{alg3}). At the end, if DC with the lowest physical resources is free and can be served instead of DC with the highest physical resource, the slices remapped to new DC with the lowest physical resource since it has the lowest power consumption (line \ref{37} of algorithm \ref{alg3}).
-If a slice does not admit to a specific DC, it remains for the next placement. In next placement the remaining slices, map to more than one DC according to their requirements.
+Secondly, we start mapping from the most needed slices to the DC with the most physical resources (from line \ref{33} to line \ref{34} of algorithm \ref{alg3}). After mapping DCs to slices, If a slice does not admit to a specific DC, it remains for the next placement. In the next placement the remaining slices, map to more than one DC according to their requirements. (from line \ref{35} to line \ref{36} of algorithm \ref{alg3}). At the end, if DC with the lowest physical resources is free and can be served the slices of a DC with the highest physical resource, the slices remapped to new DC with the lowest physical resource since it has the lowest power consumption (line \ref{37} of algorithm \ref{alg3}).
 \begin{algorithm}
 \caption{Plecement of Physical resources into Virtual resources}\label{alg3}
 \begin{algorithmic}[1]
@@ -465,7 +464,9 @@ In Fig. \ref{fig:f1a}, energy efficiency is depicted for two different numbers o
   \caption{Energy Efficiency vs. Mean Number of UEs in each Service}
   \label{fig:f1a}
 \end{figure}
-In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two different numbers of DCs with the different number of slices (the parameters for simulation listed in table \ref{table:1} and also we set $w_C = 320$, $w_S = 100$, $w_M =1$). In this simulation, it is assumed that  just one DC can serve each slice, and it is not admitted by more than one DC. The proposed method is based on Algorithm \ref{alg3}, and the optimal method is done by the MOSEK toolbox.
+In Fig. \ref{fig:f1}, the ratio of admitted slices is demonstrated for two different numbers of DCs with the different number of slices (the parameters for simulation listed in table \ref{table:1} and also we set $w_C = 320$, $w_S = 100$, $w_M =1$). In this simulation, the second term of \eqref{eqpsi}, is important and the designed parameter $\nu$ is supposed to be high.
+Also, it is assumed that just one DC can serve each slice, and each slice is not admitted by more than one DC. 
+The proposed method is based on Algorithm \ref{alg3}, and the optimal method is done by the MOSEK toolbox.
 \begin{small}
  \begin{table}
  \caption {Simulation Parameter} \label{table:1}
@@ -498,7 +499,7 @@ proposed method and the optimal method in the worst case (44 slices) is about $2
   \caption{Ratio of Admitted Slices connected to just one DC vs. Total slices}
   \label{fig:f1}
 \end{figure}
-In Fig. \ref{fig:f2}, the normalized resource consumption is depicted due to the number of slices (the parameters for simulation listed in table \ref{table:1} and also we set $w_C = 320$, $w_S = 100$, $w_M =1$). In this simulation, it is assumed that the number of DCs is entirely enough to cover all slices. The optimality of the placement of DCs to slices is measured. It is shown that how much resources of active DCs are not used. For ten slices, the difference between the optimal solution and the proposed solution is about $15$ percent.
+In Fig. \ref{fig:f2}, the normalized resource consumption is depicted due to the number of slices (the parameters for simulation listed in table \ref{table:1} and also we set $w_C = 320$, $w_S = 100$, $w_M =1$). In this simulation, suppose the number of DCs is entirely enough to cover all slices and also, the designed parameter $\nu$ is assumed to be low, so we focused on the first term of \eqref{eqpsi}. However, if any slice remains, it can be served by more than one DCs. The optimality of the placement of DCs to slices is measured based on the power consumption of DCs. It is shown that how much resources of active DCs are not used. For ten slices, the difference between the optimal solution and the proposed solution is about $15$ percent.
 \begin{figure}%[H]
   \centering
     \includegraphics[width=\linewidth]{fig22_last}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  29 OCT 2019 01:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  29 OCT 2019 13:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -797,25 +797,25 @@ Non-PDF special ignored!
 ]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 130.
+d on input line 131.
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 138.
+LaTeX Font Info:    Try loading font information for U+euf on input line 139.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 6592) in paragraph at lines 139--158
+Underfull \hbox (badness 6592) in paragraph at lines 140--159
 \T1/ptm/m/n/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/c
 mm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\T1/ptm/m/n/10 ,
  []
 
 [2 <./c7.pdf, page is rotated 90 degrees>]
-Underfull \hbox (badness 10000) in paragraph at lines 169--177
+Underfull \hbox (badness 10000) in paragraph at lines 170--178
 \T1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
  j[][][][]j[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 169--177
+Underfull \hbox (badness 1354) in paragraph at lines 170--178
 \T1/ptm/m/n/10 PRB. If we re-place $\OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 and $\
 OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 by $\OML/cmm/m/it/10 P[]$\T1/ptm/m/n/10 , a
 n
@@ -830,7 +830,7 @@ OML/cmm/m/it/10 ^^Q[]P[]\OT1/cmr/m/n/10 ([])) = \U/euf/m/n/10 R[]\OT1/cmr/m/n/1
  []
 
 
-Overfull \hbox (8.30817pt too wide) detected at line 353
+Overfull \hbox (8.30817pt too wide) detected at line 352
 []
  []
 
@@ -850,12 +850,12 @@ Package epstopdf Info: Source file: <fig1_last.eps>
 (epstopdf)                    size: 13720 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig1_last-eps-converted-to
 .pdf fig1_last.eps>
-(epstopdf)             \includegraphics on input line 464.
+(epstopdf)             \includegraphics on input line 463.
 Package epstopdf Info: Output file is already uptodate.
 <fig1_last-eps-converted-to.pdf, id=81, 534.99875pt x 429.605pt>
 File: fig1_last-eps-converted-to.pdf Graphic file (type pdf)
 <use fig1_last-eps-converted-to.pdf>
-Package pdftex.def Info: fig1_last-eps-converted-to.pdf  used on input line 464
+Package pdftex.def Info: fig1_last-eps-converted-to.pdf  used on input line 463
 .
 (pdftex.def)             Requested size: 240.90971pt x 193.45155pt.
 Package epstopdf Info: Source file: <f112.eps>
@@ -866,12 +866,12 @@ Package epstopdf Info: Source file: <f112.eps>
 (epstopdf)                    size: 17800 bytes
 (epstopdf)             Command: <repstopdf --outfile=f112-eps-converted-to.pdf 
 f112.eps>
-(epstopdf)             \includegraphics on input line 497.
+(epstopdf)             \includegraphics on input line 498.
 Package epstopdf Info: Output file is already uptodate.
 <f112-eps-converted-to.pdf, id=82, 655.44875pt x 443.6575pt>
 File: f112-eps-converted-to.pdf Graphic file (type pdf)
 <use f112-eps-converted-to.pdf>
-Package pdftex.def Info: f112-eps-converted-to.pdf  used on input line 497.
+Package pdftex.def Info: f112-eps-converted-to.pdf  used on input line 498.
 (pdftex.def)             Requested size: 240.90971pt x 163.06755pt.
 Package epstopdf Info: Source file: <fig22_last.eps>
 (epstopdf)                    date: 2019-10-28 15:40:18
@@ -881,13 +881,13 @@ Package epstopdf Info: Source file: <fig22_last.eps>
 (epstopdf)                    size: 12939 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig22_last-eps-converted-t
 o.pdf fig22_last.eps>
-(epstopdf)             \includegraphics on input line 504.
+(epstopdf)             \includegraphics on input line 505.
 Package epstopdf Info: Output file is already uptodate.
 <fig22_last-eps-converted-to.pdf, id=83, 655.44875pt x 443.6575pt>
 File: fig22_last-eps-converted-to.pdf Graphic file (type pdf)
 <use fig22_last-eps-converted-to.pdf>
 Package pdftex.def Info: fig22_last-eps-converted-to.pdf  used on input line 50
-4.
+5.
 (pdftex.def)             Requested size: 240.90971pt x 163.06755pt.
  [6 <./fig1_last-eps-converted-to.pdf>] (./pr.bbl
 Underfull \hbox (badness 1571) in paragraph at lines 46--50
@@ -953,7 +953,7 @@ ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/
 2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fo
 nts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (7 pages, 373718 bytes).
+Output written on pr.pdf (7 pages, 374055 bytes).
 PDF statistics:
  198 PDF objects out of 1000 (max. 8388607)
  137 compressed objects within 2 object streams
