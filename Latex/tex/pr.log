@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  29 OCT 2019 13:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  29 OCT 2019 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -767,10 +767,10 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<c7.pdf, id=1, 794.97pt x 614.295pt>
-File: c7.pdf Graphic file (type pdf)
-<use c7.pdf>
-Package pdftex.def Info: c7.pdf  used on input line 96.
+<c8.pdf, id=1, 794.97pt x 614.295pt>
+File: c8.pdf Graphic file (type pdf)
+<use c8.pdf>
+Package pdftex.def Info: c8.pdf  used on input line 96.
 (pdftex.def)             Requested size: 437.23485pt x 337.86328pt.
 
 Overfull \hbox (196.32513pt too wide) in paragraph at lines 96--97
@@ -808,7 +808,7 @@ Underfull \hbox (badness 6592) in paragraph at lines 140--159
 mm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\T1/ptm/m/n/10 ,
  []
 
-[2 <./c7.pdf, page is rotated 90 degrees>]
+[2 <./c8.pdf, page is rotated 90 degrees>]
 Underfull \hbox (badness 10000) in paragraph at lines 170--178
 \T1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
  j[][][][]j[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
@@ -852,7 +852,7 @@ Package epstopdf Info: Source file: <fig1_last.eps>
 .pdf fig1_last.eps>
 (epstopdf)             \includegraphics on input line 463.
 Package epstopdf Info: Output file is already uptodate.
-<fig1_last-eps-converted-to.pdf, id=81, 534.99875pt x 429.605pt>
+<fig1_last-eps-converted-to.pdf, id=45, 534.99875pt x 429.605pt>
 File: fig1_last-eps-converted-to.pdf Graphic file (type pdf)
 <use fig1_last-eps-converted-to.pdf>
 Package pdftex.def Info: fig1_last-eps-converted-to.pdf  used on input line 463
@@ -868,7 +868,7 @@ Package epstopdf Info: Source file: <f112.eps>
 f112.eps>
 (epstopdf)             \includegraphics on input line 498.
 Package epstopdf Info: Output file is already uptodate.
-<f112-eps-converted-to.pdf, id=82, 655.44875pt x 443.6575pt>
+<f112-eps-converted-to.pdf, id=46, 655.44875pt x 443.6575pt>
 File: f112-eps-converted-to.pdf Graphic file (type pdf)
 <use f112-eps-converted-to.pdf>
 Package pdftex.def Info: f112-eps-converted-to.pdf  used on input line 498.
@@ -883,7 +883,7 @@ Package epstopdf Info: Source file: <fig22_last.eps>
 o.pdf fig22_last.eps>
 (epstopdf)             \includegraphics on input line 505.
 Package epstopdf Info: Output file is already uptodate.
-<fig22_last-eps-converted-to.pdf, id=83, 655.44875pt x 443.6575pt>
+<fig22_last-eps-converted-to.pdf, id=47, 655.44875pt x 443.6575pt>
 File: fig22_last-eps-converted-to.pdf Graphic file (type pdf)
 <use fig22_last-eps-converted-to.pdf>
 Package pdftex.def Info: fig22_last-eps-converted-to.pdf  used on input line 50
@@ -923,7 +923,11 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 [7 <./f112-eps-converted-to.pdf> <./fig22_last-eps-converted-to.pdf>] (./pr.aux
-) ) 
+)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  8272 strings out of 492649
  122166 string characters out of 6133384
@@ -932,31 +936,31 @@ Here is how much of TeX's memory you used:
  116417 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,27n,42p,986b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type
-1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><
-c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><c:/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.p
-fb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/
-texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/
-2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fo
-nts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/tim
-es/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (7 pages, 374055 bytes).
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c
+:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pf
+b><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2
+018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/time
+s/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on pr.pdf (7 pages, 445130 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
+ 162 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
