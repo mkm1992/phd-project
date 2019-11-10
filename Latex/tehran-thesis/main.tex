@@ -60,9 +60,14 @@ twoside
 {
 \small
 \onehalfspacing
-\bibliographystyle{plain-fa} % or plainnat-fa for author-date
+%\bibliographystyle{plain-fa} % or plainnat-fa for author-date
+
+
+\begin{latin}
 \bibliographystyle{IEEEtran}
+\renewcommand{\bibname}{\rl{{کتاب‌نامه}\hfill}} 
 \bibliography{./tex/MyReferences}
+\end{latin}
 }
 
 \pagestyle{fancy}
