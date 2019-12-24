@@ -106,7 +106,7 @@ Num_Server = 4
 Num_Resource = 3
 Num_var = Num_Resource * Num_Server * Num_Service
 
-Itr = 100
+Itr = 1
 Max_Service = 50
 value = []
 x = []
