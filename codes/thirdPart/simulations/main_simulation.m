@@ -74,9 +74,9 @@ plot(N_service_min:N_service_step:N_service_max ,mean(NumService1,2)./xx')
 % hold on
 % plot(N_service_min:N_service_step:N_service_max ,mean(NumServerEnd1,2))
 % figure;
-plot(N_service_min:N_service_step:N_service_max ,wmeanCons)
-hold on
-plot(N_service_min:N_service_step:N_service_max ,wmeanCons1)
+% plot(N_service_min:N_service_step:N_service_max ,wmeanCons)
+% hold on
+% plot(N_service_min:N_service_step:N_service_max ,wmeanCons1)
 % figure;
 % plot(N_service_min:N_service_step:N_service_max ,wmeanVec)
 % hold on
