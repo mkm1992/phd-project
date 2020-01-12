@@ -69,7 +69,17 @@
 
 \section{System Model and Problem Formulation}\label{systemmodel}
 In this section, we consider the downlink of an ORAN system consisting of $V$ services served by an enterprise deploying $S$ slices. We denote $v\in \{1,2,...,V \} $ and $s \in \{1,2,...,S \}$ the set of
-services and slices, respectively. Each service $v$, contains $U_v$ single-antenna UEs. Moreover, each slice $s$, consists of $R_s$ multi-antenna RUs ,which contains $M$ antennas, $K_s$ physical resource blocks (PRBs), one DU and one CU. Each DU and CU consists of $$  
+services and slices, respectively. Each service $v$, contains $U_v$ single-antenna UEs. Moreover, each slice $s$, consists of $R_s$ multi-antenna RUs ,which contains $M$ antennas, $K_s$ physical resource blocks (PRBs), one DU and one CU. Each DU and CU consist of $M_{s,1}$ and $M_{s,2}$ VNFs, with the computational capacity
+of $\mu_1$ and $\mu_2$, respectively.
+\subsection{The Achievable Rate}
+Here, we want to obtain achievable data rate. The achievable data rate for the $j^{th}$ UE in $v^{th}$ service can be formulated as 
+\begin{equation}\label{eq1}
+\mathsf{R}_{u(v,j)} = B \log_2({1+ \rho_{u(v,j)}}),
+\end{equation}
+where, $\rho_{u(v,j)}$ is the SNR of $j^{th}$ UE in the $v^{th}$ service that is described as
+\begin{equation}\label{eq2}
+\rho_{u(v,j)} =  \frac{p_{u(v,j)}\sum_{s=1}^{S}|\bold{h}_{R_s,u(v,j)}^H \bold{w}_{R_s,u(v,j)}|^2 a_{v,s}}{BN_0 + I_{u(v,j)}},
+\end{equation}
 
 
 
