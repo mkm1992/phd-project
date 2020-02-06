@@ -214,7 +214,10 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \doublespacing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % دستوراتی برای اضافه کردن کلمه «فصل» در فهرست مطالب
-
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\usepackage{mathtools}
+\usepackage{stackengine}
+\def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
 \newlength\mylenprt
 \newlength\mylenchp
 \newlength\mylenapp
@@ -229,7 +232,6 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \addtolength\mylenprt{\cftpartnumwidth}
 \addtolength\mylenchp{\cftchapnumwidth}
 \addtolength\mylenapp{\cftchapnumwidth}
-
 \setlength\cftpartnumwidth{\mylenprt}
 \setlength\cftchapnumwidth{\mylenchp}	
 

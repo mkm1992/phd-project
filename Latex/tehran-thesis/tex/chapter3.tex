@@ -142,3 +142,126 @@ $N_0$
 $\boldsymbol{q}_{R_s} \in \mathbb{C}^{{R}_s }  $
 نشان دهنده ی نویز کوانتیزاسیون می باشد که از فشرده سازی سیگنال  در واحد توزیع شده بدست آمده است.
 $\boldsymbol{P}_{U_v} = \diag{(p_{u_{(v,1)}}, ..., p_{u_{(v,\mathcal{U}_v)}})}$.
+همچنین در اینجا، 
+$\zeta_{k,s}^{U_v} \delequal \{\zeta_{k,s}^{u(v,1)},\zeta_{k,s}^{u(v,2)},...,\zeta_{k,s}^{u(v,N_{U_v})}\}$
+و 
+$\zeta_{k,s}^{u(v,i)} \in \{0,1\}$
+پارامتر باینری می باشد که نشان دهنده ی این است که $i$ امین کابر در $v$امین سرویس امکان ارسال سیگنال خود را از طریق 
+\lr{PRB}
+$k$
+ام دارد یا نه، در ضمن این \lr{PRB} 
+ متعلق به برش $s$ ام می باشد و یا نه.
+ $\boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}=\left[\boldsymbol{h}_{\mathcal{R}_s,u_{(v,1)}},\ldots,\boldsymbol{h}_{\mathcal{R}_s,v_{(v,\mathcal{U}_v)}}\right]^T  \in \mathbb{C}^{{R}_s\times {U}_v }$
+نشان دهنده ی ماتریس کانال بین دسته واحد رادیویی 
+ $\mathcal{R}_s$
+ به دسته 
+ $\mathcal{U}_v$
+ کاربران می باشد.
+بردار کانال بین $s$امین برش و $i$امین کابر در $v$امین سرویس $\boldsymbol{h}_{\mathcal{R}_s,u_{(v,i)}}\in \mathbb{C}^{{R}_s}$ به صورت زیر نشان داده شده است 
+\begin{equation}
+\boldsymbol{h}_{\mathcal{R}_s,u_{(s,i)}} = \boldsymbol{\beta}^\frac{1}{2}_{\mathcal{R}_s,u_{(v,i)}} \boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}},
+\end{equation} 
+که در اینجا 
+$\boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{\mathcal{U}_v})$
+نشان دهنده ی بردار کانال فیدینگ سریع و تخت می باشد و
+ $\boldsymbol{\beta}_{\mathcal{R}_s,u_{(v,i)}}=\text{diag}(b_{r_{(s,1),u_{(v,i)}}},\ldots,b_{r_{(s,\mathcal{R}_s),u_{(v,i)}}})$
+ نشان دهنده ی ماتریس فیدینگ مقیاس بزرگ می باشد.
+در اینجا فرض بر این است که اطلاعات حالت کانال \lr{CSI}، به صورت کامل می باشد.\newline
+ $\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v} = [\boldsymbol{w}_{\mathcal{R}_s,u(v,1)},...,\boldsymbol{w}_{\mathcal{R}_s,u(v,U_v)}] \in \mathbb{C}^{{R}_s\times U_v} $
+ بردار بیم فرمینگ \lr{zero forcing}
+  می باشد که برای مینیمم کردن تداخل می باشد و بدین صورت است
+\begin{equation}
+\textstyle \boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v} = \boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}^H \boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v})^{-1}.
+\end{equation}  
+توان تداخلی کابر $i$ام به سرویس $v$ام به صورت زیر بیان می شود
+\begin{equation}
+\begin{split}
+ I_{u_{(v,i)}} &=
+ \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u_{(v,l)}}a_{v,s}\zeta_{u_(v,i),n,s}\zeta_{u_(v,l),n,s}}_{\text{(intra-service interference)}}\\
+&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u_{(y,l)}}a_{y,s} \zeta_{u_(v,i),n,s}\zeta_{u_(y,l),n,s}}_{\text{(inter-service interference)}}\\
+&+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r_{(s,j)}}^2 |\boldsymbol{h}_{r_{(s,j)}, u_{(v,i)}}|^2 a_{v,s}}_{\text{(quantization noise interference)}},
+\end{split}
+\end{equation}
+که 
+$\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(v,l)}}|^2$
+و 
+$\gamma_{2} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(y,l)}}|^2$.
+همچنین 
+
+${\sigma_q}_{r_{(s,j)}}$
+واریانس نویز کوانتیزاسیون
+$j$
+امین 
+واحد رادیویی در برش $s$ می باشد.
+سیگنال تداخلی برای هر کاربر از سیگنالهای کاربرانی بدست می آید که از \lr{PRB} مشترکی استفاده نموده اند.
+درصورت قرار دادن $P_{max}$
+به جای 
+$p_{u_{(v,l)}}$
+و 
+$p_{u_{(y,l)}}$
+باند بالایی  
+$\bar{I}_{u_{(v,i)}}$
+برای 
+$I_{u_{(v,i)}}$
+بدست می آید
+بنابراین،
+$\bar{\mathcal{R}}_{u_{(v,i)}} \forall v , \forall i$ 
+از قرار گرفتن 
+$\bar{I}_{u_{(v,i)}}$
+به جای 
+$I_{u_{(v,i)}}$
+در رابطه ی 
+\eqref{eq1} و \eqref{eq2}
+بدست می آید.
+\newline
+فرض کنید $\bar{p}_{r_{(s,j)}}$
+نشان دهنده ی سیگنال ارسالی از $j$ امین واحد رادیویی در $s$ امین برش می باشد.
+از رابطه ی \eqref{eq3} داریم
+\begin{equation}
+\bar{p}_{r_{(s,j)}} = \sum_{v=1}^{V}\boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   \boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s} + \sigma_{q_{r(s,j)}}^2.
+\end{equation}
+در این صورت نرخ کاربران در لینک \lr{fronthaul} بین $j$امین واحد رادیویی در برش $s$ام با واحد توزیع شده ی موجود در این برش، بدین صورت می باشد  \cite{simeone2016cloud, 1111}
+\begin{equation}
+C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s}}{ \sigma_{q_{r(s,j)}}^2})},
+\end{equation}
+که در اینجا 
+$a_{v,s}$
+متغیر باینری است که نشان دهنده ی این است که برش $s$ام به سرویس $v$ خدمات رسانی می کند یا نه.
+\subsection{میانگین تاخیر}
+فرض کنید ورود بسته های کاربران، فرآیند پوآسون با نرخ ورود 
+$\lambda_{u(v,i)}$
+برای $i$امین کاربر در سرویس $v$ ام می باشد.
+بنابراین، در لایه ی واحد مرکزی (\lr{CU})، میانگین نرخ ورود داده ی کاربری که از خدمات برش $s$ استفاده می نماید 
+$\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$
+می باشد. 
+همچنین، میانگین نرخ داده ی ورودی در لایه ی \lr{DU}، تقریبا مساوی میانگین نرخ داده ی ورودی لایه ی اول 
+$\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$
+می باشد.
+
+
+Furthermore, the mean arrival data rate of the DU layer is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$.
+It is assumed that there are load balancers in each layer for each slice to divide the incoming traffic to VNFs equally \cite{frdl,luong2018novel,luong2018novel1}.
+Suppose the baseband processing of each VNF is depicted as an M/M/1 processing queue.
+Each packet is processed by one of the VNFs of a slice. So, the mean delay of the $s^{th}$ slice in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
+\begin{equation}
+\begin{split}
+d_{s_1} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}},\\
+d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s,2}}}.
+\end{split}
+\end{equation}
+where $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layers respectively.
+Besides, $\alpha_{s}$ is the  arrival rate which is divided
+by load balancer before arriving to the VNFs. The  arrival rate of each VNF in each layer of the slice $s$ is $\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$.
+In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice on the  wireless link. The arrival data rate of wireless link
+ is equal to the arrival data rate of load balancers for each slice \cite{frdl}.
+Moreover, it is assumed that the service time of transmission queue for each slice $s$ has
+ an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue \cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. Therefore,
+the mean delay of the transmission layer is
+\begin{equation}
+ d_{s_{tr}} = \frac{1}{R_{{tot}_s} - \alpha_{s}};
+\end{equation}
+where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$ is the total achievable rate of each slice that is mapped to specific service.
+Mean delay of each slice is
+\begin{equation}
+D_{s} = d_{s_1} + d_{s_2} + d_{s_{tr}} \forall s.
+\end{equation}
