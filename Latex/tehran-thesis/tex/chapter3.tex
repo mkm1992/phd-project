@@ -237,31 +237,37 @@ $\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$
 همچنین، میانگین نرخ داده ی ورودی در لایه ی \lr{DU}، تقریبا مساوی میانگین نرخ داده ی ورودی لایه ی اول 
 $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$
 می باشد.
-
-
-Furthermore, the mean arrival data rate of the DU layer is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$.
-It is assumed that there are load balancers in each layer for each slice to divide the incoming traffic to VNFs equally \cite{frdl,luong2018novel,luong2018novel1}.
-Suppose the baseband processing of each VNF is depicted as an M/M/1 processing queue.
-Each packet is processed by one of the VNFs of a slice. So, the mean delay of the $s^{th}$ slice in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
+میانگین نرخ داده ی ورودی در لایه ی \lr{DU}، تقریبا برابر میانگین نرخ داده ی ورودی در لایه ی \lr{CU} می باشد $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$.
+در اینجا فرض بر این است کهدر هر لایه متعادل کننده ی ترافیک موجود است که ترافیک ورودی را به طور مساوی بین \lr{VNF} ها تقسیم می نماید\cite{frdl,luong2018novel,luong2018novel1}.
+فرض کنید پردازش باند پایه هر \lr{VNF}، بوسیله ی پردازش صف \lr{M/M/1} نشان داده می شود.
+هر بسته بوسیله ی یکی از \lr{VNF}های برش شبکه، پردازش می شود.
+بنابراین، میانگین تاخیر برش $s$ در لایه ی اول و دوم با استفاده از مدل \lr{M/M.1} به این صورت نشان داده می شود
 \begin{equation}
 \begin{split}
 d_{s_1} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}},\\
 d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s,2}}}.
 \end{split}
 \end{equation}
-where $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layers respectively.
-Besides, $\alpha_{s}$ is the  arrival rate which is divided
-by load balancer before arriving to the VNFs. The  arrival rate of each VNF in each layer of the slice $s$ is $\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$.
-In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice on the  wireless link. The arrival data rate of wireless link
- is equal to the arrival data rate of load balancers for each slice \cite{frdl}.
-Moreover, it is assumed that the service time of transmission queue for each slice $s$ has
- an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue \cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. Therefore,
-the mean delay of the transmission layer is
+در اینجا
+$1/\mu_1$ و $1/\mu_2$
+میانگین زمان سرویس دهی در لایه ی اول و دوم به ترتیب می باشند.
+$\alpha_{s}$
+نرخ ورودی است که توسط متعادل کننده ی ترافیک به طور مساوی بین \lr{VNF} ها تقسیم می شود.
+نرخ ورودی هر \lr{VNF} در هر لایه از برش \lr{s}، $\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$ می باشد.
+$d_{s_{tr}}$
+تاخیر ارسال برای برش $s$ در لینک وایرلس می باشد.
+نرخ داده ی ورودی لینک وایرلس برابر نرخ داده ی ورودی متعادل کننده ی ترافیک برای هر برش است
+\cite{frdl}.
+همچنین زمان سرویس برای صف ارسال در هر برش $s$ دارای توزیع نمایی با میانگین $1/(R_{{tot}_s})$
+است و می توان به صورت صف \lr{M/M/1} مدل کرد  
+\cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}.
+بنابراین میانگین تاخیر لایه ی ارسال بدین صورت است
 \begin{equation}
  d_{s_{tr}} = \frac{1}{R_{{tot}_s} - \alpha_{s}};
 \end{equation}
-where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$ is the total achievable rate of each slice that is mapped to specific service.
-Mean delay of each slice is
+ $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$ 
+ کل نرخ قابل دسترس در هر برش می باشد که به سرویس خاص، تخصیص داده است.
+میانگین تاخیر در هر برش نیز بدین صورت است
 \begin{equation}
 D_{s} = d_{s_1} + d_{s_2} + d_{s_{tr}} \forall s.
 \end{equation}
