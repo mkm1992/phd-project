@@ -17,7 +17,7 @@ class Handler(tornado.websocket.WebSocketHandler):
 		print(msg, "after convert to json", msg['url'])
 		mainService = MainService(msg['url'], msg['type'])
 		mainService.start_clustering(self)
-		#self.write_message("your request is processing")
+		self.write_message("your request is processing")
 
 	def on_close(self):
 		print("socket closed")
