@@ -21,6 +21,6 @@ class MainService:
 		#     text_file.write(now)
 		#################################################
 		a =2;
-		serialized_data = json.dumps({"throughput": a})
+		serialized_data = json.dumps({"throughput": a, "result": now})
 		socket.write_message(serialized_data)
         
