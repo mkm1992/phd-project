@@ -4,23 +4,17 @@ import json
 import numpy as np
 import time
 import os
-
-
+from services.obtainNet.throughput_service import throughputService
+from services.obtainNet.text2json_service import text2jsonService
 class MainService:
 	def __init__(self, url, type):
 		self.url = url
 		self.type = int(type)
-		#self.thresh = int(thresh)
 	def start_clustering(self, socket):
-		str1 = "ping "+self.url;   
-		f = os.popen(str1)
-		now = f.read()
-		print(now)
-		print(type(now))
-		# with open("Output.txt", "w") as text_file:
-		#     text_file.write(now)
-		#################################################
-		a =2;
-		serialized_data = json.dumps({"throughput": a, "result": now})
-		socket.write_message(serialized_data)
+		throughputService.CfunctionReciever()
+		dict1,out_file = text2jsonService.conversion()
+		print("hiiii")
+		serialized_data =json.dump(dict1, out_file, indent = 4) 
+		print(dict1)
+		socket.write_message(dict1)
         
