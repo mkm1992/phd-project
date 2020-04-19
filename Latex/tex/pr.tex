@@ -60,7 +60,7 @@
 \maketitle
 
 \begin{abstract}
-Open radio access network (ORAN) alliance which has been formed recently establishes a flexible,  open, and smart radio access network (RAN) by combing the ideas from xRAN and cloud RAN (C-RAN). ORAN divides the functions of the RAN into three parts, namely remote unit (RU), distributed unit (DU), and central unit (CU). While RU contains lower PHY functions, DU contains higher PHY, MAC, and RLC and CU contains RRC, PDCP, and SDAP. CU and DU are implemented as virtual network functions (VNFs) running on a cloud environment. Interface between RU, CU, and DU are open standard interfaces. Network slicing as a new concept in 5G systems is used to share the network resources between various services while the operation of one service does not affect another service. In this paper, we study the problem of RAN network slicing in an ORAN system.  We formulate the problem of wireless link scheduling, mapping the slices to the services, and mapping the physical data centers resource to slices. The objective is to jointly maximize the energy efficiency and minimize power consumption of RUs and the cost of physical resources in a downlink channel. The problem is formulated as a mixed-integer optimization problem that can be decomposed into two independent sub-problems. Heuristic algorithms are proposed for each of the sub-problems.
+Open radio access network (ORAN) alliance which has been formed recently establishes a flexible,  open, and smart radio access network (RAN) by combing the ideas from xRAN and cloud RAN (C-RAN). ORAN divides the functions of the RAN into three parts, namely remote unit (RU), distributed unit (DU), and central unit (CU). While RU contains lower PHY functions, DU contains higher PHY, MAC, and RLC and CU contains RRC, PDCP, and SDAP. CU and DU are implemented as virtual network functions (VNFs) running on a cloud environment. Interfaces between RU, CU, and DU are open standard interfaces. Network slicing as a new concept in 5G systems is used to share the network resources between various services while the operation of one service does not affect another service. In this paper, we study the problem of RAN network slicing in an ORAN system.  We formulate the problem of wireless link scheduling, mapping the slices to the services, and mapping the physical data centers resource to slices. The objective is to jointly maximize the energy efficiency and minimize power consumption of RUs and the cost of physical resources in a downlink channel. The problem is formulated as a mixed-integer optimization problem that can be decomposed into two independent sub-problems. Heuristic algorithms are proposed for each of the sub-problems.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -70,21 +70,21 @@ Open RAN (ORAN), network slicing, energy efficiency.
 \section{Introduction}
 Open RAN (ORAN), as the integration and expansion of C-RAN and xRAN, is expected to be a key technology in 5G networks to extensively enhance the RAN performance. The core idea of C-RAN is to split the radio remote head (RRU) from the baseband unit (BBU). Several BBUs operating on a cloud server will create a BBU-Pool, providing unified baseband signal processing with powerful computing capabilities \cite{cran1,frdl,simeone2016cloud,motalleb2017optimal}. On the other hand, xRAN technology has three fundamental features. The control plane is decoupled from user plane. Besides, a modular eNB software stack is built to operate on common-off-the-shelf (COTS) hardware. Moreover, open north-bound and south-bound interfaces are introduced \cite{xran}.
 
-ORAN virtualizes the elements of the radio access networks, separate them and define appropriate open interfaces for connection of these elements. Moreover, ORAN uses machine learning techniques to develop smarter RAN layers in its architecture. In an innovative ORAN system, the programmable RAN software is decoupled from hardware \cite{oran1}. Open interface is one of the most crucial properties for ORAN to enable mobile network operators (MNOs) to define their own services.
+ORAN virtualizes the elements of the radio access networks, separates them and defines appropriate open interfaces for connection of these elements. Moreover, ORAN uses machine learning techniques to develop smarter RAN layers in its architecture. In an innovative ORAN system, the programmable RAN software is decoupled from hardware \cite{oran1}. Open interface is one of the most crucial properties for ORAN to enable mobile network operators (MNOs) to define their own services.
 The concept of software defined network (SDN), which is the separation of control plane from user plane, is deployed in an intelligent ORAN architecture. Moreover, this separation promotes RRM to use non-realtime (RT) and near-realtime (NRT) RAN Intelligent Controller (RIC).
 In the ORAN architecture, distributed unit (DU) is a logical node having RLC/MAC/High-PHY layer.
 Moreover, central unit (CU) is a logical node having RRC, SDAP and PDCP. Also, radio unit (RU) is a logical node having LOW-PHY layer and
 RF processing \cite{oranpaper}.
 ORAN introduces interfaces such as open fronthaul interface that connects DU and RU (i.e., E2 interface), and an A1 interface between orchestration/NMS layer containing the non-real-time RIC (RIC non-RT) function and the eNB/gNB containing the near-real-time RIC (RIC near-RT) function.
 
-To evolve servicing in 5G networks, separation of elements of software and hardware of network is employed and referred to as network functions virtualization (NFV). Virtual network function (VNF) are functional blocks of the system. 5G networks are expected to host several services with different requirements simultaneously. Network slicing is considered as a solution for such demand. A network slice is a logical end-to-end network which provides service with specific requirements. Multiple network slices run on the same network infrastructure which are managed and operate independently \cite{lee2018dynamic}. Slicing can be defined for the RAN, for the core network or both of these them \cite{ns1}.
+To evolve servicing in 5G networks, separation of elements of software and hardware of network is employed and referred to as network functions virtualization (NFV). Virtual network functions (VNFs) are functional blocks of the system. 5G networks are expected to host several services with different requirements simultaneously. Network slicing is considered as a solution for such demand. A network slice is a logical end-to-end network which provides service with specific requirements. Multiple network slices run on the same network infrastructure which are managed and operated independently \cite{lee2018dynamic}. Slicing can be defined for the RAN, for the core network or both of them \cite{ns1}.
 
-Based on their type of request, UEs are classified into various services, where UEs in the same service have similar service requests. In addition, each service is mapped to one or more slices based on the resources of the slices. Each VNF of the ORAN is mapped to one or some virtual machines (VMs) in the data center. For simplicity of analysis and without loss of generality, we assume a VNF is mapped to one VM and requires specific physical resources including storage, memory, and processing \cite{frdl,luong2018novel,luong2018novel1}.
+Based on their type of service request, user equipments (UEs) are classified into various services, where UEs in the same service have similar service requests. In addition, each service is mapped to one or more slices based on the resources of the slices. Each VNF of the ORAN is mapped to one or more virtual machines (VMs) in the data center. For simplicity of analysis and without loss of generality, we assume a VNF is mapped to one VM and requires specific physical resources including storage, memory, and processing \cite{frdl,luong2018novel,luong2018novel1}.
 
 
 %The compression of messages passed through the fronthaul link due to the limited capacity of these links is considered in \cite{simeone2016cloud,1111}.
-In \cite{oranT},  the evolution of RAN in the  5G network is described. The architecture of C-RAN and X-RAN is expressed and development of the ORAN from C-RAN and X-RAN is explained. Also requirements of the network in terms of capacity and latency is taken into account.
-In \cite{oran12},  the ORAN architecture is studied. The eight work groups is discussed including: focus areas of ORAN alliance which contains use-cases, overall architecture,  open interfaces, and  the virtualization and modularization of hardware and software. To the best of our knowledge, there is not work in the literature to model ORAN systems. 
+In \cite{oranT},  the evolution of RAN in the  5G network is described. The architecture of C-RAN and xRAN is expressed and development of the ORAN from C-RAN and xRAN is explained. Also requirements of the network in terms of capacity and latency is taken into account.
+In \cite{oran12},  the ORAN architecture is studied. The eight working groups are discussed including: focus areas of ORAN alliance which contains use-cases, overall architecture,  open interfaces, and  the virtualization and modularization of hardware and software. To the best of our knowledge, there is not work in the literature to model ORAN systems. 
 
 %We shortly review related works in the area of C-RAN and xRAN. In \cite{motalleb2017optimal}, power allocation in C-RAN architecture, with limited fronthaul capacity in clustered network is studied. In \cite{lee2018dynamic}, dynamic network slicing is considered in heterogeneous CRAN (H-CRAN) to maximize the weighted sum-rate. Also, two level network slicing (upper and lower level) is done. The admission of UEs is maximized using the heuristic algorithms. In addition, the allocation of BBU capacity to UEs is considered. In \cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting} minimization of cost obtained by power consumption, also cloud processing and limited power for each RU is considered. Furthermore, the processing delay of each VM and wireless transmission delay are taken into account. In \cite{frdl}, the processing and transmission delay is modeled as a M/M/1 queue. In \cite{guo2016exploiting}, M/D/1 queue is used to modeled the transmission delay.
 
@@ -95,11 +95,10 @@ In \cite{oran12},  the ORAN architecture is studied. The eight work groups is di
   \label{fig:c11}
 \end{figure}
 
-In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The RAN is divided into three layers including RU, DU, and CU with open interfaces. DU and CU are running on general purpose data centers. UEs are divided to different services according to their requirements. RAN resources are decoupled to slices to provide requirements of services. Optimal power allocation and joint mapping of slices to services are applied. In addition, mapping slices to physical resources is taken to account. The contributions of the paper are as follows:
+In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The RAN is divided into three layers including RU, DU, and CU with open interfaces. DU and CU are running on general purpose data centers. UEs are divided to different services according to their requirements. RAN resources are partitioned into slices to provide requirements of services. Optimal power allocation and joint mapping of slices to services are applied. In addition, mapping slices to physical resources is taken into account. The contributions of the paper are as follows:
 \begin{itemize}
-\item In this paper, joint network slicing and resource allocation is considered in an ORAN system.
+\item Joint network slicing and resource allocation is considered in an ORAN system.
 \item We formulate the problem of assigning UEs to services, services to slices, and physical wireless and data center resources to the slices as an optimization problem.
-\item The problem is decomposed into two independent sub-problems.
 \item Novel heuristic algorithms are applied for these sub-problems to efficiently obtain the solution.
 \end{itemize}
 
@@ -113,11 +112,11 @@ In this section, first, we  present the system model. Then, we obtain achievable
 Finally, the main problem is expressed.
 \subsection{System Model}
 Suppose there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $ consists of $U_v$
-single-antenna user equipments (UEs) that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RUs and $K_s$ physical resource blocks (PRBs), one DU and one CU that contains VNFs.
-Slices can have shared resources. All RUs in a slice, that is mapped to a service, transmit signals cooperatively to all the UEs in a specific service \cite{motalleb2017optimal,mimoCran}. Each RU $r \in \{1,2,...,R \}$ is mapped to a DU via an optical fiber link with limited fronthaul capacity.
+single-antenna UEs that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RUs and $K_s$ physical resource blocks (PRBs), one DU and one CU that contains VNFs.
+Slices can have shared resources. All RUs in a slice, that are mapped to a service, transmit signals cooperatively to all the UEs in a specific service \cite{motalleb2017optimal,mimoCran}. Each RU $r \in \{1,2,...,R \}$ is mapped to a DU via an optical fiber link with limited fronthaul capacity.
 There are two processing layers one in the DU and one in the CU of ORAN system, each represented with a VNF. The lower layer (i.e., DU) consists of high-PHY, MAC, and RLC, and the upper layer (i.e., CU) consists of RRC, PDCP and SDAP. Assume we have $M_1$ VNFs in the DU layer and $M_2$ VNFs in the CU layer for processing data.
 Each VNF in both layers belongs to one or more slices. So, in the $s^{th}$ slice, there are $M_{s,1}$ VNFs in the DU layer and $M_{s,2}$ VNFs in the CU layer. The VNFs in the DU and CU layers have the computational capacity that is  equal to $\mu_1$ and $\mu_2$, respectively.
-Also, RUs and PRBs can serve more than one slices.
+Also, RUs and PRBs can serve more than one slice.
 \subsection{The Achievable Rate}
 The achievable data rate for the $i^{th}$ UE in the $v^{th}$ service can be written as
 \begin{equation}\label{eq1}
@@ -206,7 +205,7 @@ the mean delay of the transmission layer is
  d_{s_{tr}} = \frac{1}{R_{{tot}_s} - \alpha_{s}};
 \end{equation}
 where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$ is the total achievable rate of each slice that is mapped to specific service.
-Mean delay of each slice is
+Mean delay of each slice is obtained as below.
 \begin{equation}
 D_{s} = d_{s_1} + d_{s_2} + d_{s_{tr}} \forall s.
 \end{equation}
@@ -233,7 +232,7 @@ An important criterion to measure the optimality of a system is energy efficienc
 \begin{equation}
 \textstyle \eta(\boldsymbol{P},\boldsymbol{A}) := \frac{\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} }{\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}} = \frac{\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A})}{P_r^{{tot}}(\boldsymbol{P},\boldsymbol{A})},
 \end{equation}
-where, $P_r^{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{s=1}^{S}\sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}$ is the total power consumption of all RUs in all slices. Also, $\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} $ is the toal rates of all UEs applied for all types of services.
+where, $P_r^{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{s=1}^{S}\sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}$ is the total power consumption of all RUs in all slices. Also, $\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} $ is the total rates of all UEs applied for all types of services.
 Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
 $\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as
 \begin{equation*}
@@ -247,7 +246,7 @@ where, $\nu$ is a design variable to value between the first term of \eqref{eqps
 Our goal is to maximize sum-rate and minimize sum-power (the total power of all RUs and the total power consumption of baseband processing at all DCs) simultaneously, with the presence of constraints which is written as follow,
 \begin{subequations}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{Y} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})+\frac{1}{\psi_{tot}(\boldsymbol{Y})} \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{Y} }   \quad &  \eta(\boldsymbol{P},\boldsymbol{A})+ \varphi \frac{1}{\psi_{tot}(\boldsymbol{Y})} \\
 \text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} \quad \forall s, \forall i,
  \label{c11} \\
 &p_{u_{(v,k)}}  \geq 0  \quad \forall v, \forall k,\label{c12} \\
@@ -262,6 +261,7 @@ Our goal is to maximize sum-rate and minimize sum-power (the total power of all 
 \end{subequations}
 where $\boldsymbol{P} =[p_{u(v,k)}] \:\: \forall v , \forall k $, is the matrix of power for UEs, $\boldsymbol{A} =[a_{v,s}] \:\: \forall v , \forall s $ denotes the binary variable for connecting slices to services and $\boldsymbol{Y} =[y_{s,d}]  \:\: \forall s ,  \forall d $ is a binary variable shown whether
 the physical DC is mapped to a VNFs of a slice or not.
+Also, $\varphi$ is weighted variable to value between first and second term of objective function.
 \eqref{c11}, and \eqref{c12}, indicate that the power of each RU do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. Also \eqref{c13} shows that the rate of each UE is more than a threshold. \eqref{c14} and \eqref{c15} expressed the limited capacity of the fronthaul link, and the limited delay of receiving signal, respectively.
 Furthermore, \eqref{c21}
 ensures that each service is mapped to at least one slice.
@@ -308,7 +308,7 @@ The details of the heuristic algorithm are represented in algorithm \ref{alg}.
 \For {$j \gets 1$ to $V$}
 \State Set $a_{i,j} = 1$
 \State Obtain Parameters of Systems (power and rate of UEs, rate of fronhaul links, power of RUs)
-\If {conditions \eqref{c11}, \eqref{c12}, \eqref{c13} and \eqref{c14} is not applied}
+\If {conditions \eqref{c11}, \eqref{c12}, \eqref{c13} and \eqref{c14} are not applied}
 \State Set $a_{i,j} = 0$;
 \Else
 \State break from inner loop;
@@ -394,7 +394,7 @@ We define a weighted parameter for $\Omega_{\mathfrak{z},s}^{tot}$ and $\tau_j^\
 where, $\boldsymbol{w} = \{w_M, w_S, w_C\}$ is the weight of memory, storage and CPU.
 Secondly, we start mapping from the most needed slices to the DC with the most physical resources (from line \ref{33} to line \ref{34} of algorithm \ref{alg3}). After mapping DCs to slices, If a slice does not admit to a specific DC, it remains for the next placement. In the next placement the remaining slices, map to more than one DC according to their requirements. (from line \ref{35} to line \ref{36} of algorithm \ref{alg3}). At the end, if DC with the lowest physical resources is free and can be served the slices of a DC with the highest physical resource, the slices remapped to new DC with the lowest physical resource since it has the lowest power consumption (line \ref{37} of algorithm \ref{alg3}).
 \begin{algorithm}
-\caption{Plecement of Physical resources into Virtual resources}\label{alg3}
+\caption{Placement of Physical resources into Virtual resources}\label{alg3}
 \begin{algorithmic}[1]
 \State Sort Slices according to $\hat{\Omega}_{s}^{tot} , \forall s$ in descending order.\label{31}
 \State Sort DCs according to $\hat{\tau}_j , \forall j$ in descending order. \label{32}
@@ -454,7 +454,7 @@ Parameter & Value \\ [0.5ex]
  \end{tabular}
  \end{center}
  \end{table}
-In Fig. \ref{fig:f1a}, energy efficiency is depicted for two different numbers of services with different mean number of UEs in each service The parameters of simulations are listed in Table \ref{table:1a}. The optimal method is obtained by using MOSEK toolbox to obtain $\boldsymbol{A}$ and CVX toolbox to obtain $\boldsymbol{P}$. They iteratively update $\boldsymbol{A}$, $\eta$ and $\boldsymbol{P}$. The optimal method is $0.1$ bits/J/Hz better than the proposed method for $V = 6$ and $E[U_v] = 10$, and also, $0.09$ bits/J/Hz better than the proposed method for $V = 3$ and, $E[U_v] = 10$. As it is shown, the energy efficiency is increased as mean number of UEs rises.
+In Fig. \ref{fig:f1a}, energy efficiency is depicted for two different numbers of services with different mean number of UEs in each service. The parameters of simulations are listed in Table \ref{table:1a}. The optimal method is obtained by using MOSEK toolbox to obtain $\boldsymbol{A}$ and CVX toolbox to obtain $\boldsymbol{P}$. They iteratively update $\boldsymbol{A}$, $\eta$ and $\boldsymbol{P}$. The optimal method is $0.1$ bits/J/Hz better than the proposed method for $V = 6$ and $E[U_v] = 10$, and also, $0.09$ bits/J/Hz better than the proposed method for $V = 3$ and, $E[U_v] = 10$. As it is shown, the energy efficiency is increased as mean number of UEs rises.
 \begin{figure}%[H]
   \centering
     \includegraphics[width=\linewidth]{fig1_last}

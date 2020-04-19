@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  5 NOV 2019 13:39
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  17 APR 2020 18:21
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **pr.tex
 (./pr.tex
@@ -615,25 +615,25 @@ Underfull \vbox (badness 2285) has occurred while \output is active []
 ]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 128.
+d on input line 127.
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 136.
+LaTeX Font Info:    Try loading font information for U+euf on input line 135.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 6592) in paragraph at lines 137--156
+Underfull \hbox (badness 6592) in paragraph at lines 136--155
 \T1/ptm/m/n/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/c
 mm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\T1/ptm/m/n/10 ,
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 167--175
+Underfull \hbox (badness 10000) in paragraph at lines 166--174
 \T1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
  j[][][][]j[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 167--175
+Underfull \hbox (badness 1354) in paragraph at lines 166--174
 \T1/ptm/m/n/10 PRB. If we re-place $\OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 and $\
 OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 by $\OML/cmm/m/it/10 P[]$\T1/ptm/m/n/10 , a
 n
@@ -661,13 +661,16 @@ n/10 and
  []
 
 [5]
-File: fig1_last.eps Graphic file (type eps)
-<fig1_last.eps>
-File: f112.eps Graphic file (type eps)
-<f112.eps>
-File: fig22_last.eps Graphic file (type eps)
-<fig22_last.eps>
- [6] (./pr.bbl
+File: fig1_last.pdf Graphic file (type pdf)
+<use fig1_last.pdf>
+File: f112.pdf Graphic file (type pdf)
+<use f112.pdf>
+File: fig22_last.pdf Graphic file (type pdf)
+<use fig22_last.pdf>
+ [6]
+Underfull \vbox (badness 5431) has occurred while \output is active []
+
+ (./pr.bbl
 Underfull \hbox (badness 1571) in paragraph at lines 46--50
 []\T1/ptm/m/n/8 (2018) xran fo-rum merges with c-ran al-liance
  []
@@ -690,7 +693,7 @@ Underfull \hbox (badness 1377) in paragraph at lines 89--93
 
  []
 
-)
+[7])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -702,18 +705,20 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (./pr.aux)
+[8
+
+] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7302 strings out of 492970
- 107731 string characters out of 6137298
+ 7287 strings out of 492970
+ 107744 string characters out of 6137298
  212375 words of memory out of 5000000
- 11163 multiletter control sequences out of 15000+600000
+ 11166 multiletter control sequences out of 15000+600000
  84455 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 44i,27n,42p,1349b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,27n,42p,1350b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on pr.pdf (7 pages).
+Output written on pr.pdf (8 pages).

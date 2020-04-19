@@ -271,3 +271,75 @@ $d_{s_{tr}}$
 \begin{equation}
 D_{s} = d_{s_1} + d_{s_2} + d_{s_{tr}} \forall s.
 \end{equation}
+\subsection{مرکز داده ی فیزیکی}
+هر \lr{VNF}
+نیازمند منابع فیزیکی است که شامل حافظه، نگهدارنده و پردازشگر می باشد.
+فرض کنید منابع مورد نیاز برای $f$ امین \lr{VNF} در برش $s$ ام به صورت زیر می باشد
+ \begin{equation}
+\bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f \},
+\end{equation}
+که در اینجا 
+ $\bar{\Omega}_{s}^f\in \mathbb{C}^{3}$
+ و
+$\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f$
+به ترتیب نشان دهنده ی مقدار حافظه، نگهدارنده و پردازشگر می باشد.
+همچنین مقدار کل حافظه، نگهدارنده و پردازشگر برای همه \lr{VNF} ها در یک برش به این صورت تعریف می شود
+\begin{equation}
+\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{M_{s_1} + M_{s_2}}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C\}.
+\end{equation}
+همچنین $D_c$ مرکز داده برای سرویس دهی به \lr{VNF} ها می باشد. هر مرکز داده شامل تعدادی سرور برای سرویس دهی است.
+مقدار حافظه، نگهدارنده و پردازشگر به ترتیب با 
+$\tau_{M_{j}}, \tau_{S_{j}}$
+و
+$\tau_{C_{j}} $
+برای 
+$j^{th}$
+امین مرکز داده به ترتیب زیر می باشد.
+\begin{equation*}
+\tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}} \},
+\end{equation*}
+در این مدل سیستم، 
+تخصیص منابع فیزیکی به \lr{VNF} ها در نظر کرفته شده است. 
+در اینجا فرض بر این است که $y_{s,d}$ متغیر صفر و یکی است که نشان میدهد مرکز داده ی $d$ ام به $s$ امین برش متصل است یا نه.
+\subsection{صورت مساله}
+یک معیار مهم برای سنجش بهینگی یک سیستم ، بهره وری انرژی است که نسبت نرخ کل به توان کل می باشد.
+\begin{equation}
+\textstyle \eta(\boldsymbol{P},\boldsymbol{A}) := \frac{\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} }{\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}} = \frac{\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A})}{P_r^{{tot}}(\boldsymbol{P},\boldsymbol{A})},
+\end{equation}
+که در اینجا، 
+ $P_r^{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{s=1}^{S}\sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}$
+ توان کل مصرفی تمام واحد های رادیویی در یک برشمی باشد.
+همچنین 
+ $\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} $
+ نرخ تمام کاربران مصرفی تمام سرویس ها می باشد.
+فرض کنید توان مصرفی پردازش باند پایه در هر مرکز داده ی $d$ که به \lr{VNF} های یک برش $s$ متصل می باشد با   
+$\phi_{s,d}$
+نشان داده شده است.
+بنابراین می توان توان کل سیستم را برای کلیه مرکز داده های فعال که به برش متصل هستند ،بدین صورت نشان داد
+\begin{equation*}
+\textstyle \phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d}.
+\end{equation*}
+همچنین ، یک تابع هزینه برای قرار دادن \lr{VNF} ها در مرکز داده ها بدین عنوان تعریف شده است
+\begin{equation}\label{eqpsi}
+\textstyle  \psi_{tot} = \phi_{tot} - \nu \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s}
+\end{equation}
+که $\nu$
+متغیر طراحی برای ارزش بین اولین ترم 
+\eqref{eqpsi}
+ است که عبارت است از کل مصرف انرژی منابع فیزیکی و ترم دوم که مقدار برش های پذیرفته شده برای داشتن منابع فیزیکی نشان داده شده است.
+هدف ما این است که مجموع نرخ را به حداکثر رسانده و توان حاصل از کل (حداکثر توان تمام واحد های رادیویی و کل مصرف انرژی پردازش باند پایه را در کلیه مرکز داده ها) به طور همزمان و با وجود محدودیت هایی که به شرح زیر نوشته شده است ، به حداکثر برساند.
+\begin{subequations}
+\begin{alignat}{4}
+\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{Y} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})+\frac{1}{\psi_{tot}(\boldsymbol{Y})} \\
+\text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} \quad \forall s, \forall i,
+ \label{c11} \\
+&p_{u_{(v,k)}}  \geq 0  \quad \forall v, \forall k,\label{c12} \\
+&\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{min} \quad \forall v, \forall k,\label{c13} \\
+&C_{r_{(s,i)}} \leq C_{r_{(s,i)}}^{max} \quad \forall s, \forall i, \label{c14}\\
+&D_{s} \leq D_{s}^{max} \quad \forall s,\label{c15} \\
+& \textstyle  \sum_{s=1}^{S}a_{v,s} \geq 1 \quad \forall s, \label{c21} \\
+& \textstyle  \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s,\label{c23} \\
+ &\textstyle  \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_{\mathfrak{z}_d}  \forall s, \forall \mathfrak{z}\in \mathcal{E}; \label{c22}
+\end{alignat}
+\label{constraints}
+\end{subequations}
