@@ -219,8 +219,9 @@ Let the required resources for VNF $f$ in slice $s$ is represented by a tuple as
 where $\bar{\Omega}_{s}^f\in \mathbb{C}^{3}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f$ indicate the amount of required memory, storage, and CPU, respectively.
 Moreover, the total amount of required memory, storage and CPU of all VNFs of a slice is defined as
 \begin{equation}
-\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{M_{s_1} + M_{s_2}}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C\}.
+\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C\}.
 \end{equation}
+Where, $F_s = M_{s_1} + M_{s_2}$
 Also, there are $D_c$ data centers (DC), serving the VNFs. Each DC contains several servers that supply VNF requirements.
 The amount of memory, storage and CPU is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$and $\tau_{C_{j}} $ for the $j^{th}$ DC, respectively
 \begin{equation*}
@@ -255,7 +256,7 @@ Our goal is to maximize sum-rate and minimize sum-power (the total power of all 
 &D_{s} \leq D_{s}^{max} \quad \forall s,\label{c15} \\
 & \textstyle  \sum_{s=1}^{S}a_{v,s} \geq 1 \quad \forall s, \label{c21} \\
 & \textstyle  \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s,\label{c23} \\
- &\textstyle  \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_{\mathfrak{z}_d}  \forall s, \forall \mathfrak{z}\in \mathcal{E}; \label{c22}
+ &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c22}
 \end{alignat}
 \label{constraints}
 \end{subequations}
@@ -267,8 +268,8 @@ Furthermore, \eqref{c21}
 ensures that each service is mapped to at least one slice.
 Also, \eqref{c23}, guarantees that each slice (VNFs in two layers of slices) has been placed to one or more physical resources of DCs. Moreover, in \eqref{c22}  $\mathcal{E} = \{M,S,C\}$ and the constraint supports
 that we have enough physical resources for VNFs of each slice.\newline
-The optimization problem in \eqref{constraints} can be decomposed into two independent optimization problems A and B since the variables can be obtained independently and respectively. Firstly we need to solve problem A. After obtaining $\boldsymbol{P}$ and $ \boldsymbol{A}$, problem B can be solved by having the value of $ \boldsymbol{A}$. 
-The problem A is as follow
+The optimization problem in \eqref{constraints} can be decomposed into two independent optimization sub-problems 1 and 2 since the variables can be obtained independently and respectively. Firstly we need to solve sub-problem 1. After obtaining $\boldsymbol{P}$ and $ \boldsymbol{A}$, sub-problem 2 can be solved by having the value of $ \boldsymbol{A}$. 
+The sub-problem 1 is as follow
 \begin{subequations}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{A} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})\\
@@ -281,22 +282,21 @@ The problem A is as follow
 \end{alignat}
 \label{constraints1}
 \end{subequations}
-In problem B, $ \boldsymbol{Y}$ is obtained. The problem B is
+In sub-problem 2, $ \boldsymbol{Y}$ is obtained. The sub-problem 2 is
 \begin{subequations}
 \begin{alignat}{4}
 \min\limits_{\boldsymbol{y} }   \quad &   \psi_{tot}(\boldsymbol{Y})\\
 \text{s. t.} \quad & \textstyle \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s, \\
- &\textstyle  \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \leq  \sum_{d=1}^{D_c} y_{s,d} \tau_{\mathfrak{z}_d}
-\forall s, \forall \mathfrak{z}\in \mathcal{E};  \label{eqomega}
+ &\textstyle  \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d,, \forall \mathfrak{z}\in \mathcal{E};  \label{eqomega}
 \end{alignat}
 \label{constraints2}
 \end{subequations}
 \section{Heuristic Method}\label{proposedmethod}
-In this subsection, a heuristic  method is proposed to solve the problem in \eqref{constraints1} which is non-convex and computationally hard. To make it tractable, we divide problem \eqref{constraints1} into
+In this subsection, a heuristic  method is proposed to solve the problem in \eqref{constraints1} which is non-convex and computationally hard. To make it tractable, we divide the problem \eqref{constraints1} into
 two different part that can be solved iteratively.
-In the first part of sub-problem A, we obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = P_{max}$ in \eqref{constraints1}. Also, we set $\eta = 0$. Afterward, by achieving $\boldsymbol{A}$, in the second part, we find $\boldsymbol{P}$ by using \eqref{constraints1}. This part of the problem can be approximated and converted to a convex problem, so the problem can be solved by convex methods. After solving $\boldsymbol{P}$, $\eta$ is updated. Then in the next iteration, with new $\boldsymbol{P}$
-and $\eta$, the two parts of the problems are solved. We repeat this procedure until the algorithm  converges.
-\subsection{First Part of Sub-Problem A}\label{firstsub}
+In the first part of sub-problem 1, we obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = P_{max}$ in \eqref{constraints1}. Also, we set $\eta = 0$. Afterward, by achieving $\boldsymbol{A}$, in the second part, we find $\boldsymbol{P}$ by using \eqref{constraints1}. This part of the sub-problem can be approximated and converted to a convex problem, so the sub-problem can be solved by convex methods. After solving $\boldsymbol{P}$, $\eta$ is updated. Then in the next iteration, with new $\boldsymbol{P}$
+and $\eta$, the two parts of the sub-problems are solved. We repeat this procedure until the algorithm  converges.
+\subsection{First Part of Sub-Problem 1}\label{firstsub}
 Two different methods are applied to acquire $\boldsymbol{A}$.
 The details of the heuristic algorithm are represented in algorithm \ref{alg}.
 \begin{algorithm}
@@ -320,7 +320,7 @@ The details of the heuristic algorithm are represented in algorithm \ref{alg}.
 \State \textbf{end for}
 \end{algorithmic}
 \end{algorithm}
-\subsection{Second Part of Sub-Problem A}\label{secondsub}
+\subsection{Second Part of Sub-Problem 1}\label{secondsub}
 In this part, by assuming that $\boldsymbol{A}$ is fixed, the power of UEs in each service is achieved.
 \begin{theorem}\label{t2}
 The optimum energy efficiency is achieved if
@@ -357,11 +357,11 @@ $\mathfrak{w}_{u(v,i)} = \sum_{s=1}^{S}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(
 $\mathfrak{z}_{u(v,i)} = BN_0 + \bar{I}_{u(v,i)}$ and $\mathfrak{x}_{u(v,i)} = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} ( \mu_{r_{u(s,i)}} + \xi_{r_{(s,i)}}+\eta)||w_{r_{(s,j)},u_{(v,i)}}||^2$.
 By using sub-gradient method, the optimal power $\boldsymbol{P}$ is obtained \cite{mimoCran}.
 %\section*{References}
-\subsection{Solving two part of Sub-problem A iteratively}
+\subsection{Solving two part of Sub-problem 1 iteratively}
 In \eqref{firstsub} and \eqref{secondsub}, the details of solving each part of the sub-problem are depicted.
 Firstly, we obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = P_{max}$ in the problem \eqref{constraints1} and using algorithm \eqref{alg}. Also we fixed $\eta = 0$. Afterward, $\boldsymbol{A}$ is achieved from algorithm \ref{alg}. Then, in the second part, we acquire $\boldsymbol{P}$ using the sub-gradient method. After solving $\boldsymbol{P}$, $\eta$ is updated. Then in the next iteration, with new $\boldsymbol{P}$
-and $\eta$ the two parts of the problems is solved until the algorithm converges.
-Here, the algorithm of solving sub-problem A is shown in algorithm \eqref{alg2}
+and $\eta$ the two parts of the sub-problem is solved until the algorithm converges.
+Here, the algorithm of solving sub-problem 1 is shown in algorithm \eqref{alg2}
 \begin{algorithm}
 \caption{Joint Network Slicing and Power Allocation}\label{alg2}
 \begin{algorithmic}[1]
@@ -381,7 +381,7 @@ Here, the algorithm of solving sub-problem A is shown in algorithm \eqref{alg2}
 \State \textbf{end for}
 \end{algorithmic}
 \end{algorithm}
-\subsection{Sub-Problem B}
+\subsection{Sub-Problem 2}
 In this subsection, we would like to solve  \eqref{constraints2}, which is the placement of virtual resources to physical resources in order to minimize the cost function $\psi_{tot}$.
 To achieve optimum $\boldsymbol{Y}$ heuristic algorithm is applied. The details of the heuristic algorithm are written in algorithm \eqref{alg3}. In this algorithm, firstly, we sort slices and DCs according to their sum-weighted of their requirements (line \ref{31} and line \ref{32} of algorithm \ref{alg3}).
 We define a weighted parameter for $\Omega_{\mathfrak{z},s}^{tot}$ and $\tau_j^\mathfrak{z}$ as follow
