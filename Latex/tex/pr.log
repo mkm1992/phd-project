@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  21 APR 2020 11:35
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  12 MAY 2020 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -641,7 +641,7 @@ n
 
 Missing character: There is no ’ in font ptmr8t!
 [3] [4]
-Overfull \hbox (9.04622pt too wide) detected at line 332
+Overfull \hbox (9.04622pt too wide) detected at line 333
 []\OT1/cmr/m/n/10 (\U/euf/m/n/10 R[]\OT1/cmr/m/n/10 ([]) \OMS/cmsy/m/n/10 ^^@ \
 OML/cmm/m/it/10 ^^Q[]P[]\OT1/cmr/m/n/10 ([])) = \U/euf/m/n/10 R[]\OT1/cmr/m/n/1
 0 ([][]) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^Q[]P[]\OT1/cmr/m/n/10 ([][]) =
@@ -649,12 +649,12 @@ OML/cmm/m/it/10 ^^Q[]P[]\OT1/cmr/m/n/10 ([])) = \U/euf/m/n/10 R[]\OT1/cmr/m/n/1
  []
 
 
-Overfull \hbox (8.30817pt too wide) detected at line 349
+Overfull \hbox (8.30817pt too wide) detected at line 350
 []
  []
 
 
-Underfull \hbox (badness 4341) in paragraph at lines 354--360
+Underfull \hbox (badness 4341) in paragraph at lines 355--361
 \T1/ptm/m/n/10 where, $\U/euf/m/n/10 y[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 ^^
 U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^T[] \OT1/cmr/m/n/10 + 1)[]$ \T1/ptm/m/
 n/10 and
@@ -667,10 +667,7 @@ File: f112.pdf Graphic file (type pdf)
 <use f112.pdf>
 File: fig22_last.pdf Graphic file (type pdf)
 <use fig22_last.pdf>
- [6]
-Underfull \vbox (badness 5431) has occurred while \output is active []
-
- (./pr.bbl
+ [6] (./pr.bbl
 Underfull \hbox (badness 1571) in paragraph at lines 46--50
 []\T1/ptm/m/n/8 (2018) xran fo-rum merges with c-ran al-liance
  []

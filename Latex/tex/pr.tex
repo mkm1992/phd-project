@@ -297,7 +297,8 @@ two different part that can be solved iteratively.
 In the first part of sub-problem 1, we obtain $\boldsymbol{A}$ by fixing $\boldsymbol{P} = P_{max}$ in \eqref{constraints1}. Also, we set $\eta = 0$. Afterward, by achieving $\boldsymbol{A}$, in the second part, we find $\boldsymbol{P}$ by using \eqref{constraints1}. This part of the sub-problem can be approximated and converted to a convex problem, so the sub-problem can be solved by convex methods. After solving $\boldsymbol{P}$, $\eta$ is updated. Then in the next iteration, with new $\boldsymbol{P}$
 and $\eta$, the two parts of the sub-problems are solved. We repeat this procedure until the algorithm  converges.
 \subsection{First Part of Sub-Problem 1}\label{firstsub}
-Two different methods are applied to acquire $\boldsymbol{A}$.
+Iterative algorithms are applied to acquire $\boldsymbol{A}$.
+Since the first part of sun-problem is 3D-bin packing problem which is NP-hard, we need heuristic algorithm.
 The details of the heuristic algorithm are represented in algorithm \ref{alg}.
 \begin{algorithm}
 \caption{Mapping Slice to Service}\label{alg}
@@ -383,7 +384,8 @@ Here, the algorithm of solving sub-problem 1 is shown in algorithm \eqref{alg2}
 \end{algorithm}
 \subsection{Sub-Problem 2}
 In this subsection, we would like to solve  \eqref{constraints2}, which is the placement of virtual resources to physical resources in order to minimize the cost function $\psi_{tot}$.
-To achieve optimum $\boldsymbol{Y}$ heuristic algorithm is applied. The details of the heuristic algorithm are written in algorithm \eqref{alg3}. In this algorithm, firstly, we sort slices and DCs according to their sum-weighted of their requirements (line \ref{31} and line \ref{32} of algorithm \ref{alg3}).
+The investigate problem is 3D-bin packing problem which is NP-hard.
+To achieve optimum $\boldsymbol{Y}$ heuristic algorithm for 3D-bin packing is applied. The details of the heuristic algorithm are written in algorithm \eqref{alg3}. In this algorithm, firstly, we sort slices and DCs according to their sum-weighted of their requirements (line \ref{31} and line \ref{32} of algorithm \ref{alg3}).
 We define a weighted parameter for $\Omega_{\mathfrak{z},s}^{tot}$ and $\tau_j^\mathfrak{z}$ as follow
 \begin{equation}\label{wt}
 \begin{split}
