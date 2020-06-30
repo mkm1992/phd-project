@@ -114,6 +114,59 @@ packet loss, such as forward error correction (FEC).
   \caption{deep Q learning structure \cite{qos}}
   \label{fig:qos}
 \end{figure}
+\item \textbf{Where do we use out of order delivery?}
+
+out-of-order delivery is the delivery of data packets in a different order from which they were sent. Out-of-order delivery can be caused by packets following multiple paths through a network, or via parallel processing paths within network equipment that are not designed to ensure that packet ordering is preserved. One of the functions of TCP is to prevent the out-of-order delivery of data, either by reassembling packets into order or forcing retries of out-of-order packets.
+
+Some applications running on your network are sensitive to delay. These applications commonly use the UDP protocol as opposed to the TCP protocol. The key difference between TCP and UDP as it relates to time sensitivity is that TCP will retransmit packets that are lost in transit while UDP does not. For a file transfer from one PC to the next, TCP should be used because if any packets are lost, malformed or arrive out of order, the TCP protocol can retransmit and reorder the packets to recreate the file on the destination PC.
+\item \textbf{ What is the best method for online learning?! Game theory vs RL vs DRL vs Deep learning?}
+
+In Reinforcement Learning (RL) it is common to imagine an underlying Markov Decision Process (MDP). Then the goal of RL is to learn a good policy for the MDP, which is often only partially specified. MDPs can have different objectives such as total, average, or discounted reward, where discounted reward is the most common assumption for RL. There are well-studied extensions of MDPs to two-player (i.e., game) settings.
+
+Game theory is quite involved in the context of Multi-agent Reinforcement learning (MARL).
+
+RL: A single agent is trained to solve a Markov decision problem (MDPS). GT: Two agents are trained to solve Games. A multi-agent Reinforcement learning (MARL) can be used to solve for stochastic games.
+
+If you are interested in the single-agent application of RL in deep learning, then you do not need to go for any GT course. For two or more agents you may need to know the game-theoretic techniques.
+
+So a big differences is that mostly RL is a single agent decision and GT is a multiple agent decision.
+
+Then there are minor differences related to the most common uses. RL uses decision through time, GT only equilibria points. RL considers infinite state space, GT considers finite ones. RL is a learning problem (you have to learn the model of the world) while GT is a planning problem (you already know your game matrix). Of course there are exception to all these minor differences.
+
+For instance it is easy to prove that two agents using Q-Learning in a competitive game will converge to the Nash equilibria of a game.
+%%
+The reinforcement learning techniques enable a single
+agent to learn optimal behavior through trial-and-error interactions with its environment. Various RL techniques have been developed which allow an agent to optimize its behavior in a wide range of circumstances. However, when multiple learners simultaneously apply reinforcement learning in a shared environment, the traditional
+approaches often fail.
+When, in addition to multiple agents, we assume a dynamic environment which
+requires multiple sequential decisions, the problem becomes even more complex.
+Now agents do not only have to coordinate, they also have to take into account the
+current state of their environment. This problem is further complicated by the fact
+that agents typically have only limited information about the system.
+
+Game theory is generally defined as the mathematics of conflicts and are being utilized in various fields like economy, psychology, AI, sociology etc. In Game theory w.r.t RL, the policy is the strategy, mapping all possible state of actions, in respect to one of the players of the game.
+The types of games in Multi-Agent RL (MARL) are:
+● Static Games : players are independent and make simultaneous decision
+● Stage Games : the rules depend on specific stages
+● Repeated Games : when a game is played in sequence
+\begin{figure}%[H]
+  \centering
+    \includegraphics[width=\linewidth]{rlfig}
+  \caption{Multiple agents acting in the same environment \cite{rl1}}
+  \label{fig:qos}
+\end{figure}
+%%
+An extension of the single agent Markov decision process (MDP) to the multi-agent
+case can be defined by Markov Games. In a Markov Game, joint actions are the
+result of multiple agents choosing an action independently.
+While in normal form games the challenges for reinforcement learners originate
+mainly from the interactions between the agents, in Markov games they face the
+additional challenge of an environment with state transitions. This means that the
+agents typically need to combine coordination methods or equilibrium solvers used
+in repeated games with MDP approaches from single-agent RL.
+\item  \textbf{Find best delay formula which is the nearest to reality (M/M/1 M/D/1 M/G/1)}
+
+
 \end{enumerate}
 
 \bibliographystyle{IEEEtran}

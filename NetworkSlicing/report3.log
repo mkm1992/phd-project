@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  28 JUN 2020 13:03
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  30 JUN 2020 11:19
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -487,7 +487,11 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen162
 \Gm@layoutvoffset=\dimen163
 \Gm@dimlist=\toks30
-) (./report3.aux)
+) (./report3.aux
+
+LaTeX Warning: Label `fig:qos' multiply defined.
+
+)
 \openout1 = `report3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -506,8 +510,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
-
-(c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+ (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 29.
@@ -609,10 +612,19 @@ File: deepQ.png Graphic file (type bmp)
 <deepQ.png>
 File: qos.png Graphic file (type bmp)
 <qos.png>
- (./report3.bbl [1
+ [1
 
 
-])
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Missing character: There is no ● in font ptmr8t!
+Missing character: There is no ● in font ptmr8t!
+Missing character: There is no ● in font ptmr8t!
+File: rlfig.png Graphic file (type bmp)
+<rlfig.png>
+
+(./report3.bbl [2])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -624,20 +636,23 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2
+[3
 
 ] (./report3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 7140 strings out of 492970
- 106012 string characters out of 6137298
- 195375 words of memory out of 5000000
- 11040 multiletter control sequences out of 15000+600000
+ 7145 strings out of 492970
+ 106066 string characters out of 6137298
+ 196375 words of memory out of 5000000
+ 11044 multiletter control sequences out of 15000+600000
  76797 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,8n,42p,926b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report3.pdf (2 pages).
+Output written on report3.pdf (3 pages).
