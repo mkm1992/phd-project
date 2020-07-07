@@ -165,8 +165,166 @@ additional challenge of an environment with state transitions. This means that t
 agents typically need to combine coordination methods or equilibrium solvers used
 in repeated games with MDP approaches from single-agent RL.
 \item  \textbf{Find best delay formula which is the nearest to reality (M/M/1 M/D/1 M/G/1)}
+\begin{figure}%[H]
+  \centering
+    \includegraphics[width=\linewidth]{delay1}
+  \caption{ Latency contribution in E2E delay of a packet transmission \cite{delay}}
+  \label{fig:delay}
+\end{figure}
+In the LTE system, the latency can be divided into two
+major parts: (1) user plane (U-plane) latency and (2) control
+plane (C-plane) latency. The U-plane latency is measured by 
+one directional transmit time of a packet to become available
+in the IP layer between evolved UMTS terrestrial radio access
+network (E-UTRAN) edge/UE and UE/E-UTRAN node.
+On the other hand, C-plane latency can be defined as the
+transition time of a UE to switch from idle state to active
+state. At the idle state, an UE is not connected with radio
+resource control (RRC). After the RRC connection is being
+setup, the UE switches from idle state into connected state
+and then enters into active state after moving into dedicated
+mode. Since the application performance is dependent mainly
+on the U-plane latency, U-plane is the main focus of interest
+for low latency communication.
+In the U-plane, the delay of a packet transmission in a
+cellular network can be contributed by the RAN, backhaul,
+core network, and data center/Internet.
+\begin{equation}
+T = T_{Radio} + T_{Backhaul} + T_{Core} + T_{Transport}
+\end{equation}
+\begin{itemize}
+\item TRadio
+
+ is the packet transmission time between eNB and
+UEs and is mainly due to physical layer communication.
+It is contributed by eNBs, UEs and environment. It
+consists of time to transmit, processing time at eNB/UE,
+retransmissions, and propagation delay. Processing delay at the eNB involves channel coding, rate matching,
+scrambling, cyclic redundancy check (CRC) attachment,
+precoding, modulation mapper, layer mapper, resource
+element mapper, and OFDM signal generation. On the
+other hand, uplink processing at UE involves CRC attachment, code block segmentation, code block concatenation, channel coding, rate matching, data and control
+multiplexing, and channel interleaver. Propagation delay
+depends on obstacles (i.e. building, trees, hills etc.) on
+the way of propagation and the total distance traveled by
+the RF signal;
+\item TBackhaul
+
+ is the time for building connections between
+eNB and the core network (i.e. EPC). Generally, the core
+network and eNB are connected by copper wires or microwave or optical fibers. In general, microwave involves
+lower latency while optic fibers come with comparatively
+higher latency. However, spectrum limitation may curb
+the capacity of microwave ;
+\item TCore
+
+ is the processing time taken by the core network.
+It is contributed by various core network entities such
+as mobility management entity (MME), serving GPRS
+support node (SGSN), and SDN/NFV. The processing
+steps of core network includes NAS security, EPS bearer
+control, idle state mobility handling, mobility anchoring,
+UE IP address allocation, and packet filtering;
+\item TTransport
+
+ is the delay to data communication between
+the core network and Internet/cloud. Generally, distance
+between the core network and the server, bandwidth, and
+communication protocol affect this latency
+\end{itemize}
+\begin{equation}
+T_{Radio} = t_{Q} + t_{FA} + t_{tx} + t_{bsp} + t_{mpt}
+\end{equation}
+\begin{itemize}
+\item tQ is the queuing delay which depends on the number of
+users that will be multiplexed on same resources;
+\item tFA is the delay due to frame alignment which depends on
+the frame structure and duplexing modes (i.e., frequency
+division duplexing (FDD) and time division duplexing
+(TDD));
+\item ttx is the time for transmission processing, and payload
+transmission which uses at least one TTI depending on
+radio channel condition, payload size, available resources,
+transmission errors and retransmission;
+\item tbsp is the processing delay at the base station;
+\item  tmpt is the processing delay of user terminal. Both
+the base station and user terminal delay depend on the
+capabilities of base station and user terminal (i.e., UE),
+respectively.
+\end{itemize}
+Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda$.
+It is assumed that there are load balancers in each layer for each slice to divide the incoming traffic to VNFs equally \cite{frdl,luong2018novel,luong2018novel1}.
+Suppose the baseband processing of each VNF is depicted as an M/M/1 processing queue.
+Each packet is processed by one of the VNFs of a slice. So, the mean delay of  slice, modeled as M/M/1 queue, is formulated as follow, respectively
+\begin{equation}
+d = \frac{1}{\mu - \alpha/{M}}
+\end{equation}
+where $1/\mu$ is the mean service time.
+Besides, $\alpha$ is the  arrival rate which is divided
+by load balancer before arriving to the VNFs. The  arrival rate of each VNF in each layer of the slice $s$ is $\alpha/{M}$.
+In addition, $d_{tr}$ is the transmission delay on the  wireless link. The arrival data rate of wireless link
+ is equal to the arrival data rate of load balancers for each slice \cite{frdl}.
+Moreover, it is assumed that the service time of transmission queue has
+ an exponential distribution with mean $1/(R_{{tot}})$ and can be modeled as a M/M/1 queue \cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. Therefore,
+the mean delay of the transmission layer is
+\begin{equation}
+ d_{tr} = \frac{1}{R_{{tot}} - \alpha};
+\end{equation}
+where, $R_{{tot}}$ is the total achievable rate of each slice that is mapped to specific service.
+Mean delay of each slice is obtained as below.
+\begin{equation}
+D_{s} = d+ d_{{tr}}
+\end{equation}
+\begin{figure}%[H]
+  \centering
+    \includegraphics[width=\linewidth]{delay}
+  \caption{ delay of a packet \cite{frdl}}
+  \label{fig:delay}
+\end{figure}
+\item \textbf{Assume a system model for the paper}
+
+Suppose there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $ consists of $U_v$
+ UEs that require certain service. Each slice $s \in \{1,2,...,S \}$  contains VNFs.
+There are processing layer in the  system,  represented with a VNF.
+
+Assume we have $M$ VNFs for processing data.
+Each VNF  belongs to one or more slices. So, in the $s^{th}$ slice, there are $M_{s}$ VNFs. The VNFs have the computational capacity that is  equal to $\mu$.
 
 
+Each VNF requires
+physical resources that contain memory, storage and CPU.
+Let the required resources for VNF $f$ in slice $s$ is represented by a tuple as
+\begin{equation}
+\bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f \},
+\end{equation}
+where $\bar{\Omega}_{s}^f\in \mathbb{C}^{3}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f$ indicate the amount of required memory, storage, and CPU, respectively.
+Moreover, the total amount of required memory, storage and CPU of all VNFs of a slice is defined as
+\begin{equation}
+\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{M_s}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C\}.
+\end{equation}
+Also, there are $D_c$ data centers (DC), serving the VNFs. Each DC contains several servers that supply VNF requirements.
+The amount of memory, storage and CPU is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$and $\tau_{C_{j}} $ for the $j^{th}$ DC, respectively
+\begin{equation*}
+\tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}} \},
+\end{equation*}
+In this system model, the assignment of physical DC resources to VNFs is considered. Let $y_{s,d}$ be a binary variable indicating whether the $d^{th}$ DC is connected to the VNFs of $s^{th}$ slice or not.
+Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
+$\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as
+\begin{equation*}
+\textstyle \phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d}.
+\end{equation*}
+Also, a cost function for the placement of VNFs into DCs is defined as
+\begin{equation}\label{eqpsi}
+\textstyle  \psi_{tot} = \phi_{tot} - \nu \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s}
+\end{equation}
+where, $\nu$ is a design variable to value between the first term of \eqref{eqpsi} which is the total power consumption of physical resources and the second term that is shown the amount of admitted slices to have physical resources.
+\begin{subequations}
+\begin{alignat}{4}
+\min\limits_{\boldsymbol{y} }   \quad &   \psi_{tot}(\boldsymbol{Y})\\
+\text{s. t.} \quad & \textstyle \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s, \\
+ &\textstyle  \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d,, \forall \mathfrak{z}\in \mathcal{E};  \label{eqomega}
+\end{alignat}
+\end{subequations}
 \end{enumerate}
 
 \bibliographystyle{IEEEtran}
