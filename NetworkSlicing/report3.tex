@@ -311,18 +311,24 @@ In this system model, the assignment of physical DC resources to VNFs is conside
 Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
 $\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as
 \begin{equation*}
-\textstyle \phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d}.
+\textstyle \phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}(t)\phi_{s,d}.
 \end{equation*}
+%%
+In addition, in each time the deploying a new VNF on a VM needs more power.
+\begin{equation*}
+\textstyle \phi_{diff} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}[y_{s,d}(t)-y_{s,d}(t-1)]^+\phi_{s,d}^{new}.
+\end{equation*}
+%%
 Also, a cost function for the placement of VNFs into DCs is defined as
 \begin{equation}\label{eqpsi}
-\textstyle  \psi_{tot} = \phi_{tot} - \nu \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s}
+\textstyle  \psi_{tot} = \phi_{tot} + \phi_{diff}
 \end{equation}
 where, $\nu$ is a design variable to value between the first term of \eqref{eqpsi} which is the total power consumption of physical resources and the second term that is shown the amount of admitted slices to have physical resources.
 \begin{subequations}
 \begin{alignat}{4}
 \min\limits_{\boldsymbol{y} }   \quad &   \psi_{tot}(\boldsymbol{Y})\\
-\text{s. t.} \quad & \textstyle \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s, \\
- &\textstyle  \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d,, \forall \mathfrak{z}\in \mathcal{E};  \label{eqomega}
+\text{s. t.} \quad & \textstyle \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}(t) \geq 1 \forall s, \\
+ &\textstyle  \sum_{s=1}^{S} y_{s,d}(t) \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d,, \forall \mathfrak{z}\in \mathcal{E};  \label{eqomega}
 \end{alignat}
 \end{subequations}
 \end{enumerate}
