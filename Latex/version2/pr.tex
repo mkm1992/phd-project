@@ -60,7 +60,7 @@
 \maketitle
 
 \begin{abstract}
-Open radio access network (ORAN) alliance which has been formed recently establishes a flexible,  open, and smart radio access network (RAN) by combing the ideas from xRAN and cloud RAN (C-RAN). ORAN divides the functions of the RAN into three parts, namely remote unit (RU), distributed unit (DU), and central unit (CU). While RU contains lower PHY functions, DU contains higher PHY, MAC, and RLC and CU contains RRC, PDCP, and SDAP. CU and DU are implemented as virtual network functions (VNFs) running on a cloud environment. Interfaces between RU, CU, and DU are open standard interfaces. Network slicing as a new concept in 5G systems is used to share the network resources between various services while the operation of one service does not affect another service. In this paper, we study the problem of RAN network slicing in an ORAN system.  We formulate the problem of wireless link scheduling, mapping the slices to the services, and mapping the physical data centers resource to slices. The objective is to jointly maximize the energy efficiency and minimize power consumption of RUs and the cost of physical resources in a downlink channel. The problem is formulated as a mixed-integer optimization problem that can be decomposed into two independent sub-problems. Heuristic algorithms are proposed for each of the sub-problems.
+Open radio access network (ORAN) alliance which has been formed recently establishes a flexible,  open, and smart radio access network (RAN) by combing the ideas from xRAN and cloud RAN (C-RAN). ORAN divides the functions of the RAN into three parts, namely remote unit (RU), distributed unit (DU), and central unit (CU). While RU contains lower PHY functions, DU contains higher PHY, MAC, and RLC and CU contains RRC, PDCP, and SDAP. CU and DU are implemented as virtual network functions (VNFs) running on a cloud environment. Interfaces between RU, CU, and DU are open standard interfaces. Network slicing as a new concept in 5G systems is used to share the network resources between various services while the operation of one service does not affect another service. In this paper, we study the problem of RAN network slicing in an ORAN system.  We formulate the problem of wireless link scheduling, assigning the slices to the services, and assigning the physical data centers resource to slices which is 3D-bin packing problems. The objective is to jointly maximize the energy efficiency and minimize power consumption of RUs and the cost of physical resources in a downlink channel. The problem is formulated as a mixed-integer optimization problem that can be decomposed into two independent sub-problems. Heuristic algorithms are proposed for each of the sub-problems.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -298,8 +298,8 @@ In the first part of sub-problem 1, we obtain $\boldsymbol{A}$ by fixing $\bolds
 and $\eta$, the two parts of the sub-problems are solved. We repeat this procedure until the algorithm  converges.
 \subsection{First Part of Sub-Problem 1}\label{firstsub}
 Iterative algorithms are applied to acquire $\boldsymbol{A}$.
-Since the first part of sun-problem is 3D-bin packing problem which is NP-hard, we need heuristic algorithm.
-The details of the heuristic algorithm are represented in algorithm \ref{alg}.
+Since the first part of sun-problem is 3D-bin packing problem which is NP-hard, we need heuristic algorithm. In \cite{3dbin}, a heuristic algorithm is defined based on sorting bins according to a measurement.
+The details of the heuristic algorithm are represented in algorithm \ref{alg}\cite{3dbin}.
 \begin{algorithm}
 \caption{Mapping Slice to Service}\label{alg}
 \begin{algorithmic}[1]
@@ -393,8 +393,8 @@ We define a weighted parameter for $\Omega_{\mathfrak{z},s}^{tot}$ and $\tau_j^\
 \hat{\tau}_j &= w_M \tau_{{j}}^M + w_S \tau_{{j}}^S + w_C \tau_{{j}}^C,
 \end{split}
 \end{equation}
-where, $\boldsymbol{w} = \{w_M, w_S, w_C\}$ is the weight of memory, storage and CPU.
-Secondly, we start mapping from the most needed slices to the DC with the most physical resources (from line \ref{33} to line \ref{34} of algorithm \ref{alg3}). After mapping DCs to slices, If a slice does not admit to a specific DC, it remains for the next placement. In the next placement the remaining slices, map to more than one DC according to their requirements. (from line \ref{35} to line \ref{36} of algorithm \ref{alg3}). At the end, if DC with the lowest physical resources is free and can be served the slices of a DC with the highest physical resource, the slices remapped to new DC with the lowest physical resource since it has the lowest power consumption (line \ref{37} of algorithm \ref{alg3}).
+where, $\boldsymbol{w} = \{w_M, w_S, w_C\}$ is the weight of memory, storage and CPU\cite{3dbin}.
+Secondly, we start mapping from the most needed slices to the DC with the most physical resources (from line \ref{33} to line \ref{34} of algorithm \ref{alg3}). After mapping DCs to slices, If a slice does not admit to a specific DC, it remains for the next placement. In the next placement the remaining slices, map to more than one DC according to their requirements. (from line \ref{35} to line \ref{36} of algorithm \ref{alg3}). At the end, if DC with the lowest physical resources is free and can be served the slices of a DC with the highest physical resource, the slices remapped to new DC with the lowest physical resource since it has the lowest power consumption (line \ref{37} of algorithm \ref{alg3})\cite{3dbin}.
 \begin{algorithm}
 \caption{Placement of Physical resources into Virtual resources}\label{alg3}
 \begin{algorithmic}[1]
