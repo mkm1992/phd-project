@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  12 JUL 2020 12:43
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  21 JUL 2020 12:18
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -621,9 +621,6 @@ File: qos.png Graphic file (type bmp)
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Missing character: There is no ● in font ptmr8t!
-Missing character: There is no ● in font ptmr8t!
-Missing character: There is no ● in font ptmr8t!
 File: rlfig.png Graphic file (type bmp)
 <rlfig.png>
 File: delay1.png Graphic file (type bmp)
@@ -635,10 +632,16 @@ Underfull \vbox (badness 2237) has occurred while \output is active []
 [3]
 File: delay.png Graphic file (type bmp)
 <delay.png>
-LaTeX Font Info:    Try loading font information for U+euf on input line 303.
+LaTeX Font Info:    Try loading font information for U+euf on input line 312.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) (./report3.bbl)
+) [4]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 380.
+
+Missing character: There is no ’ in font ptmr8t!
+(./report3.bbl [5])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -650,7 +653,9 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] (./report3.aux)
+[6
+
+] (./report3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -659,12 +664,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7193 strings out of 492970
- 106682 string characters out of 6137298
- 198375 words of memory out of 5000000
- 11074 multiletter control sequences out of 15000+600000
+ 7197 strings out of 492970
+ 106712 string characters out of 6137298
+ 202375 words of memory out of 5000000
+ 11078 multiletter control sequences out of 15000+600000
  80262 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 44i,13n,42p,926b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,17n,42p,926b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report3.pdf (4 pages).
+Output written on report3.pdf (6 pages).
