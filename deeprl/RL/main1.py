@@ -11,7 +11,7 @@ NumDC = 1;
 NumVNF = 3;
 state_size = pow(2, NumVNF)
 action_size = NumVNF
-DC = 8
+DC =  np.array([8])
 VNF = np.array([6, 5, 3])
 Q = np.zeros((state_size, action_size))
 R = np.zeros((state_size, action_size))
@@ -66,6 +66,8 @@ for episode in range(episodes):
         # Step the game forward
         next_state = nextState(action, state)
         reward = S[next_state] - S[state] 
+        if reward == 0:
+            reward = -10
         if next_state == 7:
             reward = -50
         if state == 7 :
