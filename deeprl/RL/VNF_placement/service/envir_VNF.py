@@ -14,29 +14,69 @@ class Env:
         self.state_size =  pow(2, self.NumVNF)
         self.action_size  =  self.NumVNF 
         self.Q = np.zeros((self.state_size, self.action_size))
-        self.R = np.zeros((self.state_size, self.action_size))
+        self.ValueState = np.zeros(self.state_size)
         self.S = np.zeros((self.state_size, self.state_size))
-        self.State = np.zeros((self.state_size, self.action_size))
+        self.State = np.zeros((self.state_size, self.NumVNF))
     def dec2bin(num):
         return int(bin(num)[2:])
+    def state_define(self):
+        for i in range(0, self.state_size) : 
+            j = 0
+            temp = Env.dec2bin(i)
+            while temp > 0 :
+                self.State[i][self.NumVNF-1- j] = temp % 10
+                temp = int(temp /10)
+                j = j +1
+        print(self.State)       
     def available_state(self):
         for i in range(0, self.state_size):
             for j in range(0, self.state_size):
                 if (i- j > 0) and ((Env.dec2bin(i) - Env.dec2bin(j)) == 1 or  np.log10(Env.dec2bin(i) - Env.dec2bin(j))% 1 == 0) :
-                    self.S[i][j] = 1
-                    #print(Env.dec2bin(i),Env.dec2bin(j))
+                    self.S[self.state_size-i - 1][self.state_size -j - 1] = 1
         print(self.S)
     def choose_action(self, state):
-        actions = np.where(self.S[state]==1)
+        self.available_state() 
+        self.state_define()
+        actions = np.where(self.State[state][:]==0)
         return actions
-    def nextState(action, state):
-        possible_actions = Env.choose_action(state)[0]
+    def next_state(self, state, action):
+        possible_actions = self.choose_action(state)[0]
+        print('possible_actions')
+        print(possible_actions)
+        state_new = 0
         if action not in possible_actions :
             state_new = state
         else:
-            state_new = action
-    #def value_state(self, state):
-a = Env(np.array([4,5,3]), np.array([8]))        
-a.available_state()                
-a.choose_action(1)        
+            temp =  np.copy(self.State[state][:])
+            print(temp)
+            temp[action] = 1
+            print(temp)
+            for i in range(0, self.NumVNF):  
+                state_new = state_new + temp[self.NumVNF - i -1] * pow(2,i)
+        return int(state_new)
+    def value_state(self):
+        eps = 1e-5
+        for i in range(0, self.state_size):
+            self.ValueState[i] = 1/(self.DC - np.dot(self.State[i], self.VNF) + eps)
+        print((self.ValueState))
+    def get_reward(self, state, next_state):
+        self.value_state()
+        if self.S[state][next_state] == 1 :
+            return self.ValueState[next_state] - self.ValueState[state]
+        else:
+            return 
         
+a = Env(np.array([4,5,3]), np.array([8]))                              
+print('choose_action') 
+print(a.choose_action(4)[0])  
+print('nextState')      
+print(a.next_state(4, 2))
+print(a.get_reward(1,3))
+##
+
+#a = Env(np.array([4,5,3, 1]), np.array([10]))                              
+#print('choose_action') 
+#print(a.choose_action(4)[0])  
+#print('nextState')      
+#print(a.next_state(4, 2))
+#print(a.get_reward(9,13))
