@@ -55,9 +55,13 @@ class Env:
                 state_new = state_new + temp[self.NumVNF - i -1] * pow(2,i)
         return int(state_new)
     def value_state(self):
-        eps = 1e-5
         for i in range(0, self.state_size):
-            self.ValueState[i] = 1/(self.DC - np.dot(self.State[i], self.VNF) + eps)
+            temp = self.DC - np.dot(self.State[i], self.VNF)
+            if temp < 0 :
+                self.ValueState[i] = -10* pow(self.DC - np.dot(self.State[i], self.VNF),2) - 100 
+            else :
+                self.ValueState[i] = -2* pow(-self.DC + np.dot(self.State[i], self.VNF),2) + 100 
+            #self.ValueState[i] = self.DC - np.dot(self.State[i], self.VNF)
         print((self.ValueState))
     def get_reward(self, state, next_state):
         self.value_state()
@@ -65,13 +69,32 @@ class Env:
             return self.ValueState[next_state] - self.ValueState[state]
         else:
             return 
+    def done_action(self, state):
+        done  = 1
+        if np.sum(self.S[state]) == 0:
+            done = 1
+            print('done')
+            return done
+        else :
+            for i in range(0, self.state_size):
+                if self.S[state][i] == 1 :
+                    reward = self.get_reward(state, i)
+                    if reward > 0 :
+                        done = 0
+                        print('not done')
+
+        return done
+                        
+                        
         
 a = Env(np.array([4,5,3]), np.array([8]))                              
 print('choose_action') 
-print(a.choose_action(4)[0])  
+print(a.choose_action(6)[0])  
 print('nextState')      
-print(a.next_state(4, 2))
-print(a.get_reward(1,3))
+print(a.next_state(6, 2))
+print('reward')
+print(a.get_reward(6,7))
+print(a.done_action(4))
 ##
 
 #a = Env(np.array([4,5,3, 1]), np.array([10]))                              
