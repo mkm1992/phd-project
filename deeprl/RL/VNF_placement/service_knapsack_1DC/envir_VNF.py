@@ -87,14 +87,14 @@ class Env:
                         
                         
         
-a = Env(np.array([4,5,3]), np.array([8]))                              
-print('choose_action') 
-print(a.choose_action(0)[0])  
-print('nextState')      
-print(a.next_state(6, 2))
-print('reward')
-print(a.get_reward(6,7))
-print(a.done_action(4))
+#a = Env(np.array([4,5,3]), np.array([8]))                              
+#print('choose_action') 
+#print(a.choose_action(0)[0])  
+#print('nextState')      
+#print(a.next_state(6, 2))
+#print('reward')
+#print(a.get_reward(6,7))
+#print(a.done_action(4))
 ###
 
 #a = Env(np.array([4,5,3, 1]), np.array([10]))                              
