@@ -27,13 +27,13 @@ class Env:
                 self.State[i][self.NumVNF-1- j] = temp % 10
                 temp = int(temp /10)
                 j = j +1
-        #print(self.State)       
+        print(self.State)       
     def available_state(self):
         for i in range(0, self.state_size):
             for j in range(0, self.state_size):
                 if (i- j > 0) and ((Env.dec2bin(i) - Env.dec2bin(j)) == 1 or  np.log10(Env.dec2bin(i) - Env.dec2bin(j))% 1 == 0) :
                     self.S[self.state_size-i - 1][self.state_size -j - 1] = 1
-        #print(self.S)
+        print(self.S)
     def choose_action(self, state):
         self.available_state() 
         self.state_define()
