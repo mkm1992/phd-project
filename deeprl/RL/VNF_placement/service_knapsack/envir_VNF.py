@@ -4,30 +4,53 @@ Created on Tue Aug  4 10:42:20 2020
 @author: Mojdeh Karbalaee
 """
 import numpy as np
-
+from itertools import combinations
 class Env:
     def __init__(self, VNF, DC):
         self.VNF = VNF
         self.DC = DC
         self.NumVNF = len(VNF)
         self.NumDC = len(DC)
-        self.state_size =  pow(2, self.NumVNF)
-        self.action_size  =  self.NumVNF 
+        self.state_size =  pow( self.NumDC+1, self.NumVNF) 
+        self.action_size  =  self.NumVNF * self.NumDC
         self.Q = np.zeros((self.state_size, self.action_size))
         self.ValueState = np.zeros(self.state_size)
         self.S = np.zeros((self.state_size, self.state_size))
-        self.State = np.zeros((self.state_size, self.NumVNF))
+        self.State = np.zeros((self.state_size, self.NumVNF ))
     def dec2bin(num):
         return int(bin(num)[2:])
+    def place_ones(size, count):
+        for positions in combinations(range(size), count):
+            p = [0] * size
+    
+            for i in positions:
+                p[i] = 1
+    
+            yield p
     def state_define(self):
-        for i in range(0, self.state_size) : 
+        for i in range(0, self.state_size1) : 
             j = 0
             temp = Env.dec2bin(i)
             while temp > 0 :
-                self.State[i][self.NumVNF-1- j] = temp % 10
+                self.State1[i][self.NumVNF-1- j] = temp % 10
                 temp = int(temp /10)
                 j = j +1
-        print(self.State)       
+        #print(self.State1) 
+    def state_DC(self):
+        self.state_define()
+        number = 0
+        for i in range(0, self.state_size1):
+            for j in range(0, self.NumVNF):
+                #if self.State1[i][j] == 1:
+                    for k in range(2, self.NumDC + 1):
+                        self.State[number] = self.State1[i]
+                        self.State[number][j] = k
+                        number += 1
+                        
+                    print(number)
+                    print(i)
+        print(self.State)
+                
     def available_state(self):
         for i in range(0, self.state_size):
             for j in range(0, self.state_size):
@@ -48,9 +71,9 @@ class Env:
             state_new = state
         else:
             temp =  np.copy(self.State[state][:])
-            #print(temp)
+            print(temp)
             temp[action] = 1
-            #print(temp)
+            print(temp)
             for i in range(0, self.NumVNF):  
                 state_new = state_new + temp[self.NumVNF - i -1] * pow(2,i)
         return int(state_new)
@@ -61,8 +84,8 @@ class Env:
                 self.ValueState[i] = -10* pow(self.DC - np.dot(self.State[i], self.VNF),2) - 100 
             else :
                 self.ValueState[i] = -2* pow(-self.DC + np.dot(self.State[i], self.VNF),2) + 100 
-            #self.ValueState[i] = self.DC - np.dot(self.State[i], self.VNF)
-        #print((self.ValueState))
+            self.ValueState[i] = self.DC - np.dot(self.State[i], self.VNF)
+        print((self.ValueState))
     def get_reward(self, state, next_state):
         self.value_state()
         if self.S[state][next_state] == 1 :
@@ -73,7 +96,7 @@ class Env:
         done  = 1
         if np.sum(self.S[state]) == 0:
             done = 1
-            #print('done')
+            print('done')
             return done
         else :
             for i in range(0, self.state_size):
@@ -81,13 +104,14 @@ class Env:
                     reward = self.get_reward(state, i)
                     if reward > 0 :
                         done = 0
-                        #print('not done')
+                        print('not done')
 
         return done
                         
                         
         
-#a = Env(np.array([4,5,3]), np.array([8]))                              
+a = Env(np.array([4,5,3]), np.array([8, 9]))    
+a.state_DC()                          
 #print('choose_action') 
 #print(a.choose_action(0)[0])  
 #print('nextState')      
