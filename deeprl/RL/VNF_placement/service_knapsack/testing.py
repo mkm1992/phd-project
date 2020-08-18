@@ -2,7 +2,7 @@
 """
 Created on Sun Aug 16 15:59:58 2020
 
-@author: Dr-ShahMansouri
+@author: Mojdeh Karbalaee
 """
 import numpy as np
 s = np.array([[1,0],[1,1],[0,1]])
@@ -54,6 +54,8 @@ def place_ones(size, count):
         yield p
 
 list(place_ones(6, 3))
+2
+1
 
 
 

@@ -17,39 +17,21 @@ class Env:
         self.ValueState = np.zeros(self.state_size)
         self.S = np.zeros((self.state_size, self.state_size))
         self.State = np.zeros((self.state_size, self.NumVNF ))
-    def dec2bin(num):
-        return int(bin(num)[2:])
     def place_ones(size, count):
         for positions in combinations(range(size), count):
             p = [0] * size
-    
             for i in positions:
                 p[i] = 1
     
             yield p
     def state_define(self):
-        for i in range(0, self.state_size1) : 
-            j = 0
-            temp = Env.dec2bin(i)
-            while temp > 0 :
-                self.State1[i][self.NumVNF-1- j] = temp % 10
-                temp = int(temp /10)
-                j = j +1
-        #print(self.State1) 
-    def state_DC(self):
-        self.state_define()
-        number = 0
-        for i in range(0, self.state_size1):
-            for j in range(0, self.NumVNF):
-                #if self.State1[i][j] == 1:
-                    for k in range(2, self.NumDC + 1):
-                        self.State[number] = self.State1[i]
-                        self.State[number][j] = k
-                        number += 1
-                        
-                    print(number)
-                    print(i)
+        list_state = [];
+        for i in range(0, self.NumVNF + 1):
+            list_state += list(Env.place_ones(self.NumDC * self.NumVNF, i))
+        self.State =  np.asarray(list_state)
         print(self.State)
+        print(len(self.State))
+        print(self.state_size)
                 
     def available_state(self):
         for i in range(0, self.state_size):
@@ -110,8 +92,8 @@ class Env:
                         
                         
         
-a = Env(np.array([4,5,3]), np.array([8, 9]))    
-a.state_DC()                          
+a = Env(np.array([4,5]), np.array([8,9]))    
+a.state_define()                          
 #print('choose_action') 
 #print(a.choose_action(0)[0])  
 #print('nextState')      
