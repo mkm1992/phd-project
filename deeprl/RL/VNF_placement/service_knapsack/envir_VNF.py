@@ -92,7 +92,7 @@ class Env:
                         
                         
         
-a = Env(np.array([4,5]), np.array([8,9]))    
+a = Env(np.array([4,5,3]), np.array([8, 9]))    
 a.state_define()                          
 #print('choose_action') 
 #print(a.choose_action(0)[0])  
