@@ -54,8 +54,25 @@ def place_ones(size, count):
         yield p
 
 a =list(place_ones(4, 2))
-
-
+a = np.asarray(list(place_ones(4, 2)) + list(place_ones(4, 1))+list(place_ones(4, 0)))
+num = []
+a1 = []
+x = len(a)
+for i in range(0,x):
+    b = np.array(a[i])
+    for j in range(0,2):
+        vector = np.arange(j, 4, 2)
+        if sum(b[vector]) > 1:
+            num = np.append(num, i)
+            #a = np.delete(a,i,0)
+num = num.astype(int)
+a1 =  np.delete(a,num,0)            
+#for  k  in range(0, len(a)):
+#    if k not in num: 
+#        a1 = np.append(a1, a[k])
+#        t +=1
+print(a1)
+        
 
 
 def dec_to_base(num,base):  #Maximum base - 36

@@ -22,30 +22,51 @@ class Env:
             p = [0] * size
             for i in positions:
                 p[i] = 1
-    
             yield p
     def state_define(self):
         list_state = [];
         for i in range(0, self.NumVNF + 1):
             list_state += list(Env.place_ones(self.NumDC * self.NumVNF, i))
-        self.State =  np.asarray(list_state)
+        np_listState =  np.asarray(list_state)
+        num = []
+        x = np.size(np_listState,axis =0)
+        for i in range(0,x):
+            b = np.array(np_listState[i])
+            for j in range(0,self.NumVNF):
+                vector = np.arange(j, self.action_size , self.NumVNF)
+                if sum(b[vector]) > 1:
+                    num = np.append(num, i)
+                    #a = np.delete(a,i,0)
+        num = num.astype(int)
+        self.State =  np.delete(np_listState,num,0) 
         print(self.State)
         print(len(self.State))
         print(self.state_size)
-                
     def available_state(self):
         for i in range(0, self.state_size):
-            for j in range(0, self.state_size):
-                if (i- j > 0) and ((Env.dec2bin(i) - Env.dec2bin(j)) == 1 or  np.log10(Env.dec2bin(i) - Env.dec2bin(j))% 1 == 0) :
-                    self.S[self.state_size-i - 1][self.state_size -j - 1] = 1
-        print(self.S)
+            for j in range(0, self.NumVNF):
+                vector = np.arange(j, self.action_size , self.NumVNF)
+                if sum(self.State[i][vector]) == 0 :
+                    self.S[i][vector]
+                
+                
+#    def available_state(self):
+#        for i in range(0, self.state_size):
+#            for j in range(0, self.state_size):
+#                if (i- j > 0) and ((Env.dec2bin(i) - Env.dec2bin(j)) == 1 or  np.log10(Env.dec2bin(i) - Env.dec2bin(j))% 1 == 0) :
+#                    self.S[self.state_size-i - 1][self.state_size -j - 1] = 1
+#        print(self.S)
     def choose_action(self, state):
-        self.available_state() 
+        actions = []
         self.state_define()
-        actions = np.where(self.State[state][:]==0)
+        for j in range(0, self.NumVNF):
+            vector = np.arange(j, self.action_size , self.NumVNF)
+            if sum(self.State[state][vector])==0 :    
+                actions = np.append(actions,vector)
+            #actions = np.where(self.State[state][vector]==0)
         return actions
     def next_state(self, state, action):
-        possible_actions = self.choose_action(state)[0]
+        possible_actions = self.choose_action(state)
         #print('possible_actions')
         #print(possible_actions)
         state_new = 0
@@ -94,9 +115,9 @@ class Env:
         
 a = Env(np.array([4,5,3]), np.array([8, 9]))    
 a.state_define()                          
-#print('choose_action') 
-#print(a.choose_action(0)[0])  
-#print('nextState')      
+print('choose_action') 
+print(a.choose_action(18))  
+print('nextState')      
 #print(a.next_state(6, 2))
 #print('reward')
 #print(a.get_reward(6,7))
