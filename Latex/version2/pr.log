@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  5 SEP 2020 12:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  6 SEP 2020 12:47
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **pr.tex
 (./pr.tex
@@ -77,7 +77,7 @@ LaTeX Font Warning: Font shape `TU/ptm/bx/it' undefined
 \c@IEEEbiography=\count94
 \@IEEEtranrubishbin=\box27
 )
-** ATTENTION: Overriding command lockouts (line 2).
+** ATTENTION: Overriding command lockouts (line 3).
 (c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
@@ -490,67 +490,67 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 ) (./pr.aux)
 \openout1 = `pr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 30.
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 
 -- Lines per column: 57 (approximate, difference = 9.79243pt).
 Package caption Info: Begin \AtBeginDocument code.
@@ -591,18 +591,63 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+
+LaTeX Warning: Citation `cran1' on page 1 undefined on input line 72.
+
+
+LaTeX Warning: Citation `frdl' on page 1 undefined on input line 72.
+
+
+LaTeX Warning: Citation `simeone2016cloud' on page 1 undefined on input line 72
+.
+
+
+LaTeX Warning: Citation `motalleb2017optimal' on page 1 undefined on input line
+ 72.
+
+
+LaTeX Warning: Citation `xran' on page 1 undefined on input line 72.
+
+
+LaTeX Warning: Citation `oran1' on page 1 undefined on input line 74.
+
+
+LaTeX Warning: Citation `oranpaper' on page 1 undefined on input line 78.
+
+
+LaTeX Warning: Citation `lee2018dynamic' on page 1 undefined on input line 81.
+
+
+LaTeX Warning: Citation `ns1' on page 1 undefined on input line 81.
+
+
+LaTeX Warning: Citation `frdl' on page 1 undefined on input line 83.
+
+
+LaTeX Warning: Citation `luong2018novel' on page 1 undefined on input line 83.
+
+
+LaTeX Warning: Citation `luong2018novel1' on page 1 undefined on input line 83.
+
+
+
+LaTeX Warning: Citation `oranT' on page 1 undefined on input line 87.
+
+
+LaTeX Warning: Citation `oran12' on page 1 undefined on input line 88.
+
 File: c7.pdf Graphic file (type pdf)
 <use c7.pdf>
 
-Overfull \hbox (196.32512pt too wide) in paragraph at lines 93--94
+Overfull \hbox (196.32512pt too wide) in paragraph at lines 94--95
  [][] 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 100.
+LaTeX Font Info:    Try loading font information for U+msa on input line 101.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 100.
+LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -614,108 +659,80 @@ Underfull \vbox (badness 2285) has occurred while \output is active []
 
 ]
 
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 127.
+LaTeX Warning: Reference `proposedmethod' on page 2 undefined on input line 107
+.
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 135.
+
+LaTeX Warning: Reference `simul' on page 2 undefined on input line 107.
+
+
+LaTeX Warning: Citation `motalleb2017optimal' on page 2 undefined on input line
+ 117.
+
+
+LaTeX Warning: Citation `mimoCran' on page 2 undefined on input line 117.
+
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 128.
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 136.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 6592) in paragraph at lines 136--155
+Underfull \hbox (badness 6592) in paragraph at lines 137--156
 \T1/ptm/m/n/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/c
 mm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\T1/ptm/m/n/10 ,
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 166--174
+Underfull \hbox (badness 10000) in paragraph at lines 167--175
 \T1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
  j[][][][]j[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 166--174
+Underfull \hbox (badness 1354) in paragraph at lines 167--175
 \T1/ptm/m/n/10 PRB. If we re-place $\OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 and $\
 OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 by $\OML/cmm/m/it/10 P[]$\T1/ptm/m/n/10 , a
 n
  []
 
-Missing character: There is no ’ in font ptmr8t!
-[3] [4]
-Overfull \hbox (9.04622pt too wide) detected at line 333
-[]\OT1/cmr/m/n/10 (\U/euf/m/n/10 R[]\OT1/cmr/m/n/10 ([]) \OMS/cmsy/m/n/10 ^^@ \
-OML/cmm/m/it/10 ^^Q[]P[]\OT1/cmr/m/n/10 ([])) = \U/euf/m/n/10 R[]\OT1/cmr/m/n/1
-0 ([][]) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^Q[]P[]\OT1/cmr/m/n/10 ([][]) =
- 0\OML/cmm/m/it/10 :
- []
+
+LaTeX Warning: Citation `simeone2016cloud' on page 3 undefined on input line 17
+8.
 
 
-Overfull \hbox (8.30817pt too wide) detected at line 350
-[]
- []
+LaTeX Warning: Citation `1111' on page 3 undefined on input line 178.
 
-
-Underfull \hbox (badness 4341) in paragraph at lines 355--361
-\T1/ptm/m/n/10 where, $\U/euf/m/n/10 y[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 ^^
-U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^T[] \OT1/cmr/m/n/10 + 1)[]$ \T1/ptm/m/
-n/10 and
- []
-
-[5]
-File: fig1_last.pdf Graphic file (type pdf)
-<use fig1_last.pdf>
-File: f112.pdf Graphic file (type pdf)
-<use f112.pdf>
-File: fig22_last.pdf Graphic file (type pdf)
-<use fig22_last.pdf>
- [6] (./pr.bbl
-Underfull \hbox (badness 1571) in paragraph at lines 46--50
-[]\T1/ptm/m/n/8 (2018) xran fo-rum merges with c-ran al-liance
- []
-
-
-Underfull \hbox (badness 4291) in paragraph at lines 46--50
-\T1/ptm/m/n/8 to form oran al-liance. [On-line]. Avail-able:
- []
-
-
-Overfull \hbox (7.64029pt too wide) in paragraph at lines 46--50
-\T1/ptm/m/n/8 https://www.businesswire.com/news/home/20180227005673/en/xRAN-
- []
-
-Missing character: There is no ‘ in font ptmr8t!
 Missing character: There is no ’ in font ptmr8t!
 
-Underfull \hbox (badness 1377) in paragraph at lines 89--93
-[]\T1/ptm/m/n/8 P. Se-hier, P. Chan-clou, N. Ben-za-oui, D. Chen, K. Ket-tunen,
+LaTeX Warning: Citation `frdl' on page 3 undefined on input line 188.
 
- []
 
-[7])
+LaTeX Warning: Citation `luong2018novel' on page 3 undefined on input line 188.
 
-** Conference Paper **
-Before submitting the final camera ready copy, remember to:
 
- 1. Manually equalize the lengths of two columns on the last page
- of your paper;
 
- 2. Ensure that any PostScript and/or PDF output post-processing
- uses only Type 1 fonts and that every step in the generation
- process uses the appropriate paper size.
+LaTeX Warning: Citation `luong2018novel1' on page 3 undefined on input line 188
+.
 
-[8
 
-] (./pr.aux)
+LaTeX Warning: Citation `frdl' on page 3 undefined on input line 201.
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- ) 
-Here is how much of TeX's memory you used:
- 7288 strings out of 492970
- 107751 string characters out of 6137298
- 212375 words of memory out of 5000000
- 11167 multiletter control sequences out of 15000+600000
- 84455 words of font info for 101 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 44i,27n,42p,1387b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
+LaTeX Warning: Citation `frdl' on page 3 undefined on input line 203.
 
-Output written on pr.pdf (8 pages).
+
+LaTeX Warning: Citation `luong2018novel' on page 3 undefined on input line 203.
+
+
+
+LaTeX Warning: Citation `luong2018novel1' on page 3 undefined on input line 203
+.
+
+
+LaTeX Warning: Citation `guo2016exploiting' on page 3 undefined on input line 2
+03.
+
+[3
