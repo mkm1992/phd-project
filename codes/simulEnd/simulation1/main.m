@@ -2,17 +2,17 @@ clear all
 clc
 close all
 %% variables
-N_min = 10;
-N_step = 2;
-N_max = 18;
+N_min = 2;
+N_step = 1;
+N_max = 6;
 counter_max = 1;
-iter_max = 100;
+iter_max = 1;
 numVar = N_min:N_step:N_max ;
 etha = zeros(length(numVar),iter_max,counter_max);
 etha1 = zeros(length(numVar),iter_max,counter_max);
 %% loops
 nr = 0;
-for N_PRB = N_min:N_step:N_max   
+for N_Service = N_min:N_step:N_max   
     nr = nr +1;
     %N_rrh = N_var;
     for iter =1 :iter_max 
@@ -59,7 +59,7 @@ for N_PRB = N_min:N_step:N_max
         end
     end
 end
-plot( N_min:N_step:N_max , mean(etha(:,:,end),2))
+%plot( N_min:N_step:N_max , mean(etha(:,:,end),2))
 %% plot without nan
 len1 = N_min:N_step:N_max ;
 a = zeros(1,length(len1));
