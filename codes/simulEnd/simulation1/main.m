@@ -3,10 +3,10 @@ clc
 close all
 %% variables
 N_min = 2;
-N_step = 1;
-N_max = 6;
+N_step = 2;
+N_max = 10;
 counter_max = 1;
-iter_max = 1;
+iter_max = 100;
 numVar = N_min:N_step:N_max ;
 etha = zeros(length(numVar),iter_max,counter_max);
 etha1 = zeros(length(numVar),iter_max,counter_max);
