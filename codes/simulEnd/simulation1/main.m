@@ -12,7 +12,7 @@ etha = zeros(length(numVar),iter_max,counter_max);
 etha1 = zeros(length(numVar),iter_max,counter_max);
 %% loops
 nr = 0;
-for N_Service = N_min:N_step:N_max   
+for N_var = N_min:N_step:N_max   
     nr = nr +1;
     %N_rrh = N_var;
     for iter =1 :iter_max 

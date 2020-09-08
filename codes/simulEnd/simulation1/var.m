@@ -1,6 +1,6 @@
 %% Physical layer
 R = 500;
-%N_Service = 5;
+N_Service = 3;
 N_Slice =  30;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
@@ -10,9 +10,9 @@ Pc  = db2pow(Pc1)/1000;
 Pt = 30;
 Pmax = 10*db2pow(Pt)/1000;
 Rt =.01*BW;% .1*BW;%0.1*BW; 
-N_PRB = 12;
+N_PRB = 20;
 N_rrh = 30;
-N_var = 2;
+%N_var = 2;
 imax = 1;
 NumOfUtInService =N_var*ones(1,N_Service);%randi([1 10],1, N_Service); 
 N_Ut = sum(NumOfUtInService);
