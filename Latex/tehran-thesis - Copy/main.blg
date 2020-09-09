@@ -16,31 +16,31 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ./tex/MyReferences.bib
-Repeated entry---line 251 of file ./tex/MyReferences.bib
+Repeated entry---line 272 of file ./tex/MyReferences.bib
  : @article{fogComputing
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 597 of file ./tex/MyReferences.bib
+Repeated entry---line 618 of file ./tex/MyReferences.bib
  : @online{xran
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 602 of file ./tex/MyReferences.bib
+Repeated entry---line 623 of file ./tex/MyReferences.bib
  : @article{ns1
  :             ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 663 of file ./tex/MyReferences.bib
+Repeated entry---line 684 of file ./tex/MyReferences.bib
  : @article{checko2015cloud
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 826 of file ./tex/MyReferences.bib
+Repeated entry---line 847 of file ./tex/MyReferences.bib
  : @article{fogComputing
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 863 of file ./tex/MyReferences.bib
+Repeated entry---line 884 of file ./tex/MyReferences.bib
  : @article{fogEdge
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 874 of file ./tex/MyReferences.bib
+Repeated entry---line 895 of file ./tex/MyReferences.bib
  : @article{heterogeneous
  :                       ,
 I'm skipping whatever remains of this entry
@@ -57,45 +57,45 @@ Warning--empty journal in kawahara2019ran
 Warning--empty journal in cziva2018dynamic
 
 Done.
-You've used 56 entries,
+You've used 58 entries,
             4087 wiz_defined-function locations,
-            1129 strings with 17830 characters,
-and the built_in function-call counts, 44709 in all, are:
-= -- 3652
-> -- 1153
-< -- 411
-+ -- 638
-- -- 210
-* -- 2171
-:= -- 6594
-add.period$ -- 116
-call.type$ -- 56
-change.case$ -- 56
-chr.to.int$ -- 924
-cite$ -- 58
-duplicate$ -- 3164
-empty$ -- 3360
-format.name$ -- 247
-if$ -- 10401
+            1138 strings with 18112 characters,
+and the built_in function-call counts, 45815 in all, are:
+= -- 3747
+> -- 1169
+< -- 420
++ -- 647
+- -- 212
+* -- 2219
+:= -- 6772
+add.period$ -- 119
+call.type$ -- 58
+change.case$ -- 58
+chr.to.int$ -- 942
+cite$ -- 60
+duplicate$ -- 3247
+empty$ -- 3449
+format.name$ -- 250
+if$ -- 10655
 int.to.chr$ -- 0
-int.to.str$ -- 56
-missing$ -- 555
-newline$ -- 201
-num.names$ -- 52
-pop$ -- 1262
+int.to.str$ -- 58
+missing$ -- 570
+newline$ -- 209
+num.names$ -- 53
+pop$ -- 1299
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 3415
+skip$ -- 3504
 stack$ -- 0
-substring$ -- 2249
-swap$ -- 2695
-text.length$ -- 103
+substring$ -- 2292
+swap$ -- 2761
+text.length$ -- 106
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 56
+type$ -- 58
 warning$ -- 2
-while$ -- 210
-width$ -- 58
-write$ -- 576
+while$ -- 215
+width$ -- 60
+write$ -- 596
 (There were 10 error messages)

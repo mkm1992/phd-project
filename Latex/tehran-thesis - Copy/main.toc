@@ -5,67 +5,68 @@
 \contentsline {chapter}{\rl {فهرست برنامه‌ها}}{ح}{chapter*.6}
 \contentsline {chapter}{فهرست اختصارات}{خ}{chapter*.6}
 \contentsline {chapter}{\numberline {1}مقدمه}{1}{chapter.1}
-\contentsline {subsection}{\numberline {1.0.1}مقدمه ای بر \lr {5G} }{1}{subsection.1.0.1}
-\contentsline {subsection}{\numberline {1.0.2}مروری بر نسلهای اخیر مخابرات}{3}{subsection.1.0.2}
-\contentsline {subsubsection}{\numberline {1.0.2.1} نسل چهارم مخابرات}{4}{subsubsection.1.0.2.1}
-\contentsline {subsubsection}{\numberline {1.0.2.2}نسل پنجم مخابرات}{4}{subsubsection.1.0.2.2}
-\contentsline {section}{\numberline {1.1}مقدمه ای بر ساختار \lr {ORAN}}{5}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}مقدمه ای بر ساختار شبکه های دسترسی رادیویی \lr {C-RAN}}{6}{subsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1.1}ساختار شبکه های مختلف }{7}{subsubsection.1.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1.2}ساختار سنتی ایستگاه پایه }{8}{subsubsection.1.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.1.3} ساختار ایستگاه پایه و واحد رادیویی}{8}{subsubsection.1.1.1.3}
-\contentsline {subsubsection}{\numberline {1.1.1.4}ساختار \lr {C-RAN}}{9}{subsubsection.1.1.1.4}
-\contentsline {subsection}{\numberline {1.1.2}\lr {xRAN}}{14}{subsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.2.1}مزایای ساختار \lr {xRAN}}{15}{subsubsection.1.1.2.1}
-\contentsline {subsection}{\numberline {1.1.3}\lr {ORAN}}{15}{subsection.1.1.3}
-\contentsline {section}{\numberline {1.2}مجازی سازی توابع شبکه}{19}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}ساختار شبکه }{20}{subsection.1.2.1}
-\contentsline {section}{\numberline {1.3}شبکه تعریف شده نرم افزار (SDN)}{22}{section.1.3}
-\contentsline {section}{\numberline {1.4}برش شبکه}{23}{section.1.4}
-\contentsline {section}{\numberline {1.5}نتیجه گیری}{25}{section.1.5}
-\contentsline {section}{\numberline {1.6}خلاصه ای از فصل های آتی}{26}{section.1.6}
-\contentsline {chapter}{\numberline {2}مروری بر کارهای پیشین}{27}{chapter.2}
-\contentsline {section}{\numberline {2.1}مقدمه}{27}{section.2.1}
-\contentsline {section}{\numberline {2.2}مسائل پیش رو}{27}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}برش شبکه}{27}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}رفتن به سمت شبکه های دسترسی رادیویی باز}{31}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}قرار دادن VNF ها}{32}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}روش های حل}{33}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}مسائل Np-Hard}{33}{subsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.1.1} مسئله ی کوله پشتی }{33}{subsubsection.2.3.1.1}
-\contentsline {subsubsection}{\numberline {2.3.1.2}مسئله ی بسته بندی جعبه}{34}{subsubsection.2.3.1.2}
-\contentsline {subsection}{\numberline {2.3.2}روشهای یادگیری تقویتی}{35}{subsection.2.3.2}
-\contentsline {chapter}{\numberline {3}تخصیص منابع در شبکه های \lr {Open RAN}}{38}{chapter.3}
-\contentsline {section}{\numberline {3.1}مقدمه}{38}{section.3.1}
-\contentsline {section}{\numberline {3.2}مدل سیستم}{40}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}نرخ قابل دسترس}{40}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}میانگین تاخیر}{43}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}مرکز داده ی فیزیکی}{44}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}صورت مساله}{45}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}روش ابتکاری استفاده شده}{47}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}بخش اول مسئله‌ی اول}{47}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}بخش دوم مسئله‌ی اول}{49}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}حل دو بخش مسئله‌ی اول به صورت تکراری}{50}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}مسئله‌ی دوم}{50}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}نتایج عددی}{52}{section.3.4}
-\contentsline {section}{\numberline {3.5}نتیجه‌گیری}{57}{section.3.5}
-\contentsline {chapter}{\numberline {4}تخصیص برش شبکه به صورت دینامیکی}{60}{chapter.4}
-\contentsline {section}{\numberline {4.1}مقدمه}{60}{section.4.1}
-\contentsline {section}{\numberline {4.2} مدل سیستم و صورت مسئله‌ی اول}{60}{section.4.2}
-\contentsline {section}{\numberline {4.3} مدل سیستم و صورت مسئله‌ی دوم}{62}{section.4.3}
-\contentsline {section}{\numberline {4.4}حل مسئله به‌روش یادگیری تقویتی}{63}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}نتایج عددی مسئله‌ی اول}{65}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}نتایج عددی مسئله‌ی دوم}{65}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}نتیجه‌گیری}{66}{section.4.5}
-\contentsline {chapter}{\numberline {5}پیشنهادات و کارهای آتی}{67}{chapter.5}
-\contentsline {section}{\numberline {5.1}مقدمه}{67}{section.5.1}
-\contentsline {section}{\numberline {5.2}نتیجه‌گیری}{67}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}مزایای این چالش و حل آن}{68}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}معایب پروژه انجام شده}{68}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}نوآوری‌های این پروژه}{68}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}پیشنهادات}{69}{section.5.3}
-\contentsline {chapter}{\rl {{کتاب‌نامه}\hfill }}{70}{chapter*.30}
+\contentsline {section}{\numberline {1.1}مقدمه ای بر \lr {5G} }{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1} نسل چهارم مخابرات}{4}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}نسل پنجم مخابرات}{4}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}مقدمه ای بر ساختار \lr {ORAN}}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}مقدمه ای بر ساختار شبکه‌های دسترسی رادیویی \lr {C-RAN}}{6}{subsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.1.1}ساختار شبکه‌های مختلف }{7}{subsubsection.1.2.1.1}
+\contentsline {subsubsection}{\numberline {1.2.1.2}ساختار سنتی ایستگاه پایه }{8}{subsubsection.1.2.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1.3} ساختار ایستگاه پایه و واحد رادیویی}{8}{subsubsection.1.2.1.3}
+\contentsline {subsubsection}{\numberline {1.2.1.4}ساختار \lr {C-RAN}}{9}{subsubsection.1.2.1.4}
+\contentsline {subsection}{\numberline {1.2.2}\lr {xRAN}}{14}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}vRAN}{15}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}\lr {ORAN}}{16}{subsection.1.2.4}
+\contentsline {section}{\numberline {1.3}مجازی سازی توابع شبکه}{20}{section.1.3}
+\contentsline {section}{\numberline {1.4}شبکه تعریف شده نرم‌افزار (SDN)}{23}{section.1.4}
+\contentsline {section}{\numberline {1.5}برش شبکه}{25}{section.1.5}
+\contentsline {section}{\numberline {1.6}مسائل Np-Hard}{26}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}مسئله‌ی کوله‌پشتی}{27}{subsection.1.6.1}
+\contentsline {section}{\numberline {1.7}نتیجه گیری}{27}{section.1.7}
+\contentsline {section}{\numberline {1.8}دستاوردهای پروژه}{28}{section.1.8}
+\contentsline {section}{\numberline {1.9}ساختار پروژه}{28}{section.1.9}
+\contentsline {chapter}{\numberline {2}مروری بر کارهای پیشین}{29}{chapter.2}
+\contentsline {section}{\numberline {2.1}مقدمه}{29}{section.2.1}
+\contentsline {section}{\numberline {2.2}مسائل پیش رو}{29}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}برش شبکه}{29}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}رفتن به سمت شبکه های دسترسی رادیویی باز}{33}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}قرار دادن VNF ها}{34}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}روش های حل}{35}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}مسائل Np-Hard}{35}{subsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.1.1} مسئله‌ی کوله‌پشتی }{36}{subsubsection.2.3.1.1}
+\contentsline {subsubsection}{\numberline {2.3.1.2}مسئله ی بسته بندی جعبه}{36}{subsubsection.2.3.1.2}
+\contentsline {subsection}{\numberline {2.3.2}روشهای یادگیری تقویتی}{37}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}تخصیص منابع در شبکه‌های دسترسی باز}{40}{chapter.3}
+\contentsline {section}{\numberline {3.1}مقدمه}{40}{section.3.1}
+\contentsline {section}{\numberline {3.2}مدل سیستم}{42}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}نرخ قابل دسترس}{42}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}میانگین تاخیر}{45}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}مرکز داده ی فیزیکی}{46}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}صورت مساله}{47}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}روش ابتکاری استفاده شده}{49}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}بخش اول مسئله‌ی اول}{49}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}بخش دوم مسئله‌ی اول}{51}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}حل دو بخش مسئله‌ی اول به صورت تکراری}{52}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}مسئله‌ی دوم}{52}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}نتایج عددی}{54}{section.3.4}
+\contentsline {section}{\numberline {3.5}نتیجه‌گیری}{59}{section.3.5}
+\contentsline {chapter}{\numberline {4}تخصیص برش شبکه به صورت دینامیکی}{62}{chapter.4}
+\contentsline {section}{\numberline {4.1}مقدمه}{62}{section.4.1}
+\contentsline {section}{\numberline {4.2} مدل سیستم و صورت مسئله‌ی اول}{62}{section.4.2}
+\contentsline {section}{\numberline {4.3} مدل سیستم و صورت مسئله‌ی دوم}{64}{section.4.3}
+\contentsline {section}{\numberline {4.4}حل مسئله به‌روش یادگیری تقویتی}{65}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}نتایج عددی مسئله‌ی اول}{67}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}نتایج عددی مسئله‌ی دوم}{67}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}نتیجه‌گیری}{68}{section.4.5}
+\contentsline {chapter}{\numberline {5}پیشنهادات و کارهای آتی}{69}{chapter.5}
+\contentsline {section}{\numberline {5.1}مقدمه}{69}{section.5.1}
+\contentsline {section}{\numberline {5.2}نتیجه‌گیری}{69}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}مزایای این چالش و حل آن}{70}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}معایب پروژه انجام شده}{70}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}نوآوری‌های این پروژه}{70}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}پیشنهادات}{71}{section.5.3}
+\contentsline {chapter}{\rl {{کتاب‌نامه}\hfill }}{73}{chapter*.31}
  \renewcommand \cftchappresnum {پیوست\nobreakspace {}}\setlength {\cftchapnumwidth }{\mylenapp }
-\contentsline {chapter}{واژه‌نامهٔ فارسی به انگلیسی}{اول}{chapter*.30}
-\contentsline {chapter}{واژه‌نامهٔ انگلیسی به فارسی}{دوم}{chapter*.30}
-\contentsline {paragraph}{Keywords}{سوم}{section*.32}
+\contentsline {chapter}{واژه‌نامهٔ فارسی به انگلیسی}{اول}{chapter*.31}
+\contentsline {chapter}{واژه‌نامهٔ انگلیسی به فارسی}{دوم}{chapter*.31}
+\contentsline {paragraph}{Keywords}{سوم}{section*.33}

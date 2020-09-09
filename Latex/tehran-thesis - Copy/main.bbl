@@ -44,6 +44,12 @@ M.~Peng, S.~Yan, K.~Zhang, and C.~Wang, ``Fog-computing-based radio access
   networks: issues and challenges,'' \emph{IEEE Network}, vol.~30, no.~4, pp.
   46--53, 2016.
 
+\bibitem{vran}
+\BIBentryALTinterwordspacing
+(2017) vran: The next step in network transformation. [Online]. Available:
+  \url{https://builders.intel.com/docs/networkbuilders/vran-the-next-step-in-network-transformation.pdf}
+\BIBentrySTDinterwordspacing
+
 \bibitem{oranWP}
 C.~C. W. D. R. D. S.~G. Chih-Lin~I, Sachin~Katti, ``O-ran white paper: Towards
   an open and smart ran,'' O-RAN Alliance, Tech. Rep., 2018.
@@ -118,6 +124,11 @@ H.~Zhang, N.~Liu, X.~Chu, K.~Long, A.-H. Aghvami, and V.~C. Leung, ``Network
   slicing based 5g and future mobile networks: mobility, resource management,
   and challenges,'' \emph{IEEE communications magazine}, vol.~55, no.~8, pp.
   138--145, 2017.
+
+\bibitem{chu1998genetic}
+P.~C. Chu and J.~E. Beasley, ``A genetic algorithm for the multidimensional
+  knapsack problem,'' \emph{Journal of heuristics}, vol.~4, no.~1, pp. 63--86,
+  1998.
 
 \bibitem{cranInt}
 M.~Peng, Y.~Li, Z.~Zhao, and C.~Wang, ``System architecture and key
