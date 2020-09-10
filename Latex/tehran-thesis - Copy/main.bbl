@@ -119,6 +119,17 @@ V.-G. Nguyen, A.~Brunstrom, K.-J. Grinnemo, and J.~Taheri, ``Sdn/nfv-based
   mobile packet core network architectures: A survey,'' \emph{IEEE
   Communications Surveys \& Tutorials}, vol.~19, no.~3, pp. 1567--1602, 2017.
 
+\bibitem{gudipati2013softran}
+A.~Gudipati, D.~Perry, L.~E. Li, and S.~Katti, ``Softran: Software defined
+  radio access network,'' in \emph{Proceedings of the second ACM SIGCOMM
+  workshop on Hot topics in software defined networking}, 2013, pp. 25--30.
+
+\bibitem{yu2017hsdran}
+R.~Yu, G.~Xue, M.~Bennis, X.~Chen, and Z.~Han, ``Hsdran: Hierarchical
+  software-defined radio access network for distributed optimization,''
+  \emph{IEEE Transactions on Vehicular Technology}, vol.~67, no.~9, pp.
+  8623--8636, 2017.
+
 \bibitem{NS1}
 H.~Zhang, N.~Liu, X.~Chu, K.~Long, A.-H. Aghvami, and V.~C. Leung, ``Network
   slicing based 5g and future mobile networks: mobility, resource management,

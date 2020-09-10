@@ -10,18 +10,18 @@
 \contentsline {figure}{\numberline {1.9}{\ignorespaces ساختار شبکه ی \lr {ORAN} \cite {oranWP}\relax }}{17}{figure.caption.15}
 \contentsline {figure}{\numberline {1.10}{\ignorespaces ساختار NFV \cite {NFVArch}\relax }}{22}{figure.caption.16}
 \contentsline {figure}{\numberline {1.11}{\ignorespaces ساختار SDN \cite {SDN3}\relax }}{24}{figure.caption.17}
-\contentsline {figure}{\numberline {1.12}{\ignorespaces سه ساختار برش شبکه \cite {NS2}\relax }}{25}{figure.caption.18}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces سه ساختار برش شبکه \cite {NS2}\relax }}{26}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces روند برش شبکه\ \cite {lee2018dynamic}\relax }}{32}{figure.caption.19}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces مدل پردازشی شبکه صف \cite {frdl}.\relax }}{34}{figure.caption.20}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces یادگیری تقویتی\relax }}{38}{figure.caption.21}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces سناریوی ارسال لینک بالا و پایین در برشهای شبکه \relax }}{39}{figure.caption.22}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces روند برش شبکه\ \cite {lee2018dynamic}\relax }}{33}{figure.caption.19}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces مدل پردازشی شبکه صف \cite {frdl}.\relax }}{35}{figure.caption.20}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces یادگیری تقویتی\relax }}{39}{figure.caption.21}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces سناریوی ارسال لینک بالا و پایین در برشهای شبکه \relax }}{40}{figure.caption.22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces برش شبکه در ORAN\relax }}{42}{figure.caption.23}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces بهره‌وری انرژی براساس تعداد کاربران در هر سرویس\relax }}{57}{figure.caption.25}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces بهره‌وری انرژی براساس تعداد بلوکهای منابع فیزیکی\relax }}{58}{figure.caption.26}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces بهره‌وری انرژی براساس تعداد سرویسهای مختلف \relax }}{59}{figure.caption.27}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces نسبت برش های پذیرفته شده فقط به یک DC در مقابل برش های کل\relax }}{61}{figure.caption.29}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces نرمالیزه‌ی مصرف منابع بر‌اساس تعداد برشها\relax }}{61}{figure.caption.30}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces برش شبکه در ORAN\relax }}{43}{figure.caption.23}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces بهره‌وری انرژی براساس تعداد کاربران در هر سرویس\relax }}{58}{figure.caption.25}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces بهره‌وری انرژی براساس تعداد بلوکهای منابع فیزیکی\relax }}{59}{figure.caption.26}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces بهره‌وری انرژی براساس تعداد سرویسهای مختلف \relax }}{60}{figure.caption.27}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces نسبت برش های پذیرفته شده فقط به یک DC در مقابل برش های کل\relax }}{62}{figure.caption.29}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces نرمالیزه‌ی مصرف منابع بر‌اساس تعداد برشها\relax }}{62}{figure.caption.30}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
