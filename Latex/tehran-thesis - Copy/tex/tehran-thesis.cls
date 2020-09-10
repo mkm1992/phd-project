@@ -92,7 +92,7 @@
  \if@bscthesis
  {\projectLabel{پروژه}}
  \else
-{\projectLabel{رساله}}
+{\projectLabel{پروپزال}}
 \fi\fi
 }\fi
 
@@ -674,7 +674,7 @@ Advisors:
 \fi}
 
 \def\onvan{عنوان}
-\def\writtenfor{برای دریافت درجهٔ }
+\def\writtenfor{برای  }
 \def\by{پژوهشگر}
 \def\latinby{By:}
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else

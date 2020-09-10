@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  10 SEP 2020 21:22
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  10 SEP 2020 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2919,21 +2919,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
  [10] (./main.mw)
 \openout5 = `main.mw'.
 
-LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 20.
-LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 20.
-
-Overfull \hbox (1.71272pt too wide) in paragraph at lines 20--20
-[][]\TU/LiberationSerif-Regular.ttf(0)/m/n/12 thesis[] \TU/IRLotusICEE.ttf(1)/m
-/n/12 و بستهٔ زی‌پرشین در []\TU/LiberationSerif-Regular.ttf(0)/m/n/12 L[]T[]X[]
- \TU/IRLotusICEE.ttf(1)/m/n/12 تهیه شده است. این قالب به گونه‌ای طراحی شده است 
-که مطابق با دستورالعمل[]
- []
-
 \openout5 = `main.mw'.
 
-[11] (./main.mw)
+ [11] (./main.mw)
 \openout5 = `main.mw'.
 
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/bx/n' will be
@@ -2945,6 +2933,8 @@ LaTeX Font Warning: Font shape `TU/IRLotusICEE.ttf(1)/bx/n' undefined
 
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(1)/bx/n' will be
 (Font)              scaled to size 14.39996pt on input line 7.
+LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 8.
 \openout5 = `main.mw'.
 
 [1
@@ -5033,7 +5023,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  44322 strings out of 492970
  834647 string characters out of 6137298
- 1046760 words of memory out of 5000000
+ 1047356 words of memory out of 5000000
  47110 multiletter control sequences out of 15000+600000
  545353 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
