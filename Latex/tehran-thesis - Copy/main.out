@@ -21,49 +21,50 @@
 \BOOKMARK [1][-]{section.1.5}{برش شبکه}{chapter.1}% 21
 \BOOKMARK [1][-]{section.1.6}{مسائل Np-Hard}{chapter.1}% 22
 \BOOKMARK [2][-]{subsection.1.6.1}{مسئله‌ی کوله‌پشتی}{section.1.6}% 23
-\BOOKMARK [1][-]{section.1.7}{نتیجه گیری}{chapter.1}% 24
-\BOOKMARK [1][-]{section.1.8}{دستاوردهای پروژه}{chapter.1}% 25
-\BOOKMARK [1][-]{section.1.9}{ساختار پروژه}{chapter.1}% 26
-\BOOKMARK [0][-]{chapter.2}{مروری بر کارهای پیشین}{}% 27
-\BOOKMARK [1][-]{section.2.1}{مقدمه}{chapter.2}% 28
-\BOOKMARK [1][-]{section.2.2}{مسائل پیش رو}{chapter.2}% 29
-\BOOKMARK [2][-]{subsection.2.2.1}{برش شبکه}{section.2.2}% 30
-\BOOKMARK [2][-]{subsection.2.2.2}{رفتن به سمت شبکه های دسترسی رادیویی باز}{section.2.2}% 31
-\BOOKMARK [2][-]{subsection.2.2.3}{قرار دادن VNF ها}{section.2.2}% 32
-\BOOKMARK [1][-]{section.2.3}{روش های حل}{chapter.2}% 33
-\BOOKMARK [2][-]{subsection.2.3.1}{مسائل Np-Hard}{section.2.3}% 34
-\BOOKMARK [3][-]{subsubsection.2.3.1.1}{ مسئله‌ی کوله‌پشتی }{subsection.2.3.1}% 35
-\BOOKMARK [3][-]{subsubsection.2.3.1.2}{مسئله ی بسته بندی جعبه}{subsection.2.3.1}% 36
-\BOOKMARK [2][-]{subsection.2.3.2}{روشهای یادگیری تقویتی}{section.2.3}% 37
-\BOOKMARK [0][-]{chapter.3}{تخصیص منابع در شبکه‌های دسترسی باز}{}% 38
-\BOOKMARK [1][-]{section.3.1}{مقدمه}{chapter.3}% 39
-\BOOKMARK [1][-]{section.3.2}{مدل سیستم}{chapter.3}% 40
-\BOOKMARK [2][-]{subsection.3.2.1}{نرخ قابل دسترس}{section.3.2}% 41
-\BOOKMARK [2][-]{subsection.3.2.2}{میانگین تاخیر}{section.3.2}% 42
-\BOOKMARK [2][-]{subsection.3.2.3}{مرکز داده ی فیزیکی}{section.3.2}% 43
-\BOOKMARK [2][-]{subsection.3.2.4}{صورت مساله}{section.3.2}% 44
-\BOOKMARK [1][-]{section.3.3}{روش ابتکاری استفاده شده}{chapter.3}% 45
-\BOOKMARK [2][-]{subsection.3.3.1}{بخش اول مسئله‌ی اول}{section.3.3}% 46
-\BOOKMARK [2][-]{subsection.3.3.2}{بخش دوم مسئله‌ی اول}{section.3.3}% 47
-\BOOKMARK [2][-]{subsection.3.3.3}{حل دو بخش مسئله‌ی اول به صورت تکراری}{section.3.3}% 48
-\BOOKMARK [2][-]{subsection.3.3.4}{مسئله‌ی دوم}{section.3.3}% 49
-\BOOKMARK [1][-]{section.3.4}{نتایج عددی}{chapter.3}% 50
-\BOOKMARK [1][-]{section.3.5}{نتیجه‌گیری}{chapter.3}% 51
-\BOOKMARK [0][-]{chapter.4}{تخصیص برش شبکه به صورت دینامیکی}{}% 52
-\BOOKMARK [1][-]{section.4.1}{مقدمه}{chapter.4}% 53
-\BOOKMARK [1][-]{section.4.2}{ مدل سیستم و صورت مسئله‌ی اول}{chapter.4}% 54
-\BOOKMARK [1][-]{section.4.3}{ مدل سیستم و صورت مسئله‌ی دوم}{chapter.4}% 55
-\BOOKMARK [1][-]{section.4.4}{حل مسئله به‌روش یادگیری تقویتی}{chapter.4}% 56
-\BOOKMARK [2][-]{subsection.4.4.1}{نتایج عددی مسئله‌ی اول}{section.4.4}% 57
-\BOOKMARK [2][-]{subsection.4.4.2}{نتایج عددی مسئله‌ی دوم}{section.4.4}% 58
-\BOOKMARK [1][-]{section.4.5}{نتیجه‌گیری}{chapter.4}% 59
-\BOOKMARK [0][-]{chapter.5}{پیشنهادات و کارهای آتی}{}% 60
-\BOOKMARK [1][-]{section.5.1}{مقدمه}{chapter.5}% 61
-\BOOKMARK [1][-]{section.5.2}{نتیجه‌گیری}{chapter.5}% 62
-\BOOKMARK [2][-]{subsection.5.2.1}{مزایای این چالش و حل آن}{section.5.2}% 63
-\BOOKMARK [2][-]{subsection.5.2.2}{معایب پروژه انجام شده}{section.5.2}% 64
-\BOOKMARK [2][-]{subsection.5.2.3}{نوآوری‌های این پروژه}{section.5.2}% 65
-\BOOKMARK [1][-]{section.5.3}{پیشنهادات}{chapter.5}% 66
-\BOOKMARK [0][-]{chapter*.31}{کتاب‌نامه}{}% 67
-\BOOKMARK [0][-]{chapter*.31}{واژه‌نامهٔ فارسی به انگلیسی}{}% 68
-\BOOKMARK [0][-]{chapter*.31}{واژه‌نامهٔ انگلیسی به فارسی}{}% 69
+\BOOKMARK [2][-]{subsection.1.6.2}{مسئله‌ی بسته‌بندی جعبه}{section.1.6}% 24
+\BOOKMARK [1][-]{section.1.7}{نتیجه گیری}{chapter.1}% 25
+\BOOKMARK [1][-]{section.1.8}{دستاوردهای پروژه}{chapter.1}% 26
+\BOOKMARK [1][-]{section.1.9}{ساختار پروژه}{chapter.1}% 27
+\BOOKMARK [0][-]{chapter.2}{مروری بر کارهای پیشین}{}% 28
+\BOOKMARK [1][-]{section.2.1}{مقدمه}{chapter.2}% 29
+\BOOKMARK [1][-]{section.2.2}{مسائل حل شده}{chapter.2}% 30
+\BOOKMARK [2][-]{subsection.2.2.1}{برش شبکه}{section.2.2}% 31
+\BOOKMARK [2][-]{subsection.2.2.2}{رفتن به سمت شبکه های دسترسی رادیویی باز}{section.2.2}% 32
+\BOOKMARK [2][-]{subsection.2.2.3}{قرار دادن VNF ها}{section.2.2}% 33
+\BOOKMARK [1][-]{section.2.3}{روش های حل}{chapter.2}% 34
+\BOOKMARK [2][-]{subsection.2.3.1}{مسائل Np-Hard}{section.2.3}% 35
+\BOOKMARK [3][-]{subsubsection.2.3.1.1}{ مسئله‌ی کوله‌پشتی }{subsection.2.3.1}% 36
+\BOOKMARK [3][-]{subsubsection.2.3.1.2}{مسئله‌ی بسته‌بندی جعبه}{subsection.2.3.1}% 37
+\BOOKMARK [2][-]{subsection.2.3.2}{روشهای یادگیری تقویتی}{section.2.3}% 38
+\BOOKMARK [0][-]{chapter.3}{تخصیص منابع در شبکه‌های دسترسی باز}{}% 39
+\BOOKMARK [1][-]{section.3.1}{مقدمه}{chapter.3}% 40
+\BOOKMARK [1][-]{section.3.2}{مدل سیستم}{chapter.3}% 41
+\BOOKMARK [2][-]{subsection.3.2.1}{نرخ قابل دسترس}{section.3.2}% 42
+\BOOKMARK [2][-]{subsection.3.2.2}{میانگین تاخیر}{section.3.2}% 43
+\BOOKMARK [2][-]{subsection.3.2.3}{مرکز داده ی فیزیکی}{section.3.2}% 44
+\BOOKMARK [2][-]{subsection.3.2.4}{صورت مساله}{section.3.2}% 45
+\BOOKMARK [1][-]{section.3.3}{روش ابتکاری استفاده شده}{chapter.3}% 46
+\BOOKMARK [2][-]{subsection.3.3.1}{بخش اول مسئله‌ی اول}{section.3.3}% 47
+\BOOKMARK [2][-]{subsection.3.3.2}{بخش دوم مسئله‌ی اول}{section.3.3}% 48
+\BOOKMARK [2][-]{subsection.3.3.3}{حل دو بخش مسئله‌ی اول به صورت تکراری}{section.3.3}% 49
+\BOOKMARK [2][-]{subsection.3.3.4}{مسئله‌ی دوم}{section.3.3}% 50
+\BOOKMARK [1][-]{section.3.4}{نتایج عددی}{chapter.3}% 51
+\BOOKMARK [1][-]{section.3.5}{نتیجه‌گیری}{chapter.3}% 52
+\BOOKMARK [0][-]{chapter.4}{تخصیص برش شبکه به صورت دینامیکی}{}% 53
+\BOOKMARK [1][-]{section.4.1}{مقدمه}{chapter.4}% 54
+\BOOKMARK [1][-]{section.4.2}{ مدل سیستم و صورت مسئله‌ی اول}{chapter.4}% 55
+\BOOKMARK [1][-]{section.4.3}{ مدل سیستم و صورت مسئله‌ی دوم}{chapter.4}% 56
+\BOOKMARK [1][-]{section.4.4}{حل مسئله به‌روش یادگیری تقویتی}{chapter.4}% 57
+\BOOKMARK [2][-]{subsection.4.4.1}{نتایج عددی مسئله‌ی اول}{section.4.4}% 58
+\BOOKMARK [2][-]{subsection.4.4.2}{نتایج عددی مسئله‌ی دوم}{section.4.4}% 59
+\BOOKMARK [1][-]{section.4.5}{نتیجه‌گیری}{chapter.4}% 60
+\BOOKMARK [0][-]{chapter.5}{پیشنهادات و کارهای آتی}{}% 61
+\BOOKMARK [1][-]{section.5.1}{مقدمه}{chapter.5}% 62
+\BOOKMARK [1][-]{section.5.2}{نتیجه‌گیری}{chapter.5}% 63
+\BOOKMARK [2][-]{subsection.5.2.1}{مزایای این چالش و حل آن}{section.5.2}% 64
+\BOOKMARK [2][-]{subsection.5.2.2}{معایب پروژه انجام شده}{section.5.2}% 65
+\BOOKMARK [2][-]{subsection.5.2.3}{نوآوری‌های این پروژه}{section.5.2}% 66
+\BOOKMARK [1][-]{section.5.3}{پیشنهادات}{chapter.5}% 67
+\BOOKMARK [0][-]{chapter*.31}{کتاب‌نامه}{}% 68
+\BOOKMARK [0][-]{chapter*.31}{واژه‌نامهٔ فارسی به انگلیسی}{}% 69
+\BOOKMARK [0][-]{chapter*.31}{واژه‌نامهٔ انگلیسی به فارسی}{}% 70

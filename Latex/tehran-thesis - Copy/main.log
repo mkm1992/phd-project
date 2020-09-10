@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  9 SEP 2020 16:41
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  10 SEP 2020 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2156,6 +2156,12 @@ LaTeX Warning: Unused global option(s):
 
 LaTeX Warning: Label `fig:C-RAN' multiply defined.
 
+
+LaTeX Warning: Label `eqmain' multiply defined.
+
+
+LaTeX Warning: Label `constraints2' multiply defined.
+
 ) (./tex/chapter2.aux) (./tex/chapter3.aux
 
 LaTeX Warning: Label `fig:c11' multiply defined.
@@ -2951,13 +2957,9 @@ LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(1)/bx/n' will be
  [2] (./main.mw)
 \openout5 = `main.mw'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 \openout5 = `main.mw'.
 
- [3]
-(./main.mw)
+ [3] (./main.mw)
 \openout5 = `main.mw'.
 
 )
@@ -3521,9 +3523,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/m/n' will be
 (Font)              scaled to size 7.19998pt on input line 821.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.5297pt.
@@ -3543,7 +3542,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-)
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.5297pt.
@@ -3563,13 +3562,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.5297pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+\openout5 = `main.mw'.
+
+[29] (./main.mw)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
 \openout2 = `./tex/chapter2.aux'.
 
  (./tex/chapter2.tex
 فصل 2.
 \openout5 = `main.mw'.
 
-[29
+[30
 
 
 
@@ -3607,7 +3622,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[30] (./main.mw)
+[31] (./main.mw)
 \openout5 = `main.mw'.
 
 
@@ -3619,7 +3634,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[31] (./main.mw)
+[32] (./main.mw)
 \openout5 = `main.mw'.
 
 File: ./fig/Delay.png Graphic file (type bmp)
@@ -3633,23 +3648,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[32] (./main.mw)
-\openout5 = `main.mw'.
-
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.5297pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-\openout5 = `main.mw'.
-
 [33] (./main.mw)
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
 \openout5 = `main.mw'.
 
 
@@ -3669,6 +3668,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `main.mw'.
 
 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.5297pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+\openout5 = `main.mw'.
+
+[35] (./main.mw)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+
 Underfull \vbox (badness 3428) has occurred while \output is active []
 
 
@@ -3680,7 +3695,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[35] (./main.mw)
+[36] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -3702,7 +3717,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[36] (./main.mw)
+[37] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -3722,7 +3737,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[37] (./main.mw)
+[38] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -3743,7 +3758,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[38] (./main.mw)
+[39] (./main.mw)
 \openout5 = `main.mw'.
 
 )
@@ -3755,7 +3770,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[39] (./main.mw)
+[40] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout2 = `./tex/chapter3.aux'.
@@ -3766,7 +3781,7 @@ File: ./fig/c2.pdf Graphic file (type pdf)
 <use ./fig/c2.pdf>
 \openout5 = `main.mw'.
 
-[40
+[41
 
 
 
@@ -3790,7 +3805,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[41] (./main.mw)
+[42] (./main.mw)
 \openout5 = `main.mw'.
 
 
@@ -3806,7 +3821,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[42] (./main.mw)
+[43] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -3821,27 +3836,12 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 161.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Overfull \hbox (13.26593pt too wide) in paragraph at lines 196--206
+Overfull \hbox (11.6628pt too wide) in paragraph at lines 196--206
 []\TU/IRLotusICEE.ttf(1)/bx/n/12 که در اینجا $[][] \U/msa/m/n/12 v \OMS/cmsy/m/
 n/12 N\OT1/cmr/m/n/12 ([]\OML/cmm/m/it/12 ; N[][][]\OT1/cmr/m/n/12 )$ \TU/IRLot
-usICEE.ttf(1)/bx/n/12 نشان دهنده ی بردار کانال فیدینگ سریع و تخت می باشد و $[][
+usICEE.ttf(1)/bx/n/12 نشان دهنده ی بردار کانال فیدینگ سریع و تخت می‌باشد و $[][
 ] \OT1/cmr/m/n/12 =$[]
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 15.00562pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-\openout5 = `main.mw'.
-
-[43] (./main.mw)
-\openout5 = `main.mw'.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3871,10 +3871,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `main.mw'.
 
 [45] (./main.mw)
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
 \openout5 = `main.mw'.
 
 
@@ -3930,6 +3926,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [48] (./main.mw)
 \openout5 = `main.mw'.
 
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.00562pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+\openout5 = `main.mw'.
+
+[49] (./main.mw)
+\openout5 = `main.mw'.
+
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 469.
 Missing character: There is no ب in font [./font/LiberationSerif-Regular.ttf]/O
@@ -3951,7 +3966,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[49] (./main.mw)
+[50] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -3971,7 +3986,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[50] (./main.mw)
+[51] (./main.mw)
 \openout5 = `main.mw'.
 
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/bx/it' will be
@@ -3988,7 +4003,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[51] (./main.mw)
+[52] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4007,7 +4022,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[52] (./main.mw)
+[53] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4027,7 +4042,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[53] (./main.mw)
+[54] (./main.mw)
 \openout5 = `main.mw'.
 
 File: ./fig/fig1_last.pdf Graphic file (type pdf)
@@ -4043,23 +4058,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[54] (./main.mw)
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 15.00562pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-\openout5 = `main.mw'.
-
 [55] (./main.mw)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
 \openout5 = `main.mw'.
 
 
@@ -4072,6 +4075,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `main.mw'.
 
 [56] (./main.mw)
+\openout5 = `main.mw'.
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.00562pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+\openout5 = `main.mw'.
+
+[57] (./main.mw)
 \openout5 = `main.mw'.
 
 File: ./fig/fig_service1.eps Graphic file (type eps)
@@ -4088,7 +4103,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[57] (./main.mw)
+[58] (./main.mw)
 \openout5 = `main.mw'.
 
 
@@ -4100,7 +4115,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[58] (./main.mw)
+[59] (./main.mw)
 \openout5 = `main.mw'.
 
 File: ./fig/f112.pdf Graphic file (type pdf)
@@ -4116,26 +4131,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[59] (./main.mw)
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 15.00562pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-\openout5 = `main.mw'.
-
 [60] (./main.mw)
 \openout5 = `main.mw'.
 
-)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 15.00562pt.
@@ -4147,13 +4150,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [61] (./main.mw)
 \openout5 = `main.mw'.
 
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.00562pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+\openout5 = `main.mw'.
+
+[62] (./main.mw)
+\openout5 = `main.mw'.
+
 \openout2 = `./tex/chapter4.aux'.
 
  (./tex/chapter4.tex
 فصل 4.
 \openout5 = `main.mw'.
 
-[62
+[63
 
 
 
@@ -4184,26 +4199,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[63] (./main.mw)
-\openout5 = `main.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.5297pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-\openout5 = `main.mw'.
-
 [64] (./main.mw)
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
 \openout5 = `main.mw'.
 
 
@@ -4240,6 +4236,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [66] (./main.mw)
 \openout5 = `main.mw'.
 
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.5297pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+\openout5 = `main.mw'.
+
+[67] (./main.mw)
+\openout5 = `main.mw'.
+
 
 Underfull \vbox (badness 7047) has occurred while \output is active []
 
@@ -4252,7 +4267,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[67] (./main.mw)
+[68] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4272,7 +4287,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[68] (./main.mw)
+[69] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4285,35 +4300,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 فصل 5.
 \openout5 = `main.mw'.
 
-[69
+[70
 
 
 
 ] (./main.mw)
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.5297pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-\openout5 = `main.mw'.
-
-[70] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4344,7 +4335,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.5297pt.
@@ -4354,6 +4353,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `main.mw'.
 
 [72] (./main.mw)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.5297pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+\openout5 = `main.mw'.
+
+[73] (./main.mw)
 \openout5 = `main.mw'.
 
 LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
@@ -4374,7 +4389,7 @@ LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/it' will be
 (Font)              scaled to size 10.95pt on input line 33.
 \openout5 = `main.mw'.
 
-[73
+[74
 
 
 ] (./main.mw)
@@ -4382,11 +4397,6 @@ LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/it' will be
 
 \openout5 = `main.mw'.
 
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
- [74] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4399,6 +4409,17 @@ LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/it' will be
  [76] (./main.mw)
 \openout5 = `main.mw'.
 
+\openout5 = `main.mw'.
+
+ [77] (./main.mw)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+ [78]
+(./main.mw)
+\openout5 = `main.mw'.
+
 )
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4408,7 +4429,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[77] (./main.mw)
+[79] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout2 = `./tex/appendix1.aux'.
@@ -4524,6 +4545,10 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
 \openout5 = `main.mw'.
 
  (./tex/chapter1.aux
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4950,7 +4975,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
 \openout5 = `main.out'.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9F47CC3D00C70671800D91E9AED22736.
+(rerunfilecheck)             Checksum: E1CA95AB6F31E90D8C3D1B54A58E8836.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -4978,12 +5003,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 44309 strings out of 492970
- 834458 string characters out of 6137298
+ 44315 strings out of 492970
+ 834531 string characters out of 6137298
  1046760 words of memory out of 5000000
- 47103 multiletter control sequences out of 15000+600000
+ 47105 multiletter control sequences out of 15000+600000
  545353 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  64i,27n,96p,10465b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (101 pages).
+Output written on main.pdf (103 pages).
