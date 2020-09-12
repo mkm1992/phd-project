@@ -17,8 +17,8 @@ learning_rate = 0.5
 gamma = 0.65
 
 ## 
-env1 = Env(np.array([4,5,3,1]), np.array([12])) 
-env1.available_state() 
+env1 = Env(np.array([4,5,3,1]), np.array([12,13])) 
+#env1.available_state() 
 env1.state_define()
 env1.value_state()
 Q = np.zeros((env1.state_size, env1.action_size))
@@ -40,7 +40,7 @@ for episode in range(episodes):
         # Else take a random action
         else:
             actions =  env1.choose_action(state)
-            if len(actions[0]) > 0 :
+            if len(actions) > 0 :
                 act = np.random.randint(0,len(actions[0]))
                 action = actions[0][act]
                 #print(action)

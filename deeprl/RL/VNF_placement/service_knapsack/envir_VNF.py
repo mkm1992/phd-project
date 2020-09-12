@@ -42,12 +42,12 @@ class Env:
         print(self.State)
         print(len(self.State))
         print(self.state_size)
-    def available_state(self):
-        for i in range(0, self.state_size):
-            for j in range(0, self.NumVNF):
-                vector = np.arange(j, self.action_size , self.NumVNF)
-                if sum(self.State[i][vector]) == 0 :
-                    self.S[i][vector]
+#    def available_state(self):
+#        for i in range(0, self.state_size):
+#            for j in range(0, self.NumVNF):
+#                vector = np.arange(j, self.action_size , self.NumVNF)
+#                if sum(self.State[i][vector]) == 0 :
+#                    self.S[i][vector]
                 
                 
 #    def available_state(self):
@@ -58,7 +58,8 @@ class Env:
 #        print(self.S)
     def choose_action(self, state):
         actions = []
-        self.state_define()
+        #self.state_define()
+        #print(self.State[state])
         for j in range(0, self.NumVNF):
             vector = np.arange(j, self.action_size , self.NumVNF)
             if sum(self.State[state][vector])==0 :    
@@ -74,41 +75,50 @@ class Env:
             state_new = state
         else:
             temp =  np.copy(self.State[state][:])
-            print(temp)
+            #print(temp)
             temp[action] = 1
-            print(temp)
-            for i in range(0, self.NumVNF):  
-                state_new = state_new + temp[self.NumVNF - i -1] * pow(2,i)
-        return int(state_new)
-    def value_state(self):
-        for i in range(0, self.state_size):
-            temp = self.DC - np.dot(self.State[i], self.VNF)
-            if temp < 0 :
-                self.ValueState[i] = -10* pow(self.DC - np.dot(self.State[i], self.VNF),2) - 100 
-            else :
-                self.ValueState[i] = -2* pow(-self.DC + np.dot(self.State[i], self.VNF),2) + 100 
-            self.ValueState[i] = self.DC - np.dot(self.State[i], self.VNF)
-        print((self.ValueState))
+            #print(temp)
+            for i in range(0, len(self.State)):  
+                if all(temp == self.State[i]):
+                    state_new = i
+        return state_new
+    def value_state(self):       
+        DC_value = np.repeat(self.DC,self.NumVNF);
+        VNF_value = np.tile(self.VNF, (1,self.NumDC))[0]
+        #print(DC_value)
+        #print(VNF_value)
+        self.ValueState = np.zeros(len(self.State))
+        valuStateDC = np.zeros((len(self.State),self.NumDC))
+        for i in range(0, len(self.State)):
+            k =  0
+            for j in range(0, self.NumDC):
+                valuStateDC[i][j] = self.DC[j] - np.dot(self.State[i][k:k+self.NumVNF], self.VNF)
+                k = k + self.NumVNF
+                if valuStateDC[i][j] < 0:
+                    self.ValueState[i] += -20 * pow(valuStateDC[i][j],2) -150
+                else:
+                    self.ValueState[i] += -2 * pow(valuStateDC[i][j],2) +100
+            #print(valuStateDC[i])
+        #print(self.ValueState)
     def get_reward(self, state, next_state):
         self.value_state()
-        if self.S[state][next_state] == 1 :
-            return self.ValueState[next_state] - self.ValueState[state]
-        else:
-            return 0 
+        return self.ValueState[next_state] - self.ValueState[state]
     def done_action(self, state):
         done  = 1
-        if np.sum(self.S[state]) == 0:
+        if len(a.choose_action(state)) == 0:
             done = 1
             print('done')
             return done
         else :
-            for i in range(0, self.state_size):
-                if self.S[state][i] == 1 :
-                    reward = self.get_reward(state, i)
-                    if reward > 0 :
+            actions = (a.choose_action(state)).astype(int)
+            print('act')
+            print(actions)
+            for i in range(0, len(actions)):
+                nxt = self.next_state(state, actions[i])
+                reward = self.get_reward(state, nxt)
+                if reward > 0 :
                         done = 0
                         print('not done')
-
         return done
                         
                         
@@ -116,12 +126,14 @@ class Env:
 a = Env(np.array([4,5,3]), np.array([8, 9]))    
 a.state_define()                          
 print('choose_action') 
-print(a.choose_action(18))  
+print(a.choose_action(10))  
 print('nextState')      
-#print(a.next_state(6, 2))
-#print('reward')
-#print(a.get_reward(6,7))
-#print(a.done_action(4))
+print(a.next_state(10, 4))
+print('value')
+a.value_state()
+print('reward')
+print(a.get_reward(10,22))
+print(a.done_action(10))
 ###
 
 #a = Env(np.array([4,5,3, 1]), np.array([10]))                              
