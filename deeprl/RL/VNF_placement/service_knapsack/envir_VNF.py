@@ -41,6 +41,7 @@ class Env:
         self.State =  np.delete(np_listState,num,0) 
         print(self.State)
         print(len(self.State))
+        self.state_size = len(self.State)
         print(self.state_size)
 #    def available_state(self):
 #        for i in range(0, self.state_size):
@@ -76,7 +77,7 @@ class Env:
         else:
             temp =  np.copy(self.State[state][:])
             #print(temp)
-            temp[action] = 1
+            temp[int(action)] = 1
             #print(temp)
             for i in range(0, len(self.State)):  
                 if all(temp == self.State[i]):
@@ -105,14 +106,14 @@ class Env:
         return self.ValueState[next_state] - self.ValueState[state]
     def done_action(self, state):
         done  = 1
-        if len(a.choose_action(state)) == 0:
+        if len(self.choose_action(state)) == 0:
             done = 1
             print('done')
             return done
         else :
-            actions = (a.choose_action(state)).astype(int)
-            print('act')
-            print(actions)
+            actions = (self.choose_action(state)).astype(int)
+#            print('act')
+#            print(actions)
             for i in range(0, len(actions)):
                 nxt = self.next_state(state, actions[i])
                 reward = self.get_reward(state, nxt)
@@ -123,7 +124,7 @@ class Env:
                         
                         
         
-a = Env(np.array([4,5,3]), np.array([8, 9]))    
+a = Env(np.array([4,5,3,1]), np.array([12, 13]))    
 a.state_define()                          
 print('choose_action') 
 print(a.choose_action(10))  

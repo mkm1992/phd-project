@@ -1,9 +1,11 @@
-# -*- coding: utf-8 -*-
 """
-Created on Sun Aug  9 17:02:19 2020
+Created on Sun Sep 13 16:55:18 2020
 
 @author: Mojdeh Karbalaee
 """
+import numpy as np
+from envir_VNF import Env
+
 import numpy as np
 from envir_VNF import Env
 

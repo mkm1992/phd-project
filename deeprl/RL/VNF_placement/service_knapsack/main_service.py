@@ -17,7 +17,7 @@ learning_rate = 0.5
 gamma = 0.65
 
 ## 
-env1 = Env(np.array([4,5,3,1]), np.array([12,13])) 
+env1 = Env(np.array([4,5,3,5,7]), np.array([12,13])) 
 #env1.available_state() 
 env1.state_define()
 env1.value_state()
@@ -41,12 +41,15 @@ for episode in range(episodes):
         else:
             actions =  env1.choose_action(state)
             if len(actions) > 0 :
-                act = np.random.randint(0,len(actions[0]))
-                action = actions[0][act]
+                act = np.random.randint(0,len(actions))
+                action = actions[act]
+                action = int(action)
                 #print(action)
 
         # Step the game forward
         next_state = env1.next_state(state, action)
+#        if next_state>26:
+#            print('hi')
         reward =  env1.get_reward(state, next_state) 
 
         # Add up the score
