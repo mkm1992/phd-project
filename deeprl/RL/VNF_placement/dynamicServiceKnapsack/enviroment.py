@@ -19,13 +19,13 @@ class Env:
         self.state = self.DC_rem, self.VNF1, self.VNF2
     def choose_action(self):
         if self.VNF1 > 0:
-            ac1 = list(range(1,self.VNF1+1))*self.Val1
+            ac1 = list(range(0,self.VNF1+1))*self.Val1
         else :
-            ac1 = list(range(-1,self.VNF1-1,-1))*self.Val1  
+            ac1 = list(range(0,self.VNF1-1,-1))*self.Val1  
         if self.VNF2 > 0:
-            ac2 = list(range(1,self.VNF2+1))*self.Val2
+            ac2 = list(range(0,self.VNF2+1))*self.Val2
         else :
-            ac2 = list(range(-1,self.VNF2-1,-1))*self.Val2 
+            ac2 = list(range(0,self.VNF2-1,-1))*self.Val2 
         actions = ac1, ac2
         return actions
     def next_state(self, action):
@@ -37,6 +37,8 @@ class Env:
         else:
             reward_s = pow(self.MaxS1*self.Val1 + self.MaxS2*self.Val2-DC_remN,2)
         return reward_s
+    #def done_action(self):
+        
         
         
 
