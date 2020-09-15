@@ -59,17 +59,17 @@
 \contentsline {section}{\numberline {4.3} مدل سیستم و صورت مسئله‌ی دوم}{66}{section.4.3}
 \contentsline {section}{\numberline {4.4}حل مسئله به‌روش یادگیری تقویتی}{67}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}نتایج عددی مسئله‌ی اول}{69}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}نتایج عددی مسئله‌ی دوم}{69}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}نتیجه‌گیری}{70}{section.4.5}
-\contentsline {chapter}{\numberline {5}پیشنهادات و کارهای آتی}{71}{chapter.5}
-\contentsline {section}{\numberline {5.1}مقدمه}{71}{section.5.1}
-\contentsline {section}{\numberline {5.2}نتیجه‌گیری}{71}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}مزایای این چالش و حل آن}{72}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}معایب پروژه انجام شده}{72}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}نوآوری‌های این پروژه}{72}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}پیشنهادات}{73}{section.5.3}
-\contentsline {chapter}{\rl {{کتاب‌نامه}\hfill }}{75}{chapter*.31}
+\contentsline {subsection}{\numberline {4.4.2}نتایج عددی مسئله‌ی دوم}{71}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}نتیجه‌گیری}{71}{section.4.5}
+\contentsline {chapter}{\numberline {5}پیشنهادات و کارهای آتی}{72}{chapter.5}
+\contentsline {section}{\numberline {5.1}مقدمه}{72}{section.5.1}
+\contentsline {section}{\numberline {5.2}نتیجه‌گیری}{72}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}مزایای این چالش و حل آن}{73}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}معایب پروژه انجام شده}{73}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}نوآوری‌های این پروژه}{73}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}پیشنهادات}{74}{section.5.3}
+\contentsline {chapter}{\rl {{کتاب‌نامه}\hfill }}{76}{chapter*.33}
  \renewcommand \cftchappresnum {پیوست\nobreakspace {}}\setlength {\cftchapnumwidth }{\mylenapp }
-\contentsline {chapter}{واژه‌نامهٔ فارسی به انگلیسی}{اول}{chapter*.31}
-\contentsline {chapter}{واژه‌نامهٔ انگلیسی به فارسی}{دوم}{chapter*.31}
-\contentsline {paragraph}{Keywords}{سوم}{section*.33}
+\contentsline {chapter}{واژه‌نامهٔ فارسی به انگلیسی}{اول}{chapter*.33}
+\contentsline {chapter}{واژه‌نامهٔ انگلیسی به فارسی}{دوم}{chapter*.33}
+\contentsline {paragraph}{Keywords}{سوم}{section*.35}

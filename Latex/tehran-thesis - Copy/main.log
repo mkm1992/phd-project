@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  10 SEP 2020 23:27
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  15 SEP 2020 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4265,8 +4265,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [68] (./main.mw)
 \openout5 = `main.mw'.
 
+File: ./fig/dynamicEpoch.eps Graphic file (type eps)
+<./fig/dynamicEpoch.eps>
+File: ./fig/dynamicEpoch1.eps Graphic file (type eps)
+<./fig/dynamicEpoch1.eps>
 
-Underfull \vbox (badness 7047) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -4284,8 +4288,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.5297pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 \openout5 = `main.mw'.
 
+[70] (./main.mw)
 \openout5 = `main.mw'.
 
 )
@@ -4297,7 +4309,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[70] (./main.mw)
+[71] (./main.mw)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4310,35 +4326,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 فصل 5.
 \openout5 = `main.mw'.
 
-[71
+[72
 
 
 
 ] (./main.mw)
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.5297pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-\openout5 = `main.mw'.
-
-[72] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4369,7 +4361,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.5297pt.
@@ -4379,6 +4379,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `main.mw'.
 
 [74] (./main.mw)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.5297pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+\openout5 = `main.mw'.
+
+[75] (./main.mw)
 \openout5 = `main.mw'.
 
 LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/n' will be
@@ -4399,7 +4415,7 @@ LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/it' will be
 (Font)              scaled to size 10.95pt on input line 33.
 \openout5 = `main.mw'.
 
-[75
+[76
 
 
 ] (./main.mw)
@@ -4407,11 +4423,6 @@ LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/it' will be
 
 \openout5 = `main.mw'.
 
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
- [76] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout5 = `main.mw'.
@@ -4426,7 +4437,12 @@ LaTeX Font Info:    Font shape `TU/LiberationSerif-Regular.ttf(0)/m/it' will be
 
 \openout5 = `main.mw'.
 
- [79]
+ [79] (./main.mw)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+ [80]
 (./main.mw)
 \openout5 = `main.mw'.
 
@@ -4439,7 +4455,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-[80] (./main.mw)
+[81] (./main.mw)
 \openout5 = `main.mw'.
 
 \openout2 = `./tex/appendix1.aux'.
@@ -4927,6 +4943,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
 
 \openout5 = `main.mw'.
 
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
 ) (./tex/chapter5.aux
 \openout5 = `main.mw'.
 
@@ -4993,7 +5017,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
 \openout5 = `main.out'.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1B2CA5EC539849237E4C57AE2DD52054.
+(rerunfilecheck)             Checksum: 158CE2045FE745A8A62F4BCEFA308ACA.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -5021,12 +5045,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 44322 strings out of 492970
- 834647 string characters out of 6137298
+ 44332 strings out of 492970
+ 834849 string characters out of 6137298
  1047356 words of memory out of 5000000
- 47110 multiletter control sequences out of 15000+600000
+ 47116 multiletter control sequences out of 15000+600000
  545353 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  64i,27n,96p,10465b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (104 pages).
+Output written on main.pdf (105 pages).
