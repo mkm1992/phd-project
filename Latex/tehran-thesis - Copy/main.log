@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  15 SEP 2020 17:05
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  16 SEP 2020 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4265,13 +4265,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [68] (./main.mw)
 \openout5 = `main.mw'.
 
-File: ./fig/dynamicEpoch.eps Graphic file (type eps)
-<./fig/dynamicEpoch.eps>
-File: ./fig/dynamicEpoch1.eps Graphic file (type eps)
-<./fig/dynamicEpoch1.eps>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+File: ./fig/dynamicEpoch_0.eps Graphic file (type eps)
+<./fig/dynamicEpoch_0.eps>
+File: ./fig/dynamicEpoch1_0.eps Graphic file (type eps)
+<./fig/dynamicEpoch1_0.eps>
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -5046,7 +5043,7 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  44332 strings out of 492970
- 834849 string characters out of 6137298
+ 834861 string characters out of 6137298
  1047356 words of memory out of 5000000
  47116 multiletter control sequences out of 15000+600000
  545353 words of font info for 142 fonts, out of 8000000 for 9000

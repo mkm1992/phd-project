@@ -17,7 +17,7 @@ max_steps = 100         #Maximum steps per episode
 learning_rate = 0.6
 gamma = 0.65
 ##
-DC_max = 10 # 5
+DC_max = 20 # 5
 DC_rem = DC_max
 val1 = 1
 maxS1 = DC_max
@@ -41,7 +41,7 @@ for episode in range(episodes):
         state[0] =  DC_rem
         state[1] =  np.random.randint(1,maxS1+1)
         Exp = np.random.randint(0,1000)/1000
-        if Exp > epsilon or episode> 5700: 
+        if Exp > epsilon or episode> 4000: 
             action = np.argmax(Q[state[0],state[1], 0:state[1]+1])
             #print(Q[state[0],state[1], :])
         else:
@@ -92,12 +92,12 @@ for episode in range(episodes):
 #plt.plot(list(range(0,episodes* max_steps,100)),statePath1[0:episodes* max_steps:100])
 #plt.plot(list(range(0,episodes* max_steps,100)),np.mean(statePath1.reshape(-1, 100), axis=1))
 a1 = statePath1[0:episodes* max_steps:100]
-fig = plt.figure(figsize=(5, 5),dpi=100)
+fig = plt.figure(figsize=(6, 6),dpi=100)
 hfont = {'fontname':'Times New Roman'}
-plt.plot(list(range(0,episodes* max_steps,5000)),np.mean(a1.reshape(-1,50),axis =1),'r')
-plt.title("Admission rate vs. Epoch number",fontsize=10,**hfont)
-plt.xlabel('Epoch Number ',fontsize=10,**hfont)
-plt.ylabel('Admission Rate',fontsize=10,**hfont)
+plt.plot(list(range(0,episodes,50)),np.mean(a1.reshape(-1,50),axis =1),'r')
+plt.title("Ratio of Admission rate of the RL to the Optimal vs. Episode Number",fontsize=10,**hfont)
+plt.xlabel('Episode Number ',fontsize=10,**hfont)
+plt.ylabel('Ratio of Admission rate of the RL to the Optimal',fontsize=10,**hfont)
 plt.xticks(fontsize=10)
 plt.yticks(fontsize=10)
 #plt.ylim([0,0.015])
