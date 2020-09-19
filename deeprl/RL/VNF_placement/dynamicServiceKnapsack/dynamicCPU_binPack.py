@@ -1,18 +1,29 @@
 # -*- coding: utf-8 -*-
 """
+Created on Sat Sep 19 12:28:12 2020
+
+@author: Mojdeh Karbalaee
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Wed Sep 16 11:50:16 2020
 
 @author: Mojdeh Karbalaee
 """
 import numpy as np
 import matplotlib.pyplot as plt  
-    
+from keras.models import Sequential
+from keras.layers import Dense, Activation, Flatten
+from keras.optimizers import Adam
+from keras import datasets, layers, models
+import tensorflow as tf
     
 ## Define Variables
 epsilon = 1.0           #Greed 100%
 epsilon_min = 0.0005     #Minimum greed 0.05%
 epsilon_decay = 0.99 #Decay multiplied with epsilon after each episode 
-episodes = 100      #Amount of games
+episodes = 3000      #Amount of games
 max_steps = 300         #Maximum steps per episode 
 learning_rate = 0.6
 gamma = 0.65
@@ -20,7 +31,7 @@ gamma = 0.65
 DC_max = 12 # 5
 DC_rem = DC_max
 val1 = 1
-maxS1 = 6
+maxS1 = 3
 val2 = 2
 maxS2 = 3
 aSize1 = maxS1 +1
@@ -33,6 +44,25 @@ score = 0
 state = np.array([0,0,0])
 statePath = np.zeros((episodes* max_steps))
 statePath1 = np.zeros((episodes* max_steps))
+##
+input_shape =(4, state_size[0], state_size[1], state_size[2], 1)
+x = tf.random.normal(input_shape)
+y = tf.keras.layers.Conv3D(
+2, 3, activation='relu', input_shape=input_shape[1:])(x)
+
+model = Sequential()
+model.add(Flatten(input_shape=(4, state_size[0], state_size[1], state_size[2])))
+model.add(layers.Conv2D(13, (4,4), activation='relu', input_shape=(state_size[0], state_size[1], state_size[2],1)))
+model.add(Activation('relu'))
+model.add(Dense([16,16,16]))
+model.add(Activation('relu'))
+model.add(Dense([16,16,16]))
+model.add(Activation('relu'))
+model.add(Dense(max_action[0], max_action[1]))
+model.add(Activation('linear'))
+model.compile(loss='mse', optimizer=Adam(lr=learning_rate))
+print(model.summary())
+##
 j = 0;
 for episode in range(episodes):
     score = 0
