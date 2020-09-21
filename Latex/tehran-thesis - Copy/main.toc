@@ -61,15 +61,15 @@
 \contentsline {subsection}{\numberline {4.4.1}نتایج عددی مسئله‌ی اول}{69}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}نتایج عددی مسئله‌ی دوم}{70}{subsection.4.4.2}
 \contentsline {section}{\numberline {4.5}نتیجه‌گیری}{71}{section.4.5}
-\contentsline {chapter}{\numberline {5}پیشنهادات و کارهای آتی}{72}{chapter.5}
-\contentsline {section}{\numberline {5.1}مقدمه}{72}{section.5.1}
-\contentsline {section}{\numberline {5.2}نتیجه‌گیری}{72}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}مزایای این چالش و حل آن}{73}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}معایب پروژه انجام شده}{73}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}نوآوری‌های این پروژه}{73}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}پیشنهادات}{74}{section.5.3}
-\contentsline {chapter}{\rl {{کتاب‌نامه}\hfill }}{76}{chapter*.33}
+\contentsline {chapter}{\numberline {5}پیشنهادات و کارهای آتی}{73}{chapter.5}
+\contentsline {section}{\numberline {5.1}مقدمه}{73}{section.5.1}
+\contentsline {section}{\numberline {5.2}نتیجه‌گیری}{73}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}مزایای این چالش و حل آن}{74}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}معایب پروژه انجام شده}{74}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}نوآوری‌های این پروژه}{74}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}پیشنهادات}{75}{section.5.3}
+\contentsline {chapter}{\rl {{کتاب‌نامه}\hfill }}{77}{chapter*.34}
  \renewcommand \cftchappresnum {پیوست\nobreakspace {}}\setlength {\cftchapnumwidth }{\mylenapp }
-\contentsline {chapter}{واژه‌نامهٔ فارسی به انگلیسی}{اول}{chapter*.33}
-\contentsline {chapter}{واژه‌نامهٔ انگلیسی به فارسی}{دوم}{chapter*.33}
-\contentsline {paragraph}{Keywords}{سوم}{section*.35}
+\contentsline {chapter}{واژه‌نامهٔ فارسی به انگلیسی}{اول}{chapter*.34}
+\contentsline {chapter}{واژه‌نامهٔ انگلیسی به فارسی}{دوم}{chapter*.34}
+\contentsline {paragraph}{Keywords}{سوم}{section*.36}

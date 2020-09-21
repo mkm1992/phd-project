@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 """
+Created on Mon Sep 21 23:18:36 2020
+
+@author: mojdeh
+"""
+# -*- coding: utf-8 -*-
+"""
 Created on Wed Sep 16 11:50:16 2020
 
 @author: Mojdeh Karbalaee
@@ -17,7 +23,7 @@ max_steps = 200         #Maximum steps per episode
 learning_rate = 0.95
 gamma = 0.5
 ##
-DC_max = 10 # 5
+DC_max = 20 # 5
 DC_rem = DC_max
 val1 = 1
 maxS1 = 6
