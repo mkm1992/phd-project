@@ -11,11 +11,11 @@ import matplotlib.pyplot as plt
 ## Define Variables
 epsilon = 1.0           #Greed 100%
 epsilon_min = 0.0005     #Minimum greed 0.05%
-epsilon_decay = 0.99 #Decay multiplied with epsilon after each episode 
-episodes = 5000      #Amount of games
+epsilon_decay = 0.5 #Decay multiplied with epsilon after each episode 
+episodes = 1000      #Amount of games
 max_steps = 200         #Maximum steps per episode 
-learning_rate = 0.8
-gamma = 0.75
+learning_rate = 0.85
+gamma = 0.5
 ##
 DC_max = 16 # 5
 DC_rem = DC_max
@@ -39,7 +39,7 @@ j = 0;
 for episode in range(episodes):
     score = 0
     state = np.array([0,0,0])
-    DC_rem = DC_max
+    #DC_rem = DC_max
     for k in range(max_steps):
         if DC_max - DC_rem > 0:
             deparRate = np.random.randint(1,100)
@@ -48,7 +48,7 @@ for episode in range(episodes):
         state[1] =  np.random.randint(1,maxS1+1)
         state[2] =  np.random.randint(1,maxS2+1)
         Exp = np.random.randint(0,1000)/900
-        if Exp > epsilon:# or episode> 4500: 
+        if Exp > epsilon or episode> 900: 
             action = np.argmax(Q[state[0],state[1], state[2], 0:state[1]+1, 0:state[2]+1])
             #print(Q[state[0],state[1], :])
         else:
@@ -102,8 +102,9 @@ for episode in range(episodes):
     # Reducing our epsilon each episode (Exploration-Exploitation trade-off)
     if epsilon >= epsilon_min:
         epsilon *= epsilon_decay
-xx = 1000
-plt.plot(list(range(5000,episodes* max_steps,xx)),statePath1[5000:episodes* max_steps:xx])
+xx = 10
+ss = 0
+plt.plot(list(range(ss,episodes* max_steps,xx)),statePath1[ss:episodes* max_steps:xx])
 fig = plt.figure(figsize=(5, 5),dpi=100)
 plt.plot(list(range(0,episodes* max_steps,1000)),np.mean(statePath1.reshape(-1, 1000), axis=1))
 a1 = statePath1[0:episodes* max_steps:300]
