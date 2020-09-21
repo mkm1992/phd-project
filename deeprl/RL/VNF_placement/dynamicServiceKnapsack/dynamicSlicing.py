@@ -36,7 +36,7 @@ for episode in range(episodes):
     DC_rem = DC_max
     for k in range(max_steps):
         if DC_max - DC_rem > 0:
-            deparRate = np.random.randint(1,20)
+            deparRate = np.random.randint(1,50)
             DC_rem = DC_rem + (DC_max - DC_rem)* deparRate/100
         state[0] =  DC_rem
         state[1] =  np.random.randint(1,maxS1+1)

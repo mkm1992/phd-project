@@ -12,17 +12,17 @@ import matplotlib.pyplot as plt
 epsilon = 1.0           #Greed 100%
 epsilon_min = 0.0005     #Minimum greed 0.05%
 epsilon_decay = 0.99 #Decay multiplied with epsilon after each episode 
-episodes = 100      #Amount of games
-max_steps = 300         #Maximum steps per episode 
-learning_rate = 0.6
-gamma = 0.65
+episodes = 5000      #Amount of games
+max_steps = 200         #Maximum steps per episode 
+learning_rate = 0.8
+gamma = 0.75
 ##
-DC_max = 12 # 5
+DC_max = 16 # 5
 DC_rem = DC_max
 val1 = 1
 maxS1 = 6
 val2 = 2
-maxS2 = 3
+maxS2 = 4
 aSize1 = maxS1 +1
 aSize2 = maxS2 +1
 aSize0 = DC_max + 1
@@ -33,6 +33,8 @@ score = 0
 state = np.array([0,0,0])
 statePath = np.zeros((episodes* max_steps))
 statePath1 = np.zeros((episodes* max_steps))
+statePath2 = np.zeros((episodes* max_steps))
+statePath3 = np.zeros((episodes* max_steps))
 j = 0;
 for episode in range(episodes):
     score = 0
@@ -40,13 +42,13 @@ for episode in range(episodes):
     DC_rem = DC_max
     for k in range(max_steps):
         if DC_max - DC_rem > 0:
-            deparRate = np.random.randint(1,20)
+            deparRate = np.random.randint(1,100)
             DC_rem = DC_rem + (DC_max - DC_rem)* deparRate/100
         state[0] =  DC_rem
         state[1] =  np.random.randint(1,maxS1+1)
         state[2] =  np.random.randint(1,maxS2+1)
-        Exp = np.random.randint(0,1000)/1000
-        if Exp > epsilon: #or episode> 6000: 
+        Exp = np.random.randint(0,1000)/900
+        if Exp > epsilon:# or episode> 4500: 
             action = np.argmax(Q[state[0],state[1], state[2], 0:state[1]+1, 0:state[2]+1])
             #print(Q[state[0],state[1], :])
         else:
@@ -60,6 +62,9 @@ for episode in range(episodes):
                 #print(action)
 
         # Step the game forward
+        statePath2[j] = DC_rem;
+        statePath3[j] = (action1*val1 + action2*val2)
+        statePath[j] = (action1*val1 + action2*val2)/DC_rem
         DC_rem =  DC_rem -  action1*val1 - action2*val2 
         if DC_rem < 0:
             reward =  -100000
@@ -75,7 +80,7 @@ for episode in range(episodes):
         
         # Update our Q-table with our Q-function
         Q[state[0],state[1],  state[2], action1, action2] = (1 - learning_rate) * Q[state[0],state[1],  state[2], action1, action2] \
-            + learning_rate * (reward + gamma * np.max(Q[int(stateN),state[1],:,:]))
+            + learning_rate * (reward + gamma * np.max(Q[int(stateN),state[1],state[2],:,:]))
         
            
         # Set the next state as the current state
@@ -87,8 +92,9 @@ for episode in range(episodes):
         if a == 0:
             a = 1
         state[0] = DC_rem
-        statePath[j] = (action1*val1 + action2*val2)/state[1]
+        
         statePath1[j] = (action1*val1 + action2*val2)/a
+         
         if statePath1[j]>1 :
             statePath1[j] = 1
         j = j + 1
@@ -96,14 +102,14 @@ for episode in range(episodes):
     # Reducing our epsilon each episode (Exploration-Exploitation trade-off)
     if epsilon >= epsilon_min:
         epsilon *= epsilon_decay
-
-plt.plot(list(range(0,episodes* max_steps,300)),statePath1[0:episodes* max_steps:300])
+xx = 1000
+plt.plot(list(range(5000,episodes* max_steps,xx)),statePath1[5000:episodes* max_steps:xx])
 fig = plt.figure(figsize=(5, 5),dpi=100)
-plt.plot(list(range(0,episodes* max_steps,300)),np.mean(statePath1.reshape(-1, 300), axis=1))
+plt.plot(list(range(0,episodes* max_steps,1000)),np.mean(statePath1.reshape(-1, 1000), axis=1))
 a1 = statePath1[0:episodes* max_steps:300]
 fig = plt.figure(figsize=(5, 5),dpi=100)
 hfont = {'fontname':'Times New Roman'}
-plt.plot(list(range(0,episodes* max_steps,15000)),np.mean(a1.reshape(-1,50),axis =1),'r')
+plt.plot(list(range(0,episodes* max_steps,1000)),np.mean(a1.reshape(-1,50),axis =1),'r')
 plt.title("Admission rate vs. Epoch number",fontsize=10,**hfont)
 plt.xlabel('Epoch Number ',fontsize=10,**hfont)
 plt.ylabel('Admission Rate',fontsize=10,**hfont)

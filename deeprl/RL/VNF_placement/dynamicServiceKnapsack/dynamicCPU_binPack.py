@@ -14,10 +14,10 @@ Created on Wed Sep 16 11:50:16 2020
 import numpy as np
 import matplotlib.pyplot as plt  
 from keras.models import Sequential
-from keras.layers import Dense, Activation, Flatten
-from keras.optimizers import Adam
-from keras import datasets, layers, models
-import tensorflow as tf
+#from keras.layers import Dense, Activation, Flatten
+#from keras.optimizers import Adam
+#from keras import datasets, layers, models
+#import tensorflow as tf
     
 ## Define Variables
 epsilon = 1.0           #Greed 100%
@@ -105,7 +105,7 @@ for episode in range(episodes):
         
         # Update our Q-table with our Q-function
         Q[state[0],state[1],  state[2], action1, action2] = (1 - learning_rate) * Q[state[0],state[1],  state[2], action1, action2] \
-            + learning_rate * (reward + gamma * np.max(Q[int(stateN),state[1],:,:]))
+            + learning_rate * (reward + gamma * np.max(Q[int(stateN),state[1],state[2],:,:]))
         
            
         # Set the next state as the current state

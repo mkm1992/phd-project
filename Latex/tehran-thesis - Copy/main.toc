@@ -59,7 +59,7 @@
 \contentsline {section}{\numberline {4.3} مدل سیستم و صورت مسئله‌ی دوم}{66}{section.4.3}
 \contentsline {section}{\numberline {4.4}حل مسئله به‌روش یادگیری تقویتی}{67}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}نتایج عددی مسئله‌ی اول}{69}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}نتایج عددی مسئله‌ی دوم}{71}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}نتایج عددی مسئله‌ی دوم}{70}{subsection.4.4.2}
 \contentsline {section}{\numberline {4.5}نتیجه‌گیری}{71}{section.4.5}
 \contentsline {chapter}{\numberline {5}پیشنهادات و کارهای آتی}{72}{chapter.5}
 \contentsline {section}{\numberline {5.1}مقدمه}{72}{section.5.1}
