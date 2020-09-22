@@ -605,9 +605,9 @@ inner xsep=-1.3cm,inner ysep=0.4cm]
     Bachelor of Science Thesis
 	in  \@latinsubject 
 \else
-	A Thesis submitted to the Graduate Studies Office
-    \\In partial fulfillment of the requirements for
-    \\The degree of 
+	A Proposal submitted to the Graduate Studies Office to continue
+    %\\In partial fulfillment of the requirements for
+   % \\The degree of 
 	\if@mscthesis
 	 Master of Science
 	\else

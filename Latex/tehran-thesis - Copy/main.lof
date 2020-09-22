@@ -26,5 +26,5 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces نسبت تعداد سرویسهای پذیرفته شده با استفاده از روش یادگیری تقویتی عمیق به نسبت تعداد سرویسهای پذیرفته شده در حالت بهینه براساس زمان طی شده\relax }}{70}{figure.caption.31}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces نسبت تعداد سرویسهای پذیرفته شده روش استفاده شده به نسبت تعداد سرویسهای پذیرفته شده در حالت بهینه براساس زمان طی شده با افزایش تعداد ماکسیمم درخواستها و تعداد برشهای شبکه\relax }}{71}{figure.caption.32}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces نسبت تعداد سرورهای مصرفی با روش Q-learning به سرورهای مصرفی بهینه براساس زمان طی شده\relax }}{72}{figure.caption.33}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces نسبت تعداد سرورهای مصرفی با روش بهینه به سرورهای مصرفی با استفاده از روش یادگیری تقویتی براساس زمان طی شده\relax }}{72}{figure.caption.33}
 \addvspace {10\p@ }
