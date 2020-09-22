@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  22 SEP 2020 10:07
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  22 SEP 2020 10:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4291,8 +4291,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-File: ./fig/ratio_episode1.eps Graphic file (type eps)
-<./fig/ratio_episode1.eps>
+File: ./fig/ratio_episode2.eps Graphic file (type eps)
+<./fig/ratio_episode2.eps>
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4309,7 +4309,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 \openout5 = `main.mw'.
 
-)
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.5297pt.
@@ -4321,11 +4321,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [71] (./main.mw)
 \openout5 = `main.mw'.
 
-\openout5 = `main.mw'.
-
-\openout5 = `main.mw'.
-
-
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.5297pt.
@@ -4335,6 +4331,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `main.mw'.
 
 [72] (./main.mw)
+\openout5 = `main.mw'.
+
+\openout5 = `main.mw'.
+
 \openout5 = `main.mw'.
 
 \openout2 = `./tex/chapter5.aux'.
