@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  22 SEP 2020 10:56
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  23 SEP 2020 10:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1937,7 +1937,7 @@ apping=parsidigits;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/m/n' will be
-(Font)              scaled to size 14.39996pt on input line 116.
+(Font)              scaled to size 14.39996pt on input line 118.
 \g__fontspec_family_LiberationSerif-Regular.ttf_int=\count411
 .................................................
 . fontspec info: "defining-font"
@@ -1967,7 +1967,7 @@ ping=tex-text;"
 ;mapping=tex-text;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
-LaTeX Info: Redefining \latinfont on input line 118.
+LaTeX Info: Redefining \latinfont on input line 120.
 *************************************************
 * fontspec warning: "language-not-exist"
 * 
@@ -2006,7 +2006,7 @@ idigits;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
 Package xepersian-mathsdigitspec Info: DefiningthedefaultPersianmathsdigitsfont
-as'IRLotusICEE.ttf' on input line 121.
+as'IRLotusICEE.ttf' on input line 123.
 \symOPERATORS=\mathgroup6
 \symnew@mathbf@font@digits=\mathgroup7
 \symnew@mathit@font@digits=\mathgroup8
@@ -2033,7 +2033,7 @@ as'IRLotusICEE.ttf' on input line 121.
 ng=parsidigits;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-LaTeX Info: Redefining \iranicfamily on input line 123.
+LaTeX Info: Redefining \iranicfamily on input line 125.
 .................................................
 . fontspec info: "no-scripts"
 . 
@@ -2074,7 +2074,7 @@ LaTeX Info: Redefining \iranicfamily on input line 123.
 .................................................
 \c@definition=\count414
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 180.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 182.
 
 (c:/texlive/2018/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
@@ -2122,11 +2122,11 @@ sep char (CT)
 \mylenchp=\skip146
 \mylenapp=\skip147
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/m/n' will be
-(Font)              scaled to size 17.27994pt on input line 247.
+(Font)              scaled to size 17.27994pt on input line 249.
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/bx/n' will be
-(Font)              scaled to size 17.27994pt on input line 247.
+(Font)              scaled to size 17.27994pt on input line 249.
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/bx/n' will be
-(Font)              scaled to size 14.39996pt on input line 248.
+(Font)              scaled to size 14.39996pt on input line 250.
 )
 (./tex/faTitle.tex) (./tex/enTitle.tex) (./tex/glossaries-settings.tex
 \glswrite=\write19
