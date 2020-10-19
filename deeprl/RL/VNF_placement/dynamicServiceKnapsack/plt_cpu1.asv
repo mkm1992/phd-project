@@ -1,0 +1,12 @@
+r1 = result1/max(result2);
+r2 = result2/max(result2);
+z = zeros(2,6);
+z(:,1) = r1;
+z(2,:) = r2;
+% bar(r2)
+% hold all
+% bar(r1)
+bar(1:6,z)
+xlabel('Number of DCs')
+ylabel('Normalized Mean Amount of Resource Consumption')
+title('Normalized Mean Amount of Resource Consumptiont vs. Number of DCs')

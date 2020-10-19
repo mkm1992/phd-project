@@ -1,0 +1,7 @@
+r1 = result1/max(result2);
+r2 = result2/max(result2);
+plot(r1)
+hold all
+plot(r2)
+xlabel('Number of Slices')
+ylabel('Normalized Mean Number of ')
