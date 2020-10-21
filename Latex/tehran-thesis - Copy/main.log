@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  19 OCT 2020 22:52
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  21 OCT 2020 13:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3543,7 +3543,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `main.mw'.
 
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/m/n' will be
-(Font)              scaled to size 7.19998pt on input line 844.
+(Font)              scaled to size 7.19998pt on input line 846.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -4297,10 +4297,6 @@ File: ./fig/ratio_episode2.eps Graphic file (type eps)
 <./fig/ratio_episode2.eps>
 File: ./fig/consumptionE.eps Graphic file (type eps)
 <./fig/consumptionE.eps>
-
-
-LaTeX Warning: Reference `fig:consumptionE' on page 69 undefined on input line 
-295.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -5079,13 +5075,10 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: EDC95C076A50436C4E0C3FBF0D812305
+(rerunfilecheck)             Before: 11440ABC8E9C4B98D238DD1B5E2DAE75
 (rerunfilecheck)             After:  AC6CB2C7C589460A2167364B161EF38C.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
