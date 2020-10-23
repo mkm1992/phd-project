@@ -32,7 +32,7 @@
 \contentsline {section}{\numberline {2.1}مقدمه}{31}{section.2.1}
 \contentsline {section}{\numberline {2.2}مروری بر مسائل پیشین}{31}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}برش شبکه}{32}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}رفتن به سمت شبکه های دسترسی رادیویی باز}{35}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2} شبکه های دسترسی رادیویی باز}{35}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}قرار دادن VNF ها}{36}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}روش های حل}{37}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}مسئله‌ی کوله‌پشتی و بسته‌بندی جعبه}{37}{subsection.2.3.1}

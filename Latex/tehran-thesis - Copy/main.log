@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  21 OCT 2020 13:42
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  23 OCT 2020 22:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3478,6 +3478,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: ./fig/SDN.png Graphic file (type bmp)
 <./fig/SDN.png>
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.5297pt.
@@ -3488,9 +3491,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [24] (./main.mw)
 \openout5 = `main.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -3543,7 +3543,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `main.mw'.
 
 LaTeX Font Info:    Font shape `TU/IRLotusICEE.ttf(0)/m/n' will be
-(Font)              scaled to size 7.19998pt on input line 846.
+(Font)              scaled to size 7.19998pt on input line 852.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -5068,15 +5068,9 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 113.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
 \openout5 = `main.out'.
 
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 570257AB546F2A3B0EBB8351788A7964.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 11440ABC8E9C4B98D238DD1B5E2DAE75
-(rerunfilecheck)             After:  AC6CB2C7C589460A2167364B161EF38C.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -5105,7 +5099,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  44350 strings out of 492970
  835229 string characters out of 6137298
- 1047566 words of memory out of 5000000
+ 1047567 words of memory out of 5000000
  47127 multiletter control sequences out of 15000+600000
  545353 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
