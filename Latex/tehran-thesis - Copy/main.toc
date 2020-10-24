@@ -56,8 +56,8 @@
 \contentsline {section}{\numberline {3.5}نتیجه‌گیری}{61}{section.3.5}
 \contentsline {chapter}{\numberline {4}تخصیص برش شبکه به صورت دینامیکی}{63}{chapter.4}
 \contentsline {section}{\numberline {4.1}مقدمه}{63}{section.4.1}
-\contentsline {section}{\numberline {4.2} مدل سیستم و صورت مسئله‌ی اول}{63}{section.4.2}
-\contentsline {section}{\numberline {4.3} مدل سیستم و صورت مسئله‌ی دوم}{65}{section.4.3}
+\contentsline {section}{\numberline {4.2} مدل سیستم و صورت مسئله‌ی بخش رادیویی}{63}{section.4.2}
+\contentsline {section}{\numberline {4.3} مدل سیستم و صورت مسئله‌ی بخش هسته}{65}{section.4.3}
 \contentsline {section}{\numberline {4.4}حل مسئله به‌روش یادگیری تقویتی}{66}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}نتایج عددی مسئله‌ی اول}{68}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}نتایج عددی مسئله‌ی دوم}{69}{subsection.4.4.2}
