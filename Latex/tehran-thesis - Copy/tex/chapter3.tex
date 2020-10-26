@@ -210,9 +210,9 @@ $\boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}} \backsim \mathcal{N}(0,N_0\boldsymbol{
 \begin{equation}
 \begin{split}
  I_{u_{(v,i)}} &=
- \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u_{(v,l)}}a_{v,s}\zeta_{u_(v,i),n,s}\zeta_{u_(v,l),n,s}}_{\text{(intra-service interference)}}\\
-&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u_{(y,l)}}a_{y,s} \zeta_{u_(v,i),n,s}\zeta_{u_(y,l),n,s}}_{\text{(inter-service interference)}}\\
-&+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r_{(s,j)}}^2 |\boldsymbol{h}_{r_{(s,j)}, u_{(v,i)}}|^2 a_{v,s}}_{\text{(quantization noise interference)}},
+ \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u_{(v,l)}}a_{v,s}\zeta_{u_(v,i),n,s}\zeta_{u_(v,l),n,s}}_{\text{\lr{(intra-service interference)}}}\\
+&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u_{(y,l)}}a_{y,s} \zeta_{u_(v,i),n,s}\zeta_{u_(y,l),n,s}}_{\text{\lr{(inter-service interference)}}}\\
+&+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r_{(s,j)}}^2 |\boldsymbol{h}_{r_{(s,j)}, u_{(v,i)}}|^2 a_{v,s}}_{\text{\lr{(quantization noise interference)}}},
 \end{split}
 \end{equation}
 که 
@@ -248,7 +248,7 @@ $I_{u_{(v,i)}}$
 بدست می‌آید.
 \newline
 فرض کنید $\bar{p}_{r_{(s,j)}}$
-نشان دهنده ی سیگنال ارسالی از $j$ امین واحد رادیویی در $s$ امین برش می‌باشد.
+نشان دهنده‌ی توان سیگنال ارسالی از $j$ امین واحد رادیویی در $s$ امین برش می‌باشد.
 از رابطه ی \eqref{eq3} داریم
 \begin{equation}
 \bar{p}_{r_{(s,j)}} = \sum_{v=1}^{V}\boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   \boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s} + \sigma_{q_{r(s,j)}}^2.
@@ -348,11 +348,11 @@ $j^{th}$
 فرض کنید توان مصرفی پردازش باند پایه در هر مرکز داده ی $d$ که به \lr{VNF} های یک برش $s$ متصل می‌باشد با   
 $\phi_{s,d}$
 نشان داده شده است.
-بنابراین می‌توان توان کل سیستم را برای کلیه مرکز داده های فعال که به برش متصل هستند ،بدین صورت نشان داد
+بنابراین می‌توان توان کل سیستم را برای کلیه مرکز داده های فعال که به برش شبکه سرویس دهی می‌کنند، بدین صورت نشان داد
 \begin{equation*}
 \textstyle \phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d}.
 \end{equation*}
-همچنین ، یک تابع هزینه برای قرار دادن \lr{VNF} ها در مرکز داده ها بدین عنوان تعریف شده است
+همچنین ، یک تابع هزینه برای سرویس دهی\lr{VNF} ها توسط مرکز داده ها بدین عنوان تعریف شده است
 \begin{equation}\label{eqpsi}
 \textstyle  \psi_{tot} = \phi_{tot} - \nu \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s}
 \end{equation}
