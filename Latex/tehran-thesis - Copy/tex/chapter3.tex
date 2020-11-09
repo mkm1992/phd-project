@@ -174,7 +174,7 @@ $N_0$
 علاوه بر این
 $\boldsymbol{q}_{R_s} \in \mathbb{C}^{{R}_s }  $
 نشان دهنده ی نویز کوانتیزاسیون می‌باشد که از فشرده سازی سیگنال  در واحد توزیع شده بدست آمده است.
-$\boldsymbol{P}_{U_v} = \diag{(p_{u_{(v,1)}}, ..., p_{u_{(v,\mathcal{U}_v)}})}$.
+$\boldsymbol{P}_{U_v} = \diag{(p_{u{(v,1)}}, ..., p_{u{(v,\mathcal{U}_v)}})}$.
 همچنین در اینجا، 
 $\zeta_{k,s}^{U_v} \delequal \{\zeta_{k,s}^{u(v,1)},\zeta_{k,s}^{u(v,2)},...,\zeta_{k,s}^{u(v,N_{U_v})}\}$
 و 
@@ -209,16 +209,16 @@ $\boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}} \backsim \mathcal{N}(0,N_0\boldsymbol{
 توان تداخلی کابر $i$ام به سرویس $v$ام به صورت زیر بیان می‌شود
 \begin{equation}
 \begin{split}
- I_{u_{(v,i)}} &=
- \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u_{(v,l)}}a_{v,s}\zeta_{u_(v,i),n,s}\zeta_{u_(v,l),n,s}}_{\text{\lr{(intra-service interference)}}}\\
-&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u_{(y,l)}}a_{y,s} \zeta_{u_(v,i),n,s}\zeta_{u_(y,l),n,s}}_{\text{\lr{(inter-service interference)}}}\\
-&+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r_{(s,j)}}^2 |\boldsymbol{h}_{r_{(s,j)}, u_{(v,i)}}|^2 a_{v,s}}_{\text{\lr{(quantization noise interference)}}},
+ I_{u{(v,i)}} &=
+ \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u{(v,l)}}a_{v,s}\zeta_{n,s}^{u(v,i)}\zeta_{n,s}^{u(v,l)}}_{\text{\lr{(intra-service interference)}}}\\
+&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u{(y,l)}}a_{y,s} \zeta_{n,s}^{u(v,i)}\zeta_{n,s}^{u(y,l)}}_{\text{\lr{(inter-service interference)}}}\\
+&+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r{(s,j)}}^2 |\boldsymbol{h}_{r{(s,j)}, u{(v,i)}}|^2 a_{v,s}}_{\text{\lr{(quantization noise interference)}}},
 \end{split}
 \end{equation}
 که 
-$\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(v,l)}}|^2$
+$\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_s, u{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u{(v,l)}}|^2$
 و 
-$\gamma_{2} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(y,l)}}|^2$.
+$\gamma_{2} =|\boldsymbol{h}_{\mathcal{R}_s, u{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u{(y,l)}}|^2$.
 همچنین 
 
 ${\sigma_q}_{r_{(s,j)}}$
@@ -229,20 +229,20 @@ $j$
 سیگنال تداخلی برای هر کاربر از سیگنالهای کاربرانی بدست می‌آید که از \lr{PRB} مشترکی استفاده نموده اند.
 درصورت قرار دادن $P_{max}$
 به جای 
-$p_{u_{(v,l)}}$
+$p_{u{(v,l)}}$
 و 
-$p_{u_{(y,l)}}$
+$p_{u{(y,l)}}$
 باند بالایی  
-$\bar{I}_{u_{(v,i)}}$
+$\bar{I}_{u{(v,i)}}$
 برای 
-$I_{u_{(v,i)}}$
+$I_{u{(v,i)}}$
 بدست می‌آید
 بنابراین،
-$\bar{\mathcal{R}}_{u_{(v,i)}} \forall v , \forall i$ 
+$\bar{\mathcal{R}}_{u{(v,i)}} \forall v , \forall i$ 
 از قرار گرفتن 
-$\bar{I}_{u_{(v,i)}}$
+$\bar{I}_{u{(v,i)}}$
 به جای 
-$I_{u_{(v,i)}}$
+$I_{u{(v,i)}}$
 در رابطه ی 
 \eqref{eq1} و \eqref{eq2}
 بدست می‌آید.
@@ -251,11 +251,11 @@ $I_{u_{(v,i)}}$
 نشان دهنده‌ی توان سیگنال ارسالی از $j$ امین واحد رادیویی در $s$ امین برش می‌باشد.
 از رابطه ی \eqref{eq3} داریم
 \begin{equation}
-\bar{p}_{r_{(s,j)}} = \sum_{v=1}^{V}\boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   \boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s} + \sigma_{q_{r(s,j)}}^2.
+\bar{p}_{r{(s,j)}} = \sum_{v=1}^{V}\boldsymbol{w}_{r{(s,j)},\mathcal{U}_{v}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   \boldsymbol{w}_{r{(s,j)},\mathcal{U}_{v}}^H a_{v,s} + \sigma_{q_{r(s,j)}}^2.
 \end{equation}
 در این صورت نرخ کاربران در لینک \lr{fronthaul} بین $j$امین واحد رادیویی در برش $s$ام با واحد توزیع شده ی موجود در این برش، بدین صورت می‌باشد  \cite{simeone2016cloud, 1111}
 \begin{equation}
-C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s}}{ \sigma_{q_{r(s,j)}}^2})},
+C_{R{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r{(s,j)},\mathcal{U}_{v}}^H a_{v,s}}{ \sigma_{q_{r(s,j)}}^2})},
 \end{equation}
 که در اینجا 
 $a_{v,s}$
@@ -354,7 +354,7 @@ $\phi_{s,d}$
 \end{equation*}
 همچنین ، یک تابع هزینه برای سرویس دهی\lr{VNF} ها توسط مرکز داده ها بدین عنوان تعریف شده است
 \begin{equation}\label{eqpsi}
-\textstyle  \psi_{tot} = \phi_{tot} - \nu \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s}
+\textstyle  \psi_{tot} = \phi_{tot} - \nu \sum_{s=1}^{S}\sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s}
 \end{equation}
 که $\nu$
 متغیر طراحی برای ارزش بین اولین ترم 
