@@ -864,15 +864,20 @@ $p_j$
 حل این مسئله با استفاده از روش های مختلف صورت می‌گیرد. این مسئله بدین صورت فرمول بندی می‌شود.
 \begin{subequations}
 	\begin{alignat}{4}
-		\min\limits_{\boldsymbol{x} }   \quad &   \sum_{j=1}^{n}  y_{j}\\
-		\text{\lr{subject to}} \quad & \textstyle \sum_{j=1}^{n}x_{ij} =1  \quad i =1,...,m, \\
-		&  \sum_{j=1}^{m} r_{i,j} x_j \leq b_i  \quad i=1,..,m \\
+		\min\limits_{\boldsymbol{x} }   \quad &  K= \sum_{j=1}^{n}  y_{j}\\
+		\text{\lr{subject to}} \quad & K\geq 1 \\
+		& \sum_{j=1}^{n}x_{ij} =1  \quad i =1,...,m, \\
+		&  \sum_{i=1}^{m} r_{i} x_{ij} \leq b_j  \quad j=1,..,n \\
 		&  x_{ij} \in \{0,1\}  \quad y_j \in \{0,1\} \quad \forall i,j \label{eqmain}
 	\end{alignat}
 	\label{constraints2}
 \end{subequations}
-در اینجا، $y_j$ تعداد جعبه‌های مورد استفاده است که درصورتی که  $\sum_{j=1}^{n}x_{i,j \geq 1}$
-باشد، $y_j$ مقدار 1 می‌گیرد و در غیر این صورت 0 است \cite{berkey1987two}.
+در اینجا، $y_j$ تعداد جعبه‌های مورد استفاده است که درصورتی که  
+$\sum_{i=1}^{n}x_{ij} \geq 1$
+باشد، $y_j$ مقدار 1 می‌گیرد 
+$x_{ij}$
+نشان می‌دهد که شی i در جعبه‌ی j جا دارد.
+و در غیر این صورت 0 است \cite{berkey1987two}.
 
 \section{دستاوردهای پروژه}
 در اینجا، هدف در نظرگیری ساختار رادیویی دسترسی باز در نسل پنجم و تخصیص منابع آن می‌باشد.
