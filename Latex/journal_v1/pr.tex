@@ -76,17 +76,33 @@
 In this section, first, we  present the system model. Then, we obtain achievable data rates and delays for the downlink (DL) of the ORAN system. Afterward, we discuss about assignment of physical data center resources.
 Finally, the main problem is expressed.
 \subsection{System Model}
-Suppose we have two service types includes eMBB and URLLC. Assume we have $V_1$ and $V_2$ different applications for the first and second service type ($V = V_1 + V_2$).
-Assume we have $S$ pre allocated slices serving $V$ services; There are $S_1$ slices for the first service type (eMBB) and $S_2$ slices for the second service type (URLLC) ($S = S_1 + S_2$).
+Suppose we have two service types includes eMBB and URLLC. Assume we have $V_1$ and $V_2$ different applications for the first and second service type, respectively ($V = V_1 + V_2$).
+Assume we have $S$ preallocated slices serving $V$ services; There are $S_1$ slices for the first service type (eMBB) and $S_2$ slices for the second service type (URLLC) ($S = S_1 + S_2$).
 Each Service $v_i\in \{1,2,...,V_i \} $ consists of $U_{v_i}$ request from the 
-single-antenna UEs that require certain service ($i \in \{1,2\}$ indicate service type).
-There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocate to slice.
-Each slice $s_i \in \{1,2,...,S_i \}$, $i \in \{1,2\}$ consists of $K_{s_i}$ , $i \in \{1,2\}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs).
+single-antenna UEs which require certain QoS to be able to use the requested program($i \in \{1,2\}$ indicate service type).
+There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocated to slice.
+Each slice $s_i \in \{1,2,...,S_i \}$, $i \in \{1,2\}$ consists of $K_{s_i}$, $i \in \{1,2\}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_{s,1}$ VNFs for the processing of O-DU,  $M_{s,2}$ VNFs for the processing of O-CU-UP and $M_{u}$ VNFs for the processing of UPF.
+
+Also, each VNF instance is running on the virtual machine (VM) that are using resources from the data centers. Each VM, requires enough resources of CPU, memory, storage and network bandwidth.
+
+In addition, there are $R$ multi-antenna RU that are shared between slices. Each RU $r \in \{1,2,...,R \}$
+has $J$ antenna for transmitting and receiving data. Moreover, all RUs, have access to PRBs.
+\subsection{The Achievable Rate}
+The achievable data rate for the $i^{th}$ UE request in the $v_{1}^{th}$ application of service type 1 (eMBB) can be written as
+\begin{equation}\label{eq1}
+\mathcal{R}_{u(v_1,i)}^{e} = \sum_{s1=1}^{S_1}\sum_{k=1}^{K_s} B \log_2({1+ \rho_{u(v_1,i)}^{k,s1}})a_{u(v,i)} b_{v_1, s_1} e^{s_1}_{k,u(v_1,i)},
+\end{equation}
+where $B$ is the bandwidth of system, $a_{u(v,i)} \in \{0,1\}$ is a binary variable to depict user admission.
+$b_{v_1, s_1}$ is a binary variable that illustrates whether slice $s_1$ is allocated to service $v_1$ or not. 
+$e^{s_1}_{k,u(v_1,i)}$ is the binary variable to show whether the UE $i$ in service $v_1$ using slice $s_1$, is assigned to $k^{th}$ PRB or not.
+ and $\rho_{u(v_1,i)}^{k,s1}$ is the SNR of $i^{th}$ UE in $v_{1}^{th}$ service experienced at slice $s_1$ on PRB $k$ which is obtained from
+\begin{equation}\label{eq2}
+\rho_{u(v_1,i)}^{k,s1} =  \sum_{s1=1}^{S_1}\frac{p_{u(v,i)}\sum_{s=1}^{S}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{v,s}}{BN_0 + I_{u(v,i)}},
+\end{equation} 
 
 
 
-
-
+\newpage
 Suppose there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $ consists of $U_v$
 single-antenna UEs that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RUs and $K_s$ physical resource blocks (PRBs), one DU and one CU that contains VNFs.
 Slices can have shared resources. All RUs in a slice, that are mapped to a service, transmit signals cooperatively to all the UEs in a specific service \cite{motalleb2017optimal,mimoCran}. Each RU $r \in \{1,2,...,R \}$ is mapped to a DU via an optical fiber link with limited fronthaul capacity.
