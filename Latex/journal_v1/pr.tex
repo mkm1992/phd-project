@@ -78,110 +78,69 @@ Finally, the main problem is expressed.
 \subsection{System Model}
 Suppose we have two service types includes eMBB and URLLC. Assume we have $V_1$ and $V_2$ different applications for the first and second service type, respectively ($V = V_1 + V_2$).
 Assume we have $S$ preallocated slices serving $V$ services; There are $S_1$ slices for the first service type (eMBB) and $S_2$ slices for the second service type (URLLC) ($S = S_1 + S_2$).
-Each Service $v_i\in \{1,2,...,V_i \} $ consists of $U_{v_i}$ request from the 
-single-antenna UEs which require certain QoS to be able to use the requested program($i \in \{1,2\}$ indicate service type).
+Each Service $v_j\in \{1,2,...,V_j \} $ consists of $U_{v_j}$ request from the 
+single-antenna UEs which require certain QoS to be able to use the requested program($j \in \{1,2\}$ indicate service type).
 There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocated to slice.
-Each slice $s_i \in \{1,2,...,S_i \}$, $i \in \{1,2\}$ consists of $K_{s_i}$, $i \in \{1,2\}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_{s,1}$ VNFs for the processing of O-DU,  $M_{s,2}$ VNFs for the processing of O-CU-UP and $M_{u}$ VNFs for the processing of UPF.
+Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j \in \{1,2\}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_{s,1}$ VNFs for the processing of O-DU,  $M_{s,2}$ VNFs for the processing of O-CU-UP and $M_{u}$ VNFs for the processing of UPF.
 
 Also, each VNF instance is running on the virtual machine (VM) that are using resources from the data centers. Each VM, requires enough resources of CPU, memory, storage and network bandwidth.
 
 In addition, there are $R$ multi-antenna RU that are shared between slices. Each RU $r \in \{1,2,...,R \}$
 has $J$ antenna for transmitting and receiving data. Moreover, all RUs, have access to PRBs.
 \subsection{The Achievable Rate}
+The SNR of $i^{th}$ UE in $v^{th}$ service experienced at slice $s$ on PRB $k$ which is obtained from
+ $\rho_{u(v,i)}^{k,s}$ is the SNR 
+\begin{equation}\label{eq2}
+\rho_{u(v,i)}^{k,s} =  \frac{p_{u(v,i)}^{k,s}\sum_{r=1}^{R}|{\bold{h}_{r,u(v,i)}^{H \: k,s}} \bold{w}_{r,u(v,i)}^{k,s} g_{r,u(v,i)}|^2}{BN_0 + I_{u(v,i)}^{k,s}},
+\end{equation} 
+where $p_{u(v,i)}^{k,s}$ represents the transmission power allocated to $i^{th}$ UE in $v^{th}$ service, served at slice $s$ on PRB $k$. 
+${\bold{h}_{r,u(v,i)}^{k,s}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
+$r^{th}$ RU to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{r,u(v,i)}^{k,s} \in \mathbb{C}^{J}$ depicts the  transmit beamforming vector from $r^{th}$ RU to the $i^{th}$ UE in $v^{th}$ service that is the zero forcing beamforming vector to minimize the interference which is indicated as below
+\begin{equation}
+\bold{w}_{r,u(v,i)}^{k,s} = {\bold{h}_{r,u(v,i)}^{k,s}}({\bold{h}_{r,u(v,i)}^{H \: k,s1}} {\bold{h}_{r,u(v,i)}^{k,s}})^{-1}
+\end{equation}
+Moreover, $g_{r,u(v,i)} \in \{0,1\}$ is a binary variable that illustrates whether RU $r$ is mapped to the $i^{th}$ UE in $v_{1}^{th}$ service or not. 
+Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{u(v,i)}^{k,s1}$ is the power of interfering signals represented as follow
+\begin{equation}
+\begin{split}
+I_{u(v,i)}^{k,s} &=
+ \underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{v}} \gamma_{1}  p_{u(v,i)}^{k,s}\sum_{r=1}^{R}|{\bold{h}_{r,u(v,i)}^{H \: k,s}} \bold{w}_{r,u(v,i)}^{k,s1} g_{r,u(v,i)}|^2}_{\text{(intra-service interference)}}\\
+&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{n=1}^{S}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u(y,l)}^{k,n}\sum_{r=1}^{R}|{\bold{h}_{r,u(v,i)}^{H \: k,s}} \bold{w}_{r,u(y,l)}^{k,n} g_{r,u(y,l)}|^2}_{\text{(inter-service interference)}}\\
+\end{split}
+\end{equation}
+where $\gamma_{1} = e^{s}_{k,u(v,i)}e^{s}_{k,u(v,l)}a_{u(v,i)}a_{u(v,l)} b_{v, s} $
+and $\gamma_{2} = e^{s}_{k,u(v,i)}e^{n}_{k,u(y,l)}a_{u(v,i)}a_{u(y,l)} b_{v, s} b_{y,n} $.
+Where $a_{u(v,i)} \in \{0,1\}$ is a binary variable to depict user admission.
+$b_{v, s}$ is a binary variable that illustrates whether slice $s$ is allocated to service $v$ or not. 
+$e^{s}_{k,u(v,i)}$ is the binary variable to show whether the UE $i$ in service $v$ using slice $s$, is assigned to $k^{th}$ PRB or not.
+
 The achievable data rate for the $i^{th}$ UE request in the $v_{1}^{th}$ application of service type 1 (eMBB) can be written as
 \begin{equation}\label{eq1}
-\mathcal{R}_{u(v_1,i)}^{e} = \sum_{s1=1}^{S_1}\sum_{k=1}^{K_s} B \log_2({1+ \rho_{u(v_1,i)}^{k,s1}})a_{u(v,i)} b_{v_1, s_1} e^{s_1}_{k,u(v_1,i)},
+\mathcal{R}_{u(v_1,i)}^{e} = \sum_{s_1=1}^{S_1}\sum_{k=1}^{K_s} B \log_2({1+ \rho_{u(v_1,i)}^{k,s_1}})a_{u(v_1,i)} b_{v_1, s_1} e^{s_1}_{k,u(v_1,i)},
 \end{equation}
-where $B$ is the bandwidth of system, $a_{u(v,i)} \in \{0,1\}$ is a binary variable to depict user admission.
-$b_{v_1, s_1}$ is a binary variable that illustrates whether slice $s_1$ is allocated to service $v_1$ or not. 
-$e^{s_1}_{k,u(v_1,i)}$ is the binary variable to show whether the UE $i$ in service $v_1$ using slice $s_1$, is assigned to $k^{th}$ PRB or not.
- and $\rho_{u(v_1,i)}^{k,s1}$ is the SNR of $i^{th}$ UE in $v_{1}^{th}$ service experienced at slice $s_1$ on PRB $k$ which is obtained from
-\begin{equation}\label{eq2}
-\rho_{u(v_1,i)}^{k,s1} =  \sum_{s1=1}^{S_1}\frac{p_{u(v,i)}\sum_{s=1}^{S}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{v,s}}{BN_0 + I_{u(v,i)}},
-\end{equation} 
+where $B$ is the bandwidth of system. 
+
+Since the blocklength in URLLC is finite, the achievable data rate for the $i^{th}$ UE request in the $v_{2}^{th}$ application of service type 2 (URLLC) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated from follow
+\begin{equation}\label{eq1}
+\mathcal{R}_{u(v_2,i)}^{u} = \sum_{s_2=1}^{S_2}\sum_{k=1}^{K_s} B (\log_2({1+ \rho_{u(v_2,i)}^{k,s_2}})- \zeta_{u(v_2,i)}^{k,s_2}){\beta}_{u(v_2,i)}^{k,s_2}
+\end{equation}
+Where ${\beta}_{u(v_2,i)}^{k,s_2}=a_{u(v_2,i)} b_{v_2, s_1} e^{s_2}_{k,u(v_2,i)}$
+and $\zeta_{u(v_2,i)}^{k,s_2} = log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{C_{u(v_2,i)}^{k,s_2}}{N_{u(v_2,i)}^{k,s_2}}})$
+
 
 
 
 \newpage
-Suppose there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $ consists of $U_v$
-single-antenna UEs that require certain service. Each slice $s \in \{1,2,...,S \}$ consists of $R_s$ RUs and $K_s$ physical resource blocks (PRBs), one DU and one CU that contains VNFs.
-Slices can have shared resources. All RUs in a slice, that are mapped to a service, transmit signals cooperatively to all the UEs in a specific service \cite{motalleb2017optimal,mimoCran}. Each RU $r \in \{1,2,...,R \}$ is mapped to a DU via an optical fiber link with limited fronthaul capacity.
-There are two processing layers one in the DU and one in the CU of ORAN system, each represented with a VNF. The lower layer (i.e., DU) consists of high-PHY, MAC, and RLC, and the upper layer (i.e., CU) consists of RRC, PDCP and SDAP. Assume we have $M_1$ VNFs in the DU layer and $M_2$ VNFs in the CU layer for processing data.
-Each VNF in both layers belongs to one or more slices. So, in the $s^{th}$ slice, there are $M_{s,1}$ VNFs in the DU layer and $M_{s,2}$ VNFs in the CU layer. The VNFs in the DU and CU layers have the computational capacity that is  equal to $\mu_1$ and $\mu_2$, respectively.
-Also, RUs and PRBs can serve more than one slice.
-\subsection{The Achievable Rate}
-The achievable data rate for the $i^{th}$ UE in the $v^{th}$ service can be written as
-\begin{equation}\label{eq1}
-\mathcal{R}_{u(v,i)} = B \log_2({1+ \rho_{u(v,i)}}),
-\end{equation}
-where $B$ is the bandwidth of system and $\rho_{u(v,i)}$ is the SNR of $i^{th}$ UE in $v^{th}$ service which is obtained from
-\begin{equation}\label{eq2}
-\rho_{u(v,i)} =  \frac{p_{u(v,i)}\sum_{s=1}^{S}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{v,s}}{BN_0 + I_{u(v,i)}},
-\end{equation}
-where $p_{u(v,i)}$ represents the transmission power allocated by RUs to $i^{th}$ UE in $v^{th}$ service, and
-$\bold{h}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ is the vector of channel gain of a wireless link from RUs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_s,u(v,i)} \in \mathbb{C}^{{R}_s}$ depicts the  transmit beamforming vector from RUs in the $s^{th}$ slice to the $i^{th}$ UE in $v^{th}$ service. Moreover, $BN_0$ denotes the power of Gaussian additive noise, and $I_{u(v,i)}$ is the power of interfering signals. Moreover, $a_{v,s} \in \{0,1\}$ is a binary variable that illustrates whether slice $s$ is mapped to service $v$ or not. If $a_{v,s} =1$ then, $v^{th}$ service is mapped to $s^{th}$ slice; otherwise, it is not mapped.
-\newline
-To obtain SNR as formulated in \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service
-\begin{equation}\label{eq3}
-\textstyle \bold{y}_{U_v} = \sum_{s = 1}^{S}\sum_{k=1}^{K_s} \boldsymbol{H}^H_{\mathcal{R}_s,\mathcal{U}_v} \
-\mathfrak{y}_{R_s}\zeta_{U_v,k,s} a_{v,s}+ \boldsymbol{z}_{\mathcal{U}_v},
-\end{equation}
-where $\mathfrak{y}_{R_s} = \boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{U}_v}+ \boldsymbol{q}_{\mathcal{R}_s}$
-and $\boldsymbol{x}_{ \mathcal{U}_v} = [x_{ u_{(v,1)}},...,x_{ u_{(v,\mathcal{U}_v)}}]^T \in \mathbb{C}^{{R}_s } $ depicts the transmitted symbol vector of UEs in $v^{th}$ set of service,  $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power.
-In addition, $\boldsymbol{q}_{R_s} \in \mathbb{C}^{{R}_s }  $ indicates the quantization noise, which is made from signal compression in DU.
-Besides, $\boldsymbol{P}_{U_v} = \diag{(p_{u_{(v,1)}}, ..., p_{u_{(v,\mathcal{U}_v)}})}$.
-\newline
-Furthermore, $\zeta_{k,s}^{U_v} \delequal \{\zeta_{k,s}^{u(v,1)},\zeta_{k,s}^{u(v,2)},...,\zeta_{k,s}^{u(v,N_{U_v})}\}$,
-$\zeta_{k,s}^{u(v,i)} \in \{0,1\}$ is a binary parameter, which demonstrates whether $i^{th}$ UE in $v^{th}$ service can transmit its signals through $k^{th}$ PRB and also this PRB belongs to $s^{th}$ slice or not.
-$\boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}=\left[\boldsymbol{h}_{\mathcal{R}_s,u_{(v,1)}},\ldots,\boldsymbol{h}_{\mathcal{R}_s,v_{(v,\mathcal{U}_v)}}\right]^T  \in \mathbb{C}^{{R}_s\times {U}_v }$
-shows the channel matrix between RU set $\mathcal{R}_s$ to UE set
-$\mathcal{U}_v$, besides.
-%The channel vector from the RU of  $s^{th}$ slice to the $i^{th}$ UE in the $v^{th}$ service $\boldsymbol{h}_{\mathcal{R}_s,u_{(v,i)}}\in \mathbb{C}^{{R}_s}$ is modeled as below
-%\begin{equation}
-%\boldsymbol{h}_{\mathcal{R}_s,u_{(s,i)}} = \boldsymbol{\beta}^\frac{1}{2}_{\mathcal{R}_s,u_{(v,i)}} \boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}},
-%\end{equation}
-%where $\boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{\mathcal{U}_v})$ indicates the fast fading and flat fading channel vector and $\boldsymbol{\beta}_{\mathcal{R}_s,u_{(v,i)}}=\text{diag}(b_{r_{(s,1),u_{(v,i)}}},\ldots,b_{r_{(s,\mathcal{R}_s),u_{(v,i)}}})$
-%represents the large scale fading matrix.
-What's more, it is assumed we have perfect channel state information (CSI).\newline
-Moreover, $\boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v} = [\boldsymbol{w}_{\mathcal{R}_s,u(v,1)},...,\boldsymbol{w}_{\mathcal{R}_s,u(v,U_v)}] \in \mathbb{C}^{{R}_s\times U_v} $ is the zero forcing beamforming vector to minimize the interference which is indicated as below
-\begin{equation}
-\textstyle \boldsymbol{W}_{\mathcal{R}_s,\mathcal{U}_v} = \boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}(\boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v}^H \boldsymbol{H}_{\mathcal{R}_s,\mathcal{U}_v})^{-1}.
-\end{equation}
-Hence, the interference power of $i^{th}$ UE in $v^{th}$ service can be represented as follow
-\begin{equation}
-\begin{split}
- I_{u_{(v,i)}} &=
- \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u_{(v,l)}}a_{v,s}\zeta_{u_(v,i),n,s}\zeta_{u_(v,l),n,s}}_{\text{(intra-service interference)}}\\
-&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u_{(y,l)}}a_{y,s} \zeta_{u_(v,i),n,s}\zeta_{u_(y,l),n,s}}_{\text{(inter-service interference)}}\\
-&+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{{R}_s} {\sigma_q}_{r_{(s,j)}}^2 |\boldsymbol{h}_{r_{(s,j)}, u_{(v,i)}}|^2 a_{v,s}}_{\text{(quantization noise interference)}},
-\end{split}
-\end{equation}
-where $\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(v,l)}}|^2$
-and $\gamma_{2} =|\boldsymbol{h}_{\mathcal{R}_s, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{s},u_{(y,l)}}|^2$. Moreover,
-${\sigma_q}_{r_{(s,j)}}$ is the variance of quantization noise of $j^{th}$ RU in $s^{th}$ slice.
-Interference signal for each UE is coming from UEs using the same PRB.
-If we replace $p_{u_{(v,l)}}$ and $p_{u_{(y,l)}}$ by $P_{max}$, an upper bound $\bar{I}_{u_{(v,i)}}$ is obtained for $I_{u_{(v,i)}}$. Therefore, $\bar{\mathcal{R}}_{u_{(v,i)}} \forall v , \forall i$ is derived by using $\bar{I}_{u_{(v,i)}}$ instead of $I_{u_{(v,i)}}$ in  \eqref{eq1} and \eqref{eq2}.\newline
-Let $\bar{p}_{r_{(s,j)}}$ denote the power of transmitted signal from the $j^{th}$ RU in $s^{th}$ slice.
-From \eqref{eq3}, we have,
-\begin{equation}
-\bar{p}_{r_{(s,j)}} = \sum_{v=1}^{V}\boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   \boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s} + \sigma_{q_{r(s,j)}}^2.
-\end{equation}
-Nevertheless, the rate of users on the fronthual link between DU and the $j^{th}$ RU in $s^{th}$ slice is formulated as \cite{simeone2016cloud, 1111}
-\begin{equation}
-C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s}}{ \sigma_{q_{r(s,j)}}^2})},
-\end{equation}
-where, $a_{v,s}$ is a binary variable denotes whether the slice $s$ is mapped to service $v$ or not .
-
 \subsection{Mean Delay}
 Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service.
-Therefore, the mean arrival data rate of UEs mapped to the $s^{th}$ slice in the CU layer is $\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where $a_{v,s}$ is a binary variable which indicates whether the $v^{th}$ service is mapped to the $s^{th}$ slice or not.
-Furthermore, the mean arrival data rate of the DU layer is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$.
+Therefore, the mean arrival data rate of UEs mapped to the $s^{th}$ slice in the CU layer is $\alpha_{s_j} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where $a_{v,s}$ is a binary variable which indicates whether the $v^{th}$ service is mapped to the $s^{th}$ slice or not.
+Furthermore, the mean arrival data rate of the DU layer is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_j} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$.
 It is assumed that there are load balancers in each layer for each slice to divide the incoming traffic to VNFs equally \cite{frdl,luong2018novel,luong2018novel1}.
 Suppose the baseband processing of each VNF is depicted as an M/M/1 processing queue.
 Each packet is processed by one of the VNFs of a slice. So, the mean delay of the $s^{th}$ slice in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
 \begin{equation}
 \begin{split}
-d_{s_1} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}},\\
+d_{s_j} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}},\\
 d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s,2}}}.
 \end{split}
 \end{equation}
@@ -199,7 +158,7 @@ the mean delay of the transmission layer is
 where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$ is the total achievable rate of each slice that is mapped to specific service.
 Mean delay of each slice is obtained as below.
 \begin{equation}
-D_{s} = d_{s_1} + d_{s_2} + d_{s_{tr}} \forall s.
+D_{s} = d_{s_j} + d_{s_2} + d_{s_{tr}} \forall s.
 \end{equation}
 \subsection{Physical Data Center Resource}
 Each VNF requires
@@ -213,7 +172,7 @@ Moreover, the total amount of required memory, storage and CPU of all VNFs of a 
 \begin{equation}
 \textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C\}.
 \end{equation}
-Where, $F_s = M_{s_1} + M_{s_2}$
+Where, $F_s = M_{s_j} + M_{s_2}$
 Also, there are $D_c$ data centers (DC), serving the VNFs. Each DC contains several servers that supply VNF requirements.
 The amount of memory, storage and CPU is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$and $\tau_{C_{j}} $ for the $j^{th}$ DC, respectively
 \begin{equation*}

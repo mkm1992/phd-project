@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  15 DEC 2020 14:40
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  16 DEC 2020 16:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -492,6 +492,9 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 LaTeX Warning: Label `eq1' multiply defined.
 
 
+LaTeX Warning: Label `eq1' multiply defined.
+
+
 LaTeX Warning: Label `eq2' multiply defined.
 
 )
@@ -606,87 +609,69 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 79.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (10.93991pt too wide) detected at line 94
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 94.
+
+
+Overfull \hbox (8.31673pt too wide) detected at line 110
+[]
+ []
+
+
+Underfull \hbox (badness 4582) in paragraph at lines 110--116
+\OML/cmm/m/it/10 e[]e[]a[]a[]b[]b[]$\T1/ptm/m/n/10 . Where $\OML/cmm/m/it/10 a[
+] \OMS/cmsy/m/n/10 2
+ []
+
+
+Overfull \hbox (14.50829pt too wide) detected at line 120
 \OMS/cmsy/m/n/10 R[] \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 B [][]\OT1/cmr/m/
 n/10 ([])\OML/cmm/m/it/10 a[]b[]e[];
  []
 
 
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 100.
+Underfull \vbox (badness 1033) has occurred while \output is active []
 
-[1
+ [1
 
 
 ]
-
-LaTeX Warning: Citation `motalleb2017optimal' on page 2 undefined on input line
- 108.
-
-
-LaTeX Warning: Citation `mimoCran' on page 2 undefined on input line 108.
-
-LaTeX Font Info:    Try loading font information for U+euf on input line 127.
-(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Underfull \hbox (badness 6592) in paragraph at lines 128--147
-\T1/ptm/m/n/10 Furthermore, $\OML/cmm/m/it/10 ^^P[] [] \OMS/cmsy/m/n/10 f\OML/c
-mm/m/it/10 ^^P[]; ^^P[]; :::; ^^P[]\OMS/cmsy/m/n/10 g$\T1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--166
-\T1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10
- j[][][][]j[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
- []
-
-
-Underfull \hbox (badness 1354) in paragraph at lines 158--166
-\T1/ptm/m/n/10 PRB. If we re-place $\OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 and $\
-OML/cmm/m/it/10 p[]$ \T1/ptm/m/n/10 by $\OML/cmm/m/it/10 P[]$\T1/ptm/m/n/10 , a
-n
- []
-
-
-LaTeX Warning: Citation `simeone2016cloud' on page 2 undefined on input line 16
-9.
-
-
-LaTeX Warning: Citation `1111' on page 2 undefined on input line 169.
-
 Missing character: There is no ’ in font ptmr8t!
 
-LaTeX Warning: Citation `frdl' on page 2 undefined on input line 179.
+
+LaTeX Warning: Citation `frdl' on page 2 undefined on input line 138.
 
 
-LaTeX Warning: Citation `luong2018novel' on page 2 undefined on input line 179.
-
-
-
-LaTeX Warning: Citation `luong2018novel1' on page 2 undefined on input line 179
-.
-
-[2]
-
-LaTeX Warning: Citation `frdl' on page 3 undefined on input line 192.
-
-
-LaTeX Warning: Citation `frdl' on page 3 undefined on input line 194.
-
-
-LaTeX Warning: Citation `luong2018novel' on page 3 undefined on input line 194.
+LaTeX Warning: Citation `luong2018novel' on page 2 undefined on input line 138.
 
 
 
-LaTeX Warning: Citation `luong2018novel1' on page 3 undefined on input line 194
+LaTeX Warning: Citation `luong2018novel1' on page 2 undefined on input line 138
 .
 
 
-LaTeX Warning: Citation `guo2016exploiting' on page 3 undefined on input line 1
-94.
+LaTeX Warning: Citation `frdl' on page 2 undefined on input line 151.
 
-[3]
+
+LaTeX Warning: Citation `frdl' on page 2 undefined on input line 153.
+
+
+LaTeX Warning: Citation `luong2018novel' on page 2 undefined on input line 153.
+
+
+
+LaTeX Warning: Citation `luong2018novel1' on page 2 undefined on input line 153
+.
+
+
+LaTeX Warning: Citation `guo2016exploiting' on page 2 undefined on input line 1
+53.
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 173.
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [2]
 No file pr.bbl.
 
 ** Conference Paper **
@@ -699,9 +684,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4
-
-] (./pr.aux)
+[3] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -713,12 +696,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7167 strings out of 492970
- 106286 string characters out of 6137298
- 206375 words of memory out of 5000000
- 11062 multiletter control sequences out of 15000+600000
+ 7163 strings out of 492970
+ 106231 string characters out of 6137298
+ 210375 words of memory out of 5000000
+ 11058 multiletter control sequences out of 15000+600000
  80262 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,27n,42p,921b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on pr.pdf (4 pages).
+Output written on pr.pdf (3 pages).
