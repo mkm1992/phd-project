@@ -126,12 +126,12 @@ Since the blocklength in URLLC is finite, the achievable data rate for the $i^{t
 \end{equation}
 Where ${\beta}_{u(v_2,i)}^{k,s_2}=a_{u(v_2,i)} b_{v_2, s_1} e^{s_2}_{k,u(v_2,i)}$
 and $\zeta_{u(v_2,i)}^{k,s_2} = log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{C_{u(v_2,i)}^{k,s_2}}{N_{u(v_2,i)}^{k,s_2}}})$
+Where, $\epsilon $ is the transmission probability, $Q^{-1}$ is the inverse of Q- function (Gaussian),
+$C_{u(v_2,i)}^{k,s_2} = 1 - \frac{1}{(1+\rho_{u(v_2,i)}^{k,s_2})}$ depicts the channel dispersion of UE  $i$ requesting service $v_2$, experiencing PRB $k$ at slice $s_2$  and
+$N_{u(v_2,i)}^{k,s_2}$ represents the blocklength of it. 
 
-
-
-
-\newpage
 \subsection{Mean Delay}
+In this part, the mean arrival delay for a UE is obtained.
 Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service.
 Therefore, the mean arrival data rate of UEs mapped to the $s^{th}$ slice in the CU layer is $\alpha_{s_j} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where $a_{v,s}$ is a binary variable which indicates whether the $v^{th}$ service is mapped to the $s^{th}$ slice or not.
 Furthermore, the mean arrival data rate of the DU layer is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_j} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$.
@@ -179,6 +179,10 @@ The amount of memory, storage and CPU is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$
 \tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}} \},
 \end{equation*}
 In this system model, the assignment of physical DC resources to VNFs is considered. Let $y_{s,d}$ be a binary variable indicating whether the $d^{th}$ DC is connected to the VNFs of $s^{th}$ slice or not.
+
+
+
+\newpage
 \subsection{Problem Statement}
 An important criterion to measure the optimality of a system is energy efficiency represented as the sum-rate to sum-power
 \begin{equation}
