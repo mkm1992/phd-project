@@ -81,7 +81,7 @@ Assume we have $S$ preallocated slices serving $V$ services; There are $S_1$ sli
 Each Service $v_j\in \{1,2,...,V_j \} $ consists of $U_{v_j}$ request from the 
 single-antenna UEs which require certain QoS to be able to use the requested program($j \in \{1,2\}$ indicate service type).
 There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocated to slice.
-Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j \in \{1,2\}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_{s,1}$ VNFs for the processing of O-DU,  $M_{s,2}$ VNFs for the processing of O-CU-UP and $M_{u}$ VNFs for the processing of UPF.
+Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j \in \{1,2\}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_{d}$ VNFs for the processing of O-DU,  $M_{c}$ VNFs for the processing of O-CU-UP and $M_{u}$ VNFs for the processing of UPF.
 
 Also, each VNF instance is running on the virtual machine (VM) that are using resources from the data centers. Each VM, requires enough resources of CPU, memory, storage and network bandwidth.
 
@@ -131,55 +131,91 @@ $C_{u(v_2,i)}^{k,s_2} = 1 - \frac{1}{(1+\rho_{u(v_2,i)}^{k,s_2})}$ depicts the c
 $N_{u(v_2,i)}^{k,s_2}$ represents the blocklength of it. 
 
 \subsection{Mean Delay}
-In this part, the mean arrival delay for a UE is obtained.
-Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service.
-Therefore, the mean arrival data rate of UEs mapped to the $s^{th}$ slice in the CU layer is $\alpha_{s_j} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where $a_{v,s}$ is a binary variable which indicates whether the $v^{th}$ service is mapped to the $s^{th}$ slice or not.
-Furthermore, the mean arrival data rate of the DU layer is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_j} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$.
-It is assumed that there are load balancers in each layer for each slice to divide the incoming traffic to VNFs equally \cite{frdl,luong2018novel,luong2018novel1}.
-Suppose the baseband processing of each VNF is depicted as an M/M/1 processing queue.
-Each packet is processed by one of the VNFs of a slice. So, the mean delay of the $s^{th}$ slice in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
+In this part, the end to end mean delay for a service is obtained.
+Suppose the mean total delay is depicted as $T_{tot}$.
 \begin{equation}
 \begin{split}
-d_{s_j} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}},\\
-d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s,2}}}.
+T_{tot} &=  T_{process} + T_{transmission} + T_{propagation}\\
+T_{process} &=  T_{RU} + T_{DU} + T_{CU} + T_{UPF}\\
+T_{transmission} &= T_{front} + T_{mid} + T_{back} + T_{trans2net} \\
+T_{propagation} &= T_{front} + T_{mid} + T_{back} + T_{trans2net} \\
 \end{split}
 \end{equation}
-where $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layers respectively.
-Besides, $\alpha_{s}$ is the  arrival rate which is divided
-by load balancer before arriving to the VNFs. The  arrival rate of each VNF in each layer of the slice $s$ is $\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$.
-In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice on the  wireless link. The arrival data rate of wireless link
- is equal to the arrival data rate of load balancers for each slice \cite{frdl}.
+%T_{tot} = T_{RU} + T_{front} + T_{DU} + T_{mid} + T_{CU} + T_{back} + T_{core} + T_{trans2net}
+Total delay is sum of processing delay, transmission delay and propagation delay. 
+The propagation delay is the time takes for a signal to reach to its destination. So it has a constant value based on the length of fiber link ($T = L/c$, where $L$ is the length of link and c is the speed of signal).
+Here we assume the value of propagation delay is negligible compared to the rest.
+\subsubsection{Processing Delay}
+Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service.
+Therefore, the mean arrival data rate of the $v^{th}$ service in the UPF layer is $\alpha_{v}^1 = \sum_{u=1}^{U_v}a_{u(v,i)}\lambda_{u(v,i)}$, where $a_{u(v,i)}$ is a binary variable which indicates whether the $i^{th}$ UE requested $v^{th}$ service is admitted or not.
+
+Assume the mean arrival data rate of the UPF layer ($\alpha_{v}^U$) is approximately equal to the mean arrival data rate of the O-CU-UP layer ($\alpha_{v}^C$) and O-DU ($\alpha_{v}^D$). so $\alpha_{v} =\alpha_{v}^U \approx \alpha_{v}^C \approx \alpha_{v}^D$. since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{v}$.
+It is assumed that there are load balancers in each layer for each service to divide the incoming traffic to VNFs equally. %\cite{frdl,luong2018novel,luong2018novel1}.
+Suppose the baseband processing of each VNF is depicted as M/M/1 processing queue.
+Each packet is processed by one of the VNFs of a slice. So, the mean delay for the $v^{th}$ service in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
+\begin{equation}
+\begin{split}
+T_{DU}^{v} &= \frac{1}{\mu_d - \alpha_{v}/{M_{v,d}}},\\
+T_{CU}^{v} &= \frac{1}{\mu_c - \alpha_{v}/{M_{v,c}}}\\
+T_{UPF}^{v} &= \frac{1}{\mu_u - \alpha_{v}/{M_{v,u}}}\\
+\end{split}
+\end{equation}
+Where $M_{v,d} = \sum_{s=1}^{S}M_{d} b_{v,s}$, $M_{v,c} = \sum_{s=1}^{S}M_{c} b_{v,s}$ and 
+$M_{v,u} = \sum_{s=1}^{S}M_{u} b_{v,s}$ 
+are the sum of VNFs in O-DU, O-CU-UP and UPF, respectively. Since, each service may use more than one slice, the data packets of each service is divided between VNFs of slices allocated to service.
+Moreover, $1/\mu_d$, $1/\mu_c$ and $1/\mu_u$ are the mean service time of the O-DU, O-CU and the UPF layers respectively.
+Besides, $\alpha_{v}$ is the  arrival rate which is divided
+by load balancer before arriving to the VNFs. The arrival rate of each VNF in each layer for each service 
+$v$ is $\alpha_{v}/{M_{v,i}}$ $ i \in \{d,c, u\}$.
+
+In addition, $T_{RU}^{v}$ is the mean transmission delay of $v^{th}$ service on the wireless link. The arrival data rate of wireless link is equal to the arrival data rate of load balancers for each service.
+ %\cite{frdl}.
 Moreover, it is assumed that the service time of transmission queue for each slice $s$ has
- an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue \cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. Therefore,
+ an exponential distribution with mean $1/(R_{{tot}_v})$ and can be modeled as a M/M/1 queue.
+ %\cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. 
+ Therefore,
 the mean delay of the transmission layer is
 \begin{equation}
- d_{s_{tr}} = \frac{1}{R_{{tot}_s} - \alpha_{s}};
+ T_{RU}^{v} = \frac{1}{R_{{tot}_v} - \alpha_{v}};
 \end{equation}
-where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$ is the total achievable rate of each slice that is mapped to specific service.
-Mean delay of each slice is obtained as below.
+where, $R_{{tot}_v} = \sum_{u=1}^{U_v}a_{u(v,i)}R_{u(v,i)}$ is the total achievable rate of each service.
+So the mean processing delay for each UE in service $v$ is 
 \begin{equation}
-D_{s} = d_{s_j} + d_{s_2} + d_{s_{tr}} \forall s.
+T_{process}^{v} =  T_{RU}^{v} + T_{DU}^{v} + T_{CU}^{v} + T_{UPF}^{v}
 \end{equation}
+\subsubsection{Transmission Delay}
+The transmission delay is the amount of time required to push all the packets into the fiber link. 
+Here, we have transmission delay in fronthaul, midhaul, backhaul and the link to transmit data to internet.
+\begin{equation}
+\begin{split}
+T_{front} =& \frac{\alpha_{v}^{f}}{R_f} \\
+T_{mid} =&  \frac{\alpha_{v}^{m}}{R_m} \\
+T_{back} =& \frac{\alpha_{v}^{b}}{R_b} \\
+T_{trans2net} =& \frac{\alpha_{v}^{t}}{R_t} \\
+\end{split}
+\end{equation}
+Where, $R_f$, $R_m$, $R_b$ and $R_t$ are the rate of transmission in fronthaul, midhaul, backhaul and the link to transmit data to internet, respectively.
+Furthermore, the mean arrival data rate of the each link ($\alpha_{v}^i$ , $i \in \{f,m,b,t\}$) is approximately equal to others ($\alpha_{v} \approx \alpha_{v}^i$ , $i \in \{f,m,b,t\}$).  
 \subsection{Physical Data Center Resource}
 Each VNF requires
-physical resources that contain memory, storage and CPU.
+physical resources that contain memory, storage, CPU and Network Bandwidth.
 Let the required resources for VNF $f$ in slice $s$ is represented by a tuple as
 \begin{equation}
-\bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f \},
+\bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f, \Omega_{N,{s}}^f \},
 \end{equation}
-where $\bar{\Omega}_{s}^f\in \mathbb{C}^{3}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f$ indicate the amount of required memory, storage, and CPU, respectively.
-Moreover, the total amount of required memory, storage and CPU of all VNFs of a slice is defined as
+where $\bar{\Omega}_{s}^f\in \mathbb{C}^{4}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f, \Omega_{N,{s}}^f$ indicate the amount of required memory, storage, CPU and and Network Bandwidth, respectively.
+Moreover, the total amount of required memory, storage, CPU and Network Bandwidth of all VNFs of a slice is defined as
 \begin{equation}
-\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C\}.
+\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C, N\}.
 \end{equation}
 Where, $F_s = M_{s_j} + M_{s_2}$
 Also, there are $D_c$ data centers (DC), serving the VNFs. Each DC contains several servers that supply VNF requirements.
-The amount of memory, storage and CPU is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$and $\tau_{C_{j}} $ for the $j^{th}$ DC, respectively
+The amount of memory, storage, CPU and and Network Bandwidth is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$, $\tau_{C_{j}} $ and $\tau_{N_{j}} $ for the $j^{th}$ DC, respectively
 \begin{equation*}
-\tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}} \},
+\tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}}, \tau_{N_{j}} \},
 \end{equation*}
-In this system model, the assignment of physical DC resources to VNFs is considered. Let $y_{s,d}$ be a binary variable indicating whether the $d^{th}$ DC is connected to the VNFs of $s^{th}$ slice or not.
-
+In this system model, the assignment of physical DC resources to VNFs is considered. Let $y_{s,d}$ be a binary variable indicating whether the $d^{th}$ DC is allocated the resources to the VNFs of $s^{th}$ slice or not.
+\subsection{Problem Statement}
 
 
 \newpage
