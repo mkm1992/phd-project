@@ -81,7 +81,7 @@ Assume we have $S$ preallocated slices serving $V$ services; There are $S_1$ sli
 Each Service $v_j\in \{1,2,...,V_j \} $ consists of $U_{v_j}$ request from the 
 single-antenna UEs which require certain QoS to be able to use the requested program($j \in \{1,2\}$ indicate service type).
 There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocated to slice.
-Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j \in \{1,2\}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_{s,1}$ VNFs for the processing of O-DU,  $M_{s,2}$ VNFs for the processing of O-CU-UP and $M_{u}$ VNFs for the processing of UPF.
+Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j \in \{1,2\}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU,  $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
 
 Also, each VNF instance is running on the virtual machine (VM) that are using resources from the data centers. Each VM, requires enough resources of CPU, memory, storage and network bandwidth.
 
@@ -91,114 +91,182 @@ has $J$ antenna for transmitting and receiving data. Moreover, all RUs, have acc
 The SNR of $i^{th}$ UE in $v^{th}$ service experienced at slice $s$ on PRB $k$ which is obtained from
  $\rho_{u(v,i)}^{k,s}$ is the SNR 
 \begin{equation}\label{eq2}
-\rho_{u(v,i)}^{k,s} =  \frac{p_{u(v,i)}^{k,s}\sum_{r=1}^{R}|{\bold{h}_{r,u(v,i)}^{H \: k,s}} \bold{w}_{r,u(v,i)}^{k,s} g_{r,u(v,i)}|^2}{BN_0 + I_{u(v,i)}^{k,s}},
+\rho_{u(v,i)}^{k,s} =  \sum_{r=1}^{R}\frac{|p_{r,u(v,i)}^{k,s}{\bold{h}_{r,u(v,i)}^{H \: k,s}} \bold{w}_{r,u(v,i)}^{k,s} g_{u(v,i)}^r|^2}{BN_0 + I_{r,u(v,i)}^{k,s}},
 \end{equation} 
-where $p_{u(v,i)}^{k,s}$ represents the transmission power allocated to $i^{th}$ UE in $v^{th}$ service, served at slice $s$ on PRB $k$. 
+where $p_{r,u(v,i)}^{k,s}$ represents the transmission power from o-RU $r$ to $i^{th}$ UE in $v^{th}$ service, served at slice $s$ on PRB $k$. 
 ${\bold{h}_{r,u(v,i)}^{k,s}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
 $r^{th}$ RU to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{r,u(v,i)}^{k,s} \in \mathbb{C}^{J}$ depicts the  transmit beamforming vector from $r^{th}$ RU to the $i^{th}$ UE in $v^{th}$ service that is the zero forcing beamforming vector to minimize the interference which is indicated as below
 \begin{equation}
 \bold{w}_{r,u(v,i)}^{k,s} = {\bold{h}_{r,u(v,i)}^{k,s}}({\bold{h}_{r,u(v,i)}^{H \: k,s1}} {\bold{h}_{r,u(v,i)}^{k,s}})^{-1}
 \end{equation}
-Moreover, $g_{r,u(v,i)} \in \{0,1\}$ is a binary variable that illustrates whether RU $r$ is mapped to the $i^{th}$ UE in $v_{1}^{th}$ service or not. 
-Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{u(v,i)}^{k,s1}$ is the power of interfering signals represented as follow
+Moreover, $g_{u(v,i)}^r \in \{0,1\}$ is a binary variable that illustrates whether RU $r$ is mapped to the $i^{th}$ UE in $v_{1}^{th}$ service or not. 
+Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{r,u(v,i)}^{k,s1}$ is the power of interfering signals represented as follow
 \begin{equation}
 \begin{split}
-I_{u(v,i)}^{k,s} &=
- \underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{v}} \gamma_{1}  p_{u(v,i)}^{k,s}\sum_{r=1}^{R}|{\bold{h}_{r,u(v,i)}^{H \: k,s}} \bold{w}_{r,u(v,i)}^{k,s1} g_{r,u(v,i)}|^2}_{\text{(intra-service interference)}}\\
-&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{n=1}^{S}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u(y,l)}^{k,n}\sum_{r=1}^{R}|{\bold{h}_{r,u(v,i)}^{H \: k,s}} \bold{w}_{r,u(y,l)}^{k,n} g_{r,u(y,l)}|^2}_{\text{(inter-service interference)}}\\
+I_{r,u(v,i)}^{k,s} &=
+ \underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{v}} \gamma_{1}  p_{u(v,i)}^{k,s}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(v,i)}^{H \: k,s}} \bold{w}_{r',u(v,i)}^{k,s1} g_{u(v,i)}^{r'}|^2}_{\text{(intra-service interference)}}\\
+&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{n=1}^{S}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u(y,l)}^{k,n}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(v,i)}^{H \: k,s}} \bold{w}_{r',u(y,l)}^{k,n} g_{u(y,l)}^{r'}|^2}_{\text{(inter-service interference)}}\\
 \end{split}
 \end{equation}
-where $\gamma_{1} = e^{s}_{k,u(v,i)}e^{s}_{k,u(v,l)}a_{u(v,i)}a_{u(v,l)} b_{v, s} $
-and $\gamma_{2} = e^{s}_{k,u(v,i)}e^{n}_{k,u(y,l)}a_{u(v,i)}a_{u(y,l)} b_{v, s} b_{y,n} $.
+where $\gamma_{1} = e^{k,s}_{r,u(v,i)}e^{k,s}_{r',u(v,l)}a_{u(v,i)}a_{u(v,l)} b_{v, s} $
+and $\gamma_{2} = e^{k,s}_{r,u(v,i)}e^{k,n}_{r',u(y,l)}a_{u(v,i)}a_{u(y,l)} b_{v, s} b_{y,n} $.
 Where $a_{u(v,i)} \in \{0,1\}$ is a binary variable to depict user admission.
 $b_{v, s}$ is a binary variable that illustrates whether slice $s$ is allocated to service $v$ or not. 
-$e^{s}_{k,u(v,i)}$ is the binary variable to show whether the UE $i$ in service $v$ using slice $s$, is assigned to $k^{th}$ PRB or not.
+$e^{k,s}_{r,u(v,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in service $v$, assigned to $r^{th}$ o-RU using slice $s$ or not.
 
 The achievable data rate for the $i^{th}$ UE request in the $v_{1}^{th}$ application of service type 1 (eMBB) can be written as
 \begin{equation}\label{eq1}
-\mathcal{R}_{u(v_1,i)}^{e} = \sum_{s_1=1}^{S_1}\sum_{k=1}^{K_s} B \log_2({1+ \rho_{u(v_1,i)}^{k,s_1}})a_{u(v_1,i)} b_{v_1, s_1} e^{s_1}_{k,u(v_1,i)},
+\mathcal{R}_{u(v_1,i)}^{e} = \sum_{s_1=1}^{S_1}\sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{u(v_1,i)}^{k,s_1}})a_{u(v_1,i)} b_{v_1, s_1} e^{k,s_1}_{r,u(v_1,i)},
 \end{equation}
 where $B$ is the bandwidth of system. 
 
 Since the blocklength in URLLC is finite, the achievable data rate for the $i^{th}$ UE request in the $v_{2}^{th}$ application of service type 2 (URLLC) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated from follow
 \begin{equation}\label{eq1}
-\mathcal{R}_{u(v_2,i)}^{u} = \sum_{s_2=1}^{S_2}\sum_{k=1}^{K_s} B (\log_2({1+ \rho_{u(v_2,i)}^{k,s_2}})- \zeta_{u(v_2,i)}^{k,s_2}){\beta}_{u(v_2,i)}^{k,s_2}
+\mathcal{R}_{u(v_2,i)}^{u} = \sum_{s_2=1}^{S_2}\sum_{k=1}^{K_{s_2}} B (\log_2({1+ \rho_{u(v_2,i)}^{k,s_2}})- \zeta_{u(v_2,i)}^{k,s_2}){\beta}_{u(v_2,i)}^{k,s_2}
 \end{equation}
-Where ${\beta}_{u(v_2,i)}^{k,s_2}=a_{u(v_2,i)} b_{v_2, s_1} e^{s_2}_{k,u(v_2,i)}$
+Where ${\beta}_{u(v_2,i)}^{k,s_2}=a_{u(v_2,i)} b_{v_2, s_1} e^{k,s_2}_{u(v_2,i)}$
 and $\zeta_{u(v_2,i)}^{k,s_2} = log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{C_{u(v_2,i)}^{k,s_2}}{N_{u(v_2,i)}^{k,s_2}}})$
 Where, $\epsilon $ is the transmission probability, $Q^{-1}$ is the inverse of Q- function (Gaussian),
 $C_{u(v_2,i)}^{k,s_2} = 1 - \frac{1}{(1+\rho_{u(v_2,i)}^{k,s_2})}$ depicts the channel dispersion of UE  $i$ requesting service $v_2$, experiencing PRB $k$ at slice $s_2$  and
 $N_{u(v_2,i)}^{k,s_2}$ represents the blocklength of it. 
 
 \subsection{Mean Delay}
-In this part, the mean arrival delay for a UE is obtained.
-Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service.
-Therefore, the mean arrival data rate of UEs mapped to the $s^{th}$ slice in the CU layer is $\alpha_{s_j} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where $a_{v,s}$ is a binary variable which indicates whether the $v^{th}$ service is mapped to the $s^{th}$ slice or not.
-Furthermore, the mean arrival data rate of the DU layer is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_j} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$.
-It is assumed that there are load balancers in each layer for each slice to divide the incoming traffic to VNFs equally \cite{frdl,luong2018novel,luong2018novel1}.
-Suppose the baseband processing of each VNF is depicted as an M/M/1 processing queue.
-Each packet is processed by one of the VNFs of a slice. So, the mean delay of the $s^{th}$ slice in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
+In this part, the end to end mean delay for a service is obtained.
+Suppose the mean total delay is depicted as $T_{tot}$.
 \begin{equation}
 \begin{split}
-d_{s_j} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}},\\
-d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s,2}}}.
+T_{tot} &=  T_{process} + T_{transmission} + T_{propagation}\\
+T_{process} &=  T_{RU} + T_{DU} + T_{CU} + T_{UPF}\\
+T_{transmission} &= T_{front} + T_{mid} + T_{back} + T_{trans2net} \\
+T_{propagation} &= T_{front} + T_{mid} + T_{back} + T_{trans2net} \\
 \end{split}
 \end{equation}
-where $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layers respectively.
-Besides, $\alpha_{s}$ is the  arrival rate which is divided
-by load balancer before arriving to the VNFs. The  arrival rate of each VNF in each layer of the slice $s$ is $\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$.
-In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice on the  wireless link. The arrival data rate of wireless link
- is equal to the arrival data rate of load balancers for each slice \cite{frdl}.
+%T_{tot} = T_{RU} + T_{front} + T_{DU} + T_{mid} + T_{CU} + T_{back} + T_{core} + T_{trans2net}
+Total delay is sum of processing delay, transmission delay and propagation delay. 
+The propagation delay is the time takes for a signal to reach to its destination. So it has a constant value based on the length of fiber link ($T = L/c$, where $L$ is the length of link and c is the speed of signal).
+Here we assume the value of propagation delay is negligible compared to the rest.
+\subsubsection{Processing Delay}
+Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service.
+Therefore, the mean arrival data rate of the $v^{th}$ service in the UPF layer is $\alpha_{v}^1 = \sum_{u=1}^{U_v}a_{u(v,i)}\lambda_{u(v,i)}$, where $a_{u(v,i)}$ is a binary variable which indicates whether the $i^{th}$ UE requested $v^{th}$ service is admitted or not.
+
+Assume the mean arrival data rate of the UPF layer ($\alpha_{v}^U$) is approximately equal to the mean arrival data rate of the O-CU-UP layer ($\alpha_{v}^C$) and O-DU ($\alpha_{v}^D$). so $\alpha_{v} =\alpha_{v}^U \approx \alpha_{v}^C \approx \alpha_{v}^D$. since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{v}$.
+It is assumed that there are load balancers in each layer for each service to divide the incoming traffic to VNFs equally. %\cite{frdl,luong2018novel,luong2018novel1}.
+Suppose the baseband processing of each VNF is depicted as M/M/1 processing queue.
+Each packet is processed by one of the VNFs of a slice. So, the mean delay for the $v^{th}$ service in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
+\begin{equation}
+\begin{split}
+T_{DU}^{v} &= \frac{1}{\mu_d - \alpha_{v}/{M_{v,d}}},\\
+T_{CU}^{v} &= \frac{1}{\mu_c - \alpha_{v}/{M_{v,c}}}\\
+T_{UPF}^{v} &= \frac{1}{\mu_u - \alpha_{v}/{M_{v,u}}}\\
+\end{split}
+\end{equation}
+Where $M_{v,d} = \sum_{s=1}^{S}M_s^{d} b_{v,s}$, $M_{v,c} = \sum_{s=1}^{S}M_s^{c} b_{v,s}$ and 
+$M_{v,u} = \sum_{s=1}^{S}M_s^{u} b_{v,s}$ 
+are the sum of VNFs in O-DU, O-CU-UP and UPF, respectively. Since, each service may use more than one slice, the data packets of each service is divided between VNFs of slices allocated to service.
+Moreover, $1/\mu_d$, $1/\mu_c$ and $1/\mu_u$ are the mean service time of the O-DU, O-CU and the UPF layers respectively.
+Besides, $\alpha_{v}$ is the  arrival rate which is divided
+by load balancer before arriving to the VNFs. The arrival rate of each VNF in each layer for each service 
+$v$ is $\alpha_{v}/{M_{v,i}}$ $ i \in \{d,c, u\}$.
+
+In addition, $T_{RU}^{v}$ is the mean transmission delay of $v^{th}$ service on the wireless link. The arrival data rate of wireless link is equal to the arrival data rate of load balancers for each service.
+ %\cite{frdl}.
 Moreover, it is assumed that the service time of transmission queue for each slice $s$ has
- an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue \cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. Therefore,
+ an exponential distribution with mean $1/(R_{{tot}_v})$ and can be modeled as a M/M/1 queue.
+ %\cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. 
+ Therefore,
 the mean delay of the transmission layer is
 \begin{equation}
- d_{s_{tr}} = \frac{1}{R_{{tot}_s} - \alpha_{s}};
+ T_{RU}^{v} = \frac{1}{R_{{tot}_v} - \alpha_{v}};
 \end{equation}
-where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$ is the total achievable rate of each slice that is mapped to specific service.
-Mean delay of each slice is obtained as below.
+where, $R_{{tot}_v} = \sum_{u=1}^{U_v}a_{u(v,i)}R_{u(v,i)}$ is the total achievable rate of each service.
+So the mean processing delay for each UE in service $v$ is 
 \begin{equation}
-D_{s} = d_{s_j} + d_{s_2} + d_{s_{tr}} \forall s.
+T_{process}^{v} =  T_{RU}^{v} + T_{DU}^{v} + T_{CU}^{v} + T_{UPF}^{v}
 \end{equation}
+\subsubsection{Transmission Delay}
+The transmission delay is the amount of time required to push all the packets into the fiber link. 
+Here, we have transmission delay in fronthaul, midhaul, backhaul and the link to transmit data to internet.
+\begin{equation}
+\begin{split}
+T_{front} =& \frac{\alpha_{v}^{f}}{R_f} \\
+T_{mid} =&  \frac{\alpha_{v}^{m}}{R_m} \\
+T_{back} =& \frac{\alpha_{v}^{b}}{R_b} \\
+T_{trans2net} =& \frac{\alpha_{v}^{t}}{R_t} \\
+\end{split}
+\end{equation}
+Where, $R_f$, $R_m$, $R_b$ and $R_t$ are the rate of transmission in fronthaul, midhaul, backhaul and the link to transmit data to internet, respectively.
+Furthermore, the mean arrival data rate of the each link ($\alpha_{v}^i$ , $i \in \{f,m,b,t\}$) is approximately equal to others ($\alpha_{v} \approx \alpha_{v}^i$ , $i \in \{f,m,b,t\}$).  
 \subsection{Physical Data Center Resource}
 Each VNF requires
-physical resources that contain memory, storage and CPU.
+physical resources that contain memory, storage, CPU and Network Bandwidth.
 Let the required resources for VNF $f$ in slice $s$ is represented by a tuple as
 \begin{equation}
-\bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f \},
+\bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f, \Omega_{N,{s}}^f \},
 \end{equation}
-where $\bar{\Omega}_{s}^f\in \mathbb{C}^{3}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f$ indicate the amount of required memory, storage, and CPU, respectively.
-Moreover, the total amount of required memory, storage and CPU of all VNFs of a slice is defined as
+where $\bar{\Omega}_{s}^f\in \mathbb{C}^{4}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f, \Omega_{N,{s}}^f$ indicate the amount of required memory, storage, CPU and and Network Bandwidth, respectively.
+Moreover, the total amount of required memory, storage, CPU and Network Bandwidth of all VNFs of a slice is defined as
 \begin{equation}
-\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C\}.
+\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C, N\}.
 \end{equation}
-Where, $F_s = M_{s_j} + M_{s_2}$
+Where, $F_s = M_{s}^d + M_{s}^c + M_{s}^u$
 Also, there are $D_c$ data centers (DC), serving the VNFs. Each DC contains several servers that supply VNF requirements.
-The amount of memory, storage and CPU is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$and $\tau_{C_{j}} $ for the $j^{th}$ DC, respectively
+The amount of memory, storage, CPU and and Network Bandwidth is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$, $\tau_{C_{j}} $ and $\tau_{N_{j}} $ for the $j^{th}$ DC, respectively
 \begin{equation*}
-\tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}} \},
+\tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}}, \tau_{N_{j}} \},
 \end{equation*}
-In this system model, the assignment of physical DC resources to VNFs is considered. Let $y_{s,d}$ be a binary variable indicating whether the $d^{th}$ DC is connected to the VNFs of $s^{th}$ slice or not.
+In this system model, the assignment of physical DC resources to VNFs is considered. Let $y_{s,d}$ be a binary variable indicating whether the $d^{th}$ DC is allocated the resources to the VNFs of $s^{th}$ slice or not.
+\subsection{Problem Statement}
+In this system, the goal is to minimize the cost of the system.
+Power of each O-RU is obtained as below
+\begin{equation}
+P_r =  \sum_{v=1}^{V} \sum_{i=1}^{U_v} \sum_{s=1}^{S} \sum_{k=1}^{K_s}p_{r,u(v,i)}^{k,s}a_{u(v,i)} b_{v, s} e^{k,s}_{r,u(v,i)}g_{u(v,i)}^r.
+\end{equation}
+The total power cost of O-RUs for transmitting data to UE is depicted as follow
+\begin{equation}
+P_{tot} = \sum_{r=1}^{R}P_r
+\end{equation}
+Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
+$\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as
+\begin{equation*}
+\textstyle \phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d} + \sum_{d=1}^{D_c}z_d \psi_d .
+\end{equation*}
+Where,$z_d$ is shown that whether the $d^{th}$ DC is turned on or not and $\psi_d$ is a static cost when a DC is active.
+\begin{equation}
+  z_d =
+    \begin{cases}
+      1 & \sum_{s=1}^{S}y_{s,d} \geq 1 \\
+      0 & \text{otherwise}
+    \end{cases}       
+\end{equation}  
+So the optimization problem is formulated as follow
+The aim of this paper is minimize the total power of all RUs and the total power consumption of baseband processing at all DCs simultaneously, with the presence of constraints which is written as follow,
+\begin{subequations}
+\begin{alignat}{4}
+\min\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{B}, \boldsymbol{E}, \boldsymbol{G}, \boldsymbol{Y} }   \quad &  P_{tot}+ \varphi \phi_{tot} \ \\
+\text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
+ \label{c11} \\
+&p_{r,u(v,i)}^{k,s}  \geq 0  \quad \forall v,\forall i,\forall r,\forall s, \forall k,\label{c12} \\
+&\mathcal{R}_{u_{(v_1,k)}}^e \geq  \mathcal{R}_{min}^{v_1,e} \quad \forall v_1, \label{c13} \\
+&\mathcal{R}_{u_{(v_2,k)}}^u \geq  \mathcal{R}_{min}^{v_2,u} \quad \forall v_2, \label{c14} \\
+&T_{tot}^v \leq T_{tot}^{max,v} \quad \forall v,\label{c15} \\
+&a_{u(v,i)} \leq a_{u(v,i)}\sum_{r}g^r_{u(v,i)} \leq 1 \quad \forall v,\forall i  \\
+& \textstyle  \sum_{s=1}^{S}a_{v,s} \geq 1 \quad \forall s, \label{c21} \\
+& \textstyle  \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s,\label{c23} \\
+ &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c22}
+\end{alignat}
+\label{constraints}
+\end{subequations}
+
+
+
+
+
 
 
 
 \newpage
-\subsection{Problem Statement}
-An important criterion to measure the optimality of a system is energy efficiency represented as the sum-rate to sum-power
-\begin{equation}
-\textstyle \eta(\boldsymbol{P},\boldsymbol{A}) := \frac{\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} }{\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}} = \frac{\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A})}{P_r^{{tot}}(\boldsymbol{P},\boldsymbol{A})},
-\end{equation}
-where, $P_r^{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{s=1}^{S}\sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}$ is the total power consumption of all RUs in all slices. Also, $\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} $ is the total rates of all UEs applied for all types of services.
-Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
-$\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as
-\begin{equation*}
-\textstyle \phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d}.
-\end{equation*}
-Also, a cost function for the placement of VNFs into DCs is defined as
-\begin{equation}\label{eqpsi}
-\textstyle  \psi_{tot} = \phi_{tot} - \nu \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s}
-\end{equation}
-where, $\nu$ is a design variable to value between the first term of \eqref{eqpsi} which is the total power consumption of physical resources and the second term that is shown the amount of admitted slices to have physical resources.
+\newpage
+
 Our goal is to maximize sum-rate and minimize sum-power (the total power of all RUs and the total power consumption of baseband processing at all DCs) simultaneously, with the presence of constraints which is written as follow,
 \begin{subequations}
 \begin{alignat}{4}
@@ -246,9 +314,6 @@ In sub-problem 2, $ \boldsymbol{Y}$ is obtained. The sub-problem 2 is
 \end{alignat}
 \label{constraints2}
 \end{subequations}
-\section{Numerical Results}\label{simul}
-
-\section{Conclusion}
 
 
 
