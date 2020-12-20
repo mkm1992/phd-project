@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  19 DEC 2020 16:02
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  20 DEC 2020 15:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -491,6 +491,33 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 
 LaTeX Warning: Label `eq1' multiply defined.
 
+
+LaTeX Warning: Label `c11' multiply defined.
+
+
+LaTeX Warning: Label `c12' multiply defined.
+
+
+LaTeX Warning: Label `c13' multiply defined.
+
+
+LaTeX Warning: Label `c14' multiply defined.
+
+
+LaTeX Warning: Label `c15' multiply defined.
+
+
+LaTeX Warning: Label `c21' multiply defined.
+
+
+LaTeX Warning: Label `c23' multiply defined.
+
+
+LaTeX Warning: Label `c22' multiply defined.
+
+
+LaTeX Warning: Label `constraints' multiply defined.
+
 )
 \openout1 = `pr.aux'.
 
@@ -608,33 +635,29 @@ Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 94.
 
 
-Overfull \hbox (8.31673pt too wide) detected at line 110
+Overfull \hbox (16.9013pt too wide) detected at line 110
 []
  []
 
 
-Underfull \hbox (badness 4582) in paragraph at lines 110--116
+Underfull \hbox (badness 3780) in paragraph at lines 110--116
 \OML/cmm/m/it/10 e[]e[]a[]a[]b[]b[]$\T1/ptm/m/n/10 . Where $\OML/cmm/m/it/10 a[
 ] \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (14.50829pt too wide) detected at line 120
+Overfull \hbox (13.58582pt too wide) detected at line 120
 \OMS/cmsy/m/n/10 R[] \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 B [][]\OT1/cmr/m/
 n/10 ([])\OML/cmm/m/it/10 a[]b[]e[];
  []
 
-
-Underfull \vbox (badness 1033) has occurred while \output is active []
-
- [1
+[1
 
 
 ]
 Missing character: There is no ’ in font ptmr8t!
 LaTeX Font Info:    Try loading font information for U+euf on input line 209.
-
-(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
+ (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [2] [3]
 No file pr.bbl.
@@ -649,9 +672,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4
-
-] (./pr.aux)
+[4] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -660,12 +681,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7158 strings out of 492970
- 106168 string characters out of 6137298
- 204375 words of memory out of 5000000
- 11053 multiletter control sequences out of 15000+600000
+ 7156 strings out of 492970
+ 106154 string characters out of 6137298
+ 218375 words of memory out of 5000000
+ 11051 multiletter control sequences out of 15000+600000
  80262 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 44i,27n,42p,921b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,28n,42p,921b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on pr.pdf (4 pages).
