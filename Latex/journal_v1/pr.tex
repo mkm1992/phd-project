@@ -250,7 +250,8 @@ The aim of this paper is minimize the total power of all RUs and the total power
 &\mathcal{R}_{u_{(v_2,k)}}^u \geq  \mathcal{R}_{min}^{v_2,u} \quad \forall v_2, \label{c14} \\
 &T_{tot}^v \leq T_{tot}^{max,v} \quad \forall v,\label{c15} \\
 &a_{u(v,i)} \leq a_{u(v,i)}\sum_{r}g^r_{u(v,i)} \leq 1 \quad \forall v,\forall i  \\
-& \textstyle  \sum_{s=1}^{S}a_{v,s} \geq 1 \quad \forall s, \label{c21} \\
+& \sum_{s=1}^{S}\sum_{v=1}^{V}\sum_{i=1}^{U_v}a_{u(v,i)}g^r_{u(v,i)}e^{k,s}_{r,u(v,i)} \leq 1 \quad \forall r, \label{c21} \\
+&  \sum_{s=1}^{S}b_{v,s} \geq 1 \quad \forall v,\\
 & \textstyle  \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s,\label{c23} \\
  &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c22}
 \end{alignat}
