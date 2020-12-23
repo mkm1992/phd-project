@@ -88,12 +88,11 @@ Also, each VNF instance is running on the virtual machine (VM) that are using re
 In addition, there are $R$ multi-antenna RU that are shared between slices. Each RU $r \in \{1,2,...,R \}$
 has $J$ antenna for transmitting and receiving data. Moreover, all RUs, have access to PRBs.
 \subsection{The Achievable Rate}
-The SNR of $i^{th}$ UE in $v^{th}$ service experienced at slice $s$ on PRB $k$ which is obtained from
- $\rho_{u_i}^{k,s}$ is the SNR 
+The SNR of $i^{th}$ UE requesting served at slice $s$ on PRB $k$ is obtained from
 \begin{equation}\label{eq2}
-\rho_{u_i}^{k,s} =  \sum_{r=1}^{R}\frac{|p_{r,u_i}^{k,s}{\bold{h}_{r,u_i}^{H \: k,s}} \bold{w}_{r,u_i}^{k,s} g_{u_i}^r|^2}{BN_0 + I_{r,u_i}^{k,s}},
+\rho_{u(s,i)}^{k} =  \sum_{r=1}^{R}\frac{|p_{r,u(s,i)}^{k}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0 + I_{r,u(s,i)}^{k}},
 \end{equation} 
-where $p_{r,u_i}^{k,s}$ represents the transmission power from o-RU $r$ to $i^{th}$ UE in $v^{th}$ service, served at slice $s$ on PRB $k$. 
+where $p_{r,u(s,i)}^{k}$ represents the transmission power from o-RU $r$ to $i^{th}$ UE served at slice $s$ on PRB $k$. 
 ${\bold{h}_{r,u_i}^{k,s}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
 $r^{th}$ RU to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{r,u_i}^{k,s} \in \mathbb{C}^{J}$ depicts the  transmit beamforming vector from $r^{th}$ RU to the $i^{th}$ UE in $v^{th}$ service that is the zero forcing beamforming vector to minimize the interference which is indicated as below
 \begin{equation}
