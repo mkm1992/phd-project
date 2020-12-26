@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  23 DEC 2020 15:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  26 DEC 2020 16:35
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -608,15 +608,20 @@ Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 93.
 
 
-Underfull \hbox (badness 3078) in paragraph at lines 109--115
-\T1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10
- e[]e[]a[]a[]b[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
+Overfull \hbox (1.74622pt too wide) detected at line 109
+[]
  []
 
 
-Overfull \hbox (13.58582pt too wide) detected at line 119
-\OMS/cmsy/m/n/10 R[] \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 B [][]\OT1/cmr/m/
-n/10 ([])\OML/cmm/m/it/10 a[]b[]e[];
+Underfull \hbox (badness 1584) in paragraph at lines 109--114
+\T1/ptm/m/n/10 where $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10
+ e[]e[]a[]a[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^M[] \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 5231) in paragraph at lines 124--130
+\T1/ptm/m/n/10 Where $\OML/cmm/m/it/10 ^^L[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10
+ a[]e[]$ \T1/ptm/m/n/10 and $\OML/cmm/m/it/10 ^^P[] \OT1/cmr/m/n/10 =
  []
 
 [1
@@ -624,7 +629,7 @@ n/10 ([])\OML/cmm/m/it/10 a[]b[]e[];
 
 ]
 Missing character: There is no ’ in font ptmr8t!
-LaTeX Font Info:    Try loading font information for U+euf on input line 208.
+LaTeX Font Info:    Try loading font information for U+euf on input line 206.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [2]
@@ -640,7 +645,9 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3] (./pr.aux)
+[3
+
+] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -651,7 +658,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  7151 strings out of 492970
  106105 string characters out of 6137298
- 209375 words of memory out of 5000000
+ 208375 words of memory out of 5000000
  11046 multiletter control sequences out of 15000+600000
  80262 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
