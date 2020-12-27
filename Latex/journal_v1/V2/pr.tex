@@ -247,12 +247,13 @@ The aim of this paper is maximize the sum rate of all UEs with the presence of c
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
 &p_{r,u_i}^{k,s}  \geq 0  \quad \forall v,\forall i,\forall r,\forall s, \forall k,\label{c12} \\
-&\mathcal{R}_{u_{(v_1,k)}}^e \geq  \mathcal{R}_{min}^{v_1,e} \quad \forall v_1, \label{c13} \\
-&\mathcal{R}_{u_{(v_2,k)}}^u \geq  \mathcal{R}_{min}^{v_2,u} \quad \forall v_2, \label{c14} \\
-&T_{tot}^v \leq T_{tot}^{max,v} \quad \forall v,\label{c15} \\
-&a_{u_i} \leq a_{u_i}\sum_{r}g^r_{u_i} \leq 1 \quad \forall v,\forall i  \\
-& \sum_{s=1}^{S}\sum_{v=1}^{V}\sum_{i=1}^{U_v}a_{u_i}g^r_{u_i}e^{k,s}_{r,u_i} \leq 1 \quad \forall r, \label{c21} \\
-&  \sum_{s=1}^{S}b_{v,s} \geq 1 \quad \forall v,\\
+&\mathcal{R}_{u_{(s_1,k)}}^e \geq  \mathcal{R}_{min}^{s_1,e} \quad \forall s_1, \label{c13} \\
+&\mathcal{R}_{u_{(s_2,k)}}^u \geq  \mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
+&T_{tot}^s \leq T_{tot}^{max,s} \quad \forall s,\label{c15} \\
+&a_{u(s,i)} \leq a_{u(s,i)}\sum_{r}g^r_{u(s,i)}  \quad \forall s,\forall i, \label{c16}  \\
+& a_{u(s,i)}g^r_{u(s,i)} \leq a_{u(s,i)}g^r_{u(s,i)}\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)}  \quad \forall s,i , \label{c21} \\
+& \phi_{s} \leq \phi_{max}, \forall s\\
+\label{c22} \\
 & \textstyle  \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s,\label{c23} \\
  &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c22}
 \end{alignat}
