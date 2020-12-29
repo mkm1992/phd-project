@@ -90,7 +90,7 @@ has $J$ antenna for transmitting and receiving data. Moreover, all RUs, have acc
 \subsection{The Achievable Rate}
 The SNR of $i^{th}$ UE requesting served at slice $s$ on PRB $k$ is obtained from
 \begin{equation}\label{eq2}
-\rho_{u(s,i)}^{k} =  \sum_{r=1}^{R}\frac{|p_{r,u(s,i)}^{k}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0 + I_{r,u(s,i)}^{k}},
+\rho_{r,u(s,i)}^{k} =  \frac{|p_{r,u(s,i)}^{k}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0 + I_{r,u(s,i)}^{k}},
 \end{equation} 
 where $p_{r,u(s,i)}^{k}$ represents the transmission power from o-RU $r$ to $i^{th}$ UE served at slice $s$ on PRB $k$. 
 ${\bold{h}_{r,u(s,i)}^{k}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
@@ -112,22 +112,28 @@ and $\gamma_{2} = e^{k}_{r,u(s,i)}e^{k}_{r',u(n,l)}a_{u(s,i)}a_{u(y,l)}$.
 Where $a_{u(s,i)} \in \{0,1\}$ is a binary variable to depict user admission.
 $e^{k}_{r,u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ o-RU.
 
-The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as
+The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}^{e}$.
 \begin{equation}\label{eq1}
-\mathcal{R}_{u(s_1,i)}^{e} = \sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{u(s_1,i)}^{k}})a_{u(s_1,i)} e^k_{r,u(s_1,i)},
+\begin{split}
+\mathcal{R}_{u(s_1,i)}^{e,r} &= \sum_{r=1}^{R}\sum_{k=1}^{K} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}})a_{u(s_1,i)} e^k_{r,u(s_1,i)},\\
+\mathcal{R}_{u(s_1,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{e,r} 
+\end{split}
 \end{equation}
 where $B$ is the bandwidth of system. 
-
+$\mathcal{R}_{u(s_1,i)}^{e,r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_1$.
 Since the blocklength in URLLC is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{2}^{th}$ application of service type 2 (URLLC) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated from follow
-\begin{equation}\label{eq1}
-\mathcal{R}_{u(s_2,i)}^{u} = \sum_{k=1}^{K_{s_2}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_2,i)}^{k}){\beta}_{u(s_2,i)}^{k}
+\begin{equation}\label{eq11}
+\begin{split}
+\mathcal{R}_{u(s_2,i)}^{u,r} &= \sum_{k=1}^{K_{s_2}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_2,i)}^{k}){\beta}_{u(s_2,i)}^{k}\\
+\mathcal{R}_{u(s_1,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_2,i)}^{e,r} 
+\end{split}
 \end{equation}
 Where ${\beta}_{u(s_2,i)}^{k}=a_{u(s_2,i)} e^{k}_{u(s_2,i)}$
 and $\zeta_{u(s_2,i)}^{k} = log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{C_{u(s_2,i)}^{k}}{N_{u(s_2,i)}^{k}}})$
 Where, $\epsilon $ is the transmission probability, $Q^{-1}$ is the inverse of Q- function (Gaussian),
 $C_{u(s_2,i)}^{k} = 1 - \frac{1}{(1+\rho_{u(s_2,i)}^{k})}$ depicts the channel dispersion of UE  $i$ at slice $s_2$, experiencing PRB $k$ and
 $N_{u(s_2,i)}^{k}$ represents the blocklength of it. 
-
+$\mathcal{R}_{u(s_1,i)}^{e,r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_2$.
 \subsection{Mean Delay}
 In this part, the end to end mean delay for a service is obtained.
 Suppose the mean total delay is depicted as $T_{tot}$.
@@ -201,11 +207,18 @@ Let the required resources for VNF $f$ in slice $s$ is represented by a tuple as
 \bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f, \Omega_{N,{s}}^f \},
 \end{equation}
 where $\bar{\Omega}_{s}^f\in \mathbb{C}^{4}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f, \Omega_{N,{s}}^f$ indicate the amount of required memory, storage, CPU and and Network Bandwidth, respectively.
-Moreover, the total amount of required memory, storage, CPU and Network Bandwidth of all VNFs of a slice is defined as
+Moreover, the total amount of required memory, storage, CPU and Network Bandwidth of all VNFs of a slice in DU, CU and UPF is defined as below, respectively
 \begin{equation}
-\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C, N\}.
+\begin{split}
+&\bar{\Omega}_{\mathfrak{z},s}^{tot,d} = \sum_{f=1}^{M_{s}^d}\bar{\Omega}_{\mathfrak{z},s}^{f,d} \;\; \mathfrak{z} \in \{M, S, C, N\}.\\
+&\bar{\Omega}_{\mathfrak{z},s}^{tot,c} = \sum_{f=1}^{M_{s}^c}\bar{\Omega}_{\mathfrak{z},s}^{f,c} \;\; \mathfrak{z} \in \{M, S, C, N\}.\\
+&\bar{\Omega}_{\mathfrak{z},s}^{tot,u} = \sum_{f=1}^{M_{s}^u}\bar{\Omega}_{\mathfrak{z},s}^{f,u} \;\; \mathfrak{z} \in \{M, S, C, N\}.\\
+\end{split}
 \end{equation}
-Where, $F_s = M_{s}^d + M_{s}^c + M_{s}^u$
+Where, $\bar{\Omega}_{\mathfrak{z},s}^{f,d}$, $\bar{\Omega}_{\mathfrak{z},s}^{f,c}$ and $\bar{\Omega}_{\mathfrak{z},s}^{f,u}$ are the amount of resource that a VNF required in DU, CU and UPF, respectively.
+\begin{equation}
+ \bar{\Omega}_{\mathfrak{z},s}^{tot} = \bar{\Omega}_{\mathfrak{z},s}^{tot,d}+ \bar{\Omega}_{\mathfrak{z},s}^{tot,c}+\bar{\Omega}_{\mathfrak{z},s}^{tot,u}
+\end{equation} 
 Also, there are $D_c$ data centers (DC), serving the VNFs. Each DC contains several servers that supply VNF requirements.
 The amount of memory, storage, CPU and and Network Bandwidth is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$, $\tau_{C_{j}} $ and $\tau_{N_{j}} $ for the $j^{th}$ DC, respectively
 \begin{equation*}
@@ -223,7 +236,7 @@ The total power cost of O-RUs for transmitting data to UE is depicted as follow
 P_{tot} = \sum_{r=1}^{R}P_r
 \end{equation}
 Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
-$\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as
+$\phi_{s}$. So the total power of the system for all active DCs that are connected to slices can be represented as
 \begin{equation*}
 \textstyle \phi_{tot} = \sum_{s=1}^{S}\phi_{s} + \sum_{d=1}^{D_c}z_d \psi_d .
 \end{equation*}
@@ -235,27 +248,28 @@ Where,$z_d$ is shown that whether the $d^{th}$ DC is turned on or not and $\psi_
       0 & \text{otherwise}
     \end{cases}       
 \end{equation}  
-In addition, $\phi_{s,d}$ is obtained from below
+In addition, $\phi_{s}$ is obtained from below
 \begin{equation}
 \phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M_s^d \phi_s^d
 \end{equation}
+Where, $\phi_s^u$, $\phi_s^c$ and $\phi_s^d$ are the static cost of energy in UPF, CU and DU, respectively. 
 So the optimization problem is formulated as follow.
-The aim of this paper is maximize the sum rate of all UEs with the presence of constraints which is written as follow,
+The aim of this paper is to maximize the benefits and minimize the cost. So our goal is to maximize sum rate of all UEs and minimize the total cost of the system with the presence of constraints which is written as follow,
 \begin{subequations}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G}, \boldsymbol{Y} }   \quad &  P_{tot}+ \varphi \phi_{tot} \ \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G}, \boldsymbol{Y} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}}- \eta(P_{tot}+ \varphi \phi_{tot}) \ \\
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
 &p_{r,u_i}^{k,s}  \geq 0  \quad \forall v,\forall i,\forall r,\forall s, \forall k,\label{c12} \\
-&\mathcal{R}_{u_{(s_1,k)}}^e \geq  \mathcal{R}_{min}^{s_1,e} \quad \forall s_1, \label{c13} \\
-&\mathcal{R}_{u_{(s_2,k)}}^u \geq  \mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
+&\mathcal{R}_{u_{(s_1,i)}}^e \geq  a_{u(s_1,i)}\mathcal{R}_{min}^{s_1,e} \quad \forall s_1, \label{c13} \\
+&\mathcal{R}_{u_{(s_2,i)}}^u \geq  a_{u(s_2,i)}\mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
 &T_{tot}^s \leq T_{tot}^{max,s} \quad \forall s,\label{c15} \\
 &a_{u(s,i)} \leq a_{u(s,i)}\sum_{r}g^r_{u(s,i)}  \quad \forall s,\forall i, \label{c16}  \\
 & a_{u(s,i)}g^r_{u(s,i)} \leq a_{u(s,i)}g^r_{u(s,i)}\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)}  \quad \forall s,i , \label{c21} \\
-& \phi_{s} \leq \phi_{max}, \forall s\\
-\label{c22} \\
-& \textstyle  \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s,\label{c23} \\
- &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c22}
+& \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}}^r \leq C_{max}^r \quad \forall r, \label{c24}\\ 
+& \phi_{s} \leq \phi_{max}, \quad \forall s \label{c22} \\
+ &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d} 
+ \quad \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c23}
 \end{alignat}
 \label{constraints}
 \end{subequations}
