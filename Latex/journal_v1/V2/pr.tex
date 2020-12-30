@@ -115,7 +115,7 @@ $e^{k}_{r,u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is al
 The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}^{e}$.
 \begin{equation}\label{eq1}
 \begin{split}
-\mathcal{R}_{u(s_1,i)}^{e,r} &= \sum_{r=1}^{R}\sum_{k=1}^{K} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}})a_{u(s_1,i)} e^k_{r,u(s_1,i)},\\
+\mathcal{R}_{u(s_1,i)}^{e,r} &= \sum_{r=1}^{R}\sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}})a_{u(s_1,i)} e^k_{r,u(s_1,i)},\\
 \mathcal{R}_{u(s_1,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{e,r} 
 \end{split}
 \end{equation}
@@ -263,17 +263,27 @@ The aim of this paper is to maximize the benefits and minimize the cost. So our 
 &p_{r,u_i}^{k,s}  \geq 0  \quad \forall v,\forall i,\forall r,\forall s, \forall k,\label{c12} \\
 &\mathcal{R}_{u_{(s_1,i)}}^e \geq  a_{u(s_1,i)}\mathcal{R}_{min}^{s_1,e} \quad \forall s_1, \label{c13} \\
 &\mathcal{R}_{u_{(s_2,i)}}^u \geq  a_{u(s_2,i)}\mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
-&T_{tot}^s \leq T_{tot}^{max,s} \quad \forall s,\label{c15} \\
-&a_{u(s,i)} \leq a_{u(s,i)}\sum_{r}g^r_{u(s,i)}  \quad \forall s,\forall i, \label{c16}  \\
-& a_{u(s,i)}g^r_{u(s,i)} \leq a_{u(s,i)}g^r_{u(s,i)}\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)}  \quad \forall s,i , \label{c21} \\
-& \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}}^r \leq C_{max}^r \quad \forall r, \label{c24}\\ 
-& \phi_{s} \leq \phi_{max}, \quad \forall s \label{c22} \\
+& \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}}^r \leq C_{max}^r \quad \forall r, \label{c15}\\ 
+&T_{tot}^s \leq T_{tot}^{max,s} \quad \forall s,\label{c16} \\
+&a_{u(s,i)} \leq a_{u(s,i)}\sum_{r}g^r_{u(s,i)}  \quad \forall s,\forall i, \label{c17}  \\
+& a_{u(s,i)}g^r_{u(s,i)} \leq a_{u(s,i)}g^r_{u(s,i)}\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)}  \quad \forall s,i , \label{c18} \\
+& \phi_{s} \leq \phi_{max}, \quad \forall s \label{c19} \\
  &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d} 
- \quad \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c23}
+ \quad \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c20}
 \end{alignat}
 \label{constraints}
 \end{subequations}
-
+where $\boldsymbol{P} =[p_{u(s,i)}] \:\: \forall s , \forall i $, is the matrix of power for UEs, $\boldsymbol{A} =[a_{u(s,i)}] \:\: \forall s , \forall i $ denotes the binary variable for UE admission,
+$\boldsymbol{E} =[e_{r,u(s,i)}^k] \:\: \forall s , \forall i \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r] \:\: \forall s , \forall i \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u] \:\: \forall s$ is the matrix that shown the number of VNFs in each layer of slice and $\boldsymbol{Y} =[y_{s,d}]  \:\: \forall s ,  \forall d $ is a binary variable shown whether
+the physical DC is mapped to a VNFs of a slice or not.
+Also, $\eta$ is weighted variable to value between the benefit and the cost term of objective function.
+\eqref{c11}, and \eqref{c12}, indicate that the power of each RU do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. 
+Also \eqref{c13} and \eqref{c14} shows that the rate of each UE requesting eMBB and URLLC is more than a threshold, respectively.
+\eqref{c15} and \eqref{c16} expressed the limited capacity of the fronthaul link, and the limited delay of receiving signal, respectively.
+\eqref{c17} and \eqref{c18} guarantee that if a UE in admitted by the system, O-RU and PRB is associated to it, respectively.
+In addition, \eqref{c19} indicate that the static cost of energy of VNFs in each slice do not exceed from the threshold. 
+Moreover, in \eqref{c20}  $\mathcal{E} = \{M,S,C, N\}$ and the constraint supports
+that we have enough physical resources for VNFs of each slice.
 
 
 \bibliographystyle{IEEEtran}
