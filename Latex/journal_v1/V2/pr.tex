@@ -122,7 +122,7 @@ $e^{k}_{r,u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is al
 The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}^{e}$.
 \begin{equation}\label{eq1}
 \begin{split}
-\mathcal{R}_{u(s_1,i)}^{e,r} &= \sum_{r=1}^{R}\sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}})a_{u(s_1,i)} e^k_{r,u(s_1,i)},\\
+\mathcal{R}_{u(s_1,i)}^{e,r} &= \sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}})a_{u(s_1,i)} e^k_{r,u(s_1,i)},\\
 \mathcal{R}_{u(s_1,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{e,r} 
 \end{split}
 \end{equation}
@@ -255,10 +255,10 @@ Power of each O-RU is obtained as below
 \begin{equation}
 P_r =  \sum_{s=1}^{S} \sum_{i=1}^{U_v} \sum_{k=1}^{K_s}p_{r,u(s,i)}^{k}a_{u(s,i)} e^{k}_{r,u(s,i)}g_{u(s,i)}^r.
 \end{equation}
-The total power cost of O-RUs for transmitting data to UE is depicted as follow
-\begin{equation}
-P_{tot} = \sum_{r=1}^{R}P_r
-\end{equation}
+%The total power cost of O-RUs for transmitting data to UE is depicted as follow
+%\begin{equation}
+%P_{tot} = \sum_{r=1}^{R}P_r
+%\end{equation}
 Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
 $\phi_{s}$. So the total power of the system for all active DCs that are connected to slices can be represented as
 \begin{equation*}
@@ -278,13 +278,13 @@ In addition, $\phi_{s}$ is obtained from below
 \end{equation}
 Where, $\phi_s^u$, $\phi_s^c$ and $\phi_s^d$ are the static cost of energy in UPF, CU and DU, respectively. 
 So the optimization problem is formulated as follow.
-The aim of this paper is to maximize the benefits and minimize the cost. So our goal is to maximize sum rate of all UEs and minimize the total cost of the system with the presence of constraints which is written as follow,
+The aim of this paper is to maximize the sum rate of all UEs  with the presence of constraints which is written as follow,
 \begin{subequations}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G}, \boldsymbol{Y} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}}- \eta(P_{tot}+ \varphi \phi_{tot}) \ \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G}, \boldsymbol{Y} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}} \ \\
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
-&p_{r,u_i}^{k,s}  \geq 0  \quad \forall v,\forall i,\forall r,\forall s, \forall k,\label{c12} \\
+&p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
 &\mathcal{R}_{u_{(s_1,i)}}^e \geq  a_{u(s_1,i)}\mathcal{R}_{min}^{s_1,e} \quad \forall s_1, \label{c13} \\
 &\mathcal{R}_{u_{(s_2,i)}}^u \geq  a_{u(s_2,i)}\mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
 & \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}}^r \leq C_{max}^r \quad \forall r, \label{c15}\\ 
@@ -292,7 +292,7 @@ The aim of this paper is to maximize the benefits and minimize the cost. So our 
 & P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
 &a_{u(s,i)} \leq a_{u(s,i)}\sum_{r}g^r_{u(s,i)}  \quad \forall s,\forall i, \label{c17}  \\
 & a_{u(s,i)}g^r_{u(s,i)} \leq a_{u(s,i)}g^r_{u(s,i)}\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)}  \quad \forall s,i , \label{c18} \\
-& \phi_{s} \leq \phi_{max}, \quad \forall s \label{c19} \\
+& \phi_{tot}  \leq \phi_{max}, \label{c19} \\
  &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d} 
  \quad \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c20}
 \end{alignat}
