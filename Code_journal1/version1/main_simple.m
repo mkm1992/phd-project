@@ -28,12 +28,44 @@ for i=1:N_RU
        ChannelGain(i,j) = 100*(loss(i,j)^0.5)/sqrt(2)*(randn(1)+1i*randn(1));
     end
 end
-%% Rate
-rate_UE = zeros(1,N_UE);
-admission_UE = zeros(1,N_UE);
 RU_UE = zeros(N_RU,N_UE);
+for j=1:N_UE
+    RU2UE = 0;
+    temp = 0;
+    for i=1:N_RU
+        if abs(ChannelGain(i,j))> abs(temp)
+            temp = ChannelGain(i,j);
+            RU2UE = i;
+        end
+    end
+    RU_UE(RU2UE,j) = 1;
+end
+%% UE Admission
+rate_UE = zeros(1,N_UE);
+admission_UE = ones(1,N_UE);
+admission_UE1 =  zeros(1,N_UE);
+%RU_UE = zeros(N_RU,N_UE);
 for i = 1:N_UE
     for j = 1:N_RU
-        rate_UE(i) = rate_UE(i) + BW* log2(1 + (Popt(i)*abs((ChannelGain(j,i).*RU_UE(j,i)))^2)/(BW*N0))*admission_UE(i);
+        rate_UE(i) = rate_UE(i) + BW* log2(1 + (Popt(i)*abs((ChannelGain(j,i).*RU_UE(j,i)))^2)/(BW*N0));
+    end
+end
+sum(rate_UE)
+Rate_fr_max = ceil(sum(rate_UE)*2/3);
+[best admission_UE1] = knapsack(ceil(rate_UE), admission_UE, Rate_fr_max);
+disp(best)
+items = find(admission_UE1);
+disp(items)
+%% RU Association
+rate_UE = zeros(1,N_UE);
+Intf = zeros(1,N_UE);
+for i = 1:N_UE
+    for j = 1:N_RU
+        for t = 1 : N_UE
+            if i~=t 
+                Intf(i) = Intf(i) + Popt(t)*abs(ChannelGain(j,i))^2 * (1 - RU_UE(j,i));
+            end
+        end
+        rate_UE(i) = rate_UE(i) + BW* log2(1 + (Popt(i)*abs((ChannelGain(j,i).*RU_UE(j,i)))^2)/(Intf(i)+BW*N0));
     end
 end
