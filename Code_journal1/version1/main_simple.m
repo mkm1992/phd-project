@@ -50,7 +50,7 @@ for i = 1:N_UE
         rate_UE(i) = rate_UE(i) + BW* log2(1 + (Popt(i)*abs((ChannelGain(j,i).*RU_UE(j,i)))^2)/(BW*N0));
     end
 end
-sum(rate_UE)
+C_Fr = sum(rate_UE);
 Rate_fr_max = ceil(sum(rate_UE)*2/3);
 [best admission_UE1] = knapsack(ceil(rate_UE), admission_UE, Rate_fr_max);
 disp(best)
@@ -69,3 +69,21 @@ for i = 1:N_UE
         rate_UE(i) = rate_UE(i) + BW* log2(1 + (Popt(i)*abs((ChannelGain(j,i).*RU_UE(j,i)))^2)/(Intf(i)+BW*N0));
     end
 end
+%%%%%%%%%% 
+C_Fr1 = C_Fr/(N_RU);
+Capacity_RU = ones(1, N_RU)*C_Fr1;
+Capacity_RU(1) = Capacity_RU(1)*2;
+Capacity_RU(2) = Capacity_RU(2)*1.2;
+[Sort_rate, I] = sort(rate_UE,'descend');
+sum(Capacity_RU)
+sum(rate_UE)
+RU_UE = zeros(N_RU,N_UE);
+for j = 1:N_RU
+    for i = 1:N_UE
+        if Capacity_RU(j)> Sort_rate(i) && sum(RU_UE(:,i))==0
+            Capacity_RU(j) = Capacity_RU(j) - Sort_rate(i);
+            RU_UE(j,i) = 1;
+        end
+    end
+end
+%% PRB association
