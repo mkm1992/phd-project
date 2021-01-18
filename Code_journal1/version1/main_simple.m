@@ -1,6 +1,6 @@
 clear all
 clc
-%% Varibale
+%% Variable
 R = 500;
 S = 1;
 BW = 120*1e3;%10*1e6;  
