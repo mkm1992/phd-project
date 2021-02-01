@@ -86,4 +86,5 @@ for j = 1:N_RU
         end
     end
 end
-%% PRB association
+%% PRB and power allocation
+
