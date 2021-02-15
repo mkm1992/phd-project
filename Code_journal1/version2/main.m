@@ -2,6 +2,9 @@ clear all
 close all
 clc
 %% 
-run var
+run var_const
+run var_dyn
 run channel_gain
+run precoding
+run UE_admission
 

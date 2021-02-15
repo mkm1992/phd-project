@@ -93,7 +93,7 @@ for j = 1:N_RU
         end
     end
 end
-%% PRB and power allocation
+%% PRB and Power allocation
 cvx_begin
     variable Popt(1,N_UE)
     maximize error
