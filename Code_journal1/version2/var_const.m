@@ -16,4 +16,8 @@ N_PRB = 24;
 T_max = 50e-3; % sec
 N_UE_max = 10;
 N_RU = 4;
+%%
+Ca_RU = ones(1, N_RU)*C_Fr1;
+Capacity_RU(1) = Capacity_RU(1)*2;
+Capacity_RU(2) = Capacity_RU(2)*1.2;
 N_Antenna = 1;
