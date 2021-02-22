@@ -8,3 +8,4 @@ run channel_gain
 %run precoding
 run UE_admission
 run RU_association
+run PRB_Power_Allocation
