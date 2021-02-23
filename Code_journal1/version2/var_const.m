@@ -16,12 +16,9 @@ N_PRB = 24;
 T_max = 50e-3; % sec
 N_UE_max = 10;
 N_RU = 4;
+counter_max = 10;
 %%
-Capacity_RU = zeros(1,N_RU);
 C_tot_RU = sum(Rate_mid_max);
-Capacity_RU = C_tot_RU * randi([20,70],1,4)/100;
-% C_Fr1 = Rate_mid_max *randi(100)/100;
-% Capacity_RU = C_Fr1;
-% Capacity_RU(1) = Capacity_RU(1)*2;
-% Capacity_RU(2) = Capacity_RU(2)*1.2;
+Capacity_RU = C_tot_RU * randi([1,50],1,N_RU)/100;
 N_Antenna = 1;
+P_RU = zeros(1,N_RU);
