@@ -15,4 +15,4 @@ for i = 1:S
 end
 N_PRB = 12;
 RU_PRB = randi([0 1],N_RU,N_PRB);
-PRB_UE = zeros(N_PRB, N_UE);
+PRB_UE =  randi([0 1],N_PRB,N_UE);%zeros(N_PRB, N_UE);

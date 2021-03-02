@@ -5,7 +5,7 @@ for i = 1:N_UE
         for z = 1:N_PRB
             for t = 1 : N_UE
                 if i~=t 
-                    Intf(i) = Intf(i) + Popt(t)*abs(ChannelGain(j,i))^2 * PRB_UE(z,i) * PRB_UE(z,t)*admission_UE1(t);
+                    Intf(i) = Intf(i);% + Popt(t)*abs(ChannelGain(j,i))^2 * PRB_UE(z,i) * PRB_UE(z,t)*admission_UE1(t);
                 end
             end
            

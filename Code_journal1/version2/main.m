@@ -14,3 +14,4 @@ disp(UE_S)
 run interference
 run rate
 run Prrh_obtain
+run PowerAllocation

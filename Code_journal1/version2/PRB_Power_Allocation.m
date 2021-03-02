@@ -1,7 +1,13 @@
 %% PRB and Power allocation
+lambda_P = ones(1,N_RU)* Pmax / 100;
+Beta = ones(1,N_UE) ;
+gamma = ones(1,N_UE);
+alpha = ones(1, N_RU);
+zeta = ones(1,S);
+
+
 for count = 1:count_max
-    lambda_PRU = ones(1,N_RU);
-    Beta
+    
 end
 
 % % % for  count_power=1:counter_max 
