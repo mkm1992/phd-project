@@ -1,0 +1,258 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage[T1]{fontenc}
+\usepackage{cite}
+\usepackage{mathtools}
+\usepackage{stackengine}
+\def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfig}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{amsthm}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\allowdisplaybreaks
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\usepackage[margin=0.7in]{geometry}
+\setlength{\columnsep}{11mm}
+\begin{document}
+
+\title{System Model\vspace{-.1cm}
+}
+%
+%\author{\IEEEauthorblockN{1\textsuperscript{st} Mojdeh Karbalaee Motalleb}
+%\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+%\textit{Tehran University}\\
+%Tehran, Iran \\
+%mojdeh.karbalaee@ut.ac.ir}
+%\and
+%\IEEEauthorblockN{2\textsuperscript{nd} Vahid Shah-Mansouri}
+%\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+%\textit{Tehran University}\\
+%Tehran, Iran \\
+%vmansouri@ut.ac.ir}
+%\and
+%\IEEEauthorblockN{3\textsuperscript{rd} Salar Nouri Naghadeh}
+%\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+%\textit{Tehran University}\\
+%Tehran, Iran \\
+%salar.nouri@ut.ac.ir}
+%}
+  \author{
+    \IEEEauthorblockN{Mojdeh Karbalaee Motalleb}
+    \IEEEauthorblockA{School of ECE, College of Engineering, University of Tehran, Iran \\
+    Email: \{mojdeh.karbalaee\}@ut.ac.ir,
+    \vspace{-.2cm}
+  }
+  }
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+\begin{IEEEkeywords}
+
+\end{IEEEkeywords}
+\section{System Model and Problem Formulation}\label{systemmodel}
+
+In this section, first, we  present the system model. Then, we obtain achievable rates and delays for the downlink (DL) of the ORAN system. Afterward, we discuss about assignment of physical data center resources.
+Finally, the main problem is expressed.
+\subsection{System Model}
+Suppose there are $S$ slices Serving $V$ services. Each Service $v\in \{1,2,...,V \} $ consists of $U_v$
+single-antenna UEs that require certain service. Each Service is one of the instance of 3 type service contains URLLC, eMBB, MIoT. Each slice $s \in \{1,2,...,S \}$ consists of  $K_s$ physical resource blocks (PRBs), one DU and one CU that contains VNFs and physical resources from Data Centers.
+Slices can have shared resources. All RUs can serve any users based on their distance and can transmit signals cooperatively to all the UEs in a specific place. Each RU $r \in \{1,2,...,R \}$ is mapped to a DU via an optical fiber link with limited fronthaul capacity.
+There are two processing layers one in the DU and one in the CU of ORAN system, each represented with a VNF. The lower layer (i.e., DU) consists of high-PHY, MAC, and RLC, and the upper layer (i.e., CU) consists of RRC, PDCP and SDAP. Assume we have $M_1$ VNFs in the DU layer and $M_2$ VNFs in the CU layer for processing data.
+Each VNF in both layers belongs to one or more slices. So, in the $s^{th}$ slice, there are $M_{s,1}$ VNFs in the DU layer and $M_{s,2}$ VNFs in the CU layer. The VNFs in the DU and CU layers have the computational capacity that is  equal to $\mu_1$ and $\mu_2$, respectively.
+Also, RUs and PRBs can serve more than one slice.
+\subsection{The Achievable Rate}
+The achievable data rate for the $i^{th}$ UE in the $v^{th}$ service can be written as
+\begin{equation}\label{eq1}
+\mathcal{R}_{u(v,i)} = \sum_{s} B_s \log_2({1+ \rho_{u(v,i)} b_{u(v,i)}}) a_{v,s},
+\end{equation}
+where $B_s$ is the bandwidth of slice, $b_{u(v,i)}$ is a binary number represent whether the $i^{th}$ user in service $v$ is admitted in system or no and $\rho_{u(v,i)}$ is the SNR of $i^{th}$ UE in $v^{th}$ service which is obtained from
+\begin{equation}\label{eq2}
+\rho_{u(v,i)} =  \frac{p_{u(v,i)}\sum_{j=1}^{J}|\bold{h}_{R_j,u(v,i)}^H \bold{w}_{R_j,u(v,i)}|^2 e_{j,u(v,i)}}{BN_0 + I_{u(v,i)}},
+\end{equation}
+where $p_{u(v,i)}$ represents the transmission power allocated by RUs to $i^{th}$ UE in $v^{th}$ service,
+$e_{j,u(v,i)}$ is the association of RRH j to user i in $v^{th}$ service.
+and
+$\bold{h}_{R_j,u(v,i)} \in \mathbb{C}^{{R}_j}$ is the vector of channel gain of a wireless link from RU j to the $i^{th}$ UE in $v^{th}$ service. In addition, $\bold{w}_{R_j,u(v,i)} \in \mathbb{C}^{{R}_j}$ depicts the transmit beamforming vector from RU j to the $i^{th}$ UE in $v^{th}$ service. Moreover, $BN_0$ denotes the power of Gaussian additive noise, and $I_{u(v,i)}$ is the power of interfering signals. Moreover, $a_{v,s} \in \{0,1\}$ is a binary variable that illustrates whether slice $s$ is mapped to service $v$ or not. If $a_{v,s} =1$ then, $v^{th}$ service is mapped to $s^{th}$ slice; otherwise, it is not mapped.
+\newline
+To obtain SNR as formulated in \eqref{eq2}, let $\bold{y}_{U_v}\in \mathbb{C}^{U_v} $ be the received signal's vector of all users in $v^{th}$ service
+\begin{equation}\label{eq3}
+\textstyle \bold{y}_{U_v} = \sum_{j = 1}^{J}\sum_{s = 1}^{S}\sum_{k=1}^{K_s} \boldsymbol{H}^H_{\mathcal{R}_j,\mathcal{U}_v} \
+\mathfrak{y}_{R_j}\zeta_{k,s}^{U_v,j} b_{U_v} a_{v,s}+ \boldsymbol{z}_{\mathcal{U}_v},
+\end{equation}
+where $\mathfrak{y}_{R_j} = \boldsymbol{W}_{\mathcal{R}_j,\mathcal{U}_v}\boldsymbol{P}_{U_v}^{\frac{1}{2}}\boldsymbol{x}_{\mathcal{U}_v}+ \boldsymbol{q}_{\mathcal{R}_j}$
+and $\boldsymbol{x}_{ \mathcal{U}_v} = [x_{ u_{(v,1)}},...,x_{ u_{(v,\mathcal{U}_v)}}]^T \in \mathbb{C}^{{R}_s } $ depicts the transmitted symbol vector of UEs in $v^{th}$ set of service,  $\boldsymbol{z}_{U_v}$ is the additive Gaussian noise $\boldsymbol{z_{U_v}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{{U}_v})$ and $N_0$ is the noise power.
+In addition, $\boldsymbol{q}_{R_j} \in \mathbb{C}^{{R}_j }  $ indicates the quantization noise, which is made from signal compression in DU.
+Besides, $\boldsymbol{P}_{U_v} = \diag{(p_{u_{(v,1)}}, ..., p_{u_{(v,\mathcal{U}_v)}})}$.
+\newline
+Furthermore, $\zeta_{k,s}^{U_v,j} \delequal \{\zeta_{k,s}^{u(v,1)},\zeta_{k,s}^{u(v,2)},...,\zeta_{k,s}^{u(v,N_{U_v})}\}$,
+$\zeta_{k,s}^{u(v,i),j} \in \{0,1\}$ is a binary parameter, which demonstrates whether $i^{th}$ UE in $v^{th}$ service can transmit its signals through $j^{th}$ RU using $k^{th}$ PRB and also this PRB belongs to $s^{th}$ slice or not.
+$\boldsymbol{H}_{\mathcal{R}_j,\mathcal{U}_v}=\left[\boldsymbol{h}_{\mathcal{R}_j,u_{(v,1)}},\ldots,\boldsymbol{h}_{\mathcal{R}_j,v_{(v,\mathcal{U}_v)}}\right]^T  \in \mathbb{C}^{{R}_j\times {U}_v }$
+shows the channel matrix between RU set $\mathcal{R}_j$ to UE set
+$\mathcal{U}_v$, besides.
+%The channel vector from the RU of  $s^{th}$ slice to the $i^{th}$ UE in the $v^{th}$ service $\boldsymbol{h}_{\mathcal{R}_s,u_{(v,i)}}\in \mathbb{C}^{{R}_s}$ is modeled as below
+%\begin{equation}
+%\boldsymbol{h}_{\mathcal{R}_s,u_{(s,i)}} = \boldsymbol{\beta}^\frac{1}{2}_{\mathcal{R}_s,u_{(v,i)}} \boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}},
+%\end{equation}
+%where $\boldsymbol{g}_{\mathcal{R}_s,u_{(v,i)}} \backsim \mathcal{N}(0,N_0\boldsymbol{I}_{\mathcal{U}_v})$ indicates the fast fading and flat fading channel vector and $\boldsymbol{\beta}_{\mathcal{R}_s,u_{(v,i)}}=\text{diag}(b_{r_{(s,1),u_{(v,i)}}},\ldots,b_{r_{(s,\mathcal{R}_s),u_{(v,i)}}})$
+%represents the large scale fading matrix.
+What's more, it is assumed we have perfect channel state information (CSI).\newline
+Moreover, $\boldsymbol{W}_{\mathcal{R}_j,\mathcal{U}_v} = [\boldsymbol{w}_{\mathcal{R}_j,u(v,1)},...,\boldsymbol{w}_{\mathcal{R}_j,u(v,U_v)}] \in \mathbb{C}^{{R}_j\times U_v} $ is the zero forcing beamforming vector to minimize the interference which is indicated as below
+\begin{equation}
+\textstyle \boldsymbol{W}_{\mathcal{R}_j,\mathcal{U}_v} = \boldsymbol{H}_{\mathcal{R}_j,\mathcal{U}_v}(\boldsymbol{H}_{\mathcal{R}_j,\mathcal{U}_v}^H \boldsymbol{H}_{\mathcal{R}_j,\mathcal{U}_v})^{-1}.
+\end{equation}
+Hence, the interference power of $i^{th}$ UE in $v^{th}$ service can be represented as follow
+\begin{equation}
+\begin{split}
+ I_{u_{(v,i)}} &=
+ \underbrace{\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{j=1}^{J}\sum_{\hat{j}=1}^{J}\sum_{\substack{l=1 \\ l\neq i}}^{{U}_v} \gamma_{1}  p_{u_{(v,l)}}e_{j,u(v,i)}e_{\hat{j},u(v,l)}b_{u(v,i)}b_{u(v,l)}}_{\text{(intra-service interference)}}\\
+&+ \underbrace{\sum_{\substack{y=1 \\ l\neq v}}^{V}\sum_{s=1}^{S}\sum_{n=1}^{S}\sum_{j=1}^{J}\sum_{\hat{j}=1}^{J}\sum_{l=1}^{{U}_y} \gamma_{2}  p_{u_{(y,l)}}e_{j,u(v,i)}e_{\hat{j},u(v,l)}b_{u(v,i)}b_{u(y,l)}}_{\text{(inter-service interference)}}\\
+&+\underbrace{ \sum_{s=1}^{S} \sum_{j=1}^{J} {\sigma_q}_{R_j}^2 |\boldsymbol{h}_{R_j}, u_{(v,i)}|^2 a_{v,s} e_{j,u(v,i)}b_{u(v,i)}}_{\text{(quantization noise interference)}},
+\end{split}
+\end{equation}
+where $\gamma_{1} =|\boldsymbol{h}_{\mathcal{R}_j, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{j},u_{(v,l)}}|^2 a_{v,s}\zeta_{n,s}^{u_(v,i),j}\zeta_{n,s}^{u_(v,l),\hat{j}}$
+and $\gamma_{2} =|\boldsymbol{h}_{\mathcal{R}_j, u_{(v,i)}}^H \boldsymbol{w}_{\mathcal{R}_{j},u_{(y,l)}}|^2a_{y,s} \zeta_{n,s}^{u_(v,i),j}\zeta_{n,s}^{u_(y,l),\hat{j}}a_{v,s}$. Moreover,
+${\sigma_q}_{r_{(s,j)}}$ is the variance of quantization noise of $j^{th}$ RU in $s^{th}$ slice.
+Interference signal for each UE is coming from UEs using the same PRB.
+If we replace $p_{u_{(v,l)}}$ and $p_{u_{(y,l)}}$ by $P_{max}$, an upper bound $\bar{I}_{u_{(v,i)}}$ is obtained for $I_{u_{(v,i)}}$. Therefore, $\bar{\mathcal{R}}_{u_{(v,i)}} \forall v , \forall i$ is derived by using $\bar{I}_{u_{(v,i)}}$ instead of $I_{u_{(v,i)}}$ in  \eqref{eq1} and \eqref{eq2}.\newline
+Let $\bar{p}_{r_{(s,j)}}$ denote the power of transmitted signal from the $j^{th}$ RU in $s^{th}$ slice.
+From \eqref{eq3}, we have,
+\begin{equation}
+\bar{p}_{R_j} = \sum_{v=1}^{V}\boldsymbol{w}_{R_j,\mathcal{U}_{v}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   \boldsymbol{w}_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s} + \sigma_{q_{r(s,j)}}^2.
+\end{equation}
+Nevertheless, the rate of users on the fronthual link between DU and the $j^{th}$ RU in $s^{th}$ slice is formulated as 
+\begin{equation}
+C_{R_{(s,j)}} = \log{(1+\sum_{v=1}^{V}\frac{w_{r_{(s,j)},\mathcal{D}_{s}} \boldsymbol{P}_{\mathcal{U}_v}^{\frac{1}{2}} \boldsymbol{P}_{\mathcal{U}_v}^{H \frac{1}{2}}   w_{r_{(s,j)},\mathcal{U}_{v}}^H a_{v,s}}{ \sigma_{q_{r(s,j)}}^2})},
+\end{equation}
+where, $a_{v,s}$ is a binary variable denotes whether the slice $s$ is mapped to service $v$ or not .
+
+\subsection{Mean Delay}
+Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(v,i)}$ for the $i^{th}$ UE of the $v^{th}$ service.
+Therefore, the mean arrival data rate of UEs mapped to the $s^{th}$ slice in the CU layer is $\alpha_{s_1} = \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}\lambda_{u(v,i)}$, where $a_{v,s}$ is a binary variable which indicates whether the $v^{th}$ service is mapped to the $s^{th}$ slice or not.
+Furthermore, the mean arrival data rate of the DU layer is approximately equal to the mean arrival data rate of the first layer $\alpha_{s} =\alpha_{s_1} \approx \alpha_{s_2}$ since, by using Burke’s Theorem, the mean arrival data rate of the second layer which is processed in the first layer is still Poisson with rate $\alpha_{s}$.
+It is assumed that there are load balancers in each layer for each slice to divide the incoming traffic to VNFs equally \cite{frdl,luong2018novel,luong2018novel1}.
+Suppose the baseband processing of each VNF is depicted as an M/M/1 processing queue.
+Each packet is processed by one of the VNFs of a slice. So, the mean delay of the $s^{th}$ slice in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
+\begin{equation}
+\begin{split}
+d_{s_1} &= \frac{1}{\mu_1 - \alpha_{s}/{M_{s,1}}},\\
+d_{s_2} &= \frac{1}{\mu_2 - \alpha_{s}/{M_{s,2}}}.
+\end{split}
+\end{equation}
+where $1/\mu_1$ and $1/\mu_2$ are the mean service time of the first and the second layers respectively.
+Besides, $\alpha_{s}$ is the  arrival rate which is divided
+by load balancer before arriving to the VNFs. The  arrival rate of each VNF in each layer of the slice $s$ is $\alpha_{s}/{M_{s,i}}$ $ i \in \{1,2\}$.
+In addition, $d_{s_{tr}}$ is the transmission delay for $s^{th}$ slice on the  wireless link. The arrival data rate of wireless link
+ is equal to the arrival data rate of load balancers for each slice \cite{frdl}.
+Moreover, it is assumed that the service time of transmission queue for each slice $s$ has
+ an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue. Therefore,
+the mean delay of the transmission layer is
+\begin{equation}
+ d_{s_{tr}} = \frac{1}{R_{{tot}_s} - \alpha_{s}};
+\end{equation}
+where, $R_{{tot}_s} =  \sum_{v=1}^{V}\sum_{u=2}^{U_v}a_{v,s}R_{u(v,i)}$ is the total achievable rate of each slice that is mapped to specific service.
+Mean delay of each slice is obtained as below.
+\begin{equation}
+D_{s} = d_{s_1} + d_{s_2} + d_{s_{tr}} \forall s.
+\end{equation}
+\subsection{Physical Data Center Resource}
+Each VNF requires
+physical resources that contain memory, storage and CPU.
+Let the required resources for VNF $f$ in slice $s$ is represented by a tuple as
+\begin{equation}
+\bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f \},
+\end{equation}
+where $\bar{\Omega}_{s}^f\in \mathbb{C}^{3}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f$ indicate the amount of required memory, storage, and CPU, respectively.
+Moreover, the total amount of required memory, storage and CPU of all VNFs of a slice is defined as
+\begin{equation}
+\textstyle \bar{\Omega}_{\mathfrak{z},s}^{tot} = \sum_{f=1}^{F_s}\bar{\Omega}_{\mathfrak{z},s}^f \;\; \mathfrak{z} \in \{M, S, C\}.
+\end{equation}
+Where, $F_s = M_{s_1} + M_{s_2}$
+Also, there are $D_c$ data centers (DC), serving the VNFs. Each DC contains several servers that supply VNF requirements.
+The amount of memory, storage and CPU is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$and $\tau_{C_{j}} $ for the $j^{th}$ DC, respectively
+\begin{equation*}
+\tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}} \},
+\end{equation*}
+In this system model, the assignment of physical DC resources to VNFs is considered. Let $y_{s,d}$ be a binary variable indicating whether the $d^{th}$ DC is connected to the VNFs of $s^{th}$ slice or not.
+\subsection{Problem Statement}
+An important criterion to measure the optimality of a system is energy efficiency represented as the sum-rate to sum-power
+\begin{equation}
+\textstyle \eta(\boldsymbol{P},\boldsymbol{A}) := \frac{\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} }{\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}} = \frac{\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A})}{P_r^{{tot}}(\boldsymbol{P},\boldsymbol{A})},
+\end{equation}
+where, $P_r^{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{s=1}^{S}\sum\limits_{i=1}^{{R}_s}\bar{p}_{r_{(s,i)}}$ is the total power consumption of all RUs in all slices. Also, $\mathfrak{R}_{tot}(\boldsymbol{P},\boldsymbol{A}) = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{{U}_v}\mathcal{R}_{u_{(v,k)}} $ is the total rates of all UEs applied for all types of services.
+Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
+$\phi_{s,d}$. So the total power of the system for all active DCs that are connected to slices can be represented as
+\begin{equation*}
+\textstyle \phi_{tot} = \sum_{s=1}^{S}\sum_{d=1}^{D_c}y_{s,d}\phi_{s,d}.
+\end{equation*}
+Also, a cost function for the placement of VNFs into DCs is defined as
+\begin{equation}\label{eqpsi}
+\textstyle  \psi_{tot} = \phi_{tot} - \nu \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s}
+\end{equation}
+where, $\nu$ is a design variable to value between the first term of \eqref{eqpsi} which is the total power consumption of physical resources and the second term that is shown the amount of admitted slices to have physical resources.
+Our goal is to maximize sum-rate and minimize sum-power (the total power of all RUs and the total power consumption of baseband processing at all DCs) simultaneously, with the presence of constraints which is written as follow,
+\begin{subequations}
+\begin{alignat}{4}
+\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{Y} }   \quad &  \eta(\boldsymbol{P},\boldsymbol{A})+ \varphi \frac{1}{\psi_{tot}(\boldsymbol{Y})} \\
+\text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} \quad \forall s, \forall i,
+ \label{c11} \\
+&p_{u_{(v,k)}}  \geq 0  \quad \forall v, \forall k,\label{c12} \\
+&\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{min} \quad \forall v, \forall k,\label{c13} \\
+&C_{r_{(s,i)}} \leq C_{r_{(s,i)}}^{max} \quad \forall s, \forall i, \label{c14}\\
+&D_{s} \leq D_{s}^{max} \quad \forall s,\label{c15} \\
+& \textstyle  \sum_{s=1}^{S}a_{v,s} \geq 1 \quad \forall s, \label{c21} \\
+& \textstyle  \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s,\label{c23} \\
+ &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c22}
+\end{alignat}
+\label{constraints}
+\end{subequations}
+where $\boldsymbol{P} =[p_{u(v,k)}] \:\: \forall v , \forall k $, is the matrix of power for UEs, $\boldsymbol{A} =[a_{v,s}] \:\: \forall v , \forall s $ denotes the binary variable for connecting slices to services and $\boldsymbol{Y} =[y_{s,d}]  \:\: \forall s ,  \forall d $ is a binary variable shown whether
+the physical DC is mapped to a VNFs of a slice or not.
+Also, $\varphi$ is weighted variable to value between first and second term of objective function.
+\eqref{c11}, and \eqref{c12}, indicate that the power of each RU do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. Also \eqref{c13} shows that the rate of each UE is more than a threshold. \eqref{c14} and \eqref{c15} expressed the limited capacity of the fronthaul link, and the limited delay of receiving signal, respectively.
+Furthermore, \eqref{c21}
+ensures that each service is mapped to at least one slice.
+Also, \eqref{c23}, guarantees that each slice (VNFs in two layers of slices) has been placed to one or more physical resources of DCs. Moreover, in \eqref{c22}  $\mathcal{E} = \{M,S,C\}$ and the constraint supports
+that we have enough physical resources for VNFs of each slice.\newline
+The optimization problem in \eqref{constraints} can be decomposed into two independent optimization sub-problems 1 and 2 since the variables can be obtained independently and respectively. Firstly we need to solve sub-problem 1. After obtaining $\boldsymbol{P}$ and $ \boldsymbol{A}$, sub-problem 2 can be solved by having the value of $ \boldsymbol{A}$. 
+The sub-problem 1 is as follow
+\begin{subequations}
+\begin{alignat}{4}
+\max\limits_{\boldsymbol{P}, \boldsymbol{A} }   \quad &   \eta(\boldsymbol{P},\boldsymbol{A})\\
+\text{subject to} \quad  & \bar{p}_{r_{(s,i)}} \leq P_{max} && \quad \forall s, \forall i,   \\
+&p_{u_{(v,k)}}  \geq 0  &&\quad \forall v, \forall k, \\
+&\mathcal{R}_{u_{(v,k)}} \geq  \mathcal{R}_{u_{(v,k)}}^{min} && \quad \forall v, \forall k, \\
+&C_{r_{(s,i)}} \leq C_{r_{(s,i)}}^{max}  &&\quad \forall s, \forall i,\label{cc14} \\
+&D_{s} \leq D_{s}^{max}  &&\quad \forall s, \label{cc15} \\
+& \textstyle  \sum_{s=1}^{S}a_{v,s} \geq 1 &&\quad \forall s.
+\end{alignat}
+\label{constraints1}
+\end{subequations}
+In sub-problem 2, $ \boldsymbol{Y}$ is obtained. The sub-problem 2 is
+\begin{subequations}
+\begin{alignat}{4}
+\min\limits_{\boldsymbol{y} }   \quad &   \psi_{tot}(\boldsymbol{Y})\\
+\text{s. t.} \quad & \textstyle \sum_{d=1}^{D_c}\sum_{v=1}^{V}y_{s,d}a_{v,s} \geq 1\times\sum_{v=1}^{V}a_{v,s} \forall s, \\
+ &\textstyle  \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}  \forall d,, \forall \mathfrak{z}\in \mathcal{E};  \label{eqomega}
+\end{alignat}
+\label{constraints2}
+\end{subequations}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document} 

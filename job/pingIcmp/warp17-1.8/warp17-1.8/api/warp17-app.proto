@@ -1,0 +1,112 @@
+//
+// DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER
+//
+// Copyright (c) 2018, Juniper Networks, Inc. All rights reserved.
+//
+//
+// The contents of this file are subject to the terms of the BSD 3 clause
+// License (the "License"). You may not use this file except in compliance
+// with the License.
+//
+// You can obtain a copy of the license at
+// https://github.com/Juniper/warp17/blob/master/LICENSE.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions
+// are met:
+//
+// 1. Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// 2. Redistributions in binary form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// 3. Neither the name of the copyright holder nor the names of its
+// contributors may be used to endorse or promote products derived from this
+// software without specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// File name:
+//     warp17-app.proto
+//
+// Description:
+//     Base application and Imix object definitions.
+//
+// Author:
+//     Dumitru Ceara
+//
+// Initial Created:
+//     01/16/2018
+//
+// Notes:
+//
+//
+
+import "warp17-common.proto";
+import "warp17-app-raw.proto";
+import "warp17-app-http.proto";
+
+// IMIX "adaptation" layer (i.e., imix-id) to be used in the App and AppStats
+// definitions.
+message Imix {
+    required uint32 imix_id = 1;
+}
+
+message ImixStats {
+    required uint32 imix_id = 1;
+}
+
+message App {
+    required AppProto app_proto = 1;
+
+    /* Add different App configs below as optionals. */
+    optional RawClient  app_raw_client  = 2 [(warp17_union_anon) = true];
+    optional RawServer  app_raw_server  = 3 [(warp17_union_anon) = true];
+    optional HttpClient app_http_client = 4 [(warp17_union_anon) = true];
+    optional HttpServer app_http_server = 5 [(warp17_union_anon) = true];
+    optional Imix       app_imix        = 6 [(warp17_union_anon) = true];
+}
+
+message AppStats {
+    /* The user will do the translation. */
+    option (warp17_xlate_tpg) = false;
+
+    optional RawStats  as_raw  = 1 [(warp17_union_anon) = true];
+    optional HttpStats as_http = 2 [(warp17_union_anon) = true];
+    optional ImixStats as_imix = 3 [(warp17_union_anon) = true];
+}
+
+// IMIX application config and stats.
+message ImixApp {
+    required uint32 ia_weight = 1;
+    required App    ia_app    = 2;
+}
+
+message ImixGroup {
+    required uint32 imix_id = 1;
+
+    repeated ImixApp imix_apps = 2 [(warp17_array_size) = 'TPG_IMIX_MAX_APPS'];
+}
+
+message ImixAppStats {
+    /* The user will do the translation. */
+    option (warp17_xlate_tpg) = false;
+
+    required uint32 ias_imix_id = 1;
+
+    repeated AppProto ias_app_protos = 2 [(warp17_array_size) = 'TPG_IMIX_MAX_APPS'];
+    repeated AppStats ias_apps       = 3 [(warp17_array_size) = 'TPG_IMIX_MAX_APPS'];
+}
+

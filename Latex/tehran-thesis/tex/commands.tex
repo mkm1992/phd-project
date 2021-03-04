@@ -21,6 +21,12 @@
 \usepackage{lastpage}
 % بسته‌ٔ لازم برای: ۱. تغییر شماره‌گذاری صفحات پیوست. ۲. تصحیح باگ آدرس وب حاوی '%' در مراجع
 \usepackage{etoolbox}
+%\usepackage{algpseudocode}
+%\usepackage{algorithm}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+%\usepackage{algorithmic}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% دستورات وابسته به استیل مراجع:
@@ -75,8 +81,8 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 %\usepackage{enumitem}
 \usepackage{setspace}
 % بسته‌های لازم برای نوشتن الگوریتم
-\usepackage{algorithm}
-\usepackage{algorithmic}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
 % بسته‌های لازم برای رسم بهتر جداول
 \usepackage{tabulary}
 \usepackage{tabularx}
@@ -101,7 +107,7 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 % فراخوانی بسته زی‌پرشین (باید آخرین بسته باشد)
 \usepackage[extrafootnotefeatures, localise=on, displaymathdigits=persian]{xepersian}
 
-
+\allowdisplaybreaks
 
 
 \makeatletter
@@ -187,6 +193,18 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \def\listfigurename{فهرست تصاویر}
 \def\listtablename{فهرست جداول}
 
+%\floatstyle{plaintop}
+%\restylefloat{algorithm}
+
+%\usepackage{caption}
+%\captionsetup[algorithm]{singlelinecheck=off}
+%\usepackage{xecolor}
+%\usepackage{cleveref}
+%\crefformat{algorithm}{الگوریتم~(#2#1#3)}
+%\newcommand{\algmargin}{\the\ALG@thistlm}
+%\makeatother
+%\algnewcommand{\parState}[1]{\State \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut\hangindent=\algorithmicindent \hangafter=1 #1\strut}}
+%\setcounter{topnumber}{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% دستورهایی برای سفارشی کردن سربرگ صفحات:
 %\newcommand{\SetHeader}[1]{
@@ -214,7 +232,10 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \doublespacing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % دستوراتی برای اضافه کردن کلمه «فصل» در فهرست مطالب
-
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\usepackage{mathtools}
+\usepackage{stackengine}
+\def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
 \newlength\mylenprt
 \newlength\mylenchp
 \newlength\mylenapp
@@ -229,7 +250,6 @@ colorlinks,linkcolor=blue,citecolor=blue,final]{hyperref}
 \addtolength\mylenprt{\cftpartnumwidth}
 \addtolength\mylenchp{\cftchapnumwidth}
 \addtolength\mylenapp{\cftchapnumwidth}
-
 \setlength\cftpartnumwidth{\mylenprt}
 \setlength\cftchapnumwidth{\mylenchp}	
 

@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<script type="text/javascript" src="util.js"></script>
+		<script type="text/javascript" src="custom_rug.js"></script>
+		<script type="text/javascript" src="jscolor.js"></script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<style>
+		    .color-box{
+		        display: inline-block;
+		        width: 10px;
+		        height: 10px;
+		        background-color: red;
+		    }
+		    ul {
+		        list-style-type: none;
+		        padding: 0;
+		    }
+		    li{
+		        border: 1px solid lightgray;
+		        width: 100px;
+		        padding: 5px;
+		        display: flex;
+		        justify-content: space-between;
+		        align-items: center;
+		    }
+		</style>
+
+	</head>
+
+	<body>
+		<canvas id="canvas"></canvas>
+<!-- 		<canvas id="canvas1" width="100" height="100"></canvas> -->
+
+		<img src="" />
+		<input type="text" id="flag" value="1" />
+		<!--<input type="text" id="thresh" value="35" />-->
+		<input type="text" id="txt_url" value="https://rmimages2.blob.core.windows.net/radici/Iseo/ISEO3_3X4_11/Radici_702883589862_702883589862_40b014d7a13ce09c94c62951bce51a3b614765a1ff43bb8e8b568016a6e5c1ac_S.jpg"/>
+		
+		<input type="button" value="submit" onclick="sendToServer()" />
+		<input class="jscolor" id="color_value" value="ab2567">
+		
+			
+		<input type="text" id="color_number" />
+	<span>select color ----
+        <button onclick="openClose()">v</button>
+    </span>
+    <ul id="color_list" style="display:none;">
+        <!-- <li>
+            <span>1</span>
+            <input type="color" value="">
+        </li>
+        <li>
+            <span>2</span>
+            <input type="color" value="">
+        </li>
+        <li>
+            <span>3</span>
+            <input type="color" value="">
+        </li> -->
+    </ul>
+
+
+		<input type="button" value="change color" onclick="changeColor()" />
+
+		
+
+
+	</body>
+</html>

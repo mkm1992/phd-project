@@ -1,6 +1,6 @@
 %% Physical layer
 R = 500;
-N_Service = 6;
+N_Service = 3;
 N_Slice =  30;
 BW = 120*1e3;%10*1e6;  
 n0 = -174;%-174 ; %dbm
@@ -10,8 +10,9 @@ Pc  = db2pow(Pc1)/1000;
 Pt = 30;
 Pmax = 10*db2pow(Pt)/1000;
 Rt =.01*BW;% .1*BW;%0.1*BW; 
-N_PRB = 10;
+N_PRB = 20;
 N_rrh = 30;
+%N_var = 2;
 imax = 1;
 NumOfUtInService =N_var*ones(1,N_Service);%randi([1 10],1, N_Service); 
 N_Ut = sum(NumOfUtInService);
@@ -30,7 +31,7 @@ C_thresh = 3000*Rt/BW;
 %% VNF MAC LAYER
 N_VNF1 = 10;
 VNF2Slice1 = randi([0 imax],N_VNF1, N_Slice); %5
-N_VNF2 = 10;
+N_VNF2 = N_VNF1;
 VNF2Slice2 = randi([0 imax],N_VNF2, N_Slice); %6
 mu1 = 10* Rt;
 alpha_m1  = Rt;

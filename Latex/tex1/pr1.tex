@@ -1,0 +1,88 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage[T1]{fontenc}
+\usepackage{cite}
+\usepackage{mathtools}
+\usepackage{stackengine}
+\def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfig}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{amsthm}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\allowdisplaybreaks
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\usepackage[margin=0.7in]{geometry}
+\setlength{\columnsep}{11mm}
+\begin{document}
+
+\title{Joint Power Allocation and Network Slicing in an Open RAN System \vspace{-.1cm}
+}
+%
+%\author{\IEEEauthorblockN{1\textsuperscript{st} Mojdeh Karbalaee Motalleb}
+%\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+%\textit{Tehran University}\\
+%Tehran, Iran \\
+%mojdeh.karbalaee@ut.ac.ir}
+%\and
+%\IEEEauthorblockN{2\textsuperscript{nd} Vahid Shah-Mansouri}
+%\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+%\textit{Tehran University}\\
+%Tehran, Iran \\
+%vmansouri@ut.ac.ir}
+%\and
+%\IEEEauthorblockN{3\textsuperscript{rd} Salar Nouri Naghadeh}
+%\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+%\textit{Tehran University}\\
+%Tehran, Iran \\
+%salar.nouri@ut.ac.ir}
+%}
+  \author{
+    \IEEEauthorblockN{Mojdeh Karbalaee Motalleb, Vahid Shah-Mansouri, Salar Nouri Naghadeh}
+    \IEEEauthorblockA{School of ECE, College of Engineering, University of Tehran, Iran \\
+    Email: \{mojdeh.karbalaee, vmansouri, salar.nouri\}@ut.ac.ir,
+    \vspace{-.2cm}
+  }
+  }
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+
+\end{IEEEkeywords}
+
+\section{System Model and Problem Formulation}\label{systemmodel}
+In this section, we consider the downlink of an ORAN system consisting of $V$ services served by an enterprise deploying $S$ slices. We denote $v\in \{1,2,...,V \} $ and $s \in \{1,2,...,S \}$ the set of
+services and slices, respectively. Each service $v$, contains $U_v$ single-antenna UEs. Moreover, each slice $s$, consists of $R_s$ multi-antenna RUs ,which contains $M$ antennas, $K_s$ physical resource blocks (PRBs), one DU and one CU. Each DU and CU consist of $M_{s,1}$ and $M_{s,2}$ VNFs, with the computational capacity
+of $\mu_1$ and $\mu_2$, respectively.
+\subsection{The Achievable Rate}
+Here, we want to obtain achievable data rate. The achievable data rate for the $j^{th}$ UE in $v^{th}$ service can be formulated as 
+\begin{equation}\label{eq1}
+\mathsf{R}_{u(v,j)} = B \log_2({1+ \rho_{u(v,j)}}),
+\end{equation}
+where, $\rho_{u(v,j)}$ is the SNR of $j^{th}$ UE in the $v^{th}$ service that is described as
+\begin{equation}\label{eq2}
+\rho_{u(v,j)} =  \frac{p_{u(v,j)}\sum_{s=1}^{S}|\bold{h}_{R_s,u(v,j)}^H \bold{w}_{R_s,u(v,j)}|^2 a_{v,s}}{BN_0 + I_{u(v,j)}},
+\end{equation}
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+\end{document} 

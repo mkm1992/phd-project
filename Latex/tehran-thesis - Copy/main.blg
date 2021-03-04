@@ -1,0 +1,101 @@
+This is BibTeX, Version 0.99d (TeX Live 2018/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: ./tex/chapter1.aux
+A level-1 auxiliary file: ./tex/chapter2.aux
+A level-1 auxiliary file: ./tex/chapter3.aux
+A level-1 auxiliary file: ./tex/chapter4.aux
+A level-1 auxiliary file: ./tex/chapter5.aux
+The style file: IEEEtran.bst
+A level-1 auxiliary file: ./tex/appendix1.aux
+A level-1 auxiliary file: ./tex/appendix2.aux
+A level-1 auxiliary file: ./tex/appendix3.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ./tex/MyReferences.bib
+Repeated entry---line 597 of file ./tex/MyReferences.bib
+ : @article{fogComputing
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1289 of file ./tex/MyReferences.bib
+ : @online{xran
+ :             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1299 of file ./tex/MyReferences.bib
+ : @article{ns1
+ :             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1421 of file ./tex/MyReferences.bib
+ : @article{checko2015cloud
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1747 of file ./tex/MyReferences.bib
+ : @article{fogComputing
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1821 of file ./tex/MyReferences.bib
+ : @article{fogEdge
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1843 of file ./tex/MyReferences.bib
+ : @article{heterogeneous
+ :                       ,
+I'm skipping whatever remains of this entry
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Too many commas in name 1 of "Chih-Lin I, Sachin Katti, Claudio Coletti, William Diego, Ran Duan, Saeed Ghassemzadeh" for entry oranWP
+while executing---line 2403 of file IEEEtran.bst
+Too many commas in name 1 of "Chih-Lin I, Sachin Katti, Claudio Coletti, William Diego, Ran Duan, Saeed Ghassemzadeh" for entry oranWP
+while executing---line 2403 of file IEEEtran.bst
+Too many commas in name 1 of "Chih-Lin I, Sachin Katti, Claudio Coletti, William Diego, Ran Duan, Saeed Ghassemzadeh" for entry oranWP
+while executing---line 2403 of file IEEEtran.bst
+Warning--empty journal in kawahara2019ran
+Warning--empty journal in cziva2018dynamic
+
+Done.
+You've used 61 entries,
+            4087 wiz_defined-function locations,
+            1155 strings with 18682 characters,
+and the built_in function-call counts, 48671 in all, are:
+= -- 3983
+> -- 1240
+< -- 451
++ -- 687
+- -- 223
+* -- 2358
+:= -- 7175
+add.period$ -- 125
+call.type$ -- 61
+change.case$ -- 61
+chr.to.int$ -- 1014
+cite$ -- 63
+duplicate$ -- 3441
+empty$ -- 3662
+format.name$ -- 264
+if$ -- 11329
+int.to.chr$ -- 0
+int.to.str$ -- 61
+missing$ -- 602
+newline$ -- 218
+num.names$ -- 56
+pop$ -- 1367
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 3727
+stack$ -- 0
+substring$ -- 2463
+swap$ -- 2936
+text.length$ -- 113
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 61
+warning$ -- 2
+while$ -- 230
+width$ -- 63
+write$ -- 627
+(There were 10 error messages)
