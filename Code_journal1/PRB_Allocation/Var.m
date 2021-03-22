@@ -19,3 +19,4 @@ counter_max = 10;
 ChannelGain =  zeros(N_RU ,N_UE);
 RU_UE = zeros(N_RU ,N_UE);
 %% 
+Popt = zeros(1,N_UE);
