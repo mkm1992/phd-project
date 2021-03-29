@@ -11,7 +11,7 @@ run RU_association
 %run PRB_Power_Allocation
 disp(RU_UE)
 disp(UE_S)
-run interference
-run rate
-run Prrh_obtain
-run PowerAllocation
+% run interference
+% run rate
+% run Prrh_obtain
+% run PowerAllocation
