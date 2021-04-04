@@ -10,3 +10,4 @@ ChannelGain = zeros(N_RU,N_UE);
 beamForming = zeros(N_RU ,N_UE);
 run Channel_Gain
 run Precoding
+run PRB_Pow_Alloc

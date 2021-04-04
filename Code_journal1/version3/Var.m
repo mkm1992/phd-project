@@ -19,7 +19,7 @@ counter_max = 10;
 C_tot_RU = sum(Rate_mid_max);
 Capacity_RU = C_tot_RU * randi([1,50],1,N_RU)/100;
 N_Antenna = 1;
-P_RU = zeros(1,N_RU);
+%P_RU = zeros(1,N_RU);
 %% changable variable
 UE_S = randi(N_UE_max,1,S);
 N_UE = sum(UE_S);
