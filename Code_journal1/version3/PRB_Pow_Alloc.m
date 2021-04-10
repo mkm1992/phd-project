@@ -10,7 +10,6 @@ cvx_begin
     Pow_RU(:) <= Pmax*10;
     %Prrh(:) <= 2^C_thresh * var_q *100;
     Popt(:) >= 0; 
-    Popt(:) <= Pmax;
     rate_UE(:) >= Rmin(1)/1000;%.*admission_UE1(:);  
     %PRB_UE(:)> 1
 cvx_end
