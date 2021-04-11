@@ -6,6 +6,14 @@ run Var
 run UE_admission
 %% RU associated in Comp Way, Remove UE that are not admitted
 N_UE = sum(UE_S_Admit);
+Rmin_UE = zeros(1,N_UE);
+t = 0;
+for i = 1:S
+    for j = 1:UE_S_Admit(i)
+        t = t+1;
+        Rmin_UE(t) = Rmin(i);
+    end
+end
 ChannelGain = zeros(N_RU,N_UE);
 beamForming = zeros(N_RU ,N_UE);
 run Channel_Gain

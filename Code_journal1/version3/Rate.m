@@ -1,4 +1,5 @@
-rate_UE = cvx(zeros(1,N_UE));
+%rate_UE = cvx(zeros(1,N_UE));
+rate_UE = zeros(1,N_UE);
 for i = 1:N_UE
     for j = 1:N_RU
         %for z = 1:N_PRB
