@@ -1,7 +1,7 @@
 % PRB & Power Allocation
 cvx_begin
     variables Popt(1,N_UE) 
-    variable PRB_UE(N_PRB, N_UE) binary;
+    %variable PRB_UE(N_PRB, N_UE) binary;
     run Interference
     run Rate
     run P_RU

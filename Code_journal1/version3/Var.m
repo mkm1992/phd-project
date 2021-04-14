@@ -24,7 +24,7 @@ N_Antenna = 1;
 UE_S = randi(N_UE_max,1,S);
 N_UE = sum(UE_S);
 RU_UE = ones(N_RU,N_UE);
-Popt = ones(1,N_UE)*Pmax;
+%Popt = ones(1,N_UE)*Pmax;
 Rmin_UE = zeros(1,N_UE);
 t = 0;
 for i = 1:S
@@ -35,4 +35,4 @@ for i = 1:S
 end
 N_PRB = 12;
 %RU_PRB = randi([0 1],N_RU,N_PRB);
-PRB_UE =  zeros(N_PRB,N_UE);%zeros(N_PRB, N_UE);
+%PRB_UE = randi([0,1],N_PRB,N_UE);%zeros(N_PRB, N_UE);
