@@ -4,10 +4,11 @@ cvx_begin
     %variable PRB_UE(N_PRB, N_UE) binary;
     run Interference
     run Rate
+    %rate_UE = cvx(rate_UE);
     run P_RU
     maximize sum(rate_UE)
     subject to
-    Pow_RU(:) <= Pmax*10;
+    Pow_RU(:) <= Pmax;
     %Prrh(:) <= 2^C_thresh * var_q *100;
     Popt(:) >= 0; 
     rate_UE(:) >= Rmin(1)/1000;%.*admission_UE1(:);  
