@@ -1,6 +1,6 @@
 % Obtain PRB and Power 
 beta = ones(1,N_UE)*Pmax/1;
-alpha = ones(1,N_RU)*Pmax/.01;
+alpha = ones(1,N_RU)*Pmax/.1;
 lambda = ones(1,N_UE).*Rmin_UE/1000;
 run Interference
 run Rate
@@ -19,6 +19,22 @@ for count = 1: counter_max
 %        end
 %     end
     Popt
+    run Rate_PRB
+    H_PRB = zeros(N_PRB, N_UE);
+    for i = 1:N_UE
+        for z = 1:N_PRB
+            temp = sum(alpha(:).*RU_UE(:,i))*Popt(i);
+            H_PRB(z,i) = rate_PRB_UE(z,i) *(1+ lambda(i))-temp + beta(i)*Popt(i);
+        end
+         [m, ind] = max(H_PRB(:,i));
+         PRB_UE(ind,i) = 1;
+         run Rate_PRB
+    end
+%     for i =1:N_UE
+%         [m, ind] = max(H_PRB(:,i));
+%         PRB_UE(ind,i) = 1;
+%         run Rate_PRB
+%     end
     result_old = sum(rate_UE);
     run Interference
     run Rate
