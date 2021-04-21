@@ -22,7 +22,9 @@ PRB_UE = zeros(N_PRB,N_UE);
 run Channel_Gain
 run Precoding
 run RU_association
+%run PRB2UEAllocate
 %run PRB_Pow_Alloc
 run PRB_P
 (rate_UE)>Rmin_UE
-Pow_RU(:) <= Pmax
+Pow_RU(:)' <= Pmax
+(RU_UE*rate_UE')' < Capacity_RU

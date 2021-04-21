@@ -2,6 +2,8 @@
 beta = ones(1,N_UE)*Pmax/1;
 alpha = ones(1,N_RU)*Pmax/.1;
 lambda = ones(1,N_UE).*Rmin_UE/1000;
+tr = ones(1,N_RU).*Capacity_RU/10000;
+zeta_s = ones(1,S)*(alpha_s+ frac1_t);
 run Interference
 run Rate
 run P_RU
@@ -10,7 +12,9 @@ for count = 1: counter_max
     for i = 1:N_UE
         temp = sum(alpha(:).*RU_UE(:,i));
         ze = -beta(i) + temp; 
-        Popt(i) = max(0,(BW*(1+lambda(i))/0.693/ze)-( Intf(i)+BW*N0)/sum(abs(ChannelGain(:,i).* RU_UE(:,i)))); 
+        %ze = temp;
+        tr_sum = sum(tr(:).*RU_UE(:,i));
+        Popt(i) = max(0,(BW*(1+lambda(i)-tr_sum)/0.693/ze)-( Intf(i)+BW*N0)/sum(abs(ChannelGain(:,i).* RU_UE(:,i)))); 
         %Popt(i) = min(Pmax/N_RU, Popt(i));
     end
 %     for z = 1:N_PRB
@@ -24,7 +28,8 @@ for count = 1: counter_max
     for i = 1:N_UE
         for z = 1:N_PRB
             temp = sum(alpha(:).*RU_UE(:,i))*Popt(i);
-            H_PRB(z,i) = rate_PRB_UE(z,i) *(1+ lambda(i))-temp + beta(i)*Popt(i);
+            tr_temp = sum(tr(:).*RU_UE(:,i));
+            H_PRB(z,i) = rate_PRB_UE(z,i) *(1+ lambda(i)-tr_temp)-temp + beta(i)*Popt(i);
         end
          [m, ind] = max(H_PRB(:,i));
          PRB_UE(ind,i) = 1;
