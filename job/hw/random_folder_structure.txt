@@ -1,0 +1,19 @@
+root: | .txt
+      | .txt
+      | .txt
+      | First: | .txt
+               | .txt
+               | .txt
+               | Second: | .txt
+                         | .txt
+                         | .txt
+                         | Third: | .txt
+                                  | .txt
+                                  | .txt
+                                  | Fourth: | .txt
+                                            | .txt
+                                            | .txt
+                                            | Fifth: | .txt
+                                                     | .txt
+                                                     | .txt
+

@@ -1,0 +1,211 @@
+\documentclass[oneside]{article}
+
+\usepackage{siunitx}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{minted}
+\usepackage{lastpage}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{setspace}
+\usepackage[absolute]{textpos}
+\usepackage{xepersian} % Always last package to load
+
+\settextfont{XW Zar}
+%\setlatintextfont{Adobe Garamond Pro}
+%\setlatinmonofont[Scale=0.8]{Monaco}
+\defpersianfont\nastaliqfont{IranNastaliq}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\linespread{1.5}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand*{\fancypagenumber}{%
+\fancyfoot[C]{صفحه
+\thepage
+از
+\pageref{LastPage}}
+}
+\fancypagenumber
+\fancypagestyle{plain}{\fancypagenumber}
+% insert syntax highlighted code from a file
+\newcommand{\inputcode}[2]{\inputminted[mathescape,%
+                                                 linenos=true,%
+                                                 formatcom=\small\setstretch{1}]{#1}{#2}}%
+%\renewcommand{\theFancyVerbLine}{\sffamily\scriptsize
+%\textcolor[rgb]{0.5,0.5,1.0}{\oldstylenums{\arabic{FancyVerbLine}}}}
+\title{تمرین های سری اول درس برنامه نویسی کامپیوتر}
+\author{دکتر شفیعی}
+\begin{document}
+\maketitle
+
+\begin{textblock}{5}(6.5,2)\nastaliqfont
+\noindent\Large
+بسم الله الرحمن الرحیم
+\end{textblock}
+\begin{tcolorbox}
+\begin{center}
+این اولین سری از تمارین مربوطه به پایتون می باشد. در صورت داشتن سوال، در جلسه ی رفع اشکال پاسخ داده می شود 
+\end{center}
+\end{tcolorbox}
+
+\begin{enumerate}
+\item 
+برنامه ای بنویسید که  یک عدد صحیح مثبت را از ورودی گرفته و به اندازه ی ارقام آن از همان عدد چاپ کند برای مثال عدد 523 را گرفته و 5555522333 را چاپ کند. 
+\item
+برنامه ای بنویسید که دو 
+\lr{string}
+ از کاربر بگیرد و در اولی نام و در دومی نام خانوادگی کاربر را قرار داده
+ و در 
+ \lr{string}
+ سومی، نام و نام خانوادگی را بدون فاصله قرار دهد که با چسباندن دو 
+ \lr{string}
+اول و دوم باشد و در 
+ \lr{string}
+ آخری، 
+ نام و نام خانوادگی را با فاصله قرار دهد.
+\item
+\begin{enumerate}
+\item 
+یک اسکریپت پایتون با دیکشنری بنویسید که کلیدها اعداد بین 1 تا 15 باشند و مقادیر مربع کلیدها هستند.
+\item
+از کاربر نام و معدل 10 دانشجو را بگیرید و در دیکشنری (کلید : نام، مقدار : معدل) قرار دهید.
+\item
+یک اسکریپت پایتون با دیکشنری بنویسید که دیکشنری دو مسئله ی قبل را با هم ادغام نماید
+\end{enumerate}
+\item 
+برنامه ای بنویسید که یک کلمه یا جمله
+از کاربر بگیرد و در صورتی که این
+کلمه با مقدار عکس خود یکی باشد، مقدار 
+\lr{true}
+و در غیر این صورت مقدار
+\lr{false}
+را چاپ نماید
+(
+برای مثال 
+\lr{hi ih}
+مقدار 
+\lr{true}
+و 
+\lr{tree}
+مقدار
+\lr{false}
+است.
+)
+\item
+برنامه ای بنویسید که سه نمره ی دانشجو را از کاربر بگیرد.
+\\
+اعداد صحیح یا اعشاری می توانند باشند .حاصل جمع، حاصل ضرب و میانگین اعداد را چاپ کند. به این صورت:
+\\
+\begin{latin}
+\texttt{Please enter 3 integers: 10 13 12.5} \\
+\texttt{Sum is: 35.5 }\\
+\texttt{Product is: 16.25 }\\
+\texttt{Average is: 11.833}
+\end{latin}
+همچنین در صورتی که میانگین نمره ها از $18$ بیشتر باشد، در خروجی مقدار \lr{A}، میانگین بین $16$ تا 
+$18$
+بود مقدار \lr{B}
+و در غیر اینصورت مقدار
+\lr{C}
+را در خروجی چاپ نماید.
+\item
+	برنامه ای بنویسید که از کاربر عدد بگیرد تا زمانی که کاربر عدد صفر را وارد کند. بعد به روش
+\lr{bubble sort}
+  این اعداد را مرتب کنید و در خروجی چاپ کنید. 
+  \\
+راهنمایی:
+\\
+روش
+\lr{bubble sort}
+یک الگوریتم مرتب‌سازی ساده‌است که فهرست را پشت سرهم پیمایش می‌کند تا هر بار عناصر کنارهم را با هم سنجیده و اگر در جای نادرست بودند جابه‌جایشان کند. دراین الگوریتم این کار باید تا زمانی که هیچ جابه‌جایی در فهرست رخ ندهد، ادامه یابد و در آن زمان فهرست مرتب شده‌است.
+\item
+\begin{enumerate}
+\item
+یک فایل متنی درست کنید به این ترتیب که متشکل از 
+\num{1000000}
+ خط باشد که از شماره خط صفر شروع می شود. هر خط این فایل به این شیوه نوشته شده باشد:
+\begin{latin}\inputcode{Text}{random.txt}\end{latin}
+برای تولید عدد تصادفی بین صفر و یک از تابع 
+\lr{\texttt{random}}
+داخل کتابخانه
+\lr{\texttt{numpy.random}}
+استفاده کنید و با 6 رقم بعد از ممیز عدد را نشان دهید. توجه کنید که در این فایل بعد از کلمه
+\lr{Line}
+از فاصله استفاده شده و بعد از شماره خط از 
+\lr{TAB}
+استفاده می شود. زمان اجرای کار را ذخیره کنید و نشان دهید. 
+\item
+سپس همین کار را دقیقا توسط کتابخانه 
+\lr{\texttt{csv}}
+انجام دهید و زمان را اندازه بگیرید و درصد کاهش و یا افزایش را بیان کنید. به نظر شما علت این کاهش یا افزایش چه چیزی می تواند باشد؟ (همه جا از فاصله عادی یا
+\lr{TAB})
+استفاده کنید.
+\item
+در قسمت سوم این سوال اگر کل داده ها را داخل یک لیست در ابتدا ذخیره کنید و سپس داخل فایل بریزید آیا سریع تر خواهد بود؟ در صورت مثبت و منفی بودن جواب علت را توضیح دهید؟
+\end{enumerate}
+در کل یک فایل پایتون خواهیم داشت که از سه قسمت تشکیل شده است و در هر قسمت زمان اجرا ذخیره می شود و نشان داده می شود.
+
+راهنمایی: برای قسمت دوم سوال بایستی از تابع 
+\lr{\texttt{csv.writer}}
+استفاده کنید که ورودی آن 
+\lr{File Handle}
+می باشد و خروجی آن 
+\lr{CSV Handle}
+خواهد بود. متغیر اخیر یک متد به نام 
+\texttt{writerow}
+دارد که یک لیست را ورودی می گیرد و در خروجی چاپ می کند. در قسمت سوم سوال از
+\lr{List Comprehension}
+استفاده کنید. کل عملیات باز کردن فایل و ریختن داده ها در دو خط کد قابل انجام خواهد بود. از تابع 
+\lr{\texttt{writelines}}
+استفاده بفرمایید.
+\item
+در شاخه ای که فایل پایتون شما وجود دارد یک فلدر به نام
+\lr{root}
+بسازید. هدف این است که داخل این فلدر تعدادی فایل و فلدر دیگر بسازیم به این صورت:
+\begin{latin}\inputcode{Text}{random_folder_structure.txt}\end{latin}
+این فلدر تا 5 مرحله شاخه بندی شده است. داخل هر فلدر تعدادی فایل متنی وجود دارد که با 
+\lr{\texttt{.txt}}
+داخل شکل نشان داده شده اند. اسم هر کدام از این فایل ها یک عدد تصادفی بین 0 تا 100 می باشد. توجه کنید که تعداد این فایل ها نیز تصادفی می باشد. 
+\begin{enumerate}
+\item
+برنامه مورد نظر را طوری بنویسید که با هر بار اجرا کردن فلدر ها و فایل های قبلی پاک شوند (در صورت وجود) و دوباره ایجاد شوند.
+\item
+در قسمت دوم همین برنامه با استفاده از تابع
+\lr{\texttt{os.walk}}
+ابتدا تعداد کل فایل های ایجاد شده را بشمارید و سپس  تمامی  فایل هایی که داخل  نام  فایل عدد صفر را دارند به جای عدد صفر از کاراکتر
+\lr{\texttt{'\_'}}
+استفاده کنید 
+(\lr{rename}).
+\end{enumerate}
+راهنمایی: در این تمرین نیاز به استفاده از تعدادی از توابع داخل کتابخانه 
+\lr{\texttt{os}}
+از جمله
+\lr{\texttt{os.path.exists}}
+،
+\lr{\texttt{mkdir}}
+و 
+\lr{\texttt{rename}}
+دارید. همچنین از توابع کتابخانه
+\lr{\texttt{shutil}}
+مثل
+\lr{\texttt{rmtree}}
+نیز می توانید استفاده کنید. با توابع رشته ای هم می توانید جهت عوض کردن اسم فایل کار کنید.
+
+\end{enumerate}
+
+\begin{tcolorbox}
+جهت تحویل تمارین هر تمرین را داخل یک فلدر بریزید که با شماره تمرین نام گذاری شده است و 
+ گزارش کار را به فرمت یک فایل
+\lr{PDF}
+در فلدراصلی قرار دهید. فلدر اصلی را بعد از فشرده سازی به صورت 
+\lr{HW1-\rl{شماره دانشجویی}.\textbf{zip}}
+ نام گزاری، و ارسال کنید.
+\begin{center}
+\textbf{
+مهلت تحویل: تا ساعت 12 ظهر دوشنبه سیزدهم اردیبهشت ماه 1400.
+}
+\end{center}
+\end{tcolorbox}
+\end{document}
