@@ -10,12 +10,12 @@ Pt = 25;
 Pmax = db2pow(Pt)/1000;
 Rmin1 = 1*BW*randi([1,10],1,S);
 [Rmin, I] = sort(Rmin1,'descend');
-Rate_mid_max = BW*randi([5,10],1,S);
+Rate_mid_max = BW*randi([6,10],1,S);
 %% 
 T_max = 50e-3*randi([1,10],1,S); % sec
 N_UE_max = 10;
 N_RU = 4;
-counter_max = 5;
+counter_max = 10;
 %%
 C_tot_RU = sum(Rate_mid_max);
 Capacity_RU = C_tot_RU * randi([10,50],1,N_RU)/100;
@@ -34,6 +34,6 @@ for i = 1:S
         Rmin_UE(t) = Rmin(i);
     end
 end
-N_PRB = 12;
+N_PRB = 6;
 %RU_PRB = randi([0 1],N_RU,N_PRB);
 %PRB_UE = randi([0,1],N_PRB,N_UE);%zeros(N_PRB, N_UE);

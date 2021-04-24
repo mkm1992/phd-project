@@ -13,7 +13,7 @@ Rate_mid_max = 2*BW;
 %% 
 N_PRB = 8;
 T_max = 50e-3; % sec
-N_UE = 5;
+N_UE = 10;
 N_RU = 4;
 counter_max = 10;
 ChannelGain =  zeros(N_RU ,N_UE);

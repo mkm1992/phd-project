@@ -3,7 +3,7 @@ beta = ones(1,N_UE)*Pmax/1;
 alpha = ones(1,N_RU)*Pmax/.1;
 lambda = ones(1,N_UE).*Rmin_UE/1000;
 tr = ones(1,N_RU).*Capacity_RU/10000;
-%zeta_s = ones(1,S)*(alpha_s+ frac1_t);
+zeta_s = ones(1,S)*(alpha_s+ frac1_t);
 run Interference
 run Rate
 run P_RU

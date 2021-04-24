@@ -17,9 +17,14 @@ end
 ChannelGain = zeros(N_RU,N_UE);
 beamForming = zeros(N_RU ,N_UE);
 Popt = ones(1,N_UE)*Pmax;
-PRB_UE = randi([0,1],N_PRB,N_UE);
+%PRB_UE = randi([0,1],N_PRB,N_UE);
+PRB_UE = zeros(N_PRB,N_UE);
 run Channel_Gain
 run Precoding
 run RU_association
+run PRB2UEAllocate
 run PRB_Pow_Alloc
 %run PRB_P
+(rate_UE)>Rmin_UE
+Pow_RU(:)' <= Pmax
+(RU_UE*rate_UE')' < Capacity_RU
