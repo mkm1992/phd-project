@@ -29,3 +29,4 @@ end
 run Channel_Gain
 run Precoding
 run RU_association
+run PRB_Pow_Alloc

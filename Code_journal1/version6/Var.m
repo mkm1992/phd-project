@@ -6,11 +6,13 @@ n0 = -174; %-174 dbm
 N0 = db2pow(n0)/1000;
 Pc1 = 10; %watt
 Pc  = db2pow(Pc1)/1000;
-Pt = 25;
+Pt = 30;
 Pmax = db2pow(Pt)/1000;
-Rmin1 = 1*BW*randi([1,10],1,S);
+Rmin1 = .1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
 [Rmin, I] = sort(Rmin1,'descend');
-Rate_mid_max = BW*randi([1,10],1,S);
+Rate_mid_max = 0.5*BW*randi([1,10],1,S);
+var_q = 1e-6;
+%C_thresh = 3000*Rt/BW;
 %% 
 T_max = 50e-3*randi([1,10],1,S); % sec
 N_UE_max = 10;
@@ -34,6 +36,6 @@ for i = 1:S
         Rmin_UE(t) = Rmin(i);
     end
 end
-N_PRB = 12;
+N_PRB = 6;
 %RU_PRB = randi([0 1],N_RU,N_PRB);
 %PRB_UE = randi([0,1],N_PRB,N_UE);%zeros(N_PRB, N_UE);
