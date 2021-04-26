@@ -12,6 +12,8 @@ Rmin1 = .1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
 [Rmin, I] = sort(Rmin1,'descend');
 Rate_mid_max = 0.5*BW*randi([1,10],1,S);
 var_q = 1e-6;
+alpha_s = .1*BW;
+delay_max = 1e-5;
 %C_thresh = 3000*Rt/BW;
 %% 
 T_max = 50e-3*randi([1,10],1,S); % sec

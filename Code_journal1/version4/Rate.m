@@ -8,3 +8,13 @@ for i = 1:N_UE
         end
     end
 end
+
+
+R_s = zeros(1,S);
+t = 0;
+for s = 1:S
+    for j = 1:UE_S_Admit(i)
+        t = t+1;
+        R_s(s) = R_s(s) + rate_UE(t);
+    end
+end
