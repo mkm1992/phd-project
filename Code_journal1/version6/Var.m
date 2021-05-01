@@ -13,10 +13,14 @@ Rmin1 = .1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
 Rate_mid_max = 0.5*BW*randi([1,10],1,S);
 var_q = 1e-6;
 alpha_s = .1*BW;
-delay_max = 1e-5;
+delay_max = 1e-5*randi([1,10],1,S);;
+mu = 10* Rmin;
+alpha_m  = Rmin;
 %C_thresh = 3000*Rt/BW;
 %% 
-T_max = 50e-3*randi([1,10],1,S); % sec
+T_max = 50e-5*randi([1,10],1,S); % sec
+Delay_Slice = zeros(1,S);
+VNF_NUM =  zeros(1,S);
 N_UE_max = 10;
 N_RU = 4;
 counter_max = 5;
