@@ -21,7 +21,7 @@ for j in range(6):
         with open(str(np.random.randint(100)) + ".txt", "w") as text: #to create an empty txt file
             pass
 
-for directory, folders, files in os.walk(pth): #To search in Root directory
-    for Textnames in files:
-        if "0" in Textnames:
-            os.rename(os.path.join(directory, Textnames), os.path.join(directory, Textnames.replace("0", "_")))
+#for directory, folders, files in os.walk(pth): #To search in Root directory
+#    for Textnames in files:
+#        if "0" in Textnames:
+#            os.rename(os.path.join(directory, Textnames), os.path.join(directory, Textnames.replace("0", "_")))
