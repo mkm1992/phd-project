@@ -13,6 +13,9 @@ for  count_power=1:1
         Popt(:) < Pmax;
         rate_UE(:) > Rmin_UE(:);%.*admission_UE1(:); 
         R_s(:) > alpha_s + 1./delay_max(:);
+%         for s = 1:S
+%            1/(R_s(s)-alpha_s) < delay_max(s);
+%         end
         %rate_UE(:) > 
         %PRB_UE(:)> 1
     cvx_end
