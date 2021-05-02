@@ -29,15 +29,15 @@ end
 run Channel_Gain
 run Precoding
 run RU_association
-count_max = 5;
+count_max = 1;
 T_tot = T_max + delay_max;
 d_new = delay_max;
 d_step = delay_max*.1;
 for counter = 1: count_max
     run PRB_Pow_Alloc
     run findM
-    for s = 1:S
-        delay_max(s) = delay_max(s) - d_step./sqrt(counter).*(lambda1(s)-lambda2(2));
-    end
+%     for s = 1:S
+%         delay_max(s) = delay_max(s) - d_step./sqrt(counter).*(lambda1(s)-lambda2(2));
+%     end
     T_max = T_tot - delay_max;
 end
