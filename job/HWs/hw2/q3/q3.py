@@ -32,13 +32,13 @@ for rank in root.iter('rank'):
 tree.write('output.xml')
 
 
-tree = ET.parse('output.xml')
-root = tree.getroot()
-print(root.tag)
-
-for student in root.findall('student'):
-    rank = int(student.find('rank').text)
-    if rank > 9:
-        root.remove(student)
-
-tree.write('output1.xml')
+#tree = ET.parse('output.xml')
+#root = tree.getroot()
+#print(root.tag)
+#
+#for student in root.findall('student'):
+#    rank = int(student.find('rank').text)
+#    if rank > 9:
+#        root.remove(student)
+#
+#tree.write('output1.xml')
