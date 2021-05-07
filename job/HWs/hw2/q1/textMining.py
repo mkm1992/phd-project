@@ -34,7 +34,7 @@ def find_json_file(name):
         str = str + data[i]
     print(str)
     print('------------')
-    str1 = re.findall(r'\{(.*?)\}', str)
+    str1 = re.findall(r'\[(.*?)\]', str)
     return str1 , str
 
 def sum1(a,b):

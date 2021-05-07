@@ -1,12 +1,13 @@
 import xml.etree.ElementTree as ET
 
-tree = ET.parse('test.xml')
+tree = ET.parse('std.xml')
 root = tree.getroot()
 print(root.tag)
 
-
+count = 0
 for child in root:
     print(child.tag, child.attrib)
+    count+=1
 
 for elem in root:
    for subelem in elem:

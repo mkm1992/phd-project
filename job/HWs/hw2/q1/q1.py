@@ -26,3 +26,4 @@ for f1 in filelist:
 
 User, Pass = textMining.find_user_pass(filename)
 string, str = textMining.find_json_file(filename)
+print(string)
