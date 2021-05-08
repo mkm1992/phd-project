@@ -12,6 +12,7 @@ for child in root:
 for elem in root:
    for subelem in elem:
       print(subelem.text)
+   print("------")
 
 print(root[0][1].text)      
 print('---------------------')
