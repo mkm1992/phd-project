@@ -4,10 +4,21 @@ tree = ET.parse('std.xml')
 root = tree.getroot()
 print(root.tag)
 
+#str = input()
+#count = 0
+#for child in root:
+#    stdNum =child.attrib
+#    if stdNum['std_num'] == str:
+#        counterStd = count
+#    count+= 1
+#print(student[counterStd].find('name').text)
+
+
 count = 0
 for child in root:
     print(child.tag, child.attrib)
     count+=1
+    print(child.attrib)
 
 for elem in root:
    for subelem in elem:
