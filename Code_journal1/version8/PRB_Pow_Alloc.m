@@ -16,11 +16,16 @@ for  count_power=1:1
         rate_UE(:) >= Rmin_UE(:);%.*admission_UE1(:); 
         %R_s(:) > alpha_s + 1./delay_max(:);
         %xx(:).*(R_s(:)-alpha_s) >= 1.;
-        %t(:) = R_s(:) - alpha_s;
         xx(:) > 0
-        xx(:) - 1/((R_s(:)-alpha_s))> 0
         delay_max(:) - xx(:) >= 0
         alpha_s*(delay_max(:) - xx(:))-(mu(:).*(delay_max(:) - xx(:))-1)*10 <= 0
+        %m(:) >= alpha_s*(delay_max(:) - xx(:))./(mu(:).*(delay_max(:) - xx(:))-1)
+        
+%         for s = 1:S
+%            1/(R_s(s)-alpha_s) < delay_max(s);
+%         end
+        %rate_UE(:) > 
+        %PRB_UE(:)> 1
     cvx_end
 
 end

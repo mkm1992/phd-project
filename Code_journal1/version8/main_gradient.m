@@ -18,20 +18,16 @@ ChannelGain = zeros(N_RU,N_UE);
 beamForming = zeros(N_RU ,N_UE);
 Popt = ones(1,N_UE)*Pmax;
 PRB_UE = zeros(N_PRB,N_UE);
-for i =1:N_UE
-    if mod(i,N_PRB)==0
-       PRB_UE(N_PRB,i)= 1;
-    else
-        PRB_UE(mod(i,N_PRB),i) =1 ;
-    end
-
-end
+% for i =1:N_UE
+%     if mod(i,N_PRB)==0
+%        PRB_UE(N_PRB,i)= 1;
+%     else
+%         PRB_UE(mod(i,N_PRB),i) =1 ;
+%     end
+% 
+% end
 run Channel_Gain
 run Precoding
 run RU_association
-count_max = 1;
-run PRB_Pow_Alloc
+run PRB_P
 run findM
-VNF_NUM
-xx
-xx(:).*(R_s(:)-alpha_s) >= 1
