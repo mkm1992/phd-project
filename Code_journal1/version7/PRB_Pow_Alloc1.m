@@ -1,9 +1,6 @@
 for  count_power=1:1 
     cvx_begin
         variables Popt(1,N_UE); 
-        variables xx(1,S);
-        variables m(1,S);
-        %variable PRB_UE(N_PRB, N_UE);
         run Interference
         run Rate
         run P_RU
@@ -14,12 +11,11 @@ for  count_power=1:1
         Popt(:) >= 0; 
         Popt(:) <= Pmax;
         rate_UE(:) >= Rmin_UE(:);%.*admission_UE1(:); 
-        %R_s(:) > alpha_s + 1./delay_max(:);
-        %xx(:).*(R_s(:)-alpha_s) >= 1.;
-        %t(:) = R_s(:) - alpha_s;
-        xx(:) > 0
-        %xx(:) - 1/((R_s(:)-alpha_s))> 0
-        delay_max(:) - xx(:) >= 0
+        w1(:) = alpha_m(:).* delay_max(:);
+        w2(:) = alpha_m(:).^2 .* delay_max(:) + alpha_m(:);
+        w(3) = mu(:).* delay_max(:)-1;
+        w4(:) = mu(:).* delay_max(:).*alpha_m(:)+mu(:) + alpha_m(:);
+        
         alpha_m(:).*(delay_max(:) - xx(:))-(mu(:).*(delay_max(:) - xx(:))-1)*10 <= 0
     cvx_end
 

@@ -34,4 +34,4 @@ run PRB_Pow_Alloc
 run findM
 VNF_NUM
 xx
-xx(:).*(R_s(:)-alpha_s) >= 1
+xx(:).*(R_s(:)-alpha_m(:)) >= 1
