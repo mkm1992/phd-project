@@ -1,0 +1,134 @@
+\documentclass[oneside]{article}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{minted}
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{setspace}
+\usepackage[absolute]{textpos}
+\usepackage{xepersian} % Always last package to load
+\settextfont{B Nazanin}
+\setlatintextfont{Times New Roman}
+%\setlatinmonofont[Scale=0.8]{Monaco}
+\defpersianfont\nastaliqfont{IranNastaliq}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\linespread{1.5}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand*{\fancypagenumber}{%
+\fancyfoot[C]{صفحه
+\thepage
+از
+\pageref{LastPage}}
+}
+\fancypagenumber
+\fancypagestyle{plain}{\fancypagenumber}
+% insert syntax highlighted code from a file
+\newcommand{\inputcode}[2]{\inputminted[mathescape,%
+                                                 linenos=true,%
+                                                 formatcom=\small\setstretch{1}]{#1}{#2}}%
+%\renewcommand{\theFancyVerbLine}{\sffamily\scriptsize
+%\textcolor[rgb]{0.5,0.5,1.0}{\oldstylenums{\arabic{FancyVerbLine}}}}
+\title{تمرین های سری سوم درس
+\lr{Service Based Architecture}
+}
+%\author{دکتر شفیعی}
+\date{\vspace{-5ex}}
+\begin{document}
+\maketitle
+
+\begin{textblock}{5}(6.5,2)\nastaliqfont
+\noindent\Large
+بسم الله الرحمن الرحیم
+\end{textblock}
+%\begin{tcolorbox}
+%\begin{center}
+%این اولین سری از تمارین مربوطه به پایتون می باشد. در صورت داشتن سوال، در جلسه ی رفع اشکال پاسخ داده می شود 
+%\end{center}
+%\end{tcolorbox}
+
+\begin{enumerate}
+\item 
+برنامه ای بنویسید که
+با استفاده از کتابخانه ی
+\lr{SOAPpy}
+یک سرور
+ \lr{SOAP}
+برروی 
+\lr{localhost:8080}
+قرار دهید.
+این برنامه می بایست شامل دو فایل 
+\lr{server}
+و 
+\lr{client}
+باشد.
+در این برنامه فایل 
+\lr{std.xml}
+که در تمرین قبلی نیز بود قرار گرفته است.
+\begin{enumerate}
+\item 
+در این برنامه بر روی سرور تابعی بنویسید که استاد درس ریاضی (با وارد کردن کلمه ی 
+\lr{"teacher"}
+) بتواند نمره ی درس ریاضی را با ورود شماره دانشجویی و نمره ی فرد، در فایل 
+\lr{xml}
+قرار دهد.
+\item
+در بخش دوم تابعی بنویسید که دانشجو(با وارد کردن کلمه 
+\lr{"student"}
+) با ورود شماره دانشجویی خود، بتواند نمره ی خود را برروی کنسول ببیند.
+\item
+در بخش سوم تابعی بنویسید که مدیرگروه (با وارد کردن کلمه
+\lr{"admin"}
+)
+بتواند لیست نمره ی همه ی دانشجوها و معدل نمرات کلاس را ببیند.
+\end{enumerate}
+برای نصب این کتابخانه بر روی پایتون ۲و پایتون
+3
+به ترتیب از دستور های داده شده استفاده کنید و ترجیحا برروی پایتون ۲ نصب نمایید.
+\begin{latin}\inputcode{Text}{m.txt}\end{latin}
+\item
+برنامه ای بنویسید که 
+برروی 
+\lr{localhost:8080}
+سروری را قرار دهد و از متدهای 
+\lr{get}
+و
+\lr{post}
+استفاده گردد.
+فایل 
+\lr{city.json}
+را خوانده و
+در متد
+\lr{get}
+با وارد کردن نام شهر،
+دمای هوا را بدهد و در متد 
+\lr{post}
+با وارد کردن نام شهر، 
+در خروجی نام شهر و دمای هوا را به صورت  
+\lr{json}
+بدهد.
+
+
+
+\end{enumerate}
+
+%\begin{tcolorbox}
+%جهت تحویل تمارین هر تمرین را داخل یک فلدر بریزید که با شماره تمرین نام گذاری شده است و 
+% گزارش کار را به فرمت یک فایل
+%\lr{PDF}
+%در فلدراصلی قرار دهید. فلدر اصلی را بعد از فشرده سازی به صورت 
+%\lr{HW1-\rl{شماره دانشجویی}.\textbf{zip}}
+% نام گزاری، و ارسال کنید.
+%\begin{center}
+%\textbf{
+%مهلت تحویل: تا ساعت 12 ظهر دوشنبه سیزدهم اردیبهشت ماه 1400.
+%}
+%\end{center}
+%\end{tcolorbox}
+\end{document}
