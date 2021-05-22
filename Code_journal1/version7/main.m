@@ -30,8 +30,7 @@ run Channel_Gain
 run Precoding
 run RU_association
 count_max = 1;
-run PRB_Pow_Alloc
+run PRB_Pow_Alloc1
 run findM
 VNF_NUM
-xx
-xx(:).*(R_s(:)-alpha_m(:)) >= 1
+
