@@ -13,10 +13,9 @@ Rmin1 = .1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
 Rate_mid_max = 0.5*BW*randi([1,10],1,S);
 var_q = 1e-6;
 alpha_s = .1*BW;
-%delay_max = 3e-5*randi([1,20],1,S);
-delay_max = [1e-5, 5e-4, 1e-3];
-mu = 1e9.*[1.5, 3, 5];%Rmin .* randi([500,520],1,S)/1000;
-alpha_m  =10e8.*[0.1, 0.5, 1]; %Rmin .* randi([485,499],1,S)/1000;
+delay_max = 3e-5*randi([5,10],1,S);
+mu = Rmin .* randi([500,520],1,S)/1000;
+alpha_m  = Rmin .* randi([485,499],1,S)/1000;
 %C_thresh = 3000*Rt/BW;
 %% 
 T_max = 50e-5*randi([1,10],1,S); % sec
@@ -25,7 +24,6 @@ VNF_NUM =  zeros(1,S);
 N_UE_max = 10;
 N_RU = 4;
 counter_max = 5;
-M_max = 30; %max number of vnf
 %%
 C_tot_RU = sum(Rate_mid_max);
 Capacity_RU = C_tot_RU * randi([10,50],1,N_RU)/100;

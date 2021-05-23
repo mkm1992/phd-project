@@ -8,6 +8,7 @@ run UE_admission
 N_UE = sum(UE_S_Admit);
 Rmin_UE = zeros(1,N_UE);
 t = 0;
+alpha_m = lambda_m.*(UE_S_Admit);
 for i = 1:S
     for j = 1:UE_S_Admit(i)
         t = t+1;
@@ -30,8 +31,7 @@ run Channel_Gain
 run Precoding
 run RU_association
 count_max = 1;
-run PRB_Pow_Alloc
+run PRB_Pow_Alloc1
 run findM
 VNF_NUM
-xx
-xx(:).*(R_s(:)-alpha_s) >= 1
+
