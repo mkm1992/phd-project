@@ -1,11 +1,11 @@
 clear all
 clc
 run var_const
-count_min1 = 3;
+count_min1 = 2;
 count_step1 = 2;
 count_max1 = 12;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 50;
+iter_max = 20;
 sumRate = zeros(numvar,iter_max);
 %% initializing
 number_check = 0;
@@ -18,6 +18,8 @@ for i_count = count_min1:count_step1:count_max1
         run findM
         run Rate_final
         sumRate(number_check,iter) = abs(sum(rate_UE_1));
+        iter
+        i_count
         VNF_NUM
 
     end
