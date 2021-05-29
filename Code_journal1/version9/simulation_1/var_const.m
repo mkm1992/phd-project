@@ -35,7 +35,7 @@ Capacity_RU = [160500, 288900, 502900, 449400];%C_tot_RU * randi([10,50],1,N_RU)
 N_Antenna = 1;
 %P_RU = zeros(1,N_RU);
 %% changable variable
-N_PRB = 10;
+N_PRB = 20;
 
 %RU_PRB = randi([0 1],N_RU,N_PRB);
 %PRB_UE = randi([0,1],N_PRB,N_UE);%zeros(N_PRB, N_UE);

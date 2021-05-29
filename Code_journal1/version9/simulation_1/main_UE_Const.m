@@ -5,7 +5,7 @@ count_min1 = 2;
 count_step1 = 2;
 count_max1 = 12;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 20;
+iter_max = 10;
 sumRate = zeros(numvar,iter_max);
 %% initializing
 number_check = 0;

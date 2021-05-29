@@ -81,44 +81,46 @@
 In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied.
 \section{System Model and Problem Formulation}\label{systemmodel}
 
-In this section, first, we  present the system model. Then, we obtain achievable data rates and delays for the downlink (DL) of the ORAN system. Afterward, we discuss about assignment of physical data center resources.
+In this section, first, we  present the system model. Then, we obtain achievable data rates and delays for the downlink (DL) of the ORAN system. Afterward, we discuss about the assignment of physical data center resources.
 Finally, the main problem is expressed.
 \subsection{System Model}
 Suppose we have three service types includes mMTC, eMBB and URLLC which support different applications.
 Assume we have preallocated slices serving these services;
+So each service request $s$ served by its corresponding slice.
 Each Service $s\in \{1,2,3 \} $ consists of $U_{s}$ request from the 
 single-antenna UEs which require certain QoS to be able to use the requested program indicate service type).
 There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocated to the resources.
-Each slice $s_ \in \{1,23 \}$ consists of $K_{s}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
+Each slice $s_ \in \{1,2,3 \}$ consists of $K_{s}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
 
 Also, each VNF instance is running on the virtual machine (VM) that are using resources from the data centers. Each VM, requires enough resources of CPU, memory, storage and network bandwidth.
 
-In addition, there are $R$ single-antenna RU that are shared between slices. All RUs $r \in \{1,2,...,R \}$
-transmit signals cooperatively to all the UEs(RUs are in comp mode). Moreover, all RUs, have access to PRBs.
+In addition, there are $R$ single-antenna RU that are shared between slices. 
+All RUs $\{ r_i | i\in 1,2,...,R \}$
+transmit signals cooperatively to all the UEs. 
+Also $\mathcal{R} = \{ r_i | i\in 1,2,...,R \}$ depicts the set of o-RUs.
+Moreover, all o-RUs, have access to all PRBs.
 \subsection{The Achievable Rate}
-The SNR of $i^{th}$ UE requesting served at slice $s$ on PRB $k$ is obtained from
+The SNR of $i^{th}$ UE  served at slice $s$ on PRB $k$ is obtained from
 \begin{equation}\label{eq2}
-\rho_{r,u(s,i)}^{k} =  \frac{|p_{r,u(s,i)}^{k}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0 + I_{r,u(s,i)}^{k}},
+\rho_{u(s,i)}^{k} =  \frac{|p_{u(s,i)}^{k}{\bold{h}_{\mathcal{R},u(s,i)}^{H \: k}} \bold{w}_{\mathcal{R},u(s,i)}^{k}}{BN_0 + I_{u(s,i)}^{k}},
 \end{equation} 
-where $p_{r,u(s,i)}^{k}$ represents the transmission power from o-RU $r$ to $i^{th}$ UE served at slice $s$ on PRB $k$. 
-${\bold{h}_{r,u(s,i)}^{k}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
-$r^{th}$ RU to the $i^{th}$ UE in $s^{th}$ slice. In addition, $\bold{w}_{r,u(s,i)}^{k} \in \mathbb{C}^{J}$ depicts the  transmit beamforming vector from $r^{th}$ RU to the $i^{th}$ UE in $s^{th}$ slice that is the zero forcing beamforming vector to minimize the interference which is indicated as below
+where $p_{u(s,i)}^{k}$ represents the transmission power allocated by set of o-RUs $\mathcal{R}$ to $i^{th}$ UE requesting $s^{th}$ service on PRB $k$. 
+${\bold{h}_{\mathcal{R},u(s,i)}^{k}} \in \mathbb{C}^{R}$ is the vector of channel gain of a wireless link from set of 
+$\mathcal{R} = \{r\in 1,2,...,R\}$ O-RUs to the $i^{th}$ UE requesting $s^{th}$ service. In addition, $\bold{w}_{\mathcal{R},u(s,i)}^{k} \in \mathbb{C}^{R}$ depicts the  transmit beamforming vector from set of $\mathcal{R}$ o-RU to the $i^{th}$ UE served by $s^{th}$ slice that is the zero forcing beamforming vector to minimize the interference which is indicated as below
 \begin{equation}
-\bold{w}_{r,u(s,i)}^{k} = {\bold{h}_{r,u(s,i)}^{k}}({\bold{h}_{r,u(s,i)}^{H \: k}} {\bold{h}_{r,u(s,i)}^{k}})^{-1}
+\bold{w}_{\mathcal{R},u(s,i)}^{k} = {\bold{h}_{\mathcal{R},u(s,i)}^{k}}({\bold{h}_{\mathcal{R},u(s,i)}^{H \: k}} {\bold{h}_{\mathcal{R},u(s,i)}^{k}})^{-1}
 \end{equation}
-Moreover, $g_{u(s,i)}^r \in \{0,1\}$ is a binary variable that illustrates whether RU $r$ is mapped to the $i^{th}$ UE allocate to $s^{th}$ slice or not. 
-Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{r,u(s,i)}^{k}$ is the power of interfering signals represented as follow
+Moreover, $BN_0$ denotes the power of Gaussian additive noise, and $I_{u(s,i)}^{k}$ is the power of interfering signals represented as follow
 \begin{equation}
 \begin{split}
-I_{r,u(s,i)}^{k} &=
- \underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} \gamma_{1}  p_{u(s,i)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(s,i)}^{k} g_{u(s,i)}^{r'}|^2}_{\text{(intra-slice interference)}}\\
-&+ \underbrace{\sum_{\substack{n = 1 \\ n\neq s}}^{S}\sum_{l=1}^{{U}_s} \gamma_{2}  p_{u(n,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(n,l)}^{k} g_{u(n,l)}^{r'}|^2}_{\text{(inter-slice interference)}}\\
+I_{u(s,i)}^{k} &=
+ \underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} \gamma_{1}  p_{u(s,i)}^{k} |{\bold{h}_{\mathcal{R},u(s,i)}^{H \: k}} \bold{w}_{\mathcal{R},u(s,i)}^{k} |^2}_{\text{(Interference Power)}}\\
+&+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}_{r_j}^2 |\boldsymbol{h}_{r,{u(s,i)}}|^2 a_{u(s,i)}}_{\text{(Quantization Noise Interference)}}
 \end{split}
 \end{equation}
-where $\gamma_{1} = e^{k}_{r,u(s,i)}e^{k}_{r',u(s,l)}a_{u(s,i)}a_{u(s,l)}$
-and $\gamma_{2} = e^{k}_{r,u(s,i)}e^{k}_{r',u(n,l)}a_{u(s,i)}a_{u(y,l)}$.
+where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}a_{u(s,i)}a_{u(s,l)}$.
 Where $a_{u(s,i)} \in \{0,1\}$ is a binary variable to depict user admission.
-$e^{k}_{r,u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ o-RU.
+$e^{k}_{u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ o-RU.
 
 The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}^{e}$.
 \begin{equation}\label{eq1}
