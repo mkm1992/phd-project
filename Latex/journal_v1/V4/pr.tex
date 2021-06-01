@@ -96,16 +96,16 @@ Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j
 
 Also, each VNF instance is running on the virtual machine (VM) that are using resources from the data centers. Each VM, requires enough resources of CPU, memory, storage and network bandwidth.
 
-In addition, there are $R$ multi-antenna o-RU that are shared between slices. Each RU $r \in \{1,2,...,R \}$
+In addition, there are $R$ multi-antenna O-RU that are shared between slices. Each O-RU $r \in \{1,2,...,R \}$
 has $J$ antenna for transmitting and receiving data.
-Also $\mathcal{R} = \{ r | r\in 1,2,...,R \}$ depicts the set of o-RUs.
-Moreover, all RUs, have access to PRBs.
+Also $\mathcal{R} = \{ r | r\in 1,2,...,R \}$ depicts the set of O-RUs.
+Moreover, all O-RUs, have access to PRBs.
 \subsection{The Achievable Rate}
-The SNR of $i^{th}$ UE requesting served at slice $s$ on PRB $k$ is obtained from
+The SNR of $i^{th}$ UE served at slice $s$ on PRB $k$ is obtained from
 \begin{equation}\label{eq2}
 \rho_{r,u(s,i)}^{k} =  \frac{|p_{r,u(s,i)}^{k}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0 + I_{r,u(s,i)}^{k}},
 \end{equation} 
-where $p_{r,u(s,i)}^{k}$ represents the transmission power from o-RU $r$ to $i^{th}$ UE served at slice $s$ on PRB $k$. 
+where $p_{r,u(s,i)}^{k}$ represents the transmission power from O-RU $r$ to $i^{th}$ UE served at slice $s$ on PRB $k$. 
 ${\bold{h}_{r,u(s,i)}^{k}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
 $r^{th}$ o-RU to the $i^{th}$ UE in $s^{th}$ slice. In addition, $\bold{w}_{r,u(s,i)}^{k} \in \mathbb{C}^{J}$ depicts the  transmit beamforming vector from $r^{th}$ RU to the $i^{th}$ UE in $s^{th}$ slice that is the zero forcing beamforming vector to minimize the interference which is indicated as below
 \begin{equation}

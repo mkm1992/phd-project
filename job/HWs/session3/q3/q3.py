@@ -10,6 +10,7 @@ for child in root:
     count+=1
 
 for elem in root:
+   #ET.Element('child', num=str(1))
    for subelem in elem:
       print(subelem.text)
 
@@ -23,6 +24,9 @@ for std in student:
     print('Name: ', std.find('name').text)
     print('Email: ', std.find('email').text)
     print('Phone: ', std.find('phone').text)
+    data = ET.Element('child', num=str(std))
+    print(data)
+    root.extend(data)
     
 
 
@@ -33,6 +37,24 @@ for rank in root.iter('rank'):
 tree.write('output.xml')
 
 
+
+children = [
+    ET.Element('child', num=str(i))
+    for i in range(3)
+    ]
+
+root.extend(children)
+
+
+count = 0
+for child in root:
+    #print(child.tag, child.attrib)
+    math = ET.Element("math")
+    data = ET.SubElement(math, "10")
+    #root.insert(1,data)
+    #ET.dump(root)
+tree = ET.ElementTree(root)
+tree.write('2.xml')
 #tree = ET.parse('output.xml')
 #root = tree.getroot()
 #print(root.tag)
