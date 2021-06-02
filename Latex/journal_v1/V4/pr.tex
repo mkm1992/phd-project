@@ -92,14 +92,15 @@ Assume we have $S$ preallocated slices serving these $S$ services; There are $S_
 Each Service $s_j\in \{1,2,...,S_j \} $ consists of $U_{s_j}$ request from the 
 single-antenna UEs which require certain QoS to be able to use the requested program($j \in \{1,2,3\}$ indicate service type).
 There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocated to the resources.
-Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j \in \{1,2,3\}$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU,  $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
+Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j \in \{1,2,3\}$ preallocated virtual resource blocks that are mapped to the Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
 
 Also, each VNF instance is running on the virtual machine (VM) that are using resources from the data centers. Each VM, requires enough resources of CPU, memory, storage and network bandwidth.
 
 In addition, there are $R$ multi-antenna O-RU that are shared between slices. Each O-RU $r \in \{1,2,...,R \}$
 has $J$ antenna for transmitting and receiving data.
 Also $\mathcal{R} = \{ r | r\in 1,2,...,R \}$ depicts the set of O-RUs.
-Moreover, all O-RUs, have access to PRBs.
+Moreover, all O-RUs, have access to the all PRBs.
+Coordinated multipoint (CoMP) system is considered here. 
 \subsection{The Achievable Rate}
 The SNR of $i^{th}$ UE served at slice $s$ on PRB $k$ is obtained from
 \begin{equation}\label{eq2}
