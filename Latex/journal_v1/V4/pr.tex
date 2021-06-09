@@ -87,9 +87,9 @@ Finally, the main problem is expressed.
 Suppose we have three service types includes mMTC, eMBB and URLLC which support different applications.
 
 Assume we have $S_1$, $S_2$ and $S_3$ different applications for the first, second and third service type, respectively ($S = S_1 + S_2 + S_3$).
-Assume we have $S$ preallocated slices serving these $S$ services; There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC) and $S_3$ slices for the third service type (mMtc). So each service request $s$ served by its corresponding slice.
+So, we have $S$ preallocated slices serving these $S$ services; There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC) and $S_3$ slices for the third service type (mMtc). So each service request $s$ served by its corresponding slice.
 
-Each Service $s_j\in \{1,2,...,S_j \} $ consists of $U_{s_j}$ request from the 
+Each Service $s_j\in \{1,2,...,S_j\} $ consists of $U_{s}$ request from the 
 single-antenna UEs which require certain QoS to be able to use the requested program($j \in \{1,2,3\}$ indicate service type).
 There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocated to the resources.
 Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j \in \{1,2,3\}$ preallocated virtual resource blocks that are mapped to the Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
@@ -100,33 +100,44 @@ In addition, there are $R$ multi-antenna O-RU that are shared between slices. Ea
 has $J$ antenna for transmitting and receiving data.
 Also $\mathcal{R} = \{ r | r\in 1,2,...,R \}$ depicts the set of O-RUs.
 Moreover, all O-RUs, have access to the all PRBs.
-Coordinated multipoint (CoMP) system is considered here. 
+%Coordinated multipoint (CoMP) system is considered here. 
 \subsection{The Achievable Rate}
 The SNR of $i^{th}$ UE served at slice $s$ on PRB $k$ is obtained from
-\begin{equation}\label{eq2}
+\begin{equation}\label{eq1}
 \rho_{r,u(s,i)}^{k} =  \frac{|p_{r,u(s,i)}^{k}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0 + I_{r,u(s,i)}^{k}},
 \end{equation} 
 where $p_{r,u(s,i)}^{k}$ represents the transmission power from O-RU $r$ to $i^{th}$ UE served at slice $s$ on PRB $k$. 
 ${\bold{h}_{r,u(s,i)}^{k}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
-$r^{th}$ o-RU to the $i^{th}$ UE in $s^{th}$ slice. In addition, $\bold{w}_{r,u(s,i)}^{k} \in \mathbb{C}^{J}$ depicts the  transmit beamforming vector from $r^{th}$ RU to the $i^{th}$ UE in $s^{th}$ slice that is the zero forcing beamforming vector to minimize the interference which is indicated as below
+$r^{th}$ O-RU to the $i^{th}$ UE in $s^{th}$ slice. In addition, $\bold{w}_{r,u(s,i)}^{k} \in \mathbb{C}^{J}$ depicts the  transmit beamforming vector from $r^{th}$ O-RU to the $i^{th}$ UE in $s^{th}$ slice that is the zero forcing beamforming vector to minimize the interference which is indicated as below
 \begin{equation}
 \bold{w}_{r,u(s,i)}^{k} = {\bold{h}_{r,u(s,i)}^{k}}({\bold{h}_{r,u(s,i)}^{H \: k}} {\bold{h}_{r,u(s,i)}^{k}})^{-1}
 \end{equation}
-Moreover, $g_{u(s,i)}^r \in \{0,1\}$ is the binary value that illustrates whether RU $r$ served the $i^{th}$ UE allocate to $s^{th}$ slice or not. Here, it is assumed that each UE is served by the nearest o-RU
-Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{u(s,i)}^{k}$ is the power of interfering signals represented as follow
-\begin{equation}
+Moreover, $g_{u(s,i)}^r \in \{0,1\}$ is the binary variable that illustrates whether O-RU $r$ served the $i^{th}$ UE that is allocated to $s^{th}$ slice or not. 
+%Here, it is assumed that each UE is served by the nearest o-RU
+Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{r,u(s,i)}^{k}$ is the power of interfering signals represented as follow
+
+\begin{equation}\label{eqI}
 \begin{split}
-I_{u(s,i)}^{k} &=
- \underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} \gamma_{1}  p_{u(s,i)}^{k} |{\bold{h}_{\mathcal{R},u(s,i)}^{H \: k}} \bold{w}_{\mathcal{R},u(s,i)}^{k} |^2}_{\text{(Interference Power)}}\\
-&+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}_{r_j}^2 |\boldsymbol{h}_{r,{u(s,i)}}|^2 a_{u(s,i)}}_{\text{(Quantization Noise Interference)}}
+I_{r,u(s,i)}^{k} &=
+ \underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} \gamma_{1}  p_{u(s,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(s,l)}^{k} g_{u(s,l)}^{r'}|^2}_{\text{(intra-slice interference)}}\\
+&+ \underbrace{\sum_{\substack{n = 1 \\ n\neq s}}^{S}\sum_{l=1}^{{U}_s} \gamma_{2}  p_{u(n,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(n,l)}^{k} g_{u(n,l)}^{r'}|^2}_{\text{(inter-slice interference)}}\\
+&+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}_{r_j}^2 |\boldsymbol{h}_{r,{u(s,i)}}|^2 }_{\text{(Quantization Noise Interference)}}
 \end{split}
 \end{equation}
-where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}a_{u(s,i)}a_{u(s,l)}$.
-Where $a_{u(s,i)} \in \{0,1\}$ is a binary variable to depict user admission.
+where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}$ and $\gamma_{2} = e^{k}_{u(s,i)}e^{k}_{u(n,l)}$.\newline
 $e^{k}_{u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ o-RU.
 
-The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}^{e}$.
-\begin{equation}\label{eq1}
+To obtain SNR as formulated in \eqref{eq1}, let $y_{u(s,i)} $ be the received signal user $i$ in $s^{th}$ service
+\begin{equation}\label{eq2}
+\textstyle y_{u(s,i)} = \sum_{r = 1}^{R}\sum_{k=1}^{K_s} \boldsymbol{h}^{H \: k}_{r,u(s,i)} g_{u(s,i)}^r e^k_{r,u(s,i)}\mathfrak{y}^k_{r,u(s,i)}+ z_{u(s,i)},
+\end{equation}
+%\boldsymbol{w}^k_{r,u(s,i)}p^k_{r,u(s,i)}
+where $\mathfrak{y}^k_{r,u(s,i)} =\boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2}}_{r,u(s,i)}} x_{u(s,i)}+ \boldsymbol{q}_{r}$
+and $ x_{u(s,i)}$ depicts the transmitted symbol vector of UE $i$ in $s^{th}$ set of service,  $z_{u(s,i)}$ is the additive Gaussian noise $z_{u(s,i)} \backsim \mathcal{N}(0,N_0)$ and $N_0$ is the noise power.
+In addition, $\boldsymbol{q}_{r} \in \mathbb{C}^{J }  $ indicates the quantization noise, which is made from signal compression in O-DU.
+
+The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}^{e}$ that is formulated as below.
+\begin{equation}\label{eq3}
 \begin{split}
 \mathcal{R}_{u(s_1,i)}^{e,r} &= \sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}})a_{u(s_1,i)} e^k_{r,u(s_1,i)},\\
 \mathcal{R}_{u(s_1,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{e,r} 
@@ -134,19 +145,34 @@ The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ applica
 \end{equation}
 where $B$ is the bandwidth of system. 
 $\mathcal{R}_{u(s_1,i)}^{e,r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_1$.
-Since the blocklength in URLLC is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{2}^{th}$ application of service type 2 (URLLC) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated from follow
+Since the blocklength in URLLC and mMtc is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{j}^{th}$ ( $j \in \{1,2\}$) application of service type 2 (URLLC) and 3 (mMtc) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated from follow
 \begin{equation}\label{eq11}
 \begin{split}
-\mathcal{R}_{u(s_2,i)}^{u,r} &= \sum_{k=1}^{K_{s_2}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_2,i)}^{k}){\beta}_{u(s_2,i)}^{k}\\
-\mathcal{R}_{u(s_1,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_2,i)}^{e,r} 
+\mathcal{R}_{u(s_j,i)}^{u,r} &= \sum_{k=1}^{K_{s_j}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_j,i)}^{k}){\beta}_{u(s_j,i)}^{k}\\
+\mathcal{R}_{u(s_j,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_j,i)}^{e,r} 
 \end{split}
 \end{equation}
-Where ${\beta}_{u(s_2,i)}^{k}=a_{u(s_2,i)} e^{k}_{u(s_2,i)}$
-and $\zeta_{u(s_2,i)}^{k} = log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{C_{u(s_2,i)}^{k}}{N_{u(s_2,i)}^{k}}})$
+Where ${\beta}_{u(s_2,i)}^{k}=a_{u(s_2,i)} e^{k}_{u(s_2,i)}$, $j \in \{1,2\}$
+and $\zeta_{u(s_j,i)}^{k} = log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{C_{u(s_j,i)}^{k}}{N_{u(s_j,i)}^{k}}})$
 Where, $\epsilon $ is the transmission probability, $Q^{-1}$ is the inverse of Q- function (Gaussian),
-$C_{u(s_2,i)}^{k} = 1 - \frac{1}{(1+\rho_{u(s_2,i)}^{k})}$ depicts the channel dispersion of UE  $i$ at slice $s_2$, experiencing PRB $k$ and
-$N_{u(s_2,i)}^{k}$ represents the blocklength of it. 
-$\mathcal{R}_{u(s_1,i)}^{e,r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_2$.
+$C_{u(s_j,i)}^{k} = 1 - \frac{1}{(1+\rho_{u(s_j,i)}^{k})}$ depicts the channel dispersion of UE  $i$ at slice $s_j$, experiencing PRB $k$ and
+$N_{u(s_j,i)}^{k}$ represents the blocklength of it. 
+$\mathcal{R}_{u(s_j,i)}^{e,r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_j$.
+
+If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$. Therefore, $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , \forall i$ is derived by using $\bar{I}_{r,u(s,i)}^{k}$ instead of $I_{r,u(s,i)}^{k}$ in  \eqref{eq1}.
+\subsection{Power of O-RU and Fronthaul Capacity}
+Let $P_r$ denote the power of transmitted signal from the $r^{th}$ RU to UEs served by it.
+From \eqref{eq2}, we have,
+\begin{equation}
+P_r = \sum_{s=1}^{S}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 \bold{p}_{r,u(s,i)}^{k} + \sigma_{q_{r(s,j)}}^2.
+\end{equation}
+Nevertheless, the rate of users on the fronthual link between DU and the $r^{th}$ RU  is formulated as
+%\cite{simeone2016cloud, 1111}
+\begin{equation}
+C_{r} = \log{(1+ \frac{\sum_{s=1}^{S}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 \bold{p}_{r,u(s,i)}^{k} }{ \sigma_{q_{r}}^2})},
+\end{equation}
+where, $a_{v,s}$ is a binary variable denotes whether the slice $s$ is mapped to service $v$ or not .
+
 \subsection{Mean Delay}
 In this part, the end to end mean delay for a service is obtained.
 Suppose the mean total delay is depicted as $T_{tot}$.
@@ -161,7 +187,9 @@ T_{propagation} &= T_{front} + T_{mid} + T_{back} + T_{trans2net} \\
 %T_{tot} = T_{RU} + T_{front} + T_{DU} + T_{mid} + T_{CU} + T_{back} + T_{core} + T_{trans2net}
 Total delay is sum of processing delay, transmission delay and propagation delay. 
 The propagation delay is the time takes for a signal to reach to its destination. So it has a constant value based on the length of fiber link ($T = L/c$, where $L$ is the length of link and c is the speed of signal).
-Here we assume the value of propagation delay is negligible compared to the rest.
+Also, the transmission delay is the amount of time required to push all the packets into the fiber link. 
+($T = \frac{\alpha}{R}$ Where, $R$ is the rate of transmission in each link and $\alpha$ is the mean arrival data rate of the each link which is constant in this model.)
+Here we assume the value of propagation delay and transmission is negligible compared to the rest.
 \subsubsection{Processing Delay}
 Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(s,i)}$ for the $i^{th}$ UE of the $s^{th}$ slice.
 Therefore, the mean arrival data rate of the $s^{th}$ slice in the UPF layer is $\alpha_{s}^1 = \sum_{u=1}^{U_s}a_{u(s,i)}\lambda_{u(s,i)}$, where $a_{u(s,i)}$ is a binary variable which indicates whether the $i^{th}$ UE requested $s^{th}$ service is admitted or not.
@@ -199,62 +227,9 @@ So the mean processing delay for each UE in slice $s$ is
 \begin{equation}
 T_{process}^{s} =  T_{RU}^{s} + T_{DU}^{s} + T_{CU}^{s} + T_{UPF}^{s}
 \end{equation}
-\subsubsection{Transmission Delay}
-The transmission delay is the amount of time required to push all the packets into the fiber link. 
-Here, we have transmission delay in fronthaul, midhaul, backhaul and the link to transmit data to internet.
-\begin{equation}
-\begin{split}
-T_{front} =& \frac{\alpha_{s}^{f}}{R_f} \\
-T_{mid} =&  \frac{\alpha_{s}^{m}}{R_m} \\
-T_{back} =& \frac{\alpha_{s}^{b}}{R_b} \\
-T_{trans2net} =& \frac{\alpha_{s}^{t}}{R_t} \\
-\end{split}
-\end{equation}
-Where, $R_f$, $R_m$, $R_b$ and $R_t$ are the rate of transmission in fronthaul, midhaul, backhaul and the link to transmit data to internet, respectively.
-Furthermore, the mean arrival data rate of the each link ($\alpha_{s}^i$ , $i \in \{f,m,b,t\}$) is approximately equal to others ($\alpha_{s} \approx \alpha_{s}^i$ , $i \in \{f,m,b,t\}$).  
-\subsection{Delay for URLLC}
-As we know, UEs request URLLC services, require services with low latency.
-For the M/M/1 system, the probability of the delay for each application $s$ in the UPF, CU, DU and RU is as follow, respectively
-\begin{equation}
-\begin{split}
-P_r\{T_{UPF}^{s} \geq T_{UPF}^{max}\} &= e^{-(\mu_u - \alpha_{s}/{M_s^{u}})T_{UPF}^{max}}\\
-P_r\{T_{CU}^{s} \geq T_{CU}^{max}\} &= e^{-(\mu_c - \alpha_{s}/{M_s^{c}})T_{CU}^{max}}\\
-P_r\{T_{DU}^{s} \geq T_{DU}^{max}\} &= e^{-(\mu_d - \alpha_{s}/{M_s^{d}})T_{DU}^{max}}\\
-P_r\{T_{RU}^{s} \geq T_{RU}^{max}\} &= e^{-(R_{{tot}_s} - \alpha_{s})T_{RU}^{max}}\\
-\end{split}
-\end{equation} 
-So the probability of coincidence of these events is as follow
-\begin{equation}
-P_r\{E_1, E_2, E_3, E_4\} = A_1 A_2 A_3 A_4,
-\end{equation}
-Where $E_1 = T_{UPF}^{s} \geq T_{UPF}^{max}$, $E_2 =T_{CU}^{s} \geq T_{CU}^{max} $, $E_3 =T_{DU}^{s} \geq T_{DU}^{max} $ and $E_4 =T_{RU}^{s} \geq T_{RU}^{max} $.
-Also $A_1=e^{-(\mu_u - \alpha_{s}/{M_s^{u}})T_{UPF}^{max}}$, $A_2=e^{-(\mu_c - \alpha_{s}/{M_s^{c}})T_{CU}^{max}}$, $A_3= e^{-(\mu_d - \alpha_{s}/{M_s^{d}})T_{DU}^{max}}$ and $A_4 = e^{-(R_{{tot}_s} - \alpha_{s})T_{RU}^{max}}$.
-\subsection{Physical Data Center Resource}
-Each VNF requires
-physical resources that contain memory, storage, CPU and Network Bandwidth.
-Let the required resources for VNF $f$ in slice $s$ is represented by a tuple as
-\begin{equation}
-\bar{\Omega}_{s}^f = \{\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f, \Omega_{N,{s}}^f \},
-\end{equation}
-where $\bar{\Omega}_{s}^f\in \mathbb{C}^{4}$ and $\Omega_{M,{s}}^f, \Omega_{S,{s}}^f, \Omega_{C,{s}}^f, \Omega_{N,{s}}^f$ indicate the amount of required memory, storage, CPU and and Network Bandwidth, respectively.
-Moreover, the total amount of required memory, storage, CPU and Network Bandwidth of all VNFs of a slice in DU, CU and UPF is defined as below, respectively
-\begin{equation}
-\begin{split}
-&\bar{\Omega}_{\mathfrak{z},s}^{tot,d} = \sum_{f=1}^{M_{s}^d}\bar{\Omega}_{\mathfrak{z},s}^{f,d} \;\; \mathfrak{z} \in \{M, S, C, N\}.\\
-&\bar{\Omega}_{\mathfrak{z},s}^{tot,c} = \sum_{f=1}^{M_{s}^c}\bar{\Omega}_{\mathfrak{z},s}^{f,c} \;\; \mathfrak{z} \in \{M, S, C, N\}.\\
-&\bar{\Omega}_{\mathfrak{z},s}^{tot,u} = \sum_{f=1}^{M_{s}^u}\bar{\Omega}_{\mathfrak{z},s}^{f,u} \;\; \mathfrak{z} \in \{M, S, C, N\}.\\
-\end{split}
-\end{equation}
-Where, $\bar{\Omega}_{\mathfrak{z},s}^{f,d}$, $\bar{\Omega}_{\mathfrak{z},s}^{f,c}$ and $\bar{\Omega}_{\mathfrak{z},s}^{f,u}$ are the amount of resource that a VNF required in DU, CU and UPF, respectively.
-\begin{equation}
- \bar{\Omega}_{\mathfrak{z},s}^{tot} = \bar{\Omega}_{\mathfrak{z},s}^{tot,d}+ \bar{\Omega}_{\mathfrak{z},s}^{tot,c}+\bar{\Omega}_{\mathfrak{z},s}^{tot,u}
-\end{equation} 
-Also, there are $D_c$ data centers (DC), serving the VNFs. Each DC contains several servers that supply VNF requirements.
-The amount of memory, storage, CPU and and Network Bandwidth is denoted by $\tau_{M_{j}}, \tau_{S_{j}}$, $\tau_{C_{j}} $ and $\tau_{N_{j}} $ for the $j^{th}$ DC, respectively
-\begin{equation*}
-\tau_j = \{\tau_{M_{j}}, \tau_{S_{j}}, \tau_{C_{j}}, \tau_{N_{j}} \},
-\end{equation*}
-In this system model, the assignment of physical DC resources to VNFs is considered. Let $y_{s,d}$ be a binary variable indicating whether the $d^{th}$ DC is allocated the resources to the VNFs of $s^{th}$ slice or not.
+
+%Furthermore, the mean arrival data rate of the each link ($\textstyle \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$) is approximately equal to others ($\textstyle \alpha_{s} \approx \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$).  
+
 \subsection{Problem Statement}
 %In this system, the goal is to minimize the cost of the system.
 Power of each O-RU is obtained as below
