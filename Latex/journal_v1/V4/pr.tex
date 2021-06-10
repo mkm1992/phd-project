@@ -87,7 +87,7 @@ Finally, the main problem is expressed.
 Suppose we have three service types includes mMTC, eMBB and URLLC which support different applications.
 
 Assume we have $S_1$, $S_2$ and $S_3$ different applications for the first, second and third service type, respectively ($S = S_1 + S_2 + S_3$).
-So, we have $S$ preallocated slices serving these $S$ services; There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC) and $S_3$ slices for the third service type (mMtc). So each service request $s$ served by its corresponding slice.
+So, we have $S$ preallocated slices serving these $S$ services; There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC) and $S_3$ slices for the third service type (mMTC). So each service request $s$ served by its corresponding slice.
 
 Each Service $s_j\in \{1,2,...,S_j\} $ consists of $U_{s}$ request from the 
 single-antenna UEs which require certain QoS to be able to use the requested program($j \in \{1,2,3\}$ indicate service type).
@@ -136,43 +136,44 @@ where $\mathfrak{y}^k_{r,u(s,i)} =\boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2
 and $ x_{u(s,i)}$ depicts the transmitted symbol vector of UE $i$ in $s^{th}$ set of service,  $z_{u(s,i)}$ is the additive Gaussian noise $z_{u(s,i)} \backsim \mathcal{N}(0,N_0)$ and $N_0$ is the noise power.
 In addition, $\boldsymbol{q}_{r} \in \mathbb{C}^{J }  $ indicates the quantization noise, which is made from signal compression in O-DU.
 
-The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}^{e}$ that is formulated as below.
+The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}$ that is formulated as below.
 \begin{equation}\label{eq3}
 \begin{split}
-\mathcal{R}_{u(s_1,i)}^{e,r} &= \sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}})a_{u(s_1,i)} e^k_{r,u(s_1,i)},\\
-\mathcal{R}_{u(s_1,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{e,r} 
+\mathcal{R}_{u(s_1,i)}^{r} &= \sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}} e^k_{r,u(s_1,i)}),\\
+\mathcal{R}_{u(s_1,i)} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{r} 
 \end{split}
 \end{equation}
 where $B$ is the bandwidth of system. 
-$\mathcal{R}_{u(s_1,i)}^{e,r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_1$.
-Since the blocklength in URLLC and mMtc is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{j}^{th}$ ( $j \in \{1,2\}$) application of service type 2 (URLLC) and 3 (mMtc) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated from follow
+$\mathcal{R}_{u(s_1,i)}^{r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_1$.
+Since the blocklength in URLLC and mMTC is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{j}^{th}$ ( $j \in \{2,3\}$) application of service type 2 (URLLC) and 3 (mMTC) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated from follow
 \begin{equation}\label{eq11}
 \begin{split}
-\mathcal{R}_{u(s_j,i)}^{u,r} &= \sum_{k=1}^{K_{s_j}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_j,i)}^{k}){\beta}_{u(s_j,i)}^{k}\\
-\mathcal{R}_{u(s_j,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_j,i)}^{e,r} 
+\mathcal{R}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K_{s_j}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k}\\
+\mathcal{R}_{u(s_j,i)} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_j,i)}^{r} 
 \end{split}
 \end{equation}
-Where ${\beta}_{u(s_2,i)}^{k}=a_{u(s_2,i)} e^{k}_{u(s_2,i)}$, $j \in \{1,2\}$
-and $\zeta_{u(s_j,i)}^{k} = log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{C_{u(s_j,i)}^{k}}{N_{u(s_j,i)}^{k}}})$
+Where $j \in \{1,2\}$. Also we have
+\begin{equation}\label{shortPacket}
+ \zeta_{u(s_j,i)}^{k} = log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{\mathfrak{C}_{u(s_j,i)}^{k}}{N_{u(s_j,i)}^{k}}})
+\end{equation}
 Where, $\epsilon $ is the transmission probability, $Q^{-1}$ is the inverse of Q- function (Gaussian),
-$C_{u(s_j,i)}^{k} = 1 - \frac{1}{(1+\rho_{u(s_j,i)}^{k})}$ depicts the channel dispersion of UE  $i$ at slice $s_j$, experiencing PRB $k$ and
+$\mathfrak{C}_{u(s_j,i)}^{k} = 1 - \frac{1}{(1+\rho_{u(s_j,i)}^{k})^2}$ depicts the channel dispersion of UE  $i$ at slice $s_j$, experiencing PRB $k$ and
 $N_{u(s_j,i)}^{k}$ represents the blocklength of it. 
-$\mathcal{R}_{u(s_j,i)}^{e,r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_j$.
+$\mathcal{R}_{u(s_j,i)}^{e,r}$ is the achievable rate of each O-RU $r$ to UE $i$ in slice $s_j$.
 
-If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$. Therefore, $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , \forall i$ is derived by using $\bar{I}_{r,u(s,i)}^{k}$ instead of $I_{r,u(s,i)}^{k}$ in  \eqref{eq1}.
+If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$. Therefore, $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , \forall i$ is derived by using $\bar{I}_{r,u(s,i)}^{k}$ instead of $I_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3}.
 \subsection{Power of O-RU and Fronthaul Capacity}
-Let $P_r$ denote the power of transmitted signal from the $r^{th}$ RU to UEs served by it.
+Let $P_r$ denote the power of transmitted signal from the $r^{th}$ O-RU to UEs served by it.
 From \eqref{eq2}, we have,
 \begin{equation}
-P_r = \sum_{s=1}^{S}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 \bold{p}_{r,u(s,i)}^{k} + \sigma_{q_{r(s,j)}}^2.
+P_r = \sum_{s=1}^{S}\sum_{k=1}^{K_s}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r e^k_{r,u(s,i)}+ \sigma_{q_{r(s,j)}}^2.
 \end{equation}
-Nevertheless, the rate of users on the fronthual link between DU and the $r^{th}$ RU  is formulated as
+Since we have fiber link between O-RU and O-DU, the rate of users on the fronthual link between O-DU and the $r^{th}$ O-RU  is formulated as
 %\cite{simeone2016cloud, 1111}
 \begin{equation}
-C_{r} = \log{(1+ \frac{\sum_{s=1}^{S}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 \bold{p}_{r,u(s,i)}^{k} }{ \sigma_{q_{r}}^2})},
+C_{r} = \log{(1+ \frac{\sum_{s=1}^{S}\sum_{k=1}^{K_s}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 \mathcal{\alpha}^k_{r,u(s,i)} }{ \sigma_{q_{r}}^2})},
 \end{equation}
-where, $a_{v,s}$ is a binary variable denotes whether the slice $s$ is mapped to service $v$ or not .
-
+Where, $\mathcal{\alpha}^k_{r,u(s,i)}= p_{r,u(s,i)}^{k} g_{u(s,i)}^r e^k_{r,u(s,i)}$ and $\sigma_{q_{r}}^2$ is the power of quantization noise.
 \subsection{Mean Delay}
 In this part, the end to end mean delay for a service is obtained.
 Suppose the mean total delay is depicted as $T_{tot}$.
@@ -229,70 +230,65 @@ T_{process}^{s} =  T_{RU}^{s} + T_{DU}^{s} + T_{CU}^{s} + T_{UPF}^{s}
 \end{equation}
 
 %Furthermore, the mean arrival data rate of the each link ($\textstyle \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$) is approximately equal to others ($\textstyle \alpha_{s} \approx \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$).  
-
-\subsection{Problem Statement}
-%In this system, the goal is to minimize the cost of the system.
-Power of each O-RU is obtained as below
-\begin{equation}
-P_r =  \sum_{s=1}^{S} \sum_{i=1}^{U_v} \sum_{k=1}^{K_s}p_{r,u(s,i)}^{k}a_{u(s,i)} e^{k}_{r,u(s,i)}g_{u(s,i)}^r.
-\end{equation}
-%The total power cost of O-RUs for transmitting data to UE is depicted as follow
-%\begin{equation}
-%P_{tot} = \sum_{r=1}^{R}P_r
-%\end{equation}
+\subsection{VNF Power}
 Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
 $\phi_{s}$. So the total power of the system for all active DCs that are connected to slices can be represented as
 \begin{equation*}
-\textstyle \phi_{tot} = \sum_{s=1}^{S}\phi_{s} + \sum_{d=1}^{D_c}z_d \psi_d .
+\textstyle \phi_{tot} = \sum_{s=1}^{S}\phi_{s}.
 \end{equation*}
-Where,$z_d$ is shown that whether the $d^{th}$ DC is turned on or not and $\psi_d$ is a static cost when a DC is active.
-\begin{equation}
-  z_d =
-    \begin{cases}
-      1 & \sum_{s=1}^{S}y_{s,d} \geq 1 \\
-      0 & \text{otherwise}
-    \end{cases}       
-\end{equation}  
-In addition, $\phi_{s}$ is obtained from below
+Where, $\phi_{s}$ is obtained from below
 \begin{equation}
 \phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M_s^d \phi_s^d
 \end{equation}
-Where, $\phi_s^u$, $\phi_s^c$ and $\phi_s^d$ are the static cost of energy in UPF, CU and DU, respectively. 
-So the optimization problem is formulated as follow.
-The aim of this paper is to maximize the sum rate of all UEs  with the presence of constraints which is written as follow,
-\begin{subequations}
+Moreover, $\phi_s^u$, $\phi_s^c$ and $\phi_s^d$ are the static cost of energy in UPF, O-CU and O-DU, respectively. 
+\subsection{Problem Statement}
+The optimization problem is formulated as follow.
+The aim of this paper is to maximize the sum rate of all UEs with the presence of constraints which is written as follow,
+\begin{subequations}\label{problem}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{A}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G}, \boldsymbol{Y} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}} \ \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}} \ \\
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
-&\mathcal{R}_{u_{(s_1,i)}}^e \geq  a_{u(s_1,i)}\mathcal{R}_{min}^{s_1,e} \quad \forall s_1, \label{c13} \\
-&\mathcal{R}_{u_{(s_2,i)}}^u \geq  a_{u(s_2,i)}\mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
-& \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}}^r \leq C_{max}^r \quad \forall r, \label{c15}\\ 
+&\mathcal{R}_{u_{(s_j,i)}} \geq \mathcal{R}_{min}^{s_j} \quad \forall s, j \in \{1,2,3\}, \label{c13} \\
+%&\mathcal{R}_{u_{(s_2,i)}}^u \geq  \mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
+& C^r \leq C_{max}^r \quad \forall r, \label{c15}\\ 
 &T_{tot}^s \leq T_{tot}^{max,s} \quad \forall s,\label{c16} \\
-& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
-&a_{u(s,i)} \leq a_{u(s,i)}\sum_{r}g^r_{u(s,i)}  \quad \forall s,\forall i, \label{c17}  \\
-& a_{u(s,i)}g^r_{u(s,i)} \leq a_{u(s,i)}g^r_{u(s,i)}\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)}  \quad \forall s,i , \label{c18} \\
-& \phi_{tot}  \leq \phi_{max}, \label{c19} \\
- &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d} 
- \quad \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c20}
+%& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
+& \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{c17}  \\
+& \sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i , \label{c18} \\
+& \phi_{tot}  \leq \phi_{max}, \label{c19} 
 \end{alignat}
 \label{constraints}
 \end{subequations}
-where $\boldsymbol{P} =[p_{u(s,i)}] \:\: \forall s , \forall i $, is the matrix of power for UEs, $\boldsymbol{A} =[a_{u(s,i)}] \:\: \forall s , \forall i $ denotes the binary variable for UE admission,
-$\boldsymbol{E} =[e_{r,u(s,i)}^k] \:\: \forall s , \forall i \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r] \:\: \forall s , \forall i \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u] \:\: \forall s$ is the matrix that shown the number of VNFs in each layer of slice and $\boldsymbol{Y} =[y_{s,d}]  \:\: \forall s ,  \forall d $ is a binary variable shown whether
-the physical DC is mapped to a VNFs of a slice or not.
-Also, $\eta$ is weighted variable to value between the benefit and the cost term of objective function.
+where $\boldsymbol{P} =[p_{r,u(s,i)}^{k}] \:\: \forall s , \forall i, \forall r, \forall k $, is the matrix of power for UEs, $\boldsymbol{E} =[e_{r,u(s,i)}^k] \:\: \forall s , \forall i \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r] \:\: \forall s , \forall i \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u] \:\: \forall s$ is the matrix that shown the number of VNFs in each layer of slice.
 \eqref{c11}, and \eqref{c12}, indicate that the power of each RU do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. 
-Also \eqref{c13} and \eqref{c14} shows that the rate of each UE requesting eMBB and URLLC is more than a threshold, respectively.
+Also \eqref{c13} shows that the rate of each UE requesting eMBB, URLLC and mMTC is more than a threshold, respectively.
 \eqref{c15} and \eqref{c16} expressed the limited capacity of the fronthaul link, and the limited delay of receiving signal, respectively.
-\eqref{c16} is a reliability condition that the delay in each layer should be less than threshold.
-\eqref{c17} and \eqref{c18} guarantee that if a UE in admitted by the system, O-RU and PRB is associated to it, respectively.
+%\eqref{c16} is a reliability condition that the delay in each layer should be less than threshold.
+\eqref{c17} and \eqref{c18} guarantee that O-RU and PRB is associated to the UE, respectively.
 In addition, \eqref{c19} indicate that the static cost of energy of VNFs in each slice do not exceed from the threshold. 
-Moreover, in \eqref{c20}  $\mathcal{E} = \{M,S,C, N\}$ and the constraint supports
-that we have enough physical resources for VNFs of each slice.
+\section{Proposed Algorithm Scheme}
+In this section, we first apply some simplifications to the system; Solving problem \eqref{problem} is complicated due to the fact that this problem is 
+a non-convex problem and it is a 
+mixed integer non-linear problem (MINLP) with a binary variable and an integer variable. 
+In the following, we apply the simplifications to reformulate MINL parts and use iterative heuristic algorithm to solve the reformulated problem.
+We solve this problem in two level iteratively until it converges; In the first level,
+parameters ($\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}$) are obtained by relaxing and reformulating parameters and turn it to convex problem; Afterward we solve it by dual optimization problem.
+In the second level, finding optimal O-RU association ($ \boldsymbol{G}$) is concerned with the fixed parameter of power, PRB allocation and number of VNFs.   
+We repeat this procedure until the algorithm converges.
+\subsection{Sub-Problem 1}
+Suppose that $\boldsymbol{G}$ is fixed, we want to obtain $\boldsymbol{P}, \boldsymbol{E}$ and $\boldsymbol{M}$.
+Here, we first simplify and relax the parameters to convexify the problem.
 
+As we mentioned before, by replacing $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ for $I_{r,u(s,i)}^{k}$ and lower bound $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , \forall i$ for  ${\mathcal{R}}_{u_{(s,i)}}$ is obtained by replacing with $I_{r,u(s,i)}^{k}$ $\bar{I}_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3} and make them concave.
 
-\bibliographystyle{IEEEtran}
+Suppose $\hat{\rho}_{r,u(s,i)}^{k} =  \frac{|P_{max}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0}$. 
+To convexify \eqref{eq11}, we replace ${\rho}_{r,u(s,i)}^{k}$ with $\hat{\rho}_{r,u(s,i)}^{k}$ in \eqref{shortPacket}. So, a lower bound for \eqref{eq11} is given that is a concave function.
+
+Suppose UPF, O-CU and O-DU have the same processor 
+\begin{lemma}
+In problem \eqref{problem}, 
+\end{lemma}
 \bibliography{ref}
 \end{document} 
