@@ -201,14 +201,14 @@ Suppose the baseband processing of each VNF is depicted as M/M/1 processing queu
 Each packet is processed by one of the VNFs of a slice. So, the mean delay for the $s^{th}$ slice in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
 \begin{equation}
 \begin{split}
-T_{DU}^{s} &= \frac{1}{\mu_d - \alpha_{s}/{M_s^{d}}},\\
-T_{CU}^{s} &= \frac{1}{\mu_c - \alpha_{s}/{M_s^{c}}}\\
-T_{UPF}^{s} &= \frac{1}{\mu_u - \alpha_{s}/{M_s^{u}}}\\
+T_{DU}^{s} &= \frac{1}{\mu_s^d - \alpha_{s}/{M_s^{d}}},\\
+T_{CU}^{s} &= \frac{1}{\mu_s^c - \alpha_{s}/{M_s^{c}}}\\
+T_{UPF}^{s} &= \frac{1}{\mu_s^u - \alpha_{s}/{M_s^{u}}}\\
 \end{split}
 \end{equation}
 Where $M_s^{d}$, $M_s^{c}$ and 
 $M_s{u}$ are the variables that depict the sum of VNFs in O-DU, O-CU-UP and UPF, respectively. 
-Moreover, $1/\mu_d$, $1/\mu_c$ and $1/\mu_u$ are the mean service time of the O-DU, O-CU and the UPF layers respectively.
+Moreover, $1/\mu_s^d$, $1/\mu_s^c$ and $1/\mu_s^u$ are the mean service time of the O-DU, O-CU and the UPF layers respectively.
 Besides, $\alpha_{s}$ is the  arrival rate which is divided
 by load balancer before arriving to the VNFs. The arrival rate of each VNF in each layer for each slice 
 $s$ is $\alpha_{s}/{M_s^{i}}$ $ i \in \{d,c, u\}$.
@@ -284,11 +284,30 @@ Here, we first simplify and relax the parameters to convexify the problem.
 As we mentioned before, by replacing $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ for $I_{r,u(s,i)}^{k}$ and lower bound $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , \forall i$ for  ${\mathcal{R}}_{u_{(s,i)}}$ is obtained by replacing with $I_{r,u(s,i)}^{k}$ $\bar{I}_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3} and make them concave.
 
 Suppose $\hat{\rho}_{r,u(s,i)}^{k} =  \frac{|P_{max}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0}$. 
-To convexify \eqref{eq11}, we replace ${\rho}_{r,u(s,i)}^{k}$ with $\hat{\rho}_{r,u(s,i)}^{k}$ in \eqref{shortPacket}. So, a lower bound for \eqref{eq11} is given that is a concave function.
-
-Suppose UPF, O-CU and O-DU have the same processor 
+To convexify \eqref{eq11} (for the short packet transmission), we replace ${\rho}_{r,u(s,i)}^{k}$ with $\hat{\rho}_{r,u(s,i)}^{k}$ in \eqref{shortPacket}. So, a lower bound for \eqref{eq11} is given that is a concave function.
+\begin{equation}
+\begin{split}
+\hat{\mathcal{R}}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K_{s_j}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \hat{\zeta}_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k}\\
+\hat{\mathcal{R}}_{u(s_j,i)} &= \sum_{r=1}^{R}\hat{\mathcal{R}}_{u(s_j,i)}^{r}\\ 
+ \hat{\zeta}_{u(s_j,i)}^{k} =& log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{\hat{\mathfrak{C}}_{u(s_j,i)}^{k}}{N_{u(s_j,i)}^{k}}})\\
+ \hat{\mathfrak{C}}_{u(s_j,i)}^{k} =& 1 - \frac{1}{(1+\hat{\rho}_{u(s_j,i)}^{k})^2}\\
+\end{split}
+\end{equation}
+Consider UPF, O-CU and O-DU have the same processor (for simplification), so we have $\mu_s = \mu_s^u \approx \mu_s^c \approx \mu_s^d $. Moreover, as mentioned before,
+the mean arrival data rate of the UPF layer for a service $s$ ($\alpha_{s}^U$) is approximately equal to the mean arrival data rate of the O-CU-UP layer ($\alpha_{s}^C$) and O-DU ($\alpha_{s}^D$). so $\alpha_{s} =\alpha_{s}^U \approx \alpha_{s}^C \approx \alpha_{s}^D$. 
+As a result of these assumption, for simplicity, we can assume that $M_s = M_s^u = M_s^c = M_s^d $
+Using the above assumption, we have $T_{DU}^{s} = T_{CU}^{s} = T_{UPF}^{s}$ 
+\begin{equation}
+\begin{split}
+T_{process}^{s} &=  T_{RU}^{s} + T_{DU}^{s} + T_{CU}^{s} + T_{UPF}^{s} \\
+T_{process}^{s} &=  T_{RU}^{s} + 3\times T_{DU}^{s}.
+\end{split}
+\end{equation}
 \begin{lemma}
-In problem \eqref{problem}, 
+In problem \eqref{problem}, if we change the constraint \eqref{c16} to equality, the optimality of the  
+system will not be changed \cite{SystemCostMinimization}
 \end{lemma}
+
+\bibliographystyle{IEEEtran}
 \bibliography{ref}
 \end{document} 
