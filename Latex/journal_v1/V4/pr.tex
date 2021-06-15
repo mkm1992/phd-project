@@ -191,6 +191,9 @@ The propagation delay is the time takes for a signal to reach to its destination
 Also, the transmission delay is the amount of time required to push all the packets into the fiber link. 
 ($T = \frac{\alpha}{R}$ Where, $R$ is the rate of transmission in each link and $\alpha$ is the mean arrival data rate of the each link which is constant in this model.)
 Here we assume the value of propagation delay and transmission is negligible compared to the rest.
+\begin{equation}
+T_{tot} \approx T_{process}
+\end{equation}
 \subsubsection{Processing Delay}
 Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(s,i)}$ for the $i^{th}$ UE of the $s^{th}$ slice.
 Therefore, the mean arrival data rate of the $s^{th}$ slice in the UPF layer is $\alpha_{s}^1 = \sum_{u=1}^{U_s}a_{u(s,i)}\lambda_{u(s,i)}$, where $a_{u(s,i)}$ is a binary variable which indicates whether the $i^{th}$ UE requested $s^{th}$ service is admitted or not.
@@ -213,22 +216,22 @@ Besides, $\alpha_{s}$ is the  arrival rate which is divided
 by load balancer before arriving to the VNFs. The arrival rate of each VNF in each layer for each slice 
 $s$ is $\alpha_{s}/{M_s^{i}}$ $ i \in \{d,c, u\}$.
 
-In addition, $T_{RU}^{s}$ is the mean transmission delay of $s^{th}$ slice on the wireless link. The arrival data rate of wireless link is equal to the arrival data rate of load balancers for each service.
- %\cite{frdl}.
-Moreover, it is assumed that the service time of transmission queue for each slice $s$ has
- an exponential distribution with mean $1/(R_{{tot}_s})$ and can be modeled as a M/M/1 queue.
- %\cite{frdl,luong2018novel,luong2018novel1,guo2016exploiting}. 
- Therefore,
-the mean delay of the transmission layer is
+In addition, $T_{RU}^{u(s,i)}$ is the mean transmission delay of $i^{th}$ UE in $s^{th}$ service on the wireless link.
+ The arrival data rate of wireless link for each UE i in service s is $\lambda_{u(s,i)}$
+As a result we have, $\sum_{i = 1}^{U_s} \lambda_{u(s,i)} = \alpha_s$.
+Moreover, The service time of transmission queue for UE $i$ requesting service $s$ has
+an exponential distribution with mean $1/(R_{u(s,i)}$ and can be modeled as a M/M/1 queue.
+ 
+Therefore, the mean delay of the transmission layer for UE $i$ in slice $s$ is
 \begin{equation}
- T_{RU}^{s} = \frac{1}{R_{{tot}_s} - \alpha_{s}};
-\end{equation}
-where, $R_{{tot}_s} = \sum_{u=1}^{U_s}a_{u(s,i)}R_{u(s,i)}$ is the total achievable rate of each service.
-So the mean processing delay for each UE in slice $s$ is 
-\begin{equation}
-T_{process}^{s} =  T_{RU}^{s} + T_{DU}^{s} + T_{CU}^{s} + T_{UPF}^{s}
+ T_{RU}^{u(s,i)} = \frac{1}{R_{u(s,i)} - \lambda_{u(s,i)}};
 \end{equation}
 
+So the mean processing delay for each UE $i$ in slice $s$ is 
+\begin{equation}
+T_{process}^{u(s,i)} =  T_{RU}^{u(s,i)} + T_{DU}^{s} + T_{CU}^{s} + T_{UPF}^{s}
+\end{equation}
+Hence, $T_{tot}^{u(s,i)} \approx T_{process}^{u(s,i)} $
 %Furthermore, the mean arrival data rate of the each link ($\textstyle \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$) is approximately equal to others ($\textstyle \alpha_{s} \approx \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$).  
 \subsection{VNF Power}
 Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
@@ -253,7 +256,10 @@ The aim of this paper is to maximize the sum rate of all UEs with the presence o
 &\mathcal{R}_{u_{(s_j,i)}} \geq \mathcal{R}_{min}^{s_j} \quad \forall s, j \in \{1,2,3\}, \label{c13} \\
 %&\mathcal{R}_{u_{(s_2,i)}}^u \geq  \mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
 & C^r \leq C_{max}^r \quad \forall r, \label{c15}\\ 
-&T_{tot}^s \leq T_{tot}^{max,s} \quad \forall s,\label{c16} \\
+&T_{tot}^{u(s,i)}  \leq T_{max}^{s} \quad \forall i,\forall s,\label{c16} \\
+& \mu_s \geq \alpha_s/M_s \quad \forall s,\label{c16-1} \\
+& \mathcal{R}_{u_{(s,i)}} \geq {\lambda}_{u_{(s,i)}} \quad \forall i,\forall s,\label{c16-2} \\
+& 0 \leq M_s \leq M^{max}  \quad \forall s,\label{c16-3}\\
 %& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
 & \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{c17}  \\
 & \sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i , \label{c18} \\
@@ -261,10 +267,12 @@ The aim of this paper is to maximize the sum rate of all UEs with the presence o
 \end{alignat}
 \label{constraints}
 \end{subequations}
-where $\boldsymbol{P} =[p_{r,u(s,i)}^{k}] \:\: \forall s , \forall i, \forall r, \forall k $, is the matrix of power for UEs, $\boldsymbol{E} =[e_{r,u(s,i)}^k] \:\: \forall s , \forall i \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r] \:\: \forall s , \forall i \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u] \:\: \forall s$ is the matrix that shown the number of VNFs in each layer of slice.
+where $\boldsymbol{P} =[p_{r,u(s,i)}^{k}] \:\: \forall s , \forall i, \forall r, \forall k $, is the matrix of power for UEs, $\boldsymbol{E} =[e_{r,u(s,i)}^k] \:\: \forall s , \forall i, \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r] \:\: \forall s , \forall i, \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u] \:\: \forall s$ is the matrix that shown the number of VNFs in each layer of slice.
 \eqref{c11}, and \eqref{c12}, indicate that the power of each RU do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. 
 Also \eqref{c13} shows that the rate of each UE requesting eMBB, URLLC and mMTC is more than a threshold, respectively.
 \eqref{c15} and \eqref{c16} expressed the limited capacity of the fronthaul link, and the limited delay of receiving signal, respectively.
+\eqref{c16-1} and \eqref{c16-2} denoted the stability of the M/M/1 queue model.
+\eqref{c16-3} restricted the number of VNF in each slice due to the limited resources.
 %\eqref{c16} is a reliability condition that the delay in each layer should be less than threshold.
 \eqref{c17} and \eqref{c18} guarantee that O-RU and PRB is associated to the UE, respectively.
 In addition, \eqref{c19} indicate that the static cost of energy of VNFs in each slice do not exceed from the threshold. 
@@ -304,9 +312,67 @@ T_{process}^{s} &=  T_{RU}^{s} + 3\times T_{DU}^{s}.
 \end{split}
 \end{equation}
 \begin{lemma}
-In problem \eqref{problem}, if we change the constraint \eqref{c16} to equality, the optimality of the  
-system will not be changed \cite{SystemCostMinimization}
+In problem \eqref{problem}, the constraint \eqref{c16} can be reformulated as below
+$ \forall i,\forall s$
+\begin{equation}
+\begin{split}
+&T_{max}^s \geq\frac{1}{R_{u(s,i)} - \lambda_{u(s,i)}} + \frac{3}{\mu_s - \alpha_{s}/{M_s}}  \\
+&M_s \geq \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }\\
+\end{split}
+\end{equation}
+Also from equation \eqref{c19}, \eqref{c16-1} and \eqref{c16-3} we have
+\begin{equation}
+0\leq M_s \leq \min\{M^{max}, \alpha_s/\mu_s, \phi_{max}/{3\phi_s}\}
+\end{equation}
+We denote $ \mathfrak{M}_s= \min\{M^{max}, \alpha_s/\mu_s, \phi_{max}/{3\phi_s}\}$.
+Thus, if we restrict \eqref{c16} to equality we have
+\begin{equation}\label{eqDelay}
+0\leq \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
+\end{equation}
+In \eqref{eqDelay}, $0\leq \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ is established due to the fact that 
+the numerator and the denominator will be both negative. Using \eqref{c16-2},
+in numerator, $\alpha_s \geq 0$, $ R_{u(s,i)}-\lambda_{u(s,i)} \geq 0$ and 
+$(R_{u(s,i)}-\lambda_{u(s,i)})T_{max}^s \leq 1$. So the numerator is negative.
+In denominator, it can be said approximately that $(T_{max}^s\mu_s)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s \leq 0 $, since, $(R_{u(s,i)}-\lambda_{u(s,i)}) \leq 1/T_{max}^s$.
+Therefore, we just need to have constraint below
+\begin{equation}\label{constraint16}
+\frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
+\end{equation}
+So by reformulating the equation \eqref{constraint16}, we have a new constraint $\forall i, \forall s$ as below,
+\begin{equation}
+R_{u(s,i)} \geq \frac{\mathfrak{M}_s ((T_{max}^s\mu_s-3)\lambda_{u(s,i)} + \mu_s) - \alpha_s(T_{max}^s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T_{max}^s\mu_s-3)-\alpha_s T_{max}^s}.
+\end{equation}
+In addition, we denote $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$.
+So we have,
+\begin{equation}
+M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s .
+\end{equation}
 \end{lemma}
+Despite simplifying the problem \eqref{problem}, it is still non-convex and hard to be solved.
+So the simplest approach is to relax $\mathbf{E}$ into continuous value $e_{r,u(s,i)}^k \in [0,1] \:\: \forall s , \forall i ,\forall r, \forall k$
+Furthermore, the problem can  be solved using the Lagrangian function and iterative algorithm.
+In order to make \eqref{constraints1} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cc14} and \eqref{cc15} ($p_{r_{(s,i)}} = \sigma_{q_{r(s,j)}}^2\times 2^{C_{r_{(s,i)}}}$ and $1/(D_{s}- d_{s_1} + d_{s_2})+\alpha_s$ respectively).
+Assume $\boldsymbol{\lambda}$, $\boldsymbol{\mu}$, $\boldsymbol{\xi}$, and $\boldsymbol{ \kappa}$ are the matrix of Lagrangian multipliers that have non-zero positive elements.
+The Lagrangian function is written as follow
+\begin{subequations}\label{lagrang}
+\begin{alignat}{4}
+\mathcal{L}(\boldsymbol{P}; \boldsymbol{\lambda}, \boldsymbol{\chi}, \boldsymbol{\mu}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}) & = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v}\mathcal{\bar{R}}_{u_{(v,k)}}
+- \eta \sum\limits_{v=1}^{V} \sum\limits_{i=1}^{\mathcal{R}_s}\bar{p}_{r_{(s,i)}}\\
+&+\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v} \lambda_{u_{(v,k)}} (\mathcal{\bar{R}}_{u_{(v,k)}}-\mathcal{R}_{u_{(v,k)}}^{max})\\
+&- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \mu_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-P_{max})\\
+&- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \xi_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-\sigma_{q_{r(s,i)}}^2 2^{C_{r_{(s,i)}}^{max}}).\\
+&+ \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v} \kappa_{u_{(v,k)}} \sum\limits_{s=1}^{S}(R_{u_{(v,k)}} -\mathfrak{D_s})a_{v,s}.
+\end{alignat}
+\end{subequations}
+where, $\mathfrak{D_s}=\frac{1}{D_{s}^{max}-d_{s_1}-d_{s_2}}+\alpha_s$. Optimal power is obtained from  \eqref{lagrang}
+\begin{equation}
+p_{u(v,i)}^{*} = [\frac{\mathfrak{y}_{u(v,i)}\mathfrak{w}_{u(v,i)}-\mathfrak{x}_{u(v,i)}\mathfrak{z}_{u(v,i)}}{\mathfrak{x}_{u(v,i)}\mathfrak{w}_{u(v,i)} }]^+
+\end{equation}
+where, $\mathfrak{y}_{u(v,i)}= (\lambda_{u(v,i)}+\kappa_{u_{(v,k)}}+1)\frac{B}{Ln_2}$ and
+$\mathfrak{w}_{u(v,i)} = \sum_{s=1}^{S}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{v,s}$. Also
+$\mathfrak{z}_{u(v,i)} = BN_0 + \bar{I}_{u(v,i)}$ and $\mathfrak{x}_{u(v,i)} = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} ( \mu_{r_{u(s,i)}} + \xi_{r_{(s,i)}}+\eta)||w_{r_{(s,j)},u_{(v,i)}}||^2$.
+By using sub-gradient method, the optimal power $\boldsymbol{P}$ is obtained \cite{mimoCran}.
+
 
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
