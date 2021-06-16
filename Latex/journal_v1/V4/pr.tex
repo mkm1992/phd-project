@@ -341,7 +341,7 @@ Therefore, we just need to have constraint below
 \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
 \end{equation}
 So by reformulating the equation \eqref{constraint16}, we have a new constraint $\forall i, \forall s$ as below,
-\begin{equation}
+\begin{equation}\label{RM}
 \begin{split}
 \mathcal{R}_{u(s,i)} &\geq \frac{\mathfrak{M}_s ((T_{max}^s\mu_s-3)\lambda_{u(s,i)} + \mu_s) - \alpha_s(T_{max}^s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T_{max}^s\mu_s-3)-\alpha_s T_{max}^s},\\
 \varpi_{u(s,i)} &= \frac{\mathfrak{M}_s ((T_{max}^s\mu_s-3)\lambda_{u(s,i)} + \mu_s) - \alpha_s(T_{max}^s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T_{max}^s\mu_s-3)-\alpha_s T_{max}^s},\\
@@ -361,18 +361,32 @@ Furthermore, the problem can  be solved using the Lagrangian function and iterat
 In order to make \eqref{problem} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cr} to $P_r = \sigma_{q_r}^2\times 2^{C^r}$ so the constraint 
 \eqref{c15} is changed to
  $P_r \leq \sigma_{q_r}^2\times 2^{C^r_{max}}$.
- 
+The combination of equations \eqref{c13} and \eqref{c15} leads to the following equation
+\begin{equation}
+\begin{split}
+\zeta_{r}&= min\{P_{max}, \sigma_{q_r}^2\times 2^{C^r_{max}} \}, \\
+P_r &\leq  \zeta_{r}.\\
+\end{split}
+\end{equation} 
+Moreover, the combination of equations \eqref{c13}, \eqref{c16-2} and \eqref{RM} leads to the following equation
+\begin{equation}
+\begin{split}
+\eta_{u_{(s,i)}}&= max\{\mathcal{R}_{u_{(s,i)}}^{max}, \lambda_{u_{(s,i)}}, \varpi_{u(s,i)} \}, \\
+\mathcal{\bar{R}}_{u_{(s,i)}} &\geq  \eta_{u_{(s,i)}}.\\
+\end{split}
+\end{equation}
 Assume $\boldsymbol{\mathfrak{v}}$, $\boldsymbol{\mathfrak{m}}$, $\boldsymbol{\mathfrak{h}}$, $\boldsymbol{\xi}$, $\boldsymbol{\chi}$ and $\boldsymbol{ \kappa}$ are the matrix of Lagrangian multipliers that have non-zero positive elements.
+
 The Lagrangian function is written as follow
 \begin{subequations}\label{lagrang}
 \begin{alignat}{4}
 &\mathcal{L}(\boldsymbol{P},\boldsymbol{E}; \boldsymbol{\mathfrak{v}}, \boldsymbol{\chi}, \boldsymbol{\mathfrak{h}}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}, \boldsymbol{\mathfrak{m}})  = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathcal{\bar{R}}_{u_{(s,i)}}\\
-&+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathfrak{h}_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\mathcal{R}_{u_{(s,i)}}^{max})
-+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\kappa_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\varpi_{u_{(s,i)}})\\
-&+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\xi_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\lambda_{u_{(s,i)}})\\
-&-  \sum\limits_{r=1}^{R} \mathfrak{m}_{r} (P_{r}-\sigma_{q_r}^2 \times 2^{C^{r}_{max}} )\\
-&-  \sum\limits_{r=1}^{R} \mathfrak{v}_{r} (P_{r}-P_{max})\\
-&+ \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v} \kappa_{u_{(v,k)}} \sum\limits_{s=1}^{S}(R_{u_{(v,k)}} -\mathfrak{D_s})a_{v,s}.
+&+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathfrak{h}_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\eta_{u_{(s,i)}})\\
+&-  \sum\limits_{r=1}^{R} \mathfrak{m}_{r} (P_{r}- \zeta_r)\\
+&+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\kappa^k_{r,u(s,i)}  p^k_{r,u(s,i)}\\
+&+ \sum\limits_{r=1}^{R}\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\chi_{r,u(s,i)}(\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} -1)\\
+&-  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\mathfrak{v}^{k}_{r,u(s,i)} (e^{k}_{r,u(s,i)} -1)\\
+&+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R} \xi^{k}_{r,u(s,i)} e^{k}_{r,u(s,i)}.
 \end{alignat}
 \end{subequations}
 
