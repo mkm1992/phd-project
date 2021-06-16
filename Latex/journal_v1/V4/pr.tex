@@ -165,12 +165,12 @@ If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{max}$,
 \subsection{Power of O-RU and Fronthaul Capacity}
 Let $P_r$ denote the power of transmitted signal from the $r^{th}$ O-RU to UEs served by it.
 From \eqref{eq2}, we have,
-\begin{equation}
-P_r = \sum_{s=1}^{S}\sum_{k=1}^{K_s}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r e^k_{r,u(s,i)}+ \sigma_{q_{r(s,j)}}^2.
+\begin{equation}\label{pr}
+P_r = \sum_{s=1}^{S}\sum_{k=1}^{K_s}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r e^k_{r,u(s,i)}+ \sigma_{q_r}^2.
 \end{equation}
 Since we have fiber link between O-RU and O-DU, the rate of users on the fronthual link between O-DU and the $r^{th}$ O-RU  is formulated as
 %\cite{simeone2016cloud, 1111}
-\begin{equation}
+\begin{equation}\label{cr}
 C_{r} = \log{(1+ \frac{\sum_{s=1}^{S}\sum_{k=1}^{K_s}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 \mathcal{\alpha}^k_{r,u(s,i)} }{ \sigma_{q_{r}}^2})},
 \end{equation}
 Where, $\mathcal{\alpha}^k_{r,u(s,i)}= p_{r,u(s,i)}^{k} g_{u(s,i)}^r e^k_{r,u(s,i)}$ and $\sigma_{q_{r}}^2$ is the power of quantization noise.
@@ -249,20 +249,20 @@ The optimization problem is formulated as follow.
 The aim of this paper is to maximize the sum rate of all UEs with the presence of constraints which is written as follow,
 \begin{subequations}\label{problem}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}} \ \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s} \bar{\mathcal{R}}_{u_{(s,k)}} \ \\
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
-&\mathcal{R}_{u_{(s_j,i)}} \geq \mathcal{R}_{min}^{s_j} \quad \forall s, j \in \{1,2,3\}, \label{c13} \\
+&\bar{\mathcal{R}}_{u_{(s_j,i)}} \geq \mathcal{R}_{min}^{s_j} \quad \forall s, j \in \{1,2,3\}, \label{c13} \\
 %&\mathcal{R}_{u_{(s_2,i)}}^u \geq  \mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
 & C^r \leq C_{max}^r \quad \forall r, \label{c15}\\ 
 &T_{tot}^{u(s,i)}  \leq T_{max}^{s} \quad \forall i,\forall s,\label{c16} \\
 & \mu_s \geq \alpha_s/M_s \quad \forall s,\label{c16-1} \\
-& \mathcal{R}_{u_{(s,i)}} \geq {\lambda}_{u_{(s,i)}} \quad \forall i,\forall s,\label{c16-2} \\
+& \bar{\mathcal{R}}_{u_{(s,i)}} \geq {\lambda}_{u_{(s,i)}} \quad \forall i,\forall s,\label{c16-2} \\
 & 0 \leq M_s \leq M^{max}  \quad \forall s,\label{c16-3}\\
 %& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
 & \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{c17}  \\
-& \sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i , \label{c18} \\
+& \sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r \label{c18} \\
 & \phi_{tot}  \leq \phi_{max}, \label{c19} 
 \end{alignat}
 \label{constraints}
@@ -289,14 +289,16 @@ We repeat this procedure until the algorithm converges.
 Suppose that $\boldsymbol{G}$ is fixed, we want to obtain $\boldsymbol{P}, \boldsymbol{E}$ and $\boldsymbol{M}$.
 Here, we first simplify and relax the parameters to convexify the problem.
 
-As we mentioned before, by replacing $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ for $I_{r,u(s,i)}^{k}$ and lower bound $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , \forall i$ for  ${\mathcal{R}}_{u_{(s,i)}}$ is obtained by replacing with $I_{r,u(s,i)}^{k}$ $\bar{I}_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3} and make them concave.
+As we mentioned before, by replacing $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ for $I_{r,u(s,i)}^{k}$, the lower bound $\bar{\rho}_{u(s,i)}^{k}$ 
+for $\rho_{u(s,i)}^{k}$ 
+and the lower bound $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , \forall i$ for  ${\mathcal{R}}_{u_{(s,i)}}$ is obtained by replacing with $I_{r,u(s,i)}^{k}$ $\bar{I}_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3} and make them concave.
 
 Suppose $\hat{\rho}_{r,u(s,i)}^{k} =  \frac{|P_{max}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0}$. 
 To convexify \eqref{eq11} (for the short packet transmission), we replace ${\rho}_{r,u(s,i)}^{k}$ with $\hat{\rho}_{r,u(s,i)}^{k}$ in \eqref{shortPacket}. So, a lower bound for \eqref{eq11} is given that is a concave function.
 \begin{equation}
 \begin{split}
-\hat{\mathcal{R}}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K_{s_j}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \hat{\zeta}_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k}\\
-\hat{\mathcal{R}}_{u(s_j,i)} &= \sum_{r=1}^{R}\hat{\mathcal{R}}_{u(s_j,i)}^{r}\\ 
+\bar{\mathcal{R}}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K_{s_j}} B (\log_2({1+ \bar{\rho}_{u(s_2,i)}^{k}})- \hat{\zeta}_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k}\\
+\bar{\mathcal{R}}_{u(s_j,i)} &= \sum_{r=1}^{R}\bar{\mathcal{R}}_{u(s_j,i)}^{r}\\ 
  \hat{\zeta}_{u(s_j,i)}^{k} =& log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{\hat{\mathfrak{C}}_{u(s_j,i)}^{k}}{N_{u(s_j,i)}^{k}}})\\
  \hat{\mathfrak{C}}_{u(s_j,i)}^{k} =& 1 - \frac{1}{(1+\hat{\rho}_{u(s_j,i)}^{k})^2}\\
 \end{split}
@@ -340,7 +342,11 @@ Therefore, we just need to have constraint below
 \end{equation}
 So by reformulating the equation \eqref{constraint16}, we have a new constraint $\forall i, \forall s$ as below,
 \begin{equation}
-R_{u(s,i)} \geq \frac{\mathfrak{M}_s ((T_{max}^s\mu_s-3)\lambda_{u(s,i)} + \mu_s) - \alpha_s(T_{max}^s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T_{max}^s\mu_s-3)-\alpha_s T_{max}^s}.
+\begin{split}
+\mathcal{R}_{u(s,i)} &\geq \frac{\mathfrak{M}_s ((T_{max}^s\mu_s-3)\lambda_{u(s,i)} + \mu_s) - \alpha_s(T_{max}^s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T_{max}^s\mu_s-3)-\alpha_s T_{max}^s},\\
+\varpi_{u(s,i)} &= \frac{\mathfrak{M}_s ((T_{max}^s\mu_s-3)\lambda_{u(s,i)} + \mu_s) - \alpha_s(T_{max}^s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T_{max}^s\mu_s-3)-\alpha_s T_{max}^s},\\
+\mathcal{R}_{u(s,i)} &\geq \varpi_{u(s,i)}. \\
+\end{split}
 \end{equation}
 In addition, we denote $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$.
 So we have,
@@ -351,27 +357,24 @@ M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s .
 Despite simplifying the problem \eqref{problem}, it is still non-convex and hard to be solved.
 So the simplest approach is to relax $\mathbf{E}$ into continuous value $e_{r,u(s,i)}^k \in [0,1] \:\: \forall s , \forall i ,\forall r, \forall k$
 Furthermore, the problem can  be solved using the Lagrangian function and iterative algorithm.
-In order to make \eqref{constraints1} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cc14} and \eqref{cc15} ($p_{r_{(s,i)}} = \sigma_{q_{r(s,j)}}^2\times 2^{C_{r_{(s,i)}}}$ and $1/(D_{s}- d_{s_1} + d_{s_2})+\alpha_s$ respectively).
-Assume $\boldsymbol{\lambda}$, $\boldsymbol{\mu}$, $\boldsymbol{\xi}$, and $\boldsymbol{ \kappa}$ are the matrix of Lagrangian multipliers that have non-zero positive elements.
+
+In order to make \eqref{problem} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cr} to $P_r = \sigma_{q_r}^2\times 2^{C^r}$ so the constraint 
+\eqref{c15} is changed to
+ $P_r \leq \sigma_{q_r}^2\times 2^{C^r_{max}}$.
+ 
+Assume $\boldsymbol{\mathfrak{v}}$, $\boldsymbol{\mathfrak{m}}$, $\boldsymbol{\mathfrak{h}}$, $\boldsymbol{\xi}$, $\boldsymbol{\chi}$ and $\boldsymbol{ \kappa}$ are the matrix of Lagrangian multipliers that have non-zero positive elements.
 The Lagrangian function is written as follow
 \begin{subequations}\label{lagrang}
 \begin{alignat}{4}
-\mathcal{L}(\boldsymbol{P}; \boldsymbol{\lambda}, \boldsymbol{\chi}, \boldsymbol{\mu}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}) & = \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v}\mathcal{\bar{R}}_{u_{(v,k)}}
-- \eta \sum\limits_{v=1}^{V} \sum\limits_{i=1}^{\mathcal{R}_s}\bar{p}_{r_{(s,i)}}\\
-&+\sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v} \lambda_{u_{(v,k)}} (\mathcal{\bar{R}}_{u_{(v,k)}}-\mathcal{R}_{u_{(v,k)}}^{max})\\
-&- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \mu_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-P_{max})\\
-&- \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} \xi_{r_{(s,i)}} (\bar{p}_{r_{(s,i)}}-\sigma_{q_{r(s,i)}}^2 2^{C_{r_{(s,i)}}^{max}}).\\
+&\mathcal{L}(\boldsymbol{P},\boldsymbol{E}; \boldsymbol{\mathfrak{v}}, \boldsymbol{\chi}, \boldsymbol{\mathfrak{h}}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}, \boldsymbol{\mathfrak{m}})  = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathcal{\bar{R}}_{u_{(s,i)}}\\
+&+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathfrak{h}_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\mathcal{R}_{u_{(s,i)}}^{max})
++\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\kappa_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\varpi_{u_{(s,i)}})\\
+&+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\xi_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\lambda_{u_{(s,i)}})\\
+&-  \sum\limits_{r=1}^{R} \mathfrak{m}_{r} (P_{r}-\sigma_{q_r}^2 \times 2^{C^{r}_{max}} )\\
+&-  \sum\limits_{r=1}^{R} \mathfrak{v}_{r} (P_{r}-P_{max})\\
 &+ \sum\limits_{v=1}^{V} \sum\limits_{k=1}^{U_v} \kappa_{u_{(v,k)}} \sum\limits_{s=1}^{S}(R_{u_{(v,k)}} -\mathfrak{D_s})a_{v,s}.
 \end{alignat}
 \end{subequations}
-where, $\mathfrak{D_s}=\frac{1}{D_{s}^{max}-d_{s_1}-d_{s_2}}+\alpha_s$. Optimal power is obtained from  \eqref{lagrang}
-\begin{equation}
-p_{u(v,i)}^{*} = [\frac{\mathfrak{y}_{u(v,i)}\mathfrak{w}_{u(v,i)}-\mathfrak{x}_{u(v,i)}\mathfrak{z}_{u(v,i)}}{\mathfrak{x}_{u(v,i)}\mathfrak{w}_{u(v,i)} }]^+
-\end{equation}
-where, $\mathfrak{y}_{u(v,i)}= (\lambda_{u(v,i)}+\kappa_{u_{(v,k)}}+1)\frac{B}{Ln_2}$ and
-$\mathfrak{w}_{u(v,i)} = \sum_{s=1}^{S}|\bold{h}_{R_s,u(v,i)}^H \bold{w}_{R_s,u(v,i)}|^2 a_{v,s}$. Also
-$\mathfrak{z}_{u(v,i)} = BN_0 + \bar{I}_{u(v,i)}$ and $\mathfrak{x}_{u(v,i)} = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{R_s} ( \mu_{r_{u(s,i)}} + \xi_{r_{(s,i)}}+\eta)||w_{r_{(s,j)},u_{(v,i)}}||^2$.
-By using sub-gradient method, the optimal power $\boldsymbol{P}$ is obtained \cite{mimoCran}.
 
 
 \bibliographystyle{IEEEtran}
