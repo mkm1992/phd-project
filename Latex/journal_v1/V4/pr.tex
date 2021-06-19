@@ -92,8 +92,9 @@ So, we have $S$ preallocated slices serving these $S$ services; There are $S_1$ 
 Each Service $s_j\in \{1,2,...,S_j\} $ consists of $U_{s}$ request from the 
 single-antenna UEs which require certain QoS to be able to use the requested program($j \in \{1,2,3\}$ indicate service type).
 There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocated to the resources.
-Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of $K_{s_j}$, $j \in \{1,2,3\}$ preallocated virtual resource blocks that are mapped to the Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
+Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of  preallocated virtual resource blocks that are mapped to the Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
 
+All $K$ PRBs can be assigned to the all UE in each service.
 Also, each VNF instance is running on the virtual machine (VM) that are using resources from the data centers. Each VM, requires enough resources of CPU, memory, storage and network bandwidth.
 
 In addition, there are $R$ multi-antenna O-RU that are shared between slices. Each O-RU $r \in \{1,2,...,R \}$
@@ -104,7 +105,7 @@ Moreover, all O-RUs, have access to the all PRBs.
 \subsection{The Achievable Rate}
 The SNR of $i^{th}$ UE served at slice $s$ on PRB $k$ is obtained from
 \begin{equation}\label{eq1}
-\rho_{r,u(s,i)}^{k} =  \frac{|p_{r,u(s,i)}^{k}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0 + I_{r,u(s,i)}^{k}},
+\rho_{r,u(s,i)}^{k} =  \frac{|p_{r,u(s,i)}^{k}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2}{BN_0 + I_{r,u(s,i)}^{k}},
 \end{equation} 
 where $p_{r,u(s,i)}^{k}$ represents the transmission power from O-RU $r$ to $i^{th}$ UE served at slice $s$ on PRB $k$. 
 ${\bold{h}_{r,u(s,i)}^{k}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
@@ -139,8 +140,9 @@ In addition, $\boldsymbol{q}_{r} \in \mathbb{C}^{J }  $ indicates the quantizati
 The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}$ that is formulated as below.
 \begin{equation}\label{eq3}
 \begin{split}
-\mathcal{R}_{u(s_1,i)}^{r} &= \sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}} e^k_{r,u(s_1,i)}),\\
-\mathcal{R}_{u(s_1,i)} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{r} 
+\mathcal{{R}}_{r,u(s_1,i)}^{k} &=  B \log_2({1+ \rho_{r,u(s_1,i)}^{k}}) ,\\
+\mathcal{R}_{u(s_1,i)}^{r} &= \sum_{k=1}^{K} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}} e^k_{r,u(s_1,i)}),\\
+\mathcal{R}_{u(s_1,i)} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{r} g^r_{u(s_1,i)}
 \end{split}
 \end{equation}
 where $B$ is the bandwidth of system. 
@@ -148,8 +150,9 @@ $\mathcal{R}_{u(s_1,i)}^{r}$ is the achievable rate of each RU $r$ to UE $i$ in 
 Since the blocklength in URLLC and mMTC is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{j}^{th}$ ( $j \in \{2,3\}$) application of service type 2 (URLLC) and 3 (mMTC) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated from follow
 \begin{equation}\label{eq11}
 \begin{split}
-\mathcal{R}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K_{s_j}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k}\\
-\mathcal{R}_{u(s_j,i)} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_j,i)}^{r} 
+\mathcal{{R}}_{r,u(s_j,i)}^{k} &= B \log_2({1+ \rho_{r,u(s_j,i)}^{k}} - \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k},\\
+\mathcal{R}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k}\\
+\mathcal{R}_{u(s_j,i)} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_j,i)}^{r} g^r_{u(s_j,i)}
 \end{split}
 \end{equation}
 Where $j \in \{1,2\}$. Also we have
@@ -249,7 +252,7 @@ The optimization problem is formulated as follow.
 The aim of this paper is to maximize the sum rate of all UEs with the presence of constraints which is written as follow,
 \begin{subequations}\label{problem}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s} \bar{\mathcal{R}}_{u_{(s,k)}} \ \\
+\max\limits_{ \boldsymbol{G} }   \quad &  \sum_{r=1}^{R}g_{u(s,i)}^r \bar{\mathcal{R}}_{u_{(s,k)}} \ \\
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
@@ -263,7 +266,9 @@ The aim of this paper is to maximize the sum rate of all UEs with the presence o
 %& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
 & \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{c17}  \\
 & \sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r \label{c18} \\
-& \phi_{tot}  \leq \phi_{max}, \label{c19} 
+& \phi_{tot}  \leq \phi_{max}, \label{c19} \\
+& g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c20}  \\
+& e^k_{r,u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c21}  
 \end{alignat}
 \label{constraints}
 \end{subequations}
@@ -276,6 +281,7 @@ Also \eqref{c13} shows that the rate of each UE requesting eMBB, URLLC and mMTC 
 %\eqref{c16} is a reliability condition that the delay in each layer should be less than threshold.
 \eqref{c17} and \eqref{c18} guarantee that O-RU and PRB is associated to the UE, respectively.
 In addition, \eqref{c19} indicate that the static cost of energy of VNFs in each slice do not exceed from the threshold. 
+Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
 \section{Proposed Algorithm Scheme}
 In this section, we first apply some simplifications to the system; Solving problem \eqref{problem} is complicated due to the fact that this problem is 
 a non-convex problem and it is a 
@@ -285,7 +291,7 @@ We solve this problem in two level iteratively until it converges; In the first 
 parameters ($\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}$) are obtained by relaxing and reformulating parameters and turn it to convex problem; Afterward we solve it by dual optimization problem.
 In the second level, finding optimal O-RU association ($ \boldsymbol{G}$) is concerned with the fixed parameter of power, PRB allocation and number of VNFs.   
 We repeat this procedure until the algorithm converges.
-\subsection{Sub-Problem 1}
+\subsection{Sub-Problem 1}\label{sub1}
 Suppose that $\boldsymbol{G}$ is fixed, we want to obtain $\boldsymbol{P}, \boldsymbol{E}$ and $\boldsymbol{M}$.
 Here, we first simplify and relax the parameters to convexify the problem.
 
@@ -369,7 +375,7 @@ P_r &\leq  \zeta_{r}.\\
 \end{split}
 \end{equation} 
 Moreover, the combination of equations \eqref{c13}, \eqref{c16-2} and \eqref{RM} leads to the following equation
-\begin{equation}
+\begin{equation}\label{RConstr}
 \begin{split}
 \eta_{u_{(s,i)}}&= max\{\mathcal{R}_{u_{(s,i)}}^{max}, \lambda_{u_{(s,i)}}, \varpi_{u(s,i)} \}, \\
 \mathcal{\bar{R}}_{u_{(s,i)}} &\geq  \eta_{u_{(s,i)}}.\\
@@ -389,8 +395,69 @@ The Lagrangian function is written as follow
 &+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R} \xi^{k}_{r,u(s,i)} e^{k}_{r,u(s,i)}.
 \end{alignat}
 \end{subequations}
-
-
+\begin{lemma}
+By taking derivatives of \eqref{lagrang} (the lagrangian function), with respect to the $\boldsymbol{P}$ and the $\boldsymbol{E}$, these two variables are obtained.
+Assume, $e_{r,u(s,i)}^{k} = 1$
+\begin{equation}\label{deriveP}
+\dfrac{\partial\mathcal{L}}{\partial p_{r,u(s,i)}^{k}} = (1 + \mathfrak{h}_{u_{(s,i)}})\mathfrak{B}_{r,u(s,i)}^{k} + (\kappa^k_{r,u(s,i)} -\mathfrak{m}_{r}\mathfrak{D}_{r,u(s,i)}^{k})=0
+\end{equation}
+Where
+\begin{equation}
+\begin{split}
+\mathfrak{D}_{r,u(s,i)}^{k} &= |\bold{w}_{r,u(s,i)}^{k}|^2 g_{u(s,i)}^r e^k_{r,u(s,i)}, \\
+\mathfrak{B}_{r,u(s,i)}^{k} &= \frac{B |{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2 g_{u(s,i)}^r e_{r,u(s,i)}^{k}}{\ln(2)} \mathfrak{S}_{r,u(s,i)}^{k},\\
+\mathfrak{S}_{r,u(s,i)}^{k} &= \frac{1}{{|\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2 \mathfrak{k}_{r,u(s,i)}^{k}+BN_0 + I_{r,u(s,i)}^{k}}.\\
+\end{split}
+\end{equation}
+where $\mathfrak{k}_{r,u(s,i)}^{k} = g_{u(s,i)}^r e_{r,u(s,i)}^{k}p_{r,u(s,i)}^{k}$.
+Thus, from equation \eqref{deriveP}, optimal power is obtained and power is allocated.
+We denote $ \mathfrak{j}_{r,u(s,i)}^{k} = g_{u(s,i)}^r e_{r,u(s,i)}^{k}$.
+\begin{equation}
+p_{r,u(s,i)}^{k} = [\frac{(1 + \mathfrak{h}_{u_{(s,i)}})B \mathfrak{j}_{r,u(s,i)}^{k}}{\kappa^k_{r,u(s,i)} -\mathfrak{m}_{r}\mathfrak{D}_{r,u(s,i)}^{k}} -\frac{BN_0 + I_{r,u(s,i)}^{k}}{{|\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2\mathfrak{j}_{r,u(s,i)}^{k}}]^+.
+\end{equation}
+Also $[a]^+ = \max(0,a)$.
+In addition, PRB assignment is obtained as follow
+\begin{equation}\label{deriveE}
+\begin{split}
+\dfrac{\partial\mathcal{L}}{\partial e_{r,u(s,i)}^{k}} &= \mathcal{\bar{R}}_{r,u(s,i)}^{k}(1+\mathfrak{h}_{u_{(s,i)}})\\
+&- \mathfrak{m}_{r}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r\\
+&+( \xi^{k}_{r,u(s,i)}-\mathfrak{v}^{k}_{r,u(s,i)} +\chi_{r,u(s,i)})=0.\\
+\end{split}
+\end{equation}
+Using KKT conditions, we have
+\begin{equation}\label{deriveE1}
+e_{r,u(s,i)}^{k}\times (\mathfrak{F}^{k}_{r,u(s,i)} -\mathfrak{v}^{k}_{r,u(s,i)} - \mathfrak{m}_{r}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r ) = 0.
+\end{equation}
+Where $\mathfrak{F}^{k}_{r,u(s,i)} =\mathcal{\bar{R}}_{r,u(s,i)}^{k}(1+\mathfrak{h}_{u_{(s,i)}})+( \xi^{k}_{r,u(s,i)} +\chi_{r,u(s,i)}) $.
+Hence, from equation \eqref{deriveE} and \eqref{deriveE1}, PRB assignment is performed as follow.
+\begin{equation}
+e_{r,u(s,i)}^{k} = 
+  \begin{cases}
+      1 & u(s,i) = \text{argmax} \mathfrak{F}^{k}_{r,u(s,i)} \forall s, \forall r, \forall k\\
+      0 & \text{otherwise}
+    \end{cases}
+\end{equation}
+\end{lemma}
+Thus the user in each slice $s$ that have the largest value of $\mathfrak{F}^{k}_{r,u(s,i)}$, should be allocated to the PRB $k$; Due to the fact that just one PRB can be allocated to a UE between those UEs (regardless to the services) that are associated to the same O-RU.
+\subsection{Sub-Problem 2}
+After power allocation and PRB assignment, the remaining problem is to assign O-RU to the UE in each service.
+The problem can be solved by two different method. 
+Next we introduce the first method which is a greedy algorithm.
+\begin{enumerate}
+\item \textit{Greedy Algorithm:}
+The problem can be simplificated and reformulated as follow
+\begin{subequations}\label{problem2}
+\begin{alignat}{4}
+\max\limits_{ \boldsymbol{G} }   \quad &  \sum_{r=1}^{R}g_{u(s,i)}^r \bar{\mathcal{R}}^r_{u_{(s,k)}} \ \\
+\text{subject to} \quad  & g_{u(s,i)}^r P_r \leq \zeta_r \quad \forall r
+ \label{p11} \\
+& \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{p12}\\
+ & g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{p13}  
+\end{alignat}
+\end{subequations}
+Since we obtained \eqref{RConstr} in \eqref{sub1}, we can ignore this constraint in \eqref{problem2}.
+So \eqref{problem2}, is a NP-complete 0-1 multiple knapsack problem  
+\end{enumerate} 
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
 \end{document} 
