@@ -21,9 +21,15 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{SystemCostMinimization}
-J.~Tang, W.~P. Tay, T.~Q. Quek, and B.~Liang, ``System cost minimization in
-  cloud ran with limited fronthaul capacity,'' \emph{IEEE Transactions on
-  Wireless Communications}, vol.~16, no.~5, pp. 3371--3384, 2017.
+\bibitem{akccay2007greedy}
+Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
+  multidimensional knapsack problem,'' \emph{Annals of Operations Research},
+  vol. 150, no.~1, pp. 17--29, 2007.
+
+\bibitem{lee2018dynamic}
+Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
+  multitenant heterogeneous cloud radio access networks,'' \emph{IEEE
+  Transactions on Wireless Communications}, vol.~17, no.~4, pp. 2146--2161,
+  2018.
 
 \end{thebibliography}

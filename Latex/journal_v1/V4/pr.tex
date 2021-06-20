@@ -252,7 +252,7 @@ The optimization problem is formulated as follow.
 The aim of this paper is to maximize the sum rate of all UEs with the presence of constraints which is written as follow,
 \begin{subequations}\label{problem}
 \begin{alignat}{4}
-\max\limits_{ \boldsymbol{G} }   \quad &  \sum_{r=1}^{R}g_{u(s,i)}^r \bar{\mathcal{R}}_{u_{(s,k)}} \ \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}\bar{\mathcal{R}}_{u_{(s,k)}} \ \\
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
@@ -311,6 +311,7 @@ To convexify \eqref{eq11} (for the short packet transmission), we replace ${\rho
 \end{equation}
 Consider UPF, O-CU and O-DU have the same processor (for simplification), so we have $\mu_s = \mu_s^u \approx \mu_s^c \approx \mu_s^d $. Moreover, as mentioned before,
 the mean arrival data rate of the UPF layer for a service $s$ ($\alpha_{s}^U$) is approximately equal to the mean arrival data rate of the O-CU-UP layer ($\alpha_{s}^C$) and O-DU ($\alpha_{s}^D$). so $\alpha_{s} =\alpha_{s}^U \approx \alpha_{s}^C \approx \alpha_{s}^D$. 
+So the given assumption leads to have same energy for each layer $\phi_s^u = \phi_s^c =\phi_s^d $.
 As a result of these assumption, for simplicity, we can assume that $M_s = M_s^u = M_s^c = M_s^d $
 Using the above assumption, we have $T_{DU}^{s} = T_{CU}^{s} = T_{UPF}^{s}$ 
 \begin{equation}
@@ -441,22 +442,66 @@ e_{r,u(s,i)}^{k} =
 Thus the user in each slice $s$ that have the largest value of $\mathfrak{F}^{k}_{r,u(s,i)}$, should be allocated to the PRB $k$; Due to the fact that just one PRB can be allocated to a UE between those UEs (regardless to the services) that are associated to the same O-RU.
 \subsection{Sub-Problem 2}
 After power allocation and PRB assignment, the remaining problem is to assign O-RU to the UE in each service.
+
+Assume $\boldsymbol{P}$ and $\boldsymbol{E}$ are fixed, we want to find $\boldsymbol{G}$.
 The problem can be solved by two different method. 
 Next we introduce the first method which is a greedy algorithm.
 \begin{enumerate}
 \item \textit{Greedy Algorithm:}
-The problem can be simplificated and reformulated as follow
+The problem can be reformulated as follow
 \begin{subequations}\label{problem2}
 \begin{alignat}{4}
-\max\limits_{ \boldsymbol{G} }   \quad &  \sum_{r=1}^{R}g_{u(s,i)}^r \bar{\mathcal{R}}^r_{u_{(s,k)}} \ \\
-\text{subject to} \quad  & g_{u(s,i)}^r P_r \leq \zeta_r \quad \forall r
+\max\limits_{ \boldsymbol{G} }   \quad &  \sum_{s=1}^S\sum_{i=1}^{U_s}\sum_{r=1}^{R}  g^r_{u(s,i)}\bar{\mathcal{R}}^r_{u_{(s,k)}} \ \\
+\text{subject to} \quad  & \sum_{s=1}^{S}\sum_{i=1}^{U_s} g_{u(s,i)}^r \psi_{r,u(s,i)}\leq \mathfrak{t}_r \quad \forall r
  \label{p11} \\
 & \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{p12}\\
  & g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{p13}  
 \end{alignat}
 \end{subequations}
+Where $ \psi_{r,u(s,i)}=\sum_{k=1}^{K_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k}  e^k_{r,u(s,i)}$
+and $\mathfrak{t}_r = \zeta_r- \sigma_r$
 Since we obtained \eqref{RConstr} in \eqref{sub1}, we can ignore this constraint in \eqref{problem2}.
-So \eqref{problem2}, is a NP-complete 0-1 multiple knapsack problem  
+To simplicated  and reformulated to the multiple knapsack problem suppose that each UE in each service is associated to only one O-RU. Therefore, constraint \eqref{p12} is restricted to equality
+($\sum_{r=1}^R g^r_{u(s,i)} = 1 $). By changing this constraint,
+the problem \eqref{problem2} convert to an NP-complete 0-1 multiple knapsack problem.  
+We solve this problem using GAAOU which is a greedy algorithm \eqref{alg1} as follow \cite{akccay2007greedy,lee2018dynamic}.
+Firstly, we set all variables $g^r_{u(s,i)} = 0, \quad \forall s, \forall i, \forall r$. 
+Then we define ${RU}_{resid} = \mathcal{R} $ and $ \mathfrak{C}_r = \mathfrak{t}_r, \forall r$
+as a set of O-RUs and value of each O-RU, respectively.
+Afterward, we assign the O-RU that provides the highest achievable rate for each UE on the condition that 
+it does not exceed the value of each O-RU (that is a function of maximum power and capacity of O-RU).
+If it exceeds the value of O-RU, then O-RU with the next highest achievable rate is selected. 
+Depict $\mathfrak{N} =  \sum_{s=1}^S\sum_{i=1}^{U_s} 1$ 
+The complexity of this algorithm is about $O(N\times \mathfrak{N})$
+\begin{algorithm}
+\caption{Greedy Algorithm for Assignment of O-RU to UEs (GAAOU)}\label{alg1}
+\begin{algorithmic}[1]
+\State Set $g^r_{u(s,i)} = 0, \quad \forall s, \forall i, \forall r$.\label{31}
+\State Set ${RU}_{resid} = \mathcal{R} $ and $\mathfrak{C}_r = \mathfrak{t}_r, \forall r$  \label{32}
+\For {$s \gets 1$ to $S$}\label{33}
+\For {$i \gets 1$ to $U_s$}
+\For {$r \gets 1$ to $R$}
+\State Acquire $\mathfrak{G}_r = \bar{\mathcal{R}}^r_{u_{(s,k)}}$
+\EndFor
+\State \textbf{end for}
+\State Obtain $r = \text{argmax}_r \mathfrak{G}_r$
+\While{$\mathfrak{C}_r \geq \psi_{r,u(s,i)}$}
+\If{$\mathfrak{C}_r \geq \psi_{r,u(s,i)}$}
+\State Set $g^r_{u(s,i)} = 1$ and $\mathfrak{C}_r = \mathfrak{C}_r - \psi_{r,u(s,i)}$
+\Else
+\State  ${RU}_{resid} = \mathcal{R} \setminus \{r\} $
+\EndIf
+\State \textbf{end if}
+\EndWhile
+\State \textbf{end while}
+\EndFor
+\State \textbf{end for}
+\EndFor
+\State \textbf{end for} \label{34}
+\end{algorithmic}
+\end{algorithm}
+\item\textit{Lagrangian Function:} The second method to solve the O-RU assignment is to relax $\boldsymbol{G}$ between zero and one and solve the problem using Lagrangian function.
+
 \end{enumerate} 
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
