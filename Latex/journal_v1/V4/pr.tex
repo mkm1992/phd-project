@@ -264,8 +264,9 @@ The aim of this paper is to maximize the sum rate of all UEs with the presence o
 & \bar{\mathcal{R}}_{u_{(s,i)}} \geq {\lambda}_{u_{(s,i)}} \quad \forall i,\forall s,\label{c16-2} \\
 & 0 \leq M_s \leq M^{max}  \quad \forall s,\label{c16-3}\\
 %& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
-& \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{c17}  \\
-& \sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r \label{c18} \\
+& \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s,\forall i, \label{c17}  \\
+& \sum_{k =1}^{K_s} g^r_{u(s,i)} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r \label{c18-1} \\
+& \sum_{s =1}^{S}\sum_{i=1}^{U_s}g^r_{u(s,i)} e^{k}_{r,u(s,i)} \leq 1  \quad \forall s,\forall i ,\forall r \label{c18} \\
 & \phi_{tot}  \leq \phi_{max}, \label{c19} \\
 & g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c20}  \\
 & e^k_{r,u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c21}  
@@ -279,7 +280,8 @@ Also \eqref{c13} shows that the rate of each UE requesting eMBB, URLLC and mMTC 
 \eqref{c16-1} and \eqref{c16-2} denoted the stability of the M/M/1 queue model.
 \eqref{c16-3} restricted the number of VNF in each slice due to the limited resources.
 %\eqref{c16} is a reliability condition that the delay in each layer should be less than threshold.
-\eqref{c17} and \eqref{c18} guarantee that O-RU and PRB is associated to the UE, respectively.
+\eqref{c17} and \eqref{c18-1} guarantee that O-RU and PRB is associated to the UE, respectively.
+Also, \eqref{c18} ensure that each PRB can not be assigned to more than one UE associated to the same O-RU.
 In addition, \eqref{c19} indicate that the static cost of energy of VNFs in each slice do not exceed from the threshold. 
 Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
 \section{Proposed Algorithm Scheme}
@@ -339,10 +341,12 @@ Thus, if we restrict \eqref{c16} to equality we have
 0\leq \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
 \end{equation}
 In \eqref{eqDelay}, $0\leq \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ is established due to the fact that 
-the numerator and the denominator will be both negative. Using \eqref{c16-2},
-in numerator, $\alpha_s \geq 0$, $ R_{u(s,i)}-\lambda_{u(s,i)} \geq 0$ and 
-$(R_{u(s,i)}-\lambda_{u(s,i)})T_{max}^s \leq 1$. So the numerator is negative.
-In denominator, it can be said approximately that $(T_{max}^s\mu_s)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s \leq 0 $, since, $(R_{u(s,i)}-\lambda_{u(s,i)}) \leq 1/T_{max}^s$.
+the numerator and the denominator will both have same sign. Using \eqref{c16-2},
+in numerator, $\alpha_s \geq 0$, $ R_{u(s,i)}-\lambda_{u(s,i)} \geq 0$ and to simplify the problem, assume 
+$(R_{u(s,i)}-\lambda_{u(s,i)})T_{max}^s \geq 1$ since the order of $T_{max}^s$ is about milli second and the difference between achievable rate and packet rate can be more than $1/T_{max}^s$.
+Therefore, we restrict constraint \eqref{c16-2} to $R_{u(s,i)} \geq \lambda_{u(s,i)} + 1/T_{max}^s$.
+So the numerator is positive.
+In denominator, it can be said approximately that $(T_{max}^s\mu_s)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s \geq 0 $, since, $(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T_{max}^s$ as mentioned above.
 Therefore, we just need to have constraint below
 \begin{equation}\label{constraint16}
 \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
@@ -378,7 +382,7 @@ P_r &\leq  \zeta_{r}.\\
 Moreover, the combination of equations \eqref{c13}, \eqref{c16-2} and \eqref{RM} leads to the following equation
 \begin{equation}\label{RConstr}
 \begin{split}
-\eta_{u_{(s,i)}}&= max\{\mathcal{R}_{u_{(s,i)}}^{max}, \lambda_{u_{(s,i)}}, \varpi_{u(s,i)} \}, \\
+\eta_{u_{(s,i)}}&= max\{\mathcal{R}_{u_{(s,i)}}^{max}, \lambda_{u_{(s,i)}}+1/T^s_{max}, \varpi_{u(s,i)} \}, \\
 \mathcal{\bar{R}}_{u_{(s,i)}} &\geq  \eta_{u_{(s,i)}}.\\
 \end{split}
 \end{equation}
@@ -440,30 +444,27 @@ e_{r,u(s,i)}^{k} =
 \end{equation}
 \end{lemma}
 Thus the user in each slice $s$ that have the largest value of $\mathfrak{F}^{k}_{r,u(s,i)}$, should be allocated to the PRB $k$; Due to the fact that just one PRB can be allocated to a UE between those UEs (regardless to the services) that are associated to the same O-RU.
-\subsection{Sub-Problem 2}
+\subsection{Sub-Problem 2}\label{sub2}
 After power allocation and PRB assignment, the remaining problem is to assign O-RU to the UE in each service.
 
 Assume $\boldsymbol{P}$ and $\boldsymbol{E}$ are fixed, we want to find $\boldsymbol{G}$.
-The problem can be solved by two different method. 
-Next we introduce the first method which is a greedy algorithm.
-\begin{enumerate}
-\item \textit{Greedy Algorithm:}
+Next we introduce the  method which is a greedy algorithm.
+
+\textit{Greedy Algorithm:}
 The problem can be reformulated as follow
 \begin{subequations}\label{problem2}
 \begin{alignat}{4}
 \max\limits_{ \boldsymbol{G} }   \quad &  \sum_{s=1}^S\sum_{i=1}^{U_s}\sum_{r=1}^{R}  g^r_{u(s,i)}\bar{\mathcal{R}}^r_{u_{(s,k)}} \ \\
 \text{subject to} \quad  & \sum_{s=1}^{S}\sum_{i=1}^{U_s} g_{u(s,i)}^r \psi_{r,u(s,i)}\leq \mathfrak{t}_r \quad \forall r
  \label{p11} \\
-& \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{p12}\\
+& \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s,\forall i, \label{p12}\\
  & g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{p13}  
 \end{alignat}
 \end{subequations}
 Where $ \psi_{r,u(s,i)}=\sum_{k=1}^{K_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k}  e^k_{r,u(s,i)}$
 and $\mathfrak{t}_r = \zeta_r- \sigma_r$
 Since we obtained \eqref{RConstr} in \eqref{sub1}, we can ignore this constraint in \eqref{problem2}.
-To simplicated  and reformulated to the multiple knapsack problem suppose that each UE in each service is associated to only one O-RU. Therefore, constraint \eqref{p12} is restricted to equality
-($\sum_{r=1}^R g^r_{u(s,i)} = 1 $). By changing this constraint,
-the problem \eqref{problem2} convert to an NP-complete 0-1 multiple knapsack problem.  
+The problem \eqref{problem2} is an NP-complete 0-1 multiple knapsack problem.  
 We solve this problem using GAAOU which is a greedy algorithm \eqref{alg1} as follow \cite{akccay2007greedy,lee2018dynamic}.
 Firstly, we set all variables $g^r_{u(s,i)} = 0, \quad \forall s, \forall i, \forall r$. 
 Then we define ${RU}_{resid} = \mathcal{R} $ and $ \mathfrak{C}_r = \mathfrak{t}_r, \forall r$
@@ -500,9 +501,30 @@ The complexity of this algorithm is about $O(N\times \mathfrak{N})$
 \State \textbf{end for} \label{34}
 \end{algorithmic}
 \end{algorithm}
-\item\textit{Lagrangian Function:} The second method to solve the O-RU assignment is to relax $\boldsymbol{G}$ between zero and one and solve the problem using Lagrangian function.
-
-\end{enumerate} 
+\subsection{Iterative Proposed Algorithm}
+In \eqref{sub1} and \eqref{sub2}, the details of solving each sub-problem are depicted. 
+Here, the iterative algorithm for the whole problem is demonstrated.
+Firstly, we fixed $\boldsymbol{G}$, then $\boldsymbol{P}$ and $\boldsymbol{E}$ is achieved using Lagrangian method.  
+Afterward, $\boldsymbol{G}$ is updated using GAAOU algorithm. This process is repeated until it converges. 
+The whole algorithm is depicted as follow (Algorithm \eqref{alg2}).
+ \begin{algorithm}
+\caption{Iterative Algorithm for Power Allocation, PRB, VNF and O-RU Association (IAPPVO)}\label{alg2}
+\begin{algorithmic}[1]
+\State  Set the maximum number of iterations ${Iter}_{max}$, convergence condition $\epsilon > 0$ \label{a21}
+\State  Assign Users to O-RU randomly (Initialize $\boldsymbol{G}$) \label{a22}
+\For {$i \gets 1$ to $Iter_{max}$}\label{33}
+\State Acquire $\boldsymbol{P}^{(i)}$, $\boldsymbol{E}^{(i)}$ and $\boldsymbol{M}^{(i)}$ using Lagrangian function and sub-gradient method based on \eqref{sub1}
+\State Update $\boldsymbol{G}^{(i)}$   based on algorithm GAAOU \eqref{alg1} in  \eqref{sub2}
+\If {the algorithm converged with the tolerence of $\epsilon$}
+\State Break
+\Else 
+\State Continue the algorithm  
+\EndIf
+\State \textbf{end if}
+\EndFor
+\State \textbf{end for} \label{34}
+\end{algorithmic}
+\end{algorithm}
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
 \end{document} 
