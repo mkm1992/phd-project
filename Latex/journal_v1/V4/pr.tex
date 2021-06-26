@@ -223,7 +223,7 @@ In addition, $T_{RU}^{u(s,i)}$ is the mean transmission delay of $i^{th}$ UE in 
  The arrival data rate of wireless link for each UE i in service s is $\lambda_{u(s,i)}$
 As a result we have, $\sum_{i = 1}^{U_s} \lambda_{u(s,i)} = \alpha_s$.
 Moreover, The service time of transmission queue for UE $i$ requesting service $s$ has
-an exponential distribution with mean $1/(R_{u(s,i)}$ and can be modeled as a M/M/1 queue.
+an exponential distribution with mean $1/R_{u(s,i)}$ and can be modeled as a M/M/1 queue.
  
 Therefore, the mean delay of the transmission layer for UE $i$ in slice $s$ is
 \begin{equation}
@@ -248,11 +248,12 @@ Where, $\phi_{s}$ is obtained from below
 \end{equation}
 Moreover, $\phi_s^u$, $\phi_s^c$ and $\phi_s^d$ are the static cost of energy in UPF, O-CU and O-DU, respectively. 
 \subsection{Problem Statement}
+Suppose each slice $s$ has priority factor $\delta_s$ where $\sum_{s=1}^S \delta_s =1$.
 The optimization problem is formulated as follow.
 The aim of this paper is to maximize the sum rate of all UEs with the presence of constraints which is written as follow,
 \begin{subequations}\label{problem}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}\bar{\mathcal{R}}_{u_{(s,k)}} \ \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,k)}} \ \\
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
@@ -264,7 +265,7 @@ The aim of this paper is to maximize the sum rate of all UEs with the presence o
 & \bar{\mathcal{R}}_{u_{(s,i)}} \geq {\lambda}_{u_{(s,i)}} \quad \forall i,\forall s,\label{c16-2} \\
 & 0 \leq M_s \leq M^{max}  \quad \forall s,\label{c16-3}\\
 %& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
-& \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s,\forall i, \label{c17}  \\
+& \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{c17}  \\
 & \sum_{k =1}^{K_s} g^r_{u(s,i)} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r \label{c18-1} \\
 & \sum_{s =1}^{S}\sum_{i=1}^{U_s}g^r_{u(s,i)} e^{k}_{r,u(s,i)} \leq 1  \quad \forall s,\forall i ,\forall r \label{c18} \\
 & \phi_{tot}  \leq \phi_{max}, \label{c19} \\
@@ -391,7 +392,7 @@ Assume $\boldsymbol{\mathfrak{v}}$, $\boldsymbol{\mathfrak{m}}$, $\boldsymbol{\m
 The Lagrangian function is written as follow
 \begin{subequations}\label{lagrang}
 \begin{alignat}{4}
-&\mathcal{L}(\boldsymbol{P},\boldsymbol{E}; \boldsymbol{\mathfrak{v}}, \boldsymbol{\chi}, \boldsymbol{\mathfrak{h}}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}, \boldsymbol{\mathfrak{m}})  = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathcal{\bar{R}}_{u_{(s,i)}}\\
+&\mathcal{L}(\boldsymbol{P},\boldsymbol{E}; \boldsymbol{\mathfrak{v}}, \boldsymbol{\chi}, \boldsymbol{\mathfrak{h}}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}, \boldsymbol{\mathfrak{m}})  = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\delta_s\mathcal{\bar{R}}_{u_{(s,i)}}\\
 &+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathfrak{h}_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\eta_{u_{(s,i)}})\\
 &-  \sum\limits_{r=1}^{R} \mathfrak{m}_{r} (P_{r}- \zeta_r)\\
 &+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\kappa^k_{r,u(s,i)}  p^k_{r,u(s,i)}\\
@@ -404,7 +405,7 @@ The Lagrangian function is written as follow
 By taking derivatives of \eqref{lagrang} (the lagrangian function), with respect to the $\boldsymbol{P}$ and the $\boldsymbol{E}$, these two variables are obtained.
 Assume, $e_{r,u(s,i)}^{k} = 1$
 \begin{equation}\label{deriveP}
-\dfrac{\partial\mathcal{L}}{\partial p_{r,u(s,i)}^{k}} = (1 + \mathfrak{h}_{u_{(s,i)}})\mathfrak{B}_{r,u(s,i)}^{k} + (\kappa^k_{r,u(s,i)} -\mathfrak{m}_{r}\mathfrak{D}_{r,u(s,i)}^{k})=0
+\dfrac{\partial\mathcal{L}}{\partial p_{r,u(s,i)}^{k}} = (\delta_s + \mathfrak{h}_{u_{(s,i)}})\mathfrak{B}_{r,u(s,i)}^{k} + (\kappa^k_{r,u(s,i)} -\mathfrak{m}_{r}\mathfrak{D}_{r,u(s,i)}^{k})=0
 \end{equation}
 Where
 \begin{equation}
@@ -418,13 +419,13 @@ where $\mathfrak{k}_{r,u(s,i)}^{k} = g_{u(s,i)}^r e_{r,u(s,i)}^{k}p_{r,u(s,i)}^{
 Thus, from equation \eqref{deriveP}, optimal power is obtained and power is allocated.
 We denote $ \mathfrak{j}_{r,u(s,i)}^{k} = g_{u(s,i)}^r e_{r,u(s,i)}^{k}$.
 \begin{equation}
-p_{r,u(s,i)}^{k} = [\frac{(1 + \mathfrak{h}_{u_{(s,i)}})B \mathfrak{j}_{r,u(s,i)}^{k}}{\kappa^k_{r,u(s,i)} -\mathfrak{m}_{r}\mathfrak{D}_{r,u(s,i)}^{k}} -\frac{BN_0 + I_{r,u(s,i)}^{k}}{{|\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2\mathfrak{j}_{r,u(s,i)}^{k}}]^+.
+p_{r,u(s,i)}^{k} = [\frac{(\delta_s + \mathfrak{h}_{u_{(s,i)}})B \mathfrak{j}_{r,u(s,i)}^{k}}{\kappa^k_{r,u(s,i)} -\mathfrak{m}_{r}\mathfrak{D}_{r,u(s,i)}^{k}} -\frac{BN_0 + I_{r,u(s,i)}^{k}}{{|\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2\mathfrak{j}_{r,u(s,i)}^{k}}]^+.
 \end{equation}
 Also $[a]^+ = \max(0,a)$.
 In addition, PRB assignment is obtained as follow
 \begin{equation}\label{deriveE}
 \begin{split}
-\dfrac{\partial\mathcal{L}}{\partial e_{r,u(s,i)}^{k}} &= \mathcal{\bar{R}}_{r,u(s,i)}^{k}(1+\mathfrak{h}_{u_{(s,i)}})\\
+\dfrac{\partial\mathcal{L}}{\partial e_{r,u(s,i)}^{k}} &= \mathcal{\bar{R}}_{r,u(s,i)}^{k}(\delta_s+\mathfrak{h}_{u_{(s,i)}})\\
 &- \mathfrak{m}_{r}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r\\
 &+( \xi^{k}_{r,u(s,i)}-\mathfrak{v}^{k}_{r,u(s,i)} +\chi_{r,u(s,i)})=0.\\
 \end{split}
@@ -433,7 +434,7 @@ Using KKT conditions, we have
 \begin{equation}\label{deriveE1}
 e_{r,u(s,i)}^{k}\times (\mathfrak{F}^{k}_{r,u(s,i)} -\mathfrak{v}^{k}_{r,u(s,i)} - \mathfrak{m}_{r}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r ) = 0.
 \end{equation}
-Where $\mathfrak{F}^{k}_{r,u(s,i)} =\mathcal{\bar{R}}_{r,u(s,i)}^{k}(1+\mathfrak{h}_{u_{(s,i)}})+( \xi^{k}_{r,u(s,i)} +\chi_{r,u(s,i)}) $.
+Where $\mathfrak{F}^{k}_{r,u(s,i)} =\mathcal{\bar{R}}_{r,u(s,i)}^{k}(\delta_s+\mathfrak{h}_{u_{(s,i)}})+( \xi^{k}_{r,u(s,i)} +\chi_{r,u(s,i)}) $.
 Hence, from equation \eqref{deriveE} and \eqref{deriveE1}, PRB assignment is performed as follow.
 \begin{equation}
 e_{r,u(s,i)}^{k} = 
@@ -448,49 +449,60 @@ Thus the user in each slice $s$ that have the largest value of $\mathfrak{F}^{k}
 After power allocation and PRB assignment, the remaining problem is to assign O-RU to the UE in each service.
 
 Assume $\boldsymbol{P}$ and $\boldsymbol{E}$ are fixed, we want to find $\boldsymbol{G}$.
-Next we introduce the  method which is a greedy algorithm.
-
-\textit{Greedy Algorithm:}
+Next we introduce two methods which are both greedy algorithm.
+The first method is a greedy algorithm that assign one O-RU to each UE and the second method is
+a greedy algorithm that assign one or more than one O-RU to each UE and use coordinated multipoint (CoMP) transmissions \cite{yang2021multicast}.
+\begin{enumerate}
+\item\textit{Greedy Algorithm for Non-Comp O-RU Assignment:}
 The problem can be reformulated as follow
 \begin{subequations}\label{problem2}
 \begin{alignat}{4}
-\max\limits_{ \boldsymbol{G} }   \quad &  \sum_{s=1}^S\sum_{i=1}^{U_s}\sum_{r=1}^{R}  g^r_{u(s,i)}\bar{\mathcal{R}}^r_{u_{(s,k)}} \ \\
+\max\limits_{ \boldsymbol{G} }   \quad &  \sum_{s=1}^S\sum_{i=1}^{U_s}\sum_{r=1}^{R} \delta_s g^r_{u(s,i)}\bar{\mathcal{R}}^r_{u_{(s,k)}} \ \\
 \text{subject to} \quad  & \sum_{s=1}^{S}\sum_{i=1}^{U_s} g_{u(s,i)}^r \psi_{r,u(s,i)}\leq \mathfrak{t}_r \quad \forall r
  \label{p11} \\
-& \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s,\forall i, \label{p12}\\
+& \sum_{r}g^r_{u(s,i)} \geq 1  \quad \forall s,\forall i, \label{p12}\\
  & g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{p13}  
 \end{alignat}
 \end{subequations}
 Where $ \psi_{r,u(s,i)}=\sum_{k=1}^{K_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k}  e^k_{r,u(s,i)}$
 and $\mathfrak{t}_r = \zeta_r- \sigma_r$
 Since we obtained \eqref{RConstr} in \eqref{sub1}, we can ignore this constraint in \eqref{problem2}.
-The problem \eqref{problem2} is an NP-complete 0-1 multiple knapsack problem.  
+The problem \eqref{problem2} is an integer linear programming.
+By changing inequality \eqref{p12} to equality ($\sum_{r}g^r_{u(s,i)} = 1$),
+the problem \eqref{problem2} becomes to an NP-complete 0-1 multiple knapsack problem.  
 We solve this problem using GAAOU which is a greedy algorithm \eqref{alg1} as follow \cite{akccay2007greedy,lee2018dynamic}.
 Firstly, we set all variables $g^r_{u(s,i)} = 0, \quad \forall s, \forall i, \forall r$. 
-Then we define ${RU}_{resid} = \mathcal{R} $ and $ \mathfrak{C}_r = \mathfrak{t}_r, \forall r$
-as a set of O-RUs and value of each O-RU, respectively.
-Afterward, we assign the O-RU that provides the highest achievable rate for each UE on the condition that 
+Then we define ${\mathfrak{B}}^{rem}_{u_{(s,i)}} = \mathcal{R}$  $\forall s, \forall i$ and $ \mathfrak{C}_r = \mathfrak{t}_r, \forall r$
+as a set of all O-RUs and value of each O-RU, respectively.
+Next, we sort all slices based on their priority. 
+Afterward, we assign the O-RU that provides the highest achievable rate for each UE (we start from the UEs on the slices with highest priority) on the condition that 
 it does not exceed the value of each O-RU (that is a function of maximum power and capacity of O-RU).
 If it exceeds the value of O-RU, then O-RU with the next highest achievable rate is selected. 
-Depict $\mathfrak{N} =  \sum_{s=1}^S\sum_{i=1}^{U_s} 1$ 
-The complexity of this algorithm is about $O(N\times \mathfrak{N})$
+The complexity of sorting S slices based on their priority is $O(Slog(S))$.
+Depict $\mathfrak{N} =  \sum_{s=1}^S\sum_{i=1}^{U_s} 1$. 
+The complexity of this algorithm is about $O(Slog(s)) + O(R\times \mathfrak{N})$.
+%$O(N\times \mathfrak{N})$
 \begin{algorithm}
 \caption{Greedy Algorithm for Assignment of O-RU to UEs (GAAOU)}\label{alg1}
 \begin{algorithmic}[1]
 \State Set $g^r_{u(s,i)} = 0, \quad \forall s, \forall i, \forall r$.\label{31}
-\State Set ${RU}_{resid} = \mathcal{R} $ and $\mathfrak{C}_r = \mathfrak{t}_r, \forall r$  \label{32}
+\State Set $\mathfrak{C}_r = \mathfrak{t}_r, \forall r$  \label{32}
+\State Sort slices according to their priority factor ($\delta_s$) in descending order
 \For {$s \gets 1$ to $S$}\label{33}
 \For {$i \gets 1$ to $U_s$}
+\State $RU = 0$
 \For {$r \gets 1$ to $R$}
-\State Acquire $\mathfrak{G}_r = \bar{\mathcal{R}}^r_{u_{(s,k)}}$
+\State Acquire $\mathfrak{G}^r_{u_{(s,i)}} = \bar{\mathcal{R}}^r_{u_{(s,i)}}$
 \EndFor
 \State \textbf{end for}
-\State Obtain $r = \text{argmax}_r \mathfrak{G}_r$
-\While{$\mathfrak{C}_r \geq \psi_{r,u(s,i)}$}
-\If{$\mathfrak{C}_r \geq \psi_{r,u(s,i)}$}
-\State Set $g^r_{u(s,i)} = 1$ and $\mathfrak{C}_r = \mathfrak{C}_r - \psi_{r,u(s,i)}$
+\State Obtain $r^* = \text{argmax}_{r\in{\mathfrak{B}}^{rem}_{u_{(s,i)}}} \mathfrak{G}^r_{u_{(s,i)}}$
+\While{$RU == 0$}
+\If{$\mathfrak{C}_{r^*} \geq \psi_{r^*,u(s,i)}$}
+\State Set $g^{r^*}_{u(s,i)} = 1$ 
+\State Set  $\mathfrak{C}_{r^*} = \mathfrak{C}_{r^*} - \psi_{{r^*},u(s,i)}$
+\State Set $RU = 1$ 
 \Else
-\State  ${RU}_{resid} = \mathcal{R} \setminus \{r\} $
+\State  ${\mathfrak{B}}^{rem}_{u_{(s,i)}} = \mathcal{R} \setminus \{{r^*}\} $
 \EndIf
 \State \textbf{end if}
 \EndWhile
@@ -501,6 +513,68 @@ The complexity of this algorithm is about $O(N\times \mathfrak{N})$
 \State \textbf{end for} \label{34}
 \end{algorithmic}
 \end{algorithm}
+\item\textit{Greedy Algorithm for Comp O-RU Assignment:}
+Here we want to solve problem \eqref{problem2}, by assuming that one or more than one O-RU can assign to each UE.
+We solve this problem using GACA algorithm which used GAAOU algorithm.
+In this algorithm, Firstly we sort slices based on their priority (So the UEs of slices are sorted too).
+Then we assign one O-RU to each UE based on GAAOU algorithm so we guarantee that each UE is assigned to a O-RU. Next, we want to assign more than one O-RU to UE.
+\begin{algorithm}
+\caption{Greedy Algorithm for Comp Assignment of O-RU to UEs (GACA)}\label{alg3}
+\begin{algorithmic}[1]
+\State Set $g^r_{u(s,i)} = 0, \quad \forall s, \forall i, \forall r$.\label{31}
+\State Set $\mathfrak{C}_r = \mathfrak{t}_r, \forall r$  \label{32}
+\State Set $\mathtt{R}^{t} = 0$
+\State Sort slices according to their priority factor ($\delta_s$) in descending order
+\For {$s \gets 1$ to $S$}\label{33}
+\For {$i \gets 1$ to $U_s$}
+\State $RU = 0$
+\For {$r \gets 1$ to $R$}
+\State Acquire $\mathfrak{G}^r_{u_{(s,i)}} = \bar{\mathcal{R}}^r_{u_{(s,i)}}$
+\EndFor
+\State \textbf{end for}
+\State Obtain $r^* = \text{argmax}_{r\in{\mathfrak{B}}^{rem}_{u_{(s,i)}}} \mathfrak{G}^r_{u_{(s,i)}}$
+\While{$RU == 0$}
+\If{$\mathfrak{C}_{r^*} \geq \psi_{r^*,u(s,i)}$}
+\State Set $g^{r^*}_{u(s,i)} = 1$ 
+\State Set  $\mathfrak{C}_{r^*} = \mathfrak{C}_{r^*} - \psi_{{r^*},u(s,i)}$
+\State Set $RU = 1$ and  ${\mathfrak{B}}^{rem}_{u_{(s,i)}} = \mathcal{R} \setminus \{{r^*}\} $
+\State Update $I^{k}_{r,u(s,i)}, \forall s, \forall i$
+\State Update $\bar{\mathcal{R}}^{r}_{u_{(s,i)}} \forall s, \forall i$
+\Else
+\State  ${\mathfrak{B}}^{rem}_{u_{(s,i)}} = \mathcal{R} \setminus \{{r^*}\} $
+\EndIf
+\State \textbf{end if}
+\EndWhile
+\State \textbf{end while}
+\EndFor
+\State \textbf{end for}
+\EndFor
+\State \textbf{end for}
+\For {$s \gets 1$ to $S$}
+\For {$i \gets 1$ to $U_s$}
+\State Obtain $r^* = \text{argmax}_{r\in{\mathfrak{B}}^{rem}_{u_{(s,i)}}} \mathfrak{G}^r_{u_{(s,i)}}$
+\State  ${\mathfrak{B}}^{rem}_{u_{(s,i)}} = \mathcal{R} \setminus \{{r^*}\} $
+\If{$\mathfrak{C}_{r^*} \geq \psi_{r^*,u(s,i)}$} 
+\State Set $\mathtt{R}^{t} =\sum_{s=1}^S\sum_{i=1}^{U_s}\sum_{r=1}^{R}\delta_s g^{r}_{u(s,i)} \bar{\mathcal{R}}^{r^*}_{u_{(s,i)}}$
+\State Update $I^{k}_{r,u(s,i)}, \forall s, \forall i$
+\State Update $\bar{\mathcal{R}}^{r}_{u_{(s,i)}} \forall s, \forall i$
+\State $g^{r^*}_{u(s,i)} = 1$ 
+\State Set $\mathtt{R} =\sum_{s=1}^S\sum_{i=1}^{U_s}\sum_{r=1}^{R}\delta_s g^{r}_{u(s,i)}\bar{\mathcal{R}}^{r^*}_{u_{(s,i)}}$
+\If{$\mathtt{R} \leq \mathtt{R}^{t}$}
+\State Set $g^{r^*}_{u(s,i)} = 0$
+\Else
+\State update $\mathtt{R}^{t}$
+\EndIf
+\State \textbf{end if}
+\EndIf
+\State \textbf{end if}
+\EndFor
+\State \textbf{end for}
+\EndFor
+\State \textbf{end for}
+\end{algorithmic}
+\end{algorithm} 
+\end{enumerate}
 \subsection{Iterative Proposed Algorithm}
 In \eqref{sub1} and \eqref{sub2}, the details of solving each sub-problem are depicted. 
 Here, the iterative algorithm for the whole problem is demonstrated.

@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{yang2021multicast}
+P.~Yang, X.~Xi, Y.~Fu, T.~Q. Quek, X.~Cao, and D.~Wu, ``Multicast embb and
+  bursty urllc service multiplexing in a comp-enabled ran,'' \emph{IEEE
+  Transactions on Wireless Communications}, vol.~20, no.~5, pp. 3061--3077,
+  2021.
+
 \bibitem{akccay2007greedy}
 Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
   multidimensional knapsack problem,'' \emph{Annals of Operations Research},
