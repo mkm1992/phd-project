@@ -62,41 +62,44 @@
 \maketitle
 
 \begin{abstract}
-Nowadays, RAN virtualization attracts a lot of attention from operators since it 
-has significant benefits which leads to increase the flexibility and 
+Taking the advantage of both virtual RAN (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-RAN)
+is introduced as a next generation of RAN systems which leads to increase the flexibility, Openness and 
 reduce operator costs
 and allow them to add new capabilities to the network more quickly.
-Openness and Flexibility are two other principle points that encourage Open Radio Access Network (O-RAN)
-Alliance to establish O-RAN as a next generation of RAN systems. 
 O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU) and
-Central Unit (O-CU). 
-Some O-RAN components that includes user plane function (UPF) , O-CU, O-DU are virtualized and implemented as a virtual network function VNF that can be run on virtual machines (VMs) or containers.
-In this paper, we study the problem of baseband resource allocation and the VM activation in O-RAN architecture based on their service priority for different type of 5G services includes enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
-According to the concept of network slicing, the isolation of different type of services in O-DU, O-CU and UPF is performed.
-The optimization of baseband resources includes O-RU assignment, physical resource block (PRB) and power allocation. The main problem is a mixed integer non-linear programming that can not be solved easily.
-So the problem is broken down into two different step that is solved by iterative algorithm.
-In the first step, we reformulate and simplify the problem to find the power allocation, PRB assignment 
-and the number of activated VMs. In the second step, O-RU association is carried out.
-The proposed method is confirmed by the simulation results.  
+Central Unit (O-CU).
+In this paper, we study the problem of baseband resource allocation and virtual network function (VNF) activation in O-RAN architecture based on their service priority for different type of 5G services includes enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
+According to the concept of network slicing, the isolation of different type of services in O-DU, O-CU and user plane function (UPF) is performed.
+Limited fronthaul capacity and the restriction of end-to-end delay is considered in the problem.
+The optimization of baseband resources includes O-RU assignment, physical resource block (PRB) and power allocation. The main problem is a mixed integer non-linear programming that is tremendously difficult.
+To solve the challenging problem, we broke it down into two different steps that is solved by iterative algorithm.
+In the first step, we reformulated and simplified the problem to find the power allocation, PRB assignment 
+and the number of activated VNFs. In the second step, O-RU association is carried out.
+The proposed method is confirmed by the simulation results ina way that
+the simulations illustrate higher achievable data rate compared with a baseline scheme which only optimizes one of the baseband resources.
+   
 \end{abstract}
 
 \begin{IEEEkeywords}
-Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Virtual Machine (VM)
+Open Radio Access Network (O-RAN), Virtual Network Function (VNF), 
 \end{IEEEkeywords}
 
 \section{Introduction}
 
+
+To take advantage of both virtual RAN (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-RAN)
+is establish as a next generation of RAN systems. 
 Nowadays, RAN virtualization attracts a lot of attention from operators since it 
 has significant benefits which leads to increase the flexibility and 
 reduce operator costs
 such as CAPEX and OPEX and also allow them to add new capabilities to the network more quickly.
 Also, Openness and Flexibility are two other principle points that encourage Open Radio Access Network (O-RAN)
 Alliance to establish O-RAN as a next generation of RAN systems. 
-%The idea of O-RAN comes from the integration of virtual RAN (vRAN) and cloud RAN (CRAN) and it takes the advantage of both.
+The idea of O-RAN comes from the integration of virtual RAN (vRAN) and cloud RAN (CRAN) and it takes the advantage of both.
 Unlike previous generation of RAN that divide RAN into two parts, O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU) and
 Central Unit (O-CU).
-%O-DU and O-CU are connected to each other via an open and well-defined interface $F_1$.
-%Moreover, O-DU is connected to radio unit (O-RU) with an open fronthaul interface. 
+O-DU and O-CU are connected to each other via an open and well-defined interface $F_1$.
+Moreover, O-DU is connected to radio unit (O-RU) with an open fronthaul interface. 
 Some O-RAN components that includes user plane function (UPF) , O-CU, O-DU and RAN Intelligent Controller (RIC)-near real time, are virtualized and implemented as a VNF that can be run on virtual machines (VMs) or containers.
 
 
@@ -123,7 +126,7 @@ for different type of 5G services includes  enhanced mobile broadband (eMBB) and
 In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied.
 \section{System Model and Problem Formulation}\label{systemmodel}
 
-In this section, first, we  present the system model. Then, we obtain achievable data rates and delays for the downlink (DL) of the ORAN system. Afterward, we discuss about the assignment of physical data center resources.
+In this section, first, we  present the system model. Then, we obtain achievable data rates, power of O-RU and the fronthaul capacity for the downlink (DL) of the ORAN system. Afterward, we discuss about the mean delay and the power of VNFs.
 Finally, the main problem is expressed.
 \subsection{System Model}
 Suppose we have three service types includes mMTC, eMBB and URLLC which support different applications.
@@ -255,7 +258,7 @@ T_{UPF}^{s} &= \frac{1}{\mu_s^u - \alpha_{s}/{M_s^{u}}}\\
 \end{split}
 \end{equation}
 Where $M_s^{d}$, $M_s^{c}$ and 
-$M_s{u}$ are the variables that depict the sum of VNFs in O-DU, O-CU-UP and UPF, respectively. 
+$M_s^{u}$ are the variables that depict the sum of VNFs in O-DU, O-CU-UP and UPF, respectively. 
 Moreover, $1/\mu_s^d$, $1/\mu_s^c$ and $1/\mu_s^u$ are the mean service time of the O-DU, O-CU and the UPF layers respectively.
 Besides, $\alpha_{s}$ is the  arrival rate which is divided
 by load balancer before arriving to the VNFs. The arrival rate of each VNF in each layer for each slice 
