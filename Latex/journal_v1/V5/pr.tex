@@ -71,17 +71,17 @@ Alliance to establish O-RAN as a next generation of RAN systems.
 O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU) and
 Central Unit (O-CU). 
 Some O-RAN components that includes user plane function (UPF) , O-CU, O-DU are virtualized and implemented as a VNF that can be run on virtual machines (VMs) or containers.
-In this paper, resource allocation in an O-RAN system is considered using the concept of network slicing, where the several end-to-end logical network share a single physical network.
-Here, we study the problem of baseband resource allocation and the VM activation in O-RAN components based on their service priority for different type of 5G services includes enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
+In this paper, we study the problem of baseband resource allocation and the VM activation in O-RAN architecture based on their service priority for different type of 5G services includes enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
 According to the concept of network slicing, the isolation of different type of services in O-DU, O-CU and UPF is performed.
 The optimization of baseband resources includes O-RU assignment, physical resource block (PRB) and power allocation. The main problem is a mixed integer non-linear programming that can not be solved easily.
 So the problem is broken down into two different step that is solved by iterative algorithm.
 In the first step, we reformulate and simplify the problem to find the power allocation, PRB assignment 
-and the number of activated VMs. In the second step, O-RU association is carried out.  
+and the number of activated VMs. In the second step, O-RU association is carried out.
+The proposed method is confirmed by the simulation results.  
 \end{abstract}
 
 \begin{IEEEkeywords}
-
+Open Radio Access Network (O-RAN), Virtual Network function (VNF), Virtual Machine (VM)
 \end{IEEEkeywords}
 
 \section{Introduction}
