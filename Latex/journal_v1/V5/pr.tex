@@ -68,17 +68,21 @@ reduce operator costs
 such as CAPEX and OPEX and also allow them to add new capabilities to the network more quickly.
 Also, Openness and Flexibility are two other principle points that encourage Open Radio Access Network (O-RAN)
 Alliance to establish O-RAN as a next generation of RAN systems. 
-O-RAN is a combination of virtual RAN (vRAN) and cloud RAN (CRAN) and it takes the advantage of both.
+The idea of O-RAN comes from the integration of virtual RAN (vRAN) and cloud RAN (CRAN) and it takes the advantage of both.
 Unlike previous generation of RAN that divide RAN into two parts, O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU) and
 Central Unit (O-CU).
-O-DU and O-CU are
+O-DU and O-CU are connected to each other via an open and well-defined interface $F_1$.
+Moreover, O-DU is connected to radio unit (O-RU) with an open fronthaul interface. 
+Some O-RAN components that includes user plane function (UPF) , O-CU, O-DU and RAN Intelligent Controller (RIC)-near real time, are virtualized and implemented as a VNF that can be run on virtual machines (VMs) or containers.
 
 Network Slicing, is an end-to-end logical network
 which offers services with special needs. Multiple network Slices in the same infrastructure run and manage
-and work independently.
+and work independently. There are several implementations of network slicing, including network core slicing, RAN slicing, and slicing of both sections. Here, we consider RAN slicing in O-RAN architecture
+for different type of 5G services includes URLLC, eMBB and mMTC services which contain different application instances.
 
 In this paper, resource allocation in an O-RAN system is considered using the concept of network slicing.
-The problem of O-RU assignment, power allocation and 
+Here, we optimize the baseband resources and the VM activation in O-RAN components base on their service priority for different services to maximize sum rate of system.
+The problem of baseband resources includes o-RU assignment, physical resource block (PRB) and power allocation. The main problem is a mixed integer non-linear programming  
 \end{abstract}
 
 \begin{IEEEkeywords}
