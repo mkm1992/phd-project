@@ -65,24 +65,19 @@
 Nowadays, RAN virtualization attracts a lot of attention from operators since it 
 has significant benefits which leads to increase the flexibility and 
 reduce operator costs
-such as CAPEX and OPEX and also allow them to add new capabilities to the network more quickly.
-Also, Openness and Flexibility are two other principle points that encourage Open Radio Access Network (O-RAN)
+and allow them to add new capabilities to the network more quickly.
+Openness and Flexibility are two other principle points that encourage Open Radio Access Network (O-RAN)
 Alliance to establish O-RAN as a next generation of RAN systems. 
-The idea of O-RAN comes from the integration of virtual RAN (vRAN) and cloud RAN (CRAN) and it takes the advantage of both.
-Unlike previous generation of RAN that divide RAN into two parts, O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU) and
-Central Unit (O-CU).
-O-DU and O-CU are connected to each other via an open and well-defined interface $F_1$.
-Moreover, O-DU is connected to radio unit (O-RU) with an open fronthaul interface. 
-Some O-RAN components that includes user plane function (UPF) , O-CU, O-DU and RAN Intelligent Controller (RIC)-near real time, are virtualized and implemented as a VNF that can be run on virtual machines (VMs) or containers.
-
-Network Slicing, is an end-to-end logical network
-which offers services with special needs. Multiple network Slices in the same infrastructure run and manage
-and work independently. There are several implementations of network slicing, including network core slicing, RAN slicing, and slicing of both sections. Here, we consider RAN slicing in O-RAN architecture
-for different type of 5G services includes URLLC, eMBB and mMTC services which contain different application instances.
-
-In this paper, resource allocation in an O-RAN system is considered using the concept of network slicing.
-Here, we optimize the baseband resources and the VM activation in O-RAN components base on their service priority for different services to maximize sum rate of system.
-The problem of baseband resources includes o-RU assignment, physical resource block (PRB) and power allocation. The main problem is a mixed integer non-linear programming  
+O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU) and
+Central Unit (O-CU). 
+Some O-RAN components that includes user plane function (UPF) , O-CU, O-DU are virtualized and implemented as a VNF that can be run on virtual machines (VMs) or containers.
+In this paper, resource allocation in an O-RAN system is considered using the concept of network slicing, where the several end-to-end logical network share a single physical network.
+Here, we study the problem of baseband resource allocation and the VM activation in O-RAN components based on their service priority for different type of 5G services includes enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
+According to the concept of network slicing, the isolation of different type of services in O-DU, O-CU and UPF is performed.
+The optimization of baseband resources includes O-RU assignment, physical resource block (PRB) and power allocation. The main problem is a mixed integer non-linear programming that can not be solved easily.
+So the problem is broken down into two different step that is solved by iterative algorithm.
+In the first step, we reformulate and simplify the problem to find the power allocation, PRB assignment 
+and the number of activated VMs. In the second step, O-RU association is carried out.  
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -90,6 +85,31 @@ The problem of baseband resources includes o-RU assignment, physical resource bl
 \end{IEEEkeywords}
 
 \section{Introduction}
+
+Nowadays, RAN virtualization attracts a lot of attention from operators since it 
+has significant benefits which leads to increase the flexibility and 
+reduce operator costs
+such as CAPEX and OPEX and also allow them to add new capabilities to the network more quickly.
+Also, Openness and Flexibility are two other principle points that encourage Open Radio Access Network (O-RAN)
+Alliance to establish O-RAN as a next generation of RAN systems. 
+%The idea of O-RAN comes from the integration of virtual RAN (vRAN) and cloud RAN (CRAN) and it takes the advantage of both.
+Unlike previous generation of RAN that divide RAN into two parts, O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU) and
+Central Unit (O-CU).
+%O-DU and O-CU are connected to each other via an open and well-defined interface $F_1$.
+%Moreover, O-DU is connected to radio unit (O-RU) with an open fronthaul interface. 
+Some O-RAN components that includes user plane function (UPF) , O-CU, O-DU and RAN Intelligent Controller (RIC)-near real time, are virtualized and implemented as a VNF that can be run on virtual machines (VMs) or containers.
+
+
+The idea of O-RAN comes from the integration of virtual RAN (vRAN) and cloud RAN (CRAN) and it takes the advantage of both.
+O-DU and O-CU are connected to each other via an open and well-defined interface $F_1$.
+Moreover, O-DU is connected to radio unit (O-RU) with an open fronthaul interface. 
+
+
+Network Slicing, is an end-to-end logical network
+which offers services with special needs. 
+Multiple network Slices in the same infrastructure run and manage
+and work independently. There are several implementations of network slicing, including network core slicing, RAN slicing, and slicing of both sections. Here, we consider RAN slicing in O-RAN architecture
+for different type of 5G services includes  enhanced mobile broadband (eMBB) and ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services which contain different application instances.
 
 \begin{figure}
   \centering 
