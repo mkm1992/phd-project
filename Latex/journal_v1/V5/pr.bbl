@@ -65,6 +65,22 @@ M.~Setayesh, S.~Bahrami, and V.~W. Wong, ``Joint prb and power allocation for
   IEEE Global Communications Conference}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2020, pp. 1--6.
 
+\bibitem{mijumbi2015network}
+R.~Mijumbi, J.~Serrat, J.-L. Gorricho, N.~Bouten, F.~De~Turck, and R.~Boutaba,
+  ``Network function virtualization: State-of-the-art and research
+  challenges,'' \emph{IEEE Communications surveys \& tutorials}, vol.~18,
+  no.~1, pp. 236--262, 2015.
+
+\bibitem{luo2020online}
+Z.~Luo and C.~Wu, ``An online algorithm for vnf service chain scaling in
+  datacenters,'' \emph{IEEE/ACM Transactions on Networking}, vol.~28, no.~3,
+  pp. 1061--1073, 2020.
+
+\bibitem{SystemCostMinimization}
+J.~Tang, W.~P. Tay, T.~Q. Quek, and B.~Liang, ``System cost minimization in
+  cloud ran with limited fronthaul capacity,'' \emph{IEEE Transactions on
+  Wireless Communications}, vol.~16, no.~5, pp. 3371--3384, 2017.
+
 \bibitem{akccay2007greedy}
 Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
   multidimensional knapsack problem,'' \emph{Annals of Operations Research},

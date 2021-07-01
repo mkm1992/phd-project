@@ -62,31 +62,26 @@
 \maketitle
 
 \begin{abstract}
-Taking the advantage of both virtual RAN (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-RAN)
-is introduced as a next generation of RAN systems which leads to increase the flexibility, Openness and 
-reduce operator costs
-and allow them to add new capabilities to the network more quickly.
-O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU) and
-Central Unit (O-CU).
-In this paper, we study the problem of baseband resource allocation and virtual network function (VNF) activation in O-RAN architecture based on their service priority for different type of 5G services includes enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
-According to the concept of network slicing, the isolation of different type of services in O-DU, O-CU and user plane function (UPF) is performed.
-Limited fronthaul capacity and the restriction of end-to-end delay is considered in the problem.
-The optimization of baseband resources includes O-RU assignment, physical resource block (PRB) and power allocation. The main problem is a mixed integer non-linear programming that is tremendously difficult.
-To solve the challenging problem, we broke it down into two different steps that is solved by iterative algorithm.
-In the first step, we reformulated and simplified the problem to find the power allocation, PRB assignment 
-and the number of activated VNFs. In the second step, O-RU association is carried out.
+Taking advantage of both virtual RAN (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-RAN) is introduced as the next generation of RAN systems which leads to increase flexibility, Openness, and reduce operational costs and allow them to add new capabilities to the network more quickly.
+O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
+In this paper, we study the problem of baseband resource allocation and virtual network function (VNF) activation in O-RAN architecture based on their service priority for a different types of 5G services includes enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
+According to the concept of network slicing, the isolation of different types of services in O-DU, O-CU, and user plane function (UPF) is performed.
+Limited fronthaul capacity and the restriction of end-to-end delay are considered in the problem.
+The optimization of baseband resources includes O-RU assignment, physical resource block (PRB), and power allocation. The main problem is mixed-integer non-linear programming that is tremendously difficult.
+To solve the challenging problem, we broke it down into two different steps that the iterative algorithm solves.
+In the first step, we reformulated and simplified the problem to find the power allocation, PRB assignment, and the number of activated VNFs. In the second step, the O-RU association is carried out.
 The proposed method is confirmed by the simulation results in a way that
-the simulations illustrate higher achievable data rate compared with a baseline scheme which only optimizes one of the baseband resources.
+the simulations illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources.
    
 \end{abstract}
 
 \begin{IEEEkeywords}
-Open Radio Access Network (O-RAN), Virtual Network Function (VNF), 
+Open Radio Access Network (O-RAN), Virtual Network Function (VNF) 
 \end{IEEEkeywords}
 
 \section{Introduction} 
-Nowadays, RAN virtualization attracts a lot of attention from operators since it 
-has significant benefits which leads to increase the flexibility and 
+Nowadays, RAN virtualization attracts significant attention from  both industry and academia since it 
+has remarkable benefits which leads to increase the flexibility and 
 reduce operator costs
 such as CAPEX and OPEX and also allow them to add new capabilities to the network more quickly.
 In addition to RAN virtualization, openness and RAN intelligence are two other fundamental points that encourage Open Radio Access Network (O-RAN)
@@ -109,15 +104,17 @@ The two logical nodes RIC-Non Real Time (which is placed in Orchestration and Au
 
 In the concept of network slicing, a slice is an end-to-end logical network
 which offers services with special needs. 
-Multiple isolated network slices run and manage
-and work independently on the same infrastructure. There are several implementations of network slicing, including network core slicing, RAN slicing, and slicing of both sections. 
+Multiple isolated network slices run, manage
+,and work independently on the same infrastructure. There are several implementations of network slicing, including network core slicing, RAN slicing, and slicing of both sections. 
 Different type of services includes enhanced mobile broadband (eMBB) and ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services are introduced in 5th generation of mobile network. Each type of service requires special slice of network based on its QoS
  \cite{shen2020ai,setayesh2020joint}.
 
-
-Some O-RAN components that includes user plane function (UPF) , O-CU, O-DU and RAN Intelligent Controller (RIC)-near real time, are virtualized and implemented as a VNF that can be run on virtual machines (VMs) or containers.
-
-
+To improve system performance in the fifth generation of telecommunications, the separation of network software and hardware elements has been done and introduced as network function virtualization (NFV), and virtual network functions (VNF) are system function blocks. The key idea of the implementation of NFV is 
+to decouple software from physical hardware, dynamic scaling and the deployment of flexible network function. A usual NFV offer is to execute VNFs on a virtual machines or containers in a cloud system \cite{mijumbi2015network, luo2020online}.
+As a result, some O-RAN components that includes user plane function (UPF) , O-CU, O-DU and RAN Intelligent Controller (RIC)-near real time, are virtualized and implemented as a VNF that can be run on virtual machines (VMs) or containers.
+\subsection{Related Works}
+In \cite{SystemCostMinimization}, the authors solve the problem of obtaining beamforming and VMs activation 
+in C-RAN system with limited fronthaul capacity. The goal of the paper is to minimize the energy cost, with the system delay, fronthaul capacity and rate constraint. 
 
 
 
