@@ -80,7 +80,15 @@ Open Radio Access Network (O-RAN), Virtual Network Function (VNF)
 \end{IEEEkeywords}
 
 \section{Introduction} 
-Nowadays, RAN virtualization attracts significant attention from  both industry and academia since it 
+One of the goals of the fifth generation of wireless system is to achieve the desired QoS (such as rate, delay, power, ...) for different type of services. Network slicing is the best solution for this aim.
+A network slice is an end-to-end logical network
+which offers services with special needs. 
+Multiple isolated network slices run, manage
+,and work independently on the same infrastructure. There are several implementations of network slicing, including network core slicing, RAN slicing, and slicing of both sections. 
+Different type of services includes enhanced mobile broadband (eMBB) and ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services are introduced in 5th generation of mobile network. Each type of service requires special slice of network based on its QoS
+ \cite{shen2020ai,setayesh2020joint,popovski20185g}.
+
+Recently, RAN virtualization attracts significant attention from  both industry and academia since it 
 has remarkable benefits which leads to increase the flexibility and 
 reduce operator costs
 such as CAPEX and OPEX and also allow them to add new capabilities to the network more quickly.
@@ -100,21 +108,29 @@ RAN Intelligent Controller (RIC)- Near Real Time and O-Cloud.
 One of the necessities of new generation of wireless networks is its intelligence.
 Based on the requirement of smart wireless network, O-RAN offers machine learning techniques.
 The two logical nodes RIC-Non Real Time (which is placed in Orchestration and Automation node) and RIC- Near Real Time implement the algorithms for network intelligence 
-\cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML}.
-
-In the concept of network slicing, a slice is an end-to-end logical network
-which offers services with special needs. 
-Multiple isolated network slices run, manage
-,and work independently on the same infrastructure. There are several implementations of network slicing, including network core slicing, RAN slicing, and slicing of both sections. 
-Different type of services includes enhanced mobile broadband (eMBB) and ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services are introduced in 5th generation of mobile network. Each type of service requires special slice of network based on its QoS
- \cite{shen2020ai,setayesh2020joint}.
+\cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML,lin2021toward}.
 
 To improve system performance in the fifth generation of telecommunications, the separation of network software and hardware elements has been done and introduced as network function virtualization (NFV), and virtual network functions (VNF) are system function blocks. The key idea of the implementation of NFV is 
 to decouple software from physical hardware, dynamic scaling and the deployment of flexible network function. A usual NFV offer is to execute VNFs on a virtual machines or containers in a cloud system \cite{mijumbi2015network, luo2020online}.
 As a result, some O-RAN components that includes user plane function (UPF) , O-CU, O-DU and RAN Intelligent Controller (RIC)-near real time, are virtualized and implemented as a VNF that can be run on virtual machines (VMs) or containers.
 \subsection{Related Works}
-In \cite{SystemCostMinimization}, the authors solve the problem of obtaining beamforming and VMs activation 
-in C-RAN system with limited fronthaul capacity. The goal of the paper is to minimize the energy cost, with the system delay, fronthaul capacity and rate constraint. 
+Network slicing is increasingly receiving research attention.
+Many researcher, studied the problem of resource allocation in network slicing for multitenant cellular networks \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
+In \cite{lee2018dynamic},
+dynamic network slicing in multitenant heterogeneous CRAN (H-CRAN) is considered. The process of allocating network resources to users is discussed. The network slicing scheme includes a higher level, which manages user acceptance control, user communication which includes radio unit association (RRH association to maximize user rates and allocate base band resource capacity), the allocation of BBU capacity and a lower level, which is the allocation of power and physical resource blocks (PRB) among users. 
+In article \cite{xiang2020realization}, network slicing in the radio section is considered for fog or F-RAN structure, in which two network slices are set for hotspots and vehicle scenarios with related infrastructure. In \cite{elayoubi20195g,d2020toward} the implementation of RAN level slicing is discussed in mobile network operator (MNO). Also the problem of resource allocation is considered. 
+Moreover, the challenges facing RAN slicing have also been explored, one of which involves designing and managing multiple slices in the shared infrastructure in an efficient manner while guaranteeing the agreed 
+service level agreement (SLA) for each.
+
+Multiplexing of eMBB and URLLC services on the same RAN and sharing the resources for these services is a challenging problem that many researchers pay attention to this topic. In \cite{setayesh2020joint,yang2020should}
+the problem of resource allocation in the coexistence of these two services (URLLC and eMBB) is considered
+based on their QoS. In \cite{alsenwi2021intelligent}, the problem of resource allocation for joint eMBB and URLLC is formulated and solved by deep reinforcement learning. In \cite{saggese2021power}
+the problem of power minimization for these two type services (URLLC and eMBB) is presented for non-orthogonal multiple access (NOMA) and orthogonal multiple access (OMA). In \cite{korrai2020ran},
+the authors proposed to allocate RAN resources for the network slicing system in the coexistence of eMBB and URLLC services. The system guarantee the latency, the service rate and the  maintenance of the reliability.
+
+Virtualization technique for RAN and core is one of the interested topics.  
+In \cite{SystemCostMinimization,guo2016exploiting}, the authors solve the problem of obtaining beamforming and VMs activation 
+in C-RAN system with limited fronthaul capacity. The goal of this paper is to minimize the energy cost, with the system delay, fronthaul capacity and rate constraint. To guarantee delay for services, transmission and processing delay is modeled based on M/M/1 queuing theory. In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing resource allocation with beamforming is formulated; Also the association of RRH to UE is considered and solved using novel methods.
 
 
 

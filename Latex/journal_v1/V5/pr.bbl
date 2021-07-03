@@ -21,6 +21,33 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{shen2020ai}
+X.~Shen, J.~Gao, W.~Wu, K.~Lyu, M.~Li, W.~Zhuang, X.~Li, and J.~Rao,
+  ``Ai-assisted network-slicing based next-generation wireless networks,''
+  \emph{IEEE Open Journal of Vehicular Technology}, vol.~1, pp. 45--66, 2020.
+
+\bibitem{setayesh2020joint}
+M.~Setayesh, S.~Bahrami, and V.~W. Wong, ``Joint prb and power allocation for
+  slicing embb and urllc services in 5g c-ran,'' in \emph{GLOBECOM 2020-2020
+  IEEE Global Communications Conference}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2020, pp. 1--6.
+
+\bibitem{popovski20185g}
+P.~Popovski, K.~F. Trillingsgaard, O.~Simeone, and G.~Durisi, ``5g wireless
+  network slicing for embb, urllc, and mmtc: A communication-theoretic view,''
+  \emph{Ieee Access}, vol.~6, pp. 55\,765--55\,779, 2018.
+
+\bibitem{mijumbi2015network}
+R.~Mijumbi, J.~Serrat, J.-L. Gorricho, N.~Bouten, F.~De~Turck, and R.~Boutaba,
+  ``Network function virtualization: State-of-the-art and research
+  challenges,'' \emph{IEEE Communications surveys \& tutorials}, vol.~18,
+  no.~1, pp. 236--262, 2015.
+
+\bibitem{luo2020online}
+Z.~Luo and C.~Wu, ``An online algorithm for vnf service chain scaling in
+  datacenters,'' \emph{IEEE/ACM Transactions on Networking}, vol.~28, no.~3,
+  pp. 1061--1073, 2020.
+
 \bibitem{han2019research}
 B.~Han, L.~Liu, J.~Zhang, C.~Tao, C.~Qiu, T.~Zhou, Z.~Li, and Z.~Piao,
   ``Research on resource migration based on novel rrh-bbu mapping in cloud
@@ -54,42 +81,92 @@ C.~B. Both, J.~Borges, L.~Gon{\c{c}}alves, C.~Nahum, C.~Macedo, A.~Klautau, and
 O.-R. W.~G. 2, ``Ai/ml workflow description and requirements,'' O-RAN Alliance,
   Tech. Rep., 2020.
 
-\bibitem{shen2020ai}
-X.~Shen, J.~Gao, W.~Wu, K.~Lyu, M.~Li, W.~Zhuang, X.~Li, and J.~Rao,
-  ``Ai-assisted network-slicing based next-generation wireless networks,''
-  \emph{IEEE Open Journal of Vehicular Technology}, vol.~1, pp. 45--66, 2020.
+\bibitem{lin2021toward}
+B.-S. Lin, ``Toward an ai-enabled o-ran-based and sdn/nfv-driven 5g\& iot
+  network era,'' \emph{Network and Communication Technologies}, vol.~6, no.~1,
+  pp. 6--15, 2021.
 
-\bibitem{setayesh2020joint}
-M.~Setayesh, S.~Bahrami, and V.~W. Wong, ``Joint prb and power allocation for
-  slicing embb and urllc services in 5g c-ran,'' in \emph{GLOBECOM 2020-2020
-  IEEE Global Communications Conference}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 2020, pp. 1--6.
-
-\bibitem{mijumbi2015network}
-R.~Mijumbi, J.~Serrat, J.-L. Gorricho, N.~Bouten, F.~De~Turck, and R.~Boutaba,
-  ``Network function virtualization: State-of-the-art and research
-  challenges,'' \emph{IEEE Communications surveys \& tutorials}, vol.~18,
-  no.~1, pp. 236--262, 2015.
-
-\bibitem{luo2020online}
-Z.~Luo and C.~Wu, ``An online algorithm for vnf service chain scaling in
-  datacenters,'' \emph{IEEE/ACM Transactions on Networking}, vol.~28, no.~3,
-  pp. 1061--1073, 2020.
-
-\bibitem{SystemCostMinimization}
-J.~Tang, W.~P. Tay, T.~Q. Quek, and B.~Liang, ``System cost minimization in
-  cloud ran with limited fronthaul capacity,'' \emph{IEEE Transactions on
-  Wireless Communications}, vol.~16, no.~5, pp. 3371--3384, 2017.
-
-\bibitem{akccay2007greedy}
-Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
-  multidimensional knapsack problem,'' \emph{Annals of Operations Research},
-  vol. 150, no.~1, pp. 17--29, 2007.
+\bibitem{feng2020dynamic}
+L.~Feng, Y.~Zi, W.~Li, F.~Zhou, P.~Yu, and M.~Kadoch, ``Dynamic resource
+  allocation with ran slicing and scheduling for urllc and embb hybrid
+  services,'' \emph{IEEE Access}, vol.~8, pp. 34\,538--34\,551, 2020.
 
 \bibitem{lee2018dynamic}
 Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
   multitenant heterogeneous cloud radio access networks,'' \emph{IEEE
   Transactions on Wireless Communications}, vol.~17, no.~4, pp. 2146--2161,
   2018.
+
+\bibitem{lee2016new}
+Y.~L. Lee, J.~Loo, and T.~C. Chuah, ``A new network slicing framework for
+  multi-tenant heterogeneous cloud radio access networks,'' in \emph{2016
+  International Conference on Advances in Electrical, Electronic and Systems
+  Engineering (ICAEES)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2016, pp.
+  414--420.
+
+\bibitem{xiang2020realization}
+H.~Xiang, S.~Yan, and M.~Peng, ``A realization of fog-ran slicing via deep
+  reinforcement learning,'' \emph{IEEE Transactions on Wireless
+  Communications}, vol.~19, no.~4, pp. 2515--2527, 2020.
+
+\bibitem{elayoubi20195g}
+S.~E. Elayoubi, S.~B. Jemaa, Z.~Altman, and A.~Galindo-Serrano, ``5g ran
+  slicing for verticals: Enablers and challenges,'' \emph{IEEE Communications
+  Magazine}, vol.~57, no.~1, pp. 28--34, 2019.
+
+\bibitem{d2020toward}
+S.~D'Oro, F.~Restuccia, and T.~Melodia, ``Toward operator-to-waveform 5g radio
+  access network slicing,'' \emph{IEEE Communications Magazine}, vol.~58,
+  no.~4, pp. 18--23, 2020.
+
+\bibitem{yang2020should}
+P.~Yang, X.~Xi, T.~Q. Quek, J.~Chen, X.~Cao, and D.~Wu, ``How should i
+  orchestrate resources of my slices for bursty urllc service provision?''
+  \emph{IEEE Transactions on Communications}, vol.~69, no.~2, pp. 1134--1146,
+  2020.
+
+\bibitem{alsenwi2021intelligent}
+M.~Alsenwi, N.~H. Tran, M.~Bennis, S.~R. Pandey, A.~K. Bairagi, and C.~S. Hong,
+  ``Intelligent resource slicing for embb and urllc coexistence in 5g and
+  beyond: A deep reinforcement learning based approach,'' \emph{IEEE
+  Transactions on Wireless Communications}, 2021.
+
+\bibitem{saggese2021power}
+F.~Saggese, M.~Moretti, and P.~Popovski, ``Power minimization of downlink
+  spectrum slicing for embb and urllc users,'' \emph{arXiv preprint
+  arXiv:2106.08847}, 2021.
+
+\bibitem{korrai2020ran}
+P.~Korrai, E.~Lagunas, S.~K. Sharma, S.~Chatzinotas, A.~Bandi, and
+  B.~Ottersten, ``A ran resource slicing mechanism for multiplexing of embb and
+  urllc services in ofdma based 5g wireless networks,'' \emph{IEEE Access},
+  vol.~8, pp. 45\,674--45\,688, 2020.
+
+\bibitem{SystemCostMinimization}
+J.~Tang, W.~P. Tay, T.~Q. Quek, and B.~Liang, ``System cost minimization in
+  cloud ran with limited fronthaul capacity,'' \emph{IEEE Transactions on
+  Wireless Communications}, vol.~16, no.~5, pp. 3371--3384, 2017.
+
+\bibitem{guo2016exploiting}
+K.~Guo, M.~Sheng, J.~Tang, T.~Q. Quek, and Z.~Qiu, ``Exploiting hybrid
+  clustering and computation provisioning for green c-ran,'' \emph{IEEE Journal
+  on Selected Areas in Communications}, vol.~34, no.~12, pp. 4063--4076, 2016.
+
+\bibitem{luong2018joint}
+P.~Luong, F.~Gagnon, C.~Despins, and L.-N. Tran, ``Joint virtual computing and
+  radio resource allocation in limited fronthaul green c-rans,'' \emph{IEEE
+  Transactions on Wireless Communications}, vol.~17, no.~4, pp. 2602--2617,
+  2018.
+
+\bibitem{luong2018novel}
+P.~Luong, C.~Despins, F.~Gagnon, and L.-N. Tran, ``A novel energy-efficient
+  resource allocation approach in limited fronthaul virtualized c-rans,'' in
+  \emph{2018 IEEE 87th Vehicular Technology Conference (VTC Spring)}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, 2018, pp. 1--6.
+
+\bibitem{akccay2007greedy}
+Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
+  multidimensional knapsack problem,'' \emph{Annals of Operations Research},
+  vol. 150, no.~1, pp. 17--29, 2007.
 
 \end{thebibliography}
