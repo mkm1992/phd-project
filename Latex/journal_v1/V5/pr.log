@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  4 JUL 2021 18:50
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  4 JUL 2021 19:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -662,14 +662,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-File: Drawing15.eps Graphic file (type eps)
-<Drawing15.eps>
+File: Drawing14.pdf Graphic file (type pdf)
+<use Drawing14.pdf>
+ [2]
+Underfull \vbox (badness 6575) has occurred while \output is active []
 
-Overfull \hbox (37.33463pt too wide) in paragraph at lines 156--159
- [][] 
- []
 
-[2]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 190.
@@ -679,7 +677,12 @@ Overfull \hbox (1.74622pt too wide) detected at line 209
 []
  []
 
+
+Underfull \vbox (badness 1715) has occurred while \output is active []
+
+ [3]
 LaTeX Font Info:    Try loading font information for U+euf on input line 215.
+
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
@@ -688,9 +691,9 @@ Overfull \hbox (8.02382pt too wide) detected at line 216
 euf/m/n/10 y[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 z[];
  []
 
-[3]
+[4]
 Missing character: There is no ’ in font ptmr8t!
- [4] [5]
+ [5]
 Overfull \hbox (32.00018pt too wide) detected at line 444
 []
  []
@@ -701,7 +704,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 444--447
  =
  []
 
-
+[6]
 Overfull \hbox (16.65843pt too wide) detected at line 491
 [] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 ^^N[] \OT1/cmr/m/n/10 + \U/euf/m/n/10 h[
 ]\OT1/cmr/m/n/10 )\U/euf/m/n/10 B[] \OT1/cmr/m/n/10 + (\OML/cmm/m/it/10 ^^T[] \
@@ -714,7 +717,7 @@ Overfull \hbox (28.92142pt too wide) detected at line 505
 10 ][]\OML/cmm/m/it/10 :
  []
 
-[6]
+
 Overfull \hbox (19.54637pt too wide) detected at line 518
 \OML/cmm/m/it/10 e[] \OMS/cmsy/m/n/10 ^^B \OT1/cmr/m/n/10 (\U/euf/m/n/10 F[] \O
 MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 m[]\OMS
@@ -722,12 +725,12 @@ MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 m[]\OMS
 T1/cmr/m/n/10 ) = 0\OML/cmm/m/it/10 :
  []
 
-(./pr.bbl
+[7] (./pr.bbl
 Underfull \hbox (badness 1852) in paragraph at lines 36--39
 \T1/ptm/m/n/8 ``5g wire-less net-work slic-ing for embb, urllc, and mmtc: A
  []
 
-[7])
+[8])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -739,18 +742,20 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8] (./pr.aux)
+[9
+
+] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 8224 strings out of 492970
- 122912 string characters out of 6137298
- 228473 words of memory out of 5000000
- 12075 multiletter control sequences out of 15000+600000
+ 8228 strings out of 492970
+ 122958 string characters out of 6137298
+ 227500 words of memory out of 5000000
+ 12079 multiletter control sequences out of 15000+600000
  81465 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,28n,77p,921b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on pr.pdf (8 pages).
+Output written on pr.pdf (9 pages).

@@ -133,33 +133,33 @@ In \cite{SystemCostMinimization,guo2016exploiting}, the authors solve the proble
 in C-RAN system with limited fronthaul capacity. The goal of this paper is to minimize the energy cost, with the system delay, fronthaul capacity and rate constraint. To guarantee delay for services, transmission and processing delay is modeled based on M/M/1 queuing theory. In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing resource allocation with beamforming is formulated; Also the association of RRH to UE is considered and solved using novel methods.
 In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power allocation and RRH association in H-CRAN system is considered to maximize energy efficiency.
 \subsection{Main Contribution}
-The aim of this study is to jointly optimize VNF activation, power, PRB allocation ,and associate O-RUs to UEs to develop an isolated network slicing outline for different type of services in an O-RAN platform.
+The aim of this study is to jointly optimize VNF activation, power allocation, PRB allocation ,and O-RUs association to develop an isolated network slicing outline for different type of services in an O-RAN platform. In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied.
 The main contributions of this paper are summarized as follow:
 \begin{itemize}
-\item In this paper a network slicing model is depicted for three different type of services introduced in 5G (URLLC, eMBB and mMTC) and the problem of radio resource allocation and VNF activation is studied in an O-RAN architecture.
-\item  We formulate the problem of baseband resource allocation to maximize the weighted throughput of O-RAN system for different type of services with specific QoS. 
-\item The desired QoS conditions such as delay and throughput are considered for different type of services. We formulate the end-to end mean delay of system based in the activated VNFs and the throughput of each user.
-\item We take into account the limited fronthaul capacity and accurately obtain the power and the capacity of each O-RU based on the quantization noise.
-\item We model the interference of neighboring O-RU and formulate the accurate throughput
+\item In this paper a network slicing model is depicted for three different type of services introduced in 5G (URLLC, eMBB and mMTC) and the problem of radio resource allocation and VNF activation is studied in the O-RAN architecture.
+We formulate the problem of baseband resource allocation to maximize the weighted throughput of O-RAN system for different type of services with specific QoS. 
+\item The desired QoS conditions such as delay and throughput are considered for different type of services. We formulate the end-to end mean delay of system based on the activated VNFs and the throughput of each user.
+We take into account the limited fronthaul capacity and accurately obtain the power and the capacity of each O-RU based on the quantization noise.
+We model the interference of neighboring O-RU and formulate the accurate throughput
 for different type of services. We model the throughput of URLLC and mMTC based on their short packet transmission.
 \item The main problem is a mixed-integer non linear programming that is extremely difficult to solve.
 We perform a two-step iterative algorithm to solve it.
-\item The two-step iterative algorithm is presented for the resource management framework with the first-step VNF activation, power allocation and PRB association and the second-step O-RU association.
+The two-step iterative algorithm is presented for the resource management framework with the first-step VNF activation, power allocation and PRB association and the second-step O-RU association.
 \item For the first-step, we reformulate and simplificate the main problem to find an upper and lower bound for number of activated VNFs and using lagrangian function and KKT conditions to find optimal power and PRB allocation.
-\item For the second-step, the problem of O-RU association can be convert to a multiple knapsack problem and solved by Greedy algorithm.
+For the second-step, the problem of O-RU association can be convert to a multiple knapsack problem and solved by Greedy algorithm.
 \end{itemize}  
 
-In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied.
-
-\begin{figure}
+\begin{figure*}
   \centering 
-    \includegraphics[scale = 0.35]{Drawing15.eps}
+    \includegraphics[scale = 0.5]{Drawing14.pdf}
     %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-    %\includegraphics[height=\textheight/2,width=\textwidth/2]{Drawing14.pdf}
+    %\includegraphics[width=\textwidth]{Drawing14.pdf}
   \caption{Network sliced ORAN system}
   \label{fig:c11}
-\end{figure}
-
+\end{figure*}
+The rest of this paper is organized as follow. The system model and the problem formulation is described 
+in Section \ref{systemmodel}. The details of our proposed resource management algorithm is 
+introduced in Seection \ref{proAlg}. In Section \ref{NE}, numerical results are provided to evaluate the performance of the proposed algorithm. Section \ref{conc}, concludes the whole paper.
 
 \section{System Model and Problem Formulation}\label{systemmodel}
 
@@ -367,7 +367,7 @@ Also \eqref{c13} shows that the rate of each UE requesting eMBB, URLLC and mMTC 
 Also, \eqref{c18} ensure that each PRB can not be assigned to more than one UE associated to the same O-RU.
 In addition, \eqref{c19} indicate that the static cost of energy of VNFs in each slice do not exceed from the threshold. 
 Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
-\section{Proposed Algorithm Scheme}
+\section{Proposed Algorithm Scheme}\label{proAlg}
 In this section, we first apply some simplifications to the system; Solving problem \eqref{problem} is complicated due to the fact that this problem is 
 a non-convex problem and it is a 
 mixed integer non-linear problem (MINLP) with a binary variable and an integer variable. 
@@ -618,6 +618,8 @@ The whole algorithm is depicted as follow (Algorithm \eqref{alg2}).
 \State \textbf{end for} \label{24}
 \end{algorithmic}
 \end{algorithm}
+\section{Numerical Result}\label{NE}
+\section{Conclusion}\label{conc}
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
 \end{document} 
