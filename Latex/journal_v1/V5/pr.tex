@@ -131,8 +131,17 @@ the authors proposed to allocate RAN resources for the network slicing system in
 Virtualization technique for RAN and core is one of the interested topics.  
 In \cite{SystemCostMinimization,guo2016exploiting}, the authors solve the problem of obtaining beamforming and VMs activation 
 in C-RAN system with limited fronthaul capacity. The goal of this paper is to minimize the energy cost, with the system delay, fronthaul capacity and rate constraint. To guarantee delay for services, transmission and processing delay is modeled based on M/M/1 queuing theory. In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing resource allocation with beamforming is formulated; Also the association of RRH to UE is considered and solved using novel methods.
+In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power allocation and RRH association in H-CRAN system is considered to maximize energy efficiency.
+\subsection{Contribution}
+The aim of this study is to jointly optimize VNF activation, power, PRB allocation ,and associate O-RUs to UEs to develop an isolated network slicing outline for different type of services in an O-RAN platform.
+The main contributions of this paper are summarized as follow:
+\begin{itemize}
+\item In this paper a network slicing model is depicted for three different type of services introduced in 5G (URLLC, eMBB and mMTC) and the problem of radio resource allocation and VNF activation is studied in an O-RAN architecture.
+\item  We formulate the problem of baseband resource allocation to maximize the weighted throughput of O-RAN
+system for different type of services with
+\end{itemize}  
 
-
+In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied.
 
 \begin{figure}
   \centering 
@@ -143,7 +152,7 @@ in C-RAN system with limited fronthaul capacity. The goal of this paper is to mi
   \label{fig:c11}
 \end{figure}
 
-In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied.
+
 \section{System Model and Problem Formulation}\label{systemmodel}
 
 In this section, first, we  present the system model. Then, we obtain achievable data rates, power of O-RU and the fronthaul capacity for the downlink (DL) of the ORAN system. Afterward, we discuss about the mean delay and the power of VNFs.
