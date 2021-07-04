@@ -132,13 +132,21 @@ Virtualization technique for RAN and core is one of the interested topics.
 In \cite{SystemCostMinimization,guo2016exploiting}, the authors solve the problem of obtaining beamforming and VMs activation 
 in C-RAN system with limited fronthaul capacity. The goal of this paper is to minimize the energy cost, with the system delay, fronthaul capacity and rate constraint. To guarantee delay for services, transmission and processing delay is modeled based on M/M/1 queuing theory. In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing resource allocation with beamforming is formulated; Also the association of RRH to UE is considered and solved using novel methods.
 In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power allocation and RRH association in H-CRAN system is considered to maximize energy efficiency.
-\subsection{Contribution}
+\subsection{Main Contribution}
 The aim of this study is to jointly optimize VNF activation, power, PRB allocation ,and associate O-RUs to UEs to develop an isolated network slicing outline for different type of services in an O-RAN platform.
 The main contributions of this paper are summarized as follow:
 \begin{itemize}
 \item In this paper a network slicing model is depicted for three different type of services introduced in 5G (URLLC, eMBB and mMTC) and the problem of radio resource allocation and VNF activation is studied in an O-RAN architecture.
-\item  We formulate the problem of baseband resource allocation to maximize the weighted throughput of O-RAN
-system for different type of services with
+\item  We formulate the problem of baseband resource allocation to maximize the weighted throughput of O-RAN system for different type of services with specific QoS. 
+\item The desired QoS conditions such as delay and throughput are considered for different type of services. We formulate the end-to end mean delay of system based in the activated VNFs and the throughput of each user.
+\item We take into account the limited fronthaul capacity and accurately obtain the power and the capacity of each O-RU based on the quantization noise.
+\item We model the interference of neighboring O-RU and formulate the accurate throughput
+for different type of services. We model the throughput of URLLC and mMTC based on their short packet transmission.
+\item The main problem is a mixed-integer non linear programming that is extremely difficult to solve.
+We perform a two-step iterative algorithm to solve it.
+\item The two-step iterative algorithm is presented for the resource management framework with the first-step VNF activation, power allocation and PRB association and the second-step O-RU association.
+\item For the first-step, we reformulate and simplificate the main problem to find an upper and lower bound for number of activated VNFs and using lagrangian function and KKT conditions to find optimal power and PRB allocation.
+\item For the second-step, the problem of O-RU association can be convert to a multiple knapsack problem and solved by Greedy algorithm.
 \end{itemize}  
 
 In this paper, as  depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied.
