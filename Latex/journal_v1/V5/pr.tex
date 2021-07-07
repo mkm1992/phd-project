@@ -10,6 +10,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfig}
 \usepackage{graphicx}
+\usepackage{blindtext}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{algorithm}
@@ -52,9 +53,9 @@
 %salar.nouri@ut.ac.ir}
 %}
   \author{
-    \IEEEauthorblockN{Mojdeh Karbalaee Motalleb}
+    \IEEEauthorblockN{Mojdeh Karbalaee Motalleb, Vahid Shah-mansouri}
     \IEEEauthorblockA{School of ECE, College of Engineering, University of Tehran, Iran \\
-    Email: \{mojdeh.karbalaee\}@ut.ac.ir,
+    Email: \{mojdeh.karbalaee, vmansouri\}@ut.ac.ir,
     \vspace{-.2cm}
   }
   }
@@ -151,19 +152,21 @@ For the second-step, the problem of O-RU association can be convert to a multipl
 
 \begin{figure*}
   \centering 
-    \includegraphics[scale = 0.5]{Drawing14.pdf}
+    \includegraphics[scale = 0.75]{finalDraw.pdf}
     %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-    %\includegraphics[width=\textwidth]{Drawing14.pdf}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
   \caption{Network sliced ORAN system}
   \label{fig:c11}
 \end{figure*}
+
 The rest of this paper is organized as follow. The system model and the problem formulation is described 
 in Section \ref{systemmodel}. The details of our proposed resource management algorithm is 
 introduced in Seection \ref{proAlg}. In Section \ref{NE}, numerical results are provided to evaluate the performance of the proposed algorithm. Section \ref{conc}, concludes the whole paper.
 
 \section{System Model and Problem Formulation}\label{systemmodel}
 
-In this section, first, we  present the system model. Then, we obtain achievable data rates, power of O-RU and the fronthaul capacity for the downlink (DL) of the ORAN system. Afterward, we discuss about the mean delay and the power of VNFs.
+In this section, we describe the downlink system in O-RAN slicing as depicted in Figure \ref{fig:c11}. 
+Here, firstly, we present the system model. Then, we obtain achievable data rates, power of O-RU and the fronthaul capacity for the downlink (DL) of the ORAN system. Afterward, we discuss about the mean delay and the power of VNFs.
 Finally, the main problem is expressed.
 \subsection{System Model}
 Suppose we have three service types includes mMTC, eMBB and URLLC which support different applications.
@@ -618,7 +621,8 @@ The whole algorithm is depicted as follow (Algorithm \eqref{alg2}).
 \State \textbf{end for} \label{24}
 \end{algorithmic}
 \end{algorithm}
-\section{Numerical Result}\label{NE}
+\section{Numerical Results}\label{NE}
+In this section, numerical results for the problem are depicted to evaluate the performance of the algorithms.
 \section{Conclusion}\label{conc}
 \bibliographystyle{IEEEtran}
 \bibliography{ref}

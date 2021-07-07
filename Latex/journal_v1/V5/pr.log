@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  4 JUL 2021 19:25
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  7 JUL 2021 12:39
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -308,7 +308,32 @@ ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
 \c@lotdepth=\count124
 \sf@top=\skip58
 \sf@bottom=\skip59
-) (c:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+) (c:/texlive/2018/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(c:/texlive/2018/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count125
+\c@Blindtext=\count126
+\c@blind@countparstart=\count127
+\blind@countxx=\count128
+\blindtext@numBlindtext=\count129
+\blind@countyy=\count130
+\c@blindlist=\count131
+\c@blindlistlevel=\count132
+\c@blindlist@level=\count133
+\blind@listitem=\count134
+\c@blind@listcount=\count135
+\c@blind@levelcount=\count136
+\blind@mathformula=\count137
+\blind@Mathformula=\count138
+\c@blind@randomcount=\count139
+\c@blind@randommax=\count140
+\c@blind@pangramcount=\count141
+\c@blind@pangrammax=\count142
+)
+(c:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -413,7 +438,7 @@ nment
 
 (c:/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count125
+\c@float@type=\count143
 \float@exts=\toks21
 \float@box=\box34
 \@float@everytoks=\toks22
@@ -423,7 +448,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks23
-\c@algorithm=\count126
+\c@algorithm=\count144
 )
 (c:/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -432,15 +457,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count127
-\c@ALG@rem=\count128
-\c@ALG@nested=\count129
+\c@ALG@line=\count145
+\c@ALG@rem=\count146
+\c@ALG@nested=\count147
 \ALG@tlm=\skip60
 \ALG@thistlm=\skip61
-\c@ALG@Lnr=\count130
-\c@ALG@blocknr=\count131
-\c@ALG@storecount=\count132
-\c@ALG@tmpcounter=\count133
+\c@ALG@Lnr=\count148
+\c@ALG@blocknr=\count149
+\c@ALG@storecount=\count150
+\c@ALG@tmpcounter=\count151
 \ALG@tmplength=\skip62
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -456,11 +481,11 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip65
 \dth@everypar=\toks29
 )
-\c@remark=\count134
-\c@theorem=\count135
-\c@lemma=\count136
-\c@proposition=\count137
-\c@corollary=\count138
+\c@remark=\count152
+\c@theorem=\count153
+\c@lemma=\count154
+\c@proposition=\count155
+\c@corollary=\count156
 
 (c:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2018/03/24 v5.7 Page Geometry
@@ -475,9 +500,9 @@ Package ifvtex Info: VTeX not detected.
 (c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count139
-\Gm@cntv=\count140
-\c@Gm@tempcnt=\count141
+\Gm@cnth=\count157
+\Gm@cntv=\count158
+\c@Gm@tempcnt=\count159
 \Gm@bindingoffset=\dimen156
 \Gm@wd@mp=\dimen157
 \Gm@odd@mp=\dimen158
@@ -499,7 +524,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks31
 \XKV@tempa@toks=\toks32
 )
-\XKV@depth=\count142
+\XKV@depth=\count160
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (c:/texlive/2018/texmf-dist/tex/latex/adjustbox/adjcalc.sty
@@ -533,78 +558,78 @@ File: tc-xetex.def 2018/04/08 v2.1 Clipping driver for xetex
 
 (c:/texlive/2018/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count143
+\c@checkoddpage=\count161
 )
 (c:/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box37
-\sift@deathcycles=\count144
+\sift@deathcycles=\count162
 \@vwid@loff=\dimen176
 \@vwid@roff=\dimen177
 )) (./pr.aux)
 \openout1 = `pr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 32.
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 32.
 
 -- Lines per column: 57 (approximate, difference = 9.79243pt).
 Package caption Info: Begin \AtBeginDocument code.
@@ -645,11 +670,11 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 104.
+LaTeX Font Info:    Try loading font information for U+msa on input line 105.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 104.
+LaTeX Font Info:    Try loading font information for U+msb on input line 105.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -662,31 +687,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-File: Drawing14.pdf Graphic file (type pdf)
-<use Drawing14.pdf>
- [2]
-Underfull \vbox (badness 6575) has occurred while \output is active []
+File: finalDraw.pdf Graphic file (type pdf)
+<use finalDraw.pdf>
 
+Overfull \hbox (35.68153pt too wide) in paragraph at lines 155--158
+ [][] 
+ []
 
+[2]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 190.
+d on input line 193.
 
 
-Overfull \hbox (1.74622pt too wide) detected at line 209
+Overfull \hbox (1.74622pt too wide) detected at line 212
 []
  []
 
-
-Underfull \vbox (badness 1715) has occurred while \output is active []
-
- [3]
-LaTeX Font Info:    Try loading font information for U+euf on input line 215.
-
-(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
+[3]
+LaTeX Font Info:    Try loading font information for U+euf on input line 218.
+ (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Overfull \hbox (8.02382pt too wide) detected at line 216
+Overfull \hbox (8.02382pt too wide) detected at line 219
 \OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 = [][] [][] [][]\OML/cmm/m/it/10 g[]e[]\U/
 euf/m/n/10 y[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 z[];
  []
@@ -694,31 +717,31 @@ euf/m/n/10 y[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 z[];
 [4]
 Missing character: There is no ’ in font ptmr8t!
  [5]
-Overfull \hbox (32.00018pt too wide) detected at line 444
+Overfull \hbox (32.00018pt too wide) detected at line 447
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--447
+Underfull \hbox (badness 10000) in paragraph at lines 447--450
 \T1/ptm/m/it/10 In ad-di-tion, we de-note $\OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/10
  =
  []
 
 [6]
-Overfull \hbox (16.65843pt too wide) detected at line 491
+Overfull \hbox (16.65843pt too wide) detected at line 494
 [] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 ^^N[] \OT1/cmr/m/n/10 + \U/euf/m/n/10 h[
 ]\OT1/cmr/m/n/10 )\U/euf/m/n/10 B[] \OT1/cmr/m/n/10 + (\OML/cmm/m/it/10 ^^T[] \
 OMS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 m[]D[]\OT1/cmr/m/n/10 ) = 0
  []
 
 
-Overfull \hbox (28.92142pt too wide) detected at line 505
+Overfull \hbox (28.92142pt too wide) detected at line 508
 \OML/cmm/m/it/10 p[] \OT1/cmr/m/n/10 = [[] \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/
 10 ][]\OML/cmm/m/it/10 :
  []
 
 
-Overfull \hbox (19.54637pt too wide) detected at line 518
+Overfull \hbox (19.54637pt too wide) detected at line 521
 \OML/cmm/m/it/10 e[] \OMS/cmsy/m/n/10 ^^B \OT1/cmr/m/n/10 (\U/euf/m/n/10 F[] \O
 MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 m[]\OMS
 /cmsy/m/n/10 j\OT1/cmr/bx/n/10 w[]\OMS/cmsy/m/n/10 j[]\OML/cmm/m/it/10 p[]g[]\O
@@ -750,10 +773,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 8228 strings out of 492970
- 122958 string characters out of 6137298
- 227500 words of memory out of 5000000
- 12079 multiletter control sequences out of 15000+600000
+ 8402 strings out of 492970
+ 125794 string characters out of 6137298
+ 232312 words of memory out of 5000000
+ 12246 multiletter control sequences out of 15000+600000
  81465 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,28n,77p,921b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
