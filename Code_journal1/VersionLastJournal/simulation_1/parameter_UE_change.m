@@ -14,14 +14,7 @@ ChannelGain = zeros(N_RU,N_UE,N_Antenna);
 beamForming = zeros(N_RU ,N_UE,N_Antenna);
 Popt = ones(1,N_UE)*Pmax;
 PRB_UE = zeros(N_PRB,N_UE);
-for i =1:N_UE
-    if mod(i,N_PRB)==0
-       PRB_UE(N_PRB,i)= 1;
-    else
-        PRB_UE(mod(i,N_PRB),i) =1 ;
-    end
 
-end
 run Channel_Gain
 run Precoding
 %RU_UE = ones(N_RU,N_UE);

@@ -8,7 +8,7 @@ for  count_power=1:1
         subject to
         %Power_RU(N_UE,Popt,beamForming,var_q,N_RU,1:N_RU)<2.^(Capacity_RU(1)/1e4) * var_q*100 ;
         %Power_RU(N_UE,Popt,beamForming,var_q,N_RU,1:N_RU)<Pmax;
-        Pow_RU <= Pmax*2;
+        Pow_RU <= Pmax*6;
         Popt(:) >= 0; 
         Popt(:) <= Pmax;
         
