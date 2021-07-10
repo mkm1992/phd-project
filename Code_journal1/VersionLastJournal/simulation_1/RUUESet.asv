@@ -1,0 +1,15 @@
+RU_UE = zeros(N_RU,N_UE);
+ChannelGain2 = zeros(N_Antenna,N_UE);
+beamForming2 = zeros(N_Antenna ,N_UE);
+for u1 =  1:N_RU
+    ChannelGain2(:,numUE)= ChannelGain(u1,numUE,:);
+    beamForming2(:,numUE)= beamForming(u1,numUE,:);
+    rate_UE_2 = zeros(N_RU,N_UE);
+    for i = 1:N_UE
+        rate_UE_2(u1,i) =  log2(1+(Popt(i)*abs((ChannelGain2(:,i))'*beamForming2(:,i))^2)/(BW*N0));
+    end  
+end
+
+for i = 1:N_UE
+   
+end
