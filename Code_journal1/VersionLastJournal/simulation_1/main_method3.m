@@ -5,7 +5,7 @@ count_min1 = 2;
 count_step1 = 2;
 count_max1 = 10;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 100;
+iter_max = 10;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 RU_iter_max = N_RU + 3;
@@ -18,35 +18,35 @@ for i_count = count_min1:count_step1:count_max1
         run parameter_UE_change
         run PRB_Alloc
         %%
-        while  RU_iter < RU_iter_max
-            
-            if RU_iter == 1
-              run RUAssociateDist  
-            end
-            run setChGain
-            alpha_m = lambda_m.*(UE_S);
-            run PRB_Pow_Alloc1
-            run findM
-            run Rate_final
-            run RUUESet
-            sumRate(number_check,iter) = abs(sum(rate_UE_1));
-            if sumRate(number_check,iter) > 0
-                RU_iter = RU_iter_max + 10;
-                
-            end
-            iter
-            i_count
-            RU_iter
-            VNF_NUM
-            RU_iter = RU_iter + 1;
-        end
+%         while  RU_iter < RU_iter_max
+%             
+%             if RU_iter == 1
+%               run RUAssociateDist  
+%             end
+%             run setChGain
+%             alpha_m = lambda_m.*(UE_S);
+%             run PRB_Pow_Alloc1
+%             run findM
+%             run Rate_final
+%             run RUUESet
+%             sumRate(number_check,iter) = abs(sum(rate_UE_1));
+%             if sumRate(number_check,iter) > 0
+%                 RU_iter = RU_iter_max + 10;
+%                 
+%             end
+%             iter
+%             i_count
+%             RU_iter
+%             VNF_NUM
+%             RU_iter = RU_iter + 1;
+%         end
         %% BaseLine Scheme
-            run PRB_rand
+            %run PRB_rand
             run RUAssociateDist
             run setChGain
             alpha_m = lambda_m.*(UE_S);
             run PRB_Pow_Alloc2
-            run findM
+            %run findM
             run Rate_final
             run RUUESet
             sumRate1(number_check,iter) = abs(sum(rate_UE_1));            

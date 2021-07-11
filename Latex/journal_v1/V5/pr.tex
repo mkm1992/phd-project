@@ -284,8 +284,7 @@ T_{tot} \approx T_{process}
 \end{equation}
 \subsubsection{Processing Delay}
 Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(s,i)}$ for the $i^{th}$ UE of the $s^{th}$ slice.
-Therefore, the mean arrival data rate of the $s^{th}$ slice in the UPF layer is $\alpha_{s}^1 = \sum_{u=1}^{U_s}a_{u(s,i)}\lambda_{u(s,i)}$, where $a_{u(s,i)}$ is a binary variable which indicates whether the $i^{th}$ UE requested $s^{th}$ service is admitted or not.
-
+Therefore, the mean arrival data rate of the $s^{th}$ slice in the UPF layer is $\alpha_{s}^U = \sum_{u=1}^{U_s}\lambda_{u(s,i)}$.
 Assume the mean arrival data rate of the UPF layer for slice $s$ ($\alpha_{s}^U$) is approximately equal to the mean arrival data rate of the O-CU-UP layer ($\alpha_{s}^C$) and O-DU ($\alpha_{s}^D$). so $\alpha_{s} =\alpha_{s}^U \approx \alpha_{s}^C \approx \alpha_{s}^D$. since, by using Burke’s Theorem, the mean arrival data rate of the second and third layer which are processed in the first layer is still Poisson with rate $\alpha_{s}$.
 It is assumed that there are load balancers in each layer for each service to divide the incoming traffic to VNFs equally. %\cite{frdl,luong2018novel,luong2018novel1}.
 Suppose the baseband processing of each VNF is depicted as M/M/1 processing queue.
@@ -622,7 +621,45 @@ The whole algorithm is depicted as follow (Algorithm \eqref{alg2}).
 \end{algorithmic}
 \end{algorithm}
 \section{Numerical Results}\label{NE}
-In this section, numerical results for the problem are depicted to evaluate the performance of the algorithms.
+In this section, numerical results for the problem are depicted to evaluate the performance of the algorithms. We consider three network slice, one for eMBB, and two another for URLLC and mMtc.
+Assume we have six 4-antenna O-RU (MISO), are located in a cell with a diameter of 500 meters. We consider 20 PRB
+in the network.
+The maximum number of VNF for each slice is 20 and the mean arrival rate for eMBB and URLLC is $\lambda  = 300KHz$ and for mMTC $\lambda  = 600KHz$. 
+The other parameters of this simulations are depicted in Table \ref{table:1a}.
+\begin{table}
+ \caption {Simulation Parameter} \label{table:1a}
+ \begin{center}
+  \begin{tabular}{||c c ||}
+  \hline
+Parameter & Value \\ [0.5ex]
+  \hline\hline
+  Noise power & -174dBm\\
+  \hline
+  Bandwidth & 120 KHz \\
+  \hline
+ Maximum transmit Power of each O-RU & 38dBm \\
+  \hline
+  Minimum delay for eMBB and mMTC &  4msec \\
+  \hline
+    Minimum delay for URLLC &  1msec \\
+  \hline
+  Minimum delay for mMTC &  7msec \\
+  \hline
+  Maximum fronthaul capacity  & 200 bits/sec/Hz \\
+   \hline
+  Minimum data rate for eMBB &  30 bits/sec/Hz \\ 
+  \hline
+   Minimum data rate for URLLC and mMTC &  10 bits/sec/Hz \\ 
+  \hline
+   Maximum received power for mMTC &  20 dBM \\ [.5ex]   
+  \hline
+    Maximum received power for eMBB and URLLC &  33 dBM \\ [.5ex]   
+  \hline
+ \end{tabular}
+ \end{center}
+ \end{table}
+ The performance of the method is compared by two different method. The first one is a baseline scheme, which used random PRB allocation and the asociation of O-RU is based on the distance ,and channel quality, and fronthaul capacity, also the number of activated VNF for each slice is fixed. The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power is dynamically allocated, the number of VNFs are fixed and the UEs are associated to O-RU based on the quality of their channels, the fronthaul capacity, and channel distance and quality.
+In Fig the aggregated throughput is demonstrated versus different number of UEs in each slice for these three methods. Here we assume that slices have the same priority.
 \section{Conclusion}\label{conc}
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
