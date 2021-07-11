@@ -635,7 +635,7 @@ Parameter & Value \\ [0.5ex]
   \hline\hline
   Noise power & -174dBm\\
   \hline
-  Bandwidth & 120 KHz \\
+  Bandwidth & 180 KHz \\
   \hline
  Maximum transmit Power of each O-RU & 38dBm \\
   \hline
@@ -659,7 +659,16 @@ Parameter & Value \\ [0.5ex]
  \end{center}
  \end{table}
  The performance of the method is compared by two different method. The first one is a baseline scheme, which used random PRB allocation and the asociation of O-RU is based on the distance ,and channel quality, and fronthaul capacity, also the number of activated VNF for each slice is fixed. The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power is dynamically allocated, the number of VNFs are fixed and the UEs are associated to O-RU based on the quality of their channels, the fronthaul capacity, and channel distance and quality.
-In Fig the aggregated throughput is demonstrated versus different number of UEs in each slice for these three methods. Here we assume that slices have the same priority.
+In Fig. \ref{fig:1} the aggregated throughput is demonstrated versus different number of UEs in each service for these three methods. Here we assume that services have the same priority. The figure, presented that the proposed algorithm is $35.6\%$ higher than the baseline scheme.
+As the number of UEs increases in each service, the aggregated throughput initially increase, but due to interference, it will decrease from 8 UEs to 10 UEs in each service.
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.45]{rate_throuput.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Aggregate Throughput vs. Number of UE in each Service }
+  \label{fig:1}
+\end{figure}
 \section{Conclusion}\label{conc}
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
