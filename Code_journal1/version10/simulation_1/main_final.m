@@ -3,18 +3,21 @@ clc
 run var_const
 count_min1 = 3;
 count_step1 = 2;
-count_max1 = 10;
+count_max1 = 3;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 3;
+iter_max = 1;
 sumRate = zeros(numvar,iter_max);
 %% initializing
 number_check = 0;
 for i_count = count_min1:count_step1:count_max1
     number_check  = number_check +  1;
     for iter = 1:iter_max
-        run RUUEFirst
+        
         for RU_iter = 1 : N_RU
             run parameter_UE_change
+            if RU_iter==1 
+                run RUUEFirst
+            end
             alpha_m = lambda_m.*(UE_S);
             run PRB_Pow_Alloc1
             run findM
