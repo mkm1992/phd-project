@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  11 JUL 2021 23:20
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  15 JUL 2021 14:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -755,10 +755,10 @@ Overfull \hbox (2.58482pt too wide) in paragraph at lines 632--659
  [] 
  []
 
-File: rate_throuput.eps Graphic file (type eps)
-<rate_throuput.eps>
+File: rate_ue1.eps Graphic file (type eps)
+<rate_ue1.eps>
 
-Overfull \hbox (21.51894pt too wide) in paragraph at lines 666--669
+Overfull \hbox (9.77513pt too wide) in paragraph at lines 666--669
  [][] 
  []
 
@@ -786,7 +786,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  8459 strings out of 492970
- 126531 string characters out of 6137298
+ 126516 string characters out of 6137298
  232328 words of memory out of 5000000
  12292 multiletter control sequences out of 15000+600000
  90473 words of font info for 122 fonts, out of 8000000 for 9000

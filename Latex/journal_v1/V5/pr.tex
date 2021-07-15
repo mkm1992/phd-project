@@ -622,7 +622,7 @@ The whole algorithm is depicted as follow (Algorithm \eqref{alg2}).
 \end{algorithm}
 \section{Numerical Results}\label{NE}
 In this section, numerical results for the problem are depicted to evaluate the performance of the algorithms. We consider three network slice, one for eMBB, and two another for URLLC and mMtc.
-Assume we have six 4-antenna O-RU (MISO), are located in a cell with a diameter of 500 meters. We consider 20 PRB
+Assume we have six 4-antenna O-RU (MISO), are located in a cell with a diameter of 500 meters. We consider 25 PRB
 in the network.
 The maximum number of VNF for each slice is 20 and the mean arrival rate for eMBB and URLLC is $\lambda  = 300KHz$ and for mMTC $\lambda  = 600KHz$. 
 The other parameters of this simulations are depicted in Table \ref{table:1a}.
@@ -647,7 +647,7 @@ Parameter & Value \\ [0.5ex]
   \hline
   Maximum fronthaul capacity  & 200 bits/sec/Hz \\
    \hline
-  Minimum data rate for eMBB &  30 bits/sec/Hz \\ 
+  Minimum data rate for eMBB &  20 bits/sec/Hz \\ 
   \hline
    Minimum data rate for URLLC and mMTC &  10 bits/sec/Hz \\ 
   \hline
@@ -659,11 +659,11 @@ Parameter & Value \\ [0.5ex]
  \end{center}
  \end{table}
  The performance of the method is compared by two different method. The first one is a baseline scheme, which used random PRB allocation and the asociation of O-RU is based on the distance ,and channel quality, and fronthaul capacity, also the number of activated VNF for each slice is fixed. The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power is dynamically allocated, the number of VNFs are fixed and the UEs are associated to O-RU based on the quality of their channels, the fronthaul capacity, and channel distance and quality.
-In Fig. \ref{fig:1} the aggregated throughput is demonstrated versus different number of UEs in each service for these three methods. Here we assume that services have the same priority. The figure, presented that the proposed algorithm is $35.6\%$ higher than the baseline scheme.
-As the number of UEs increases in each service, the aggregated throughput initially increase, but due to interference, it will decrease from 8 UEs to 10 UEs in each service.
+In Fig. \ref{fig:1} the aggregated throughput is demonstrated versus different number of UEs in each service for these three methods. Here we assume that services have the same priority. The figure, presented that the proposed algorithm is $18.6\%$ higher than the baseline scheme.
+As the number of UEs increases in each service, the aggregated throughput initially increase, but due to the interference and the power constraint, it will saturated from 12 UEs in each service.
 \begin{figure}
   \centering 
-    \includegraphics[scale = 0.45]{rate_throuput.eps}
+    \includegraphics[scale = 0.45]{rate_ue1.eps}
     %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
     %\includegraphics[width=\textwidth]{finalDraw.pdf}
   \caption{Aggregate Throughput vs. Number of UE in each Service }

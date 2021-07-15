@@ -3,9 +3,9 @@ clc
 run var_const
 count_min1 = 2;
 count_step1 = 2;
-count_max1 = 10;
+count_max1 = 16;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 100;
+iter_max = 50;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 RU_iter_max = N_RU + 3;
@@ -80,8 +80,8 @@ for i =1:numvar
     sumRB1(i) = sumRB(i)/num(i);
 end
 
-plot( UE_num , sumR1,'-*')
+plot( UE_num , sumR1/1e6,'-*')
 hold on
-plot( UE_num , sumRB1,'-+')
+plot( UE_num , sumRB1/1e6,'-+')
 
 %plot(UE_num ,mean(sumRate,2))
