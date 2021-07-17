@@ -19,9 +19,5 @@ run Channel_Gain
 run Precoding
 %RU_UE = ones(N_RU,N_UE);
 count_max = 1;
-
-Fact_S(1) = i_count;
-Fact_S(2) = 1 - i_count;
-Fact_S_UE = zeros(1,N_UE);
-Fact_S_UE(1: UE_S(1))=  i_count;
-Fact_S_UE( UE_S(1)+1: UE_S(1)*2)=  1-i_count;
+delay_max = ones(1,S)*i_count;
+Fact_S = 1;

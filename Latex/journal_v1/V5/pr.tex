@@ -4,11 +4,13 @@
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage[T1]{fontenc}
 \usepackage{cite}
+%\usepackage{caption}
+%\usepackage{subcaption}
 \usepackage{mathtools}
 \usepackage{stackengine}
 \def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfig}
+\usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfigure}
 \usepackage{graphicx}
 \usepackage{blindtext}
 \usepackage{textcomp}
@@ -337,7 +339,7 @@ The optimization problem is formulated as follow.
 The aim of this paper is to maximize the sum rate of all UEs with the presence of constraints which is written as follow,
 \begin{subequations}\label{problem}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,k)}} \ \\
+\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}} \ \\
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
@@ -659,16 +661,44 @@ Parameter & Value \\ [0.5ex]
  \end{center}
  \end{table}
  The performance of the method is compared by two different method. The first one is a baseline scheme, which used random PRB allocation and the asociation of O-RU is based on the distance ,and channel quality, and fronthaul capacity, also the number of activated VNF for each slice is fixed. The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power is dynamically allocated, the number of VNFs are fixed and the UEs are associated to O-RU based on the quality of their channels, the fronthaul capacity, and channel distance and quality.
-In Fig. \ref{fig:1} the aggregated throughput is demonstrated versus different number of UEs in each service for these three methods. Here we assume that services have the same priority. The figure, presented that the proposed algorithm is $18.6\%$ higher than the baseline scheme.
+In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus different number of UEs in each service for these three methods. Here we assume that services have the same priority. The figure, presented that the proposed algorithm is $18.6\%$ higher than the baseline scheme.
 As the number of UEs increases in each service, the aggregated throughput initially increase, but due to the interference and the power constraint, it will saturated from 12 UEs in each service.
 \begin{figure}
   \centering 
-    \includegraphics[scale = 0.45]{rate_ue1.eps}
+    \includegraphics[scale = 0.4]{rate_ue1.eps}
     %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
     %\includegraphics[width=\textwidth]{finalDraw.pdf}
   \caption{Aggregate Throughput vs. Number of UE in each Service }
   \label{fig:1}
 \end{figure}
+
+Assume we have two services of URLLC and mMTC. In figure \ref{fig:2} and \ref{fig:3}, the aggregate throughput (by considering the priority factor 
+($\sum_s \sum_i \delta_s \bar{R}_{{u(s,i)}}$)) is depicted for two services URLLC and mMTC. Here we consider 4 UEs in each service. The other parameter is shown in table \ref{table:1a}.
+The figure \ref{fig:2}, presented that by increasing the priority factor for URLLC, more resources is allocated to this service and the aggregate throughput of this service is increased and vice verse.
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.4]{mmtcurllc.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Aggregate Throughput for mMTC and URLLC vs. Priority of URLLC }
+  \label{fig:2}
+\end{figure}
+In figure \ref{fig:3}, the total sum rate of URLLC and mMTC is shown vs. priority of URLLC. It is shown that the proposed method is much better than the baseline scheme. 
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.4]{sumRatePri.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Aggregate Throughput of all services vs. Priority of URLLC}
+  \label{fig:3}
+\end{figure}
+
+
+
+
+
+
+
 \section{Conclusion}\label{conc}
 \bibliographystyle{IEEEtran}
 \bibliography{ref}

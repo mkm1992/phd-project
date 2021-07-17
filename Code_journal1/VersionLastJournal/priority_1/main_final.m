@@ -10,7 +10,7 @@ sumRate_eMBB = zeros(numvar,iter_max);
 sumRate_URLLC = zeros(numvar,iter_max);
 sumRate1_eMBB= zeros(numvar,iter_max);
 sumRate1_URLLC = zeros(numvar,iter_max);
-RU_iter_max = N_RU-1;
+RU_iter_max = N_RU+1;
 %% initializing
 number_check = 0;
 for i_count = count_min1:count_step1:count_max1
@@ -19,6 +19,22 @@ for i_count = count_min1:count_step1:count_max1
         RU_iter = 1;
         run parameter_UE_change
         run PRB_Alloc
+        if i_count > 0.5
+           for ii =1:4
+                PRB_UE(ii+8,ii) =1 ;
+                PRB_UE(ii+12,ii) =1 ;
+           end 
+        elseif i_count == 0.5
+            for ii =1:4
+                PRB_UE(ii+8,ii) =1 ;
+                PRB_UE(ii+12,ii+4) =1 ;
+            end
+        elseif i_count <0.4
+            for ii =5:8
+                PRB_UE(ii+4,ii) =1 ;
+                PRB_UE(ii+8,ii) =1 ;
+           end
+        end
         %%
         while  RU_iter < RU_iter_max
             
@@ -33,7 +49,7 @@ for i_count = count_min1:count_step1:count_max1
             run RUUESet
             sumRate_eMBB(number_check,iter) = abs(sum(rate_UE_1(1:4)));
             sumRate_URLLC(number_check,iter) = abs(sum(rate_UE_1(5:8)));
-            if sumRate_eMBB(number_check,iter) > 0
+            if sumRate_eMBB(number_check,iter) > 0 && RU_iter > 2
                 RU_iter = RU_iter_max + 10;
                 
             end
@@ -44,7 +60,8 @@ for i_count = count_min1:count_step1:count_max1
             RU_iter = RU_iter + 1;
         end
         %% BaseLine Scheme
-            %run PRB_rand
+            PRB_UE = zeros(N_PRB,N_UE);
+            run PRB_rand
             run RUAssociateDist
             run setChGain
             alpha_m = lambda_m.*(UE_S);
