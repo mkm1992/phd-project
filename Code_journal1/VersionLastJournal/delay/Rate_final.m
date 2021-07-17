@@ -12,6 +12,6 @@ t = 0;
 for s = 1:S
     for j = 1:UE_S(s)
         t = t+1;
-        R_s_1(s) = R_s(s) + rate_UE(t);
+        R_s(s) = R_s(s) + rate_UE(t);
     end
 end

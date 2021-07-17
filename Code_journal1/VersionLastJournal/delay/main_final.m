@@ -3,11 +3,13 @@ clc
 run var_const
 count_min1 = 1e-3;
 count_step1 = 2e-3;
-count_max1 = 7e-3;
+count_max1 = 5e-3;
 numvar = length(count_min1:count_step1:count_max1);
 iter_max = 1;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
+DelayTot= zeros(numvar,iter_max,S);
+DelayTot1= zeros(numvar,iter_max,S);
 RU_iter_max = N_RU+5;
 %% initializing
 number_check = 0;
@@ -30,6 +32,7 @@ for i_count = count_min1:count_step1:count_max1
             run Rate_final
             run RUUESet
             sumRate(number_check,iter) = abs(sum(rate_UE_1));
+            DelayTot(number_check,iter,:) = Delay_tot(:);
             if sumRate(number_check,iter) > 0 && RU_iter >2 
                 RU_iter = RU_iter_max + 10;
                 
@@ -49,21 +52,28 @@ for i_count = count_min1:count_step1:count_max1
             run findM
             run Rate_final
             run RUUESet
-            sumRate1(number_check,iter) = abs(sum(rate_UE_1));            
+            sumRate1(number_check,iter) = abs(sum(rate_UE_1)); 
+            DelayTot1(number_check,iter,:) = Delay_tot(:);
     end
 end
 UE_num = count_min1:count_step1:count_max1;
 sumR =  zeros(1,numvar);
 sumR1 =  zeros(1,numvar);
+TDelay =  zeros(S,numvar);
+TDelay1 =  zeros(S,numvar);
 num = zeros(1,numvar);
 for i =1:numvar
     for j =1:iter_max
         if isnan(sumRate(i,j)) == 0 
             sumR(i) = sumR(i) + sumRate(i,j);
+            for s = 1:S
+                TDelay(s,i) = TDelay(s,i) + DelayTot(i,j,s);
+            end
             num(i)=  num(i) + 1;
         end
     end
     sumR1(i) = sumR(i)/num(i);
+    TDelay(:,i) = TDelay(:,i)./num(i);
 end
 
 
@@ -74,14 +84,22 @@ for i =1:numvar
     for j =1:iter_max
         if isnan(sumRate1(i,j)) == 0 
             sumRB(i) = sumRB(i) + sumRate1(i,j);
+            for s = 1:S
+                TDelay1(s,i) = TDelay1(s,i) + DelayTot1(i,j,s);
+            end
             num(i)=  num(i) + 1;
         end
     end
     sumRB1(i) = sumRB(i)/num(i);
+    TDelay1(:,i) = TDelay1(:,i)./num(i);
 end
-
+figure;
 plot( UE_num , sumR1,'-*')
 hold on
 plot( UE_num , sumRB1,'-+')
+figure;
+plot( UE_num , sum(TDelay),'--')
+hold on
+plot( UE_num , sum(TDelay1),'-.')
 
 %plot(UE_num ,mean(sumRate,2))

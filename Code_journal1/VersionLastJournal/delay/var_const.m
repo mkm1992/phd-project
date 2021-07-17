@@ -24,6 +24,7 @@ lambda_m = [2994000, 2922000, 598800]/10;%Rmin .* randi([485,499],1,S)/10;
 %% 
 T_max = 50e-5*randi([1,10],1,S); % sec
 Delay_Slice = zeros(1,S);
+Delay_Slice1 = zeros(1,S);
 VNF_NUM =  zeros(1,S);
 N_UE_max = 6;
 N_RU = 6;
