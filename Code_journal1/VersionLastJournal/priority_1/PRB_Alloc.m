@@ -1,4 +1,4 @@
-for i =1:N_UE*2/3
+for i =1:N_UE
     if mod(i,N_PRB)==0
        PRB_UE(N_PRB,i)= 1;
     else

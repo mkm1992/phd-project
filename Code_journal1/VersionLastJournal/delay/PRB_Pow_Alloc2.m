@@ -6,11 +6,11 @@ for  count_power=1:1
         run P_RU
         maximize sum(rate_UE)
         subject to
-        Pow_RU <= Pmax*6;
+        Pow_RU <= Pmax*10;
         Popt(:) >= 0; 
         Popt(:) <= Pmax*2;
         rate_UE(:) >= Rmin_UE(:);%.*admission_UE1(:); 
-                w1(1,:) = alpha_m(:).* delay_max(:);
+        w1(1,:) = alpha_m(:).* delay_max(:);
         w2(1,:) = alpha_m(:).*lambda_m(:) .* delay_max(:) + alpha_m(:);
         w3(1,:) = mu(:).* delay_max(:)-3;
         w4(1,:) = mu(:).* delay_max(:).*lambda_m(:)+mu(:) - 3*lambda_m(:);

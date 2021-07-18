@@ -641,11 +641,11 @@ Parameter & Value \\ [0.5ex]
   \hline
  Maximum transmit Power of each O-RU & 38dBm \\
   \hline
-  Minimum delay for eMBB and mMTC &  4msec \\
+  Maximum delay for eMBB &  4msec \\
   \hline
-    Minimum delay for URLLC &  1msec \\
+    Maximum delay for URLLC &  1msec \\
   \hline
-  Minimum delay for mMTC &  7msec \\
+  Maximum delay for mMTC &  7msec \\
   \hline
   Maximum fronthaul capacity  & 200 bits/sec/Hz \\
    \hline
@@ -653,9 +653,9 @@ Parameter & Value \\ [0.5ex]
   \hline
    Minimum data rate for URLLC and mMTC &  10 bits/sec/Hz \\ 
   \hline
-   Maximum received power for mMTC &  20 dBM \\ [.5ex]   
+   Maximum received power for mMTC &  20 dBm \\ [.5ex]   
   \hline
-    Maximum received power for eMBB and URLLC &  33 dBM \\ [.5ex]   
+    Maximum received power for eMBB and URLLC &  33 dBm \\ [.5ex]   
   \hline
  \end{tabular}
  \end{center}
@@ -692,9 +692,17 @@ In figure \ref{fig:3}, the total sum rate of URLLC and mMTC is shown vs. priorit
   \caption{Aggregate Throughput of all services vs. Priority of URLLC}
   \label{fig:3}
 \end{figure}
+In figure \ref{fig:4}, the number of activated VNF for two different mean service time of a one eMBB service is depicted vs. mean arrival time. This figure, presented that as the mean arrival rate increases, the number of activated VNF increases. Moreover, the number of activated VNFs for the mean service rate of $\mu = 1.6Mbps$ is less than the number of activated VNFs for mean service rate of $\mu  =  0.8Mbps$.
 
 
-
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.4]{vnfNum.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Number of activated VNF in each Service vs. Mean Arrival Rate(Mbps)}
+  \label{fig:4}
+\end{figure}
 
 
 

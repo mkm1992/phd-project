@@ -25,7 +25,7 @@ for  count_power=1:1
                 t = t+1;
                 a(s) = (w2(s) - M_max*w4(s))./((w1(s) - M_max*w3(s)));
                 %Popt(t) <= (2^(a(s)/BW)-1)*(Intf(t)*0+BW*N0)/(abs((ChannelGain(:,t))'*beamForming(:,t))^2)
-                rate_UE(t) >= max(a(s),0)
+                %rate_UE(t) >= max(a(s),0)
             end
         end
         %%

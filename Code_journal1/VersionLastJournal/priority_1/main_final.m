@@ -2,10 +2,10 @@ clear all
 clc
 run var_const
 count_min1 = 0.1;
-count_step1 = .1;
+count_step1 = .2;
 count_max1 = 0.9;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 10;
+iter_max = 5;
 sumRate_eMBB = zeros(numvar,iter_max);
 sumRate_URLLC = zeros(numvar,iter_max);
 sumRate1_eMBB= zeros(numvar,iter_max);
@@ -19,22 +19,22 @@ for i_count = count_min1:count_step1:count_max1
         RU_iter = 1;
         run parameter_UE_change
         run PRB_Alloc
-        if i_count > 0.5
-           for ii =1:4
-                PRB_UE(ii+8,ii) =1 ;
-                PRB_UE(ii+12,ii) =1 ;
-           end 
-        elseif i_count == 0.5
-            for ii =1:4
-                PRB_UE(ii+8,ii) =1 ;
-                PRB_UE(ii+12,ii+4) =1 ;
-            end
-        elseif i_count <0.4
-            for ii =5:8
-                PRB_UE(ii+4,ii) =1 ;
-                PRB_UE(ii+8,ii) =1 ;
-           end
-        end
+%         if i_count >= 0.5
+%            for ii =1:4
+%                 PRB_UE(ii+8,ii) =1 ;
+%                 PRB_UE(ii+12,ii) =1 ;
+%            end 
+%         elseif i_count == 0
+%             for ii =1:4
+%                 PRB_UE(ii+8,ii) =1 ;
+%                 PRB_UE(ii+12,ii+4) =1 ;
+%             end
+%         elseif i_count <0.4
+%             for ii =5:8
+%                 PRB_UE(ii+4,ii) =1 ;
+%                 PRB_UE(ii+8,ii) =1 ;
+%            end
+%         end
         %%
         while  RU_iter < RU_iter_max
             
