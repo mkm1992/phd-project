@@ -1,11 +1,11 @@
 clear all
 clc
 run var_const
-count_min1 = 20e5;
-count_step1 = 20e5;
-count_max1 = 100e5;
+count_min1 = 0.1;
+count_step1 = 0.5;
+count_max1 = 3;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 1;
+iter_max = 50;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 DelayTot= zeros(numvar,iter_max,S);
@@ -14,7 +14,7 @@ DelayTot1= zeros(numvar,iter_max,S);
 Delay1_last_base= zeros(numvar,iter_max,S);
 VNFNumber = zeros(numvar,iter_max,S);
 VNFNumber1 = zeros(numvar,iter_max,S);
-RU_iter_max = 1;%N_RU+5;
+RU_iter_max = N_RU+5;
 %% initializing
 number_check = 0;
 for i_count = count_min1:count_step1:count_max1
@@ -39,7 +39,7 @@ for i_count = count_min1:count_step1:count_max1
             DelayTot(number_check,iter,:) = Delay_tot(:);
             Delay1_last(number_check,iter,:) = Delay_Slice1(:);
             VNFNumber(number_check,iter,:) =VNF_NUM(:);
-            if sumRate(number_check,iter) > 0 %&& RU_iter >2 
+            if sumRate(number_check,iter) > 0 && RU_iter >2 
                 RU_iter = RU_iter_max + 10;
                 
             end

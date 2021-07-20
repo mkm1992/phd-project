@@ -69,12 +69,12 @@ Taking advantage of both virtual RAN (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-
 O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
 In this paper, we study the problem of baseband resource allocation and virtual network function (VNF) activation in O-RAN architecture based on their service priority for a different types of 5G services includes enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
 According to the concept of network slicing, the isolation of different types of services in O-DU, O-CU, and user plane function (UPF) is performed.
-Limited fronthaul capacity and the restriction of end-to-end delay are considered in the problem.
-The optimization of baseband resources includes O-RU assignment, physical resource block (PRB), and power allocation. The main problem is mixed-integer non-linear programming that is tremendously difficult.
-To solve the challenging problem, we broke it down into two different steps that the iterative algorithm solves.
+The limited fronthaul capacity and the restriction of end-to-end delay are considered in this problem.
+The optimization of baseband resources includes O-RU assignment, physical resource block (PRB), and power allocation. The main problem is the mixed-integer non-linear programming that is tremendously difficult.
+To solve the challenging problem, we broke it down into two different steps that the iterative algorithm solves it.
 In the first step, we reformulated and simplified the problem to find the power allocation, PRB assignment, and the number of activated VNFs. In the second step, the O-RU association is carried out.
-The proposed method is confirmed by the simulation results in a way that
-the simulations illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources.
+The proposed method (IAPPVO) is confirmed by the simulation results in a way that
+the simulations illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources and the FBDR algorithm that is described in other papers.
    
 \end{abstract}
 
@@ -661,7 +661,8 @@ Parameter & Value \\ [0.5ex]
  \end{center}
  \end{table}
  The performance of the method is compared by two different method. The first one is a baseline scheme, which used random PRB allocation and the asociation of O-RU is based on the distance ,and channel quality, and fronthaul capacity, also the number of activated VNF for each slice is fixed. The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power is dynamically allocated, the number of VNFs are fixed and the UEs are associated to O-RU based on the quality of their channels, the fronthaul capacity, and channel distance and quality.
-In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus different number of UEs in each service for these three methods. Here we assume that services have the same priority. The figure, presented that the proposed algorithm is $18.6\%$ higher than the baseline scheme.
+In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus different number of UEs in each service for these three methods. Suppose we have one instance of service for each types of services so we have three different service in this figure.
+ Here we assume that services have the same priority. The figure, presented that the proposed algorithm is $18.6\%$ higher than the baseline scheme.
 As the number of UEs increases in each service, the aggregated throughput initially increase, but due to the interference and the power constraint, it will saturated from 12 UEs in each service.
 \begin{figure}
   \centering 
@@ -672,26 +673,26 @@ As the number of UEs increases in each service, the aggregated throughput initia
   \label{fig:1}
 \end{figure}
 
-Assume we have two services of URLLC and mMTC. In figure \ref{fig:2} and \ref{fig:3}, the aggregate throughput (by considering the priority factor 
-($\sum_s \sum_i \delta_s \bar{R}_{{u(s,i)}}$)) is depicted for two services URLLC and mMTC. Here we consider 4 UEs in each service. The other parameter is shown in table \ref{table:1a}.
-The figure \ref{fig:2}, presented that by increasing the priority factor for URLLC, more resources is allocated to this service and the aggregate throughput of this service is increased and vice verse.
-\begin{figure}
-  \centering 
-    \includegraphics[scale = 0.4]{mmtcurllc.eps}
-    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-  \caption{Aggregate Throughput for mMTC and URLLC vs. Priority of URLLC }
-  \label{fig:2}
-\end{figure}
-In figure \ref{fig:3}, the total sum rate of URLLC and mMTC is shown vs. priority of URLLC. It is shown that the proposed method is much better than the baseline scheme. 
-\begin{figure}
-  \centering 
-    \includegraphics[scale = 0.4]{sumRatePri.eps}
-    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-  \caption{Aggregate Throughput of all services vs. Priority of URLLC}
-  \label{fig:3}
-\end{figure}
+%Assume we have two type of services (URLLC and mMTC). In figure \ref{fig:2} and \ref{fig:3}, the aggregate throughput (by considering the priority factor 
+%($\sum_s \sum_i \delta_s \bar{R}_{{u(s,i)}}$)) is depicted for two services URLLC and mMTC. Here we consider 4 UEs in each service. The other parameter is shown in table \ref{table:1a}.
+%The figure \ref{fig:2}, presented that by increasing the priority factor for URLLC, more resources is allocated to this service and the aggregate throughput of this service is increased and vice verse.
+%\begin{figure}
+%  \centering 
+%    \includegraphics[scale = 0.4]{mmtcurllc.eps}
+%    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+%    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+%  \caption{Aggregate Throughput for mMTC and URLLC vs. Priority of URLLC }
+%  \label{fig:2}
+%\end{figure}
+%In figure \ref{fig:3}, the total sum rate of URLLC and mMTC is shown vs. priority of URLLC. It is shown that the proposed method is much better than the baseline scheme. 
+%\begin{figure}
+%  \centering 
+%    \includegraphics[scale = 0.4]{sumRatePri.eps}
+%    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+%    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+%  \caption{Aggregate Throughput of all services vs. Priority of URLLC}
+%  \label{fig:3}
+%\end{figure}
 In figure \ref{fig:4}, the number of activated VNF for two different mean service time of a one eMBB service is depicted vs. mean arrival time. This figure, presented that as the mean arrival rate increases, the number of activated VNF increases. Moreover, the number of activated VNFs for the mean service rate of $\mu = 1.6Mbps$ is less than the number of activated VNFs for mean service rate of $\mu  =  0.8Mbps$.
 
 
@@ -708,6 +709,9 @@ In figure \ref{fig:4}, the number of activated VNF for two different mean servic
 
 
 \section{Conclusion}\label{conc}
+In this paper, we proposed the downlink of O-RAN system using network slicing for different types of 5G services (eMBB, mMTC and URLC). The goal of this paper is to obtain number of activated VNFs in each service, RU association, power and PRB allocation to maximize the sum-rate. The limited fronthaul capacity, and the mean end-to-end delay for each service is considered. 
+The problem is mixed-integer non-linear programming that is solved by the iterative algorithm.
+The performance of our proposed method (IAPPVO) is compared with baseline scheme and FBDR in \cite{lee2018dynamic}.   
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
 \end{document} 

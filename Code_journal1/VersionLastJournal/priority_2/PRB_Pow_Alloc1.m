@@ -10,6 +10,7 @@ for  count_power=1:1
         %Power_RU(N_UE,Popt,beamForming,var_q,N_RU,1:N_RU)<Pmax;
         Pow_RU <= Pmax*10;
         Popt(:) >= 0; 
+        Popt(9:12) == 0; 
         Popt(:) <= Pmax*2;
         
         %Find_Rate(BW,Popt,ChannelGain,beamForming,PRB_UE,N_PRB,N_UE,N0,Intf,1:N_UE)>= Rmin_UE(1);

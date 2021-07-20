@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  18 JUL 2021 17:44
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  20 JUL 2021 16:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -679,7 +679,7 @@ euf/m/n/10 y[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 z[];
  []
 
 
-Underfull \vbox (badness 4120) has occurred while \output is active []
+Underfull \vbox (badness 1259) has occurred while \output is active []
 
  [4]
 Missing character: There is no ’ in font ptmr8t!
@@ -723,10 +723,6 @@ Overfull \hbox (2.58482pt too wide) in paragraph at lines 634--661
 
 File: rate_ue1.eps Graphic file (type eps)
 <rate_ue1.eps>
-File: mmtcurllc.eps Graphic file (type eps)
-<mmtcurllc.eps>
-File: sumRatePri.eps Graphic file (type eps)
-<sumRatePri.eps>
 [8]
 File: vnfNum.eps Graphic file (type eps)
 <vnfNum.eps>
@@ -755,10 +751,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7435 strings out of 492970
- 107405 string characters out of 6137298
- 213507 words of memory out of 5000000
- 11268 multiletter control sequences out of 15000+600000
+ 7427 strings out of 492970
+ 107284 string characters out of 6137298
+ 213491 words of memory out of 5000000
+ 11262 multiletter control sequences out of 15000+600000
  94611 words of font info for 123 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  33i,28n,35p,921b,328s stack positions out of 5000i,500n,10000p,200000b,80000s

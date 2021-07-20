@@ -1,0 +1,8 @@
+plot( UE_num , sumR1_e./UE_num,'-*')
+hold on
+plot( UE_num , sumR1_u./UE_num,'-+')
+hold on
+plot( UE_num , sumRB1_e./UE_num,'-^')
+hold on
+plot( UE_num , sumRB1_u./,'--')
+hold on

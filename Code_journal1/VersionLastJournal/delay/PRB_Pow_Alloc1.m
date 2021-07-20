@@ -8,9 +8,9 @@ for  count_power=1:1
         subject to
         %Power_RU(N_UE,Popt,beamForming,var_q,N_RU,1:N_RU)<2.^(Capacity_RU(1)/1e4) * var_q*100 ;
         %Power_RU(N_UE,Popt,beamForming,var_q,N_RU,1:N_RU)<Pmax;
-        Pow_RU <= Pmax*10;
+        Pow_RU <= Pmax*3;
         Popt(:) >= 0; 
-        Popt(:) <= Pmax*2;
+        Popt(:) <= Pmax*1;
         
         %Find_Rate(BW,Popt,ChannelGain,beamForming,PRB_UE,N_PRB,N_UE,N0,Intf,1:N_UE)>= Rmin_UE(1);
         rate_UE(:) >= Rmin_UE(:);%.*admission_UE1(:); 

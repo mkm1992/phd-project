@@ -5,7 +5,7 @@ count_min1 = 0.1;
 count_step1 = .2;
 count_max1 = 0.9;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 5;
+iter_max = 1;
 sumRate_eMBB = zeros(numvar,iter_max);
 sumRate_URLLC = zeros(numvar,iter_max);
 sumRate1_eMBB= zeros(numvar,iter_max);
@@ -49,7 +49,7 @@ for i_count = count_min1:count_step1:count_max1
             run RUUESet
             sumRate_eMBB(number_check,iter) = abs(sum(rate_UE_1(1:4)));
             sumRate_URLLC(number_check,iter) = abs(sum(rate_UE_1(5:8)));
-            if sumRate_eMBB(number_check,iter) > 0 && RU_iter > 2
+            if sumRate_eMBB(number_check,iter) > 0 && RU_iter > 1
                 RU_iter = RU_iter_max + 10;
                 
             end
@@ -69,8 +69,8 @@ for i_count = count_min1:count_step1:count_max1
             run findM
             run Rate_final
             run RUUESet
-            sumRate1_eMBB(number_check,iter) = abs(sum(R_s_1(1)));
-            sumRate1_URLLC(number_check,iter) = abs(sum(R_s_1(2)));           
+            sumRate1_eMBB(number_check,iter) = abs(sum(rate_UE_1(1:4)));
+            sumRate1_URLLC(number_check,iter) = abs(sum(rate_UE_1(5:8)));        
     end
 end
 UE_num = count_min1:count_step1:count_max1;
