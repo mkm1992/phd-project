@@ -1,11 +1,11 @@
 clear all
 clc
 run var_const
-count_min1 = 0.1;
-count_step1 = 0.5;
-count_max1 = 3;
+count_min1 = 10e6;
+count_step1 = 20e6;
+count_max1 = 100e6;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 50;
+iter_max = 1;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 DelayTot= zeros(numvar,iter_max,S);
