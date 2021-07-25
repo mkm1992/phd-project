@@ -608,11 +608,10 @@ The whole algorithm is depicted as follow (Algorithm \eqref{alg2}).
 \end{algorithmic}
 \end{algorithm}
 \section{Numerical Results}\label{NE}
-In this section, numerical results for the problem are depicted to evaluate the performance of the algorithms. We consider three network slice, one for eMBB, and two another for URLLC and mMtc.
-Assume we have six 4-antenna O-RU (MISO), are located in a cell with a diameter of 500 meters. We consider 25 PRB
-in the network.
+In this section, numerical results for the problem are depicted to evaluate the performance of the algorithms. We consider three network slices, one for eMBB and two for URLLC and mMtc.
+Assume we have six 4-antenna O-RU (MISO) located in a cell with a diameter of 500 meters. We consider 25 PRB in the network.
 The maximum number of VNF for each slice is 20 and the mean arrival rate for eMBB and URLLC is $\lambda  = 300KHz$ and for mMTC $\lambda  = 600KHz$. 
-The other parameters of this simulations are depicted in Table \ref{table:1a}.
+The other parameters of these simulations are depicted in Table \ref{table:1a}.
 \begin{table}
  \caption {Simulation Parameter} \label{table:1a}
  \begin{center}
@@ -630,13 +629,13 @@ Parameter & Value \\ [0.5ex]
   \hline
     Maximum delay for URLLC &  1msec \\
   \hline
-  Maximum delay for mMTC &  7msec \\
+  Maximum delay for mMTC &  20msec \\
   \hline
   Maximum fronthaul capacity  & 200 bits/sec/Hz \\
    \hline
   Minimum data rate for eMBB &  20 bits/sec/Hz \\ 
   \hline
-   Minimum data rate for URLLC and mMTC &  6 bits/sec/Hz \\ 
+   Minimum data rate for URLLC and mMTC &  5 bits/sec/Hz \\ 
   \hline
    Maximum received power for mMTC &  20 dBm \\ [.5ex]   
   \hline
@@ -645,10 +644,12 @@ Parameter & Value \\ [0.5ex]
  \end{tabular}
  \end{center}
  \end{table}
- The performance of the method is compared by two different method. The first one is a baseline scheme, which used random PRB allocation and the asociation of O-RU is based on the distance ,and channel quality, and fronthaul capacity, also the number of activated VNF for each slice is fixed. The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power is dynamically allocated, the number of VNFs are fixed and the UEs are associated to O-RU based on the quality of their channels, the fronthaul capacity, and channel distance and quality.
-In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus different number of UEs in each service for these three methods. Suppose we have one instance of service for each types of services so we have three different service in this figure.
-Here, we did not consider the priority. The figure, presented that the proposed algorithm is $18.6\%$ higher than the baseline scheme.
-As the number of UEs increases in each service, the aggregated throughput initially increase, but due to the interference and the power constraint, it will saturated from 12 UEs in each service.
+Two different methods compare the performance of the method.
+ The first one is a baseline scheme, which used random PRB allocation. The association of O-RU is based on the distance, channel quality, and the fronthaul capacity; also, the number of activated VNF for each slice is fixed. 
+The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power are dynamically allocated, the number of VNFs is fixed, and the UEs are associated with O-RU based on the quality of their channels, the fronthaul capacity, and channel distance and quality.
+In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus the different number of UEs in each service for these three methods. Suppose we have one service instance for each type of service, so we have three various services in this figure.
+Here, we did not consider the priority. The figure presented that the proposed algorithm is $18.6\%$ higher than the baseline scheme.
+As the number of UEs increases in each service, the aggregated throughput initially increases. Still, due to the interference and the power constraint, it will be saturated from 12 UEs in each service.
 \begin{figure}
   \centering 
     \includegraphics[scale = 0.5]{rate_ue1.eps}
@@ -678,7 +679,7 @@ As the number of UEs increases in each service, the aggregated throughput initia
 %  \caption{Aggregate Throughput of all services vs. Priority of URLLC}
 %  \label{fig:3}
 %\end{figure}
-In figure \ref{fig:4}, the number of activated VNF for the five different mean service time of a one URLLC service is depicted vs. mean arrival time for 12 UEs. This figure, presented that as the mean arrival rate increases, the number of activated VNF increases. Moreover, the number of activated VNFs decreased when the mean service rate increases.
+Figure \ref{fig:4}, depicts the number of activated VNF for the five different mean service times of one URLLC service vs. the mean arrival time for 12 UEs. This figure presented that as the mean arrival rate increases, the number of activated VNF increases. Moreover, the number of activated VNFs decreased when the mean service rate increases.
 
 
 \begin{figure}
@@ -698,10 +699,33 @@ In addition, We suppose that each O-RU can transmit three times of the maximum p
     \includegraphics[scale = 0.5]{RatePower1.eps}
     %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
     %\includegraphics[width=\textwidth]{finalDraw.pdf}
-  \caption{Aggregate Throughput for eMBB vs. Maximum Transmit power}
+  \caption{Aggregate Throughput for eMBB vs. Maximum Transmit power for various number of UEs }
   \label{fig:5}
 \end{figure}
 
+Figure \ref{fig:6}, illustrates the mean total delay of a UE in a URLLC service regarding the mean arrival rate of the UE and the number of UEs in the service for proposed method.
+It is shown that the delay is an ascending function of the mean arrival rate and the number of UEs in the service. In this figure, we assume that the maximum number of VNF for each slice is 50 and the maximum delay of each UE in a URLLC service is $0.5ms$. Also, the maximum number of PRB is considered to be 50. 
+ Moreover, we can see that the mean delay of a URLLC service 
+does not reach the maximum threshold of the delay.
+%Moreover, we can see that the mean delay of a URLLC service increases almost linearly with the mean arrival rate of the packet transmission. 
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.5]{delay_new.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Mean Total Delay of a URLCC Service vs. the Mean Arrival Rate of a UE in the Service for various number of UEs}
+  \label{fig:6}
+\end{figure}
+Figure \ref{fig:7} is the same as figure \ref{fig:7} that presented the mean total delay of a UE in a URLLC service regarding the mean arrival rate of the UE for 20 UEs using three different methods. As you can see, the proposed method (IAPPVO) outperforms the other scenarios.
+
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.5]{delay1_new.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Mean Total Delay of a URLCC Service vs. the Mean Arrival Rate of a UE in the Service for different methods}
+  \label{fig:7}
+\end{figure}
 \section{Conclusion}\label{conc}
 This paper proposed the downlink of the O-RAN system using network slicing for different types of 5G services (eMBB, mMTC, and URLC). Also, the paper aims to obtain the number of activated VNFs in each service, RU association, power, and PRB allocation to maximize the sum rate. The limited fronthaul capacity and the mean end-to-end delay for each service are considered.  The problem is mixed-integer non-linear programming that is solved by the iterative algorithm. The performance of our proposed method (IAPPVO) is compared with the baseline scheme and FBDR in \cite{lee2018dynamic}.  
 \bibliography{ref}

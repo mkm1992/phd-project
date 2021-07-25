@@ -1,6 +1,9 @@
 number_check = 0;
+DelayTot= zeros(numvar,iter_max,S)+10;
+Delay1_last= zeros(numvar,iter_max,S)+10;
 for i_count = count_min1:count_step1:count_max1
-    Pmax = i_count;
+    %Pmax = i_count;
+    lambda_m = ones(1,S)*i_count;
     Popt = ones(1,N_UE)*Pmax;
     PRB_UE = zeros(N_PRB,N_UE);
     run PRB_Alloc
@@ -20,8 +23,11 @@ for i_count = count_min1:count_step1:count_max1
         run RUUESet
 
         sumRate(number_check,iter) = max(abs(sum(rate_UE_1)),sumRate(number_check,iter));
-        DelayTot(number_check,iter,:) = Delay_tot(:);
-        Delay1_last(number_check,iter,:) = Delay_Slice1(:);
+        for s = 1:S
+            DelayTot(number_check,iter,s) = min(Delay_tot(s),DelayTot(number_check,iter,s));
+            Delay1_last(number_check,iter,s) = min(Delay_Slice1(s),Delay1_last(number_check,iter,s));
+        end
+        
         VNFNumber(number_check,iter,:) =VNF_NUM(:);
         if sumRate(number_check,iter) > 0 && RU_iter >3 
             RU_iter = RU_iter_max + 10;
@@ -34,3 +40,5 @@ for i_count = count_min1:count_step1:count_max1
         RU_iter = RU_iter + 1;
     end
 end
+ (sum(DelayTot,3)/3)'
+ (sum(Delay1_last,3)/3)'

@@ -21,7 +21,7 @@ mu = ones(1,S)*10e5;
 %alpha_m  =10e8.*[0.1, 0.5, 1]; %Rmin .* randi([485,499],1,S)/1000;
 %lambda_m = 1e6*ones(1,S);
 lambda_m = [2994000, 2922000, 598800]/5;%Rmin .* randi([485,499],1,S)/10;
-%lambda_m = ones(1,S)*299400;
+lambda_m = ones(1,S)*600000;
 %C_thresh = 3000*Rt/BW;
 %% 
 T_max = 50e-5*randi([1,10],1,S); % sec

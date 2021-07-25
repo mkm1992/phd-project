@@ -46,3 +46,5 @@ for iter = 1:iter_max
     end
 end
  plot(sumRate1)
+ (sum(DelayTot1,3)/3)'
+  (sum(Delay1_last_base,3)/3)'

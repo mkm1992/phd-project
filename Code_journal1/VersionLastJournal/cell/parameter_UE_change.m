@@ -1,4 +1,4 @@
-UE_S = 25*ones(1,S);%randi(N_UE_max,1,S);
+UE_S = 20*ones(1,S);%randi(N_UE_max,1,S);
 N_UE = sum(UE_S);
 %RU_UE = zeros(N_RU,N_UE,N_Antenna);
 %Popt = ones(1,N_UE)*Pmax;

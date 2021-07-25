@@ -2,7 +2,8 @@
     number_check = 0;
 run PRB_rand   
 for i_count = count_min1:count_step1:count_max1
-    Pmax = i_count;
+    %Pmax = i_count;
+    lambda_m = ones(1,S)*i_count;
     Popt = ones(1,N_UE)*Pmax;
     %PRB_UE = zeros(N_PRB,N_UE);
     number_check  = number_check +  1;

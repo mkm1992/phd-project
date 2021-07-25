@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  24 JUL 2021 18:38
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  25 JUL 2021 16:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -717,14 +717,14 @@ T1/cmr/m/n/10 ) = 0\OML/cmm/m/it/10 :
  []
 
 [7]
-Overfull \hbox (2.58482pt too wide) in paragraph at lines 619--646
+Overfull \hbox (2.58482pt too wide) in paragraph at lines 618--645
  [] 
  []
 
 File: rate_ue1.eps Graphic file (type eps)
 <rate_ue1.eps>
 
-Overfull \hbox (37.6309pt too wide) in paragraph at lines 654--657
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 655--658
  [][] 
  []
 
@@ -732,23 +732,37 @@ Overfull \hbox (37.6309pt too wide) in paragraph at lines 654--657
 File: vnfNum1.eps Graphic file (type eps)
 <vnfNum1.eps>
 
-Overfull \hbox (37.6309pt too wide) in paragraph at lines 686--689
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 687--690
  [][] 
  []
 
 File: RatePower1.eps Graphic file (type eps)
 <RatePower1.eps>
 
-Overfull \hbox (37.6309pt too wide) in paragraph at lines 698--701
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 699--702
  [][] 
  []
 
-(./pr.bbl
+File: delay_new.eps Graphic file (type eps)
+<delay_new.eps>
+
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 713--716
+ [][] 
+ []
+
+File: delay1_new.eps Graphic file (type eps)
+<delay1_new.eps>
+
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 723--726
+ [][] 
+ []
+
+(./pr.bbl [9]
 Underfull \hbox (badness 1852) in paragraph at lines 36--39
 \T1/ptm/m/n/8 ``5g wire-less net-work slic-ing for embb, urllc, and mmtc: A
  []
 
-[9])
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -760,18 +774,16 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[10
-
-] (./pr.aux)
+[10] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7431 strings out of 492970
- 107349 string characters out of 6137298
- 213499 words of memory out of 5000000
- 11265 multiletter control sequences out of 15000+600000
+ 7439 strings out of 492970
+ 107470 string characters out of 6137298
+ 213516 words of memory out of 5000000
+ 11271 multiletter control sequences out of 15000+600000
  94611 words of font info for 123 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  33i,28n,35p,921b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
