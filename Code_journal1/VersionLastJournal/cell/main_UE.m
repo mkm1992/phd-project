@@ -1,9 +1,9 @@
 clear all
 clc
 run var_const
-count_min1 = 2;
-count_step1 = 2;
-count_max1 = 16;
+count_min1 = 100;
+count_step1 = 100;
+count_max1 = 500;
 numvar = length(count_min1:count_step1:count_max1);
 iter_max = 1;
 sumRate = zeros(numvar,iter_max);
@@ -41,7 +41,7 @@ for i_count = count_min1:count_step1:count_max1
             RU_iter = RU_iter + 1;
         end
         %% BaseLine Scheme
-            run PRB_rand
+            %run PRB_rand
             run RUAssociateDist
             run setChGain
             alpha_m = lambda_m.*(UE_S);
