@@ -19,7 +19,7 @@ run Channel_Gain
 run Precoding
 %RU_UE = ones(N_RU,N_UE);
 count_max = 1;
-Pmax = 0.5;
+Pmax = 0.7;
 %R = i_count;
 %lambda_m = ones(1,S)*i_count;
 %delay_max = ones(1,S)*i_count;

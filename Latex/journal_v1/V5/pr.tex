@@ -73,7 +73,7 @@ The limited fronthaul capacity and the restriction of end-to-end delay are consi
 The optimization of baseband resources includes O-RU assignment, physical resource block (PRB), and power allocation. The main problem is the mixed-integer non-linear programming that is tremendously difficult.
 So we broke it down into two different steps that the iterative algorithm solves it.
 In the first step, we reformulated and simplified the problem to find the power allocation, PRB assignment, and the number of activated VNFs. In the second step, the O-RU association is carried out.
-The proposed method (IAPPVO) is confirmed by the simulation results so that the simulations illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources and the FBDR algorithm described in other papers.
+The proposed method (IAPPVO) is confirmed by the simulation results which illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources and the FBDR algorithm described in other papers. Also, the simulation results achieved less end-to-end delay for the proposed method than the FBDR and baseline scheme.
    
 \end{abstract}
 
@@ -720,7 +720,27 @@ Figure \ref{fig:7} is the same as figure \ref{fig:7} that presented the mean tot
   \caption{Mean Total Delay of a URLCC Service vs. the Mean Arrival Rate of a UE in the Service for different methods}
   \label{fig:7}
 \end{figure}
+
+Figure \ref{fig:8}, represents the aggregate throughput concerning the number of UEs and the maximum power for three different mMTC services. mMTC services include a large number of UEs with low data rates and low power.
+Assume each service instance requires $1bits/sec/Hz$ data rate and is not sensitive to end-to-end delay. The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
+\begin{figure}
+  %\centering 
+    \includegraphics[scale = 0.42]{mmTCpower.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Aggregate Throughput for mMTC services vs. Number of UE in each Service for three different mMTC service instances}
+  \label{fig:8}
+\end{figure}
 \section{Conclusion}\label{conc}
-This paper proposed the downlink of the O-RAN system using network slicing for different types of 5G services (eMBB, mMTC, and URLC). Also, the paper aims to obtain the number of activated VNFs in each service, RU association, power, and PRB allocation to maximize the sum rate. The limited fronthaul capacity and the mean end-to-end delay for each service are considered.  The problem is mixed-integer non-linear programming that is solved by the iterative algorithm. The performance of our proposed method (IAPPVO) is compared with the baseline scheme and FBDR in \cite{lee2018dynamic}.  
+This paper proposed the downlink of the O-RAN system using network slicing for different types of 5G services (eMBB, mMTC, and URLC).
+The isolation of various types of services (eMBB, mMTC, and URLC) in O-DU, O-CU, and user plane function (UPF) is accomplished.
+Also, the paper aims to obtain the number of activated VNFs in each service, RU association, power, and PRB allocation to maximize the sum rate. The limited fronthaul capacity and the mean end-to-end delay for each service are considered. 
+The problem is mixed-integer non-linear programming that is solved by the two-step iterative algorithm.
+In the first step, we reformulated the problem to achieve the number of activated VNFs as a function of data rate. Then we obtain PRB association and power allocation using the Lagrangian method.
+Then in the second step, O-RU association is acquired.
+The performance of our proposed method (IAPPVO) is compared with the baseline scheme and FBDR in \cite{lee2018dynamic}. 
+Also, we assume distinct scenarios for each service (eMBB, URLLC, and mMTC) based on their requirement QoS.
+Simulation results depicts that the proposed method (IAPPVO) achieved $18.6\%$ higher data rate than the baseline scheme.
+Moreover, simulation results illustrate less delay for the proposed method (IAPPVO) than FBDR and baseline scheme. 
 \bibliography{ref}
 \end{document} 
