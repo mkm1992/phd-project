@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.10.3)  30 JUL 2021 16:14
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  31 JUL 2021 14:42
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -662,18 +662,18 @@ Overfull \hbox (35.68153pt too wide) in paragraph at lines 144--147
 [2]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 180.
+d on input line 178.
 
 [3]
-Overfull \hbox (1.74622pt too wide) detected at line 199
+Overfull \hbox (1.74622pt too wide) detected at line 197
 []
  []
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 205.
+LaTeX Font Info:    Try loading font information for U+euf on input line 203.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Overfull \hbox (8.02382pt too wide) detected at line 206
+Overfull \hbox (8.02382pt too wide) detected at line 204
 \OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 = [][] [][] [][]\OML/cmm/m/it/10 g[]e[]\U/
 euf/m/n/10 y[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 z[];
  []
@@ -685,31 +685,31 @@ Underfull \vbox (badness 6332) has occurred while \output is active []
 Missing character: There is no ’ in font ptmr8t!
 
 [5]
-Overfull \hbox (32.00018pt too wide) detected at line 433
+Overfull \hbox (32.00018pt too wide) detected at line 427
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--436
+Underfull \hbox (badness 10000) in paragraph at lines 427--430
 \T1/ptm/m/it/10 In ad-di-tion, we de-note $\OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/10
  =
  []
 
 [6]
-Overfull \hbox (16.65843pt too wide) detected at line 480
+Overfull \hbox (16.65843pt too wide) detected at line 474
 [] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 ^^N[] \OT1/cmr/m/n/10 + \U/euf/m/n/10 h[
 ]\OT1/cmr/m/n/10 )\U/euf/m/n/10 B[] \OT1/cmr/m/n/10 + (\OML/cmm/m/it/10 ^^T[] \
 OMS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 m[]D[]\OT1/cmr/m/n/10 ) = 0
  []
 
 
-Overfull \hbox (28.92142pt too wide) detected at line 494
+Overfull \hbox (28.92142pt too wide) detected at line 488
 \OML/cmm/m/it/10 p[] \OT1/cmr/m/n/10 = [[] \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/
 10 ][]\OML/cmm/m/it/10 :
  []
 
 
-Overfull \hbox (19.54637pt too wide) detected at line 507
+Overfull \hbox (19.54637pt too wide) detected at line 501
 \OML/cmm/m/it/10 e[] \OMS/cmsy/m/n/10 ^^B \OT1/cmr/m/n/10 (\U/euf/m/n/10 F[] \O
 MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 m[]\OMS
 /cmsy/m/n/10 j\OT1/cmr/bx/n/10 w[]\OMS/cmsy/m/n/10 j[]\OML/cmm/m/it/10 p[]g[]\O
@@ -717,43 +717,43 @@ T1/cmr/m/n/10 ) = 0\OML/cmm/m/it/10 :
  []
 
 [7]
-Overfull \hbox (2.58482pt too wide) in paragraph at lines 618--645
+Overfull \hbox (2.58482pt too wide) in paragraph at lines 612--639
  [] 
  []
 
 File: rate_ue1.eps Graphic file (type eps)
 <rate_ue1.eps>
 
-Overfull \hbox (37.6309pt too wide) in paragraph at lines 655--658
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 649--652
+ [][] 
+ []
+
+File: vnfNum1.eps Graphic file (type eps)
+<vnfNum1.eps>
+
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 681--684
  [][] 
  []
 
 [8]
-File: vnfNum1.eps Graphic file (type eps)
-<vnfNum1.eps>
-
-Overfull \hbox (37.6309pt too wide) in paragraph at lines 687--690
- [][] 
- []
-
 File: RatePower1.eps Graphic file (type eps)
 <RatePower1.eps>
 
-Overfull \hbox (37.6309pt too wide) in paragraph at lines 699--702
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 693--696
  [][] 
  []
 
 File: delay_new.eps Graphic file (type eps)
 <delay_new.eps>
 
-Overfull \hbox (37.6309pt too wide) in paragraph at lines 713--716
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 707--710
  [][] 
  []
 
 File: delay1_new.eps Graphic file (type eps)
 <delay1_new.eps>
 
-Overfull \hbox (37.6309pt too wide) in paragraph at lines 723--726
+Overfull \hbox (37.6309pt too wide) in paragraph at lines 717--720
  [][] 
  []
 

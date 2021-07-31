@@ -153,26 +153,24 @@ The rest of this paper is organized as follows. The system model and the problem
 \section{System Model and Problem Formulation}\label{systemmodel}
 
 In this section, we describe the downlink system in O-RAN slicing as depicted in Figure \ref{fig:c11}. 
-Here, firstly, we present the system model. Then, we obtain achievable data rates, power of O-RU and the fronthaul capacity for the downlink (DL) of the ORAN system. Afterward, we discuss about the mean delay and the power of VNFs.
+Here, firstly, we present the system model. Then, we obtain achievable data rates, power of O-RU, and the fronthaul capacity for the downlink (DL) of the ORAN system. Afterward, we discuss the mean delay and the power of VNFs.
 Finally, the main problem is expressed.
 \subsection{System Model}
-Suppose we have three service types includes mMTC, eMBB and URLLC which support different applications.
+Suppose we have three service types includes mMTC, eMBB, and URLLC, which support different applications.
 
 Assume we have $S_1$, $S_2$ and $S_3$ different applications for the first, second and third service type, respectively ($S = S_1 + S_2 + S_3$).
-So, we have $S$ preallocated slices serving these $S$ services; There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC) and $S_3$ slices for the third service type (mMTC). So each service request $s$ served by its corresponding slice.
+So, we have $S$ preallocated slices serving these $S$ services; There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC), and $S_3$ slices for the third service type (mMTC). So each service request $s$ is served by its corresponding slice.
 
-Each Service $s_j\in \{1,2,...,S_j\} $ consists of $U_{s}$ request from the 
-single-antenna UEs which require certain QoS to be able to use the requested program($j \in \{1,2,3\}$ indicate service type).
-There are different application request which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, UE may be admitted and allocated to the resources.
+Each Service $s_j\in \{1,2,...,S_j\} $ consists of $U_{s}$ request from the single-antenna UEs which require certain QoS to be able to use the requested program($j \in \{1,2,3\}$ indicate service type).
+There are different application requests which fall into one of these service categories. Each application request requires a specific QoS. Based on the application and QoS request, UE may be admitted and allocated to the resources.
 Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of  preallocated virtual resource blocks that are mapped to the Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
 
-All $K$ PRBs can be assigned to the all UE in each service.
-Also, each VNF instance is running on the virtual machine (VM) that are using resources from the data centers. Each VM, requires enough resources of CPU, memory, storage and network bandwidth.
+All $K$ PRBs can be assigned to all UE in each service.
+Also, each VNF instance runs on a virtual machine (VM) that uses resources from the data centers. Each VM requires enough resources of CPU, memory, storage, and network bandwidth.
 
 In addition, there are $R$ multi-antenna O-RU that are shared between slices. Each O-RU $r \in \{1,2,...,R \}$
-has $J$ antenna for transmitting and receiving data.
-Also $\mathcal{R} = \{ r | r\in 1,2,...,R \}$ depicts the set of O-RUs.
-Moreover, all O-RUs, have access to the all PRBs.
+has $J$ antenna for transmitting and receiving data. Also $\mathcal{R} = \{ r | r\in 1,2,...,R \}$ depicts the set of O-RUs. Moreover, all O-RUs, have access to all PRBs.
+
 %Coordinated multipoint (CoMP) system is considered here. 
 \subsection{The Achievable Rate}
 The SNR of $i^{th}$ UE served at slice $s$ on PRB $k$ is obtained from
@@ -187,7 +185,7 @@ $r^{th}$ O-RU to the $i^{th}$ UE in $s^{th}$ slice. In addition, $\bold{w}_{r,u(
 \end{equation}
 Moreover, $g_{u(s,i)}^r \in \{0,1\}$ is the binary variable that illustrates whether O-RU $r$ served the $i^{th}$ UE that is allocated to $s^{th}$ slice or not. 
 %Here, it is assumed that each UE is served by the nearest o-RU
-Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{r,u(s,i)}^{k}$ is the power of interfering signals represented as follow
+Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{r,u(s,i)}^{k}$ is the power of interfering signals represented as follow.
 
 \begin{equation}\label{eqI}
 \begin{split}
@@ -219,7 +217,7 @@ The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ applica
 \end{equation}
 where $B$ is the bandwidth of system. 
 $\mathcal{R}_{u(s_1,i)}^{r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_1$.
-Since the blocklength in URLLC and mMTC is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{j}^{th}$ ( $j \in \{2,3\}$) application of service type 2 (URLLC) and 3 (mMTC) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated from follow
+Since the blocklength in URLLC and mMTC is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{j}^{th}$ ( $j \in \{2,3\}$) application of service type 2 (URLLC) and 3 (mMTC) is not achieved from Shannon Capacity formula. So, for the short packet transmission, the achievable data rate is approximated from following
 \begin{equation}\label{eq11}
 \begin{split}
 \mathcal{{R}}_{r,u(s_j,i)}^{k} &= B \log_2({1+ \rho_{r,u(s_j,i)}^{k}} - \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k},\\
@@ -238,19 +236,18 @@ $\mathcal{R}_{u(s_j,i)}^{e,r}$ is the achievable rate of each O-RU $r$ to UE $i$
 
 If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$. Therefore, $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , \forall i$ is derived by using $\bar{I}_{r,u(s,i)}^{k}$ instead of $I_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3}.
 \subsection{Power of O-RU and Fronthaul Capacity}
-Let $P_r$ denote the power of transmitted signal from the $r^{th}$ O-RU to UEs served by it.
-From \eqref{eq2}, we have,
+Let $P_r$ denote the power of the transmitted signal from the $r^{th}$ O-RU to UEs served by it. From \eqref{eq2}, we have,
 \begin{equation}\label{pr}
 P_r = \sum_{s=1}^{S}\sum_{k=1}^{K_s}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r e^k_{r,u(s,i)}+ \sigma_{q_r}^2.
 \end{equation}
-Since we have fiber link between O-RU and O-DU, the rate of users on the fronthual link between O-DU and the $r^{th}$ O-RU  is formulated as
+Since we have a fiber link between O-RU and O-DU, the rate of users on the fronthual link between O-DU and the $r^{th}$ O-RU  is formulated as
 %\cite{simeone2016cloud, 1111}
 \begin{equation}\label{cr}
 C_{r} = \log{(1+ \frac{\sum_{s=1}^{S}\sum_{k=1}^{K_s}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 \mathcal{\alpha}^k_{r,u(s,i)} }{ \sigma_{q_{r}}^2})},
 \end{equation}
 Where, $\mathcal{\alpha}^k_{r,u(s,i)}= p_{r,u(s,i)}^{k} g_{u(s,i)}^r e^k_{r,u(s,i)}$ and $\sigma_{q_{r}}^2$ is the power of quantization noise.
 \subsection{Mean Delay}
-In this part, the end to end mean delay for a service is obtained.
+In this part, the end-to-end mean delay for a service is obtained.
 Suppose the mean total delay is depicted as $T_{tot}$.
 \begin{equation}
 \begin{split}
@@ -261,10 +258,10 @@ T_{propagation} &= T_{front} + T_{mid} + T_{back} + T_{trans2net} \\
 \end{split}
 \end{equation}
 %T_{tot} = T_{RU} + T_{front} + T_{DU} + T_{mid} + T_{CU} + T_{back} + T_{core} + T_{trans2net}
-Total delay is sum of processing delay, transmission delay and propagation delay. 
-The propagation delay is the time takes for a signal to reach to its destination. So it has a constant value based on the length of fiber link ($T = L/c$, where $L$ is the length of link and c is the speed of signal).
+Total delay is the sum of processing delay, transmission delay, and propagation delay. 
+The propagation delay is the time takes for a signal to reach its destination. So it has a constant value based on the length of the fiber link ($T = L/c$, where $L$ is the length of the link and c is the speed of signal).
 Also, the transmission delay is the amount of time required to push all the packets into the fiber link. 
-($T = \frac{\alpha}{R}$ Where, $R$ is the rate of transmission in each link and $\alpha$ is the mean arrival data rate of the each link which is constant in this model.)
+($T = \frac{\alpha}{R}$ Where $R$ is the rate of transmission in each link and $\alpha$ is the mean arrival data rate of each link which is constant in this model.)
 Here we assume the value of propagation delay and transmission is negligible compared to the rest.
 \begin{equation}
 T_{tot} \approx T_{process}
@@ -272,10 +269,10 @@ T_{tot} \approx T_{process}
 \subsubsection{Processing Delay}
 Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(s,i)}$ for the $i^{th}$ UE of the $s^{th}$ slice.
 Therefore, the mean arrival data rate of the $s^{th}$ slice in the UPF layer is $\alpha_{s}^U = \sum_{u=1}^{U_s}\lambda_{u(s,i)}$.
-Assume the mean arrival data rate of the UPF layer for slice $s$ ($\alpha_{s}^U$) is approximately equal to the mean arrival data rate of the O-CU-UP layer ($\alpha_{s}^C$) and O-DU ($\alpha_{s}^D$). so $\alpha_{s} =\alpha_{s}^U \approx \alpha_{s}^C \approx \alpha_{s}^D$. since, by using Burke’s Theorem, the mean arrival data rate of the second and third layer which are processed in the first layer is still Poisson with rate $\alpha_{s}$.
+Assume the mean arrival data rate of the UPF layer for slice $s$ ($\alpha_{s}^U$) is approximately equal to the mean arrival data rate of the O-CU-UP layer ($\alpha_{s}^C$) and O-DU ($\alpha_{s}^D$). so $\alpha_{s} =\alpha_{s}^U \approx \alpha_{s}^C \approx \alpha_{s}^D$. since, by using Burke’s Theorem, the mean arrival data rate of the second and third layers, which are processed in the first layer, is still Poisson with rate $\alpha_{s}$
 It is assumed that there are load balancers in each layer for each service to divide the incoming traffic to VNFs equally. %\cite{frdl,luong2018novel,luong2018novel1}.
 Suppose the baseband processing of each VNF is depicted as M/M/1 processing queue.
-Each packet is processed by one of the VNFs of a slice. So, the mean delay for the $s^{th}$ slice in the first and the second layer, modeled as M/M/1 queue, is formulated as follow, respectively
+Each packet is processed by one of the VNFs of a slice. So, the mean delay for the $s^{th}$ slice in the first and the second layer, modeled as M/M/1 queue, is formulated as follows, respectively.
 \begin{equation}
 \begin{split}
 T_{DU}^{s} &= \frac{1}{\mu_s^d - \alpha_{s}/{M_s^{d}}},\\
@@ -285,7 +282,7 @@ T_{UPF}^{s} &= \frac{1}{\mu_s^u - \alpha_{s}/{M_s^{u}}}\\
 \end{equation}
 Where $M_s^{d}$, $M_s^{c}$ and 
 $M_s^{u}$ are the variables that depict the sum of VNFs in O-DU, O-CU-UP and UPF, respectively. 
-Moreover, $1/\mu_s^d$, $1/\mu_s^c$ and $1/\mu_s^u$ are the mean service time of the O-DU, O-CU and the UPF layers respectively.
+Moreover, $1/\mu_s^d$, $1/\mu_s^c$, and $1/\mu_s^u$ are the mean service time of the O-DU, O-CU, and the UPF layers, respectively.
 Besides, $\alpha_{s}$ is the  arrival rate which is divided
 by load balancer before arriving to the VNFs. The arrival rate of each VNF in each layer for each slice 
 $s$ is $\alpha_{s}/{M_s^{i}}$ $ i \in \{d,c, u\}$.
@@ -309,7 +306,7 @@ Hence, $T_{tot}^{u(s,i)} \approx T_{process}^{u(s,i)} $
 %Furthermore, the mean arrival data rate of the each link ($\textstyle \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$) is approximately equal to others ($\textstyle \alpha_{s} \approx \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$).  
 \subsection{VNF Power}
 Assume the power consumption of baseband processing at each DC $d$ that is connected to VNFs of a slice $s$ is depicted as
-$\phi_{s}$. So the total power of the system for all active DCs that are connected to slices can be represented as
+$\phi_{s}$. So the system's total power for all active DCs connected to slices can be represented as follows.
 \begin{equation*}
 \textstyle \phi_{tot} = \sum_{s=1}^{S}\phi_{s}.
 \end{equation*}
@@ -317,11 +314,11 @@ Where, $\phi_{s}$ is obtained from below
 \begin{equation}
 \phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M_s^d \phi_s^d
 \end{equation}
-Moreover, $\phi_s^u$, $\phi_s^c$ and $\phi_s^d$ are the static cost of energy in UPF, O-CU and O-DU, respectively. 
+Moreover, $\phi_s^u$, $\phi_s^c$, and $\phi_s^d$ are the fixed cost of energy in UPF, O-CU, and O-DU, respectively. 
 \subsection{Problem Statement}
 Suppose each slice $s$ has priority factor $\delta_s$ where $\sum_{s=1}^S \delta_s =1$.
 The optimization problem is formulated as follow.
-The aim of this paper is to maximize the sum rate of all UEs with the presence of constraints which is written as follow,
+This paper aims to maximize the sum rate of all UEs with the presence of constraints as follows.
 \begin{subequations}\label{problem}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}} \ \\
@@ -346,24 +343,21 @@ The aim of this paper is to maximize the sum rate of all UEs with the presence o
 \label{constraints}
 \end{subequations}
 where $\boldsymbol{P} =[p_{r,u(s,i)}^{k}] \:\: \forall s , \forall i, \forall r, \forall k $, is the matrix of power for UEs, $\boldsymbol{E} =[e_{r,u(s,i)}^k] \:\: \forall s , \forall i, \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r] \:\: \forall s , \forall i, \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u] \:\: \forall s$ is the matrix that shown the number of VNFs in each layer of slice.
-\eqref{c11}, and \eqref{c12}, indicate that the power of each RU do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. 
-Also \eqref{c13} shows that the rate of each UE requesting eMBB, URLLC and mMTC is more than a threshold, respectively.
-\eqref{c15} and \eqref{c16} expressed the limited capacity of the fronthaul link, and the limited delay of receiving signal, respectively.
+\eqref{c11}, and \eqref{c12}, indicate that the power of each RU does not exceed the maximum power, and the power of each UE is a positive integer value, respectively.  
+Also, \eqref{c13} shows that the rate of each UE requesting eMBB, URLLC, and mMTC is more than a threshold, respectively.
+\eqref{c15} and \eqref{c16} expressed the limited capacity of the fronthaul link and the limited delay of receiving the signal, respectively.
 \eqref{c16-1} and \eqref{c16-2} denoted the stability of the M/M/1 queue model.
 \eqref{c16-3} restricted the number of VNF in each slice due to the limited resources.
-%\eqref{c16} is a reliability condition that the delay in each layer should be less than threshold.
-\eqref{c17} and \eqref{c18-1} guarantee that O-RU and PRB is associated to the UE, respectively.
-Also, \eqref{c18} ensure that each PRB can not be assigned to more than one UE associated to the same O-RU.
-In addition, \eqref{c19} indicate that the static cost of energy of VNFs in each slice do not exceed from the threshold. 
+%\eqref{c16} is a reliability condition that the delay in each layer should be less than the threshold.
+\eqref{c17} and \eqref{c18-1} guarantee that O-RU and PRB are associated with the UE, respectively.
+Also, \eqref{c18} ensures that each PRB can not be assigned to more than one UE associated with the same O-RU.
+In addition, \eqref{c19} indicates that the fixed cost of energy of VNFs in each slice does not exceed the threshold. 
 Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
 \section{Proposed Algorithm Scheme}\label{proAlg}
-In this section, we first apply some simplifications to the system; Solving problem \eqref{problem} is complicated due to the fact that this problem is 
-a non-convex problem and it is a 
-mixed integer non-linear problem (MINLP) with a binary variable and an integer variable. 
-In the following, we apply the simplifications to reformulate MINL parts and use iterative heuristic algorithm to solve the reformulated problem.
-We solve this problem in two level iteratively until it converges; In the first level,
-parameters ($\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}$) are obtained by relaxing and reformulating parameters and turn it to convex problem; Afterward we solve it by dual optimization problem.
-In the second level, finding optimal O-RU association ($ \boldsymbol{G}$) is concerned with the fixed parameter of power, PRB allocation and number of VNFs.   
+In this section, we first apply some simplifications to the system; Solving problem \eqref{problem} is complicated since this problem is non-convex and it is a  mixed-integer non-linear problem (MINLP) with a binary variable and an integer variable. 
+We simplified and reformulated MINL parts and used an iterative heuristic algorithm to solve the problem.
+We solve this problem in two-level iteratively until it converges. In the first level, parameters ($\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}$) are obtained by relaxing and reformulating parameters and turn them into a convex problem; Afterward, we solve it by dual optimization problem.
+In the second level, finding optimal O-RU association ($ \boldsymbol{G}$) is concerned with the fixed parameter of power, PRB allocation, and number of VNFs.   
 We repeat this procedure until the algorithm converges.
 \subsection{Sub-Problem 1}\label{sub1}
 Suppose that $\boldsymbol{G}$ is fixed, we want to obtain $\boldsymbol{P}, \boldsymbol{E}$ and $\boldsymbol{M}$.
@@ -419,7 +413,7 @@ $(R_{u(s,i)}-\lambda_{u(s,i)})T_{max}^s \geq 1$ since the order of $T_{max}^s$ i
 Therefore, we restrict constraint \eqref{c16-2} to $R_{u(s,i)} \geq \lambda_{u(s,i)} + 1/T_{max}^s$.
 So the numerator is positive.
 In denominator, it can be said approximately that $(T_{max}^s\mu_s)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s \geq 0 $, since, $(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T_{max}^s$ as mentioned above.
-Therefore, we just need to have constraint below
+Therefore, we need to have constraints below
 \begin{equation}\label{constraint16}
 \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
 \end{equation}
@@ -439,7 +433,7 @@ M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s .
 \end{lemma}
 Despite simplifying the problem \eqref{problem}, it is still non-convex and hard to be solved.
 So the simplest approach is to relax $\mathbf{E}$ into continuous value $e_{r,u(s,i)}^k \in [0,1] \:\: \forall s , \forall i ,\forall r, \forall k$
-Furthermore, the problem can  be solved using the Lagrangian function and iterative algorithm.
+Furthermore, the problem can be solved using the Lagrangian function and iterative algorithm.
 
 In order to make \eqref{problem} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cr} to $P_r = \sigma_{q_r}^2\times 2^{C^r}$ so the constraint 
 \eqref{c15} is changed to
@@ -515,12 +509,12 @@ e_{r,u(s,i)}^{k} =
     \end{cases}
 \end{equation}
 \end{lemma}
-Thus the user in each slice $s$ that have the largest value of $\mathfrak{F}^{k}_{r,u(s,i)}$, should be allocated to the PRB $k$; Due to the fact that just one PRB can be allocated to a UE between those UEs (regardless to the services) that are associated to the same O-RU.
+Thus the user in each slice $s$ that have the the most considerable value of $\mathfrak{F}^{k}_{r,u(s,i)}$, should be allocated to the PRB $k$. Since just one PRB can be allocated to a UE between those UEs (regardless to the services) that are associated to the same O-RU.
 \subsection{Sub-Problem 2}\label{sub2}
 After power allocation and PRB assignment, the remaining problem is to assign O-RU to the UE in each service.
 
 Assume $\boldsymbol{P}$ and $\boldsymbol{E}$ are fixed, we want to find $\boldsymbol{G}$.
-Next we introduce a greedy algorithm that assign one O-RU to each UE.
+Next, we introduce a greedy algorithm that assigns one O-RU to each UE.
 
 \textit{Greedy Algorithm for Non-Comp O-RU Assignment:}
 The problem can be reformulated as follow
@@ -539,13 +533,13 @@ Since we obtained \eqref{RConstr} in \eqref{sub1}, we can ignore this constraint
 %The problem \eqref{problem2} is an integer linear programming.
 %By changing inequality \eqref{p12} to equality ($\sum_{r}g^r_{u(s,i)} = 1$),
 The problem \eqref{problem2} is an NP-complete 0-1 multiple knapsack problem.  
-We solve this problem using GAAOU which is a greedy algorithm \eqref{alg1} as follow \cite{akccay2007greedy,lee2018dynamic}.
+We solve this problem using GAAOU, which is a greedy algorithm \eqref{alg1} as follows \cite{akccay2007greedy,lee2018dynamic}.
 Firstly, we set all variables $g^r_{u(s,i)} = 0, \quad \forall s, \forall i, \forall r$. 
 Then we define ${\mathfrak{B}}^{rem}_{u_{(s,i)}} = \mathcal{R}$  $\forall s, \forall i$ and $ \mathfrak{C}_r = \mathfrak{t}_r, \forall r$
 as a set of all O-RUs and value of each O-RU, respectively.
 Next, we sort all slices based on their priority. 
-Afterward, we assign the O-RU that provides the highest achievable rate for each UE (we start from the UEs on the slices with highest priority) on the condition that 
-it does not exceed the value of each O-RU (that is a function of maximum power and capacity of O-RU).
+Afterward, we assign the O-RU that provides the highest achievable rate for each UE (we start from the UEs on the slices with the highest priority) on the condition that 
+it does not exceed the value of each O-RU (that is, a function of maximum power and capacity of O-RU).
 If it exceeds the value of O-RU, then O-RU with the next highest achievable rate is selected. 
 The complexity of sorting S slices based on their priority is $O(Slog(S))$.
 Depict $\mathfrak{N} =  \sum_{s=1}^S\sum_{i=1}^{U_s} 1$. 
@@ -586,9 +580,9 @@ The complexity of this algorithm is about $O(Slog(S)) + O(R\times \mathfrak{N})$
 \subsection{Iterative Proposed Algorithm}
 In \eqref{sub1} and \eqref{sub2}, the details of solving each sub-problem are depicted. 
 Here, the iterative algorithm for the whole problem is demonstrated.
-Firstly, we fixed $\boldsymbol{G}$, then $\boldsymbol{P}$ and $\boldsymbol{E}$ is achieved using Lagrangian method.  
-Afterward, $\boldsymbol{G}$ is updated using GAAOU algorithm. This process is repeated until it converges. 
-The whole algorithm is depicted as follow (Algorithm \eqref{alg2}).
+Firstly, we fixed $\boldsymbol{G}$, then $\boldsymbol{P}$ and $\boldsymbol{E}$ is achieved using the Lagrangian method.  
+Afterward, $\boldsymbol{G}$ is updated using the GAAOU algorithm. This process is repeated until it converges. 
+The whole algorithm is depicted as follows (Algorithm \eqref{alg2}).
  \begin{algorithm}
 \caption{Iterative Algorithm for Power Allocation, PRB, VNF and O-RU Association (IAPPVO)}\label{alg2}
 \begin{algorithmic}[1]

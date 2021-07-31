@@ -29,7 +29,7 @@ for i_count = count_min1:count_step1:count_max1
             run findM
             run Rate_final
             run RUUESet
-            sumRate(number_check,iter) = abs(sum(rate_UE_1));
+            sumRate(number_check,iter) = max(abs(sum(rate_UE_1)),sumRate(number_check,iter));
             if sumRate(number_check,iter) > 0 && RU_iter>2
                 RU_iter = RU_iter_max + 10;
                 
@@ -42,14 +42,14 @@ for i_count = count_min1:count_step1:count_max1
         end
         %% BaseLine Scheme
             %run PRB_rand
-            run RUAssociateDist
-            run setChGain
-            alpha_m = lambda_m.*(UE_S);
-            run PRB_Pow_Alloc2
-            run findM
-            run Rate_final
-            run RUUESet
-            sumRate1(number_check,iter) = abs(sum(rate_UE_1));            
+%             run RUAssociateDist
+%             run setChGain
+%             alpha_m = lambda_m.*(UE_S);
+%             run PRB_Pow_Alloc2
+%             run findM
+%             run Rate_final
+%             run RUUESet
+%             sumRate1(number_check,iter) = abs(sum(rate_UE_1));            
     end
 end
 UE_num = count_min1:count_step1:count_max1;
@@ -81,7 +81,7 @@ for i =1:numvar
 end
 
 plot( UE_num , sumR1/1e6,'-*')
-hold on
-plot( UE_num , sumRB1/1e6,'-+')
+%hold on
+%plot( UE_num , sumRB1/1e6,'-+')
 
 %plot(UE_num ,mean(sumRate,2))

@@ -6,9 +6,9 @@ for  count_power=1:1
         run P_RU
         maximize sum(rate_UE)
         subject to
-        Pow_RU <= Pmax*6;
+        Pow_RU <= Pmax*3;
         Popt(:) >= 0; 
-        Popt(:) <= Pmax*3;
+        Popt(:) <= Pmax*1;
         rate_UE(:) >= Rmin_UE(:);%.*admission_UE1(:); 
         w1(1,:) = alpha_m(:).* delay_max(:);
         w2(1,:) = alpha_m(:).*lambda_m(:) .* delay_max(:) + alpha_m(:);
@@ -24,7 +24,7 @@ for  count_power=1:1
                 t = t+1;
                 a(s) = (w2(s) - M_max*w4(s))./((w1(s) - M_max*w3(s)));
                 %Popt(t) <= (2^(a(s)/BW)-1)*(Intf(t)*0+BW*N0)/(abs((ChannelGain(:,t))'*beamForming(:,t))^2)
-                rate_UE(t) >= max(a(s),0)
+                %rate_UE(t) >= max(a(s),0)
             end
         end
 
