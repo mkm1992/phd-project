@@ -1,4 +1,4 @@
-UE_S = i_count*ones(1,S);%randi(N_UE_max,1,S);
+UE_S = 5*ones(1,S);%randi(N_UE_max,1,S);
 N_UE = sum(UE_S);
 %RU_UE = zeros(N_RU,N_UE,N_Antenna);
 %Popt = ones(1,N_UE)*Pmax;
@@ -19,7 +19,7 @@ run Channel_Gain
 run Precoding
 %RU_UE = ones(N_RU,N_UE);
 count_max = 1;
-Pmax = 0.7;
+%Pmax = 0.7;
 %R = i_count;
 %lambda_m = ones(1,S)*i_count;
 %delay_max = ones(1,S)*i_count;

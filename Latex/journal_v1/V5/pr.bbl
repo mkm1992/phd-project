@@ -37,6 +37,23 @@ P.~Popovski, K.~F. Trillingsgaard, O.~Simeone, and G.~Durisi, ``5g wireless
   network slicing for embb, urllc, and mmtc: A communication-theoretic view,''
   \emph{Ieee Access}, vol.~6, pp. 55\,765--55\,779, 2018.
 
+\bibitem{dogra2020survey}
+A.~Dogra, R.~K. Jha, and S.~Jain, ``A survey on beyond 5g network with the
+  advent of 6g: Architecture and emerging technologies,'' \emph{IEEE Access},
+  vol.~9, pp. 67\,512--67\,547, 2020.
+
+\bibitem{kassab2018coexistence}
+R.~Kassab, O.~Simeone, and P.~Popovski, ``Coexistence of urllc and embb
+  services in the c-ran uplink: An information-theoretic study,'' in \emph{2018
+  IEEE Global Communications Conference (GLOBECOM)}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2018, pp. 1--6.
+
+\bibitem{alsenwi2021intelligent}
+M.~Alsenwi, N.~H. Tran, M.~Bennis, S.~R. Pandey, A.~K. Bairagi, and C.~S. Hong,
+  ``Intelligent resource slicing for embb and urllc coexistence in 5g and
+  beyond: A deep reinforcement learning based approach,'' \emph{IEEE
+  Transactions on Wireless Communications}, 2021.
+
 \bibitem{han2019research}
 B.~Han, L.~Liu, J.~Zhang, C.~Tao, C.~Qiu, T.~Zhou, Z.~Li, and Z.~Piao,
   ``Research on resource migration based on novel rrh-bbu mapping in cloud
@@ -124,12 +141,6 @@ P.~Yang, X.~Xi, T.~Q. Quek, J.~Chen, X.~Cao, and D.~Wu, ``How should i
   orchestrate resources of my slices for bursty urllc service provision?''
   \emph{IEEE Transactions on Communications}, vol.~69, no.~2, pp. 1134--1146,
   2020.
-
-\bibitem{alsenwi2021intelligent}
-M.~Alsenwi, N.~H. Tran, M.~Bennis, S.~R. Pandey, A.~K. Bairagi, and C.~S. Hong,
-  ``Intelligent resource slicing for embb and urllc coexistence in 5g and
-  beyond: A deep reinforcement learning based approach,'' \emph{IEEE
-  Transactions on Wireless Communications}, 2021.
 
 \bibitem{saggese2021power}
 F.~Saggese, M.~Moretti, and P.~Popovski, ``Power minimization of downlink

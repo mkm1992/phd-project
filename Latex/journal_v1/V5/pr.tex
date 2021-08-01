@@ -65,15 +65,15 @@ vmansouri@ut.ac.ir}
 \maketitle
 
 \begin{abstract}
-Taking advantage of both virtual RAN (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-RAN) is introduced as the next generation of RAN systems which leads to increase flexibility, Openness, and reduce operational costs and allow them to add new capabilities to the network more quickly.
+Taking advantage of both virtual RAN (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-RAN) is introduced as the next generation of RAN systems. O-RAN leads to increased flexibility, Openness and reduces operational costs, allowing them to add new capabilities to the network more quickly.
 O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
 In this paper, we study the problem of baseband resource allocation and virtual network function (VNF) activation in O-RAN architecture based on their service priority for different types of 5G services includes enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
 According to the concept of network slicing, the isolation of different types of services in O-DU, O-CU, and user plane function (UPF) is performed.
 The limited fronthaul capacity and the restriction of end-to-end delay are considered in this problem.
 The optimization of baseband resources includes O-RU assignment, physical resource block (PRB), and power allocation. The main problem is the mixed-integer non-linear programming that is tremendously difficult.
 So we broke it down into two different steps that the iterative algorithm solves it.
-In the first step, we reformulated and simplified the problem to find the power allocation, PRB assignment, and the number of activated VNFs. In the second step, the O-RU association is carried out.
-The proposed method (IAPPVO) is confirmed by the simulation results which illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources and the FBDR algorithm described in other papers. Also, the simulation results achieved less end-to-end delay for the proposed method than the FBDR and baseline scheme.
+In the first step, we reformulated and simplified the problem to find the power allocation, PRB assignment, and the number of activated VNFs. In the second step, the O-RU association is achieved.
+The proposed method (IAPPVO) is confirmed by the simulation results which illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources and the FBDR algorithm described in other papers. Also, the simulation results attained less end-to-end delay for the proposed method than the FBDR and baseline scheme.
    
 \end{abstract}
 
@@ -82,10 +82,15 @@ Open Radio Access Network (O-RAN), Virtual Network Function (VNF)
 \end{IEEEkeywords}
 
 \section{Introduction} 
-One of the fifth-generation goals of the wireless system is to achieve the desired QoS (such as rate, delay, power, ...) for different types of services. Network slicing is the best solution for this aim. A network slice is an end-to-end logical network that offers services with special needs.  
-Multiple isolated network slices run, manage, and work independently on the same infrastructure. There are several implementations of network slicing, including network core slicing, RAN slicing, and slicing of both sections. 
-Different type of services includes enhanced mobile broadband (eMBB), and ultra-reliable low latency communications (URLLC), and massive Machine Type Communications (mMTC) services are introduced in 5th generation of mobile network. Each type of service requires a particular slice of network based on its QoS
-\cite{shen2020ai,setayesh2020joint,popovski20185g}.
+One of the fifth-generation goals of the wireless system is to achieve the desired QoS (such as rate, delay, power, ...) for different types of services. Network slicing is the best solution for this aim. A network slice is an end-to-end logical network that offers services with specific needs.  
+Multiple isolated network slices run, manage, and work independently on the same infrastructure. 
+Several implementations of network slicing include network core slicing, RAN slicing, and slicing of both sections. 
+Different type of services includes enhanced mobile broadband (eMBB), and ultra-reliable low latency communications (URLLC), and massive Machine Type Communications (mMTC) services are introduced in 5th generation of mobile network. Each type of service requires a particular slice of network based on its QoS.
+eMBB requires a higher transmission data rate in comparison with 4G systems. Moreover, eMBB service satisfies the demands of high capacity and considerable coverage.
+URLLC requires low latency restrictions and higher reliability of the system.
+URLLC contains services such as autonomous vehicles, tactile internet, or remote surgery.
+mMTC consists of a vast number of low power Internet of Things (IoT) devices transmitting small payloads to a typical receiver. In addition, mMTC UEs include sensors for sensing, metering, and monitoring devices 
+\cite{shen2020ai,setayesh2020joint,popovski20185g,dogra2020survey,kassab2018coexistence,alsenwi2021intelligent}.
 
 Recently, RAN virtualization attracts significant attention from industry and academia since it has remarkable benefits that increase flexibility and reduce operating costs such as CAPEX and OPEX and allow them to add new capabilities to the network more quickly. In addition to RAN virtualization, openness and RAN intelligence are two other fundamental points that encourage the Open Radio Access Network (O-RAN) Alliance to establish O-RAN as the next generation of RAN systems. 
 
@@ -356,9 +361,10 @@ Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsym
 \section{Proposed Algorithm Scheme}\label{proAlg}
 In this section, we first apply some simplifications to the system; Solving problem \eqref{problem} is complicated since this problem is non-convex and it is a  mixed-integer non-linear problem (MINLP) with a binary variable and an integer variable. 
 We simplified and reformulated MINL parts and used an iterative heuristic algorithm to solve the problem.
-We solve this problem in two-level iteratively until it converges. In the first level, parameters ($\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}$) are obtained by relaxing and reformulating parameters and turn them into a convex problem; Afterward, we solve it by dual optimization problem.
+We solve this problem in two-level iteratively until it converges. In the first level, parameters ($\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}$) are obtained by relaxing and reformulating parameters to turn them into a jointly-convex problem; Afterward, we solve it by dual optimization problem.
 In the second level, finding optimal O-RU association ($ \boldsymbol{G}$) is concerned with the fixed parameter of power, PRB allocation, and number of VNFs.   
 We repeat this procedure until the algorithm converges.
+
 \subsection{Sub-Problem 1}\label{sub1}
 Suppose that $\boldsymbol{G}$ is fixed, we want to obtain $\boldsymbol{P}, \boldsymbol{E}$ and $\boldsymbol{M}$.
 Here, we first simplify and relax the parameters to convexify the problem.
@@ -399,12 +405,12 @@ $ \forall i,\forall s$
 \end{equation}
 Also from equation \eqref{c19}, \eqref{c16-1} and \eqref{c16-3} we have
 \begin{equation}
-0\leq M_s \leq \min\{M^{max}, \alpha_s/\mu_s, \phi_{max}/{3\phi_s}\}
+\alpha_s/\mu_s\leq M_s \leq \min\{M^{max}, \phi_{max}/{3\phi_s}\}
 \end{equation}
-We denote $ \mathfrak{M}_s= \min\{M^{max}, \alpha_s/\mu_s, \phi_{max}/{3\phi_s}\}$.
+We denote $ \mathfrak{M}_s= \min\{M^{max}, \phi_{max}/{3\phi_s}\}$.
 Thus, if we restrict \eqref{c16} to equality we have
 \begin{equation}\label{eqDelay}
-0\leq \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
+\alpha_s/\mu_s\leq \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
 \end{equation}
 In \eqref{eqDelay}, $0\leq \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ is established due to the fact that 
 the numerator and the denominator will both have same sign. Using \eqref{c16-2},
@@ -415,9 +421,10 @@ So the numerator is positive.
 In denominator, it can be said approximately that $(T_{max}^s\mu_s)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s \geq 0 $, since, $(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T_{max}^s$ as mentioned above.
 Therefore, we need to have constraints below
 \begin{equation}\label{constraint16}
-\frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
+\alpha_s/\mu_s\leq \frac{\alpha_s(T_{max}^s R_{u(s,i)}-T_{max}^s\lambda_{u(s,i)} -1)}{(T_{max}^s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
 \end{equation}
-So by reformulating the equation \eqref{constraint16}, we have a new constraint $\forall i, \forall s$ as below,
+The left side of this formula leads to $R_{u(s,i)} \geq \lambda_{u(s,i)}$ that is the constraint \eqref{c16-2}. 
+For the right side, by reformulating the equation \eqref{constraint16}, we have a new constraint $\forall i, \forall s$ as below,
 \begin{equation}\label{RM}
 \begin{split}
 \mathcal{R}_{u(s,i)} &\geq \frac{\mathfrak{M}_s ((T_{max}^s\mu_s-3)\lambda_{u(s,i)} + \mu_s) - \alpha_s(T_{max}^s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T_{max}^s\mu_s-3)-\alpha_s T_{max}^s},\\
@@ -510,6 +517,8 @@ e_{r,u(s,i)}^{k} =
 \end{equation}
 \end{lemma}
 Thus the user in each slice $s$ that have the the most considerable value of $\mathfrak{F}^{k}_{r,u(s,i)}$, should be allocated to the PRB $k$. Since just one PRB can be allocated to a UE between those UEs (regardless to the services) that are associated to the same O-RU.
+The number of UEs are $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$.
+The complexity order of this problem is about $O(\mathfrak{N} \times K)$.
 \subsection{Sub-Problem 2}\label{sub2}
 After power allocation and PRB assignment, the remaining problem is to assign O-RU to the UE in each service.
 
@@ -543,7 +552,7 @@ it does not exceed the value of each O-RU (that is, a function of maximum power 
 If it exceeds the value of O-RU, then O-RU with the next highest achievable rate is selected. 
 The complexity of sorting S slices based on their priority is $O(Slog(S))$.
 Depict $\mathfrak{N} =  \sum_{s=1}^S\sum_{i=1}^{U_s} 1$. 
-The complexity of this algorithm is about $O(Slog(S)) + O(R\times \mathfrak{N})$.
+The complexity order of this algorithm is about $O(Slog(S)) + O(R\times \mathfrak{N})$.
 %$O(N\times \mathfrak{N})$
 \begin{algorithm}
 \caption{Greedy Algorithm for Assignment of O-RU to UEs (GAAOU)}\label{alg1}
@@ -601,10 +610,14 @@ The whole algorithm is depicted as follows (Algorithm \eqref{alg2}).
 \State \textbf{end for} \label{24}
 \end{algorithmic}
 \end{algorithm}
+The number of UEs are $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$.
+As we mentioned before, the complexity order of the first sub-problem is about $O(N_u \times K)$
+and the complexity order of the second sub-problem is about $O(Slog(S)) + O(R\times \mathfrak{N})$.
+So the complexity of the main problem \eqref{problem} is $O(\mathfrak{N} \times K \times (Slog(S)+R\mathfrak{N}))$.
 \section{Numerical Results}\label{NE}
 In this section, numerical results for the problem are depicted to evaluate the performance of the algorithms. We consider three network slices, one for eMBB and two for URLLC and mMtc.
 Assume we have six 4-antenna O-RU (MISO) located in a cell with a diameter of 500 meters. We consider 25 PRB in the network.
-The maximum number of VNF for each slice is 20 and the mean arrival rate for eMBB and URLLC is $\lambda  = 300KHz$ and for mMTC $\lambda  = 600KHz$. 
+The maximum number of VNF for each slice is 20 and the mean arrival rate for eMBB  is $\lambda  = 3Mbps$ and for mMTC and URLLC $\lambda  = 0.2Mbps$. 
 The other parameters of these simulations are depicted in Table \ref{table:1a}.
 \begin{table}
  \caption {Simulation Parameter} \label{table:1a}
@@ -629,7 +642,7 @@ Parameter & Value \\ [0.5ex]
    \hline
   Minimum data rate for eMBB &  20 bits/sec/Hz \\ 
   \hline
-   Minimum data rate for URLLC and mMTC &  5 bits/sec/Hz \\ 
+   Minimum data rate for URLLC and mMTC &  3 bits/sec/Hz \\ 
   \hline
    Maximum received power for mMTC &  20 dBm \\ [.5ex]   
   \hline
@@ -721,8 +734,8 @@ Figure \ref{fig:7} is the same as figure \ref{fig:7} that presented the mean tot
   \label{fig:7}
 \end{figure}
 
-Figure \ref{fig:8}, represents the aggregate throughput concerning the number of UEs and the maximum power for three different mMTC services. mMTC services include a large number of UEs with low data rates and low power.
-Assume each service instance requires $1bits/sec/Hz$ data rate and is not sensitive to end-to-end delay. The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
+Figure \ref{fig:8}, represents the aggregate throughput concerning the number of UEs and the maximum power for three different mMTC service instances. mMTC service includes a large number of UEs with low data rates and low power.
+Assume each UE in each mMTC service instance requires $1bits/sec/Hz$ data rate and is not sensitive to end-to-end delay. The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
 \begin{figure}
   %\centering 
     \includegraphics[scale = 0.42]{mmTCpower.eps}
@@ -730,6 +743,16 @@ Assume each service instance requires $1bits/sec/Hz$ data rate and is not sensit
     %\includegraphics[width=\textwidth]{finalDraw.pdf}
   \caption{Aggregate Throughput for mMTC services vs. Number of UE in each Service for three different mMTC service instances}
   \label{fig:8}
+\end{figure}
+
+Assume we have two types of eMBB service instances. In figure \ref{fig:9}, the aggregate throughput (by considering the priority factor $\delta_s$) is depicted for two eMBB service instances. Here we consider 4 UEs in each service. The figure \ref{fig:9} presented that by increasing the priority factor for one service instance, more resources are allocated to this service instance, and the aggregate throughput of this service is increased and vice versa. Also, we can realize from this figure that the aggregate throughput has the most significant value at the same priority.
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.4]{priorityLast.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Aggregate Throughput for two eMBB service instances vs. Priority of the first service instance }
+  \label{fig:9}
 \end{figure}
 \section{Conclusion}\label{conc}
 This paper proposed the downlink of the O-RAN system using network slicing for different types of 5G services (eMBB, mMTC, and URLC).
@@ -741,6 +764,8 @@ Then in the second step, O-RU association is acquired.
 The performance of our proposed method (IAPPVO) is compared with the baseline scheme and FBDR in \cite{lee2018dynamic}. 
 Also, we assume distinct scenarios for each service (eMBB, URLLC, and mMTC) based on their requirement QoS.
 Simulation results depicts that the proposed method (IAPPVO) achieved $18.6\%$ higher data rate than the baseline scheme.
-Moreover, simulation results illustrate less delay for the proposed method (IAPPVO) than FBDR and baseline scheme. 
+Moreover, simulation results illustrate less delay for the proposed method (IAPPVO) than FBDR and baseline scheme.
+
+\bibliographystyle{IEEEtran} 
 \bibliography{ref}
 \end{document} 

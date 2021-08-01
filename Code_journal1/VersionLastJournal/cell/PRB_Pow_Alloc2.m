@@ -4,7 +4,8 @@ for  count_power=1:1
         run Interference
         run Rate
         run P_RU
-        maximize sum(rate_UE)
+        %a = (Fact_1*sum(rate_UE(1:UE_S(1))))+(Fact_2*sum(rate_UE(UE_S(1)+1:2*UE_S(1))))
+        maximize((Fact_1*sum(rate_UE(1:UE_S(1))))+(Fact_2*sum(rate_UE(UE_S(1)+1:2*UE_S(1)))))
         subject to
         Pow_RU <= Pmax*3;
         Popt(:) >= 0; 

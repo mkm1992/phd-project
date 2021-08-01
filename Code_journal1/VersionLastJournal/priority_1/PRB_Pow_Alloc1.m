@@ -13,7 +13,7 @@ for  count_power=1:1
         Popt(:) <= Pmax*2;
         
         %Find_Rate(BW,Popt,ChannelGain,beamForming,PRB_UE,N_PRB,N_UE,N0,Intf,1:N_UE)>= Rmin_UE(1);
-        rate_UE(:) >= Rmin_UE(:);%.*admission_UE1(:); 
+        rate_UE(:) >= Fact_S_UE(:).*Rmin_UE(:);%.*admission_UE1(:); 
         w1(1,:) = alpha_m(:).* delay_max(:);
         w2(1,:) = alpha_m(:).*lambda_m(:) .* delay_max(:) + alpha_m(:);
         w3(1,:) = mu(:).* delay_max(:)-3;

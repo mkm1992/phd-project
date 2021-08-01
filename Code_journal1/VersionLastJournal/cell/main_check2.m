@@ -17,12 +17,12 @@ for i_count = count_min1:count_step1:count_max1
         end
         run setChGain
         alpha_m = lambda_m.*(UE_S);
-        run PRB_Pow_Alloc1
+        run PRB_Pow_Alloc2
         run findM
         run Rate_final
         run RUUESet
-
-        sumRate(number_check,iter) = max(abs(sum(rate_UE_1)),sumRate(number_check,iter));
+        rate_sum1 =abs(Fact_1*sum(rate_UE(1:UE_S(1)))+Fact_2*sum(rate_UE(6:10)));
+        sumRate(number_check,iter) = max(rate_sum1,sumRate(number_check,iter));
         for s = 1:S
             DelayTot(number_check,iter,s) = min(Delay_tot(s),DelayTot(number_check,iter,s));
             Delay1_last(number_check,iter,s) = min(Delay_Slice1(s),Delay1_last(number_check,iter,s));

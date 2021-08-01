@@ -8,18 +8,23 @@ Pc1 = 10; %watt
 Pc  = db2pow(Pc1)/1000;
 Pt = 30;
 Pmax = db2pow(Pt)/1000;
-Rmin1 =  [60000 ,120000 ,0];%.1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
+Rmin1 =  [60000 ,60000 ,0];%.1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
 [Rmin, I] = sort(Rmin1,'descend');
 Rate_mid_max = [600000,420000,50000];%0.5*BW*randi([1,10],1,S);
 var_q = 1e-6;
 alpha_s = .1*BW;
 %delay_max = 3e-5*randi([1,20],1,S);
-delay_max = [1e-3, 5e-3, 7e-3];
+delay_max = [5e-3, 5e-3, 7e-3];
 %mu = 1e9.*[1.5, 3, 5];%Rmin .* randi([500,520],1,S)/1000;
-mu = [7734000, 8250000, 1808400]/10;%Rmin .* randi([1200,1520],1,S)/10;
+mu = [7734000, 8250000, 1808400]/10;
+mu =  7734000*ones(1,S);
+mu =[8e6,8e6,4e6];
+%Rmin .* randi([1200,1520],1,S)/10;
 %alpha_m  =10e8.*[0.1, 0.5, 1]; %Rmin .* randi([485,499],1,S)/1000;
 %lambda_m = 1e6*ones(1,S);
 lambda_m = [2994000, 2922000, 598800]/10;%Rmin .* randi([485,499],1,S)/10;
+lambda_m = [2e6,2e6, 1e6];
+%lambda_m = 2994000*ones(1,S);
 %C_thresh = 3000*Rt/BW;
 %% 
 T_max = 50e-5*randi([1,10],1,S); % sec

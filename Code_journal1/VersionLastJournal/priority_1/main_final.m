@@ -47,9 +47,9 @@ for i_count = count_min1:count_step1:count_max1
             run findM
             run Rate_final
             run RUUESet
-            sumRate_eMBB(number_check,iter) = abs(sum(rate_UE_1(1:4)));
-            sumRate_URLLC(number_check,iter) = abs(sum(rate_UE_1(5:8)));
-            if sumRate_eMBB(number_check,iter) > 0 && RU_iter > 1
+            sumRate_eMBB(number_check,iter) = max(abs(sum(rate_UE_1(1:4))),sumRate_eMBB(number_check,iter));
+            sumRate_URLLC(number_check,iter) = max(abs(sum(rate_UE_1(5:8))),sumRate_URLLC(number_check,iter));
+            if sumRate_eMBB(number_check,iter) > 0 && RU_iter > 3
                 RU_iter = RU_iter_max + 10;
                 
             end
@@ -60,15 +60,15 @@ for i_count = count_min1:count_step1:count_max1
             RU_iter = RU_iter + 1;
         end
         %% BaseLine Scheme
-            PRB_UE = zeros(N_PRB,N_UE);
-            run PRB_rand
-            run RUAssociateDist
-            run setChGain
-            alpha_m = lambda_m.*(UE_S);
-            run PRB_Pow_Alloc2
-            run findM
+            %PRB_UE = zeros(N_PRB,N_UE);
+            %run PRB_rand
+            %run RUAssociateDist
+            %run setChGain
+             %alpha_m = lambda_m.*(UE_S);
+            %run PRB_Pow_Alloc2
+            %run findM
             run Rate_final
-            run RUUESet
+            %run RUUESet
             sumRate1_eMBB(number_check,iter) = abs(sum(rate_UE_1(1:4)));
             sumRate1_URLLC(number_check,iter) = abs(sum(rate_UE_1(5:8)));        
     end
