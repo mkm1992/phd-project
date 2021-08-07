@@ -32,7 +32,7 @@ for iter = 1:iter_max
             end
             run setChGain
             alpha_m = lambda_m.*(UE_S);
-            run PRB_P
+            run PRB_Pow_Alloc1
             run findM
             run Rate_final
             run RUUESet

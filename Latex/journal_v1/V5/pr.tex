@@ -503,7 +503,7 @@ Assume, UE $i$ in the slice $s$ that is associated to the O-RU $r$, is allocated
  &+ (\mathfrak{s}^k_{r,u(s,i)} -\mathfrak{D}_{r,u(s,i)}^{k})=0\\
 \end{split}
 \end{equation}
-Where $ \mathfrak{s}^k_{r,u(s,i)}=\kappa^k_{r,u(s,i)}+\mathfrak{q}^k_{r,u(s,i)}$ and other parameters are as follow.
+Where $ \mathfrak{s}^k_{r,u(s,i)}=\kappa^k_{r,u(s,i)}-\mathfrak{q}^k_{r,u(s,i)}$ and other parameters are as follow.
 \begin{equation}
 \begin{split}
 \mathfrak{D}_{r,u(s,i)}^{k} &= \mathfrak{m}_{r}|\bold{w}_{r,u(s,i)}^{k}|^2 g_{u(s,i)}^r e^k_{r,u(s,i)}, \\
@@ -517,7 +517,7 @@ We denote $ \mathfrak{j}_{r,u(s,i)}^{k} = g_{u(s,i)}^r e_{r,u(s,i)}^{k}$.
 The optimal power is as follow.
 \begin{equation}
 \begin{split}
-p_{r,u(s,i)}^{k} &= [\frac{(\delta_s + \mathfrak{h}_{u_{(s,i)}})B \mathfrak{j}_{r,u(s,i)}^{k}}{ Ln2 \times (\kappa^k_{r,u(s,i)} -\mathfrak{D}_{r,u(s,i)}^{k})}\\
+p_{r,u(s,i)}^{k} &= [\frac{(\delta_s + \mathfrak{h}_{u_{(s,i)}})B \mathfrak{j}_{r,u(s,i)}^{k}}{ Ln2 \times (-\mathfrak{s}^k_{r,u(s,i)} +\mathfrak{D}_{r,u(s,i)}^{k})}\\
  &-\frac{BN_0 + I_{r,u(s,i)}^{k}}{{|\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2\mathfrak{j}_{r,u(s,i)}^{k}}]^+.\\
 \end{split}
 \end{equation}
@@ -542,11 +542,12 @@ Hence, from equation \eqref{deriveE} and \eqref{deriveE1}, PRB assignment is per
 \begin{equation}
 e_{r,u(s,i)}^{k} = 
   \begin{cases}
-      1 & u(s,i) = \text{argmax} \mathfrak{F}^{k}_{r,u(s,i)} \forall s, \forall r, \forall k\\
+      1 & u(s,i) = \text{argmax} \mathfrak{Z}^{k}_{r,u(s,i)} \forall s, \forall r, \forall k\\
       0 & \text{otherwise}
     \end{cases}
 \end{equation}
-\end{lemma}
+Where, $\mathfrak{Z}^{k}_{r,u(s,i)} = (\mathfrak{F}^{k}_{r,u(s,i)} -\mathfrak{v}^{k}_{r,u(s,i)}- \mathfrak{m}_{r}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r )$.
+ \end{lemma}
 Thus the user in each slice $s$ that have the the most considerable value of $\mathfrak{F}^{k}_{r,u(s,i)}$, should be allocated to the PRB $k$. Since just one PRB can be allocated to a UE between those UEs (regardless to the services) that are associated to the same O-RU.
 The number of UEs are $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$.
 The complexity order of this problem is about $O(\mathfrak{N} \times K)$.
@@ -684,8 +685,8 @@ Parameter & Value \\ [0.5ex]
  \end{center}
  \end{table}
 Two different methods are used to compare with the performance of the proposed method (IABV).
- The first one is a baseline scheme, which used random PRB allocation. The association of O-RU is based on the distance, channel quality, and the fronthaul capacity. Also, the number of activated VNF for each slice is fixed. 
-The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power are dynamically allocated, and the number of VNFs is obtained from the simulation, and the UEs are associated with the O-RU based on the quality of their channels, the fronthaul capacity, and channel distance.
+ The first one is a baseline scheme, which used random PRB allocation. The association of O-RU is only based on the distance. Also, the number of activated VNF for each slice is fixed. 
+The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power are dynamically allocated, and the number of VNFs is obtained from the simulation, and the UEs are associated with the O-RU based on the quality of their channels and the channel distance.
 
 In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus the different number of UEs in each service for these three methods. Suppose we have one service instance for each type of service, so we have three various services in this figure.
 Here, we did not consider the priority. The figure presented that the proposed method (IABV) is $18.6\%$ higher than the baseline scheme.
