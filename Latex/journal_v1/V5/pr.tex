@@ -542,7 +542,7 @@ Hence, from equation \eqref{deriveE} and \eqref{deriveE1}, PRB assignment is per
 \begin{equation}
 e_{r,u(s,i)}^{k} = 
   \begin{cases}
-      1 & u(s,i) = \text{argmax} \mathfrak{Z}^{k}_{r,u(s,i)} \forall s, \forall r, \forall k\\
+      1 & u(s,i) = \text{argmax} \mathfrak{Z}^{k}_{r,u(s,i)} \forall r, k \in K, s \in S\\
       0 & \text{otherwise}
     \end{cases}
 \end{equation}
@@ -650,7 +650,16 @@ and the complexity order of the second sub-problem is about $O(Slog(S)) + O(R\ti
 So the complexity of the main problem \eqref{problem} is $O(T_{conv} \times \mathfrak{N} \times K \times (Slog(S)+R\mathfrak{N}))$.
 \section{Numerical Results}\label{NE}
 In this section, numerical results for the main problem are depicted to evaluate the performance of the algorithms. We consider three network slices, for eMBB, URLLC and mMtc services.
-Assume we have six 4-antenna O-RU (MISO) located in a cell with a diameter of 500 meters. We consider 25 PRB in the network.
+Assume we have six 4-antenna O-RU (MISO) located in a place with a diameter of 500 meters as it shown in figure \ref{fig:cell}. In addition, we consider the users placed randomly in this place.
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.47]{cell.pdf}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{O-RU placement in a cell}
+  \label{fig:cell}
+\end{figure}
+We consider 25 PRB in the network.
 The maximum number of VNF for each slice is 25 and the mean arrival data rate for the eMBB service is $\lambda  = 3Mbps$ and for the mMTC service and the URLLC  service is $\lambda  = 0.2Mbps$. 
 The other parameters of these simulations are depicted in Table \ref{table:1a}.
 \begin{table}

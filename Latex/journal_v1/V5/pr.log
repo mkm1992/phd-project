@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  8 AUG 2021 11:25
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  8 AUG 2021 15:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -693,8 +693,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 548--550
 \OMS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
  []
 
+File: cell.pdf Graphic file (type pdf)
+<use cell.pdf>
 
-Overfull \hbox (2.58482pt too wide) in paragraph at lines 659--686
+Overfull \hbox (2.58482pt too wide) in paragraph at lines 668--695
  [] 
  []
 
@@ -702,28 +704,28 @@ Overfull \hbox (2.58482pt too wide) in paragraph at lines 659--686
 File: rate_ue1.eps Graphic file (type eps)
 <rate_ue1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 697--700
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 706--709
  [][] 
  []
 
 File: vnfNum1.eps Graphic file (type eps)
 <vnfNum1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 729--732
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 738--741
  [][] 
  []
 
 File: RatePower1.eps Graphic file (type eps)
 <RatePower1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 741--744
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 750--753
  [][] 
  []
 
 File: delay_new.eps Graphic file (type eps)
 <delay_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 755--758
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 764--767
  [][] 
  []
 
@@ -731,14 +733,14 @@ Overfull \hbox (20.91914pt too wide) in paragraph at lines 755--758
 File: delay1_new.eps Graphic file (type eps)
 <delay1_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 765--768
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 774--777
  [][] 
  []
 
 File: mmTCpower.eps Graphic file (type eps)
 <mmTCpower.eps>
 
-Overfull \hbox (19.2583pt too wide) in paragraph at lines 776--779
+Overfull \hbox (19.2583pt too wide) in paragraph at lines 785--788
 [][] 
  []
 
@@ -769,10 +771,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7458 strings out of 492970
- 107723 string characters out of 6137298
- 209555 words of memory out of 5000000
- 11285 multiletter control sequences out of 15000+600000
+ 7463 strings out of 492970
+ 107794 string characters out of 6137298
+ 209564 words of memory out of 5000000
+ 11289 multiletter control sequences out of 15000+600000
  96356 words of font info for 128 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  33i,28n,35p,921b,328s stack positions out of 5000i,500n,10000p,200000b,80000s

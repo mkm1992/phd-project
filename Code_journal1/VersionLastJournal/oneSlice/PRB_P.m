@@ -42,7 +42,7 @@ for count = 1: counter_max
     run Parameter
     run update_var
     result_new = sum(rate_UE);
-%     if abs(result_new - result_old)< eps
-%         break
-%     end
+    if abs(result_new - result_old)< eps
+        %break
+    end
 end
