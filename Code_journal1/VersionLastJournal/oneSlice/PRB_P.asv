@@ -1,7 +1,7 @@
 % Obtain PRB and Power 
 beta = ones(1,N_RU)*Pmax/10;
 alpha = ones(1,N_UE)*Pmax/100;
-lambda = ones(1,N_UE).*Rmin_UE/10;
+lambda = ones(1,N_UE).*Rmin_UE;
 %tr = ones(1,N_RU).*Capacity_RU/100;
 %zeta_s = ones(S,1).*(alpha_s+  1./delay_max(:));
 run Parameter
@@ -15,7 +15,7 @@ for count = 1: counter_max
         %ze = temp;
         %tr_sum = sum(tr(:).*RU_UE(:,i));
         Popt(i) = max(0,(BW*(1+lambda(i))/0.693/ze)-( Intf(i)+BW*N0)/abs((ChannelGain1(:,i))'*beamForming1(:,i))^2); 
-        %Popt(i) = min(Pmax, Popt(i));
+        Popt(i) = min(Pmax, Popt(i));
     end
     run PRB_Alloc
     Popt

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  7 AUG 2021 17:04
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  8 AUG 2021 11:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -694,7 +694,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 548--550
  []
 
 
-Overfull \hbox (2.58482pt too wide) in paragraph at lines 658--685
+Overfull \hbox (2.58482pt too wide) in paragraph at lines 659--686
  [] 
  []
 
@@ -702,28 +702,28 @@ Overfull \hbox (2.58482pt too wide) in paragraph at lines 658--685
 File: rate_ue1.eps Graphic file (type eps)
 <rate_ue1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 696--699
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 697--700
  [][] 
  []
 
 File: vnfNum1.eps Graphic file (type eps)
 <vnfNum1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 728--731
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 729--732
  [][] 
  []
 
 File: RatePower1.eps Graphic file (type eps)
 <RatePower1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 740--743
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 741--744
  [][] 
  []
 
 File: delay_new.eps Graphic file (type eps)
 <delay_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 754--757
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 755--758
  [][] 
  []
 
@@ -731,24 +731,20 @@ Overfull \hbox (20.91914pt too wide) in paragraph at lines 754--757
 File: delay1_new.eps Graphic file (type eps)
 <delay1_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 764--767
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 765--768
  [][] 
  []
 
 File: mmTCpower.eps Graphic file (type eps)
 <mmTCpower.eps>
 
-Overfull \hbox (19.2583pt too wide) in paragraph at lines 775--778
+Overfull \hbox (19.2583pt too wide) in paragraph at lines 776--779
 [][] 
  []
 
 File: priorityLast.eps Graphic file (type eps)
 <priorityLast.eps>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-(./pr.bbl
+[10] (./pr.bbl
 Underfull \hbox (badness 1852) in paragraph at lines 36--39
 \T1/ptm/m/n/8 ``5g wire-less net-work slic-ing for embb, urllc, and mmtc: A
  []

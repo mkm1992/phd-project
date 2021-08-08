@@ -22,8 +22,9 @@ for i_count = count_min1:count_step1:count_max1
             run RUAssociateDist
             run setChGain
             alpha_m = lambda_m.*(UE_S);
-            run PRB_Pow_Alloc1
-            run findM
+            run PRB_P
+            %run PRB_Pow_Alloc1
+            %run findM
             run Rate_final
             %run RUUESet
             sumRate1(number_check,iter) = abs(sum(rate_UE_1));            

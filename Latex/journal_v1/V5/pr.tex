@@ -549,8 +549,8 @@ e_{r,u(s,i)}^{k} =
 Where, $\mathfrak{Z}^{k}_{r,u(s,i)} = (\mathfrak{F}^{k}_{r,u(s,i)} -\mathfrak{v}^{k}_{r,u(s,i)}- \mathfrak{m}_{r}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r )$.
  \end{lemma}
 Thus the user in each slice $s$ that have the the most considerable value of $\mathfrak{F}^{k}_{r,u(s,i)}$, should be allocated to the PRB $k$. Since just one PRB can be allocated to a UE between those UEs (regardless to the services) that are associated to the same O-RU.
-The number of UEs are $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$.
-The complexity order of this problem is about $O(\mathfrak{N} \times K)$.
+The number of UEs are $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$. Also, assume that the algorithm converges after $T_{conv}$ times.
+The complexity order of this problem is about $O( T_{conv} \times\mathfrak{N} \times K)$.
 \subsection{Sub-Problem 2}\label{sub2}
 After power allocation and PRB assignment, the remaining problem is to assign O-RU to each UE in each service.
 
@@ -644,9 +644,10 @@ The whole algorithm (IABV method) is depicted as follows (Algorithm \ref{alg2}).
 \end{algorithmic}
 \end{algorithm}
 The number of UEs are $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$.
-As we mentioned before, the complexity order of the first sub-problem is about $O(N_u \times K)$
+Also, assume that the algorithm converges after $T_{conv}$ times.
+As we mentioned before, the complexity order of the first sub-problem is about $O(T_{conv} \times \mathfrak{N} \times K)$
 and the complexity order of the second sub-problem is about $O(Slog(S)) + O(R\times \mathfrak{N})$.
-So the complexity of the main problem \eqref{problem} is $O(\mathfrak{N} \times K \times (Slog(S)+R\mathfrak{N}))$.
+So the complexity of the main problem \eqref{problem} is $O(T_{conv} \times \mathfrak{N} \times K \times (Slog(S)+R\mathfrak{N}))$.
 \section{Numerical Results}\label{NE}
 In this section, numerical results for the main problem are depicted to evaluate the performance of the algorithms. We consider three network slices, for eMBB, URLLC and mMtc services.
 Assume we have six 4-antenna O-RU (MISO) located in a cell with a diameter of 500 meters. We consider 25 PRB in the network.
@@ -769,7 +770,7 @@ Figure \ref{fig:7} is the same as figure \ref{fig:6} that presented the mean tot
 \end{figure}
 
 Figure \ref{fig:8}, represents the aggregate throughput concerning the number of UEs in each service and the maximum power for three different mMTC service instances. mMTC service includes a large number of UEs with low data rates and low power. 
-Assume each UE in each mMTC service instance requires $1bits/sec/Hz$ data rate and is not sensitive to the end-to-end delay. The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
+Assume each UE in each mMTC service instance requires $1bits/sec/Hz$ data rate and is not sensitive to the end-to-end delay. Also, suppose the fronthaul link has no restrictions  .The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
 \begin{figure}
   %\centering 
     \includegraphics[scale = 0.4]{mmTCpower.eps}
