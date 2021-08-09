@@ -11,7 +11,7 @@ for z = 1:N_PRB
 end
 
 
-
+%Intf_PRB = zeros(N_PRB,N_UE);
 rate_PRB_UE = zeros(N_PRB,N_UE);
 for z = 1:N_PRB
     for i = 1:N_UE

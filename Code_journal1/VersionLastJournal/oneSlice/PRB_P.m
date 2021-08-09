@@ -1,7 +1,7 @@
 % Obtain PRB and Power 
 beta = ones(1,N_RU)*Pmax/10;
 alpha = ones(1,N_UE)*Pmax/100;
-lambda = ones(1,N_UE).*Rmin_UE/10;
+lambda = ones(1,N_UE).*Rmin_UE*1;
 %tr = ones(1,N_RU).*Capacity_RU/100;
 %zeta_s = ones(S,1).*(alpha_s+  1./delay_max(:));
 run Parameter
@@ -33,11 +33,15 @@ for count = 1: counter_max
          PRB_UE(ind,i) = 1;
          run Parameter
     end
-%     for i =1:N_UE
-%         [m, ind] = max(H_PRB(:,i));
-%         PRB_UE(ind,i) = 1;
-%         run Rate_PRB
-%     end
+
+    
+    for z =1:N_PRB
+        if all(PRB_UE(z,:)==0)
+            [m, ind] = max(H_PRB(z,:));
+            %PRB_UE(z,ind) = 1;
+        end
+    end
+    
     result_old = sum(rate_UE);
     run Parameter
     run update_var
