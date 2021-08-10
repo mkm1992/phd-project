@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  8 AUG 2021 15:52
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  10 AUG 2021 16:59
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -674,6 +674,12 @@ Overfull \hbox (8.02382pt too wide) detected at line 208
 euf/m/n/10 y[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 z[];
  []
 
+
+Underfull \hbox (badness 1418) in paragraph at lines 208--214
+\T1/ptm/m/n/10 set of ser-vice, $\OML/cmm/m/it/10 z[]$ \T1/ptm/m/n/10 is the ad
+-di-tive Gaus-sian noise
+ []
+
 [3] [4]
 Missing character: There is no ’ in font ptmr8t!
  [5] [6]
@@ -693,60 +699,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 548--550
 \OMS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
  []
 
+[8]
 File: cell.pdf Graphic file (type pdf)
 <use cell.pdf>
 
-Overfull \hbox (2.58482pt too wide) in paragraph at lines 668--695
+Overfull \hbox (2.58482pt too wide) in paragraph at lines 695--722
  [] 
  []
 
-[8]
 File: rate_ue1.eps Graphic file (type eps)
 <rate_ue1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 706--709
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 733--736
  [][] 
  []
 
+[9]
 File: vnfNum1.eps Graphic file (type eps)
 <vnfNum1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 738--741
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 765--768
  [][] 
  []
 
 File: RatePower1.eps Graphic file (type eps)
 <RatePower1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 750--753
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 777--780
  [][] 
  []
 
 File: delay_new.eps Graphic file (type eps)
 <delay_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 764--767
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 791--794
  [][] 
  []
 
-[9]
+[10]
 File: delay1_new.eps Graphic file (type eps)
 <delay1_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 774--777
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 801--804
  [][] 
  []
 
 File: mmTCpower.eps Graphic file (type eps)
 <mmTCpower.eps>
 
-Overfull \hbox (19.2583pt too wide) in paragraph at lines 785--788
+Overfull \hbox (19.2583pt too wide) in paragraph at lines 812--815
 [][] 
  []
 
 File: priorityLast.eps Graphic file (type eps)
 <priorityLast.eps>
-[10] (./pr.bbl
+(./pr.bbl
 Underfull \hbox (badness 1852) in paragraph at lines 36--39
 \T1/ptm/m/n/8 ``5g wire-less net-work slic-ing for embb, urllc, and mmtc: A
  []
@@ -763,18 +770,16 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[12
-
-] (./pr.aux)
+[12] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7463 strings out of 492970
- 107794 string characters out of 6137298
- 209564 words of memory out of 5000000
- 11289 multiletter control sequences out of 15000+600000
+ 7464 strings out of 492970
+ 107817 string characters out of 6137298
+ 209569 words of memory out of 5000000
+ 11290 multiletter control sequences out of 15000+600000
  96356 words of font info for 128 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  33i,28n,35p,921b,328s stack positions out of 5000i,500n,10000p,200000b,80000s

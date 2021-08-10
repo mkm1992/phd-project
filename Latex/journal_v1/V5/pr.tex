@@ -196,7 +196,7 @@ Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{r,u(s,i)}^{k}
 I_{r,u(s,i)}^{k} &=
  \underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} \gamma_{1}  p_{u(s,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(s,l)}^{k} g_{u(s,l)}^{r'}|^2}_{\text{(intra-slice interference)}}\\
 &+ \underbrace{\sum_{\substack{n = 1 \\ n\neq s}}^{S}\sum_{l=1}^{{U}_s} \gamma_{2}  p_{u(n,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(n,l)}^{k} g_{u(n,l)}^{r'}|^2}_{\text{(inter-slice interference)}}\\
-&+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}^2 |\boldsymbol{h}_{r,{u(s,i)}}|^2 }_{\text{(Quantization Noise)}}
+&+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}^2 |\boldsymbol{h}_{r,{u(s,i)}}^k|^2 }_{\text{(Quantization Noise)}}
 \end{split}
 \end{equation}
 where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}$ and $\gamma_{2} = e^{k}_{u(s,i)}e^{k}_{u(n,l)}$.
@@ -209,7 +209,7 @@ To obtain SNR as formulated in \eqref{eq1}, let $y_{u(s,i)} $ be the received si
 %\boldsymbol{w}^k_{r,u(s,i)}p^k_{r,u(s,i)}
 where $\mathfrak{y}^k_{r,u(s,i)} =\boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2}}_{r,u(s,i)}} x_{u(s,i)}+ \boldsymbol{q}_{r}$
 and $ x_{u(s,i)}$ depicts the transmitted symbol vector of UE $i$ in $s^{th}$ set of service,  $z_{u(s,i)}$ is the additive Gaussian noise $z_{u(s,i)} \backsim \mathcal{N}(0,N_0)$ and $N_0$ is the noise power.
-In addition, $\boldsymbol{q}_{r} \in \mathbb{C}^{J }  $ indicates the quantization noise 
+In addition, $\boldsymbol{q}_{r} \in \mathbb{C}^{J }  $ indicates the quantization Gaussian noise 
 ($\boldsymbol{q}_{r} \backsim \mathcal{N}(0,{\sigma_q}^2\boldsymbol{I_{R}} )$), which is made from signal compression in O-DU.
 
 The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as $\mathcal{R}_{u(s_1,i)}$ that is formulated as below.
@@ -222,12 +222,12 @@ The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ applica
 \end{equation}
 where $B$ is the bandwidth of system. 
 $\mathcal{R}_{u(s_1,i)}^{r}$ is the achievable rate of each RU $r$ to UE $i$ in slice $s_1$.
-Since the blocklength in URLLC and mMTC is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{j}^{th}$ ( $j \in \{2,3\}$) application of service type 2 (URLLC) and 3 (mMTC) is not achieved from Shannon Capacity formula. So, for the short packet transmission, the achievable data rate is approximated from following
+Since the blocklength in URLLC and mMTC is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{j}^{th}$ ( $j \in \{2,3\}$) application of service type 2 (URLLC) and 3 (mMTC) is not achieved from Shannon Capacity formula. So, for the short packet transmission, the achievable data rate is approximated from following \cite{setayesh2020joint},
 \begin{equation}\label{eq11}
 \begin{split}
 \mathcal{{R}}_{r,u(s_j,i)}^{k} &= B \log_2({1+ \rho_{r,u(s_j,i)}^{k}} - \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k},\\
-\mathcal{R}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k}\\
-\mathcal{R}_{u(s_j,i)} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_j,i)}^{r} g^r_{u(s_j,i)}
+\mathcal{R}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k},\\
+\mathcal{R}_{u(s_j,i)} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_j,i)}^{r} g^r_{u(s_j,i)}.
 \end{split}
 \end{equation}
 Where $j \in \{2,3\}$. Also we have
@@ -253,13 +253,13 @@ C_{r} = \log{(1+ \frac{\sum_{s=1}^{S}\sum_{k=1}^{K_s}\sum_{i=1}^{U_s}|\bold{w}_{
 Where, $\mathcal{\alpha}^k_{r,u(s,i)}= p_{r,u(s,i)}^{k} g_{u(s,i)}^r e^k_{r,u(s,i)}$ and $\sigma_{q}^2$ is the power of quantization noise.
 \subsection{Mean Delay}
 In this part, the end-to-end mean delay for each service is obtained.
-Suppose the mean total delay is depicted as $T_{tot}$.
+Suppose the mean total delay is depicted as $T_{tot}$,
 \begin{equation}
 \begin{split}
-T^{tot} &=  T^{proc} + T^{tr} + T^{pro}\\
-T^{proc} &=  T^{RU} + T^{DU} + T^{CU} + T^{UPF}\\
-T^{tr} &= T^{fr,t} + T^{mid,t} + T^{b,t}  \\
-T^{pro} &= T^{fr,p} + T^{mid,p} + T^{b,p}  \\
+T^{tot} &=  T^{proc} + T^{tr} + T^{pro},\\
+T^{proc} &=  T^{RU} + T^{DU} + T^{CU} + T^{UPF},\\
+T^{tr} &= T^{fr,t} + T^{mid,t} + T^{b,t},  \\
+T^{pro} &= T^{fr,p} + T^{mid,p} + T^{b,p}.  \\
 \end{split}
 \end{equation}
 %T_{tot} = T_{RU} + T_{front} + T_{DU} + T_{mid} + T_{CU} + T_{back} + T_{core} + T_{trans2net}
@@ -280,12 +280,12 @@ Because the amount of data traffic transferred along the route (regardless of fr
 Since, by using Burke’s theorem, the mean arrival data rate of the second and third layers, which are processed in the first layer, is still poisson with rate $\alpha_{s}$.
 It is assumed that there are load balancers in each layer for each service to divide the incoming traffic to VNFs equally. %\cite{frdl,luong2018novel,luong2018novel1}.
 Suppose the baseband processing of each VNF is depicted as M/M/1 processing queue.
-Each packet is processed by one of the VNFs of a slice. So, the mean delay for the $s^{th}$ slice in the O-DU, the O-CU, and the UPF is modeled as M/M/1 queue, is formulated as follows, respectively.
+Each packet is processed by one of the VNFs of a slice. So, the mean delay for the $s^{th}$ slice in the O-DU, the O-CU, and the UPF is modeled as M/M/1 queue, is formulated as follows, respectively \cite{SystemCostMinimization,luong2018joint,luong2018novel},
 \begin{equation}
 \begin{split}
 T_{s}^{DU} &= \frac{1}{\mu_s^d - \alpha_{s}/{M_s^{d}}},\\
-T_{s}^{CU} &= \frac{1}{\mu_s^c - \alpha_{s}/{M_s^{c}}}\\
-T_{s}^{UPF} &= \frac{1}{\mu_s^u - \alpha_{s}/{M_s^{u}}}\\
+T_{s}^{CU} &= \frac{1}{\mu_s^c - \alpha_{s}/{M_s^{c}}},\\
+T_{s}^{UPF} &= \frac{1}{\mu_s^u - \alpha_{s}/{M_s^{u}}}.\\
 \end{split}
 \end{equation}
 Where $M_s^{d}$, $M_s^{c}$ and 
@@ -299,7 +299,7 @@ In addition, $T_{u(s,i)}^{RU}$ is the mean transmission delay of $i^{th}$ UE in 
  The arrival data rate of wireless link for each UE i in service s is $\lambda_{u(s,i)}$
 As a result we have, $\sum_{i = 1}^{U_s} \lambda_{u(s,i)} = \alpha_s$.
 Moreover, The service time of transmission queue for UE $i$ requesting service $s$ has
-an exponential distribution with mean $1/R_{u(s,i)}$ and can be modeled as a M/M/1 queue.
+an exponential distribution with mean $1/R_{u(s,i)}$ and can be modeled as a M/M/1 queue \cite{SystemCostMinimization,luong2018joint,luong2018novel}.
  
 Therefore, the mean delay of the transmission layer for UE $i$ in slice $s$ is
 \begin{equation}
@@ -643,14 +643,37 @@ The whole algorithm (IABV method) is depicted as follows (Algorithm \ref{alg2}).
 \State \textbf{end for} \label{24}
 \end{algorithmic}
 \end{algorithm}
+\subsubsection{Complexity Order}
 The number of UEs are $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$.
 Also, assume that the algorithm converges after $T_{conv}$ times.
 As we mentioned before, the complexity order of the first sub-problem is about $O(T_{conv} \times \mathfrak{N} \times K)$
 and the complexity order of the second sub-problem is about $O(Slog(S)) + O(R\times \mathfrak{N})$.
 So the complexity of the main problem \eqref{problem} is $O(T_{conv} \times \mathfrak{N} \times K \times (Slog(S)+R\mathfrak{N}))$.
+\subsubsection{Convergence Analysis}
+We can guarantee the convergence of the iterative algorithm if the objective function is the strictly ascending function concerning the number of iterations \cite{gholipoor2020resource}.
+Consider the aggregate throughput as $\mathcal{T(\bold{P},\bold{E},\bold{G})} =\sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}}$. 
+In the first step of the iteration i of the algorithm \ref{alg2} (IABV), we have $\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1})$.
+In this step, optimal power and PRB allocation are obtained for the fixed O-RU association, so we have
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1}) \geq \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$.
+In the second step of the iteration i, the optimal O-RU association is achieved to maximize the aggregate throughput. So we have this inequality
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^{i},\bold{G}^{i-1})$.
+As a result, we have 
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) \geq \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$.
+Hence, in each step of the iteration, the aggregate throughput increased.
+Note that $\mathcal{T}^*(\bold{P}^{*},\bold{E}^*,\bold{G}^{*})$ is the achieved aggregate throughput 
+for all the feasible resource allocation solutions of $\{\bold{P},\bold{E},\bold{G}\}$.
+So, $\mathcal{T}^*(\bold{P}^{*},\bold{E}^*,\bold{G}^{*}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i})$ and thus in each iteration, the aggregate throughput can not be larger than the optimal solution.
+So the the aggregate throughput is ascending function concerning the number of iterations and it will converge to the optimal solution.
+In addition, if we assume that the interference is set to be zero ${I}_{r,u_{(s,i)}}^{k}=0$,
+and we suppose that each UE has the maximum power $p_{r,u_{(s,i)}}^k = P_{s}^{max}$,
+and we consider that all PRB is assigned to all UE $e_{r,u_{(s,i)}}^k = 1 \forall s,\forall i$
+and each UE is assigned to the nearest O-RU with the best channel quality. So, the solution of this allocation, is the upper bound 
+for the aggregate throughput. Thus,
+we can guarantee the convergence of our iterative algorithm since the objective function $\mathcal{T}$ is the ascending function concerning the number of iterations
+ and it has the upper bound.  
 \section{Numerical Results}\label{NE}
-In this section, numerical results for the main problem are depicted to evaluate the performance of the algorithms. We consider three network slices, for eMBB, URLLC and mMtc services.
-Assume we have six 4-antenna O-RU (MISO) located in a place with a diameter of 500 meters as it shown in figure \ref{fig:cell}. In addition, we consider the users placed randomly in this place.
+In this section, numerical results for the main problem are depicted to evaluate the performance of the algorithms using the Monte-Carlo method. We consider three network slices for eMBB, URLLC, and mMtc services.
+Assume we have six 4-antenna O-RU (MISO) located in a place with a diameter of 500 meters as shown in figure \ref{fig:cell}. In addition, we consider the users placed randomly in this place.
 \begin{figure}
   \centering 
     \includegraphics[scale = 0.47]{cell.pdf}
@@ -659,7 +682,11 @@ Assume we have six 4-antenna O-RU (MISO) located in a place with a diameter of 5
   \caption{O-RU placement in a cell}
   \label{fig:cell}
 \end{figure}
-We consider 25 PRB in the network.
+Here, The channel vector from the O-RU $r$ to the UE $i$ in service $s$ is set as $\bold{h}_{r,u(s,i)}^{k}=d_{r,u(s,i)}^{-\mathcal{L}} \Omega_{r,u(s,i)}^{k} $.  Where, $d_{r,u(s,i)}^{-\mathcal{L}} $ is the distance between the O-RU $r$ and the UE $i$ in service $s$ and $\mathcal{L} = 3.8$ is the path-loss exponent.
+Also, $\Omega_{r,u(s,i)}^{k}$ is the random variable that is generated by the Rayleigh distribution
+and it is the Rayleigh fading channel between the UE and O-RU.
+We consider 25 PRBs are used in the network and the
+packet size is equal to 20 bytes.
 The maximum number of VNF for each slice is 25 and the mean arrival data rate for the eMBB service is $\lambda  = 3Mbps$ and for the mMTC service and the URLLC  service is $\lambda  = 0.2Mbps$. 
 The other parameters of these simulations are depicted in Table \ref{table:1a}.
 \begin{table}
