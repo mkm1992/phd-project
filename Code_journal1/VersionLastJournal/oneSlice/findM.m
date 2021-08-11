@@ -1,6 +1,7 @@
 VNF_NUM_UE =  zeros(1,N_UE);
 VNF_NUM = zeros(1,S);
 Delay_Slice1_UE = zeros(1,N_UE);
+Delay_Slice1= zeros(1,N_UE);
 t = 0;
 for s = 1:S
     for numberU = 1:UE_S(s)

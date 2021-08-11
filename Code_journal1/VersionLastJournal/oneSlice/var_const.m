@@ -8,7 +8,7 @@ Pc1 = 10; %watt
 Pc  = db2pow(Pc1)/1000;
 Pt = 33;
 Pmax = db2pow(Pt)/1000;
-Rmin1 =  BW*2;%[60000 ,60000 ,6000];%.1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
+Rmin1 =  BW*10;%[60000 ,60000 ,6000];%.1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
 [Rmin, I] = sort(Rmin1,'descend');
 Rate_mid_max = BW*100;% [600000,420000,50000];%0.5*BW*randi([1,10],1,S);
 var_q = 1e-6;
@@ -28,7 +28,7 @@ Delay_Slice = zeros(1,S);
 VNF_NUM =  zeros(1,S);
 N_UE_max = 10;
 N_RU = 6;
-counter_max = 100;
+counter_max = 50;
 M_max = 10; %max number of vnf
 %%
 C_tot_RU = sum(Rate_mid_max);

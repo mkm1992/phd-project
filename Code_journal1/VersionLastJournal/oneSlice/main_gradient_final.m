@@ -3,9 +3,9 @@ clc
 run var_const
 count_min1 = 2;
 count_step1 = 2;
-count_max1 = 16;
+count_max1 = 2;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 10;
+iter_max = 1;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 RU_iter_max = N_RU + 5;
@@ -17,17 +17,31 @@ for i_count = count_min1:count_step1:count_max1
         RU_iter = 1;
         run parameter_UE_change
         run PRB_Alloc
+         while  RU_iter < RU_iter_max
+
+        if RU_iter == 1
+          run RUAssociateDist  
+        end
         %%
-        %% BaseLine Scheme
-            run RUAssociateDist
             run setChGain
             alpha_m = lambda_m.*(UE_S);
+            run delay_const
             run PRB_P
             %run PRB_Pow_Alloc1
-            %run findM
+            run findM
             run Rate_final
-            %run RUUESet
-            sumRate1(number_check,iter) = abs(sum(rate_UE_1));            
+            run RUUESet
+            sumRate1(number_check,iter) = abs(sum(rate_UE_1));       
+            i_count
+            RU_iter
+            VNF_NUM
+            if sumRate(number_check,iter) > 0 && RU_iter >3 
+                %RU_iter = RU_iter_max + 10;
+
+            end
+            
+            RU_iter = RU_iter + 1;
+         end
     end
 end
 UE_num = count_min1:count_step1:count_max1;

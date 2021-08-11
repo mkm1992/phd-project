@@ -1,9 +1,9 @@
 clear all
 clc
 run var_const
-count_min1 = 1;
-count_step1 = 50;
-count_max1 = 151;
+count_min1 = 2;
+count_step1 = 2;
+count_max1 = 2;
 numvar = length(count_min1:count_step1:count_max1);
 iter_max = 1;
 sumRate = zeros(numvar,iter_max);

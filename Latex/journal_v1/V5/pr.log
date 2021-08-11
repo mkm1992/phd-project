@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  10 AUG 2021 16:59
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  11 AUG 2021 16:44
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -753,12 +753,12 @@ Overfull \hbox (19.2583pt too wide) in paragraph at lines 812--815
 
 File: priorityLast.eps Graphic file (type eps)
 <priorityLast.eps>
-(./pr.bbl
+(./pr.bbl [11]
 Underfull \hbox (badness 1852) in paragraph at lines 36--39
 \T1/ptm/m/n/8 ``5g wire-less net-work slic-ing for embb, urllc, and mmtc: A
  []
 
-[11])
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:

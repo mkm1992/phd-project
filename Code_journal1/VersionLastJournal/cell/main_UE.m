@@ -1,11 +1,11 @@
 clear all
 clc
 run var_const
-count_min1 = 100;
-count_step1 = 100;
-count_max1 = 500;
+count_min1 = 2;
+count_step1 = 2;
+count_max1 = 10;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 2;
+iter_max = 5;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 RU_iter_max = N_RU + 3;
