@@ -45,7 +45,7 @@ for count = 1: counter_max
          PRB_UE(ind,i) = 1;
          run Parameter
     end
-
+    %run Parameter
     for r =1:N_RU
         aRU =find(RU_UE(r,:)==1);
         if ~isempty(aRU)

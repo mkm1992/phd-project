@@ -4,7 +4,7 @@ w3(1,:) = mu(:).* delay_max(:)-3;
 w4(1,:) = mu(:).* delay_max(:).*lambda_m(:)+mu(:) - 3*lambda_m(:);
  t = 0;
 a = zeros(1,S);
-M_max = 25;
+M_max = 10;
 for s = 1:S
     for j = 1:UE_S(s)
         t = t+1;
@@ -13,3 +13,5 @@ for s = 1:S
         %rate_UE(t) >= max(a(s),0)
     end
 end
+Rmin_UE(:) = max(Rmin_UE(:),a(s));
+Rmin_UE(:) = max(Rmin_UE(:), lambda_m+1/delay_max);

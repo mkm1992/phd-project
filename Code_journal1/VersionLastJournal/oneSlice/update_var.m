@@ -2,7 +2,7 @@ alpha_step = Pmax/sqrt(count)/1;
 
 for i = 1:N_UE
     beta_step = Pmax/1/sqrt(count);
-    lambda_step = Rmin_UE(i)/sqrt(count)/1000;
+    lambda_step = Rmin_UE(i)/sqrt(count)/100;
     lambda(i)= max(0,lambda(i) - lambda_step* (rate_UE(i) - Rmin_UE(i)));
     alpha(i) = max(0, alpha(i) - alpha_step* (Popt(i)- 0));
     

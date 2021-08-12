@@ -130,7 +130,7 @@ In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power 
 \subsection{Main Contribution}
 This study aims to optimize baseband resource allocation (power allocation, PRB allocation, and O-RUs association) and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform. In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The main contributions of this paper are summarized as follow:
 \begin{itemize}
-\item In this paper, a network slicing model is depicted for three different types of services introduced in 5G (URLLC, eMBB, and mMTC). The problem of radio resource allocation and VNF activation is studied in this paper in the O-RAN architecture.
+\item In this paper, a network slicing model is depicted for three different types of services introduced in 5G i.e eMBB, mMTC, and URLLC. The problem of radio resource allocation and VNF activation is studied in this paper in the O-RAN architecture.
 We formulate the problem of baseband resource allocation to maximize the weighted throughput of the O-RAN system for a different types of services with specific QoS. 
 \item The desired QoS conditions such as delay and throughput are considered for different types of services. We formulate the end-to-end mean delay of the system based on the number of activated VNFs and each user's throughput.
 We consider the limited fronthaul capacity and accurately obtain the power and the capacity of each O-RU based on the quantization noise.
@@ -352,7 +352,7 @@ This paper aims to maximize the sum rate of all UEs with the presence of constra
 \end{subequations}
 where $\boldsymbol{P} =[p_{r,u(s,i)}^{k}], \:\: \forall s , \forall i, \forall r, \forall k $, is the matrix of power for UEs, $\boldsymbol{E} =[e_{r,u(s,i)}^k], \:\: \forall s , \forall i, \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r], \:\: \forall s , \forall i, \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u], \:\: \forall s$ is the matrix that shown the number of VNFs in each layer of slice.
 \eqref{c11}, \eqref{c12} and \eqref{c12-1}, indicate that the power of each O-RU does not exceed the maximum power, the power of each UE is a positive integer value, and the power of each UE in each service does not exceed the maximum power of each service, respectively.  
-Also, \eqref{c13} shows that the rate of each UE requesting each type of service (eMBB, URLLC, and mMTC) is more than a threshold, respectively.
+Also, \eqref{c13} shows that the rate of each UE requesting each type of service i.e eMBB, mMTC, and URLLC is more than a threshold, respectively.
 \eqref{c15} and \eqref{c16} expressed the limited fronthaul capacity and the limited end-to-end delay of the received signal, respectively.
 \eqref{c16-1} and \eqref{c16-2} denoted the stability of the M/M/1 queue model.
 \eqref{c16-3} restricted the number of VNF in each slice due to the limited resources.
@@ -663,16 +663,16 @@ Hence, in each step of the iteration, the aggregate throughput increased.
 Note that $\mathcal{T}^*(\bold{P}^{*},\bold{E}^*,\bold{G}^{*})$ is the achieved aggregate throughput 
 for all the feasible resource allocation solutions of $\{\bold{P},\bold{E},\bold{G}\}$.
 So, $\mathcal{T}^*(\bold{P}^{*},\bold{E}^*,\bold{G}^{*}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i})$ and thus in each iteration, the aggregate throughput can not be larger than the optimal solution.
-So the the aggregate throughput is ascending function concerning the number of iterations and it will converge to the optimal solution.
+So the the aggregate throughput is ascending function concerning the number of iterations and it will converge to the sub-optimal solution.
 In addition, if we assume that the interference is set to be zero ${I}_{r,u_{(s,i)}}^{k}=0$,
 and we suppose that each UE has the maximum power $p_{r,u_{(s,i)}}^k = P_{s}^{max}$,
 and we consider that all PRB is assigned to all UE $e_{r,u_{(s,i)}}^k = 1 \forall s,\forall i$
 and each UE is assigned to the nearest O-RU with the best channel quality. So, the solution of this allocation, is the upper bound 
 for the aggregate throughput. Thus,
 we can guarantee the convergence of our iterative algorithm since the objective function $\mathcal{T}$ is the ascending function concerning the number of iterations
- and it has the upper bound.  
+ and it has the upper bound. 
 \section{Numerical Results}\label{NE}
-In this section, numerical results for the main problem are depicted to evaluate the performance of the algorithms using the Monte-Carlo method. We consider three network slices for eMBB, URLLC, and mMtc services.
+In this section, numerical results for the main problem are depicted to evaluate the performance of the algorithms using the Monte-Carlo method. We consider three network slices for eMBB, URLLC, and mMTC services.
 Assume we have six 4-antenna O-RU (MISO) located in a place with a diameter of 500 meters as shown in figure \ref{fig:cell}. In addition, we consider the users placed randomly in this place.
 \begin{figure}
   \centering 
@@ -688,6 +688,7 @@ and it is the Rayleigh fading channel between the UE and O-RU.
 We consider 25 PRBs are used in the network and the
 packet size is equal to 20 bytes.
 The maximum number of VNF for each slice is 25 and the mean arrival data rate for the eMBB service is $\lambda  = 3Mbps$ and for the mMTC service and the URLLC  service is $\lambda  = 0.2Mbps$. 
+Also the quantization noise is assumed to be $10^{-13}$.
 The other parameters of these simulations are depicted in Table \ref{table:1a}.
 \begin{table}
  \caption {Simulation Parameter} \label{table:1a}
@@ -700,7 +701,7 @@ Parameter & Value \\ [0.5ex]
   \hline
   Bandwidth & 180 KHz \\
   \hline
- Maximum transmit Power of each O-RU & 38dBm \\
+ Maximum transmit Power of each O-RU & 40dBm \\
   \hline
   Maximum delay for eMBB &  4msec \\
   \hline
@@ -708,7 +709,7 @@ Parameter & Value \\ [0.5ex]
   \hline
   Maximum delay for mMTC &  5msec \\
   \hline
-  Maximum fronthaul capacity  & 200 bits/sec/Hz \\
+  Maximum fronthaul capacity  & 46 bits/sec/Hz \\
    \hline
   Minimum data rate for eMBB &  20 bits/sec/Hz \\ 
   \hline
@@ -722,7 +723,10 @@ Parameter & Value \\ [0.5ex]
  \end{center}
  \end{table}
 Two different methods are used to compare with the performance of the proposed method (IABV).
- The first one is a baseline scheme, which used random PRB allocation. The association of O-RU is only based on the distance. Also, the number of activated VNF for each slice is fixed. 
+ The first one is a baseline scheme, which used random PRB allocation. The association of O-RU is only based on the distance. Also, the number of activated VNF for each slice is fixed.
+  
+Finding a feasible initial value is almost tricky. To overcome this challenge, we compare it with the baseline scheme method using the CVX of Matlab. If the baseline scheme converged and has a feasible solution, so our algorithm (IABV) can be converged too.
+
 The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power are dynamically allocated, and the number of VNFs is obtained from the simulation, and the UEs are associated with the O-RU based on the quality of their channels and the channel distance.
 
 In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus the different number of UEs in each service for these three methods. Suppose we have one service instance for each type of service, so we have three various services in this figure.
@@ -806,7 +810,8 @@ Figure \ref{fig:7} is the same as figure \ref{fig:6} that presented the mean tot
 \end{figure}
 
 Figure \ref{fig:8}, represents the aggregate throughput concerning the number of UEs in each service and the maximum power for three different mMTC service instances. mMTC service includes a large number of UEs with low data rates and low power. 
-Assume each UE in each mMTC service instance requires $1bits/sec/Hz$ data rate and is not sensitive to the end-to-end delay. Also, suppose the fronthaul link has no restrictions. The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
+Assume each UE in each mMTC service instance requires 1bits/sec/Hz data rate and is not sensitive to the end-to-end delay. Also, suppose the fronthaul link has no restrictions. The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. 
+Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
 \begin{figure}
   %\centering 
     \includegraphics[scale = 0.4]{mmTCpower.eps}
@@ -826,15 +831,37 @@ The figure \ref{fig:9} presented that by increasing the priority factor for one 
   \caption{Aggregate Throughput for two eMBB service instances vs. Priority of the first service instance }
   \label{fig:9}
 \end{figure}
+
+In the figure \ref{fig:10}, the aggregate throughput is presented vs. the number of UEs for one service in a system by considering two different cloud restrictions and fronthaul restrictions.
+In the graph of cloud restriction, we have the restrictions in O-DU and O-CU.
+In the graph of fronthaul restriction, we have the restrictions in O-RU.
+In the O-RU restriction graph, we assume that the fronhaul link is set to be 43 bits/sec/Hz (the variance of quantization noise is $10^{-12}$) , and the maximum power of each O-RU is 40 dBm. Also, the maximum power of each UE is set to be 35 dBm. Moreover, the minimum data rate for each UE in this service is 6 bits/sec/Hz. In this graph, we assume that there is less restriction in the end-to-end delay (50 ms) and the VNF resources (the system has 100 reserved VNF).
+In the graph of cloud restriction, we assume that there is no restriction on the fronthaul link.
+The limitation on the power is less than the graph of fronthaul limitation, and it is set to be 45 dBm on the power of each O-RU, and the maximum power of each UE is 40 dBm.
+The minimum data rate for each UE in this service is 6 bits/sec/Hz. 
+The end-to-end delay for each UE is 4ms and the mean arrival rate is 2Mbps. 
+and the mean service rate is 10Mbps.
+In this figure, the consequence of cloud limitation and fronthaul limitation is depicted.
+As the number of UEs increases, the aggregate throughput rises linearly, and the graph of cloud restriction increases more than the other graph of fronthaul limitation. 
+
+
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.4]{cloudVsFronthaul.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Aggregate Throughput vs. Number of UE in a Service}
+  \label{fig:10}
+\end{figure}
 \section{Conclusion}\label{conc}
-This paper proposed the downlink of the O-RAN system using network slicing for different types of 5G services (eMBB, mMTC, and URLC).
-The isolation of various types of services (eMBB, mMTC, and URLC) in the O-DU, the O-CU, and the user plane function (UPF) is accomplished.
+This paper proposed the downlink of the O-RAN system using network slicing for different types of 5G services i.e eMBB, mMTC, and, URLLC.
+The isolation of various types of services i.e eMBB, mMTC, and, URLLC in the O-DU, the O-CU, and the user plane function (UPF) is accomplished.
 Also, the paper aims to obtain the number of activated VNFs in each service, RU association, power, and PRB allocation to maximize the aggregate throughput. The limited fronthaul capacity and the mean end-to-end delay for each service are considered. 
 The problem is mixed-integer non-linear programming that is solved by the two-step iterative algorithm.
 In the first step, we reformulated the problem to achieve the number of activated VNFs as a function of data rate. Then we obtain PRB association and power allocation using the Lagrangian method.
 Then in the second step, the O-RU association is acquired.
 The performance of our proposed method (IABV) is compared with the baseline scheme and FBDR in \cite{lee2018dynamic}. 
-Also, we assume distinct scenarios for each service (eMBB, URLLC, and mMTC) based on their requirement QoS.
+Also, we assume distinct scenarios for each service i.e eMBB, mMTC, and, URLLC based on their requirement QoS.
 Simulation results depict that the proposed method (IABV) achieved $18.6\%$ higher data rate than the baseline scheme.
 Moreover, simulation results illustrate more minor delays for the proposed method (IABV) than FBDR and the baseline scheme.
 

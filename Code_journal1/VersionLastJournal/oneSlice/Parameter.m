@@ -21,7 +21,7 @@ for i = 1:N_UE
             for t = 1 : N_UE
                 if i~=t && PRB_UE(z,i) ==1 && PRB_UE(z,t)
                     %Intf(i) = Intf(i) + Pmax/100*abs((ChannelGain(:,i))'*beamForming(:,i))^2 * PRB_UE(z,i) * PRB_UE(z,t);
-                    Intf(i) =Intf(i) + Pmax/10*abs((ChannelGain1(:,i))'*beamForming1(:,i))^2;
+                    Intf(i) =Intf(i) + Popt(i)*abs((ChannelGain1(:,i))'*beamForming1(:,i))^2;
                 end
             end
            

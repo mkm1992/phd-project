@@ -8,7 +8,7 @@ numvar = length(count_min1:count_step1:count_max1);
 iter_max = 1;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
-RU_iter_max = N_RU + 5;
+RU_iter_max = 2;%N_RU + 5;
 %% initializing
 number_check = 0;
 for i_count = count_min1:count_step1:count_max1
@@ -31,7 +31,7 @@ for i_count = count_min1:count_step1:count_max1
             run findM
             run Rate_final
             run RUUESet
-            sumRate1(number_check,iter) = abs(sum(rate_UE_1));       
+            sumRate1(number_check,iter) = max(abs(sum(rate_UE_1)),sumRate1(number_check,iter));       
             i_count
             RU_iter
             VNF_NUM
@@ -60,6 +60,6 @@ for i =1:numvar
     sumRB1(i) = sumRB(i)/num(i);
 end
 
-plot( UE_num , sumRB1/1e6,'-+')
+%plot( UE_num , sumRB1/1e6,'-+')
 
 %plot(UE_num ,mean(sumRate,2))
