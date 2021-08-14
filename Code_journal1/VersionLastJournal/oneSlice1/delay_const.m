@@ -13,5 +13,5 @@ for s = 1:S
         %rate_UE(t) >= max(a(s),0)
     end
 end
-%Rmin_UE(:) = max(Rmin_UE(:),a(s));
-%Rmin_UE(:) = max(Rmin_UE(:), lambda_m+1/delay_max);
+Rmin_UE(:) = max(Rmin_UE(:),a(s));
+Rmin_UE(:) = max(Rmin_UE(:), lambda_m+1/delay_max);

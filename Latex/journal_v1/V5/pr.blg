@@ -14,45 +14,45 @@ Database file #1: ref.bib
 Warning--empty author in ORANArch
 
 Done.
-You've used 34 entries,
+You've used 35 entries,
             4087 wiz_defined-function locations,
-            1000 strings with 14211 characters,
-and the built_in function-call counts, 30614 in all, are:
-= -- 2492
-> -- 830
-< -- 295
-+ -- 491
-- -- 184
-* -- 1527
-:= -- 4383
-add.period$ -- 72
-call.type$ -- 34
-change.case$ -- 34
-chr.to.int$ -- 690
-cite$ -- 35
-duplicate$ -- 2108
-empty$ -- 2215
-format.name$ -- 173
-if$ -- 7108
+            1004 strings with 14449 characters,
+and the built_in function-call counts, 31392 in all, are:
+= -- 2549
+> -- 851
+< -- 300
++ -- 501
+- -- 188
+* -- 1564
+:= -- 4495
+add.period$ -- 75
+call.type$ -- 35
+change.case$ -- 35
+chr.to.int$ -- 702
+cite$ -- 36
+duplicate$ -- 2165
+empty$ -- 2290
+format.name$ -- 178
+if$ -- 7294
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 359
-newline$ -- 125
-num.names$ -- 33
-pop$ -- 801
+int.to.str$ -- 35
+missing$ -- 370
+newline$ -- 128
+num.names$ -- 34
+pop$ -- 830
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2299
+skip$ -- 2357
 stack$ -- 0
-substring$ -- 1776
-swap$ -- 1873
-text.length$ -- 65
+substring$ -- 1805
+swap$ -- 1915
+text.length$ -- 66
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 34
+type$ -- 35
 warning$ -- 1
-while$ -- 139
-width$ -- 36
-write$ -- 360
+while$ -- 144
+width$ -- 37
+write$ -- 369
 (There was 1 warning)

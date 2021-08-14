@@ -1,14 +1,16 @@
 clear all
 clc
 run var_const
-count_min1 = 16;
-count_step1 = 2;
-count_max1 = 16;
+count_min1 = 10;
+count_step1 = 5;
+count_max1 = 25;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 50;
+iter_max = 100;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
-RU_iter_max = 5;%N_RU + 5;
+
+RU_iter_max = 10;%N_RU + 5;
+SumRate_prb = zeros(iter_max,numvar,RU_iter_max-1);
 %% initializing
 number_check = 0;
 for i_count = count_min1:count_step1:count_max1
@@ -32,6 +34,7 @@ for i_count = count_min1:count_step1:count_max1
             run findM
             run Rate_final
             run RUUESet
+            SumRate_prb(iter,number_check,RU_iter) = sum(rate_UE_1);
             sumRate1(number_check,iter) = max(abs(sum(rate_UE_1)),sumRate1(number_check,iter));       
             i_count
             RU_iter
@@ -61,6 +64,6 @@ for i =1:numvar
     sumRB1(i) = sumRB(i)/num(i);
 end
 
-plot( UE_num , sumRB1/1e6,'-+')
-
+%plot( UE_num , sumRB1/1e6,'-+')
+plot(1:RU_iter_max-1,mean(SumRate_prb,1))
 %plot(UE_num ,mean(sumRate,2))

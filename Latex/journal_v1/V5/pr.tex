@@ -73,7 +73,7 @@ The limited fronthaul capacity and the restriction of end-to-end delay are consi
 The optimization of baseband resources includes O-RU assignment, physical resource block (PRB), and power allocation. The main problem is the mixed-integer non-linear programming that is tremendously difficult.
 So we broke it down into two different steps that the iterative algorithm solves it.
 In the first step, we reformulated and simplified the problem to find the power allocation, PRB assignment, and the number of activated VNFs. In the second step, the O-RU association is achieved.
-The proposed method (IAPPVO) is confirmed by the simulation results which illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources and the FBDR algorithm described in other papers. Also, the simulation results attained less end-to-end delay for the proposed method than the FBDR and baseline scheme.
+The proposed method (IABV) is confirmed by the simulation results which illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources and the FBDR algorithm described in other papers. Also, the simulation results attained less end-to-end delay for the proposed method than the FBDR and baseline scheme.
    
 \end{abstract}
 
@@ -240,7 +240,7 @@ $N_{u(s_j,i)}^{k}$ represents the blocklength of it.
 $\mathcal{R}_{u(s_j,i)}^{e,r}$ is the achievable data rate that is transmitted by O-RU $r$ to UE $i$ requesting service $s_j$.
 
 If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{s}^{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$. Therefore, $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , \forall i$ is derived by using $\bar{I}_{r,u(s,i)}^{k}$ instead of $I_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3}.
-\subsection{Power of O-RU and Fronthaul Capacity}
+\subsection{Power of the O-RU and the Fronthaul Capacity}
 Let $P_r$ denote the power of the transmitted signal from the $r^{th}$ O-RU to UEs served by it. From \eqref{eq2}, we have,
 \begin{equation}\label{pr}
 P_r = \sum_{s=1}^{S}\sum_{k=1}^{K_s}\sum_{i=1}^{U_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r e^k_{r,u(s,i)}+ \sigma_{q}^2.
@@ -441,14 +441,23 @@ $(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T^{max}_s$ as mentioned above.
 
 The left side of the equation \eqref{eqDelay}, leads to $R_{u(s,i)} \geq \lambda_{u(s,i)}$ that is the constraint \eqref{c16-2}. 
 For the right side, by reformulating the equation \eqref{eqDelay}, we have a new constraint $\forall i, \forall s$ as below,
+%\begin{equation}\label{RM}
+%\begin{split}
+%\mathcal{R}_{u(s,i)} &\geq \frac{\mathfrak{M}_s \mathit{\langle}_{u(s,i)} - \alpha_s(T^{max}_s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T^{max}_s\mu_s-3)-\alpha_s T^{max}_s},\\
+% \mathit{\langle}_{u(s,i)}&=(T^{max}_s\mu_s-3)\lambda_{u(s,i)} + \mu_s,\\
+%\varpi_{u(s,i)} &= \frac{\mathfrak{M}_s \mathit{\langle}_{u(s,i)} - \alpha_s(T^{max}_s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T^{max}_s\mu_s-3)-\alpha_s T^{max}_s},\\
+%\mathcal{R}_{u(s,i)} &\geq \varpi_{u(s,i)}. \\
+%\end{split}
+%\end{equation}
+
 \begin{equation}\label{RM}
 \begin{split}
-\mathcal{R}_{u(s,i)} &\geq \frac{\mathfrak{M}_s \mathit{\langle}_{u(s,i)} - \alpha_s(T^{max}_s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T^{max}_s\mu_s-3)-\alpha_s T^{max}_s},\\
- \mathit{\langle}_{u(s,i)}&=(T^{max}_s\mu_s-3)\lambda_{u(s,i)} + \mu_s,\\
-\varpi_{u(s,i)} &= \frac{\mathfrak{M}_s \mathit{\langle}_{u(s,i)} - \alpha_s(T^{max}_s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T^{max}_s\mu_s-3)-\alpha_s T^{max}_s},\\
 \mathcal{R}_{u(s,i)} &\geq \varpi_{u(s,i)}. \\
+\varpi_{u(s,i)} &= \lambda_{u(s,i)} + \frac{1}{T^{max}_s}\\
+& + \frac{3}{T^{max}_s\mu_s-\alpha_s T^{max}_s/\mathfrak{M}_s-3}\\
 \end{split}
 \end{equation}
+
 In addition, we denote $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
 So to obtain, the optimal number of activated VNF in each slice, we need to find the maximum of the
 $\mathtt{M}_{u(s,i)}$ in each slice as follow.
@@ -682,7 +691,7 @@ Assume we have six 4-antenna O-RU (MISO) located in a place with a diameter of 5
   \caption{O-RU placement in a cell}
   \label{fig:cell}
 \end{figure}
-Here, The channel vector from the O-RU $r$ to the UE $i$ in service $s$ is set as $\bold{h}_{r,u(s,i)}^{k}=d_{r,u(s,i)}^{-\mathcal{L}} \Omega_{r,u(s,i)}^{k} $.  Where, $d_{r,u(s,i)}^{-\mathcal{L}} $ is the distance between the O-RU $r$ and the UE $i$ in service $s$ and $\mathcal{L} = 3.8$ is the path-loss exponent.
+Here, The channel vector from the O-RU $r$ to the UE $i$ in service $s$ is set as $\bold{h}_{r,u(s,i)}^{k}=d_{r,u(s,i)}^{-\mathcal{L}} \Omega_{r,u(s,i)}^{k} $.  Where, $d_{r,u(s,i)}^{-\mathcal{L}} $ is the distance between the O-RU $r$ and the UE $i$ in service $s$ and $\mathcal{L} = 3.8$ is the path-loss exponent \cite{gholipoor2020cloud}.
 Also, $\Omega_{r,u(s,i)}^{k}$ is the random variable that is generated by the Rayleigh distribution
 and it is the Rayleigh fading channel between the UE and O-RU.
 We consider 25 PRBs are used in the network and the
@@ -838,7 +847,7 @@ In the graph of fronthaul restriction, we have the restrictions in O-RU.
 In the O-RU restriction graph, we assume that the fronhaul link is set to be 43 bits/sec/Hz (the variance of quantization noise is $10^{-12}$) , and the maximum power of each O-RU is 40 dBm. Also, the maximum power of each UE is set to be 35 dBm. Moreover, the minimum data rate for each UE in this service is 6 bits/sec/Hz. In this graph, we assume that there is less restriction in the end-to-end delay (50 ms) and the VNF resources (the system has 100 reserved VNF).
 In the graph of cloud restriction, we assume that there is no restriction on the fronthaul link.
 The limitation on the power is less than the graph of fronthaul limitation, and it is set to be 45 dBm on the power of each O-RU, and the maximum power of each UE is 40 dBm.
-The minimum data rate for each UE in this service is 6 bits/sec/Hz. 
+The minimum data rate for each UE in this service is 10 bits/sec/Hz. 
 The end-to-end delay for each UE is 4ms and the mean arrival rate is 2Mbps. 
 and the mean service rate is 10Mbps.
 In this figure, the consequence of cloud limitation and fronthaul limitation is depicted.
@@ -853,6 +862,23 @@ As the number of UEs increases, the aggregate throughput rises linearly, and the
   \caption{Aggregate Throughput vs. Number of UE in a Service}
   \label{fig:10}
 \end{figure}
+In figure \ref{fig:11}, the aggregate throughput is shown according to the number of iteration (outer loop) of the
+proposed algorithm (IABV) for different numbers of UEs for one service. In this figure, the convergence of the IABV method is illustrated. The minimum data rate for each UE is assumed to be 2 Mbps.
+After four iterations, IABV converges to the fixed value.
+
+
+
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.4]{iter.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Aggregate Throughput vs. Number of Iterations}
+  \label{fig:11}
+\end{figure}
+
+%\subsection{Summary of Simulation Results}
+
 \section{Conclusion}\label{conc}
 This paper proposed the downlink of the O-RAN system using network slicing for different types of 5G services i.e eMBB, mMTC, and, URLLC.
 The isolation of various types of services i.e eMBB, mMTC, and, URLLC in the O-DU, the O-CU, and the user plane function (UPF) is accomplished.

@@ -11,7 +11,7 @@ end
 beta = ones(1,N_RU)*Pmax/10;
 alpha = ones(1,N_UE)*Pmax/100;
 gamma = ones(1,N_UE)*Pmax/100;
-lambda = ones(1,N_UE).*Rmin_UE/200;
+lambda = ones(1,N_UE).*Rmin_UE/10;
 %tr = ones(1,N_RU).*Capacity_RU/100;
 %zeta_s = ones(S,1).*(alpha_s+  1./delay_max(:));
 run Parameter
@@ -33,7 +33,6 @@ for count = 1: counter_max
     end
     run PRB_Alloc
     Popt
-    
     run Rate_PRB
     H_PRB = zeros(N_PRB, N_UE);
     PRB_UE = zeros(N_PRB,N_UE);
@@ -65,7 +64,7 @@ for count = 1: counter_max
     run Parameter
     run update_var
     result_new = sum(rate_UE);
-    
+    SumRate_prb(count) = result_new;
     if abs(result_new - result_old)< eps && count>50
        % break
     end
