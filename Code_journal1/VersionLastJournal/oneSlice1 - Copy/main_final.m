@@ -3,18 +3,19 @@ clc
 run var_const
 count_min1 = 2;
 count_step1 = 2;
-count_max1 = 16;
+count_max1 = 8;
 numvar = length(count_min1:count_step1:count_max1);
 iter_max = 1;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
-RU_iter_max = N_RU + 5;
+RU_iter_max = 5;%N_RU + 5;
 %% initializing
 number_check = 0;
 for i_count = count_min1:count_step1:count_max1
     number_check  = number_check +  1;
     for iter = 1:iter_max  
         RU_iter = 1;
+        Pmax = 10;
         run parameter_UE_change
         run PRB_Alloc
         %%
@@ -31,7 +32,7 @@ for i_count = count_min1:count_step1:count_max1
             run RUUESet
             sumRate(number_check,iter) = abs(sum(rate_UE_1));
             if sumRate(number_check,iter) > 0 && RU_iter>2
-                RU_iter = RU_iter_max + 10;
+                %RU_iter = RU_iter_max + 10;
                 
             end
             iter
