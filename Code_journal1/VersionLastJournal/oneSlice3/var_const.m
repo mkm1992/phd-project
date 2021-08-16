@@ -9,7 +9,7 @@ Pc  = db2pow(Pc1)/1000;
 Pt = 33;
 Pmax = db2pow(Pt)/1000;
  
-Rmin1 =  5*BW;%BW*5;%[60000 ,60000 ,6000];%.1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
+Rmin1 =  2*BW;%BW*5;%[60000 ,60000 ,6000];%.1*BW*randi([1,5],1,S); %.1*BW*ones(1,S)
 [Rmin, I] = sort(Rmin1,'descend');
 Rate_mid_max = BW*100;% [600000,420000,50000];%0.5*BW*randi([1,10],1,S);
 var_q = 1e-6;

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  15 AUG 2021 18:27
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  16 AUG 2021 13:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -748,14 +748,11 @@ Overfull \hbox (20.86429pt too wide) in paragraph at lines 826--829
 [10]
 File: priorityLast.eps Graphic file (type eps)
 <priorityLast.eps>
-File: AcloudVsFronthaul.eps Graphic file (type eps)
-<AcloudVsFronthaul.eps>
- [11]
 File: iter.eps Graphic file (type eps)
 <iter.eps>
 File: optimal1.eps Graphic file (type eps)
 <optimal1.eps>
- (./pr.bbl
+ [11] (./pr.bbl
 Underfull \hbox (badness 1852) in paragraph at lines 36--39
 \T1/ptm/m/n/8 ``5g wire-less net-work slic-ing for embb, urllc, and mmtc: A
  []
@@ -772,16 +769,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[13] (./pr.aux)
+[13
+
+] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7469 strings out of 492970
- 107942 string characters out of 6137298
- 209603 words of memory out of 5000000
- 11295 multiletter control sequences out of 15000+600000
+ 7465 strings out of 492970
+ 107858 string characters out of 6137298
+ 209593 words of memory out of 5000000
+ 11292 multiletter control sequences out of 15000+600000
  94611 words of font info for 123 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  33i,28n,35p,921b,328s stack positions out of 5000i,500n,10000p,200000b,80000s

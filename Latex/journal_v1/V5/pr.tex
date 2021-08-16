@@ -840,27 +840,27 @@ The figure \ref{fig:9} presented that by increasing the priority factor for one 
   \caption{Aggregate Throughput for two eMBB service instances vs. Priority of the first service instance }
   \label{fig:9}
 \end{figure}
+%
+%In the figure \ref{fig:10}, the aggregate throughput is presented vs. the number of UEs for one service in a system by considering two different cloud restrictions and fronthaul restrictions.
+%In the graph of cloud restriction, we have the restrictions in O-DU and O-CU.
+%In the graph of fronthaul restriction, we have the restrictions in O-RU.
+%In the O-RU restriction graph, we assume that the fronhaul link is set to be 47 bits/sec/Hz (the variance of quantization noise is $10^{-13}$) , and the maximum power of each O-RU is 40 dBm. Also, the maximum power of each UE is set to be 35 dBm. Moreover, the minimum data rate for each UE in this service is 6 bits/sec/Hz. In this graph, we assume that there is less restriction in the end-to-end delay (50 ms) and the VNF resources (the system has 100 reserved VNF).
+%In the graph of cloud restriction, we assume that there is no restriction on the fronthaul link.
+%The limitation on the power is less than the graph of fronthaul limitation, and it is set to be 45 dBm on the power of each O-RU, and the maximum power of each UE is 40 dBm.
+%The minimum data rate for each UE in this service is 10 bits/sec/Hz. 
+%The end-to-end delay for each UE is 4ms and the mean arrival rate is 2Mbps. 
+%and the mean service rate is 10Mbps.
+%In this figure, the consequence of cloud limitation and fronthaul limitation is depicted.
+%As the number of UEs increases, the aggregate throughput rises linearly, and the graph of cloud restriction increases more than the other graph of fronthaul limitation. 
 
-In the figure \ref{fig:10}, the aggregate throughput is presented vs. the number of UEs for one service in a system by considering two different cloud restrictions and fronthaul restrictions.
-In the graph of cloud restriction, we have the restrictions in O-DU and O-CU.
-In the graph of fronthaul restriction, we have the restrictions in O-RU.
-In the O-RU restriction graph, we assume that the fronhaul link is set to be 47 bits/sec/Hz (the variance of quantization noise is $10^{-13}$) , and the maximum power of each O-RU is 40 dBm. Also, the maximum power of each UE is set to be 35 dBm. Moreover, the minimum data rate for each UE in this service is 6 bits/sec/Hz. In this graph, we assume that there is less restriction in the end-to-end delay (50 ms) and the VNF resources (the system has 100 reserved VNF).
-In the graph of cloud restriction, we assume that there is no restriction on the fronthaul link.
-The limitation on the power is less than the graph of fronthaul limitation, and it is set to be 45 dBm on the power of each O-RU, and the maximum power of each UE is 40 dBm.
-The minimum data rate for each UE in this service is 10 bits/sec/Hz. 
-The end-to-end delay for each UE is 4ms and the mean arrival rate is 2Mbps. 
-and the mean service rate is 10Mbps.
-In this figure, the consequence of cloud limitation and fronthaul limitation is depicted.
-As the number of UEs increases, the aggregate throughput rises linearly, and the graph of cloud restriction increases more than the other graph of fronthaul limitation. 
-
-\begin{figure}
-  \centering 
-    \includegraphics[scale = 0.4]{AcloudVsFronthaul.eps}
-    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-  \caption{Aggregate Throughput vs. Number of UEs in a Service}
-  \label{fig:10}
-\end{figure}
+%\begin{figure}
+%  \centering 
+%    \includegraphics[scale = 0.4]{AcloudVsFronthaul.eps}
+%    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+%    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+%  \caption{Aggregate Throughput vs. Number of UEs in a Service}
+%  \label{fig:10}
+%\end{figure}
 In figure \ref{fig:11}, the aggregate throughput is shown according to the number of iteration (outer loop) of the
 proposed algorithm (IABV) for different numbers of UEs for one service. In this figure, the convergence of the IABV method is illustrated. The minimum data rate for each UE is assumed to be 2 Mbps.
 After four iterations, IABV converges to the fixed value.
@@ -877,7 +877,7 @@ After four iterations, IABV converges to the fixed value.
 \end{figure}
 
 %\subsection{Summary of Simulation Results}
-In figure 12, the aggregate throughput is shown according to the number of UEs for two different methods, namely the
+In figure \ref{fig:12}, the aggregate throughput is shown according to the number of UEs for two different methods, namely the
 proposed algorithm (IABV) and the optimal method for URLLC service.
 The minimum data rate is 5bits/sec/Hz for each UE and the maximum delay is $0.1$ms.
 Also the mean arrival rate is set to be $0.2$Mbps and the mean service rate is $0.5$Mbps.
