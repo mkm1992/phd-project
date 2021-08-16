@@ -7,7 +7,7 @@ for i = 1:S
         Rmin_UE(t) = max(Rmin(i),a(i));
     end
 end
-
+Rmin_UE(:) = max(Rmin_UE(:), lambda_m+1/delay_max);
 beta = ones(1,N_RU)*Pmax/10;
 alpha = ones(1,N_UE)*Pmax/100;
 gamma = ones(1,N_UE)*Pmax/100;

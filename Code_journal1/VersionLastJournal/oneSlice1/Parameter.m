@@ -28,7 +28,7 @@ for i = 1:N_UE
         end
     end
 end
-
+Intf = ones(1,N_UE)*db2pow(i_count)/1000;
 rate_UE = zeros(1,N_UE);
 for i = 1:N_UE
     %for j = 1:N_RU
