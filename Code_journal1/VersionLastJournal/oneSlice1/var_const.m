@@ -15,7 +15,7 @@ Rate_mid_max = BW*100;% [600000,420000,50000];%0.5*BW*randi([1,10],1,S);
 var_q = 1e-6;
 alpha_s = .1*BW;
 %delay_max = 3e-5*randi([1,20],1,S);
-delay_max = 1e-3;%0.01e-3;%.1e-3;% [1, 1, 1];
+delay_max = 1e-5;%0.01e-3;%.1e-3;% [1, 1, 1];
 %mu = 1e9.*[1.5, 3, 5];%Rmin .* randi([500,520],1,S)/1000;
 mu =8e6;%[7734000, 8250000, 1808400]/10;%Rmin .* randi([1200,1520],1,S)/10;
 %alpha_m  =10e8.*[0.1, 0.5, 1]; %Rmin .* randi([485,499],1,S)/1000;
@@ -37,7 +37,7 @@ Capacity_RU = [160500, 288900, 502900, 449400];%C_tot_RU * randi([10,50],1,N_RU)
 N_Antenna = 4;
 %P_RU = zeros(1,N_RU);
 %% changable variable
-N_PRB = 50;
+N_PRB = 20;
 
 %RU_PRB = randi([0 1],N_RU,N_PRB);
 %PRB_UE = randi([0,1],N_PRB,N_UE);%zeros(N_PRB, N_UE);

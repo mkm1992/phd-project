@@ -9,5 +9,12 @@ plot( UE_num , sumR1/1e6,'--')
 
 sumRB1 = 1.0e+07 *[4.3544    4.4055    4.3079    4.4731]; % 12 UE 1e-3 delay
 
-sumRB1 = 1.0e+07 *[2.8926    4.5564    5.2531    5.5255    5.1233]; %Interference -100 to -60 
-2.8951    4.6420    5.4939    5.5047    5.1085 % power more
+sumR1 = 1.0e+07 *[2.8926,4.5564,5.2531,5.5255,5.5333]; %Interference -100 to -60 
+sumR2 = 1.0e+07 *[2.8951,4.6420,5.4939,5.5847,5.5885];% power more
+
+plot( UE_num , sumR2/1e6,'-+')
+hold on
+plot( UE_num , sumR1/1e6,'--')
+xlabel('Maximum Interference (dBm)')
+ylabel('Aggregate Rate (Mbps)')
+title('Aggregate Rate  vs. Maximum Interference')

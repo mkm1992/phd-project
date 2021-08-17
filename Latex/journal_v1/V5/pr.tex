@@ -878,7 +878,7 @@ After four iterations, IABV converges to the fixed value.
 
 %\subsection{Summary of Simulation Results}
 In figure \ref{fig:12}, the aggregate throughput is shown according to the number of UEs for two different methods, namely the
-proposed algorithm (IABV) and the optimal method for URLLC service.
+proposed algorithm (IABV) and the optimal method for URLLC service for the low interference.
 The minimum data rate is 5bits/sec/Hz for each UE and the maximum delay is $0.1$ms.
 Also the mean arrival rate is set to be $0.2$Mbps and the mean service rate is $0.5$Mbps.
 The other parameters are depicted in table \ref{table:1a}.
@@ -892,6 +892,23 @@ Our solution is close to the optimal value in a small number of UEs.
     %\includegraphics[width=\textwidth]{finalDraw.pdf}
   \caption{Aggregate Throughput vs. Number of UEs }
   \label{fig:12}
+\end{figure}
+
+In figure \ref{fig:13}, the aggregate throughput is depicted vs. the maximum interference for two different maximum power thresholds of O-RU. We suppose that the maximum power threshold of UEs is one-third of the maximum power of O-RU.
+%The minimum data bit rate is assumed to be 0.2Mbps for each UE.
+Here we assume that with the increase of every ten dBm of interference power, it is assumed that ten users have been added to the system. In -100 dBm, we have 10 UEs, and at the end, we have 50 UEs in the system.
+Since the amount of interference in the system is entered as a fixed value,
+the allocation of PRBs is not considered.
+The higher maximum power threshold leads to a greater aggregate throughput. 
+The aggregate throughput rises with the increases of UEs and the maximum interference and then remains almost constant.
+
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.4]{interF.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Aggregate Throughput vs. Maximum Interference }
+  \label{fig:13}
 \end{figure}
 \section{Conclusion}\label{conc}
 This paper proposed the downlink of the O-RAN system using network slicing for different types of 5G services i.e eMBB, mMTC, and, URLLC.
