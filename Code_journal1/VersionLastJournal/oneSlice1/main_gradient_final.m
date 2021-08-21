@@ -5,7 +5,7 @@ count_min1 = 5;
 count_step1 = 5;
 count_max1 = 25;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 100;
+iter_max = 1;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 
