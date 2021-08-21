@@ -1,15 +1,15 @@
 clear all
 clc
 run var_const
-count_min1 = 5;
+count_min1 = 20;
 count_step1 = 5;
-count_max1 = 25;
+count_max1 = 20;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 100;
+iter_max = 1;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 
-RU_iter_max = 6;%N_RU + 5;
+RU_iter_max = 10;%N_RU + 5;
 SumRate_prb = zeros(iter_max,numvar,RU_iter_max-1);
 %% initializing
 number_check = 0;
@@ -17,7 +17,7 @@ for i_count = count_min1:count_step1:count_max1
     number_check  = number_check +  1;
     for iter = 1:iter_max  
         RU_iter = 1;
-        Pmax = 10;%i_count;%10;
+        Pmax = 30;%i_count;%10;
         run parameter_UE_change
         run PRB_Alloc
          while  RU_iter < RU_iter_max

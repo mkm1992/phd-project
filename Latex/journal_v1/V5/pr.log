@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  17 AUG 2021 17:18
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  21 AUG 2021 18:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -706,62 +706,59 @@ File: cell.pdf Graphic file (type pdf)
 File: Arate_ue1.eps Graphic file (type eps)
 <Arate_ue1.eps>
 
-Overfull \hbox (40.26146pt too wide) in paragraph at lines 746--749
+Overfull \hbox (40.26146pt too wide) in paragraph at lines 769--772
  [][] 
  []
 
 File: vnfNum1.eps Graphic file (type eps)
 <vnfNum1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 778--781
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 801--804
  [][] 
  []
 
 File: RatePower1.eps Graphic file (type eps)
 <RatePower1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 790--793
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 813--816
  [][] 
  []
 
 File: delay_new.eps Graphic file (type eps)
 <delay_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 804--807
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 827--830
  [][] 
  []
 
+[10]
 File: delay1_new.eps Graphic file (type eps)
 <delay1_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 814--817
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 837--840
  [][] 
  []
 
 File: AmmTCpower.eps Graphic file (type eps)
 <AmmTCpower.eps>
 
-Overfull \hbox (20.86429pt too wide) in paragraph at lines 826--829
+Overfull \hbox (20.86429pt too wide) in paragraph at lines 849--852
 [][] 
  []
 
-[10]
 File: priorityLast.eps Graphic file (type eps)
 <priorityLast.eps>
 File: iter.eps Graphic file (type eps)
 <iter.eps>
 File: optimal1.eps Graphic file (type eps)
 <optimal1.eps>
- [11]
+[11]
 File: interF.eps Graphic file (type eps)
 <interF.eps>
- (./pr.bbl
+ [12] (./pr.bbl
 Underfull \hbox (badness 1852) in paragraph at lines 36--39
 \T1/ptm/m/n/8 ``5g wire-less net-work slic-ing for embb, urllc, and mmtc: A
  []
-
-[12]
-Underfull \vbox (badness 1314) has occurred while \output is active []
 
 )
 
@@ -781,10 +778,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7469 strings out of 492970
- 107909 string characters out of 6137298
- 209603 words of memory out of 5000000
- 11295 multiletter control sequences out of 15000+600000
+ 7471 strings out of 492970
+ 107919 string characters out of 6137298
+ 209629 words of memory out of 5000000
+ 11297 multiletter control sequences out of 15000+600000
  94611 words of font info for 123 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  33i,28n,35p,921b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
