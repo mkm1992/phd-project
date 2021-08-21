@@ -1,3 +1,16 @@
+
+%% power and prb allocation
+Popt(:) = Pmax/N_UE;
+PRB_UE = zeros(N_PRB,N_UE);
+for i =1:N_UE
+    if mod(i,N_PRB)==0
+       PRB_UE(N_PRB,i)= 1;
+    else
+        PRB_UE(mod(i,N_PRB),i) =1 ;
+    end
+
+end
+%% interference 
 Intf = zeros(1,N_UE);
 for i = 1:N_UE
     for j = 1:N_Antenna
@@ -12,8 +25,7 @@ for i = 1:N_UE
         end
     end
 end
-
-%Intf = ones(1,N_UE)*db2pow(i_count)/1000;
+%% rate
 rate_UE_1 = zeros(1,N_UE);
 for i = 1:N_UE
         for z = 1:N_PRB
@@ -22,3 +34,22 @@ for i = 1:N_UE
             end
         end
 end
+%% power RU
+Pow_RU =  zeros(1,N_RU);
+Popt1 = eye(N_UE);
+for i=1:N_UE
+   Popt1(i,i) = Popt(i); 
+end
+for numRU =1:N_RU
+   for numUE = 1:N_UE
+       if RU_UE(numRU, numUE)==1
+            Pow_RU(numRU) = Pow_RU(numRU) + (abs((beamForming1(:,numUE).')*beamForming1(:,numUE)))*Popt1(numUE,numUE)+var_q; 
+       end
+   end
+end
+%% Feasible
+a1 =Pow_RU <= Pmax;
+%a2 =Popt(:) >= 0; 
+a2 =Popt(:) <= Pmax/3;
+a3 =rate_UE(:) >= Rmin_UE(:);
+sum(rate_UE_1)

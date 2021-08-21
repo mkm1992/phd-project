@@ -63,6 +63,7 @@ for count = 1: counter_max
     
     result_old = sum(rate_UE);
     run Parameter
+    %run P_RU
     run update_var
     result_new = sum(rate_UE);
     
