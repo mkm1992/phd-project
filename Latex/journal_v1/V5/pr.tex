@@ -30,6 +30,8 @@
 \DeclareMathOperator{\E}{\mathbb{E}}
 \usepackage[margin=0.7in]{geometry}
 \usepackage[export]{adjustbox}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
 \setlength{\columnsep}{11mm}
 \begin{document}
 
@@ -167,7 +169,7 @@ So, we have $S$ preallocated slices serving these $S$ services; There are $S_1$ 
 
 Each Service $s_j\in \{1,2,...,S_j\} $ consists of $U_{s_j}$ request from the single-antenna UEs which require certain QoS to be able to use the requested service ($j \in \{1,2,3\}$ indicate service type).
 There are different application requests which fall into one of these service categories. Each application request requires a specific QoS. Based on the application and QoS request, UE may be admitted and allocated to the resources.
-Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of  preallocated virtual resource blocks that are mapped to the Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
+Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2,3\}$ consists of  preallocated virtual resource blocks that are mapped to the Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
 
 All $K$ PRBs can be assigned to all UE in each service.
 Also, each VNF instance runs on a virtual machine (VM) that uses resources from the data centers.
@@ -753,13 +755,41 @@ the proposed algorithm (IABV).
 If the conditions \eqref{RConstr}, \eqref{pr11}, \eqref{c12-1} and \eqref{c12} are met in the fast algorithm (FA), the given algorithm will converge.
 The FA algorithm is depicted as algorithm \ref{alg3}.
  \begin{algorithm}
-\caption{Fast Algorithm to Check the Convergence}\label{alg3}
+\caption{Fast Algorithm to Check the Convergence (FA)}\label{alg3}
 \begin{algorithmic}[1]
-\State Assume the number of UEs is $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$
-\State Set $p_{r,u(s,i)}^{k} = \min\{P_s^{max}, P_r^{max}/\mathfrak{N}\} \quad \forall r,s,i,k$
-\State Set 
+\State Assume the number of UEs is $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_s}1$
+\State Assume the number of PRBs is $K$
+\State Assume $d_{r,u(s,i)}$ is the distance from the $r^{th}$ O-RU to the UE i in slice s
+\State Set count = 0 
+\State Set $p_{r,u(s,i)}^{k} = 0 \quad \forall r,k,s,i$
+\State Set $e_{r,u(s,i)}^{k} = 0 \quad \forall r,k,s,i$
+\State Set $g_{u(s,i)}^{r} = 0 \quad \forall r,s,i$
+\For{$s \gets 1$ to $S$} 
+\For{$i \gets 1$ to $U_s$}
+\State count = count +1  
+\State $r^* = \argmin_r d_{r,u(s,i)} \quad \forall r$
+\State $g_{u(s,i)} ^{r^*}=1$
+\State temp =mod(count, K)            
+\If {temp=0 }
+\State $e_{r^*,u(s,i)}^{K} = 1 $
+\State Set $p_{r^*,u(s,i)}^{K} = \min\{P_s^{max}, P_r^{max}/\mathfrak{N}\} $
+\Else 
+\State $e_{r^*,u(s,i)}^{temp} = 1 \quad \forall r$ 
+\State Set $p_{r^*,u(s,i)}^{temp} = \min\{P_s^{max}, P_r^{max}/\mathfrak{N}\} $
+\EndIf
+
+\State \textbf{end if}
+\EndFor
+\State \textbf{end for}
+\EndFor
+\State \textbf{end for}
 \end{algorithmic}
 \end{algorithm}
+The complexity order of this algorithm is $O(R\times \mathfrak{N})$ which is remarkably lower than the complexity order of the IABV method.
+In the algorithm FA, the O-RU association is based on the distance of the UE to the O-RU. 
+Each UE is associated with the nearest O-RU. Also, the power of each UE is set to be the minimum of the maximum power of each UE and the maximum power of each O-RU divided by the total number of UEs ($\min\{P_s^{max}, P_r^{max}/\mathfrak{N}\}$).
+Moreover, the allocation of physical resources to users is based on dividing the UE number by the total number of PRBs.
+If the number of UE is more than the resources, each UE is given exactly one PRB without interference, otherwise the amount of interference will be very low.
 \subsection{Numerical Results}
 In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus the different number of UEs in each service for these three methods. Suppose we have one service instance for each type of service, so we have three various services in this figure. Also We have between 6 and 48 UEs in the system.
 Here, we did not consider the priority. The figure presented that the proposed method (IABV) is $18.6\%$ higher than the baseline scheme.
