@@ -190,6 +190,11 @@ S.~Ali, A.~Ahmad, R.~Iqbal, S.~Saleem, and T.~Umer, ``Joint rrh-association,
   sub-channel assignment and power allocation in multi-tier 5g c-rans,''
   \emph{IEEE Access}, vol.~6, pp. 34\,393--34\,402, 2018.
 
+\bibitem{amani2019power}
+N.~Amani, S.~Parsaeefard, H.~Taheri, and H.~Pedram, ``Power-efficient resource
+  allocation in massive mimo aided cloud rans,'' \emph{arXiv preprint
+  arXiv:1908.07568}, 2019.
+
 \bibitem{akccay2007greedy}
 Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
   multidimensional knapsack problem,'' \emph{Annals of Operations Research},

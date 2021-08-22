@@ -54,7 +54,7 @@ vmansouri@ut.ac.ir}
 \IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
 \textit{University of Toronoto}\\
 Toronoto, Canada \\
-aeede.parsaeefard@gmail.com}
+saeede.parsaeefard@gmail.com}
 }
 %  \author{
 %    \IEEEauthorblockN{Mojdeh Karbalaee Motalleb, Vahid Shah-mansouri}
@@ -129,10 +129,12 @@ This paper aims to minimize the energy cost with the system delay, fronthaul cap
 Also, transmission and processing delay are modeled based on M/M/1 queuing theory to guarantee delay for the UEs.
  In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing resource allocation with beamforming is formulated; Also, the association of RRH to the UE is considered and solved using innovative methods.
 In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power allocation and RRH association in the H-CRAN system is considered to maximize energy efficiency.
+In \cite{amani2019power}, optimum power is obtained in massive MIMO aided C-RAN. Also the problem of
+RRH to BBU and the RRH to UE association is obtained. Moreover, the author talked about the feasible region to make the initial values possible.
 \subsection{Main Contribution}
 This study aims to optimize baseband resource allocation (power allocation, PRB allocation, and O-RUs association) and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform. In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The main contributions of this paper are summarized as follow:
 \begin{itemize}
-\item In this paper, a network slicing model is depicted for three different types of services introduced in 5G i.e eMBB, mMTC, and URLLC. The problem of radio resource allocation and VNF activation is studied in this paper in the O-RAN architecture.
+\item This paper depicts a network slicing model for three different types of services introduced in 5G, i.e., eMBB, mMTC, and URLLC. The problem of radio resource allocation and VNF activation is studied in this paper in the O-RAN architecture.
 We formulate the problem of baseband resource allocation to maximize the weighted throughput of the O-RAN system for a different types of services with specific QoS. 
 \item The desired QoS conditions such as delay and throughput are considered for different types of services. We formulate the end-to-end mean delay of the system based on the number of activated VNFs and each user's throughput.
 We consider the limited fronthaul capacity and accurately obtain the power and the capacity of each O-RU based on the quantization noise.
@@ -355,7 +357,7 @@ This paper aims to maximize the sum rate of all UEs with the presence of constra
 \end{subequations}
 where $\boldsymbol{P} =[p_{r,u(s,i)}^{k}], \:\: \forall s , \forall i, \forall r, \forall k $, is the matrix of power for UEs, $\boldsymbol{E} =[e_{r,u(s,i)}^k], \:\: \forall s , \forall i, \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r], \:\: \forall s , \forall i, \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u], \:\: \forall s$ is the matrix that shown the number of VNFs in each layer of slice.
 \eqref{c11}, \eqref{c12} and \eqref{c12-1}, indicate that the power of each O-RU does not exceed the maximum power, the power of each UE is a positive integer value, and the power of each UE in each service does not exceed the maximum power of each service, respectively.  
-Also, \eqref{c13} shows that the rate of each UE requesting each type of service i.e eMBB, mMTC, and URLLC is more than a threshold, respectively.
+Also, \eqref{c13} shows that the rate of each UE requesting each type of service, i.e., eMBB, mMTC, and URLLC, is more than a threshold, respectively.
 \eqref{c15} and \eqref{c16} expressed the limited fronthaul capacity and the limited end-to-end delay of the received signal, respectively.
 \eqref{c16-1} and \eqref{c16-2} denoted the stability of the M/M/1 queue model.
 \eqref{c16-3} restricted the number of VNF in each slice due to the limited resources.
@@ -879,8 +881,9 @@ Figure \ref{fig:7} is the same as figure \ref{fig:6} that presented the mean tot
 \end{figure}
 
 Figure \ref{fig:8}, represents the aggregate throughput concerning the number of UEs in each service and the maximum power for three different mMTC service instances. mMTC service includes a large number of UEs with low data rates and low power. 
-Assume each UE in each mMTC service instance requires 0.5 bits/sec/Hz data rate and is not sensitive to the end-to-end delay. Also, suppose the fronthaul link and the number of VNFs have no restrictions.
-Moreover, to make the simulation feasible, we assume that the number of PRBs is as large as the system has no interference, so we suppose there is a fixed  PRB allocation in the simulation that each UE is allocated to one PRB. There is no PRB with more than one UE allocation.
+Assume each UE in each mMTC service instance requires 0.1 bits/sec/Hz data rate and is not sensitive to the end-to-end delay. Also, suppose the fronthaul link and the number of VNFs have no restrictions.
+%Moreover, to make the simulation feasible, we assume that the number of PRBs is as large as the system has low interference.
+%so we suppose there is a fixed  PRB allocation in the simulation that each UE is allocated to one PRB. There is no PRB with more than one UE allocation.
 The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. 
 Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
 \begin{figure}
@@ -974,16 +977,18 @@ The aggregate throughput rises with the increases of UEs and the maximum interfe
 \end{figure}
 
 \section{Conclusion}\label{conc}
-This paper proposed the downlink of the O-RAN system using network slicing for different types of 5G services i.e eMBB, mMTC, and, URLLC.
-The isolation of various types of services i.e eMBB, mMTC, and, URLLC in the O-DU, the O-CU, and the user plane function (UPF) is accomplished.
+This paper proposed the downlink of the O-RAN system using network slicing for different 5G services, i.e., eMBB, mMTC, and URLLC.
+The isolation of various services, i.e., eMBB, mMTC, and URLLC in the O-DU, the O-CU, and the UPF, is accomplished.
 Also, the paper aims to obtain the number of activated VNFs in each service, RU association, power, and PRB allocation to maximize the aggregate throughput. The limited fronthaul capacity and the mean end-to-end delay for each service are considered. 
 The problem is mixed-integer non-linear programming that is solved by the two-step iterative algorithm.
 In the first step, we reformulated the problem to achieve the number of activated VNFs as a function of data rate. Then we obtain PRB association and power allocation using the Lagrangian method.
-Then in the second step, the O-RU association is acquired.
+In the second step, the O-RU association is acquired.
 The performance of our proposed method (IABV) is compared with the baseline scheme and FBDR in \cite{lee2018dynamic}. 
-Also, we assume distinct scenarios for each service i.e eMBB, mMTC, and, URLLC based on their requirement QoS.
-Simulation results depict that the proposed method (IABV) achieved $18.6\%$ higher data rate than the baseline scheme.
+In addition, the feasible region is discussed, and the FA algorithm is introduced to check the feasibility of the initial values.
+Also, we assume distinct scenarios for each service, i.e., eMBB, mMTC, and, URLLC based on their requirement QoS.
+Simulation results show that the proposed method (IABV) achieved a $18.6\%$ higher data rate than the baseline scheme.
 Moreover, simulation results illustrate more minor delays for the proposed method (IABV) than FBDR and the baseline scheme.
+
 
 \bibliographystyle{IEEEtran} 
 \bibliography{ref}
