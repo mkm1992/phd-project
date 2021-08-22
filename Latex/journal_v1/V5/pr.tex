@@ -30,6 +30,8 @@
 \DeclareMathOperator{\E}{\mathbb{E}}
 \usepackage[margin=0.7in]{geometry}
 \usepackage[export]{adjustbox}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
 \setlength{\columnsep}{11mm}
 \begin{document}
 
@@ -141,6 +143,7 @@ We perform a two-step iterative algorithm to solve it.
 The two-step iterative algorithm is presented for the resource management framework with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
 \item We reformulated and simplified the main problem for the first step to find an upper and lower bound for the number of activated VNFs and use lagrangian function and KKT conditions to find optimal power and PRB allocation.
 For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.
+\item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
 \end{itemize}  
 
 \begin{figure*}
@@ -167,7 +170,7 @@ So, we have $S$ preallocated slices serving these $S$ services; There are $S_1$ 
 
 Each Service $s_j\in \{1,2,...,S_j\} $ consists of $U_{s_j}$ request from the single-antenna UEs which require certain QoS to be able to use the requested service ($j \in \{1,2,3\}$ indicate service type).
 There are different application requests which fall into one of these service categories. Each application request requires a specific QoS. Based on the application and QoS request, UE may be admitted and allocated to the resources.
-Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2\}$ consists of  preallocated virtual resource blocks that are mapped to the Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
+Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2,3\}$ consists of  preallocated virtual resource blocks that are mapped to the Physical Resource Blocks (PRBs), $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF.
 
 All $K$ PRBs can be assigned to all UE in each service.
 Also, each VNF instance runs on a virtual machine (VM) that uses resources from the data centers.
@@ -702,6 +705,9 @@ We consider 25 PRBs are used in the network and the
 packet size is equal to 20 bytes.
 The maximum number of VNF for each slice is 25 and the mean arrival data rate for the eMBB service is $\lambda  = 3Mbps$ and for the mMTC service and the URLLC  service is $\lambda  = 0.2Mbps$. 
 Also the quantization noise is assumed to be $10^{-13}$.
+Moreover, we set $\mathfrak{h}_{u_{(s,i)}} = \eta_{u_{(s,i)}}/200$, $\mathfrak{m}_{r} = \zeta_r/10$
+and $\mathfrak{q}^k_{r,u(s,i)} = P_{s}^{max}/100$.
+
 The other parameters of these simulations are depicted in Table \ref{table:1a}.
 \begin{table}
  \caption {Simulation Parameter} \label{table:1a}
@@ -745,21 +751,52 @@ Two different methods are used to compare with the performance of the proposed m
 The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power are dynamically allocated, and the number of VNFs is obtained from the simulation, and the UEs are associated with the O-RU based on the quality of their channels and the channel distance.
 \subsection{Feasible Region}\label{fr}
 Applying the correct initial point to make the system feasible is a significant step in our work.
-During the simulation, it can be noted that sometimes the algorithm does not converge in a number of these simulations for a certain number of UEs.
-For a fixed number of UEs, by comparing convergent and non-convergent simulations, we experimentally found that in cases where convergence does not occur, UEs are at the edge of the boundaries or far away from the O-RU and have a weak channel gain. One solution is to eliminate UEs who undermine system convergence.
+During the simulation, it can be noted that sometimes the algorithm does not converge for some of the iterations with fixed initial values.
+To solve this problem, we investigated the non-converging and converging simulation for models with fixed initial parameters (such as number of UEs, the threshold of power and rate,... ) and random channel gains of UEs.
+By comparing convergent and non-convergent simulations, we experimentally found that in cases where convergence does not occur, there are UEs at the edge of the boundaries or far away from the O-RU and have a weak channel gain. One solution is to eliminate UEs who undermine system convergence.
+For a large number of UEs with a fixed number of PRBs, the probability of having an infeasible solution increases due to a large number of UE interferences.
 Another solution is to remove the simulations in the mont-Carlo that do not converge.
+In the simulation part, if more than half of the iterations have a feasible solution for the initial condition, the simulation can be displayed as a feasible model.
 To remove non-converging simulations, we need to use a fast algorithm (FA) to check the convergence before
 the proposed algorithm (IABV). 
 If the conditions \eqref{RConstr}, \eqref{pr11}, \eqref{c12-1} and \eqref{c12} are met in the fast algorithm (FA), the given algorithm will converge.
 The FA algorithm is depicted as algorithm \ref{alg3}.
  \begin{algorithm}
-\caption{Fast Algorithm to Check the Convergence}\label{alg3}
+\caption{Fast Algorithm to Check the Convergence (FA)}\label{alg3}
 \begin{algorithmic}[1]
-\State Assume the number of UEs is $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$
-\State Set $p_{r,u(s,i)}^{k} = \min\{P_s^{max}, P_r^{max}/\mathfrak{N}\} \quad \forall r,s,i,k$
-\State Set 
+\State Assume the number of UEs is $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_s}1$
+\State Assume the number of PRBs is $K$
+\State Assume $d_{r,u(s,i)}$ is the distance from the $r^{th}$ O-RU to the UE i in slice s
+\State Set count = 0 
+\State Set $p_{r,u(s,i)}^{k} = 0 \quad \forall r,k,s,i$
+\State Set $e_{r,u(s,i)}^{k} = 0 \quad \forall r,k,s,i$
+\State Set $g_{u(s,i)}^{r} = 0 \quad \forall r,s,i$
+\For{$s \gets 1$ to $S$} 
+\For{$i \gets 1$ to $U_s$}
+\State count = count +1  
+\State $r^* = \argmin_r d_{r,u(s,i)} \quad \forall r$
+\State $g_{u(s,i)} ^{r^*}=1$
+\State temp =mod(count, K)            
+\If {temp=0 }
+\State $e_{r^*,u(s,i)}^{K} = 1 $
+\State Set $p_{r^*,u(s,i)}^{K} = \min\{P_s^{max}, P_r^{max}/\mathfrak{N}\} $
+\Else 
+\State $e_{r^*,u(s,i)}^{temp} = 1 \quad \forall r$ 
+\State Set $p_{r^*,u(s,i)}^{temp} = \min\{P_s^{max}, P_r^{max}/\mathfrak{N}\} $
+\EndIf
+
+\State \textbf{end if}
+\EndFor
+\State \textbf{end for}
+\EndFor
+\State \textbf{end for}
 \end{algorithmic}
 \end{algorithm}
+The complexity order of this algorithm is $O(R\times \mathfrak{N})$ which is remarkably lower than the complexity order of the IABV method.
+In the algorithm FA, the O-RU association is based on the distance of the UE to the O-RU. 
+Each UE is associated with the nearest O-RU. Also, the power of each UE is set to be the minimum of the maximum power of each UE and the maximum power of each O-RU divided by the total number of UEs ($\min\{P_s^{max}, P_r^{max}/\mathfrak{N}\}$).
+Moreover, the allocation of PRBs to UEs is based on dividing the UE number by the total number of PRBs.
+If the number of UE is more than the PRBs, each UE is given exactly one PRB without interference. Otherwise, the amount of interference will not be high but more than one UE will use same PRBs.
 \subsection{Numerical Results}
 In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus the different number of UEs in each service for these three methods. Suppose we have one service instance for each type of service, so we have three various services in this figure. Also We have between 6 and 48 UEs in the system.
 Here, we did not consider the priority. The figure presented that the proposed method (IABV) is $18.6\%$ higher than the baseline scheme.
@@ -842,7 +879,9 @@ Figure \ref{fig:7} is the same as figure \ref{fig:6} that presented the mean tot
 \end{figure}
 
 Figure \ref{fig:8}, represents the aggregate throughput concerning the number of UEs in each service and the maximum power for three different mMTC service instances. mMTC service includes a large number of UEs with low data rates and low power. 
-Assume each UE in each mMTC service instance requires 1bits/sec/Hz data rate and is not sensitive to the end-to-end delay. Also, suppose the fronthaul link has no restrictions. The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. 
+Assume each UE in each mMTC service instance requires 0.5 bits/sec/Hz data rate and is not sensitive to the end-to-end delay. Also, suppose the fronthaul link and the number of VNFs have no restrictions.
+Moreover, to make the simulation feasible, we assume that the number of PRBs is as large as the system has no interference, so we suppose there is a fixed  PRB allocation in the simulation that each UE is allocated to one PRB. There is no PRB with more than one UE allocation.
+The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. 
 Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
 \begin{figure}
   %\centering 

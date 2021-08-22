@@ -13,7 +13,7 @@ for i = 1:N_UE
     end
 end
 
-%Intf = ones(1,N_UE)*db2pow(i_count)/1000;
+Intf = ones(1,N_UE)*db2pow(i_count)/1000;
 rate_UE_1 = zeros(1,N_UE);
 for i = 1:N_UE
         for z = 1:N_PRB
