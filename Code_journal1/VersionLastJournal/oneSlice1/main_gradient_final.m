@@ -1,15 +1,15 @@
 clear all
 clc
 run var_const
-count_min1 = 20;
-count_step1 = 5;
-count_max1 = 20;
+count_min1 = -65;
+count_step1 = 10;
+count_max1 = -55;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 1;
+iter_max = 200;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 
-RU_iter_max = 10;%N_RU + 5;
+RU_iter_max = 5;%N_RU + 5;
 SumRate_prb = zeros(iter_max,numvar,RU_iter_max-1);
 %% initializing
 number_check = 0;
@@ -56,7 +56,7 @@ sumRB1 =  zeros(1,numvar);
 num = zeros(1,numvar);
 for i =1:numvar
     for j =1:iter_max
-        if isnan(sumRate1(i,j)) == 0 
+        if isnan(sumRate1(i,j)) == 0  && sumRate1(i,j)>0
             sumRB(i) = sumRB(i) + sumRate1(i,j);
             num(i)=  num(i) + 1;
         end

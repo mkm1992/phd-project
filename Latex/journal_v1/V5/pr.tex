@@ -143,6 +143,7 @@ We perform a two-step iterative algorithm to solve it.
 The two-step iterative algorithm is presented for the resource management framework with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
 \item We reformulated and simplified the main problem for the first step to find an upper and lower bound for the number of activated VNFs and use lagrangian function and KKT conditions to find optimal power and PRB allocation.
 For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.
+\item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
 \end{itemize}  
 
 \begin{figure*}
@@ -704,6 +705,9 @@ We consider 25 PRBs are used in the network and the
 packet size is equal to 20 bytes.
 The maximum number of VNF for each slice is 25 and the mean arrival data rate for the eMBB service is $\lambda  = 3Mbps$ and for the mMTC service and the URLLC  service is $\lambda  = 0.2Mbps$. 
 Also the quantization noise is assumed to be $10^{-13}$.
+Moreover, we set $\mathfrak{h}_{u_{(s,i)}} = \eta_{u_{(s,i)}}/200$, $\mathfrak{m}_{r} = \zeta_r/10$
+and $\mathfrak{q}^k_{r,u(s,i)} = P_{s}^{max}/100$.
+
 The other parameters of these simulations are depicted in Table \ref{table:1a}.
 \begin{table}
  \caption {Simulation Parameter} \label{table:1a}
@@ -747,9 +751,12 @@ Two different methods are used to compare with the performance of the proposed m
 The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power are dynamically allocated, and the number of VNFs is obtained from the simulation, and the UEs are associated with the O-RU based on the quality of their channels and the channel distance.
 \subsection{Feasible Region}\label{fr}
 Applying the correct initial point to make the system feasible is a significant step in our work.
-During the simulation, it can be noted that sometimes the algorithm does not converge in a number of these simulations for a certain number of UEs.
-For a fixed number of UEs, by comparing convergent and non-convergent simulations, we experimentally found that in cases where convergence does not occur, UEs are at the edge of the boundaries or far away from the O-RU and have a weak channel gain. One solution is to eliminate UEs who undermine system convergence.
+During the simulation, it can be noted that sometimes the algorithm does not converge for some of the iterations with fixed initial values.
+To solve this problem, we investigated the non-converging and converging simulation for models with fixed initial parameters (such as number of UEs, the threshold of power and rate,... ) and random channel gains of UEs.
+By comparing convergent and non-convergent simulations, we experimentally found that in cases where convergence does not occur, there are UEs at the edge of the boundaries or far away from the O-RU and have a weak channel gain. One solution is to eliminate UEs who undermine system convergence.
+For a large number of UEs with a fixed number of PRBs, the probability of having an infeasible solution increases due to a large number of UE interferences.
 Another solution is to remove the simulations in the mont-Carlo that do not converge.
+In the simulation part, if more than half of the iterations have a feasible solution for the initial condition, the simulation can be displayed as a feasible model.
 To remove non-converging simulations, we need to use a fast algorithm (FA) to check the convergence before
 the proposed algorithm (IABV). 
 If the conditions \eqref{RConstr}, \eqref{pr11}, \eqref{c12-1} and \eqref{c12} are met in the fast algorithm (FA), the given algorithm will converge.
@@ -788,8 +795,8 @@ The FA algorithm is depicted as algorithm \ref{alg3}.
 The complexity order of this algorithm is $O(R\times \mathfrak{N})$ which is remarkably lower than the complexity order of the IABV method.
 In the algorithm FA, the O-RU association is based on the distance of the UE to the O-RU. 
 Each UE is associated with the nearest O-RU. Also, the power of each UE is set to be the minimum of the maximum power of each UE and the maximum power of each O-RU divided by the total number of UEs ($\min\{P_s^{max}, P_r^{max}/\mathfrak{N}\}$).
-Moreover, the allocation of physical resources to users is based on dividing the UE number by the total number of PRBs.
-If the number of UE is more than the resources, each UE is given exactly one PRB without interference, otherwise the amount of interference will be very low.
+Moreover, the allocation of PRBs to UEs is based on dividing the UE number by the total number of PRBs.
+If the number of UE is more than the PRBs, each UE is given exactly one PRB without interference. Otherwise, the amount of interference will not be high but more than one UE will use same PRBs.
 \subsection{Numerical Results}
 In Fig. \ref{fig:1} the aggregate throughput is demonstrated versus the different number of UEs in each service for these three methods. Suppose we have one service instance for each type of service, so we have three various services in this figure. Also We have between 6 and 48 UEs in the system.
 Here, we did not consider the priority. The figure presented that the proposed method (IABV) is $18.6\%$ higher than the baseline scheme.
@@ -872,7 +879,9 @@ Figure \ref{fig:7} is the same as figure \ref{fig:6} that presented the mean tot
 \end{figure}
 
 Figure \ref{fig:8}, represents the aggregate throughput concerning the number of UEs in each service and the maximum power for three different mMTC service instances. mMTC service includes a large number of UEs with low data rates and low power. 
-Assume each UE in each mMTC service instance requires 1bits/sec/Hz data rate and is not sensitive to the end-to-end delay. Also, suppose the fronthaul link has no restrictions. The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. 
+Assume each UE in each mMTC service instance requires 0.5 bits/sec/Hz data rate and is not sensitive to the end-to-end delay. Also, suppose the fronthaul link and the number of VNFs have no restrictions.
+Moreover, to make the simulation feasible, we assume that the number of PRBs is as large as the system has no interference, so we suppose there is a fixed  PRB allocation in the simulation that each UE is allocated to one PRB. There is no PRB with more than one UE allocation.
+The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases. 
 Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
 \begin{figure}
   %\centering 
