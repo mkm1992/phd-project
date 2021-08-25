@@ -961,21 +961,36 @@ Our solution is close to the optimal value in a small number of UEs.
 
 In figure \ref{fig:13}, the aggregate throughput is depicted vs. the maximum interference for two different maximum power thresholds of O-RU. We suppose that the maximum power threshold of UEs is one-third of the maximum power of O-RU.
 %The minimum data bit rate is assumed to be 0.2Mbps for each UE.
-Here we assume that with the increase of every ten dBm of interference power, it is assumed that ten users have been added to the system. In -100 dBm, we have 10 UEs, and at the end, we have 50 UEs in the system.
+Here we assume that with the increase of every ten dBm of interference power, it is assumed that ten users have been added to the system. In -105 dBm, we have 5 UEs, and at the end, we have 55 UEs in the system.
 Since the amount of interference in the system is entered as a fixed value,
 the allocation of PRBs is not considered.
 The higher maximum power threshold leads to a greater aggregate throughput. 
-The aggregate throughput rises with the increases of UEs and the maximum interference and then remains almost constant.
+The aggregate throughput first increases with the number of UEs and at the same time the amount of the maximum interference, then it becomes almost fixed and finally decreases so much. When the aggregate throughput decreases, the maximum interference is so high that it takes the system out of feasibility.
+%The aggregate throughput rises with the increases of UEs and the maximum interference and then remains almost constant.
 
 \begin{figure}
   \centering 
-    \includegraphics[scale = 0.4]{interF.eps}
+    \includegraphics[scale = 0.4]{interF_new.eps}
     %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
     %\includegraphics[width=\textwidth]{finalDraw.pdf}
   \caption{Aggregate Throughput vs. Maximum Interference }
   \label{fig:13}
 \end{figure}
 
+In figure \ref{fig:14}, the aggregate throughput is shown versus
+the different number of UEs for a service with low interference for the IABV and FA methods in the feasible region.
+The maximum power for each O-RU is 34dBm, and the maximum power for each UE is 30dBm. We assume that the system is not sensitive to fronhaul capacity and end-to-end delay and has enough VNF resources.
+By increasing the number of UEs, the aggregate throughput raises.
+And we can see that the IABV method is better than the FA method. 
+
+\begin{figure}
+  \centering 
+    \includegraphics[scale = 0.4]{FA.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Aggregate Throughput vs. the Number of UEs }
+  \label{fig:14}
+\end{figure}
 \section{Conclusion}\label{conc}
 This paper proposed the downlink of the O-RAN system using network slicing for different 5G services, i.e., eMBB, mMTC, and URLLC.
 The isolation of various services, i.e., eMBB, mMTC, and URLLC in the O-DU, the O-CU, and the UPF, is accomplished.

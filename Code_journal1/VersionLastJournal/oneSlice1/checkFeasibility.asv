@@ -48,9 +48,9 @@ for numRU =1:N_RU
    end
 end
 %% Feasible
-a1 =Pow_RU <= Pmax/3;
+a1 =Pow_RU <= Pmax;
 %a2 =Popt(:) >= 0; 
 a2 =Popt(:) <= Pmax/3;
-a3 =rate_UE_1(:) >= Rmin_UE(:);
+a3 =rate_UE(:) >= Rmin_UE(:);
 %sum(rate_UE_1)
-A_final = all(a1) && all(a2) && all(a3)
+A_final = a1 && a2 && a3
