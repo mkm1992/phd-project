@@ -17,7 +17,7 @@ from keras.models import Sequential
 #from keras.layers import Dense, Activation, Flatten
 #from keras.optimizers import Adam
 #from keras import datasets, layers, models
-#import tensorflow as tf
+import tensorflow as tf
     
 ## Define Variables
 epsilon = 1.0           #Greed 100%
