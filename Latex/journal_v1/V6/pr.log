@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  25 SEP 2021 13:18
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  25 SEP 2021 13:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -636,6 +636,32 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+
+LaTeX Warning: Citation `shen2020ai' on page 1 undefined on input line 94.
+
+
+LaTeX Warning: Citation `setayesh2020joint' on page 1 undefined on input line 9
+4.
+
+
+LaTeX Warning: Citation `popovski20185g' on page 1 undefined on input line 94.
+
+
+LaTeX Warning: Citation `dogra2020survey' on page 1 undefined on input line 94.
+
+
+
+LaTeX Warning: Citation `kassab2018coexistence' on page 1 undefined on input li
+ne 94.
+
+
+LaTeX Warning: Citation `alsenwi2021intelligent' on page 1 undefined on input l
+ine 94.
+
+
+LaTeX Warning: Citation `han2019research' on page 1 undefined on input line 97.
+
+
 LaTeX Font Info:    Try loading font information for U+msa on input line 101.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -645,150 +671,604 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+
+LaTeX Warning: Citation `gavrilovska2020cloud' on page 1 undefined on input lin
+e 107.
+
+
+LaTeX Warning: Citation `niknam2020intelligent' on page 1 undefined on input li
+ne 107.
+
+
+LaTeX Warning: Citation `kazemifard2021minimum' on page 1 undefined on input li
+ne 107.
+
+
+LaTeX Warning: Citation `both2021system' on page 1 undefined on input line 107.
+
+
+
+LaTeX Warning: Citation `ORANArch' on page 1 undefined on input line 107.
+
+
+LaTeX Warning: Citation `ORANML' on page 1 undefined on input line 107.
+
+
+LaTeX Warning: Citation `lin2021toward' on page 1 undefined on input line 107.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
 
 ]
+
+LaTeX Warning: Citation `mijumbi2015network' on page 2 undefined on input line 
+110.
+
+
+LaTeX Warning: Citation `luo2020online' on page 2 undefined on input line 110.
+
+
+LaTeX Warning: Citation `feng2020dynamic' on page 2 undefined on input line 113
+.
+
+
+LaTeX Warning: Citation `lee2018dynamic' on page 2 undefined on input line 113.
+
+
+
+LaTeX Warning: Citation `lee2016new' on page 2 undefined on input line 113.
+
+
+LaTeX Warning: Citation `lee2018dynamic' on page 2 undefined on input line 114.
+
+
+
+LaTeX Warning: Citation `xiang2020realization' on page 2 undefined on input lin
+e 115.
+
+
+LaTeX Warning: Citation `elayoubi20195g' on page 2 undefined on input line 115.
+
+
+
+LaTeX Warning: Citation `d2020toward' on page 2 undefined on input line 115.
+
+
+LaTeX Warning: Citation `setayesh2020joint' on page 2 undefined on input line 1
+19.
+
+
+LaTeX Warning: Citation `yang2020should' on page 2 undefined on input line 119.
+
+
+
+LaTeX Warning: Citation `alsenwi2021intelligent' on page 2 undefined on input l
+ine 120.
+
+
+LaTeX Warning: Citation `saggese2021power' on page 2 undefined on input line 12
+1.
+
+
+LaTeX Warning: Citation `korrai2020ran' on page 2 undefined on input line 122.
+
+
+LaTeX Warning: Citation `SystemCostMinimization' on page 2 undefined on input l
+ine 125.
+
+
+LaTeX Warning: Citation `guo2016exploiting' on page 2 undefined on input line 1
+25.
+
+
+LaTeX Warning: Citation `luong2018joint' on page 2 undefined on input line 128.
+
+
+
+LaTeX Warning: Citation `luong2018novel' on page 2 undefined on input line 128.
+
+
+
+LaTeX Warning: Citation `ali2019energy' on page 2 undefined on input line 129.
+
+
+LaTeX Warning: Citation `ali2019energy1' on page 2 undefined on input line 129.
+
+
+
+LaTeX Warning: Citation `ali2018joint' on page 2 undefined on input line 129.
+
+
+LaTeX Warning: Citation `amani2019power' on page 2 undefined on input line 130.
+
+
+
+LaTeX Warning: Reference `fig:c11' on page 2 undefined on input line 132.
+
 [2]
 File: finalDraw.pdf Graphic file (type pdf)
 <use finalDraw.pdf>
 
 
+LaTeX Warning: Reference `proAlg' on page 3 undefined on input line 156.
+
+
+LaTeX Warning: Reference `NE' on page 3 undefined on input line 156.
+
+
+LaTeX Warning: Reference `conc' on page 3 undefined on input line 156.
+
+
+LaTeX Warning: Reference `fig:c11' on page 3 undefined on input line 160.
+
+
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 190.
+d on input line 180.
 
 
-Overfull \hbox (1.93713pt too wide) detected at line 209
+Overfull \hbox (1.74622pt too wide) detected at line 199
 []
  []
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 216.
+LaTeX Font Info:    Try loading font information for U+euf on input line 206.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Underfull \hbox (badness 1418) in paragraph at lines 217--222
+Underfull \hbox (badness 1418) in paragraph at lines 207--212
 \T1/ptm/m/n/10 set of ser-vice, $\OML/cmm/m/it/10 z[]$ \T1/ptm/m/n/10 is the ad
 -di-tive Gaus-sian noise
  []
 
 [3]
+
+LaTeX Warning: Citation `setayesh2020joint' on page 4 undefined on input line 2
+23.
+
+
 Underfull \vbox (badness 5504) has occurred while \output is active []
 
- [4]
+
+
+LaTeX Warning: Reference `eq11' on page 4 undefined on input line 241.
+
+
+LaTeX Warning: Reference `eq3' on page 4 undefined on input line 241.
+
+
+LaTeX Warning: Reference `eq2' on page 4 undefined on input line 243.
+
+[4]
 Missing character: There is no ’ in font ptmr8t!
 
-Underfull \vbox (badness 1867) has occurred while \output is active []
 
- [5]
+LaTeX Warning: Citation `SystemCostMinimization' on page 5 undefined on input l
+ine 283.
+
+
+LaTeX Warning: Citation `luong2018joint' on page 5 undefined on input line 283.
+
+
+
+LaTeX Warning: Citation `luong2018novel' on page 5 undefined on input line 283.
+
+
+
+LaTeX Warning: Citation `SystemCostMinimization' on page 5 undefined on input l
+ine 302.
+
+
+LaTeX Warning: Citation `luong2018joint' on page 5 undefined on input line 302.
+
+
+
+LaTeX Warning: Citation `luong2018novel' on page 5 undefined on input line 302.
+
+
+[5]
+
+LaTeX Warning: Reference `c11' on page 6 undefined on input line 353.
+
+
+LaTeX Warning: Reference `c12' on page 6 undefined on input line 353.
+
+
+LaTeX Warning: Reference `c12-1' on page 6 undefined on input line 353.
+
+
+LaTeX Warning: Reference `c13' on page 6 undefined on input line 354.
+
+
+LaTeX Warning: Reference `c15' on page 6 undefined on input line 355.
+
+
+LaTeX Warning: Reference `c16' on page 6 undefined on input line 355.
+
+
+LaTeX Warning: Reference `c16-1' on page 6 undefined on input line 356.
+
+
+LaTeX Warning: Reference `c16-2' on page 6 undefined on input line 356.
+
+
+LaTeX Warning: Reference `c16-3' on page 6 undefined on input line 357.
+
+
+LaTeX Warning: Reference `c17' on page 6 undefined on input line 359.
+
+
+LaTeX Warning: Reference `c18-1' on page 6 undefined on input line 359.
+
+
+LaTeX Warning: Reference `c18' on page 6 undefined on input line 360.
+
+
+LaTeX Warning: Reference `c19' on page 6 undefined on input line 361.
+
+
+LaTeX Warning: Reference `c20' on page 6 undefined on input line 362.
+
+
+LaTeX Warning: Reference `c21' on page 6 undefined on input line 362.
+
+
+LaTeX Warning: Reference `problem' on page 6 undefined on input line 364.
+
+
+LaTeX Warning: Citation `ali2018joint' on page 6 undefined on input line 366.
+
+
+LaTeX Warning: Reference `problem' on page 6 undefined on input line 371.
+
+
+LaTeX Warning: Citation `lee2018dynamic' on page 6 undefined on input line 372.
+
+
+
+LaTeX Warning: Citation `ali2018joint' on page 6 undefined on input line 372.
+
+
+LaTeX Warning: Reference `c16' on page 6 undefined on input line 372.
+
+
+LaTeX Warning: Reference `eq11' on page 6 undefined on input line 383.
+
+
+LaTeX Warning: Reference `eq3' on page 6 undefined on input line 383.
+
+
+LaTeX Warning: Reference `shortPacket' on page 6 undefined on input line 386.
+
+
+LaTeX Warning: Reference `eq11' on page 6 undefined on input line 386.
+
+
+LaTeX Warning: Reference `eq11' on page 6 undefined on input line 387.
+
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 429--432
-[]\T1/ptm/b/n/10 Lemma 1. []\T1/ptm/m/it/10 The op-ti-mal num-ber of VNFs
+
+LaTeX Warning: Reference `problem' on page 7 undefined on input line 411.
+
+
+LaTeX Warning: Reference `c16' on page 7 undefined on input line 411.
+
+
+LaTeX Warning: Reference `c19' on page 7 undefined on input line 419.
+
+
+LaTeX Warning: Reference `c16-1' on page 7 undefined on input line 419.
+
+
+LaTeX Warning: Reference `c16-3' on page 7 undefined on input line 419.
+
+
+LaTeX Warning: Reference `c16' on page 7 undefined on input line 424.
+
+
+LaTeX Warning: Reference `c16' on page 7 undefined on input line 424.
+
+
+LaTeX Warning: Reference `eqDelay' on page 7 undefined on input line 429.
+
+
+LaTeX Warning: Reference `c16-2' on page 7 undefined on input line 431.
+
+
+LaTeX Warning: Reference `c16-2' on page 7 undefined on input line 434.
+
+
+LaTeX Warning: Reference `eqDelay' on page 7 undefined on input line 444.
+
+
+LaTeX Warning: Reference `c16-2' on page 7 undefined on input line 444.
+
+
+LaTeX Warning: Reference `eqDelay' on page 7 undefined on input line 445.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--466
+[]\T1/ptm/m/it/10 In ad-di-tion, we de-note $\OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/
+10 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 429--432
-\T1/ptm/m/it/10 in each slice s can be achieved by the
+Underfull \hbox (badness 1803) in paragraph at lines 463--466
+[]$ \T1/ptm/m/it/10 for each UE $\OML/cmm/m/it/10 i$ \T1/ptm/m/it/10 in slice
  []
 
 
-Underfull \hbox (badness 4647) in paragraph at lines 429--432
-\OML/cmm/m/it/10 M[] \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 f\OT1/cmtt/m/n/10 M[]
-\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 1\OML/c
-mm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; :::; U[]\OMS/cmsy/m/n/10 g 8\O
-ML/cmm/m/it/10 s$\T1/ptm/m/it/10 . where,
- []
+LaTeX Warning: Reference `problem' on page 7 undefined on input line 470.
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 429--432
-\OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/10 = []$ \T1/ptm/m/it/10 for each UE
- []
+LaTeX Warning: Citation `lee2018dynamic' on page 7 undefined on input line 471.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--491
-[]\T1/ptm/m/n/10 In ad-di-tion, we de-note $\OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/1
-0 =
- []
+
+LaTeX Warning: Citation `ali2018joint' on page 7 undefined on input line 471.
 
 
-Underfull \hbox (badness 1902) in paragraph at lines 488--491
-[]$ \T1/ptm/m/n/10 for each UE $\OML/cmm/m/it/10 i$ \T1/ptm/m/n/10 in slice
- []
+LaTeX Warning: Reference `problem' on page 7 undefined on input line 474.
+
+
+LaTeX Warning: Reference `cr' on page 7 undefined on input line 474.
+
+
+LaTeX Warning: Reference `c15' on page 7 undefined on input line 475.
+
+
+LaTeX Warning: Reference `c11' on page 7 undefined on input line 477.
+
+
+LaTeX Warning: Reference `c15' on page 7 undefined on input line 477.
+
+
+LaTeX Warning: Reference `c13' on page 7 undefined on input line 484.
+
+
+LaTeX Warning: Reference `c16-2' on page 7 undefined on input line 484.
+
+
+LaTeX Warning: Reference `RM' on page 7 undefined on input line 484.
+
+
+LaTeX Warning: Reference `lagrang' on page 7 undefined on input line 509.
+
+
+LaTeX Warning: Citation `lee2018dynamic' on page 7 undefined on input line 509.
+
+
+
+LaTeX Warning: Citation `ali2018joint' on page 7 undefined on input line 509.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 587--589
-\T1/ptm/m/n/10 where $\U/euf/m/n/10 Z[] \OT1/cmr/m/n/10 = (\U/euf/m/n/10 F[] \O
-MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
+
+LaTeX Warning: Reference `deriveP' on page 8 undefined on input line 527.
+
+
+LaTeX Warning: Reference `lagrang' on page 8 undefined on input line 537.
+
+
+LaTeX Warning: Reference `deriveE' on page 8 undefined on input line 553.
+
+
+LaTeX Warning: Reference `deriveE1' on page 8 undefined on input line 553.
+
+
+Overfull \hbox (0.52077pt too wide) detected at line 560
+\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 = []
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--562
+\T1/ptm/m/it/10 where $\U/euf/m/n/10 Z[] \OT1/cmr/m/n/10 = (\U/euf/m/n/10 F[] \
+OMS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
+ []
+
+
+LaTeX Warning: Reference `pr11' on page 8 undefined on input line 584.
+
+
+LaTeX Warning: Reference `pr' on page 8 undefined on input line 584.
+
+
+LaTeX Warning: Reference `RConstr' on page 8 undefined on input line 585.
+
+
+LaTeX Warning: Reference `sub1' on page 8 undefined on input line 585.
+
+
+LaTeX Warning: Reference `problem2' on page 8 undefined on input line 585.
+
+
+LaTeX Warning: Reference `problem2' on page 8 undefined on input line 588.
+
+
+LaTeX Warning: Reference `alg1' on page 8 undefined on input line 589.
+
+
+LaTeX Warning: Citation `akccay2007greedy' on page 8 undefined on input line 58
+9.
+
+
+LaTeX Warning: Citation `lee2018dynamic' on page 8 undefined on input line 589.
+
+
+
+LaTeX Warning: Reference `sub1' on page 8 undefined on input line 635.
+
+
+LaTeX Warning: Reference `sub2' on page 8 undefined on input line 635.
+
+
+LaTeX Warning: Reference `alg2' on page 8 undefined on input line 639.
+
+
+LaTeX Warning: Reference `sub1' on page 8 undefined on input line 646.
+
+
+LaTeX Warning: Reference `alg1' on page 8 undefined on input line 647.
+
+
+LaTeX Warning: Reference `sub2' on page 8 undefined on input line 647.
+
+
+LaTeX Warning: Reference `problem' on page 8 undefined on input line 663.
+
 [8]
+
+LaTeX Warning: Citation `gholipoor2020resource' on page 9 undefined on input li
+ne 665.
+
+
+LaTeX Warning: Reference `alg2' on page 9 undefined on input line 667.
+
+
+LaTeX Warning: Reference `fig:cell' on page 9 undefined on input line 692.
+
 File: cell.pdf Graphic file (type pdf)
 <use cell.pdf>
- [9] [10]
+
+LaTeX Warning: Citation `gholipoor2020cloud' on page 9 undefined on input line 
+701.
+
+
+LaTeX Warning: Reference `table:1a' on page 9 undefined on input line 707.
+
+
+LaTeX Warning: Reference `fr' on page 9 undefined on input line 741.
+
+[9]
+
+LaTeX Warning: Citation `lee2018dynamic' on page 10 undefined on input line 744
+.
+
+
+LaTeX Warning: Reference `RConstr' on page 10 undefined on input line 755.
+
+
+LaTeX Warning: Reference `pr11' on page 10 undefined on input line 755.
+
+
+LaTeX Warning: Reference `c12-1' on page 10 undefined on input line 755.
+
+
+LaTeX Warning: Reference `c12' on page 10 undefined on input line 755.
+
+
+LaTeX Warning: Reference `alg3' on page 10 undefined on input line 756.
+
+[10]
+
+LaTeX Warning: Reference `fig:1' on page 11 undefined on input line 796.
+
 File: Arate_ue1.eps Graphic file (type eps)
 <Arate_ue1.eps>
 
-Overfull \hbox (40.26146pt too wide) in paragraph at lines 828--831
+Overfull \hbox (40.26146pt too wide) in paragraph at lines 801--804
  [][] 
  []
+
+
+LaTeX Warning: Reference `fig:4' on page 11 undefined on input line 828.
 
 File: vnfNum1.eps Graphic file (type eps)
 <vnfNum1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 860--863
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 833--836
  [][] 
  []
+
+
+LaTeX Warning: Reference `fig:5' on page 11 undefined on input line 840.
 
 File: RatePower1.eps Graphic file (type eps)
 <RatePower1.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 872--875
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 845--848
  [][] 
  []
+
+
+LaTeX Warning: Reference `fig:6' on page 11 undefined on input line 852.
 
 File: delay_new.eps Graphic file (type eps)
 <delay_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 886--889
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 859--862
  [][] 
  []
+
+
+LaTeX Warning: Reference `fig:7' on page 11 undefined on input line 865.
+
+
+LaTeX Warning: Reference `fig:6' on page 11 undefined on input line 865.
 
 File: delay1_new.eps Graphic file (type eps)
 <delay1_new.eps>
 
-Overfull \hbox (20.91914pt too wide) in paragraph at lines 896--899
+Overfull \hbox (20.91914pt too wide) in paragraph at lines 869--872
  [][] 
  []
+
+
+LaTeX Warning: Reference `fig:8' on page 11 undefined on input line 876.
 
 File: AmmTCpower.eps Graphic file (type eps)
 <AmmTCpower.eps>
 
-Overfull \hbox (20.86429pt too wide) in paragraph at lines 911--914
+Overfull \hbox (20.86429pt too wide) in paragraph at lines 884--887
 [][] 
  []
 
 [11]
+
+LaTeX Warning: Reference `fig:9' on page 12 undefined on input line 891.
+
+
+LaTeX Warning: Reference `fig:9' on page 12 undefined on input line 892.
+
 File: priorityLast.eps Graphic file (type eps)
 <priorityLast.eps>
+
+LaTeX Warning: Reference `fig:11' on page 12 undefined on input line 922.
+
 File: iter.eps Graphic file (type eps)
 <iter.eps>
+
+LaTeX Warning: Reference `fig:12' on page 12 undefined on input line 938.
+
+
+LaTeX Warning: Reference `table:1a' on page 12 undefined on input line 942.
+
 File: optimal1.eps Graphic file (type eps)
 <optimal1.eps>
- [12]
+
+LaTeX Warning: Reference `fig:13' on page 12 undefined on input line 955.
+
+[12]
 File: interF_new.eps Graphic file (type eps)
 <interF_new.eps>
 
-Overfull \hbox (18.05383pt too wide) in paragraph at lines 993--996
+Overfull \hbox (18.05383pt too wide) in paragraph at lines 966--969
  [][] 
  []
+
+
+LaTeX Warning: Reference `fig:14' on page 13 undefined on input line 973.
 
 File: FA.eps Graphic file (type eps)
 <FA.eps>
 
-Overfull \hbox (18.05383pt too wide) in paragraph at lines 1009--1012
+Overfull \hbox (18.05383pt too wide) in paragraph at lines 982--985
  [][] 
  []
+
+
+LaTeX Warning: Citation `lee2018dynamic' on page 13 undefined on input line 995
+.
 
 [13] (./pr.bbl
 Underfull \hbox (badness 1852) in paragraph at lines 36--39
@@ -811,11 +1291,17 @@ Before submitting the final camera ready copy, remember to:
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  7457 strings out of 492970
  107652 string characters out of 6137298
- 213681 words of memory out of 5000000
+ 212920 words of memory out of 5000000
  11282 multiletter control sequences out of 15000+600000
  90132 words of font info for 110 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
