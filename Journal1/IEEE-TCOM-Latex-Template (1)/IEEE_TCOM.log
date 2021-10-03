@@ -1,0 +1,150 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  3 OCT 2021 19:44
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**IEEE_TCOM.tex
+(./IEEE_TCOM.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(./IEEEtranTCOM.cls
+Document Class: IEEEtranTCOM 2007/03/05 V1.7a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count80
+\@IEEEtrantmpcountB=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 366.
+
+(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 12 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <22> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <22> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count91
+\@IEEEtranrubishbin=\box26
+)
+No file IEEE_TCOM.aux.
+\openout1 = `IEEE_TCOM.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 390.
+LaTeX Font Info:    ... okay on input line 390.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 390.
+LaTeX Font Info:    ... okay on input line 390.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 390.
+LaTeX Font Info:    ... okay on input line 390.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 390.
+LaTeX Font Info:    ... okay on input line 390.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 390.
+LaTeX Font Info:    ... okay on input line 390.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 390.
+LaTeX Font Info:    ... okay on input line 390.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 482.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 482.
+** ATTENTION: \IEEEPARstart is disabled in draft mode (line 518).
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 519.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 519.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 519.
+[1{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \vbox (badness 1430) has occurred while \output is active []
+
+ [2]
+[3] [4] [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 709.
+
+[7] (./IEEE_TCOM.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 919 strings out of 492649
+ 15859 string characters out of 6133384
+ 75869 words of memory out of 5000000
+ 4858 multiletter control sequences out of 15000+600000
+ 41679 words of font info for 77 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 26i,6n,19p,1371b,207s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
+f-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on IEEE_TCOM.pdf (7 pages, 48542 bytes).
+PDF statistics:
+ 41 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
