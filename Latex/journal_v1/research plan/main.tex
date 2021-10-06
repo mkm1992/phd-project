@@ -1,160 +1,147 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Imperial College London
-% UKRI Centre for Doctoral Training in AI for Healthcare
-% https://ai4health.io
-%
-% LaTeX Template
-% Version 1.0 (22/10/19) Aldo Faisal
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-\input{ai4health_header}
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+ \usepackage{enumerate}
+ \usepackage[T1]{fontenc}
+\usepackage{cite}
+%\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{stackengine}
+\def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfigure}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{amsthm}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\allowdisplaybreaks
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[export]{adjustbox}
+
+\title{Reporte de inventario de eviencias}
+\author{Natalia Galeano Valerio}
+\date{Octubre 2019}
+
 \begin{document}
-\begin{titlepage}
 
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-\setlength{\topmargin}{0in}
-\center % Center everything on the page
- 
- 
- \begin{minipage}{0.4\textwidth}
-\begin{flushleft} \large
-\hspace*{-0.5cm}
-%\includegraphics[scale=0.14]{imperial.png}\\
-\end{flushleft}
-\end{minipage}
-~
-\begin{minipage}{0.5\textwidth}
-\begin{flushright} \large
-\hspace*{2cm}
-%\includegraphics[scale=0.20]{logo.png}\\
-\end{flushright}
-\end{minipage}\\[1cm]
-%----------------------------------------------------------------------------------------
-%	HEADING SECTIONS
-%----------------------------------------------------------------------------------------
 
-\textsc{\Large resource allocation in open ran system using network slicing}\\[0.5cm] % Major
-\LARGE \textsc{University of Tehran} \\[1.5cm] 
-% Name of your heading such as course name
-\textsc{\large }\\[0.5cm] % Minor heading such as course title
+\baselineskip 12pt
 
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION
-%----------------------------------------------------------------------------------------
+\vspace*{30mm}
 
-\HRule \\[0.4cm]
-{ \huge \bfseries Research Planning Report}\\[0.4cm] % Title of your document
-\HRule \\[1cm]
- 
-%----------------------------------------------------------------------------------------
-%	AUTHOR SECTION
-%----------------------------------------------------------------------------------------
+\begin{center}
 
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Student:}\\
-Mojdeh Karbalaee Motalleb \\ % Your name, if you are medically qualified please use "Last Name, M.D."
-\emph{Email Address:}\\
-mojdeh.karbalaee@ut.ac.ir
-\end{flushleft}
-\end{minipage}
-~
-\begin{minipage}{0.5\textwidth}
-\begin{flushright} \large
-\emph{Supervisor:} \\
-Dr. Onel Lopez \\% Supervisor's Name
-%Supervisor Department(s)\\
-%[0.5cm] \emph{Healthcare Supervisor} \\
-%Fist name \textsc{Last name} % Supervisor's Name
-%Supervisor Department(s)  or NHS Trust+section\\
-\emph{Department: } \\
-Electrical Engineering
-% \textsc{Add name here} % Supervisor's Name
-% Supervisor Department(s) or NHS Trust+section
-\end{flushright}
-\end{minipage}\\[1cm]
+\textbf{\Large Research Plan} \\
+\vspace{10mm}
+\textbf{Department of Electrical and Computer Engineering}\\
+\vspace{20mm}
+{\large University of Oulu}\\
+\vspace{20mm}
+\end{center}
+\vspace{10mm}
+{\scriptsize Provisional title:}\\
+Dynamic Resource Allocation in O-RAN Architecture using Network Slicing\\
 
-%----------------------------------------------------------------------------------------
-%	DATE SECTION
-%----------------------------------------------------------------------------------------
+\vspace{20mm}
 
-{\large \today}\\[0.5cm] % Date, change the \today to a set date if you want to be precise
+{\scriptsize Candidate name}\\
+Mojdeh Karbalaee Motalleb \\
+\vspace{3mm}
 
-\vfill % Fill the rest of the page with whitespace
 
-\end{titlepage}
 
-%\renewcommand{\abstractname}{Abstract}
+{\scriptsize Supervisor name:}\\
+Dr. Onel Lopez\\
+\vspace{3mm}
+
+
+\pagebreak
 \begin{abstract}
-%% 100 words
-\emph{In this project }
+Open radio access network (O-RAN) is the next generation of RAN systems introduced by the O-RAN Alliance to increase the flexibility and the openness of the network systems and simultaneously decrease CAPEX and OPEX of mobile operators. The O-RAN system combines and takes advantage of Cloud RAN (C-RAN) and the Virtual RAN (VRAN).
+O-RAN separates RAN into three
+different units, namely Radio Unit (O-RU), Distributed Unit
+(O-DU), and Central Unit (O-CU).
+In this research, we study
+the problem of baseband resource allocation and virtual
+network function (VNF) activation in O-RAN architecture
+based on their service priority for different types of 5G services
+including enhanced mobile broadband (eMBB), ultra-reliable
+low latency communications (uRLLC) and massive Machine
+Type Communications (mMTC) services using intelligent RAN slicing. 
+Network slicing is a promising solution for supporting such heterogeneous and challenging services.
+Deploying network slicing, the isolation of different types of services in O-DU, O-CU, and user plane function (UPF) is performed. The limited
+fronthaul capacity, the restriction of end-to-end delay and the reliability of the services are
+considered at the same time.
+  
+The optimization of baseband
+resources includes O-RU assignment, the assignment of physical resource block
+(PRB), and power allocation. The main problem is a mixed-integer non-linear programming problem that is tremendously difficult. Since the problem has a two-time scale, it can be broken into two layers. On the large-time scale, the problem of obtaining the optimal number of VNF, the placement of VNFs, and the assignment of PRB to the slices are considered. 
+On the small-time scale, there is the problem of obtaining the optimal power of UEs, and the PRB and o-RU assignment.
+To solve the problem, we propose deep reinforcement learning, the deep deterministic policy gradient (DDPG) method, and convex optimization.
 \end{abstract}
-
-\section{Introduction \& Literature review}
-\emph{Give background and motivation for your work. Explain  knowledge needed. Show its scientific and healthcare need.
-Define a set of clear questions and approaches to answering them. Highlight their originality and/or significance. Explain how they adds to, develop (or challenges) existing literature in the field. Note, this comprises both AI questions and Healthcare questions.}
-\subsection{AI literature}
-\subsection{Healthcare literature}
-\section{PhD goal}
-\emph{Explain the main question you want to answer in terms of AI technology developed and healthcare challenge addressed. Connect it with current state of research and show its importance in this context.
-Show what you want to achieve. Explain your contribution to the subject.}
-
-\section{Methodology}
-\emph{Specify methodology and techniques which will be used for your research. Be specific this will allow the reviewers to understand how well thought out and achievable your plan is.}
-\section{Summarise the work done since the start of the PhD.}
-\emph{Show interim results, if any.}
-\section{Program of work}
-\emph{This is your list, description and schedule of activities to achieve in PhD goal . Include Publication \& conference deadlines as expected, i.e. Give an overview of subjects or steps of your work you intend to publish,  suggest some meetings or conferences you plan to attend in order to present your research.}
-
-\section{Data, Infrastructure or Software needs}
-\emph{Make a list of facilities or infrastructure, including data and software you will need to complete your research. Explain how it is or will be made available. Assess the \textbf{Data Readiness Level} of all needed data sources.}
-
-\section{Planned Impact}
-\emph{Assuming that you achieve your PhD goals, what is the impact that your proejct will achieve. Assess your project's planned impact in terms of the PICO (population, intervention, comparator and outcome) framework.}
-
-\subsection*{Example: Diagnosis}
-\paragraph{Population}: To which populations of patients would the test be applicable? How can they be best described? Are there subgroups that need to be considered?
-
-\paragraph{Intervention} (index test[s]): The test or test strategy being evaluated.
-
-\paragraph{Comparator} The test with which the index test(s) is/are being compared, usually the reference standard (the test that is considered to be the best available method to establish the presence or absence of the condition of interest - this may not be the one that is routinely used in practice).
-
-Target condition: The disease, disease stage or subtype of disease that the index test(s) and the reference standard are being used to establish.
-
-\paragraph{Outcome} The diagnostic accuracy of the test or test strategy for detecting the target condition. This is usually reported as test parameters, such as sensitivity, specificity, predictive values, likelihood ratios, or - where multiple cut-off values are used - a receiver operating characteristic (ROC) curve.
-
-\subsection*{Example: Intervention}
-
-\paragraph{Population} Which populations of patients are we interested in? How can they be best described? Are there subgroups that need to be considered?
-
-\paragraph{Intervention} Which intervention, treatment or approach should be used?
-
-\paragraph{Comparators} What is/are the main alternative(s) to compare with the intervention being considered?
-
-\paragraph{Outcome} What is really important for the patient? Which outcomes should be considered? Examples include intermediate or short-term outcomes; mortality; morbidity and quality of life; treatment complications; adverse effects; rates of relapse; late morbidity and re-admission; return to work, physical and social functioning; resource use.
+\section{Introduction} 
+O-RAN, as the integration and expansion of C-RAN and xRAN, or C-RAN and the vRAN is expected to be a key technology in 5G networks to enhance the RAN performance extensively. 
+The core idea of C-RAN is to divide the radio remote head (RRU) from the baseband unit (BBU). Also, several BBUs are placed together to create the BBU-pool, providing unified baseband signal processing with powerful computing capabilities. On the other hand, xRAN technology has three fundamental features. The control plane is decoupled from the user plane. Besides, a modular eNB software stack is built to operate on common-off-the-shelf (COTS) hardware. Moreover, open north-bound and south-bound interfaces are introduced.
+O-RAN separate RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU). O-RU is a logical node that contains RF and lowers PHY. Moreover, the O-DU expresses another logical node that includes higher PHY, MAC, and RLC. In addition, the O-CU depicts the logical node contains two parts, which are the O-CU user plane (O-CU-UP) and O-CU control plane (O-CU-CP). O-CU-UP hosts PDCP-UP and SDAP, and O-CU-CP hosts PDCP-CP and RRC. O-DU and O-CU are connected via an open and well-defined interface F1.
+Moreover, O-DU is connected to a radio unit (O-RU) with an open fronthaul interface.
+The architecture of O-RAN contains other principal logical nodes called Orchestration and Automation,
+RAN Intelligent Controller (RIC)- Near Real-Time and O-Cloud. 
+One of the necessities of the new generation of wireless networks is its intelligence.
+Based on the requirement of an intelligent wireless network, O-RAN offers machine learning techniques. The two logical nodes RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC- Near Real Time, implement the algorithms for network intelligence 
+\cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML,lin2021toward}.
+\begin{figure*}
+  \centering 
+    \includegraphics[scale = 0.6]{finalDraw.pdf}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Network sliced ORAN system}
+  \label{fig:c11}
+\end{figure*}
 
 
-%**********************************************%
-\newpage
-\addcontentsline{toc}{section}{References}
-\begin{thebibliography}{9}
-\bibitem{latexcompanion} 
-Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
-\textit{The \LaTeX\ Companion}. 
-Addison-Wesley, Reading, Massachusetts, 1993.
+One of the goals of the next generation of mobile systems is to strictly meet the stringent QoS demands of the different services introduced in 5G , i.e., eMBB, URLLC, and mMTC. Network slicing is a promising solution to obtain the QoS for each type of service. Network slicing contains RAN slicing, core slicing, and both of them together. Efficient slicing of RAN is still challenging due to time-varying network circumstances.
+%Network slicing will propose significant complexity into the performance of systems that causes conventional mathematical model-based procedures to network operation no longer adequate. 
+Network slicing creates considerable complexity in system performance and makes the conventional mathematical methods insufficient to model the network.
+Therefore, it motivates researchers to realize network slicing using machine learning strategies such as deep learning and deep reinforcement learning. So, the network can reach the best control policy according to its experience in the past time slots.
+As mentioned above, network slicing, which contains RAN slicing, core slicing, and the whole, is considered a hot topic for vendors. In addition, the O-RAN system seems to be the next RAN architecture. So, this motivated researchers to study the dynamic RAN slicing in O-RAN architecture to achieve the desired QoS for each service type.
+In addition, according to the high complexity of RAN slicing and incapability of the traditional model-based methods, dynamic machine learning becomes the best solution for these problems.
+ Generally, there are two kinds of deep reinforcement learning methods for solving dynamic problems. The first class is value-based such as Deep-Q-Network, and the second class is policy-based problems such as DDPG. The first class can only solve the discrete action space problems, which are integer programming. The second class can solve by searching the optimal policy, which is the actor-critic method. Here, we use the second method to solve our problems.
  
-\bibitem{einstein} 
-Albert Einstein. 
-\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
-[\textit{On the electrodynamics of moving bodies}]. 
-Annalen der Physik, 322(10):891-921, 1905.
- 
-\bibitem{knuthwebsite} 
-Knuth: Computers and Typesetting,
-\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
 
-\end{thebibliography}
+
+\section{Motivation and contributions}
+In this project, we want to solve the problem of dynamic network slicing in the O-RAN system. The system has a two-time scale and should be solved in two layers. On a large time scale, the problem of obtaining an optimal number of VNFs and the VNF placement is performed. Also, the assignment of RB to the slices is obtained. There are three types of services that requires three types of slices: URLLC, which requires low latency; eMBB, which needs high data rate; and mMTC, short packet and low power devices.
+The conventional models cannot perform well in the system because of the different QoS for each service type, and the complexity of dynamic RAN slicing. So we must switch to machine learning and dynamic methods and find the most suitable approach.  
+A dynamic strategy of resource allocation is required to solve this problem to achieve the specific QoS for each type of service in the O-RAN architecture.
+In this project, we want to have an intelligent resource allocation in the O-RAN architecture for the different scenarios of services. 
+Also, another goal of this project is to apply transfer learning to the system and enhance the performance and the convergence of the methods. 
+\section{Research Method and data set}
+In this research, we want to use the machine learning methods such as deep reinforcement learning and deep learning to train the O-RAN system and have an intelligent system. The multi-agent deep reinforcement learning contains DDPG, the deep deterministic policy gradient algorithm (actor-critic algorithm), correlated q-learning, and the priority proportional fairness algorithm. 
+The deep learning algorithms contain LSTM and recurrent neural networks. Also, transfer learning is an exciting way to enhance the performance and convergence of the system.
+
+
+\bibliographystyle{IEEEtran} 
+\bibliography{ref}
+%\begin{thebibliography}{9}
+%\bibitem{Hunt}
+%Sally Hunt, ``Making Competition Work in Electricity,'' John Wiley , pp.23-30, Fev, 2002.
+
+
+
+%\end{thebibliography}
+\vspace{20mm}
+
 
 \end{document}
