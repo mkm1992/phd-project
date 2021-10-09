@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  6 OCT 2021 17:39
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  9 OCT 2021 16:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -493,7 +493,20 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \sift@deathcycles=\count151
 \@vwid@loff=\dimen147
 \@vwid@roff=\dimen148
-)) (./main.aux)
+)) (./main.aux
+
+LaTeX Warning: Label `c11' multiply defined.
+
+
+LaTeX Warning: Label `c13' multiply defined.
+
+
+LaTeX Warning: Label `c15' multiply defined.
+
+
+LaTeX Warning: Label `constraints' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -512,8 +525,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
-
-(c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+ (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 37.
@@ -562,14 +574,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--56
 ]
 File: finalDraw.pdf Graphic file (type pdf)
 <use finalDraw.pdf>
- [2] (./main.bbl [3]) [4] (./main.aux) ) 
-Here is how much of TeX's memory you used:
- 6380 strings out of 492970
- 87838 string characters out of 6137298
- 176039 words of memory out of 5000000
- 10266 multiletter control sequences out of 15000+600000
- 31877 words of font info for 24 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 33i,8n,35p,923b,281s stack positions out of 5000i,500n,10000p,200000b,80000s
+ [2]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 141.
 
-Output written on main.pdf (4 pages).
+ (c:/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [3]
+LaTeX Font Info:    Try loading font information for U+msa on input line 159.
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 159.
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 173.
+
+[4]
+LaTeX Font Info:    Try loading font information for U+euf on input line 200.
+ (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Missing character: There is no ’ in font ec-lmr10!
+ [5] [6] [7]
+[8]
+File: ./fig/ratio_episode2.eps Graphic file (type eps)
+<./fig/ratio_episode2.eps>
+File: ./fig/consumptionE.eps Graphic file (type eps)
+<./fig/consumptionE.eps>
+ [9] (./main.bbl [10]) [11] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6528 strings out of 492970
+ 90123 string characters out of 6137298
+ 183294 words of memory out of 5000000
+ 10360 multiletter control sequences out of 15000+600000
+ 43385 words of font info for 47 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 33i,17n,35p,923b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on main.pdf (11 pages).
