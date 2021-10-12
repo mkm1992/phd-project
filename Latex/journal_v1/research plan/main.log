@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  9 OCT 2021 16:25
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  12 OCT 2021 16:54
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -575,27 +575,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--56
 File: finalDraw.pdf Graphic file (type pdf)
 <use finalDraw.pdf>
  [2]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 141.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 140.
 
  (c:/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3]
-LaTeX Font Info:    Try loading font information for U+msa on input line 159.
+LaTeX Font Info:    Try loading font information for U+msa on input line 156.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 159.
+LaTeX Font Info:    Try loading font information for U+msb on input line 156.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 173.
+d on input line 168.
 
 [4]
-LaTeX Font Info:    Try loading font information for U+euf on input line 200.
+LaTeX Font Info:    Try loading font information for U+euf on input line 203.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
@@ -612,12 +612,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6528 strings out of 492970
- 90123 string characters out of 6137298
- 183294 words of memory out of 5000000
- 10360 multiletter control sequences out of 15000+600000
+ 6533 strings out of 492970
+ 90202 string characters out of 6137298
+ 184317 words of memory out of 5000000
+ 10365 multiletter control sequences out of 15000+600000
  43385 words of font info for 47 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 33i,17n,35p,923b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,28n,35p,923b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (11 pages).
