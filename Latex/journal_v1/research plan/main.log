@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  12 OCT 2021 16:54
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  13 OCT 2021 13:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -493,20 +493,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \sift@deathcycles=\count151
 \@vwid@loff=\dimen147
 \@vwid@roff=\dimen148
-)) (./main.aux
-
-LaTeX Warning: Label `c11' multiply defined.
-
-
-LaTeX Warning: Label `c13' multiply defined.
-
-
-LaTeX Warning: Label `c15' multiply defined.
-
-
-LaTeX Warning: Label `constraints' multiply defined.
-
-)
+)) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -525,7 +512,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
- (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 37.
@@ -606,16 +594,12 @@ File: ./fig/ratio_episode2.eps Graphic file (type eps)
 <./fig/ratio_episode2.eps>
 File: ./fig/consumptionE.eps Graphic file (type eps)
 <./fig/consumptionE.eps>
- [9] (./main.bbl [10]) [11] (./main.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ [9] (./main.bbl [10]) [11] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6533 strings out of 492970
- 90202 string characters out of 6137298
- 184317 words of memory out of 5000000
- 10365 multiletter control sequences out of 15000+600000
+ 6541 strings out of 492970
+ 90253 string characters out of 6137298
+ 186357 words of memory out of 5000000
+ 10373 multiletter control sequences out of 15000+600000
  43385 words of font info for 47 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  33i,28n,35p,923b,331s stack positions out of 5000i,500n,10000p,200000b,80000s

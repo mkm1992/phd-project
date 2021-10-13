@@ -272,23 +272,23 @@ So, the mean processing delay for UE $i$ in slice $s$ is
 T^{\text{proc}}_{u(s,i)} =  T^{RU}_{u(s,i)} + T^{DU}_{s} + T^{CU}_{s} + T^{UPF}_{s}.
 \end{equation}
 Hence, for the simplification and focusing on the processing delay, we assume $T^{\text{\text{tot}}}_{u(s,i)} \approx T^{\text{proc}}_{u(s,i)} $.
-\subsection{Reliability of URLLC}
-As we know, UEs request URLLC services, require services with low latency.
-For the M/M/1 system, the probability of the delay for each application $s$ in the UPF, CU, DU and RU is as follow, respectively
-\begin{equation}
-\begin{split}
-P_r\{T_{UPF}^{s} \geq T_{UPF}^{max}\} &= e^{-(\mu_u - \alpha_{s}/{M_s^{u}})T_{UPF}^{max}}\\
-P_r\{T_{CU}^{s} \geq T_{CU}^{max}\} &= e^{-(\mu_c - \alpha_{s}/{M_s^{c}})T_{CU}^{max}}\\
-P_r\{T_{DU}^{s} \geq T_{DU}^{max}\} &= e^{-(\mu_d - \alpha_{s}/{M_s^{d}})T_{DU}^{max}}\\
-P_r\{T_{RU}^{s} \geq T_{RU}^{max}\} &= e^{-(R_{{tot}_s} - \alpha_{s})T_{RU}^{max}}\\
-\end{split}
-\end{equation} 
-So the probability of coincidence of these events is as follow
-\begin{equation}
-P_r\{E_1, E_2, E_3, E_4\} = A_1 A_2 A_3 A_4,
-\end{equation}
-Where $E_1 = T_{UPF}^{s} \geq T_{UPF}^{max}$, $E_2 =T_{CU}^{s} \geq T_{CU}^{max} $, $E_3 =T_{DU}^{s} \geq T_{DU}^{max} $ and $E_4 =T_{RU}^{s} \geq T_{RU}^{max} $.
-Also $A_1=e^{-(\mu_u - \alpha_{s}/{M_s^{u}})T_{UPF}^{max}}$, $A_2=e^{-(\mu_c - \alpha_{s}/{M_s^{c}})T_{CU}^{max}}$, $A_3= e^{-(\mu_d - \alpha_{s}/{M_s^{d}})T_{DU}^{max}}$ and $A_4 = e^{-(R_{{tot}_s} - \alpha_{s})T_{RU}^{max}}$.
+%\subsection{Reliability of URLLC}
+%As we know, UEs request URLLC services, require services with low latency.
+%For the M/M/1 system, the probability of the delay for each application $s$ in the UPF, CU, DU and RU is as follow, respectively
+%\begin{equation}
+%\begin{split}
+%P_r\{T_{UPF}^{s} \geq T_{UPF}^{max}\} &= e^{-(\mu_u - \alpha_{s}/{M_s^{u}})T_{UPF}^{max}}\\
+%P_r\{T_{CU}^{s} \geq T_{CU}^{max}\} &= e^{-(\mu_c - \alpha_{s}/{M_s^{c}})T_{CU}^{max}}\\
+%P_r\{T_{DU}^{s} \geq T_{DU}^{max}\} &= e^{-(\mu_d - \alpha_{s}/{M_s^{d}})T_{DU}^{max}}\\
+%P_r\{T_{RU}^{s} \geq T_{RU}^{max}\} &= e^{-(R_{{tot}_s} - \alpha_{s})T_{RU}^{max}}\\
+%\end{split}
+%\end{equation} 
+%So the probability of coincidence of these events is as follow
+%\begin{equation}
+%P_r\{E_1, E_2, E_3, E_4\} = A_1 A_2 A_3 A_4,
+%\end{equation}
+%where $E_1 = T_{UPF}^{s} \geq T_{UPF}^{max}$, $E_2 =T_{CU}^{s} \geq T_{CU}^{max} $, $E_3 =T_{DU}^{s} \geq T_{DU}^{max} $ and $E_4 =T_{RU}^{s} \geq T_{RU}^{max} $.
+%Also $A_1=e^{-(\mu_u - \alpha_{s}/{M_s^{u}})T_{UPF}^{max}}$, $A_2=e^{-(\mu_c - \alpha_{s}/{M_s^{c}})T_{CU}^{max}}$, $A_3= e^{-(\mu_d - \alpha_{s}/{M_s^{d}})T_{DU}^{max}}$ and $A_4 = e^{-(R_{{tot}_s} - \alpha_{s})T_{RU}^{max}}$.
 \subsection{Physical Data Center Resource}
 Each VNF requires
 physical resources that include memory, storage, CPU and Network Bandwidth.
@@ -337,7 +337,7 @@ $\phi_{s}$. So the total power of the system for all active DCs that are connect
 \begin{equation*}
 \textstyle \phi_{tot} = \sum_{s=1}^{S}\phi_{s} + \sum_{d=1}^{D_c}z_d \psi_d .
 \end{equation*}
-Where, $z_d$ is shown that whether the $d^{th}$ DC is active or not and $\psi_d$ is a static cost when a DC is active, i.e.,
+where, $z_d$ is shown that whether the $d^{th}$ DC is active or not and $\psi_d$ is a static cost when a DC is active, i.e.,
 \begin{equation}
   z_d =
     \begin{cases}
@@ -350,50 +350,51 @@ In addition, $\phi_{s}$ is obtained from below
 \begin{equation}
 \phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M_s^d \phi_s^d
 \end{equation}
-Where, $\phi_s^u$, $\phi_s^c$ and $\phi_s^d$ are the static cost of energy in UPF, CU and DU, respectively. 
-So the optimization problem is formulated as follow.
-In the large-time scale the aim of the paper is to minimize the power of the system with the presence constraints
-\begin{subequations}
+where, $\phi_s^u$, $\phi_s^c$ and $\phi_s^d$ are the static cost of energy in UPF, CU and DU, respectively.
+Here, we want to maximize the energy efficiency $\eta$. 
+So the optimization problem is formulated as follow
+
+\begin{subequations} \label{mainP}
 \begin{alignat}{4}
-\min\limits_{ \boldsymbol{M}, \boldsymbol{Y}, \boldsymbol{E} } \phi_{tot}   \quad &   \ \\
+\max\limits_{ \boldsymbol{M}, \boldsymbol{Y}, \boldsymbol{E},\boldsymbol{P},\boldsymbol{G} } &\eta = \frac{\sum_{s=1}^{S_1}\sum_{i=1}^{U_s}R_{u_{(s,k)}}}{\phi_{tot} +P_r}       \ \\
 \text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
  \label{c11} \\
- &\mathcal{R}_{u_{(s_1,i)}} \geq  \mathcal{R}_{min}^{s} \quad \forall s, \label{c13} \\
-& \phi_{tot}  \leq \phi_{max}, \label{c19} \\
-& \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}}^r \leq C_{max}^r \quad \forall r, \label{c15}\\ 
- &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d} 
- \quad \forall d, \forall \mathfrak{z}\in \mathcal{E}; \label{c20}
-\end{alignat}
-\label{constraints}
-\end{subequations}
-In the small-time scale the aim of this paper is to maximize the sum rate of UEs  of eMBB services, minimum the delay of UEs of URLLC services, and minimum the power mMTC services with the presence of constraints.
-\begin{subequations}
-\begin{alignat}{4}
-\max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S_1}\sum_{i=1}^{U_s}R_{u_{(s,k)}}^e - \sum_{s=1}^{S_2}T^s_{tot} - \sum_{s=1}^{S_3}\sum_{i=1}^{U_s} p_{u_{(s,k)}} \ \\
-\text{subject to} \quad  &  P_r \leq P_{max} \quad \forall r
- \label{c11} \\
+ &\mathcal{R}_{u_{(s,i)}} \geq  \mathcal{R}_{min}^{s} \quad \forall s, \label{c13} \\
+ &\textstyle \sum_{s=1}^{S} y_{s,d} \bar{\Omega}_{\mathfrak{z},s}^{tot}  \leq   \tau_{\mathfrak{z}_d}, \quad  \mathcal{E} = \{M,S,C, N\}, \label{c14}\\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
-&\mathcal{R}_{u_{(s_1,i)}} \geq  \mathcal{R}_{min}^{s} \quad \forall s, \label{c13} \\
-& \sum_{s=1}^{S}\sum_{i=1}^{U_s}R_{u_{(s,k)}}^r \leq C_{max}^r \quad \forall r, \label{c15}\\ 
-&T_{tot}^s \leq T_{tot}^{max,s} \quad \forall s,\label{c16} \\
-& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
-& g^r_{u(s,i)} \leq g^r_{u(s,i)}\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)}  \quad \forall s,i , \label{c18} \\
+&p_{r,u(s,i)}^{k}  \leq P_{s}^{max}  \quad \forall i,\forall r,\forall s, \forall k,\label{c12-1} \\
+%&\mathcal{R}_{u_{(s_2,i)}}^u \geq  \mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
+& C_r \leq C^{max}_r \quad \forall r, \label{c15}\\ 
+&T^{\text{\text{tot}}}_{u(s,i)}  \leq T^{max}_{s} \quad \forall i,\forall s,\label{c16} \\
+& \mu_s \geq \alpha_s/M_s \quad \forall s,\label{c16-1} \\
+& \mathcal{R}_{u_{(s,i)}} \geq {\lambda}_{u_{(s,i)}} \quad \forall i,\forall s,\label{c16-2} \\
+& 0 \leq M_s \leq M^{max}_s  \quad \forall s,\label{c16-3}\\
+%& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
+& \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s,\forall i, \label{c17}  \\
+& \sum_{k =1}^{K_s} g^r_{u(s,i)} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r \label{c18-1} \\
+& \sum_{s =1}^{S}\sum_{i=1}^{U_s}g^r_{u(s,i)} e^{k}_{r,u(s,i)} \leq 1  \quad \forall s,\forall i ,\forall r \label{c18} \\
+& \phi^{\text{\text{tot}}}  \leq \phi^{max}, \label{c19} \\
+& g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c20}  \\
+& e^k_{r,u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c21}  
 \end{alignat}
 \label{constraints}
 \end{subequations}
-where $\boldsymbol{P} =[p_{u(s,i)}] \:\: \forall s , \forall i $, is the matrix of power for UEs,
-$\boldsymbol{E} =[e_{r,u(s,i)}^k] \:\: \forall s , \forall i \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r] \:\: \forall s , \forall i \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u] \:\: \forall s$ is the matrix that shown the number of VNFs in each layer of slice and $\boldsymbol{Y} =[y_{s,d}]  \:\: \forall s ,  \forall d $ is a binary variable shown whether
+\noindent where $\boldsymbol{P} =[p_{r,u(s,i)}^{k}], \:\: \forall s , \forall i, \forall r, \forall k $, is the matrix of power for UEs, $\boldsymbol{E} =[e_{r,u(s,i)}^k], \:\: \forall s , \forall i, \forall r, \forall k$ indicate the binary variable for PRB association. Moreover, $\boldsymbol{G} =[g_{u(s,i)}^r], \:\: \forall s , \forall i, \forall r$ is a binary variable for O-RU association. Furthermore, $M = [M_s^d, M_s^c, M_s^u], \:\: \forall s$ is the matrix that shows the number of VNFs in each layer of slice.
+Also $\boldsymbol{Y} =[y_{s,d}]  \:\: \forall s ,  \forall d $ is a binary variable shown whether
 the physical DC is mapped to a VNFs of a slice or not.
-Also, $\eta$ is weighted variable to value between the benefit and the cost term of objective function.
-\eqref{c11}, and \eqref{c12}, indicate that the power of each RU do not exceed the maximum power, and the power of each UE is a positive integer value, respectively. 
-Also \eqref{c13}  shows that the rate of each UE requesting eMBB, URLLC and mMTC is more than a threshold, respectively.
-\eqref{c15} and \eqref{c16} expressed the limited capacity of the fronthaul link, and the limited delay of receiving signal, respectively.
-\eqref{c16} is a reliability condition that the delay in each layer should be less than threshold.
- \eqref{c18} guarantee that if a UE in admitted by the system, O-RU and PRB is associated to it, respectively.
-In addition, \eqref{c19} indicate that the static cost of energy of VNFs in each slice do not exceed from the threshold. 
-Moreover, in \eqref{c20}  $\mathcal{E} = \{M,S,C, N\}$ and the constraint supports
-that we have enough physical resources for VNFs of each slice.
+\eqref{c11}, \eqref{c12} and \eqref{c12-1} indicate that the power of each O-RU does not exceed the maximum power, the power of each UE is a positive integer value, and the power of each UE in each service does not exceed the maximum power of each service, respectively.  
+Also, \eqref{c13} shows that the rate of each UE requesting each type of service, i.e., eMBB, mMTC, and uRLLC, is more than a threshold, respectively.
+\eqref{c15} and \eqref{c16} expressed the limited fronthaul capacity and the limited end-to-end delay of the received signal, respectively.
+\eqref{c16-1} and \eqref{c16-2} denoted the stability of the M/M/1 queue model.
+\eqref{c16-3} restricted the number of VNF in each slice due to the limited resources.
+%\eqref{c16} is a reliability condition that the delay in each layer should be less than the threshold.
+\eqref{c17} and \eqref{c18-1} guarantee that O-RU and PRB are associated with the UE, respectively.
+Also, \eqref{c18} ensures that each PRB can not be assigned to more than one UE associated with the same O-RU.
+In addition, \eqref{c19} indicates that the fixed cost of energy of VNFs in each slice does not exceed the threshold. 
+Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
+In addition, in \eqref{c14}, the constraint supports that we have enough physical resources for VNFs of each slice.
 \subsection{Proposed Algorithm and Numerical Results}
+Problem \eqref{mainP}, is a two-time scale problem, i.e., large time scale and small time scale. On a large-time scale, we aim to minimize the power of servers and obtain the QoS of slices. The assignment of PRB to slices is implemented in this time scale. In the small-time scale, the assignment of O-RU to UEs and the assignment of PRB of slices to UEs is executed, and the optimal power is obtained.
 In this research, we aim to use the machine learning methods such as deep reinforcement learning and deep learning to train the O-RAN system and have an intelligent system.
 The deep Q-learning is implemented for the large-time scale and 
  the multi-agent deep reinforcement learning contains DDPG (actor-critic algorithm), correlated q-learning, and the priority proportional fairness algorithm will be implemented for the small-time scale. 
@@ -420,7 +421,7 @@ S represents the state space matrix, and A represents the action vector. R is al
    \begin{equation}
   	Q^{\Pi}(s,a) = \mathbb{E}_{\Pi,P}[R+\gamma Q^{\Pi}(s',a')]
   \end{equation}  
-  Where, $s'$ and $a'$ can be obtained from $\Pi(.|s')$ and $P(.|s,a)$.
+  where, $s'$ and $a'$ can be obtained from $\Pi(.|s')$ and $P(.|s,a)$.
 The goal of reinforcement learnin is to obtain the optimal policy to maximize the $Q^{\Pi}(s,a)$.
 So, using Bellman equation, we have
 \begin{equation}
@@ -466,7 +467,11 @@ Figure \ref{fig:consumptionE}, shows the ratio of the normalized cost to the ave
 	\label{fig:consumptionE}
 \end{figure}
 \section{Research Plan}
-The table below outlines the goals and six-month planning overall.
+Table \ref{table:1a}, outlines the goals and six-month planning overall.
+\begin{itemize}
+\item Task 1: Complete the system model and problem formulation, 
+\end{itemize}
+
 \begin{table}
  \caption {Research Plan} \label{table:1a}
  \begin{center}
