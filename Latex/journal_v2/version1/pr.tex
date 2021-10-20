@@ -1,17 +1,15 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
- \usepackage{enumerate}
- \usepackage[T1]{fontenc}
+ %\pdfoutput=1
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage[T1]{fontenc}
 \usepackage{cite}
-%\usepackage{caption}
-%\usepackage{subcaption}
 \usepackage{mathtools}
 \usepackage{stackengine}
 \def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfigure}
+\usepackage{amsmath,epsfig,cite,amsfonts,amssymb,psfrag,subfig}
 \usepackage{graphicx}
-\usepackage{blindtext}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{algorithm}
@@ -28,78 +26,45 @@
 \newcommand{\diag}{\mathop{\mathrm{diag}}}
 \DeclareMathOperator{\E}{\mathbb{E}}
 \usepackage[margin=0.7in]{geometry}
-\usepackage[export]{adjustbox}
-
-\title{Reporte de inventario de eviencias}
-\author{Natalia Galeano Valerio}
-\date{Octubre 2019}
-
+\setlength{\columnsep}{11mm}
 \begin{document}
 
+\title{Network Slicing and Resource Allocation in an Open RAN System \vspace{-.1cm}
+}
+%
+%\author{\IEEEauthorblockN{1\textsuperscript{st} Mojdeh Karbalaee Motalleb}
+%\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+%\textit{Tehran University}\\
+%Tehran, Iran \\
+%mojdeh.karbalaee@ut.ac.ir}
+%\and
+%\IEEEauthorblockN{2\textsuperscript{nd} Vahid Shah-Mansouri}
+%\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+%\textit{Tehran University}\\
+%Tehran, Iran \\
+%vmansouri@ut.ac.ir}
+%\and
+%\IEEEauthorblockN{3\textsuperscript{rd} Salar Nouri Naghadeh}
+%\IEEEauthorblockA{\textit{Electrical and Computer Engineering} \\
+%\textit{Tehran University}\\
+%Tehran, Iran \\
+%salar.nouri@ut.ac.ir}
+%}
+  \author{
+    \IEEEauthorblockN{Mojdeh Karbalaee Motalleb}
+    \IEEEauthorblockA{School of ECE, College of Engineering, University of Tehran, Iran \\
+    Email: \{mojdeh.karbalaee\}@ut.ac.ir,
+    \vspace{-.2cm}
+  }
+  }
 
-\baselineskip 12pt
+\maketitle
 
-\vspace*{30mm}
-
-\begin{center}
-
-\textbf{\Large Research Plan} \\
-\vspace{10mm}
-\textbf{Department of Electrical and Computer Engineering}\\
-\vspace{20mm}
-{\large University of Oulu}\\
-\vspace{20mm}
-\end{center}
-\vspace{10mm}
-{\scriptsize Provisional title:}\\
-Dynamic Resource Allocation in O-RAN Architecture using Network Slicing\\
-
-\vspace{20mm}
-
-{\scriptsize Candidate name}\\
-Mojdeh Karbalaee Motalleb \\
-\vspace{3mm}
-
-
-
-{\scriptsize Supervisor name:}\\
-Dr. Onel Lopez\\
-\vspace{3mm}
-
-
-\pagebreak
 \begin{abstract}
-Open radio access network (O-RAN) is the next generation of RAN systems introduced by the O-RAN Alliance to increase the flexibility and the openness of the network systems and simultaneously decrease CAPEX and OPEX of mobile operators. The O-RAN system combines and takes advantage of Cloud RAN (C-RAN) and the Virtual RAN (VRAN).
-O-RAN separates RAN into three
-different units, namely Radio Unit (O-RU), Distributed Unit
-(O-DU), and Central Unit (O-CU).
-In this research, we study
-the problem of baseband resource allocation and virtual
-network function (VNF) activation in O-RAN architecture
-based on their service priority for different types of 5G services
-including enhanced mobile broadband (eMBB), ultra-reliable
-low latency communications (uRLLC) and massive Machine
-Type Communications (mMTC) services using intelligent RAN slicing. 
-Network slicing is a promising solution for supporting such heterogeneous and challenging services.
-Deploying network slicing, the isolation of different types of services in O-DU, O-CU, and user plane function (UPF) is performed. The limited
-fronthaul capacity, the restriction of end-to-end delay and the reliability of the services are
-considered at the same time.
-The optimization of baseband
-resources includes O-RU assignment, the assignment of physical resource blocks
-(PRBs), and power allocation. The main problem is a mixed-integer non-linear programming problem that is tremendously difficult. Since the problem has a two-time scale, it can be broken into two layers. On the large-time scale, the problem of obtaining the optimal number of VNF, the placement of VNFs, and the assignment of PRB to the slices are considered. 
-On the small-time scale, there is a problem of obtaining the optimal power of UEs, and the PRB and O-RU assignment.
-To solve the problem, we propose deep reinforcement learning, the deep deterministic policy gradient (DDPG) method, and convex optimization.
+
 \end{abstract}
 \section{Introduction} 
-Open radio access network (O-RAN), as the integration and expansion of cloud RAN (C-RAN) and xRAN, or C-RAN and virtual RAN (vRAN), is expected to be a key technology in 5G networks to enhance the RAN performance extensively. 
-The core idea of C-RAN is to divide the radio remote head (RRU) from the baseband unit (BBU). Also, several BBUs are placed together to create the BBU-pool, providing unified baseband signal processing with powerful computing capabilities. On the other hand, xRAN technology has three fundamental features. The control plane is decoupled from the user plane. Besides, a modular eNB software stack is built to operate on common-off-the-shelf (COTS) hardware. Moreover, open north-bound and south-bound interfaces are introduced.
-O-RAN, as illustrated in Fig. \ref{fig:c11}, separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU). O-RU is a logical node that contains RF and lowers PHY. Moreover, the O-DU expresses another logical node that includes higher PHY, MAC, and RLC. In addition, the O-CU depicts the logical node contains two parts: the O-CU user plane (O-CU-UP) and O-CU control plane (O-CU-CP). O-CU-UP hosts PDCP-UP and SDAP, and O-CU-CP hosts PDCP-CP and RRC. O-DU and O-CU are connected via an open and well-defined interface F1.
-Moreover, O-DU is connected to a radio unit (O-RU) with an open fronthaul interface.
-The architecture of O-RAN contains other principal logical nodes called Orchestration and Automation,
-RAN Intelligent Controller (RIC)- Near Real-Time and O-Cloud. 
-One of the necessities of the new generation of wireless networks is its intelligence.
-Based on the requirement of an intelligent wireless network, O-RAN offers machine learning techniques. The two logical nodes RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC- Near Real-Time, implement the algorithms for network intelligence
-\cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML,lin2021toward}.
+
 \begin{figure*}
   \centering 
     \includegraphics[scale = 0.5]{finalDraw.pdf}
@@ -110,29 +75,12 @@ Based on the requirement of an intelligent wireless network, O-RAN offers machin
 \end{figure*}
 
 
-One of the goals of the next generation of mobile systems is to strictly meet the stringent QoS demands of the different services introduced in 5G , i.e., eMBB, URLLC, and mMTC. Network slicing is a promising solution to obtain the QoS for each type of service. Network slicing contains RAN slicing, core slicing, and both of them together. Efficient slicing of RAN is still challenging due to time-varying network circumstances.
-%Network slicing will propose significant complexity into the performance of systems that causes conventional mathematical model-based procedures to network operation no longer adequate. 
-Network slicing creates considerable complexity in system performance and makes the conventional mathematical methods insufficient to model the network.
-Therefore, it motivates researchers to realize network slicing using machine learning strategies such as deep learning and deep reinforcement learning. So, the network can reach the best control policy according to its experience in the past time slots.
-As mentioned above, network slicing, which contains RAN slicing, core slicing, and the whole, is considered a hot topic for vendors. In addition, the O-RAN system seems to be the next RAN architecture. So, this motivated researchers to study the dynamic RAN slicing in O-RAN architecture to achieve the desired QoS for each service type.
-In addition, according to the high complexity of RAN slicing and incapability of the traditional model-based methods, dynamic machine learning becomes the best solution for these problems.
- Generally, there are two kinds of deep reinforcement learning methods for solving dynamic problems. The first class is value-based such as Deep-Q-Network, and the second class is policy-based problems such as
-deep deterministic policy gradient (DDPG). The first class can only solve the discrete action space problems, which are integer programming. The second class can solve by searching the optimal policy, which is the actor-critic method. Here, we use the second method to solve our problems \cite{alsenwi2021intelligent,yan2019intelligent,mei2021intelligent}.
-\subsection{Related Works} 
-In \cite{mei2021intelligent}, the authors proposes a new intelligent RAN slicing method with two-layered control granularity, which aims at maximizing both the long-term QoS of services and spectrum efficiency (SE) of slices. In this paper, the authors design a RAN slicing strategy with multiple time and
-resource granularities to accommodate the time-varying network conditions and diverse QoS requirements.
-Here, the DDPG method is applied for the lower level and deep Q-network is applied for upper level.
-In paper \cite{rezazadeh2021actor}, an actor-critic methods and a continuous model-free deep reinforcement
-learning (DRL) method is applied to minimize energy consumption and virtual network function (VNF) instantiation cost.
-Multiplexing eMBB and uRLLC services on the same RAN and sharing the resources of these services is challenging, and many researchers pay attention to this issue.
-In \cite{setayesh2020joint,yang2020should}, the problem of resource allocation in the coexistence of URLLC and eMBB services is considered based on their QoS. 
-Paper \cite{alsenwi2021intelligent}, represents a joint convex method and deep reinforcement learning to schedule both eMBB and URLLC services. Here we have two time-scale, a two-phase-framework, including eMBB resource allocation and URLLC scheduling phases.  
-In \cite{saggese2021power}, the problem of power minimization for uRLLC and eMBB services is presented for non-orthogonal multiple access (NOMA) and orthogonal multiple access (OMA).
- In \cite{korrai2020ran}, the authors proposed to allocate RAN resources for the network slicing system in coexistence of eMBB and URLLC services. The system guarantees the latency, the service rate, and the maintenance of reliability.
+
+
 
 \subsection{Main Contributions}
-In this research, as depicted in Figure \ref{fig:c11}, we aim at solving the problem of dynamic network slicing in the O-RAN system. 
-Here, we study a single-cell downlink situation involving multiple network slices that share existing radio sources.
+In this paper, as depicted in Figure \ref{fig:c11}, we aim at solving the problem of dynamic network slicing in the O-RAN system. 
+Here, we examine a single-cell downlink system involving multiple network slices that share existing radio sources.
 The main contributions of
 this research are summarized as follow:
 \begin{itemize}
@@ -148,8 +96,6 @@ A dynamic strategy of resource allocation is required to solve this problem to a
  In the small-time scale, the actor-critic algorithm such as DDPG is applied to the system that is based on control policy search. This method directly searches the optimal control policy
 by estimating of the gradient with respect to the parameters
 of the control policy. In the large-time scale, the deep Q-Network is implemented which is a value based algorithm and it can find best solution for discrete action-state.
-\item 
-We aim to apply transfer learning to the system and study the enhancement of performance and convergence. We can use Q-value transfer learning and action-selection transfer learning, So agents can utilize the knowledge of experts to improve their performance on current tasks\cite{zhou2021learning}. 
 \end{itemize}
 \section{Current State of the Research}
 \subsection{System Model}
@@ -442,98 +388,7 @@ In the Q-learning in each episode we have
 	Q(s_{t+1},a_{t+1}) = Q(s_t,a_t)+\alpha[ r_{t+1} + \gamma \max_{a \in A}{Q(s_{t+1},a)}-Q(s_t,a_t)]
 \end{equation}
 where, $\alpha$ is the learning rate.
-\subsection{Preliminary Numerical Results}
-Here, we simplify the large-time scale problem and indicate the numerical results.
-The numerical results for this problem (which is the VNF placement) can be shown as follow. 
-\begin{subequations}
-	\begin{alignat}{4}
-		\min\limits_{\boldsymbol{Y} }   \quad &   \psi_{tot}(\boldsymbol{Y})(t)\\
-		\text{s. t.} \quad & \textstyle \sum_{d=1}^{D_c} y_{s,d}(t) \geq 1 \quad \forall s, \\
-		&\textstyle  \sum_{s=1}^{S} y_{s,d}(t) \bar{\Omega}_{s}^{tot}  \leq   \tau_{d} \quad  \forall d, \forall ;  \label{eqomega}
-	\end{alignat}
-\end{subequations}
-Suppose we have just one limited resource (CPU in each server). The ratio of the number of the used-servers  with the optimal method to the used-servers with the Q-learning method based on time spent can be shown as figure \ref{fig:dynamicEpoch2}. In this figure, after about 900 epochs, the algorithm converges to the 0.9 of optimal solution.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale = 0.4]{./fig/ratio_episode2} %[width=\linewidth] 
-	\caption{   The ratio of the number of servers used with the optimal method to the servers used using the reinforcement learning method based on time spent}
-	\label{fig:dynamicEpoch2}
-\end{figure}
-Figure \ref{fig:consumptionE}, shows the ratio of the normalized cost to the average number of slices required in the optimal state and the reinforcement learning algorithm.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale = 0.4]{./fig/consumptionE} %[width=\linewidth] 
-	\caption{  The ratio of the normalized cost to the average number of cuts required in the optimal state and the reinforcement learning algorithm }
-	\label{fig:consumptionE}
-\end{figure}
-\section{Research Plan}
-Table \ref{table:1a}, outlines the goals and six-month planning overall.
-\begin{itemize}
-\item Task 1: Complete the system model and problem formulation
-\begin{itemize}
-\color{darkgray}
-\item In this task, we want to study the O-RAN system and the challenges of it, also we want to analyze the machine learning method in the near-time RIC and non real-time RIC to find the best feasible system model and problem formulation
-\end{itemize}
-\item Task 2: Investigate the best solution for our system model
-\begin{itemize}
-\color{darkgray}
-\item In this task, we want to find the best deep reinforcement learning and deep learning method for our system model. We talk a bit about it in the proposed algorithm, but we need to study more about it to find the best solution for our problem and collect the dataset for our system model.
-\end{itemize}
-\item Task 3: Implement the O-RAN system to collect real dataset 
-\begin{itemize}
-\color{darkgray}
-\item In this task, we want to collect a real dataset by implementing the ORAN system for a small cell with low users to obtain a dataset and compare our results with accurate results. O-RAN Alliance and Open network foundation are two different groups that implement the software of the ORAN system. I plan to implement the ORAN system on the server to obtain different datasets and face the challenges of this system. 
-\end{itemize}
-\item Task 4: Obtain the numerical results
-\begin{itemize}
-\color{darkgray}
-\item In this task, we want to obtain the numerical results from different methods and compare them with each other for our paper
-\end{itemize}
-\item Task 5: Generalized our method for other feasible system models
-\begin{itemize}
-\color{darkgray}
-\item In this task, we want to generalized our methods for two time scale  ORAN system models  
-\end{itemize}
-\item Task 6: Write the paper
-\begin{itemize}
-\color{darkgray}
-\item In this task, we want to write and review the paper
-\end{itemize}
-\end{itemize}
 
-\begin{table}
- \caption {Research Plan} \label{table:1a}
- \begin{center}
-  \begin{tabular}{||c c ||}
-  \hline
-Month & Tasks \\ [0.5ex]
-  \hline\hline
-  First Month & Complete the System model for the Intelligent RAN slicing\\
-  \hline
-  Second Month & Find the best method for this system model \\
-  \hline
-  Third Month & Implement the O-RAN system to collect real dataset  \\
-  \hline
-    Fourth Month & Obtain Numerical Results\\
-  \hline
-    Fifth Month & Generalized our method for other feasible ORAN system models\\
-  \hline
-      Sixth Month & Write and review the paper\\
-  \hline
- \end{tabular}
- \end{center}
- \end{table}
-
-\bibliographystyle{IEEEtran} 
+\bibliographystyle{IEEEtran}
 \bibliography{ref}
-%\begin{thebibliography}{9}
-%\bibitem{Hunt}
-%Sally Hunt, ``Making Competition Work in Electricity,'' John Wiley , pp.23-30, Fev, 2002.
-
-
-
-%\end{thebibliography}
-\vspace{20mm}
-
-
-\end{document}
+\end{document} 
