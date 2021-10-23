@@ -110,7 +110,7 @@ Based on the requirement of an intelligent wireless network, O-RAN offers machin
 \end{figure*}
 
 
-One of the goals of the next generation of mobile systems is to strictly meet the stringent QoS demands of the different services introduced in 5G , i.e., eMBB, URLLC, and mMTC. Network slicing is a promising solution to obtain the QoS for each type of service. Network slicing contains RAN slicing, core slicing, and both of them together. Efficient slicing of RAN is still challenging due to time-varying network circumstances.
+One of the goals of the next generation of mobile systems is to strictly meet the stringent QoS demands of the different services introduced in 5G , i.e., eMBB, URLLC, and mMTC. Network slicing is a promising solution to meet the QoS requirements of each type of service. Network slicing contains RAN slicing, core slicing, and both of them together. Efficient slicing of RAN is still challenging due to time-varying network circumstances.
 %Network slicing will propose significant complexity into the performance of systems that causes conventional mathematical model-based procedures to network operation no longer adequate. 
 Network slicing creates considerable complexity in system performance and makes the conventional mathematical methods insufficient to model the network.
 Therefore, it motivates researchers to realize network slicing using machine learning strategies such as deep learning and deep reinforcement learning. So, the network can reach the best control policy according to its experience in the past time slots.
@@ -139,11 +139,11 @@ this research are summarized as follow:
 \item 
 The system has a two-time scale and should be solved in two layers. On a large-time scale, the problem of obtaining an optimal number of VNFs and the VNF placement is performed. Also, the assignment of PRB to the slices is obtained. On a small-time scale, the problem of power allocation, O-RU association and the assignment of PRB to UE in each slice is applied.
 \item 
-We consider three types of services that requires specific QoS: URLLC, which requires low latency and high reliability; eMBB, which needs high data rate; and mMTC, , which demand short-packet connectivity support for a massive number of low-power devices.
+We consider three types of services that requires specific QoS: URLLC, which requires low latency and high reliability; eMBB, which needs high data rate; and mMTC, which demand short-packet connectivity support for a massive number of low-power devices.
 The problem of RAN slicing for different types of services is studied in this research.
 
 \item 
-We consider an intelligent resource allocation in the O-RAN architecture for the different services. Since conventional models do not perform well here because of the heterogeneous QoS requirements of each service type and the complexity of dynamic RAN slicing. So we must switch to machine learning and dynamic methods and find the most suitable approach.  
+We consider an intelligent resource allocation in the O-RAN architecture for the different services. Since conventional models do not perform well here because of the heterogeneous QoS requirements of each service type and the complexity of dynamic RAN slicing. We switch to machine learning and dynamic methods and find the most suitable approach.  
 A dynamic strategy of resource allocation is required to solve this problem to achieve the specific QoS for each type of service in the O-RAN architecture.
  In the small-time scale, the actor-critic algorithm such as DDPG is applied to the system that is based on control policy search. This method directly searches the optimal control policy
 by estimating of the gradient with respect to the parameters
@@ -153,7 +153,7 @@ We aim to apply transfer learning to the system and study the enhancement of per
 \end{itemize}
 \section{Current State of the Research}
 \subsection{System Model}
-Assume we have $S$ preallocated slices serving $S$ services contains eMBB, URLLC, and mMTC services; There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC), and $S_3$ slices for the third service type (mMTC), , thus $S=S_1+S_2+S_3$.
+Assume we have $S$ preallocated isolated slices serving $S$ services contains eMBB, URLLC, and mMTC services; There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC), and $S_3$ slices for the third service type (mMTC), thus $S=S_1+S_2+S_3$.
 Each Service $s\in \{1,2,...,S\} $ consists of $U_{s}$ single-antenna user equipments (UEs) which require certain QoS to be able to use the requested program.
 There are different application requests which fall into one of these service categories. Each application request requires specific QoS. Based on the request for the application and QoS, a UE may be admitted and allocated to the resources.
 Assume each slice $s \in \{1,2,...,S \}$, consists of $K_{s}$, pre-allocated physical resource blocks (PRBs)  obtained in the large-time scale, $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF. 
