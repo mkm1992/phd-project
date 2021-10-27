@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  20 OCT 2021 16:11
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  27 OCT 2021 10:55
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -670,9 +670,6 @@ Before submitting the final camera ready copy, remember to:
 [5] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
