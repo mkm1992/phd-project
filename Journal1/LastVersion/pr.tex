@@ -43,10 +43,12 @@
 \newcommand{\abstracttextfont}{\normalfont\small}
 \setlength{\belowcaptionskip}{-25pt}
 \setlength{\dbltextfloatsep}{-20pt}
+
 \begin{document}
 
 \title{Resource Allocation in an Open RAN System using Network Slicing\vspace{-.1cm}
 }
+%\pagestyle{plain}
 %%%%%%%%%%%%%%%
 %\author{\IEEEauthorblockN{ Mojdeh Karbalaee Motalleb}
 %\IEEEauthorblockA{\textit{School of ECE} \\
@@ -73,24 +75,28 @@
 %    Email: \{mojdeh.karbalaee, vmansouri\}@ut.ac.ir,
 %    \vspace{-.2cm}
 %  }
-\author{Mojdeh Karbalaee Motalleb,~\IEEEmembership{University of Tehran,}
-        Vahid Shah-mansouri,~\IEEEmembership{University of Tehran,}
-        and~Saeede Parsaeefard,~\IEEEmembership{University of Toronto}% <-this % stops a space
-}
+%%\author{Mojdeh Karbalaee Motalleb,~\IEEEmembership{University of Tehran,}
+%%        Vahid Shah-mansouri,~\IEEEmembership{University of Tehran,}
+%%        and~Saeede Parsaeefard,~\IEEEmembership{University of Toronto}% <-this % stops a space
+%%}
+
+\author{Mojdeh Karbalaee Motalleb \and Vahid Shah-mansouri \and Saeede Parsaeefard \\ Email: \{mojdeh.karbalaee, vmansouri\}@ut.ac.ir, \{saeede.parsaeefard\}@gmail.com\\
+\IEEEauthorblockA{School of ECE, University of Tehran, Iran, University of Toronto, Canada}
+ }
+
 
 \maketitle
+\pagenumbering{gobble}
 \vspace*{-6em}
 \begin{abstract}
 \vspace*{-1.5em}
-Taking advantage of virtual Radio access network (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-RAN) is introduced as the next generation of RAN systems. O-RAN leads to increased flexibility and openness and reduces operational costs, enabling new capabilities to be added to the network more quickly.
-O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
-In this paper, we study the problem of baseband resource allocation and virtual network function (VNF) activation in O-RAN architecture based on their service priority for different types of 5G services including enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC) and massive Machine Type Communications (mMTC) services.
-Deploying network slicing, the isolation of different types of services in O-DU, O-CU, and user plane function (UPF) is performed.
+Taking advantage of virtual radio access network (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-RAN) is introduced as the next generation of RAN systems. O-RAN leads to increased flexibility, openness, reduces operational costs, and agile deployment. O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
+In this paper, we study the problem of service aware baseband resource allocation and virtual network function (VNF) activation in O-RAN system using network slicing to isolate different types of services.
 The limited fronthaul capacity and the restriction of end-to-end delay are considered at the same time.
 The optimization of baseband resources includes O-RU assignment, physical resource block (PRB), and power allocation. The main problem is a mixed-integer non-linear programming problem that is non-trivial to solve numerically.
 Nevertheless, we break it down into two different steps where an iterative algorithm finds near optimal solution.
-In the first step, we reformulate and simplify the problem to find the power allocation, PRB assignment, and the number of activated VNFs. In the second step, the O-RU association is achieved.
-The proposed method is confirmed via simulation results which illustrate a higher achievable data rate than a baseline scheme that only optimizes one of the baseband resources and the FBDR algorithm described in the literature. Also, the simulation results demonstrate less end-to-end delay for the proposed method than the FBDR and baseline scheme.   
+In the first step, we reformulate and simplify the problem to find the power allocation, PRB assignment, and the number of VNFs. In the second step, the O-RU association is achieved.
+The proposed method is validated via simulations which illustrate a higher data rate and lower end-to-end delay compared to existing methods. 
 \end{abstract}
 \begin{IEEEkeywords}
 Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slicing.
@@ -337,6 +343,7 @@ So, the mean processing delay for UE $i$ in slice $s$ is $T^{\text{proc}}_{u(s,i
 %\end{equation}
 Hence, for the simplification and focusing on the processing delay, we assume $T^{\text{\text{tot}}}_{u(s,i)} \approx T^{\text{proc}}_{u(s,i)} $. %{\color{red} what results in this approximation?}
 %Furthermore, the mean arrival data rate of the each link ($\textstyle \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$) is approximately equal to others ($\textstyle \alpha_{s} \approx \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$).  
+\vspace*{-1.5em}
 \subsection{VNF Power}
 %{\color{red} Assume the power consumption of the baseband processing, the VNFs cost of a slice $s$ is depicted as $\phi_{s}$. Sentence has no meaning.} 
 Assume the power consumption of each VNF in each logical node (the O-DU, the O-CU, and the UPF) in the slice s, is depicted as $\phi_{s}^d$, $\phi_{s}^c$, and $\phi_{s}^u$, respectively. 
@@ -391,7 +398,9 @@ Also, \eqref{c13} shows that the rate of each UE requesting each type of service
 Also, \eqref{c18} ensures that each PRB can not be assigned to more than one UE associated with the same O-RU.
 In addition, \eqref{c19} indicates that the fixed cost of energy of VNFs in each slice does not exceed the threshold. 
 Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
+\vspace*{-4em}
 \section{Proposed Algorithm}\label{proAlg}
+\vspace*{-1em}
 In this section, we first apply some simplifications to the system; Solving the problem \eqref{problem} is complicated since this is non-convex mixed-integer non-linear problem (MINLP) with a binary variable and an integer variable. 
 We applied some simplifications and use an iterative heuristic algorithm to solve the problem.
 We solve this problem in two levels, iteratively, until it converges \cite{ali2018joint}.
