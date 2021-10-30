@@ -47,7 +47,8 @@
 \vspace{10mm}
 \textbf{Department of Electrical and Computer Engineering}\\
 \vspace{20mm}
-{\large University of Oulu}\\
+%{\large University of Oulu}\\
+{\large University of Tehran}\\
 \vspace{20mm}
 \end{center}
 \vspace{10mm}
@@ -62,8 +63,8 @@ Mojdeh Karbalaee Motalleb \\
 
 
 
-{\scriptsize Supervisor name:}\\
-Dr. Onel Lopez\\
+%{\scriptsize Supervisor name:}\\
+%Dr. Onel Lopez\\
 \vspace{3mm}
 
 
@@ -137,9 +138,9 @@ The main contributions of
 this research are summarized as follow:
 \begin{itemize}
 \item 
-The system has a two-time scale and should be solved in two layers. On a large-time scale, the problem of obtaining an optimal number of VNFs and the VNF placement is performed. Also, the assignment of PRB to the slices is obtained. On a small-time scale, the problem of power allocation, O-RU association and the assignment of PRB to UE in each slice is applied.
+Here, we separate the scheduling into two-time scales. So we considered the two-time scale system and solved it in two layers. On a large time scale, the problem of obtaining an optimal number of VNFs and the VNF placement is performed. Also, the assignment of PRB to the slices is obtained. On a small-time scale, the problem of power allocation, O-RU association, and the assignment of PRB to UE in each slice is applied.
 \item 
-We consider three types of services that requires specific QoS: URLLC, which requires low latency and high reliability; eMBB, which needs high data rate; and mMTC, , which demand short-packet connectivity support for a massive number of low-power devices.
+We consider three types of services that requires specific QoS: i) URLLC, which requires low latency and high reliability; ii) eMBB, which needs high data rate; and iii) mMTC, which demand short-packet connectivity support for a massive number of low-power devices.
 The problem of RAN slicing for different types of services is studied in this research.
 
 \item 
@@ -171,7 +172,7 @@ where $p_{r,u(s,i)}^{k}$ represents the transmission power from O-RU $r$ to $i^{
 ${\bold{h}_{r,u(s,i)}^{k}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
 $r^{th}$ RU to the $i^{th}$ UE in $s^{th}$ slice. In addition, $\bold{w}_{r,u(s,i)}^{k} \in \mathbb{C}^{J}$ depicts the  transmit beamforming vector from $r^{th}$ RU to the $i^{th}$ UE in $s^{th}$ slice that is the zero forcing beamforming vector to minimize the interference which is indicated as below
 \begin{equation}
-\bold{w}_{r,u(s,i)}^{k} = {\bold{h}_{r,u(s,i)}^{k}}({\bold{h}_{r,u(s,i)}^{H \: k}} {\bold{h}_{r,u(s,i)}^{k}})^{-1}
+\bold{w}_{r,u(s,i)}^{k} = {\bold{h}_{r,u(s,i)}^{k}}({\bold{h}_{r,u(s,i)}^{H \: k}} {\bold{h}_{r,u(s,i)}^{k}})^{-1}.
 \end{equation}
 Moreover, $g_{u(s,i)}^r \in \{0,1\}$ is a binary variable that illustrates whether RU $r$ is mapped to the $i^{th}$ UE allocated to $s^{th}$ slice or not. 
 Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{r,u(s,i)}^{k}$ is the power of interfering signals represented as follow
@@ -190,7 +191,7 @@ The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ applica
 \begin{equation}\label{eq1}
 \begin{split}
 \mathcal{R}_{u(s_1,i)}^{e,r} &= \sum_{k=1}^{K_{s_1}} B \log_2({1+ \rho_{r,u(s_1,i)}^{k}})a_{u(s_1,i)} e^k_{r,u(s_1,i)},\\
-\mathcal{R}_{u(s_1,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{e,r} 
+\mathcal{R}_{u(s_1,i)}^{e} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_1,i)}^{e,r},
 \end{split}
 \end{equation}
 where $B$ is the bandwidth of system. 
@@ -198,8 +199,8 @@ $\mathcal{R}_{u(s_1,i)}^{e,r}$ is the achievable rate of each RU $r$ to UE $i$ i
 Since the blocklength in URLLC and mMTC is finite, the achievable data rate for the $i^{th}$ UE request in the $s_{j}^{th} $, $j \in \{2,3\}$ application of service type 2 (URLLC) and 3 (mMTC) is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated as follow
 \begin{equation}\label{eq11}
 \begin{split}
-\mathcal{R}_{u(s_2,i)}^{\mathfrak{u},r} &= \sum_{k=1}^{K_{s_2}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_2,i)}^{k}){\beta}_{u(s_2,i)}^{k}, \quad \mathfrak{u} \in  \{u,m\} \\
-\mathcal{R}_{u(s_1,i)}^{\mathfrak{u}} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_2,i)}^{e,r} 
+\mathcal{R}_{u(s_2,i)}^{\mathfrak{u},r} &= \sum_{k=1}^{K_{s_2}} B (\log_2({1+ \rho_{u(s_2,i)}^{k}})- \zeta_{u(s_2,i)}^{k}){\beta}_{u(s_2,i)}^{k}, \quad \mathfrak{u} \in  \{u,m\}, \\
+\mathcal{R}_{u(s_1,i)}^{\mathfrak{u}} &= \sum_{r=1}^{R}\mathcal{R}_{u(s_2,i)}^{e,r}, 
 \end{split}
 \end{equation}
 where ${\beta}_{u(s_2,i)}^{k}=a_{u(s_2,i)} e^{k}_{u(s_2,i)}$
@@ -228,10 +229,10 @@ Moreover, it can formulated as
 $T = \frac{\mathcal{\alpha}}{R}$, where $R$ is the sum-rate of the packet transmission in each link and $\mathcal{\alpha}$ is the mean arrival data rate of each link.
 So the total transmission delay ($T^{tr}$) is the sum of the transmission delay in the fronthaul $T^{fr,t}$, the midhaul $T^{\text{mid},t}$, and the backhaul $T^{b,t}$.
 In this paper, we focus only on the processing delays to find the optimal number of VNFs, and we ignore the other two delays for simplification;
-So, we assume that the total delay is approximate to the processing delay.
+So, we assume that the total delay is approximate to the processing delay, i.e.,
 %Here we assume the propagation delay and the transmission delay are negligible compared to the processing delay.
 \begin{equation}
-T^{\text{\text{tot}}} \approx T^{\text{proc}}
+T^{\text{\text{tot}}} \approx T^{\text{proc}}.
 \end{equation}
 \subsubsection{Processing Delay}
 Assume the packet arrival of UEs follows a Poisson process with arrival rate $\lambda_{u(s,i)}$ for the $i^{th}$ UE of the $s^{th}$ service (or slice).
@@ -343,12 +344,12 @@ where, $z_d$ is shown that whether the $d^{th}$ DC is active or not and $\psi_d$
     \begin{cases}
       1 & \sum_{s=1}^{S}y_{s,d} \geq 1 \\
       0 & \text{otherwise}
-    \end{cases}       
+    \end{cases}.       
 \end{equation}  
 Here, we assume that if any VNF placed in a server $d$ is used, the server is on and active, otherwise, it is off.
 In addition, $\phi_{s}$ is obtained from below
 \begin{equation}
-\phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M_s^d \phi_s^d
+\phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M_s^d \phi_s^d,
 \end{equation}
 where, $\phi_s^u$, $\phi_s^c$ and $\phi_s^d$ are the static cost of energy in UPF, CU and DU, respectively.
 Here, we want to maximize the energy efficiency $\eta$. 
@@ -393,33 +394,33 @@ Also, \eqref{c18} ensures that each PRB can not be assigned to more than one UE 
 In addition, \eqref{c19} indicates that the fixed cost of energy of VNFs in each slice does not exceed the threshold. 
 Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
 In addition, in \eqref{c14}, the constraint supports that we have enough physical resources for VNFs of each slice.
-\subsection{Proposed Algorithm and Numerical Results}
+\subsection{AI Approaches and Numerical Results}
 Problem \eqref{mainP}, is a two-time scale problem, i.e., large time scale and small time scale. On a large-time scale, we aim to minimize the power of servers and obtain the QoS of slices. The assignment of PRB to slices is implemented in this time scale. In the small-time scale, the assignment of O-RU to UEs and the assignment of PRB of slices to UEs is executed, and the optimal power is obtained.
 In this research, we aim to use the machine learning methods such as deep reinforcement learning and deep learning to train the O-RAN system and have an intelligent system.
 The deep Q-learning is implemented for the large-time scale and 
  the multi-agent deep reinforcement learning contains DDPG (actor-critic algorithm), correlated q-learning, and the priority proportional fairness algorithm will be implemented for the small-time scale. 
 The deep learning algorithms contain LSTM and recurrent neural networks. Also, transfer learning is an exciting way to enhance the performance and convergence of the system.
 The proposed algorithm for the large-time scale is implemented in the following, and part of the numerical results is depicted.
-\subsubsection{Proposed Algorithm}
+\subsection{AI Approaches} \label{AIP}
 Here we use the reinforcement learning method to solve the above two problems.
 In the Q-learning method for the large-time scale, an agent tries to find the optimal value in a specific environment. This interactive process is modeled as a Markov decision-making process that includes $ (S, A, R, P, \gamma) $.
-S represents the state space matrix, and A represents the action vector. R is also the reward of action. $ P (. | S, a) $ is the probability of transfer and $ \gamma \in (0,1] $ is the discount factor.  The $ \Pi (. | S) $ policy is a mapping of the state to the distribution of actions. The value-state function for state s under policy $ \Pi (. | S) $ with $ V^{\Pi} (s) $ indicates that the expected return value in state s under policy $ \Pi (. | S) ) $. The value of performing operation a in state s under the $ \Pi (. | S) $ policy is represented by $ Q ^ {\Pi} (s, a) $. We have the following relations on this basis.
+S represents the state space matrix, and A represents the action vector. R is also the reward of action. $ P (. | S, a) $ is the probability of transfer and $ \gamma \in (0,1] $ is the discount factor.  The $ \Pi (. | S) $ policy is a mapping of the state to the distribution of actions. The value-state function for state s under policy $ \Pi (. | S) $ with $ V^{\Pi} (s) $ indicates that the expected return value in state s under policy $ \Pi (. | S) ) $. The value of performing operation a in state s under the $ \Pi (. | S) $ policy is represented by $ Q ^ {\Pi} (s, a) $. We have the following relations on this basis:
 \begin{equation}
-	V^{\Pi}(s) = \mathbb{E}_{\Pi,P}[\sum_{t=0}^{\infty}\gamma^tR_t|S_0=s]
+	V^{\Pi}(s) = \mathbb{E}_{\Pi,P}[\sum_{t=0}^{\infty}\gamma^tR_t|S_0=s],
  \end{equation}
- The Q-value is as below.
+ The Q-value is as follows
  \begin{equation}
 	Q^{\Pi}(s,a) = \mathbb{E}_{\Pi,P}[\sum_{t=0}^{\infty}\gamma^tR_t|S_0=s,A_0=a].
 \end{equation}
  
-  $\mathbb{E}$ represented the statistical average. 
- Based on the Bellman equation we have
+ Here $\mathbb{E}$ represents the statistical average. 
+ Based on the Bellman equation, we have
  \begin{equation}
-	V^{\Pi}(s) = \mathbb{E}_{\Pi,P}[R+\gamma V^{\Pi}(s')]
+	V^{\Pi}(s) = \mathbb{E}_{\Pi,P}[R+\gamma V^{\Pi}(s')],
 \end{equation}  
  and also, 
    \begin{equation}
-  	Q^{\Pi}(s,a) = \mathbb{E}_{\Pi,P}[R+\gamma Q^{\Pi}(s',a')]
+  	Q^{\Pi}(s,a) = \mathbb{E}_{\Pi,P}[R+\gamma Q^{\Pi}(s',a')],
   \end{equation}  
   where, $s'$ and $a'$ can be obtained from $\Pi(.|s')$ and $P(.|s,a)$.
 The goal of reinforcement learnin is to obtain the optimal policy to maximize the $Q^{\Pi}(s,a)$.
@@ -429,7 +430,7 @@ So, using Bellman equation, we have
 \end{equation} 
 Also, $T^*$ is the Bellman operator
 \begin{equation}
-	T^{*}Q(s,a) = \mathbb{E}_{\Pi^*,P}[R+\gamma Q(s',a')]
+	T^{*}Q(s,a) = \mathbb{E}_{\Pi^*,P}[R+\gamma Q(s',a')].
 \end{equation} 
 By using this operator iteratively, 
 $Q_{t+1}(s,a) \leftarrow T^{*}Q(s,a) $
@@ -439,7 +440,7 @@ $Q_{t}(s,a) \rightarrow Q^*(s,a)$.
 \cite{montague1999reinforcement,gan1}.
 In the Q-learning in each episode we have
 \begin{equation}
-	Q(s_{t+1},a_{t+1}) = Q(s_t,a_t)+\alpha[ r_{t+1} + \gamma \max_{a \in A}{Q(s_{t+1},a)}-Q(s_t,a_t)]
+	Q(s_{t+1},a_{t+1}) = Q(s_t,a_t)+\alpha[ r_{t+1} + \gamma \max_{a \in A}{Q(s_{t+1},a)}-Q(s_t,a_t)],
 \end{equation}
 where, $\alpha$ is the learning rate.
 \subsection{Preliminary Numerical Results}
@@ -449,7 +450,7 @@ The numerical results for this problem (which is the VNF placement) can be shown
 	\begin{alignat}{4}
 		\min\limits_{\boldsymbol{Y} }   \quad &   \psi_{tot}(\boldsymbol{Y})(t)\\
 		\text{s. t.} \quad & \textstyle \sum_{d=1}^{D_c} y_{s,d}(t) \geq 1 \quad \forall s, \\
-		&\textstyle  \sum_{s=1}^{S} y_{s,d}(t) \bar{\Omega}_{s}^{tot}  \leq   \tau_{d} \quad  \forall d, \forall ;  \label{eqomega}
+		&\textstyle  \sum_{s=1}^{S} y_{s,d}(t) \bar{\Omega}_{s}^{tot}  \leq   \tau_{d} \quad  \forall d;  \label{eqomega}
 	\end{alignat}
 \end{subequations}
 Suppose we have just one limited resource (CPU in each server). The ratio of the number of the used-servers  with the optimal method to the used-servers with the Q-learning method based on time spent can be shown as figure \ref{fig:dynamicEpoch2}. In this figure, after about 900 epochs, the algorithm converges to the 0.9 of optimal solution.
@@ -472,32 +473,32 @@ Table \ref{table:1a}, outlines the goals and six-month planning overall.
 \item Task 1: Complete the system model and problem formulation
 \begin{itemize}
 \color{darkgray}
-\item In this task, we want to study the O-RAN system and the challenges of it, also we want to analyze the machine learning method in the near-time RIC and non real-time RIC to find the best feasible system model and problem formulation
+\item In this task, we want to study the O-RAN system and the corresponding challenges. Also, we want to analyze the machine learning method in the near real-time RIC and non real-time RIC to find the best feasible system model and problem formulation.
 \end{itemize}
-\item Task 2: Investigate the best solution for our system model
+\item Task 2: Investigate the suitable solution for our system model
 \begin{itemize}
 \color{darkgray}
-\item In this task, we want to find the best deep reinforcement learning and deep learning method for our system model. We talk a bit about it in the proposed algorithm, but we need to study more about it to find the best solution for our problem and collect the dataset for our system model.
+\item In this task, we want to find the suitable deep reinforcement learning and deep learning methods for our system model. We have some preliminary ideas as discussed in Section \ref{AIP}, but we need to study more about it to find the best solution for our problem and collect the dataset for our system model.
 \end{itemize}
 \item Task 3: Implement the O-RAN system to collect real dataset 
 \begin{itemize}
 \color{darkgray}
-\item In this task, we want to collect a real dataset by implementing the ORAN system for a small cell with low users to obtain a dataset and compare our results with accurate results. O-RAN Alliance and Open network foundation are two different groups that implement the software of the ORAN system. I plan to implement the ORAN system on the server to obtain different datasets and face the challenges of this system. 
+\item In this task, we want to collect a real dataset by implementing the ORAN system for a small cell with few users to obtain a dataset and compare our simulation results with actual results obtained from the real implementation of ORAN. O-RAN Alliance and Open network foundation are two different groups that implement the software of the ORAN system. I plan to implement the ORAN system on the server to obtain different datasets and face the challenges of this system. 
 \end{itemize}
 \item Task 4: Obtain the numerical results
 \begin{itemize}
 \color{darkgray}
-\item In this task, we want to obtain the numerical results from different methods and compare them with each other for our paper
+\item In this task, we want to obtain the numerical results from different methods and compare them with each other for our paper.
 \end{itemize}
-\item Task 5: Generalized our method for other feasible system models
+\item Task 5: Generalize our method for other feasible system models
 \begin{itemize}
 \color{darkgray}
-\item In this task, we want to generalized our methods for two time scale  ORAN system models  
+\item In this task, we want to generalize our methods for two-time scale ORAN system models.  For instance, we consider generalizing the system model with other parameters such as UE admission, priority, and reliability.  
 \end{itemize}
 \item Task 6: Write the paper
 \begin{itemize}
 \color{darkgray}
-\item In this task, we want to write and review the paper
+\item In this task, we want to write, review and finally submit the paper.
 \end{itemize}
 \end{itemize}
 
@@ -516,9 +517,9 @@ Month & Tasks \\ [0.5ex]
   \hline
     Fourth Month & Obtain Numerical Results\\
   \hline
-    Fifth Month & Generalized our method for other feasible ORAN system models\\
+    Fifth Month & Generalize our method for other feasible ORAN system models\\
   \hline
-      Sixth Month & Write and review the paper\\
+      Sixth Month & Write, review and finally submit the paper\\
   \hline
  \end{tabular}
  \end{center}
