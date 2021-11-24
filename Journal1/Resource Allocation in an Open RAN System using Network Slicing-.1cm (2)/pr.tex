@@ -98,10 +98,12 @@ The proposed method is validated via simulations which illustrate a higher data 
 Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slicing.
 \end{IEEEkeywords}
 \section{Introduction} 
-One of the fifth-generation goals of the wireless cellular networks  is to achieve the desired QoS (such as rate, delay, power, ...) for different types of services. Network slicing is the best solution for this aim. A network slice is an end-to-end logical network that offers services with specific needs.  
+One of the fifth-generation goals of the wireless cellular networks  is to achieve the desired QoS (such as rate, delay, power, ...) for different types of services. Network slicing is the best solution for this aim. 
+Network slicing can support the heterogeneity of services by allocating different resources to each slice serving specific services to guarantee QoS, and isolating each service from the other services.
+A network slice is an end-to-end logical network that offers services with specific needs.  
 Multiple isolated network slices run, manage, and work independently on the same infrastructure. 
 Several implementations of network slicing include core slicing, RAN slicing, and slicing of both sections. 
-Three types of services are introduced for 5th generation celluar networks, namely, enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive Machine Type Communications (mMTC) services. Each type of service requires a particular slice of network based on its QoS.
+5G wireless systems have talked about supporting three generic services in recent years, namely, enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive Machine Type Communications (mMTC) services. Each type of service requires a particular slice of network based on its QoS.
 eMBB requires a higher transmission data rate in comparison with 4G systems. Moreover, eMBB service satisfies the demands of high capacity and throughput coverage.
 URLLC requires low latency  and high reliability. URLLC contains services such as autonomous vehicles, tactile internet, or remote surgery.
 mMTC consists of a vast number of low power internet of things (IoT) devices transmitting small payloads to a typical receiver. In addition, mMTC UEs include sensors for sensing, metering, and monitoring devices 
@@ -143,7 +145,10 @@ Also, transmission and processing delay are modeled based on M/M/1 queuing theor
 In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power allocation and RRH association in the H-CRAN system is considered to maximize energy efficiency.
 In \cite{amani2019power}, optimum power is obtained in massive MIMO aided C-RAN. Also the problem of RRH to BBU and the RRH to UE association is obtained. Moreover, the author talked about the feasible region to make the initial values possible.
 \subsection{Main Contributions}
-This study aims to optimize baseband resource allocation i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform. In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The main contributions of this paper are summarized as follow:
+The purpose of this study is to optimize baseband resource allocation i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
+Unlike other papers, we concentrate more on the multiservice resource management of the RAN slicing in the openness and flexible O-RAN system.
+The novelty of this paper is to improve the resource utilization of the overall wireless O-RAN system in the presents of the three generic service types introduced in 5G using RAN slicing.
+In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The main contributions of this paper are summarized as follow:
 \begin{itemize}
 \item This paper depicts a network slicing model for three different types of services introduced in 5G, i.e., eMBB, mMTC, and URLLC. The problem of radio resource allocation and VNF activation is studied in this paper in the O-RAN architecture.
 We formulate the problem of baseband resource allocation to maximize the weighted throughput of the O-RAN system for a different types of services with specific QoS. 
@@ -172,7 +177,7 @@ The rest of this paper is organized as follows. The system model and the problem
 
 \section{System Model and Problem Formulation}\label{systemmodel}
 
-In this section, we describe the downlink system in O-RAN with slicing as depicted in Figure \ref{fig:c11}. 
+In this section, we describe the downlink system in O-RAN using RAN slicing as depicted in Figure \ref{fig:c11}. 
 Firstly, we present the system model. Then, we obtain achievable data rates, power of O-RU, and the fronthaul capacity for the downlink (DL) of the ORAN system. Afterward, we discuss the mean delay and the power of VNFs.
 Finally, the main problem is expressed.
 \subsection{System Model}

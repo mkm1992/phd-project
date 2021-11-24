@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  22 NOV 2021 19:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  23 NOV 2021 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,60 +839,47 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
 [3] [4]
-<finalDraw.pdf, id=22, 731.73375pt x 406.51875pt>
+<finalDraw.pdf, id=21, 731.73375pt x 406.51875pt>
 File: finalDraw.pdf Graphic file (type pdf)
 <use finalDraw.pdf>
-Package pdftex.def Info: finalDraw.pdf  used on input line 164.
+Package pdftex.def Info: finalDraw.pdf  used on input line 169.
 (pdftex.def)             Requested size: 439.04364pt x 243.91312pt.
 
-Underfull \vbox (badness 2573) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./finalDraw.pdf, page is rotated 90 degrees>] [6]
+ [5]
+[6 <./finalDraw.pdf, page is rotated 90 degrees>]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 202.
+d on input line 207.
 
 [7]
-LaTeX Font Info:    Try loading font information for U+euf on input line 228.
+LaTeX Font Info:    Try loading font information for U+euf on input line 233.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-[9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4699) has occurred while \output is active []
 
- [10]
-[11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
-[13]
-** ATTENTION: \proof is deprecated (line 450). Use \IEEEproof instead.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
+ [9]
+[10] [11] [12] [13] [14]
+** ATTENTION: \proof is deprecated (line 455). Use \IEEEproof instead.
+[15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
-** ATTENTION: \proof is deprecated (line 550). Use \IEEEproof instead.
-
+** ATTENTION: \proof is deprecated (line 555). Use \IEEEproof instead.
+[17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
-Underfull \vbox (badness 1082) has occurred while \output is active []
 
  [18]
 [19] [20]
 <cell.pdf, id=106, 463.7325pt x 406.3983pt>
 File: cell.pdf Graphic file (type pdf)
 <use cell.pdf>
-Package pdftex.def Info: cell.pdf  used on input line 807.
+Package pdftex.def Info: cell.pdf  used on input line 812.
 (pdftex.def)             Requested size: 148.39742pt x 130.05011pt.
  [21] [22 <./cell.pdf>] [23]
 Package epstopdf Info: Source file: <Arate_ue1.eps>
@@ -903,16 +890,16 @@ Package epstopdf Info: Source file: <Arate_ue1.eps>
 (epstopdf)                    size: 15604 bytes
 (epstopdf)             Command: <repstopdf --outfile=Arate_ue1-eps-converted-to
 .pdf Arate_ue1.eps>
-(epstopdf)             \includegraphics on input line 886.
+(epstopdf)             \includegraphics on input line 891.
 Package epstopdf Info: Output file is already uptodate.
 <Arate_ue1-eps-converted-to.pdf, id=137, 598.235pt x 402.50375pt>
 File: Arate_ue1-eps-converted-to.pdf Graphic file (type pdf)
 <use Arate_ue1-eps-converted-to.pdf>
-Package pdftex.def Info: Arate_ue1-eps-converted-to.pdf  used on input line 886
+Package pdftex.def Info: Arate_ue1-eps-converted-to.pdf  used on input line 891
 .
 (pdftex.def)             Requested size: 239.28975pt x 160.99864pt.
 
-Overfull \hbox (34.04591pt too wide) in paragraph at lines 886--887
+Overfull \hbox (34.04591pt too wide) in paragraph at lines 891--892
 [][] 
  []
 
@@ -924,15 +911,15 @@ Package epstopdf Info: Source file: <vnfNum1.eps>
 (epstopdf)                    size: 15538 bytes
 (epstopdf)             Command: <repstopdf --outfile=vnfNum1-eps-converted-to.p
 df vnfNum1.eps>
-(epstopdf)             \includegraphics on input line 892.
+(epstopdf)             \includegraphics on input line 897.
 Package epstopdf Info: Output file is already uptodate.
 <vnfNum1-eps-converted-to.pdf, id=138, 557.08125pt x 402.50375pt>
 File: vnfNum1-eps-converted-to.pdf Graphic file (type pdf)
 <use vnfNum1-eps-converted-to.pdf>
-Package pdftex.def Info: vnfNum1-eps-converted-to.pdf  used on input line 892.
+Package pdftex.def Info: vnfNum1-eps-converted-to.pdf  used on input line 897.
 (pdftex.def)             Requested size: 222.82855pt x 160.99864pt.
 
-Overfull \hbox (17.58472pt too wide) in paragraph at lines 892--895
+Overfull \hbox (17.58472pt too wide) in paragraph at lines 897--900
 [][] 
  []
 
@@ -944,16 +931,16 @@ Package epstopdf Info: Source file: <RatePower1.eps>
 (epstopdf)                    size: 13540 bytes
 (epstopdf)             Command: <repstopdf --outfile=RatePower1-eps-converted-t
 o.pdf RatePower1.eps>
-(epstopdf)             \includegraphics on input line 946.
+(epstopdf)             \includegraphics on input line 951.
 Package epstopdf Info: Output file is already uptodate.
 <RatePower1-eps-converted-to.pdf, id=139, 557.08125pt x 402.50375pt>
 File: RatePower1-eps-converted-to.pdf Graphic file (type pdf)
 <use RatePower1-eps-converted-to.pdf>
-Package pdftex.def Info: RatePower1-eps-converted-to.pdf  used on input line 94
-6.
+Package pdftex.def Info: RatePower1-eps-converted-to.pdf  used on input line 95
+1.
 (pdftex.def)             Requested size: 222.82855pt x 160.99864pt.
 
-Overfull \hbox (17.58472pt too wide) in paragraph at lines 946--947
+Overfull \hbox (17.58472pt too wide) in paragraph at lines 951--952
 [][] 
  []
 
@@ -965,16 +952,16 @@ Package epstopdf Info: Source file: <delay_new.eps>
 (epstopdf)                    size: 13937 bytes
 (epstopdf)             Command: <repstopdf --outfile=delay_new-eps-converted-to
 .pdf delay_new.eps>
-(epstopdf)             \includegraphics on input line 952.
+(epstopdf)             \includegraphics on input line 957.
 Package epstopdf Info: Output file is already uptodate.
 <delay_new-eps-converted-to.pdf, id=140, 557.08125pt x 402.50375pt>
 File: delay_new-eps-converted-to.pdf Graphic file (type pdf)
 <use delay_new-eps-converted-to.pdf>
-Package pdftex.def Info: delay_new-eps-converted-to.pdf  used on input line 952
+Package pdftex.def Info: delay_new-eps-converted-to.pdf  used on input line 957
 .
 (pdftex.def)             Requested size: 222.82855pt x 160.99864pt.
 
-Overfull \hbox (17.58472pt too wide) in paragraph at lines 952--953
+Overfull \hbox (17.58472pt too wide) in paragraph at lines 957--958
 [][] 
  []
 
@@ -986,16 +973,16 @@ Package epstopdf Info: Source file: <delay1_new.eps>
 (epstopdf)                    size: 13075 bytes
 (epstopdf)             Command: <repstopdf --outfile=delay1_new-eps-converted-t
 o.pdf delay1_new.eps>
-(epstopdf)             \includegraphics on input line 997.
+(epstopdf)             \includegraphics on input line 1002.
 Package epstopdf Info: Output file is already uptodate.
 <delay1_new-eps-converted-to.pdf, id=141, 557.08125pt x 402.50375pt>
 File: delay1_new-eps-converted-to.pdf Graphic file (type pdf)
 <use delay1_new-eps-converted-to.pdf>
-Package pdftex.def Info: delay1_new-eps-converted-to.pdf  used on input line 99
-7.
+Package pdftex.def Info: delay1_new-eps-converted-to.pdf  used on input line 10
+02.
 (pdftex.def)             Requested size: 222.82855pt x 160.99864pt.
 
-Overfull \hbox (17.58472pt too wide) in paragraph at lines 997--998
+Overfull \hbox (17.58472pt too wide) in paragraph at lines 1002--1003
 [][] 
  []
 
@@ -1007,16 +994,16 @@ Package epstopdf Info: Source file: <AmmTCpower.eps>
 (epstopdf)                    size: 13435 bytes
 (epstopdf)             Command: <repstopdf --outfile=AmmTCpower-eps-converted-t
 o.pdf AmmTCpower.eps>
-(epstopdf)             \includegraphics on input line 1003.
+(epstopdf)             \includegraphics on input line 1008.
 Package epstopdf Info: Output file is already uptodate.
 <AmmTCpower-eps-converted-to.pdf, id=142, 654.445pt x 399.4925pt>
 File: AmmTCpower-eps-converted-to.pdf Graphic file (type pdf)
 <use AmmTCpower-eps-converted-to.pdf>
 Package pdftex.def Info: AmmTCpower-eps-converted-to.pdf  used on input line 10
-03.
+08.
 (pdftex.def)             Requested size: 235.60002pt x 143.81718pt.
 
-Overfull \hbox (30.35619pt too wide) in paragraph at lines 1003--1004
+Overfull \hbox (30.35619pt too wide) in paragraph at lines 1008--1009
 [][] 
  []
 
@@ -1028,17 +1015,16 @@ Package epstopdf Info: Source file: <priorityLast.eps>
 (epstopdf)                    size: 12683 bytes
 (epstopdf)             Command: <repstopdf --outfile=priorityLast-eps-converted
 -to.pdf priorityLast.eps>
-(epstopdf)             \includegraphics on input line 1029.
+(epstopdf)             \includegraphics on input line 1034.
 Package epstopdf Info: Output file is already uptodate.
 <priorityLast-eps-converted-to.pdf, id=143, 557.08125pt x 402.50375pt>
 File: priorityLast-eps-converted-to.pdf Graphic file (type pdf)
 <use priorityLast-eps-converted-to.pdf>
 Package pdftex.def Info: priorityLast-eps-converted-to.pdf  used on input line 
-1029.
+1034.
 (pdftex.def)             Requested size: 222.82855pt x 160.99864pt.
 [24 <./Arate_ue1-eps-converted-to.pdf> <./vnfNum1-eps-converted-to.pdf>]
-[25 <./RatePower1-eps-converted-to.pdf> <./delay_new-eps-converted-to.pdf> <./d
-elay1_new-eps-converted-to.pdf> <./AmmTCpower-eps-converted-to.pdf>]
+[25 <./RatePower1-eps-converted-to.pdf> <./delay_new-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <iter.eps>
 (epstopdf)                    date: 2021-11-22 14:35:38
 (epstopdf)                    size: 27088 bytes
@@ -1047,15 +1033,15 @@ Package epstopdf Info: Source file: <iter.eps>
 (epstopdf)                    size: 12746 bytes
 (epstopdf)             Command: <repstopdf --outfile=iter-eps-converted-to.pdf 
 iter.eps>
-(epstopdf)             \includegraphics on input line 1090.
+(epstopdf)             \includegraphics on input line 1095.
 Package epstopdf Info: Output file is already uptodate.
-<iter-eps-converted-to.pdf, id=203, 557.08125pt x 402.50375pt>
+<iter-eps-converted-to.pdf, id=186, 557.08125pt x 402.50375pt>
 File: iter-eps-converted-to.pdf Graphic file (type pdf)
 <use iter-eps-converted-to.pdf>
-Package pdftex.def Info: iter-eps-converted-to.pdf  used on input line 1090.
+Package pdftex.def Info: iter-eps-converted-to.pdf  used on input line 1095.
 (pdftex.def)             Requested size: 222.82855pt x 160.99864pt.
 
-Overfull \hbox (17.58472pt too wide) in paragraph at lines 1090--1091
+Overfull \hbox (17.58472pt too wide) in paragraph at lines 1095--1096
 [][] 
  []
 
@@ -1067,20 +1053,21 @@ Package epstopdf Info: Source file: <optimal1.eps>
 (epstopdf)                    size: 12785 bytes
 (epstopdf)             Command: <repstopdf --outfile=optimal1-eps-converted-to.
 pdf optimal1.eps>
-(epstopdf)             \includegraphics on input line 1096.
+(epstopdf)             \includegraphics on input line 1101.
 Package epstopdf Info: Output file is already uptodate.
-<optimal1-eps-converted-to.pdf, id=204, 557.08125pt x 402.50375pt>
+<optimal1-eps-converted-to.pdf, id=187, 557.08125pt x 402.50375pt>
 File: optimal1-eps-converted-to.pdf Graphic file (type pdf)
 <use optimal1-eps-converted-to.pdf>
-Package pdftex.def Info: optimal1-eps-converted-to.pdf  used on input line 1096
+Package pdftex.def Info: optimal1-eps-converted-to.pdf  used on input line 1101
 .
 (pdftex.def)             Requested size: 222.82855pt x 160.99864pt.
 
-Overfull \hbox (17.58472pt too wide) in paragraph at lines 1096--1097
+Overfull \hbox (17.58472pt too wide) in paragraph at lines 1101--1102
 [][] 
  []
 
-[26 <./priorityLast-eps-converted-to.pdf>]
+[26 <./delay1_new-eps-converted-to.pdf> <./AmmTCpower-eps-converted-to.pdf> <./
+priorityLast-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <interF_new.eps>
 (epstopdf)                    date: 2021-11-22 14:35:38
 (epstopdf)                    size: 23995 bytes
@@ -1089,16 +1076,16 @@ Package epstopdf Info: Source file: <interF_new.eps>
 (epstopdf)                    size: 13175 bytes
 (epstopdf)             Command: <repstopdf --outfile=interF_new-eps-converted-t
 o.pdf interF_new.eps>
-(epstopdf)             \includegraphics on input line 1123.
+(epstopdf)             \includegraphics on input line 1128.
 Package epstopdf Info: Output file is already uptodate.
 <interF_new-eps-converted-to.pdf, id=216, 647.41875pt x 424.58624pt>
 File: interF_new-eps-converted-to.pdf Graphic file (type pdf)
 <use interF_new-eps-converted-to.pdf>
 Package pdftex.def Info: interF_new-eps-converted-to.pdf  used on input line 11
-23.
+28.
 (pdftex.def)             Requested size: 226.59995pt x 148.6074pt.
 
-Overfull \hbox (21.35611pt too wide) in paragraph at lines 1123--1124
+Overfull \hbox (21.35611pt too wide) in paragraph at lines 1128--1129
 [][] 
  []
 
@@ -1110,58 +1097,55 @@ Package epstopdf Info: Source file: <FA.eps>
 (epstopdf)                    size: 12292 bytes
 (epstopdf)             Command: <repstopdf --outfile=FA-eps-converted-to.pdf FA
 .eps>
-(epstopdf)             \includegraphics on input line 1129.
+(epstopdf)             \includegraphics on input line 1134.
 Package epstopdf Info: Output file is already uptodate.
 <FA-eps-converted-to.pdf, id=217, 647.41875pt x 424.58624pt>
 File: FA-eps-converted-to.pdf Graphic file (type pdf)
 <use FA-eps-converted-to.pdf>
-Package pdftex.def Info: FA-eps-converted-to.pdf  used on input line 1129.
+Package pdftex.def Info: FA-eps-converted-to.pdf  used on input line 1134.
 (pdftex.def)             Requested size: 226.59995pt x 148.6074pt.
 
-Overfull \hbox (21.35611pt too wide) in paragraph at lines 1129--1130
+Overfull \hbox (21.35611pt too wide) in paragraph at lines 1134--1135
 [][] 
  []
 
-(./pr.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27 <./iter-eps-converted-to.pdf> <./optimal1-eps-converted-to.pdf>] [28 <./in
-terF_new-eps-converted-to.pdf> <./FA-eps-converted-to.pdf>]
-Underfull \vbox (badness 2762) has occurred while \output is active []
+Underfull \vbox (badness 3302) has occurred while \output is active []
 
- [29])
-[30] (./pr.aux) ) 
+ [27 <./iter-eps-converted-to.pdf> <./optimal1-eps-converted-to.pdf>] (./pr.bbl
+ [28 <./interF_new-eps-converted-to.pdf> <./FA-eps-converted-to.pdf>] [29]) [30
+] (./pr.aux) ) 
 Here is how much of TeX's memory you used:
  9530 strings out of 492649
  141543 string characters out of 6133384
- 225515 words of memory out of 5000000
+ 223515 words of memory out of 5000000
  13173 multiletter control sequences out of 15000+600000
  112205 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,21n,84p,921b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/201
-8/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2018/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-b10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.
-pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2018/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
-fb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufb10.pfb><c:
-/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2018/
-texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utm
-ri8a.pfb>
-Output written on pr.pdf (30 pages, 515886 bytes).
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb
+><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufb10.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2018/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type
+1/urw/times/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8
+a.pfb>
+Output written on pr.pdf (30 pages, 516293 bytes).
 PDF statistics:
  336 PDF objects out of 1000 (max. 8388607)
  227 compressed objects within 3 object streams
