@@ -162,7 +162,6 @@ The two-step iterative algorithm is presented for the resource management framew
 For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.
 \item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
 \end{itemize}  
-
 \begin{figure*}
   \centering 
   \captionsetup{justification=centering}
@@ -172,11 +171,8 @@ For the second step, the problem of O-RU association can be converted to a multi
   \caption{Network sliced ORAN system}
   \label{fig:c11}
 \end{figure*}
-
 The rest of this paper is organized as follows. The system model and the problem formulation are described in Section \ref{systemmodel}. The details of our proposed resource management algorithm are introduced in Section \ref{proAlg}. In Section \ref{NE}, numerical results are provided to evaluate the performance of the proposed algorithm. Section \ref{conc} concludes the  paper.
-
 \section{System Model and Problem Formulation}\label{systemmodel}
-
 In this section, we describe the downlink system in O-RAN using RAN slicing as depicted in Figure \ref{fig:c11}. 
 Firstly, we present the system model. Then, we obtain achievable data rates, power of O-RU, and the fronthaul capacity for the downlink (DL) of the ORAN system. Afterward, we discuss the mean delay and the power of VNFs.
 Finally, the main problem is expressed.
@@ -191,10 +187,14 @@ Each pre-allocated slice contains reserved VNFs for the three logical nodes:
 \item The UPF logical node
 \end{itemize}
 
- There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC), and $S_3$ slices for the third service type (mMTC). So, each service request $s\in \{1,\ldots,S\}$ is served by its corresponding slice.
+There are $S_1$ slices for the first service type (eMBB), $S_2$ slices for the second service type (URLLC), and $S_3$ slices for the third service type (mMTC). So, each service request $s\in \{1,\ldots,S\}$ is served by its corresponding slice. So we have 
+$\{1,2,...,S_1\}$ set of eMBB service instances, $\{1,2,...,S_2\}$ set of URLLC service instances, and
+$\{1,2,...,S_3\}$ set of mMTC service instances.
 Each Service $s_j\in \{1,2,...,S_j\} $ consists of $U_{s_j}$ requests from  single-antenna UEs which require certain level of QoS. We notice that $j \in \{1,2,3\}$ indicates the service type.
 There are different application requests which fall into one of these service categories. Each application request requires a specific QoS. Based on the application and QoS request, UE may be admitted and allocated to the resources.
-Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2,3\}$ consists of  $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF are required.
+Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2,3\}$ consists of  $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF. 
+The VNFs of O-DU, O-CU-UP, and UPF are interconnected, defined as the Service Function Chain (SFC) in the O-RAN system.
+
 Assume we have $K$ physical resource blocks (PRBs) in this system.
 All $K$ PRBs can be assigned to all UEs in each service.
 Also, each VNF instance runs on a virtual machine (VM) that uses resources from the data centers.
@@ -210,8 +210,15 @@ where $p_{r,u(s,i)}^{k}$ represents the transmission power from O-RU $r$ to the 
 ${\bold{h}_{r,u(s,i)}^{k}} \in \mathbb{C}^{J}$ is the vector of channel gain of a wireless link from 
 $r^{th}$ O-RU to the $i^{th}$ UE in $s^{th}$ slice. In addition, $\bold{w}_{r,u(s,i)}^{k} \in \mathbb{C}^{J}$ depicts the  transmit beamforming vector from $r^{th}$ O-RU to the $i^{th}$ UE in $s^{th}$ slice that is the zero forcing beamforming vector to minimize the interference which is indicated as below
 \begin{equation}
-\bold{w}_{r,u(s,i)}^{k} = {\bold{h}_{r,u(s,i)}^{k}}({\bold{h}_{r,u(s,i)}^{H \: k}} {\bold{h}_{r,u(s,i)}^{k}})^{-1}
+\bold{w}_{r,u(s,i)}^{k} = \hat{\bold{h}}_{r,u(s,i)}^{k}(\hat{\bold{h}}_{r,u(s,i)}^{H \: k} \hat{\bold{h}}_{r,u(s,i)}^{k})^{-1}
 \end{equation}
+
+The channel state information is imperfect. So, the channel gain is known with errors; the imperfection of channel estimation is shown as
+$\hat{\boldsymbol{h}}_{r,u(s,i)} = \boldsymbol{h}_{r,u(s,i)} + \Delta \boldsymbol{h}_{r,u(s,i)}$.
+$\Delta \boldsymbol{h}_{r,u(s,i)}$ indicates the estimating error vector with a Gaussian distribution of
+$\Delta \boldsymbol{h}_{r,u(s,i)}\backsim \mathcal{N}(0,\boldsymbol{\phi}_{r,u(s,i)}^2)$.
+where $\boldsymbol{\phi}_{r,u(s,i)} = \text{diag}(\phi_{r,u(s,i)},\ldots,\phi_{r,u(s,i)}).$
+
 Moreover, $g_{u(s,i)}^r \in \{0,1\}$ is the binary variable that illustrates whether O-RU $r$ served the $i^{th}$ UE that is allocated to $s^{th}$ slice or not. 
 %Here, it is assumed that each UE is served by the nearest o-RU
 Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{r,u(s,i)}^{k}$ is the power of interfering signals represented as follow
@@ -287,7 +294,7 @@ Suppose the mean total delay is depicted as $T_{\text{\text{tot}}}$,
 T^{\text{\text{tot}}} &=  T^{\text{proc}} + T^{tr} + T^{\text{pro}},\\
 T^{\text{\text{proc}}} &=  T^{RU} + T^{DU} + T^{CU} + T^{UPF},\\
 T^{tr} &= T^{fr,t} + T^{\text{mid},t} + T^{b,t},  \\
-T^{\text{pro}} &= T^{fr,p} + T^{\text{mid},p} + T^{b,p}.  \\
+T^{\text{pro}} &= T^{fr,p} + T^{\text{mid},p} + T^{b,p}. 
 \end{alignat}
 \end{subequations}
 %{\color{red} I made a mistake and replaced pro with proc. Please correct them. Also, explain in more details the processing delay in this paragraph.}
@@ -317,7 +324,7 @@ Each packet is processed by one of the VNFs of a slice. So, the mean delay for t
 \begin{split}
 T_{s}^{DU} &= \frac{1}{\mu_s^d - \alpha_{s}/{M_s^{d}}},\\
 T_{s}^{CU} &= \frac{1}{\mu_s^c - \alpha_{s}/{M_s^{c}}},\\
-T_{s}^{UPF} &= \frac{1}{\mu_s^u - \alpha_{s}/{M_s^{u}}},\\
+T_{s}^{UPF} &= \frac{1}{\mu_s^u - \alpha_{s}/{M_s^{u}}},
 \end{split}
 \end{equation}
 where $M_s^{d}$, $M_s^{c}$ and 
@@ -358,7 +365,7 @@ where $\phi_{s}$ is obtained from $\phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M
 %\end{equation}
 Moreover, $\phi_s^u$, $\phi_s^c$, and $\phi_s^d$ are the fixed cost of energy in UPF, O-CU, and O-DU, respectively. 
 \subsection{Problem Statement}
-Suppose slice $s$ (which is assigned to service s) has the priority factor $\delta_s$ where $\sum_{s=1}^S \delta_s =1$.
+Suppose slice $s$ (which is assigned to service s) has the priority factor $\delta_s$ (based on the priority of its hosting service) where $\sum_{s=1}^S \delta_s =1$.
 The priority factor of each slice is obtained according to the service level agreement (SLA) of that service to have a fairness in the system. 
 %{\color{red} explain why you introduce priority factor.}
 This paper aims to maximize the sum-rate of all UEs with the presence of constraints as follows. %{\color{red} where did you define the objective? what is R bar?}
@@ -415,7 +422,6 @@ We repeat this procedure until the algorithm converges.
 \subsection{Sub-Problem 1}\label{sub1}
 Suppose that $\boldsymbol{G}$ is fixed, we want to obtain $\boldsymbol{P}, \boldsymbol{E}$ and $\boldsymbol{M}$.
 Here, we first simplify and relax the parameters to convexify the problem.
-
 As we mentioned before, by replacing $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} with $P^{max}_s$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$, and also the lower bound $\bar{\rho}_{u(s,i)}^{k}$ is achieved
 for $\rho_{u(s,i)}^{k}$. 
 Moreover, the lower bound $\bar{\mathcal{R}}_{u_{(s,i)}}, \forall s , \forall i$ for  ${\mathcal{R}}_{u_{(s,i)}}$ is obtained by replacing $I_{r,u(s,i)}^{k}$ with $\bar{I}_{r,u(s,i)}^{k}$ in \eqref{eq11} and \eqref{eq3} and make these equations become concave functions.
@@ -423,14 +429,14 @@ Moreover, the lower bound $\bar{\mathcal{R}}_{u_{(s,i)}}, \forall s , \forall i$
 Suppose $\hat{\rho}_{r,u(s,i)}^{k} =  \frac{|P_{s}^{max}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0}$. 
 we replace ${\rho}_{r,u(s,i)}^{k}$ with $\hat{\rho}_{r,u(s,i)}^{k}$ in \eqref{shortPacket}, to convexify the \eqref{eq11} for the URLLC and mMTC services that have the short packet transmission.
 So, a lower bound for \eqref{eq11} is given that is a concave function.
-\begin{equation}
-\begin{split}
+\begin{subequations}
+\begin{alignat}{4}
 \bar{\mathcal{R}}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K_{s_j}} B (\log_2({1+ \bar{\rho}_{u(s_2,i)}^{k}})- \hat{\zeta}_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k}\\
 \bar{\mathcal{R}}_{u(s_j,i)} &= \sum_{r=1}^{R}\bar{\mathcal{R}}_{u(s_j,i)}^{r}\\ 
  \hat{\zeta}_{u(s_j,i)}^{k} =& log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{\hat{\mathfrak{C}}_{u(s_j,i)}^{k}}{N_{u(s_j,i)}^{k}}})\\
- \hat{\mathfrak{C}}_{u(s_j,i)}^{k} =& 1 - \frac{1}{(1+\hat{\rho}_{u(s_j,i)}^{k})^2}\\
-\end{split}
-\end{equation}
+ \hat{\mathfrak{C}}_{u(s_j,i)}^{k} =& 1 - \frac{1}{(1+\hat{\rho}_{u(s_j,i)}^{k})^2}.
+\end{alignat}
+\end{subequations}
 Without loss of generality, assume that UPF, O-CU and O-DU use the processors with the same processing capability. We notice that it makes the formulation simpler. However, loosing this assumption does not change the formulation significantly and the problem can be solved in the same manner. Therefore, we have $\mu_s = \mu_s^u \approx \mu_s^c \approx \mu_s^d $. Moreover, as mentioned before,
 the mean arrival data rate of the UPF layer for a service $s$ ($\alpha_{s}^U$) is equal to the mean arrival data rate of the O-CU-UP layer ($\alpha_{s}^C$) and O-DU ($\alpha_{s}^D$). So $\alpha_{s} =\alpha_{s}^U \approx \alpha_{s}^C \approx \alpha_{s}^D$. Again, this assumption only simplifies the notations and loosing it does not make the solution inefficient.
 These assumptions lead to having the same processing power for each layer $\phi_s^u = \phi_s^c =\phi_s^d $.
@@ -449,7 +455,6 @@ In the following, we define a lemma to find the upper and lower bound for the op
 The optimal number of VNFs in each slice s can be achieved by the 
 $M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s$.
 where, $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
-
 \end{lemma}
 %{\color{red} add one sentence before lemma to motivate why you need this lemma. The whole part is a lemma? It is too long. Where is the proof?}
 \begin{proof}
@@ -485,7 +490,6 @@ $(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T^{max}_s$ as mentioned above.
 %\begin{equation}\label{constraint16}
 %\alpha_s/\mu_s\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
 %\end{equation}
-
 The left side of the equation \eqref{eqDelay}, leads to $R_{u(s,i)} \geq \lambda_{u(s,i)}$ that is the constraint \eqref{c16-2}. 
 For the right side, by reformulating the equation \eqref{eqDelay}, we have a new constraint $\forall i, \forall s$ as below,
 %\begin{equation}\label{RM}
@@ -500,7 +504,7 @@ For the right side, by reformulating the equation \eqref{eqDelay}, we have a new
 \begin{alignat}{4}
 \mathcal{R}_{u(s,i)} &\geq \varpi_{u(s,i)}. \\
 \varpi_{u(s,i)} &= \lambda_{u(s,i)} + \frac{1}{T^{max}_s}\\
-& + \frac{3}{T^{max}_s\mu_s-\alpha_s T^{max}_s/\mathfrak{M}_s-3}\\
+& + \frac{3}{T^{max}_s\mu_s-\alpha_s T^{max}_s/\mathfrak{M}_s-3}
 \end{alignat}
 \end{subequations}
 In addition, we denote $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
@@ -510,7 +514,6 @@ $\mathtt{M}_{u(s,i)}$ in each slice as $M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 
 %M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s .
 %\end{equation}
 \end{proof}
-
 Despite simplifying the problem in \eqref{problem}, it is still non-convex and hard to solve.
 Therefore, the conventional approach to solve the problem of the PRB and the power allocation is to relax the variable $\mathbf{E}$ into continuous value $e_{r,u(s,i)}^k \in [0,1] \:\: \forall s , \forall i ,\forall r, \forall k$ \cite{lee2018dynamic,ali2018joint}.
 Furthermore, the problem can be solved using the Lagrangian function and iterative algorithm.
@@ -545,11 +548,8 @@ Assume $\boldsymbol{\mathfrak{v}}$, $\boldsymbol{\mathfrak{m}}$, $\boldsymbol{\m
 &+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R} \xi^{k}_{r,u(s,i)} e^{k}_{r,u(s,i)}.
 \end{alignat}
 \end{subequations}
-
 %{\color{red} Motivate the lemma. separate proof and lemma}
-
 \begin{lemma}
-
 The derivatives of the Lagrangian function \eqref{lagrang} with respect to the $\boldsymbol{P}$ and $\boldsymbol{E}$ give the Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal value of these two variables \cite{lee2018dynamic,ali2018joint}.
 \end{lemma}
 \begin{proof}
@@ -575,7 +575,7 @@ The optimal power is as follow.
 \begin{subequations}
 \begin{alignat}{4}
 p_{r,u(s,i)}^{k} &= [\frac{(\delta_s + \mathfrak{h}_{u_{(s,i)}})B \mathfrak{j}_{r,u(s,i)}^{k}}{ Ln2 \times (-\mathfrak{s}^k_{r,u(s,i)} +\mathfrak{D}_{r,u(s,i)}^{k})}\\
- &-\frac{BN_0 + I_{r,u(s,i)}^{k}}{{|\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2\mathfrak{j}_{r,u(s,i)}^{k}}]^+.\\
+ &-\frac{BN_0 + I_{r,u(s,i)}^{k}}{{|\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2\mathfrak{j}_{r,u(s,i)}^{k}}]^+.
 \end{alignat}
 \end{subequations}
 Also $[a]^+ = \max(0,a)$.
@@ -584,7 +584,7 @@ In addition, PRB assignment can be achieved from the derivatives of the Lagrangi
 \begin{alignat}{4}
 \dfrac{\partial\mathcal{L}}{\partial e_{r,u(s,i)}^{k}} &= \mathcal{\bar{R}}_{r,u(s,i)}^{k}(\delta_s+\mathfrak{h}_{u_{(s,i)}})\\
 &- \mathfrak{m}_{r}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k} g_{u(s,i)}^r\\
-&+( \xi^{k}_{r,u(s,i)}-\mathfrak{v}^{k}_{r,u(s,i)} +\chi_{r,u(s,i)})=0.\\
+&+( \xi^{k}_{r,u(s,i)}-\mathfrak{v}^{k}_{r,u(s,i)} +\chi_{r,u(s,i)})=0.
 \end{alignat}
 \end{subequations}
 So, the optimal $\boldsymbol{E}$ is obtained using KKT condition as follow.
