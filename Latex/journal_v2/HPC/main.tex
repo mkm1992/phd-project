@@ -95,7 +95,7 @@ In addition, according to the high complexity of RAN slicing and incapability of
 deep deterministic policy gradient (DDPG). The first class can only solve the discrete action space problems, which are integer programming. The second class can solve by searching the optimal policy, which is the actor-critic method \cite{alsenwi2021intelligent,yan2019intelligent,mei2021intelligent}.
 \section{Machine Learning Methods}
 In this project, we want to solve the problem of dynamic resource allocation in the O-RAN system using RAN slicing. Here, we assume that we have three service types served by three slices, namely, eMBB, URLLC, and mMTC. Each service requires its specific QoS.
-Our system model has a two-time scale. In the first time scale, we want to solve the problem of obtaining the optimal number of VNFs and the assignment of PRBs for each slice. In the second time scale, we seek to solve the power allocation and PRB assignment of each UEs in each slice. We use deep reinforcement learning since we want to solve the dynamic resource allocation.
+Our system model has a two time-scale. In the first time-scale, we want to solve the problem of obtaining the optimal number of VNFs and the assignment of PRBs for each slice. In the second time-scale, we seek to solve the power allocation and PRB assignment of each UEs in each slice. We use deep reinforcement learning since we want to solve the dynamic resource allocation.
 
 \subsection{Requirement of Deep Reinforcement Learning}
 A few pioneers developed an intelligent RAN slicing architecture incorporating DL (deep learning) technologies into network slicing and achieving automatic RAN slicing control due to the complexity of RAN slicing and the untenability of conventional models-based approaches. 
@@ -106,7 +106,15 @@ By interacting with an unknown environment, Deep Reinforcement Learning (DRL) pe
 Therefore, DRL approaches, which combine deep neural networks (DNNs) with reinforcement learning, are particularly promising because they can cope with large state and action spaces.
 DRL methods have already been used for resource allocation in 5G networks.
 
-In this project, we would like to allocate resources using DRL. This project has a two-time scale. The first time scale considers the optimal number of VNFs and the assignment of a PRB to each slice, which is the action of our problem.
+In this project, we would like to allocate resources using DRL. This project has a two time-scale. The large time-scale considers the optimal number of VNFs and the assignment of a PRB to each slice, which is the action of our problem.
+
+
+
+
+
+
+
+\newpage
 To measure the effectiveness of each state or state action pair, DQN constructs a value function model. Through optimizing the value function model, DQN derives the appropriate control policy implicitly. Although DQN has good sample efficiency and stable performance, it has the disadvantage that its action space must be a discrete variable set. 
 
 Because we have many states and actions and the action is discrete, we use deep Q learning and want to compare it with double deep Q learning to solve the first part of our problem. The Q network is a multi-perceptron network and also we would like to compare it with a LSTM (long short term memory) to find the best Q network. 
