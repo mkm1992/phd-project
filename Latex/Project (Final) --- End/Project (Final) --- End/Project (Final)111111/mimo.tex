@@ -1,0 +1,148 @@
+
+%\documentclass[oneside]{article}
+\documentclass[11pt, a4paper]{article}
+\usepackage{fontspec}
+\usepackage[a4paper]{geometry}
+\usepackage[export]{adjustbox}
+\usepackage{graphicx}
+%\usepackage[demo]{graphicx}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{tocbibind}
+\usepackage{lastpage}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{xlop}
+\usepackage{fancyhdr}
+% \geometry{a4paper,margin=10mm,bindingoffset=20mm,heightrounded,}
+\pagestyle{fancy}
+%\fancyhf{}
+%\rhead{}
+%\lhead{Guides and tutorials}
+
+
+
+%\usepackage[letterpaper, landscape, margin=2in]{geometry}
+
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{setspace}
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\usepackage{xepersian}
+\usepackage{titling}
+
+\usepackage{lipsum}
+\usepackage{scrextend}
+\deffootnote[1.8em]{0pt}{1.6em}{\makebox[1.8em][l]{.\thefootnotemark}}
+\newtheorem{theorem}{قضیه}
+\newtheorem{corollary}{گزاره}
+\newtheorem{lemma}{لم}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{tikz}
+%\usetikzlibrary{calc}
+%\usetikzlibrary{decorations.pathmorphing}
+
+%\usepackage{lipsum}% dummy text
+
+\usepackage{color}
+\definecolor{Darkblue}{rgb}{0,0,0.7}
+\definecolor{pink}{rgb}{1,0.078,0.576}
+\usepackage{hyperref}
+\hypersetup{%
+    pdfborder = {0 0 0},
+    colorlinks,
+    citecolor=red,
+    filecolor=Darkblue,
+    linkcolor=Darkblue,
+    urlcolor=cyan!50!black!90
+}
+
+%\pagestyle{headings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\settextfont[Scale=1.1]{B Nazanin}
+\setlatintextfont{Times New Roman}
+\defpersianfont\nastaliqfont{IranNastaliq}
+\linespread{2.25}
+\pagestyle{fancy}
+\addtolength{\headheight}{\baselineskip}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+%\renewcommand{\subsectionmark}[1]{\markright{#1}}
+%\rhead{\leftmark\\\rightmark}
+
+%\renewcommand{\headrulewidth}{0pt}
+%\fancyhf{}
+\newcommand*{\fancypagenumber}{%
+\fancyfoot[C]{صفحه
+\thepage
+از
+\pageref{LastPage}}
+}
+\fancypagenumber
+\fancypagestyle{plain}{\fancypagenumber}
+%\fancyhf{}
+\newcommand{\logo}[1]{%
+  \postauthor{%
+  \end{tabular}\par\end{center}
+  \begin{center}\includegraphics[scale=0.15]{#1}\end{center}
+  \vskip0.5em}%
+}
+\logo{./pic/logo2}
+\title{
+ عنوان پروژه:
+\\
+\lr{Open Ran in 5G}
+}
+
+\author{\textsc{مژده کربلایی مطلب} % Author
+\\{استاد راهنما: جناب آقای دکتر شاه منصوری}
+%\includegraphics[width=0.25\textwidth]{logo2}\\
+%\\{دانشگاه صنعتی امیرکبیر-دانشکده ی برق}
+}
+%\address{}{\textbf{Amirkabir University of Technology -- Department of Electrical Engineering}}
+%\logo{logo2}
+
+% Definition of \maketitle
+\makeatletter         
+\def\@maketitle{
+\raggedright
+\includegraphics[width = 30mm]{./pic/logo1.png}\hspace{170 pt}
+\includegraphics[width = 40mm]{./pic/logo3.png} \\[16ex] 
+\begin{center}
+{\Large \bfseries  \@title }\\ 
+{\Large  \@author}\\
+\@date\\[8ex]
+\end{center}}
+\makeatother
+
+\begin{document}
+\begin{textblock}{6}(6.5,2)
+\noindent\Large
+    \nastaliqfont
+    \begin{huge}
+    بسم الله الرحمن الرحیم
+    \end{huge}
+
+\thispagestyle{empty}
+\end{textblock}
+\maketitle
+\newpage
+\tableofcontents{}
+\newpage
+\listoffigures
+
+%\begin{titlepage}
+\newpage
+
+\include{./tex/ch1}
+\newpage
+{
+\onehalfspacing
+\bibliographystyle{acm-fa}
+\bibliography{MyReferences}
+}
+
+ 
+
+\end{document}

@@ -1,0 +1,30 @@
+<college>
+	<student std_num="9023055">
+		<rank>2</rank>
+		<name>Mojdeh</name>
+		<phone>12345678</phone>
+		<mark>18</mark>
+		<email>mokm1992@gmail.com</email>
+	</student>
+	<student std_num="9023056">
+		<rank>1</rank>
+		<name>Sara</name>
+		<phone>17569632</phone>
+		<mark>20</mark>
+		<email>sara@yahoo.com</email>
+	</student>
+	<student std_num="9023057">
+		<rank>7</rank>
+		<name>Sahar</name>
+		<phone>456987233</phone>
+		<mark>16</mark>
+		<email>sahar@gmail.com</email>
+	</student>
+	<student std_num="9023058">
+		<rank>10</rank>
+		<name>Ali</name>
+		<phone>456987233</phone>
+		<mark>19</mark>
+		<email>sahar@gmail.com</email>
+	</student>
+</college>

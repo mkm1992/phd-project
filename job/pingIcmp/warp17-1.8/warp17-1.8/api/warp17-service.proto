@@ -1,0 +1,268 @@
+//
+// DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER
+//
+// Copyright (c) 2016, Juniper Networks, Inc. All rights reserved.
+//
+//
+// The contents of this file are subject to the terms of the BSD 3 clause
+// License (the "License"). You may not use this file except in compliance
+// with the License.
+//
+// You can obtain a copy of the license at
+// https://github.com/Juniper/warp17/blob/master/LICENSE.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions
+// are met:
+//
+// 1. Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// 2. Redistributions in binary form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// 3. Neither the name of the copyright holder nor the names of its
+// contributors may be used to endorse or promote products derived from this
+// software without specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// File name:
+//     warp17-service.proto
+//
+// Description:
+//     WARP17 RPC service definitions.
+//
+// Author:
+//     Dumitru Ceara, Eelco Chaudron
+//
+// Initial Created:
+//     01/15/2016
+//
+// Notes:
+//
+//
+
+import "warp17-common.proto";
+import "warp17-l3.proto";
+import "warp17-app.proto";
+import "warp17-test-case.proto";
+import "warp17-sockopt.proto";
+import "warp17-stats.proto";
+
+option py_generic_services = true;
+option cc_generic_services = true;
+
+message Error {
+    required int32 e_code = 1;
+}
+
+message GetVersionArg {
+    required uint32 gva_unused = 1;
+}
+
+message VersionResult {
+    optional string vr_version = 1;
+}
+
+message TestCaseArg {
+    required uint32 tca_eth_port     = 1;
+    required uint32 tca_test_case_id = 2;
+}
+
+message PortCfg {
+    required uint32 pc_eth_port = 1;
+
+    repeated L3Intf pc_l3_intfs = 2 [(warp17_array_size) = 'TPG_TEST_MAX_L3_INTF'];
+    required Ip     pc_def_gw   = 3;
+}
+
+message PortCfgResult {
+    required Error   pcr_error = 1;
+    required PortCfg pcr_cfg   = 2;
+}
+
+message L3IntfArg {
+    required uint32 lia_eth_port = 1;
+    required L3Intf lia_l3_intf  = 2;
+}
+
+message L3GwArg {
+    required uint32 lga_eth_port = 1;
+    required Ip     lga_gw       = 2;
+}
+
+message TestCaseResult {
+    required Error    tcr_error = 1;
+    required TestCase tcr_cfg   = 2;
+}
+
+message UpdateArg {
+    required TestCaseArg     ua_tc_arg     = 1;
+    optional Rate            ua_rate_open  = 2;
+    optional Rate            ua_rate_send  = 3;
+    optional Rate            ua_rate_close = 4;
+    optional Delay           ua_init_delay = 5;
+    optional Delay           ua_uptime     = 6;
+    optional Delay           ua_downtime   = 7;
+    optional TestCriteria    ua_criteria   = 8;
+    optional bool            ua_async      = 9;
+    optional TestCaseLatency ua_latency    = 10;
+}
+
+message TestCaseAppResult {
+    required Error tcar_error  = 1;
+    required App   tcar_app = 2;
+}
+
+message UpdateAppArg {
+    required TestCaseArg uaa_tc_arg = 1;
+    required App         uaa_app = 2;
+}
+
+message PortArg {
+    required uint32 pa_eth_port = 1;
+}
+
+message ImixArg {
+    required uint32 ia_imix_id = 1;
+}
+
+message ImixResult {
+    required Error     ir_error = 1;
+    required ImixGroup ir_imix_group = 2;
+}
+
+message PortOptionsArg {
+    required PortArg     poa_port = 1;
+    required PortOptions poa_opts = 2;
+}
+
+message PortOptionsResult {
+    required Error       por_error = 1;
+    required PortOptions por_opts  = 2;
+}
+
+message TcpSockoptArg {
+    required TestCaseArg toa_tc_arg = 1;
+    required TcpSockopt  toa_opts   = 2;
+}
+
+message TcpSockoptResult {
+    required Error      tor_error = 1;
+    required TcpSockopt tor_opts  = 2;
+}
+
+message Ipv4SockoptArg {
+    required TestCaseArg i4sa_tc_arg = 1;
+    required Ipv4Sockopt i4sa_opts   = 2;
+}
+
+message Ipv4SockoptResult {
+    required Error       i4sr_error = 1;
+    required Ipv4Sockopt i4sr_opts  = 2;
+}
+
+message VlanSockoptArg {
+    required TestCaseArg vosa_tc_arg = 1;
+    required VlanSockopt vosa_opts   = 2;
+}
+
+message VlanSockoptResult {
+    required Error       vosr_error = 1;
+    required VlanSockopt vosr_opts  = 2;
+}
+
+message StatsResult {
+    required Error           sr_error    = 1;
+    required PortStatistics  sr_port     = 2;
+    required PhyStatistics   sr_phy      = 3;
+    required PhyStatistics   sr_phy_rate = 4;
+    required EthStatistics   sr_eth      = 5;
+    required ArpStatistics   sr_arp      = 6;
+    required RouteStatistics sr_route    = 7;
+    required Ipv4Statistics  sr_ipv4     = 8;
+    required UdpStatistics   sr_udp      = 9;
+    required TcpStatistics   sr_tcp      = 10;
+    required TsmStatistics   sr_tsm      = 11;
+    required MsgStatistics   sr_msg      = 12;
+    required TimerStatistics sr_timer    = 13;
+}
+
+message TestStatusResult {
+    /* The user will do the translation. */
+    option (warp17_xlate_tpg) = false;
+
+    required Error tsr_error = 1;
+
+    required TestCaseState tsr_state      = 2;
+    required TestCaseType  tsr_type       = 3;
+    required L4Proto       tsr_l4_proto   = 4;
+    required AppProto      tsr_app_proto  = 5;
+    required GenStats      tsr_stats      = 6;
+    required RateStats     tsr_rate_stats = 7;
+    required AppStats      tsr_app_stats  = 8;
+}
+
+message ImixStatsResult {
+    required Error        isr_error = 1;
+    required ImixAppStats isr_stats = 2;
+}
+
+service Warp17 {
+    rpc GetVersion(GetVersionArg)             returns (VersionResult);
+
+    /* Port configs. */
+    rpc ConfigurePort(PortCfg)                returns (Error);
+    rpc GetPortCfg(PortArg)                   returns (PortCfgResult);
+
+    /* Test case configs. */
+    rpc ConfigureTestCase(TestCase)           returns (Error);
+    rpc GetTestCase(TestCaseArg)              returns (TestCaseResult);
+    rpc DelTestCase(TestCaseArg)              returns (Error);
+
+    /* Imix groups. */
+    rpc ConfigureImixGroup(ImixGroup)         returns (Error);
+    rpc GetImixGroup(ImixArg)                 returns (ImixResult);
+    rpc DelImixGroup(ImixArg)                 returns (Error);
+
+    /* Stack customization RPCs. */
+    rpc SetPortOptions(PortOptionsArg)        returns (Error);
+    rpc GetPortOptions(PortArg)               returns (PortOptionsResult);
+    rpc SetTcpSockopt(TcpSockoptArg)          returns (Error);
+    rpc GetTcpSockopt(TestCaseArg)            returns (TcpSockoptResult);
+    rpc SetIpv4Sockopt(Ipv4SockoptArg)        returns (Error);
+    rpc GetIpv4Sockopt(TestCaseArg)           returns (Ipv4SockoptResult);
+    rpc SetVlanSockopt(VlanSockoptArg)        returns (Error);
+    rpc GetVlanSockopt(TestCaseArg)           returns (VlanSockoptResult);
+
+    /* Operational calls. */
+    rpc PortStart(PortArg)                    returns (Error);
+    rpc PortStop(PortArg)                     returns (Error);
+    rpc GetTestStatus(TestCaseArg)            returns (TestStatusResult);
+    rpc GetImixStatistics(ImixArg)            returns (ImixStatsResult);
+    rpc GetStatistics(PortArg)                returns (StatsResult);
+    rpc ClearStatistics(PortArg)              returns (Error);
+
+    /* Partial port configs: : FOR WARP17 INTERNAL USE ONLY! */
+    rpc ConfigureL3Intf(L3IntfArg)            returns (Error);
+    rpc ConfigureL3Gw(L3GwArg)                returns (Error);
+
+    /* Partial test case configs: FOR WARP17 INTERNAL USE ONLY! */
+    rpc UpdateTestCase(UpdateArg)             returns (Error);
+
+    rpc GetTestCaseApp(TestCaseArg)           returns (TestCaseAppResult);
+    rpc UpdateTestCaseApp(UpdateAppArg)       returns (Error);
+}
+

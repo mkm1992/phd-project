@@ -1,0 +1,161 @@
+\documentclass[oneside]{article}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{minted}
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{setspace}
+\usepackage[absolute]{textpos}
+\usepackage{xepersian} % Always last package to load
+\settextfont{B Nazanin}
+\setlatintextfont{Times New Roman}
+%\setlatinmonofont[Scale=0.8]{Monaco}
+\defpersianfont\nastaliqfont{IranNastaliq}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\linespread{1.5}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand*{\fancypagenumber}{%
+\fancyfoot[C]{صفحه
+\thepage
+از
+\pageref{LastPage}}
+}
+\fancypagenumber
+\fancypagestyle{plain}{\fancypagenumber}
+% insert syntax highlighted code from a file
+\newcommand{\inputcode}[2]{\inputminted[mathescape,%
+                                                 linenos=true,%
+                                                 formatcom=\small\setstretch{1}]{#1}{#2}}%
+%\renewcommand{\theFancyVerbLine}{\sffamily\scriptsize
+%\textcolor[rgb]{0.5,0.5,1.0}{\oldstylenums{\arabic{FancyVerbLine}}}}
+\title{تمرین های سری دوم درس
+\lr{Service Based Architecture}
+}
+%\author{دکتر شفیعی}
+\date{\vspace{-5ex}}
+\begin{document}
+\maketitle
+
+\begin{textblock}{5}(6.5,2)\nastaliqfont
+\noindent\Large
+بسم الله الرحمن الرحیم
+\end{textblock}
+%\begin{tcolorbox}
+%\begin{center}
+%این اولین سری از تمارین مربوطه به پایتون می باشد. در صورت داشتن سوال، در جلسه ی رفع اشکال پاسخ داده می شود 
+%\end{center}
+%\end{tcolorbox}
+
+\begin{enumerate}
+\item
+برنامه ای بنویسید که فایلی از نوع 
+\lr{text}
+به نام 
+\lr{myFile.txt}
+ایجاد کرده و
+عدد رندمی (بین یک تا ۱۰) را توسط سیستم ایجاد کرده و به اندازه ی آن عدد رندم 
+ درون فایل مورد نظر با حلقه ای 
+\lr{string}های 
+ زیر را بنویسید 
+\begin{latin}\inputcode{Text}{q1.txt}\end{latin}
+که در اینجا
+\lr{n}
+عدد رندمی است.
+برای بدست آوردن عدد رندم از دستور 
+\lr{(numpy.random.randint)}
+می توان استفاده کرد و همچنین
+برای ایجاد فایل از دستور
+\lr{open("myFile.txt","w+")}
+استفاده می توان کرد.
+\item 
+\begin{enumerate}
+\item
+برنامه ای بنویسید که 
+نام فایل درون فولدر 
+\lr{question}
+را دریافت کند، سپس با توجه به نام فایل، آن را باز کرده و خوانده و محتوای آن را درون لیستی قرار دهید.
+\item 
+در این فایل 
+\lr{Username}
+و 
+\lr{Password}
+را 
+پیدا کرده
+(\lr{User: , Pass:})
+ و آنها را
+چاپ کنید.
+\item
+\lr{string}
+درون 
+براکت را نیز چاپ نماید.
+
+\textcolor{red}{
+(از کتابخانه ی
+\lr{re}
+و دستور زیر 
+می توان استفاده کرد.)
+\begin{latin}\inputcode{Text}{q2.txt}\end{latin}
+}
+\end{enumerate}
+\item 
+برنامه ای بنویسید که
+فایل
+\lr{std.xml}
+داده شده را بخواند.
+این فایل شامل مشخصات دانشجویان می باشد. 
+\begin{enumerate}
+\item
+ تعداد دانشجوها را اعلام نماید و 
+ اسامی و مشخصات دانشجویان را در خروچی چاپ نمایید.
+ \item
+ \lr{tag}
+ و
+ \lr{attribute}
+ زیرمجموعه های 
+ \lr{root}
+ که در اینجا
+ \lr{college}
+ است را بدست آورید.
+ \item
+ فایل 
+ \lr{Out.xml}
+ جدیدی ایجاد کرده و دانشجویانی که معدل آنها بیشتر از 
+ $18$
+ است را در آن قرار دهید. 
+\end{enumerate}
+\item 
+برنامه ای بنویسید که
+برروی
+\lr{localhost:8000}
+شماره ی دانشجویی را به سرور درخواست بدهد
+و سرور اسم دانشجو را 
+از فایل 
+\lr{std.xml}
+پیدا کرده و آن را در کنسول چاپ نموده و
+به کاربر ارسال نماید.
+(این سوال به طور کامل در جلسه ی حل تمرین توضیح داده می شود).
+
+
+\end{enumerate}
+
+%\begin{tcolorbox}
+%جهت تحویل تمارین هر تمرین را داخل یک فلدر بریزید که با شماره تمرین نام گذاری شده است و 
+% گزارش کار را به فرمت یک فایل
+%\lr{PDF}
+%در فلدراصلی قرار دهید. فلدر اصلی را بعد از فشرده سازی به صورت 
+%\lr{HW1-\rl{شماره دانشجویی}.\textbf{zip}}
+% نام گزاری، و ارسال کنید.
+%\begin{center}
+%\textbf{
+%مهلت تحویل: تا ساعت 12 ظهر دوشنبه سیزدهم اردیبهشت ماه 1400.
+%}
+%\end{center}
+%\end{tcolorbox}
+\end{document}

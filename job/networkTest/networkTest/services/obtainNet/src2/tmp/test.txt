@@ -1,0 +1,11 @@
+test duration	:60.01 seconds 
+throughput	:20.88Gbps
+cpu cores	:2 
+cpu speed	:1795.917MHz
+user		:11.04%
+system		:74.95%
+idle		:0.00%
+iowait		:0.00%
+softirq		:14.01%
+cycles/byte	:1.38 
+cpu busy (all)	:99.33% 

@@ -1,0 +1,226 @@
+v1.8:
+-----
+FEATURES:
+- Add support for IMIX (application MIX)
+- Add an example script for collecting stats
+
+FIXED ISSUES:
+- Fix the way sockopt fields are set
+- Fix RAW latency RPC config/stats
+- Fix ARP lookup to take into account vlan-id
+- Initialize device information with proper defaults
+- Add extra checks for unexpected incoming traffic
+
+KNOWN ISSUES:
+1. When using a DUT (e.g., NAT device) between clients and servers, the
+   sessions on the DUT should be cleared after every test. This is required
+   because whenever a test-case stops, either because the pass-criteria was
+   reached or because it was explicitly stopped, the connections are forcefully
+   closed by WARP17 without performing the normal close sequence (e.g., no FIN is
+   sent for TCP). The DUT will only clear the existing sessions once its local
+   timeout expires.
+
+2. Client test cases are automatically stopped when the pass-criteria is
+   reached. This, however, is not the case for server test cases. The
+   pass-criteria for server test-cases is to have all the servers up and
+   waiting for connections. Therefore, even if a server test-case shows status
+   PASSED it MUST still be explicitly stopped ("stop tests port <x>") when
+   the user decides that the test has completed. This must be done in order to
+   avoid keeping server connections established forever when the clients silently
+   went down (e.g., when the client test case is manually stopped).
+
+3. Limited ARP table + limited number of L3 interfaces (TPG_TEST_MAX_L3_INTF):
+   only 10 interfaces supported per port for now
+
+4. No TCP options or keep-alive support.
+
+5. No IPv4 fragmentation support (neither on the send side nor on the receive
+   side).
+
+API CHANGES:
+
+v1.7:
+-----
+FEATURES:
+- Add ACK delay support for TCP 3 way handshake
+- Increase max TCP RTO to 10 seconds
+- Add HTTP stats for sessions without traffic
+- Add fine grain rate limiting
+- Add VLAN support + per-VLAN gateway
+
+FIXED ISSUES:
+
+KNOWN ISSUES:
+- See v1.6.
+
+API CHANGES:
+- Add optional VLAN/GW fields to L3Intf
+- Add VlanSockopt message type
+- Add SetVlanSockopt/GetVlanSockopt RPC calls
+
+v1.6:
+-----
+FEATURES:
+- Add jitter computation when measuring latency.
+
+FIXED ISSUES:
+- Fix lookup table hash functions.
+- Fix MTU setting for ixgbe.
+- Fix performance bottleneck caused by cache false sharing.
+
+KNOWN ISSUES:
+- See v1.5.
+
+API CHANGES:
+- No changes.
+
+v1.5:
+-----
+FEATURES:
+- Add link rate statistics out side UI.
+- Make mbuf fragment size configurable.
+- Add CLI/RPC command for clearing all statistics.
+- Add protobuf infrastructure for querying/clearing all types of stats.
+- Add `set syslog` CLI for changing log level.
+- Add proper cmdline parsing and usage printing.
+- Add support for TCP Delayed Ack (rfc1122, section 4.2.3.2).
+- Add --mpool-any-sock command line option.
+- Add support for custom HTTP fields.
+- Add support for configuring ToS/DSCP/ECN.
+- Add UDP multicast-src test cases.
+- Add support for latency measurement.
+
+FIXED ISSUES:
+- Fix memory allocation for def gw.
+- Fix L4 requeuing for RAW application traffic.
+- Cancel TCP retransmission timers once data is ack-ed.
+- Add workaround for changing X(L)710 port states.
+- Trim IP packets if padding was present.
+- Fix TCP segment reassembly.
+- Fix computation of "TCP data bytes sent".
+- Fix clearing of (extended) link stats.
+- Fix test case rate limits (open/close/send).
+- Fix Multicast IP address detection.
+
+KNOWN ISSUES:
+- See v1.4.
+
+API CHANGES:
+- Change RawStats and HttpStats (request/responses) to uint64.
+- Remove LinkStats and IpStats from TestStatusResult.
+- Add SetIpv4Sockopt/GetIpv4Sockopt RPC APIs for configuring IPv4 socket
+  options.
+- Add GetStatistics/ClearStatistics RPC APIs for querying/clearing per-port
+  statistics.
+- Add required tcs_latency_stats field in TestCaseStats returned by the
+  GetTestStatus RPC API.
+- Add optional tc_latency config field to TestCase config messages.
+
+v1.4:
+-----
+FEATURES:
+- Upgrade to DPDK 16.11.
+- Add KNI interface support.
+- Add exit CLI command.
+
+FIXED ISSUES:
+- Fix UI link speed computation.
+- Fix setting MTU for XL710 NICs.
+- Fix TCP FIN retransmission.
+- Update VM usage documentation.
+
+KNOWN ISSUES:
+- See v1.3
+
+API CHANGES:
+- No changes.
+
+v1.3:
+-----
+FEATURES:
+- Upgrade to DPDK 16.07.
+- Add MTU configuration.
+- Add TCP stack customization.
+
+FIXED ISSUES:
+- Fixed L3 IP initialization from the CLI.
+
+KNOWN ISSUES:
+- See v1.2
+
+API CHANGES:
+- Aggregated Update* RPC APIs in a single UpdateTestCase API.
+- Added SetPortOptions/GetPortOptions and SetTcpSockopt/GetTcpSockopt RPC APIs
+  for configuring Port related options (MTU) and TCP Stack related options.
+
+v1.2:
+-----
+FEATURES:
+- Upgrade to DPDK 16.04.
+- Add Ring Interface support to allow running WARP17 without using physical
+  Ethernet interfaces.
+- Add command line options for customizing packet pool sizes.
+
+FIXED ISSUES:
+- Extra validation for command line core-queue mappings (qmap).
+
+KNOWN ISSUES:
+- See v1.1
+
+API CHANGES:
+- No Changes
+
+v1.1:
+-----
+FEATURES:
+- Add details on where to download the prebuilt & configured WARP17 VM
+- Add perl scripting support
+
+FIXED ISSUES:
+- Correct display of numa_node in "show port info"
+
+KNOWN ISSUES:
+- See v1.0
+
+API CHANGES:
+- No changes
+
+v1.0:
+-----
+FEATURES:
+1. HTTP 1.1 Client/Server Application traffic generation.
+2. RAW TCP Client/Server Application traffic generation.
+3. RAW UDP Client/Server Application traffic generation.
+4. Python API for configuring, monitoring and controlling test cases.
+
+KNOWN ISSUES:
+1. When using a DUT (e.g., NAT device) between clients and servers, the
+   sessions on the DUT should be cleared after every test. This is required
+   because whenever a test-case stops, either because the pass-criteria was
+   reached or because it was explicitly stopped, the connections are forcefully
+   closed by WARP17 without performing the normal close sequence (e.g., no FIN is
+   sent for TCP). The DUT will only clear the existing sessions once its local
+   timeout expires.
+
+2. Client test cases are automatically stopped when the pass-criteria is
+   reached. This, however, is not the case for server test cases. The
+   pass-criteria for server test-cases is to have all the servers up and
+   waiting for connections. Therefore, even if a server test-case shows status
+   PASSED it MUST still be explicitly stopped ("stop tests port <x>") when
+   the user decides that the test has completed. This must be done in order to
+   avoid keeping server connections established forever when the clients silently
+   went down (e.g., when the client test case is manually stopped).
+
+3. Limited ARP table + limited number of L3 interfaces (TPG_TEST_MAX_L3_INTF):
+   only 10 interfaces supported per port for now
+
+4. No VLAN support.
+
+5. No TCP options or keep-alive support.
+
+6. No IPv4 fragmentation support (neither on the send side nor on the receive
+   side).
+
+API CHANGES:
+- Initial release
+

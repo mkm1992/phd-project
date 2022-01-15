@@ -1,0 +1,32 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces مقایسه قابلیتهای کلیدی \lr {IMT-Advanced} (نسل 4) با \lr {IMT-2020} (نسل ۵) با توجه به \lr {ITU-R M.2083} \cite {etsi} \relax }}{3}{figure.caption.7}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces ساختار سنتی ایستگاه پایه \cite {checko2015cloud}\relax }}{7}{figure.caption.8}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces ساختار ایستگاه پایه و واحد رادیویی \cite {checko2015cloud}\relax }}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces ساختار \lr {C-RAN} \cite {checko2015cloud}\relax }}{9}{figure.caption.10}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces ساختار شبکه‌ی \lr {C-RAN} \cite {checko2015cloud}\relax }}{10}{figure.caption.11}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces ساختار شبکه‌های دسترسی ابری نامتحانس \cite {heterogeneous} \relax }}{11}{figure.caption.12}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces مدل سیستم \lr {F-RAN} \cite {fogComputing} \relax }}{13}{figure.caption.13}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces ساختار شبکه ی \lr {vRAN} \cite {vran}\relax }}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces ساختار شبکه ی \lr {ORAN} \cite {oranWP}\relax }}{17}{figure.caption.15}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces ساختار NFV \cite {NFVArch}\relax }}{22}{figure.caption.16}
+\contentsline {figure}{\numberline {1.11}{\ignorespaces ساختار SDN \cite {SDN3}\relax }}{24}{figure.caption.17}
+\contentsline {figure}{\numberline {1.12}{\ignorespaces سه ساختار برش شبکه \cite {NS2}\relax }}{26}{figure.caption.18}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces روند برش شبکه\ \cite {lee2018dynamic}\relax }}{33}{figure.caption.19}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces مدل پردازشی شبکه صف \cite {frdl}.\relax }}{35}{figure.caption.20}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces یادگیری تقویتی\relax }}{39}{figure.caption.21}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces سناریوی ارسال لینک بالا و پایین در برشهای شبکه \relax }}{40}{figure.caption.22}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces برش شبکه در ORAN\relax }}{43}{figure.caption.23}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces بهره‌وری انرژی براساس تعداد کاربران در هر سرویس\relax }}{58}{figure.caption.25}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces بهره‌وری انرژی براساس تعداد بلوکهای منابع فیزیکی\relax }}{59}{figure.caption.26}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces بهره‌وری انرژی براساس تعداد سرویسهای مختلف \relax }}{60}{figure.caption.27}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces نسبت برش های پذیرفته شده فقط به یک DC در مقابل برش های کل\relax }}{60}{figure.caption.29}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces نرمالیزه‌ی مصرف منابع بر‌اساس تعداد برشها\relax }}{61}{figure.caption.30}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces نسبت تعداد سرویسهای پذیرفته شده با استفاده از روش یادگیری تقویتی عمیق به نسبت تعداد سرویسهای پذیرفته شده در حالت بهینه براساس زمان طی شده\relax }}{69}{figure.caption.31}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces نسبت تعداد سرویسهای پذیرفته شده روش استفاده شده به نسبت تعداد سرویسهای پذیرفته شده در حالت بهینه براساس زمان طی شده با افزایش تعداد ماکسیمم درخواستها و تعداد برشهای شبکه\relax }}{70}{figure.caption.32}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces میانگین تعداد سرویسهای پذیرفته شده در زمان در دو حالت بهینه و استفاده از الگوریتم تقویتی با افزایش تعداد برشهای شبکه\relax }}{70}{figure.caption.33}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces نسبت تعداد سرورهای مصرفی با روش بهینه به سرورهای مصرفی با استفاده از روش یادگیری تقویتی براساس زمان طی شده\relax }}{71}{figure.caption.34}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces نسبت مقدار هزینه‌ی مصرفی نرمالیزه شده به تعداد میانگین برشهای مورد نیاز در جالت بهینه و الگوریتم یادگیری تقویتی \relax }}{72}{figure.caption.35}
+\addvspace {10\p@ }

@@ -1,0 +1,8 @@
+function call_socket(url, type) {
+ var ws =new WebSocket("ws://localhost:8008/obtain_net")
+ ws.onopen=function() {
+  ws.send(JSON.stringify({url,type}))
+
+ } 
+}
+call_socket("172.16.149.216", 2)

@@ -1,0 +1,8 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Cooperative MIMO downlink C-RAN system.\relax }}{6}
+\contentsline {figure}{\numberline {2}{\ignorespaces Traditional architecture \cite {369}\relax }}{7}
+\contentsline {figure}{\numberline {3}{\ignorespaces Base station with RRH architecture \cite {369}\relax }}{8}
+\contentsline {figure}{\numberline {4}{\ignorespaces C-RAN architecture \cite {369}\relax }}{8}
+\contentsline {figure}{\numberline {5}{\ignorespaces First group of C-RAN architecture \cite {1111}\relax }}{9}
+\contentsline {figure}{\numberline {6}{\ignorespaces Energy efficiency vs. number of RRH for optimal and equal power allocation. $U_s=8$, and the other parameters are given in Table I.\relax }}{19}
+\contentsline {figure}{\numberline {7}{\ignorespaces Energy efficiency vs number of UE for Optimized and Equal Power Allocation, plotted for parameters given in Table I with $M_s=30$.\relax }}{19}
+\contentsline {figure}{\numberline {8}{\ignorespaces Energy efficiency vs ${C}^{th} $ constraint with $S =3$, $Ms= 20$, $U =3$. \relax }}{20}

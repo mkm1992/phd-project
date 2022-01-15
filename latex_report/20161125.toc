@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {I}Introduction}{5}
+\contentsline {section}{\numberline {II}C-RAN}{6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Traditional architecture}{7}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Base station with RRH}{7}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}C-RAN Architecture}{7}
+\contentsline {section}{\numberline {III}Research Experience and Classification}{8}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}First group}{9}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Second group}{10}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Third group}{11}
+\contentsline {section}{\numberline {IV}Criticizing and Comparing Existing Papers}{12}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Difference in System models}{12}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Similarity and difference in problem statements}{12}
+\contentsline {section}{\numberline {V}System Model and Problem Formulation}{13}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}System Model}{13}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Achievable Rate Analysis}{13}
+\contentsline {section}{\numberline {VI}Optimizing Power Allocation}{15}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}Problem Statement}{16}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-B}}Proposed Method}{16}
+\contentsline {section}{\numberline {VII}Numerical Results and Discussions}{18}
+\contentsline {section}{\numberline {VIII}Conclusion}{20}
+\contentsline {section}{References}{21}

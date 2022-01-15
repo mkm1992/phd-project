@@ -1,0 +1,629 @@
+[33mcommit ce09c0e3c40920ffa1589d614729fc8d80d2d881[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Jan 5 10:33:11 2022 +0330
+
+    add sth
+
+[33mcommit 93dc600e73f2e1d42e9e8d1595b9f38e614cbb70[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Jan 5 10:15:30 2022 +0330
+
+    add sth
+
+[33mcommit 95a7d1b5057c2aa7275f540acec06976e5a0130a[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Jan 5 10:03:33 2022 +0330
+
+    delete hpc
+
+[33mcommit 726ef1d524321fb9c218a60b6001ea170ddfc4f6[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Jan 5 09:57:14 2022 +0330
+
+    Revert "Add sth2"
+    
+    This reverts commit 371fa6d0c57c49a5128283935583a6bee752173d.
+
+[33mcommit 3328b128ad2124299a2239aace20ddbb3d70cce5[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Jan 5 09:51:27 2022 +0330
+
+    Add sth
+
+[33mcommit 5cf112fe9028fea1d170763eb577df54006c5d5b[m
+Merge: 371fa6d 0c80507
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Jan 5 09:45:25 2022 +0330
+
+    add files
+
+[33mcommit 0c80507495adfb964803387d29bfb990a03fb3fa[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Jan 4 19:36:20 2022 +0330
+
+    add python
+
+[33mcommit 371fa6d0c57c49a5128283935583a6bee752173d[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Jan 1 14:52:43 2022 +0330
+
+    Add sth2
+
+[33mcommit 263569c1128ac505db2ae0bc5fd205d172d4ff10[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Jan 1 14:48:05 2022 +0330
+
+    add sth
+
+[33mcommit ea244858ea4f9810dd256f43b3bf9d0395482cae[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Jan 1 14:43:56 2022 +0330
+
+    add spectrum
+
+[33mcommit 71311fc9e494bd8a6da447d1d51cd43136a6d0c7[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Dec 18 16:34:42 2021 +0330
+
+    add hpc
+
+[33mcommit 886534ea6ba33339ed0b27b9ef5d6b8246512f54[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Dec 18 16:07:06 2021 +0330
+
+    add revise in hpc
+
+[33mcommit 2162ee2590b29f56635191c07221cde4f93136d7[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Dec 1 16:33:22 2021 +0330
+
+    Add anything:
+
+[33mcommit 4a9b7c8c5db332460eb613a2f60c641cb9d28d7c[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Nov 27 16:02:34 2021 +0330
+
+    add a bit code
+
+[33mcommit 99f12a4ebcb7066436b5460804dead0c7aa671d9[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Nov 24 15:23:27 2021 +0330
+
+    change paper 1 after reviewing tnsm template 13 page
+
+[33mcommit 922607e4cfcea731a5c36927e812e284b767ff51[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Nov 24 12:17:31 2021 +0330
+
+    change paper 1 after reviewing
+
+[33mcommit e359a7e5d510d6e986ee8f8f04b3699e149a7640[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Nov 24 08:40:24 2021 +0330
+
+    add paper1
+
+[33mcommit 15d372ca02efa74f7662ac356408c7f16abf6f64[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Mon Nov 22 21:12:00 2021 +0330
+
+    paper1
+
+[33mcommit d39dde2a5aad434e181211f18db6a0641cf1f448[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Nov 17 17:04:25 2021 +0330
+
+    add paper
+
+[33mcommit 53b817264857ff168c7923a3fda6f0f79a23cb41[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Nov 10 16:50:34 2021 +0330
+
+    Add code
+
+[33mcommit 46d41281a3d58964169e30edc4d254e5a630974a[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Mon Nov 8 16:54:12 2021 +0330
+
+    Add a bit code
+
+[33mcommit 47e2de43e48d16ab57379e4f6ec31c6adbbe79f6[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Nov 6 15:56:25 2021 +0330
+
+    Add code for journal start
+
+[33mcommit 9a0d25934797d066d80a772c367ec78c8a8f682b[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Fri Nov 5 22:13:41 2021 +0330
+
+    add paper 2
+
+[33mcommit b26f51b54efe20af696eb72789adb97cd67c4747[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Nov 2 14:18:23 2021 +0330
+
+    add sth1
+
+[33mcommit 57e6dbc70dabd584ba275bb88bc445dae03fd4c7[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Nov 2 14:17:37 2021 +0330
+
+    add sth
+
+[33mcommit ae97b8c35f8eeacc3785a34500184e89651bf1e3[m
+Merge: 319841b 0728dd2
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Nov 2 14:16:46 2021 +0330
+
+    Merge branch 'master' of github.com:mkm1992/phd-project into HEAD
+
+[33mcommit 319841b5cbafff1f6bc06c6ff203a3e357b538eb[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Nov 2 14:15:14 2021 +0330
+
+    add sth
+
+[33mcommit 0728dd20bb26f05e27e108381009f7d2f7f07f88[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Mon Nov 1 17:25:30 2021 +0330
+
+    Add ppt
+
+[33mcommit f1959b2c658d61db310d8f05440aff82b975be61[m
+Merge: e391e2c b37c8ab
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Oct 30 21:08:06 2021 +0330
+
+    Merge branch 'master' of github.com:mkm1992/phd-project into HEAD
+
+[33mcommit e391e2c168d01bc953937c60abc4cfc26927682b[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Oct 30 21:07:09 2021 +0330
+
+    add journLal1
+
+[33mcommit b37c8ab82a815bedf3dc91cebcb575455753d4ab[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Oct 30 17:01:55 2021 +0330
+
+    add research plan
+
+[33mcommit f6fee1ec553a64d75c4b1bd2d9ce7480123fd7e6[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Oct 27 17:48:18 2021 +0330
+
+    add sth
+
+[33mcommit 8c3fa6211376d518700e9e8f9ff141c151d585cd[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Oct 23 17:57:37 2021 +0330
+
+    add paper
+
+[33mcommit cada2ae5041f86365271681c3c38abb2991f21fa[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Oct 20 17:16:16 2021 +0330
+
+    paper 2
+
+[33mcommit 2b1f5f9cc5e722bf0938370eed9f7024d0dd87b5[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Oct 13 17:55:21 2021 +0330
+
+    add research plan
+
+[33mcommit b8e7a5df17fe617060d06899f9bfa0c82e038221[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Oct 12 16:55:37 2021 +0330
+
+    research plan change
+
+[33mcommit 861a02c4b0a603250a2ffb26ef504fc8a901d6a7[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Mon Oct 11 17:41:31 2021 +0330
+
+    add paper
+
+[33mcommit e1520d8a80342df51ad95e7d5fa9e345c86b80d3[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Oct 9 16:38:30 2021 +0330
+
+    add report for lopez
+
+[33mcommit a8c0b40ec3f293f27ea0d6ebb6c18f375357894d[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Oct 6 17:40:26 2021 +0330
+
+    add research plan
+
+[33mcommit e665a3c1e9f106ee488243ee41021f00f34ee987[m
+Merge: e1562a6 8f9388d
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Mon Oct 4 00:58:23 2021 +0330
+
+    Merge branch 'master' of github.com:mkm1992/phd-project into HEAD
+
+[33mcommit e1562a6068d34224406b8fb19b3abb44396c0e80[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Mon Oct 4 00:56:53 2021 +0330
+
+    add journal 30 page
+
+[33mcommit 8f9388d9b7ead622a90dafd936f7f12e06ec5568[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Oct 2 15:51:27 2021 +0330
+
+    paper
+
+[33mcommit 8f871e044fa4d3a4707701927f7a8a8d5f0fcc2b[m
+Merge: 897de35 f14e405
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Oct 2 09:52:10 2021 +0330
+
+    book
+
+[33mcommit f14e405b8c4a0ab8a4b51049078ec9a2a0164a44[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Fri Oct 1 13:26:30 2021 +0330
+
+    add research plan
+
+[33mcommit 8b648ac2b0344d3c27dc10f2ac96ae21e33309ab[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Thu Sep 30 23:07:02 2021 +0330
+
+    finish paper 1
+
+[33mcommit 897de35efc619c25933f7b6d3f98745c8c000f21[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Sep 29 16:01:09 2021 +0330
+
+    add paper
+
+[33mcommit e705593634b17fe50afe9be061ac50402efc25d4[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Sep 29 12:07:10 2021 +0330
+
+    excel of paper complete
+
+[33mcommit 76968fd3aa8eb773b3a691c32f548948c01da14a[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Sep 26 12:30:39 2021 +0330
+
+    add sth
+
+[33mcommit 47fc5f60089ea33ce3c45cace87c842fa237b24a[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Sep 25 17:26:19 2021 +0330
+
+    add sth
+
+[33mcommit 013bf4aacee8d62071cdef278fce4f27a8ab745c[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Sep 25 15:35:12 2021 +0330
+
+    add paper last version
+
+[33mcommit 6cb175966c4c2586029e27dd37d3a55873ee991e[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Sep 22 17:52:16 2021 +0330
+
+    add latex journal 1
+
+[33mcommit 6130db3fde087d95606606763357330ed24cb414[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Sep 19 17:02:02 2021 +0430
+
+    add papers
+
+[33mcommit f6e7c2db40af78897e30684e32eed2c40a2c8a06[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Sep 18 18:22:30 2021 +0430
+
+    Add sth
+
+[33mcommit 08cf40f017c9e084b524ee326c37ceecf16cda3b[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Sep 11 17:10:51 2021 +0430
+
+    Add anything
+
+[33mcommit dabec62a1c0f7cd690c615db66d3a570f9f35e04[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Sep 8 18:03:05 2021 +0430
+
+    add papers
+
+[33mcommit 26f37a032dbd73e6442e5b3011b686051fb8427b[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Thu Sep 2 14:32:43 2021 +0430
+
+    Add sth
+
+[33mcommit a3199bec8c7b3de022b7a27aae8c552c76752433[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Sep 1 17:32:21 2021 +0430
+
+    add paper
+
+[33mcommit df4ef5ecd67f95c44ae4e7e3ef9a1e42738d762d[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Aug 31 18:22:58 2021 +0430
+
+    change code
+
+[33mcommit 0ffebd6c199db5e8aabd38174edced42f45f7731[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Aug 28 13:19:29 2021 +0430
+
+    add journal
+
+[33mcommit f8e29b41c5e91ebe0fd897823aab83cefcc788e5[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Aug 25 15:27:18 2021 +0430
+
+     change a bit latex
+
+[33mcommit 92558ff82f8f91789876743fd1a1ea1db1dd90a2[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Aug 25 15:02:23 2021 +0430
+
+     finish the journal 1
+
+[33mcommit 6e2c0780d7ccc15ed374a9e04263595cb5745161[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Aug 22 23:29:37 2021 +0430
+
+    add .mat file
+
+[33mcommit 354d3baa2f50436896ec0640987f45c906348ae5[m
+Merge: fb4ec98 ba11a1c
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Aug 22 20:48:00 2021 +0430
+
+    Merge branch 'master' of github.com:mkm1992/phd-project into HEAD
+
+[33mcommit ba11a1cb56d721aab78a84739147d9256d1263d1[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Aug 22 16:40:45 2021 +0430
+
+    add feasible1
+
+[33mcommit 1bf1ff13a37c53514bd3b84a741a128e526857c3[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Aug 22 11:26:41 2021 +0430
+
+    add feasible
+
+[33mcommit fb4ec9892bf26ee00aef3580783d4ca5bce1a1ce[m
+Merge: 8c483e1 9b6dc1c
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Aug 21 21:14:04 2021 +0430
+
+    Merge branch 'master' of github.com:mkm1992/phd-project into HEAD
+
+[33mcommit 8c483e194b7a3d97be70a252339c2c6cb1218735[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Aug 21 21:13:29 2021 +0430
+
+    change code
+
+[33mcommit 9b6dc1c5cd92f1daf63d2af8bcfff7f5bedd42d9[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Aug 21 18:29:51 2021 +0430
+
+    add feasible part
+
+[33mcommit 6220c72c015c6ffaaf3fb82871e84c3d9ffcfc7b[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Aug 17 17:57:22 2021 +0430
+
+    add one figure
+
+[33mcommit 4e5c9533f0775518489c1186531f48ad447ec3af[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Mon Aug 16 23:14:11 2021 +0430
+
+    add figure
+
+[33mcommit 174325044e7c6c101b1da165d0832f5633ee415e[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Mon Aug 16 16:46:43 2021 +0430
+
+    add sth
+
+[33mcommit aaebf0825ea9f6224c9cdb89da03417742cf273c[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Aug 15 18:28:24 2021 +0430
+
+    add figure for compare with optimal
+
+[33mcommit de7bec5480af168530f832887084424042c7d5f7[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Aug 14 18:26:26 2021 +0430
+
+    add code
+
+[33mcommit 4951ddb1b4392ca04bbfe077cf4d86b7abffc994[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Aug 14 18:09:31 2021 +0430
+
+    change mtxt
+
+[33mcommit f5e5fdf49b03a63dd17ca231d0c097cc81332c1d[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Aug 14 18:08:39 2021 +0430
+
+    add mojdeh directory and mojdeh txt
+
+[33mcommit c280ddc8d34ebd37c6e383ba8f670752514c84b3[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Aug 14 18:01:26 2021 +0430
+
+    add sth
+
+[33mcommit 981aa8218b39cf93aff6868bdb65e012c443879a[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Thu Aug 12 23:40:38 2021 +0430
+
+    add figure
+
+[33mcommit ebc94e39b3f54979244591d2f6f6b4a6e3235124[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Wed Aug 11 17:19:56 2021 +0430
+
+    add simulation code
+
+[33mcommit 6ae5a9a71098ef990a046ea81af704009d55680b[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Aug 10 17:25:12 2021 +0430
+
+    add convergence
+
+[33mcommit 02d712dc1322018692d111b699e87b930ff1655e[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Mon Aug 9 17:47:22 2021 +0430
+
+    add sth
+
+[33mcommit a54a2d738b96e25cb0d10de2f521edb60d78fedc[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Aug 8 17:37:44 2021 +0430
+
+    add code
+
+[33mcommit 980ee14a0310277abf094451614f37be125fbc37[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Aug 8 11:26:59 2021 +0430
+
+    add code
+
+[33mcommit ec63cdac64c42a1a25365ae09b0c33ff534a3003[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Aug 7 17:26:13 2021 +0430
+
+    add code
+
+[33mcommit 1e6c91b0cb4f9aae386af47583632c2c295bb731[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Aug 3 17:22:03 2021 +0430
+
+    finish analyse journal1
+
+[33mcommit 855729859e3b1d68adaa868c9b47cd254ed9d15b[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Aug 3 17:21:48 2021 +0430
+
+    finish analyse journal1
+
+[33mcommit 25f156d0e611a6fbdb9e3e7c5102f5d9598e2d03[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Aug 3 17:12:05 2021 +0430
+
+    finish analyse journal
+
+[33mcommit 7f37dd5715257b8a05925b570218f05a05374a75[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Aug 1 23:16:12 2021 +0430
+
+    read paper until proposed method
+
+[33mcommit f766ba0eb79699129caa361cb8f4732a5f9de613[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Aug 1 17:41:54 2021 +0430
+
+    add journal finilized
+
+[33mcommit 49f7ac08035bdb2693b7bf1fa7abaf3ea93bac08[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Jul 31 21:27:45 2021 +0430
+
+    add figure 7
+
+[33mcommit a66d9688dc2c00e13135a7be7027f2cf605de2e4[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Jul 31 14:49:34 2021 +0430
+
+    add figure
+
+[33mcommit e10b9075bb6229b06e82ae1d11b95e896f36df7a[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Fri Jul 30 22:53:41 2021 +0430
+
+    add dataset
+
+[33mcommit 3f4de9fc4d1b7019f473e8469802efc185e646d7[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Jul 25 16:38:09 2021 +0430
+
+    add 2figure
+
+[33mcommit 03bc9835fe785b98fa9197e75c53fd649c312017[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Jul 24 18:39:43 2021 +0430
+
+    add bar and power
+
+[33mcommit 39d4e3b595c930b05aec7df4e38758c7b368cb50[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Jul 24 08:54:15 2021 +0430
+
+    power test
+
+[33mcommit ef2d6e5c5968eaae2b157ffad073480614ce57cc[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Tue Jul 20 17:59:54 2021 +0430
+
+    add cell
+
+[33mcommit 610666de9eb617a0fcd461077de9563ac7471889[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Jul 18 17:46:36 2021 +0430
+
+    add paper
+
+[33mcommit ca151f0d3e12b3ee68b4b9534afec4f63cebbf1b[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Jul 18 00:31:36 2021 +0430
+
+    add delay
+
+[33mcommit 121176fc300d231866bdf3194ea0e03efff5d4cd[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sat Jul 17 18:08:06 2021 +0430
+
+    add figure
+
+[33mcommit 67779a745224a55c7f3f75438cfe7b3cd74473fc[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Thu Jul 15 18:03:55 2021 +0430
+
+    add code
+
+[33mcommit 006509de83e399f7e3765e0cf89dc8da6071f7f8[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Jul 11 23:24:22 2021 +0430
+
+    code change1 and add one figure to latex
+
+[33mcommit 3a95179e381db565052896932f8e7e54a78abb9a[m
+Merge: bc5af16 19ac673
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Jul 11 20:10:00 2021 +0430
+
+    Merge branch 'master' of https://github.com/mkm1992/phd-project into HEAD
+
+[33mcommit bc5af1677d1196a025b98cb41d886a81f0e38686[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Jul 11 20:09:21 2021 +0430
+
+    code change1
+
+[33mcommit 19ac673273810b8118aa05ea77e184c5ad60e032[m
+Author: mkm1992 <mokm1992@gmail.com>
+Date:   Sun Jul 11 18:24:50 2021 +0430
+
+    code generation for figure 1
+
+[33mcommit 7822b63d5f5a14b5b690d6
