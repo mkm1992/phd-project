@@ -103,54 +103,52 @@ The proposed method is validated via simulations that illustrate a higher data r
 Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slicing.
 \end{IEEEkeywords}
 \section{Introduction} 
-To achieve a desired level of quality-of-service (quality, delay, power, etc.) for different services and isolate each service from the other services, network slicing is the best solution for 5G wireless cellular networks. Several implementations of network slicing include core slicing, RAN slicing, and slicing of both sections. 
-5G wireless systems have talked about supporting three generic services in recent years, namely, enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive Machine Type Communications (mMTC) services. Each type of service requires a particular slice of network based on its QoS.
+To achieve the desired level of QoS (quality, delay, power, etc.) and isolate different services, network slicing is the most effective solution for 5G wireless cellular networks. There are several implementations of network slicing, including core slicing, RAN slicing, and both. 
+Recent discussion of 5G wireless systems has been around three services, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Depending on QoS, each service requires its own slice of the network.
 The eMBB service fulfills the demand for high capacity and throughput. The URLLC also offers autonomous vehicles, tactile internet, remote surgery services, and other services of high quality and low latency. mMTC is comprised of many low-power internet of things (IoT) devices that transmit small payloads to a typical receiver, including sensors for sensing, metering, and monitoring
 \cite{shen2020ai,setayesh2020joint,popovski20185g,dogra2020survey,kassab2018coexistence,alsenwi2021intelligent}.
 
-Openness and RAN intelligence are two pillars that encourage the Open Radio Access Network (O-RAN) Alliance to establish O-RAN as the next generation of RAN systems. The idea of O-RAN comes from the integration of virtual RAN (vRAN) and cloud RAN (CRAN), and it takes advantage of both. RAN virtualization has remarkable benefits that increase flexibility, reduce CAPEX and OPEX, and allow operators to add new capabilities to the network more quickly. CRAN divides RAN into two parts: radio remote head (RRH) and baseband unit (BBU). Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike CRAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU). 
+O-RAN is driven by two pillars of openness and RAN intelligence as the next generation of radio access networks. O-RAN was developed as a result of integrating virtual RAN (vRAN) and cloud RAN (CRAN), and it takes advantage of both. With RAN virtualization, operators can improve flexibility, reduce CAPEX and OPEX, and add new capabilities to the network more quickly. The CRAN divides the radio remote head (RRH) and baseband unit (BBU) into two major parts. Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike CRAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU). 
 
 O-RU is a logical node that contains RF and lowers PHY. Moreover, the O-DU expresses another logical node with higher PHY, MAC, and RLC.
 In addition, the O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). O-CU-UP hosts PDCP-UP and SDAP, and O-CU-CP hosts PDCP-CP and RRC.
 O-DU and O-CU are connected via an open and well-defined interface $F_1$.
 Moreover, O-DU is connected to a radio unit (O-RU) with an open fronthaul interface.
 The architecture of O-RAN contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud. 
-Based on the requirement of an intelligent wireless network for the next generation of RAN systems, O-RAN offers machine learning techniques. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC- Near Real-Time, implement the algorithms for network intelligence 
+O-RAN offers machine learning techniques based on the requirement for an intelligent wireless network for the next generation of RAN systems. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC-Near Real-Time, implement the algorithms for network intelligence 
 \cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML,lin2021toward}.
 
-Network function virtualization (NFV) is referred to the separation of network software and hardware elements such that network function can run on commodity hardware. Virtual network functions (VNF) are system function blocks in NFV systems. This technology improves the system performance in the fifth generation of telecommunication networks. 
-The key idea of the implementation of NFV is to decouple software from physical hardware, dynamic scaling, and the deployment of flexible network functions. The NFV technology offers to execute VNFs as virtual machines or containers on  cloud environment \cite{mijumbi2015network, luo2020online}.
-As a result, some O-RAN components that include user plane function (UPF), O-CU, O-DU, and RAN Intelligent Controller (RIC)-near real-time, are virtualized and implemented as a VNF that can be run as virtual machines (VMs) or containers.
+Network function virtualization (NFV) is referred to the separation of network software and hardware elements such that network function can run on commodity hardware. Virtual network functions (VNF) are system function blocks in NFV systems. The NFV technology offers to execute VNFs as virtual machines or containers on a cloud environment \cite{mijumbi2015network, luo2020online}.
+As a result, some O-RAN components, such as user plane function (UPF), O-CU, O-DU, and RAN Intelligent Controller (RIC)-near real-time, are being virtualized and implemented as VNFs that can be run as virtual machines (VMs) or containers.
+
+To achieve the specific QoS for eMBB, URLLC, and mMTC, this study optimizes the allocation of baseband resources, including power allocation, PRB allocation, O-Rus association, and VNF activation to create an isolated network slicing outline.
 \subsection{Related Works}
 The problem of resource allocation for network slicing in multi-tenant cellular networks has received attention recently \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
-In \cite{lee2018dynamic}, dynamic network slicing in multi-tenant heterogeneous CRAN (H-CRAN) is considered. The process of allocating network resources to users is discussed. The network slicing scheme includes a higher level and the lower level. The higher level manages user acceptance control, user communication that provides for radio unit association (RRH association to maximize user rates and allocate baseband resource capacity), the allocation of BBU capacity. Also, in the lower level, the allocation of power and physical resource blocks (PRB) is performed.
-In \cite{xiang2020realization}, network slicing in the radio section is considered for fog RAN (F-RAN) system, in which, two network slices are set for hotspots and vehicle scenarios with related infrastructure. In \cite{elayoubi20195g,d2020toward}, the implementation of RAN level slicing is discussed in mobile network operator (MNO). Also, the problem of resource allocation is considered. Moreover, the paper faces the challenge of RAN slicing. The problem involves designing and managing multiple slices in the shared infrastructure efficiently while guaranteeing each slice's service level agreement (SLA).
-
+In \cite{lee2018dynamic}, dynamic network slicing in multi-tenant heterogeneous CRAN (H-CRAN) is considered. The network slicing scheme includes a higher level and the lower level. The higher level manages user acceptance control, user communication that provides for radio unit association (RRH association to maximize user rates and allocate baseband resource capacity), the allocation of BBU capacity. Also, the allocation of power and physical resource blocks (PRB) is performed in the lower level.
+In \cite{xiang2020realization}, network slicing in the radio section is considered for the fog RAN (F-RAN) system, and a deep reinforcement learning algorithm is proposed for it. In \cite{elayoubi20195g,d2020toward}, the implementation of RAN level slicing is discussed in mobile network operator (MNO).
 
 Multiplexing eMBB and URLLC services on the same RAN and sharing the resources of these services is challenging, and many researchers pay attention to this issue.
-In \cite{setayesh2020joint,yang2020should}, the problem of resource allocation in the coexistence of URLLC and eMBB services is considered based on their QoS. 
+In \cite{setayesh2020joint,yang2020should,saggese2021power}, the problem of resource allocation in the coexistence of URLLC and eMBB services is considered based on their QoS. 
 In \cite{alsenwi2021intelligent}, the problem of resource allocation for joint eMBB and URLLC services is formulated and solved by deep reinforcement learning.
- In \cite{saggese2021power}, the problem of power minimization for URLLC and eMBB services is presented for non-orthogonal multiple access (NOMA) and orthogonal multiple access (OMA).
  In \cite{korrai2020ran}, the authors proposed to allocate RAN resources for the network slicing system in coexistence of eMBB and URLLC services. The system guarantees the latency, the service rate, and the maintenance of reliability.
 
-Virtualization technique for RAN and core is one of the exciting topics.  
-In \cite{SystemCostMinimization,guo2016exploiting}, the authors solve the problem of obtaining beamforming and VMs activation in a C-RAN system with limited fronthaul capacity. 
+In \cite{SystemCostMinimization,guo2016exploiting}, the authors address the issue of beamforming and VMs activation (using virtualization) in a C-RAN system with limited fronthaul capacity. 
 This paper aims to minimize the energy cost with the system delay, fronthaul capacity, and rate constraint. 
-Also, transmission and processing delay are modeled based on M/M/1 queuing theory to guarantee delay for the UEs.
- In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing resource allocation with beamforming is formulated; Also, the association of RRH to the UE is considered and solved using innovative methods.
+Also, transmission and processing delays are modeled based on M/M/1 queueing theory to guarantee UE delays.
+In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing resource allocation with beamforming is formulated; Also, the association of RRH to the UE is considered and solved using innovative methods.
+
 In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power allocation and RRH association in the H-CRAN system is considered to maximize energy efficiency.
 In \cite{amani2019power}, optimum power is obtained in massive MIMO aided C-RAN. Also the problem of RRH to BBU and the RRH to UE association is obtained. Moreover, the author talked about the feasible region to make the initial values possible.
 \subsection{Main Contributions}
-The purpose of this study is to optimize baseband resource allocation i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
+The purpose of this study is to optimize baseband resource allocation, i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
 Unlike other papers, we concentrate more on the multiservice resource management of the RAN slicing in the openness and flexible O-RAN system.
-The novelty of this paper is to improve the resource utilization of the overall wireless O-RAN system in the presents of the three generic service types introduced in 5G using RAN slicing.
-In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The main contributions of this paper are summarized as follow:
+The novelty of this paper is to improve the resource utilization of the overall wireless O-RAN system in the presence of the three generic service types introduced in 5G using RAN slicing.
+In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the ORAN system is studied. The main contributions of this paper are summarized as follows:
 \begin{itemize}
-\item This paper depicts a network slicing model for three different types of services introduced in 5G, i.e., eMBB, mMTC, and URLLC. The problem of radio resource allocation and VNF activation is studied in this paper in the O-RAN architecture.
-We formulate the problem of baseband resource allocation to maximize the weighted throughput of the O-RAN system for a different types of services with specific QoS. 
-\item The desired QoS conditions such as delay and throughput are considered for different types of services. We formulate the end-to-end mean delay of the system based on the number of activated VNFs and  user throughput.
-We consider the limited fronthaul capacity and obtain the power and the capacity of each O-RU. We model the interference of neighboring O-RU and formulate the actual throughput
-for different types of services. We also model the throughput of URLLC and mMTC based on their short packet transmission.
+\item This paper depicts a network slicing model for three different services introduced in 5G, i.e., eMBB, mMTC, and URLLC. The problem of radio resource allocation and VNF activation is studied in this paper in the O-RAN architecture.
+We formulate the problem of baseband resource allocation to maximize the weighted throughput of the O-RAN system for different types of services with specific QoS. 
+\item The desired QoS conditions such as delay and throughput are considered for different types of services. We formulate the end-to-end processing delay of the system based on the number of activated VNFs and user throughput.
+Assuming a limited fronthaul capacity, we calculate the power and capacity of each O-RU. We model the interference of neighboring O-RUs and formulate the actual throughput for different service types. Based on the short packet transmission of URLLC and mMTC, we also model their throughput.
 \item The main problem is mixed-integer non-linear programming that is extremely difficult to solve.
 We perform a two-step iterative algorithm to solve it.
 The two-step iterative algorithm is presented for the resource management framework with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
@@ -173,7 +171,7 @@ In this section, we describe the downlink system in O-RAN using RAN slicing as d
 Firstly, we present the system model. Then, we obtain achievable data rates, power of O-RU, and the fronthaul capacity for the downlink (DL) of the ORAN system. Afterward, we discuss the mean delay and the power of VNFs.
 Finally, the main problem is expressed.
 \subsection{System Model}
-There are three service types including mMTC, eMBB, and URLLC, which support different applications. There are $S_1$, $S_2$ and $S_3$ different applications for the mMTC, eMBB and URLLC service types, respectively and we have $S = S_1 + S_2 + S_3$. 
+There are three service types including eMBB, URLLC, and mMTC which support different applications. There are $S_1$, $S_2$ and $S_3$ different applications for the eMBB, URLLC, and mMTC service types, respectively and we have $S = S_1 + S_2 + S_3$. 
 %{\color{red} explain pre-allocated more}
 Therefore, there are $S$ pre-allocated slices serving these $S$ services;
 Each pre-allocated slice contains reserved VNFs for the three logical nodes:
