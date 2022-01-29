@@ -1,5 +1,5 @@
 SyncTeX Version:1
-Input:1:D:/thesis_phd/Journal1/paper1TNSM/./pr.tex
+Input:1:D:/thesis_phd1/Journal1/paper1TNSM/./pr.tex
 Input:2:c:/texlive/2018/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
 Input:3:c:/texlive/2018/texmf-dist/tex/latex/setspace/setspace.sty
 Input:4:c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
@@ -60,7 +60,7 @@ Input:58:c:/texlive/2018/texmf-dist/tex/latex/collectbox/collectbox.sty
 Input:59:c:/texlive/2018/texmf-dist/tex/latex/adjustbox/tc-xetex.def
 Input:60:c:/texlive/2018/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Input:61:c:/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
-Input:62:D:/thesis_phd/Journal1/paper1TNSM/./pr.aux
+Input:62:D:/thesis_phd1/Journal1/paper1TNSM/./pr.aux
 Input:63:c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 Input:64:c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 Input:65:c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -70,7 +70,7 @@ Unit:1
 X Offset:0
 Y Offset:0
 Content:
-!4423
+!4425
 {1
 [1,133:4736287,50473187:32206765,45736900,0
 [1,133:3315387,50473187:33627665,49346965,0
@@ -41929,8 +41929,8 @@ h1,1033:3315387,50473187:33627665,0,0
 ]
 !41514
 }11
-Input:67:D:/thesis_phd/Journal1/paper1TNSM/./pr.bbl
-!63
+Input:67:D:/thesis_phd1/Journal1/paper1TNSM/./pr.bbl
+!64
 {12
 [67,2:4736287,50473187:32206765,45736900,0
 [67,2:3315387,50473187:33627665,49346965,0
@@ -47792,8 +47792,8 @@ h1,1140:3315387,50473187:33627665,0,0
 ]
 !112927
 }13
-Input:68:D:/thesis_phd/Journal1/paper1TNSM/./pr.aux
-!64
+Input:68:D:/thesis_phd1/Journal1/paper1TNSM/./pr.aux
+!65
 Postamble:
 Count:29388
 !27

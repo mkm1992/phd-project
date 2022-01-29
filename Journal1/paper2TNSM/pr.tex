@@ -103,12 +103,13 @@ The proposed method is validated via simulations that illustrate a higher data r
 Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slicing.
 \end{IEEEkeywords}
 \section{Introduction} 
-To achieve the desired level of QoS (quality, delay, power, etc.) and isolate different services, network slicing is the most effective solution for 5G wireless cellular networks. There are several implementations of network slicing, including core slicing, RAN slicing, and both. 
+\textcolor{blue}{To achieve the desired level of QoS (quality, delay, power, etc.) and isolate different services, network slicing is the most effective solution for 5G wireless cellular networks. There are several implementations of network slicing, including core slicing, RAN slicing, and both. 
 Recent discussion of 5G wireless systems has been around three services, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Depending on QoS, each service requires its own slice of the network.
 The eMBB service fulfills the demand for high capacity and throughput. The URLLC also offers autonomous vehicles, tactile internet, remote surgery services, and other services of high quality and low latency. mMTC is comprised of many low-power internet of things (IoT) devices that transmit small payloads to a typical receiver, including sensors for sensing, metering, and monitoring
 \cite{shen2020ai,setayesh2020joint,popovski20185g,dogra2020survey,kassab2018coexistence,alsenwi2021intelligent}.
+}
 
-O-RAN is driven by two pillars of openness and RAN intelligence as the next generation of radio access networks. O-RAN was developed as a result of integrating virtual RAN (vRAN) and cloud RAN (CRAN), and it takes advantage of both. With RAN virtualization, operators can improve flexibility, reduce CAPEX and OPEX, and add new capabilities to the network more quickly. The CRAN divides the radio remote head (RRH) and baseband unit (BBU) into two major parts. Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike CRAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU). 
+\textcolor{blue}{O-RAN is driven by two pillars of openness and RAN intelligence as the next generation of radio access networks. O-RAN was developed as a result of integrating virtual RAN (vRAN) and cloud RAN (CRAN), and it takes advantage of both. With RAN virtualization, operators can improve flexibility, reduce CAPEX and OPEX, and add new capabilities to the network more quickly. The CRAN divides the radio remote head (RRH) and baseband unit (BBU) into two major parts. Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike CRAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).}
 
 O-RU is a logical node that contains RF and lowers PHY. Moreover, the O-DU expresses another logical node with higher PHY, MAC, and RLC.
 In addition, the O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). O-CU-UP hosts PDCP-UP and SDAP, and O-CU-CP hosts PDCP-CP and RRC.
@@ -121,7 +122,7 @@ O-RAN offers machine learning techniques based on the requirement for an intelli
 Network function virtualization (NFV) is referred to the separation of network software and hardware elements such that network function can run on commodity hardware. Virtual network functions (VNF) are system function blocks in NFV systems. The NFV technology offers to execute VNFs as virtual machines or containers on a cloud environment \cite{mijumbi2015network, luo2020online}.
 As a result, some O-RAN components, such as user plane function (UPF), O-CU, O-DU, and RAN Intelligent Controller (RIC)-near real-time, are being virtualized and implemented as VNFs that can be run as virtual machines (VMs) or containers.
 
-To achieve the specific QoS for eMBB, URLLC, and mMTC, this study optimizes the allocation of baseband resources, including power allocation, PRB allocation, O-Rus association, and VNF activation to create an isolated network slicing outline.
+\textcolor{blue}{In order to achieve the specific QoS for eMBB, URLLC, and mMTC, this study optimizes the allocation of baseband resources, including power allocation, PRB allocation, O-Rus association, and VNF activation to create an isolated network slicing outline.}
 \subsection{Related Works}
 The problem of resource allocation for network slicing in multi-tenant cellular networks has received attention recently \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
 In \cite{lee2018dynamic}, dynamic network slicing in multi-tenant heterogeneous CRAN (H-CRAN) is considered. The network slicing scheme includes a higher level and the lower level. The higher level manages user acceptance control, user communication that provides for radio unit association (RRH association to maximize user rates and allocate baseband resource capacity), the allocation of BBU capacity. Also, the allocation of power and physical resource blocks (PRB) is performed in the lower level.
@@ -446,7 +447,7 @@ $T^{\text{proc}}_{s}=  T^{RU}_{s} + 3\times T^{DU}_{s}.$
 %\end{split}
 %\end{equation}
 In the following, we define a lemma to find the upper and lower bound for the optimal number of VNFs based on the achievable rates. Afterward, we obtain the formula to attain the optimal number of VNFs.  
-\begin{lemma}
+\begin{lemma}\label{lemma1}
 The optimal number of VNFs in each slice s can be achieved by the 
 $M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s$.
 where, $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
@@ -785,7 +786,7 @@ Parameter & Value \\ [0.5ex]
   \hline\hline
   Noise power & -174dBm\\
   \hline
-  Bandwidth & 180 KHz \\
+  Bandwidth & 180 KHz  \\
   \hline
  Maximum transmit Power of each O-RU & 40dBm \\
   \hline
@@ -810,8 +811,12 @@ Parameter & Value \\ [0.5ex]
  \end{table} 
 Finding a feasible initial value is almost tricky. To overcome this challenge, we use a fast method that is discussed in \ref{fr}. If the fast method converges and has a feasible solution, so our algorithm (IABV) can be converged too.
 Two different methods are used to compare with the performance of the proposed method (IABV) and show the optimality of our approach.
- The first one is a baseline scheme, which uses random PRB allocation. The association of O-RU is carried out based on distance. Also, the number of activated VNFs for each slice is fixed. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method. The second one is similar to the FBDR algorithm proposed in \cite{lee2018dynamic}. In this method, PRB and power are dynamically allocated, and the number of VNFs is obtained from the simulation, and the UEs are associated with the O-RU based on the quality of their channels and the channel distance.
-\vspace*{-2em}
+\textcolor{red}{ The first one is a baseline scheme, which uses random PRB allocation. 
+So, the allocation of PRB  to each UE is random when we have low interference, but in figures with high interference, we randomly assign just one RB to each UE. Also, the association of O-RU is carried out based on distance. It means that each UE is assigned to the nearest O-RU. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method since the problem is convex. After achieving power and other parameters, the achievable rate will be obtained and the optimal number of VNF is achieved from the lemma \eqref{lemma1}.
+ The second one is similar to the fixed BBU capacity and
+dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic}. We assume here that the capacity of the O-DU (which is similar to BBU in the FBDR) is as large as the capacity of our fronthaul link so that we can use this method for our system model.
+In this method, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm \ref{alg1} (GAA algorithm ) for O-RU assignment.}
+\vspace*{-1em}
 \subsection{Feasible Region}\label{fr}
 Applying the correct initial point to make the system feasible is a significant step in our work.
 During the simulations, it can be noted that sometimes the algorithm does not converge for some of the iterations with fixed initial values.
