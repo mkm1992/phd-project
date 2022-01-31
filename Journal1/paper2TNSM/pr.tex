@@ -295,13 +295,19 @@ T^{\text{pro}} &= T^{fr,p} + T^{\text{mid},p} + T^{b,p}.
 %{\color{red} I made a mistake and replaced pro with proc. Please correct them. Also, explain in more details the processing delay in this paragraph.}
 %T_{\text{\text{tot}}} = T_{RU} + T_{front} + T_{DU} + T_{\text{mid}} + T_{CU} + T_{back} + T_{core} + T_{trans2net}
 The total delay ($T^{\text{\text{tot}}}$), is the sum of the processing delay ($T^{\text{proc}}$), the transmission delay ($T^{tr}$), and the propagation delay ($T^{\text{pro}}$). 
-The propagation delay is the time takes for a signal to reach its destination. It obtains based on the length of the fiber link and the capacity of the link ($T = L/c$, where $L$ is the length of the link and c is the capacity of the link). The total propagation delay ($T^{\text{pro}}$), is the sum of the propagation delay in the fronthaul link $T^{fr,p}$, the midhaul link $T^{\text{mid},p}$, and the backhaul link $T^{b,p}$.
+The propagation delay is the time takes for a signal to reach its destination. It obtains based on the length of the fiber link and the capacity of the link ($T = L/c$, where $L$ is the length of the link and c is the propagation speed of the link). The total propagation delay ($T^{\text{pro}}$), is the sum of the propagation delay in the fronthaul link $T^{fr,p}$, the midhaul link $T^{\text{mid},p}$, and the backhaul link $T^{b,p}$.
 Also, the transmission delay is the amount of time required to push all the packets into the fiber link.
 Moreover, it can formulated as 
-$T = \frac{\mathcal{\alpha}}{R}$, where $R$ is the sum-rate of the packet transmission in each link and $\mathcal{\alpha}$ is the mean arrival data rate of each link.
+$T = \frac{\mathcal{\alpha}}{R}$, where $R$ is the data-rate of the packet transmission in each link and $\mathcal{\alpha}$ is the mean packet size transmitting in each link.
 So the total transmission delay ($T^{tr}$) is the sum of the transmission delay in the fronthaul $T^{fr,t}$, the midhaul $T^{\text{mid},t}$, and the backhaul $T^{b,t}$.
-In this paper, we focus only on the processing delays to find the optimal number of VNFs, and we ignore the other two delays for simplification;
-So, we assume that the total delay is approximate to the processing delay ($T^{\text{\text{tot}}} \approx T^{\text{proc}}$).
+
+\textcolor{magenta}{ We can reduce the complexity of our delay calculation and enhance the performance of our solution by eliminating propagation and transmission delays to focus on obtaining the optimal number of VNF. 
+In this paper, we focus only on the processing delays to find the optimal number of VNFs, and we consider the other two delays are fixed for simplification;
+Since the distance between the O-RU to O-DU is about 10 km and also the distance between O-DU and O-CU is about 80 km. Moreover, the distance from O-CU to the network should not exceed 200 km \cite{oranD1}. so, the propagation delay is about $T^{\text{pro}} = (10 + 80 + 200)\times 10^3 /(3\times 10^8) < 1ms $. Since, fronhaul, midhaul and backhaul are fiber optics, c is the speed of light. Also, due to the use of the edge technique in O-DU or O-CU for users with low latency, this amount of latency is greatly reduced. But we do not focus on edge processing in this paper.
+In URLLC and mMTC, the mean packet size can be between 20 to 32 byte; Also, the minimum data rate is assume to be $46 bits/sec/Hz \times BW (180 KHz)$. So the transmission delay from O-RU to O-DU is about $T^{fr,t} = \frac{20\times 8}{46 \times 180 \times 10^3} < 2 us$. As a result, the $T^{fr,t} \approx T^{mid,t} \approx T^{b,t}$. for eMBB, the packet size can be 100 times larger and the delay is not exceed the 0.6ms.  
+}
+
+So, we assume that the total delay is approximate to the processing delay ($T^{\text{\text{tot}}} \approx T^{\text{proc}}$). 
 %Here we assume the propagation delay and the transmission delay are negligible compared to the processing delay.
 %\begin{equation}
 %T^{\text{\text{tot}}} \approx T^{\text{proc}}
@@ -446,6 +452,9 @@ $T^{\text{proc}}_{s}=  T^{RU}_{s} + 3\times T^{DU}_{s}.$
 %                     &=  T^{RU}_{s} + 3\times T^{DU}_{s}.
 %\end{split}
 %\end{equation}
+
+\textcolor{violet}{Since problem \eqref{problem} is mixed-integer nonlinear programming with two integer constraints which are a binary variable ($e$ shows the PRB assignment) and an integer variable ($M_s$ indicate the number of VNFs in slice s), the problem is NP-hard. Solving the problem is complex. To solve the problem by inspiring Stackelberg, we reformulate the equation \eqref{c16} to reduce one of the variables ($M_s$) that can be solved after obtaining the rate of UEs ($M_s$ is similar to followers in Stackelberg Competition and power and PRB assignment is similar to leader). So, the new problem has two variables of power and PRB assignment. This new problem is convex by relaxing the binary variable (PRB assignment) and can be solved by the Lagrangian function. After obtaining the power of UEs and PRB assignment, we can obtain the achievable rate of each UE so we can find the optimal number of VNFs.}
+
 In the following, we define a lemma to find the upper and lower bound for the optimal number of VNFs based on the achievable rates. Afterward, we obtain the formula to attain the optimal number of VNFs.  
 \begin{lemma}\label{lemma1}
 The optimal number of VNFs in each slice s can be achieved by the 
@@ -815,7 +824,9 @@ Two different methods are used to compare with the performance of the proposed m
 So, the allocation of PRB  to each UE is random when we have low interference, but in figures with high interference, we randomly assign just one RB to each UE. Also, the association of O-RU is carried out based on distance. It means that each UE is assigned to the nearest O-RU. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method since the problem is convex. After achieving power and other parameters, the achievable rate will be obtained and the optimal number of VNF is achieved from the lemma \eqref{lemma1}.
  The second one is similar to the fixed BBU capacity and
 dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic}. We assume here that the capacity of the O-DU (which is similar to BBU in the FBDR) is as large as the capacity of our fronthaul link so that we can use this method for our system model.
-In this method, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm \ref{alg1} (GAA algorithm ) for O-RU assignment.}
+In this method, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm \ref{alg1} (GAA algorithm ) for O-RU assignment.
+The figures in \cite{lee2018dynamic} show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same priority area. We will also see that our proposed algorithm performs better than FBDR in the next subsection.
+}
 \vspace*{-1em}
 \subsection{Feasible Region}\label{fr}
 Applying the correct initial point to make the system feasible is a significant step in our work.
