@@ -20,7 +20,7 @@
 \usepackage{graphicx}
 \usepackage{blindtext}
 \usepackage{textcomp}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{algorithm}
 \usepackage{algorithmicx}
 %\usepackage{algorithmic,algorithm2e,float}
@@ -103,11 +103,14 @@ The proposed method is validated via simulations that illustrate a higher data r
 Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slicing.
 \end{IEEEkeywords}
 \section{Introduction} 
+\subsection{State Of The Arts}
 \textcolor{blue}{To achieve the desired level of QoS (quality, delay, power, etc.) and isolate different services, network slicing is the most effective solution for 5G wireless cellular networks. There are several implementations of network slicing, including core slicing, RAN slicing, and both. 
 Recent discussion of 5G wireless systems has been around three services, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Depending on QoS, each service requires its own slice of the network.
 The eMBB service fulfills the demand for high capacity and throughput. The URLLC also offers autonomous vehicles, tactile internet, remote surgery services, and other services of high quality and low latency. mMTC is comprised of many low-power internet of things (IoT) devices that transmit small payloads to a typical receiver, including sensors for sensing, metering, and monitoring
 \cite{shen2020ai,setayesh2020joint,popovski20185g,dogra2020survey,kassab2018coexistence,alsenwi2021intelligent}.
 }
+
+\textcolor{OrangeRed}{This paper considers various user equipments (UEs) requesting one of these types of services with different QoS. We want to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.}
 
 \textcolor{blue}{O-RAN is driven by two pillars of openness and RAN intelligence as the next generation of radio access networks. O-RAN was developed as a result of integrating virtual RAN (vRAN) and cloud RAN (CRAN), and it takes advantage of both. With RAN virtualization, operators can improve flexibility, reduce CAPEX and OPEX, and add new capabilities to the network more quickly. The CRAN divides the radio remote head (RRH) and baseband unit (BBU) into two major parts. Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike CRAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).}
 
@@ -123,7 +126,7 @@ Network function virtualization (NFV) is referred to the separation of network s
 As a result, some O-RAN components, such as user plane function (UPF), O-CU, O-DU, and RAN Intelligent Controller (RIC)-near real-time, are being virtualized and implemented as VNFs that can be run as virtual machines (VMs) or containers.
 
 \textcolor{blue}{In order to achieve the specific QoS for eMBB, URLLC, and mMTC, this study optimizes the allocation of baseband resources, including power allocation, PRB allocation, O-Rus association, and VNF activation to create an isolated network slicing outline.}
-\subsection{Related Works}
+\subsection{Related Literature}
 The problem of resource allocation for network slicing in multi-tenant cellular networks has received attention recently \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
 In \cite{lee2018dynamic}, dynamic network slicing in multi-tenant heterogeneous CRAN (H-CRAN) is considered. The network slicing scheme includes a higher level and the lower level. The higher level manages user acceptance control, user communication that provides for radio unit association (RRH association to maximize user rates and allocate baseband resource capacity), the allocation of BBU capacity. Also, the allocation of power and physical resource blocks (PRB) is performed in the lower level.
 In \cite{xiang2020realization}, network slicing in the radio section is considered for the fog RAN (F-RAN) system, and a deep reinforcement learning algorithm is proposed for it. In \cite{elayoubi20195g,d2020toward}, the implementation of RAN level slicing is discussed in mobile network operator (MNO).
@@ -229,7 +232,7 @@ Also, $BN_0$ denotes the power of Gaussian additive noise, and $I_{r,u(s,i)}^{k}
 %{\color{red} $\gamma_1$ is constant used instead of variable. }
 %where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}$ and $\gamma_{2} = e^{k}_{u(s,i)}e^{k}_{u(n,l)}$.
 where $e^{k}_{u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ O-RU. %($\gamma_1$ and $\gamma_2$ are two variales. You  define on variable here.) 
-
+\textcolor{NavyBlue}{Here we have two Gaussian noise types: additive Gaussian noise and the other is Gaussian quantization noise. The second noise is added to the interfering signal and shown with $ I_{r,u(s,i)}^{k}$ and it is different with interference.}
 \textcolor{teal}{To obtain SNR as formulated in \eqref{eq1}, let $y_{u(s,i)} $ be the received signal of UE $i$ in $s^{th}$ service formulated as
 \begin{equation}\label{eq2}
 y_{u(s,i)} = \sum_{r = 1}^{R}\sum_{k=1}^{K_s} \boldsymbol{h}^{H \: k}_{r,u(s,i)} g_{u(s,i)}^r e^k_{r,u(s,i)}{x_Q}^k_{r,u(s,i)}+ z_{u(s,i)},
@@ -377,6 +380,8 @@ where $\phi_{s}$ is obtained from $\phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M
 %\phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M_s^d \phi_s^d.
 %\end{equation}
 Moreover, $\phi_s^u$, $\phi_s^c$, and $\phi_s^d$ are the fixed cost of energy in UPF, O-CU, and O-DU, respectively. 
+
+\textcolor{gray}{A significant issue facing the industry is reducing energy consumption. Data centers are one of the most energy-consuming. As a result, restrictions are placed on data centers' energy, including virtual machines (VMs). So, one of our goals is to limit the energy consumption of total VNFs that can be run as VM on data centers. So, by applying a custom policy on total power consumption, we can control data centers' power consumption ($\phi^{\text{\text{tot}}}  \leq \phi^{max}$).}
 \subsection{Problem Statement}
 Suppose slice $s$ (which is assigned to service s) has the priority factor $\delta_s$ (based on the priority of its hosting service) where $\sum_{s=1}^S \delta_s =1$.
 The priority factor of each slice is obtained according to the service level agreement (SLA) of that service to have a fairness in the system. 
@@ -396,11 +401,11 @@ This paper aims to maximize the sum-rate of all UEs with the presence of constra
 & \mu_s \geq \alpha_s/M_s \quad \forall s,\label{c16-1} \\
 & \bar{\mathcal{R}}_{u_{(s,i)}} \geq {\lambda}_{u_{(s,i)}} \quad \forall i,\forall s,\label{c16-2} \\
 & 0 \leq M_s \leq M^{max}_s  \quad \forall s,\label{c16-3}\\
+& \phi^{\text{\text{tot}}}  \leq \phi^{max}, \label{c19} \\
 %& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
 & \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s,\forall i, \label{c17}  \\
 & \sum_{k =1}^{K_s} g^r_{u(s,i)} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r \label{c18-1} \\
 & \sum_{s =1}^{S}\sum_{i=1}^{U_s}g^r_{u(s,i)} e^{k}_{r,u(s,i)} \leq 1  \quad \forall s,\forall i ,\forall r \label{c18} \\
-& \phi^{\text{\text{tot}}}  \leq \phi^{max}, \label{c19} \\
 & g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c20}  \\
 & e^k_{r,u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c21}  
 \end{alignat}
@@ -418,7 +423,7 @@ Also, \eqref{c13} shows that the rate of each UE requesting each type of service
 Also, \eqref{c18} ensures that each PRB can not be assigned to more than one UE associated with the same O-RU.
 In addition, \eqref{c19} indicates that the fixed cost of energy of VNFs in each slice does not exceed the threshold. 
 Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
-\vspace*{-1em}
+%\vspace*{-1em}
 \section{Proposed Algorithm}\label{proAlg}
 In this section, we first apply some simplifications to the system; Solving the problem \eqref{problem} is complicated since this is non-convex mixed-integer non-linear problem (MINLP) with a binary variable and an integer variable. 
 We applied some simplifications and use an iterative heuristic algorithm to solve the problem.
@@ -833,9 +838,11 @@ Parameter & Value \\ [0.5ex]
 Finding a feasible initial value is almost tricky. To overcome this challenge, we use a fast method that is discussed in \ref{fr}. If the fast method converges and has a feasible solution, so our algorithm (IABV) can be converged too.
 Two different methods are used to compare with the performance of the proposed method (IABV) and show the optimality of our approach.
 \textcolor{red}{ The first one is a baseline scheme, which uses random PRB allocation. 
-So, the allocation of PRB  to each UE is random when we have low interference, but in figures with high interference, we randomly assign just one RB to each UE. Also, the association of O-RU is carried out based on distance. It means that each UE is assigned to the nearest O-RU. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method since the problem is convex. After achieving power and other parameters, the achievable rate will be obtained and the optimal number of VNF is achieved from the lemma \eqref{lemma1}.
- The second one is similar to the fixed BBU capacity and
-dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic}. We assume here that the capacity of the O-DU (which is similar to BBU in the FBDR) is as large as the capacity of our fronthaul link so that we can use this method for our system model.
+So, the allocation of PRB  to each UE is random when we have low interference, but in figures with high interference, we randomly assign just one RB to each UE. Also, the association of O-RU is carried out based on distance. It means that each UE is assigned to the nearest O-RU. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method since the problem is convex. After achieving power and other parameters, the achievable rate will be obtained and the optimal number of VNF is achieved from the lemma \eqref{lemma1}.}
+\textcolor{brown}{ The second one is similar to the fixed BBU capacity and
+dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic}.
+In this work, we have services with different QoS that contain UEs, which is similar to tenants with a different QoS. So, we used an algorithm similar to FBDR adapted to our conditions for comparison.  
+ We assume here that the capacity of the O-DU (which is similar to BBU in the FBDR) is as large as the capacity of our fronthaul link so that we can use this method for our system model.
 In this method, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm \ref{alg1} (GAA algorithm ) for O-RU assignment.
 The figures in \cite{lee2018dynamic} show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same priority area. We will also see that our proposed algorithm performs better than FBDR in the next subsection.
 }
