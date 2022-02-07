@@ -198,11 +198,22 @@ N.~Amani, S.~Parsaeefard, H.~Taheri, and H.~Pedram, ``Power-efficient resource
   allocation in massive mimo aided cloud rans,'' \emph{arXiv preprint
   arXiv:1908.07568}, Aug. 2019.
 
+\bibitem{mei2021intelligent}
+J.~Mei, X.~Wang, K.~Zheng, G.~Boudreau, A.~B. Sediq, and H.~Abou-Zeid,
+  ``Intelligent radio access network slicing for service provisioning in 6g: A
+  hierarchical deep reinforcement learning approach,'' \emph{IEEE Transactions
+  on Communications}, vol.~69, no.~9, pp. 6063--6078, 2021.
+
 \bibitem{oranD1}
 \BIBentryALTinterwordspacing
 J.~Cavazos. (2020) 5g testing: What is o-ran? – part 2. [Online]. Available:
   \url{https://blogs.keysight.com/blogs/inds.entry.html}
 \BIBentrySTDinterwordspacing
+
+\bibitem{marabissi2019highly}
+D.~Marabissi and R.~Fantacci, ``Highly flexible ran slicing approach to manage
+  isolation, priority, efficiency,'' \emph{IEEE Access}, vol.~7, pp.
+  97\,130--97\,142, 2019.
 
 \bibitem{akccay2007greedy}
 Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
