@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  7 FEB 2022 18:44
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  8 FEB 2022 17:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -743,20 +743,27 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
+Underfull \hbox (badness 1776) in paragraph at lines 338--339
+[][]\T1/ptm/m/n/10 Considering prop-a-ga-tion and trans-mis-sion de-lays is
+ []
+
 Missing character: There is no ’ in font ptmr8t!
 
-[5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 507--510
+Underfull \vbox (badness 4899) has occurred while \output is active []
+
+ [5]
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 510--513
 []\T1/ptm/b/n/10 Lemma 1. []\T1/ptm/m/it/10 The op-ti-mal num-ber of VNFs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--510
+Underfull \hbox (badness 10000) in paragraph at lines 510--513
 \T1/ptm/m/it/10 in each slice s can be achieved by the
  []
 
 
-Underfull \hbox (badness 4647) in paragraph at lines 507--510
+Underfull \hbox (badness 4647) in paragraph at lines 510--513
 \OML/cmm/m/it/10 M[] \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 f\OT1/cmtt/m/n/10 M[]
 \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 1\OML/c
 mm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; :::; U[]\OMS/cmsy/m/n/10 g 8\O
@@ -764,40 +771,34 @@ ML/cmm/m/it/10 s$\T1/ptm/m/it/10 . where,
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 507--510
+Underfull \hbox (badness 1466) in paragraph at lines 510--513
 \OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/10 = []$ \T1/ptm/m/it/10 for each UE
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 560--568
+
+Underfull \vbox (badness 5064) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--571
 \T1/ptm/m/n/10 In ad-di-tion, we de-note $\OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/10 
 =
  []
 
 
-Underfull \hbox (badness 1902) in paragraph at lines 560--568
+Underfull \hbox (badness 1902) in paragraph at lines 563--571
 []$ \T1/ptm/m/n/10 for each UE $\OML/cmm/m/it/10 i$ \T1/ptm/m/n/10 in slice
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]
-Underfull \hbox (badness 10000) in paragraph at lines 657--659
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 660--662
 \T1/ptm/m/n/10 where $\U/euf/m/n/10 Z[] \OT1/cmr/m/n/10 = (\U/euf/m/n/10 F[] \O
 MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
+[9]
 File: cell.pdf Graphic file (type pdf)
 <use cell.pdf>
-
-[10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ [10] [11]
 File: Arate_ue1.eps Graphic file (type eps)
 <Arate_ue1.eps>
 File: vnfNum1.eps Graphic file (type eps)
@@ -812,9 +813,6 @@ File: AmmTCpower.eps Graphic file (type eps)
 <AmmTCpower.eps>
 File: priorityLast.eps Graphic file (type eps)
 <priorityLast.eps>
- [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: iter.eps Graphic file (type eps)
 <iter.eps>
 File: optimal1.eps Graphic file (type eps)
@@ -824,19 +822,20 @@ File: interF_new.eps Graphic file (type eps)
 File: FA.eps Graphic file (type eps)
 <FA.eps>
 
-Underfull \vbox (badness 1845) has occurred while \output is active []
+Underfull \vbox (badness 5417) has occurred while \output is active []
 
  [12]
-(./pr.bbl [13]
+Underfull \vbox (badness 1189) has occurred while \output is active []
+
+ (./pr.bbl
+[13]
 Underfull \hbox (badness 1852) in paragraph at lines 37--40
 \T1/ptm/m/n/8 ``5g wire-less net-work slic-ing for embb, urllc, and mmtc: A
  []
 
 [14]
 Missing character: There is no – in font ptmr8t!
-) [15
-
-] (./pr.aux)
+) [15] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -845,12 +844,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8818 strings out of 492970
- 131631 string characters out of 6137298
- 231735 words of memory out of 5000000
- 12607 multiletter control sequences out of 15000+600000
+ 8820 strings out of 492970
+ 131640 string characters out of 6137298
+ 235747 words of memory out of 5000000
+ 12609 multiletter control sequences out of 15000+600000
  91586 words of font info for 125 fonts, out of 8000000 for 9000
  1352 hyphenation exceptions out of 8191
- 36i,21n,77p,944b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,21n,77p,1220b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on pr.pdf (15 pages).

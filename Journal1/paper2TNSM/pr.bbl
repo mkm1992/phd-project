@@ -210,6 +210,10 @@ J.~Cavazos. (2020) 5g testing: What is o-ran? – part 2. [Online]. Available:
   \url{https://blogs.keysight.com/blogs/inds.entry.html}
 \BIBentrySTDinterwordspacing
 
+\bibitem{QS}
+\emph{Queueing Systems. Volume 1: Theory 1st Edition}.\hskip 1em plus 0.5em
+  minus 0.4em\relax A Wiley-Interscience Publication, 1975.
+
 \bibitem{marabissi2019highly}
 D.~Marabissi and R.~Fantacci, ``Highly flexible ran slicing approach to manage
   isolation, priority, efficiency,'' \emph{IEEE Access}, vol.~7, pp.
