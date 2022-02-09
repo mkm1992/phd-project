@@ -191,11 +191,12 @@ $\{1,2,...,S_3\}$ set of mMTC service instances.
 Each Service $s_j\in \{1,2,...,S_j\} $ consists of $U_{s_j}$ requests from  single-antenna UEs which require certain level of QoS. We notice that $j \in \{1,2,3\}$ indicates the service type.
 There are different application requests which fall into one of these service categories. Each application request requires a specific QoS. Based on the application and QoS request, UE may be admitted and allocated to the resources.
 Each slice $s_j \in \{1,2,...,S_j \}$, $j \in \{1,2,3\}$ consists of  $M_s^{d}$ VNFs for the processing of O-DU, $M_s^{c}$ VNFs for the processing of O-CU-UP and $M_s^{u}$ VNFs for the processing of UPF. 
-The VNFs of O-DU, O-CU-UP, and UPF are interconnected, defined as the Service Function Chain (SFC) in the O-RAN system.
+The VNFs of O-DU, O-CU-UP, and UPF are interconnected, defined as the Service Function Chain (SFC) in the O-RAN system. Also, each VNF instance runs on a virtual machine (VM) that uses resources from the data centers.
 
-Assume we have $K$ physical resource blocks (PRBs) in this system.
-All $K$ PRBs can be assigned to all UEs in each service.
-Also, each VNF instance runs on a virtual machine (VM) that uses resources from the data centers.
+
+%All $K$ PRBs can be assigned to all UEs in each service. 
+\textcolor{Sepia}{ Assume we have $K$ physical resource blocks (PRBs) in this system. Suppose each slice s consists of $\bar{K}_s$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs). Therefore, we have $\sum_s \bar{K}_s \leq K$.
+}
 In addition, there are $R$ multi-antenna O-RUs that are shared between slices. O-RU $r \in \{1,2,...,R \}$ has $J$ antennas for transmitting and receiving data. Also $\mathcal{R} = \{ r \ | \ r\in 1,2,...,R \}$ depicts the set of O-RUs. Moreover, all O-RUs have access to all PRBs.
 
 %Coordinated multipoint (CoMP) system is considered here. 
@@ -220,10 +221,11 @@ where $\boldsymbol{\phi}_{r,u(s,i)} = \text{diag}(\phi_{r,u(s,i)},\ldots,\phi_{r
 Moreover, $g_{u(s,i)}^r \in \{0,1\}$ is the binary variable that illustrates whether O-RU $r$ served the $i^{th}$ UE that is allocated to $s^{th}$ slice or not. 
 %Here, it is assumed that each UE is served by the nearest o-RU
 Also, $BN_0$ denotes the power of Gaussian additive noise.
-\textcolor{Sepia}{UEs in different O-RUs can be assigned to different PRBs. As a result, a UE in O-RU $r$ using PRB $k$ may experience interference from other O-RUs in the set of $r' \in R -r$.
-Network Slicing methods significantly reduce inter-service interference but do not eliminate it at all.
-There are some techniques to minimize inter-slice interference. One of these techniques is to have two-time scale scheduling. The PRB scheduling to the slices is performed on the first time scale, and in the second time scale, the PRB scheduling to the UEs of slices is carried out. Since there are limited resources, inter-service interference cannot be eliminated entirely. The other method is to allocate part of the RB of eMBB services to URLLC and mMTC \cite{alsenwi2021intelligent, setayesh2020joint, mei2021intelligent}.}
-We have two types of interference, the first one is between slices (inter-slice) and the second one is between UEs in each slices or services (intra-slice) that is shown in figure \ref{fig:intf}.
+
+\textcolor{Sepia}{Interference occurs when a UE in O-RU $r$ using PRB $k$ experiences an interference signal from other O-RUs in the set of $r' \in R \not\in
+ r$. UEs in each slice interfere in two ways in the technique of network slicing: the first is inter-slice interference between UEs of different slices, and the second is intra-slice interference between UEs of the same slice that is shown in figure \ref{fig:intf}.
+Network Slicing methods significantly reduce inter-service interference.
+There are some techniques to remove inter-slice interference. One of these techniques is to have two-time scale scheduling. The PRB scheduling to the slices is performed on the first time scale, and in the second time scale, the PRB scheduling to the UEs of slices is carried out. Since there are limited resources, inter-service interference cannot be eliminated entirely. The other method is to allocate part of the RB of eMBB services to URLLC and mMTC \cite{alsenwi2021intelligent, setayesh2020joint, mei2021intelligent}.} In this paper, we assume that the PRB scheduling is performed. Also, in subsection \ref{prb}, we briefly study the PRB scheduling between slices.
 \begin{figure}
   \centering 
   \captionsetup{justification=centering}
@@ -245,7 +247,9 @@ We have two types of interference, the first one is between slices (inter-slice)
 \end{subequations}
 %{\color{red} $\gamma_1$ is constant used instead of variable. }
 %where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}$ and $\gamma_{2} = e^{k}_{u(s,i)}e^{k}_{u(n,l)}$.
-where $e^{k}_{u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ O-RU. %($\gamma_1$ and $\gamma_2$ are two variales. You  define on variable here.) 
+where $e^{k}_{u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ O-RU. %($\gamma_1$ and $\gamma_2$ are two variales. You  define on variable here.)
+\textcolor{Sepia}{Furthermore, there is no inter-slice interference since slices are isolated and there is just intra-slice interference.}
+
 \textcolor{NavyBlue}{Here we have two Gaussian noise types: additive Gaussian noise and the other is Gaussian quantization noise. The second noise is added to the interfering signal and shown with $ I_{r,u(s,i)}^{k}$ and it is different with interference.}
 \textcolor{teal}{To obtain SNR as formulated in \eqref{eq1}, let $y_{u(s,i)} $ be the received signal of UE $i$ in $s^{th}$ service formulated as
 \begin{equation}\label{eq2}
@@ -440,22 +444,32 @@ Also, \eqref{c13} shows that the rate of each UE requesting each type of service
 Also, \eqref{c18} ensures that each PRB can not be assigned to more than one UE associated with the same O-RU.
 In addition, \eqref{c19} indicates that the fixed cost of energy of VNFs in each slice does not exceed the threshold. 
 Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
-\subsubsection{PRB Scheduling}
-\textcolor{Sepia}{  In this section, we study the problem of PRB scheduling to illuminate the inter-slice interference and guarantee the isolation of slices \cite{marabissi2019highly}.
-We need to have an algorithm to illuminate the inter-slice interference before solving the problem \ref{problem}. Firstly, we should assign PRBs to slices, and in the second step, the assignment of PRBs of each slice to each UEs of a specific slice is performed. So, the assignment of PRB can be completed in two steps to remove inter-slice interference and isolate the slices. Firstly we assign PRBs to slices. Secondly, we allocate power of UEs, assign PRBs of slices to UEs, find the optimal number of VNFs for each slice and assign O-RU to UEs, which uses the proposed algorithm \ref{proAlg}.
-Firstly, we need to find the average PRB number used by UEs in each service. Since mMTC and URLLC transmit a short packet, each UE in mMTC and URLLC requires 1 PRB. So if slice s serves mMTC or URLLC services, with $U_s$ UEs, it requires $K_s = U_s \times 1$ PRBs. For eMBB, assume the average rate of each UE in slice s serving eMBB UEs is $\bar{R}_s = Blog_2(1 + \bar{\rho_s})$, where, $\bar{\rho_s}$ is the average SNR of UEs in slice s. Also, $\mathcal{R}_{{s}}^{min}$ is the minimum data rate of each UE in slice s (eMBB slice).
-So, the average number of PRB that slice s with $U_s$ UEs requires is $K_s = U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{min}}$. $K_s$ is the average number of PRBs needed for slice s, and K is the total number of PRBs in the system. Our goal is to obtain the number of PRBs assigned to each slice s ($\bar{K_s}$).
+\subsubsection{PRB Scheduling}\label{prb}
+\textcolor{Sepia}{ In this section, we have a brief study on the problem of PRB scheduling to eliminate  the inter-slice interference and guarantee the isolation of slices \cite{marabissi2019highly}.
+We need to have an algorithm to remove the inter-slice interference before solving the problem \ref{problem}. Firstly, we should assign PRBs to slices, and in the second step, the assignment of PRBs of each slice to each UEs of a specific slice is performed. So, the assignment of PRB can be completed in two steps to remove inter-slice interference and isolate the slices. Firstly we assign PRBs to slices. Secondly, we allocate power of UEs, assign PRBs of slices to UEs, find the optimal number of VNFs for each slice and assign O-RU to UEs, which uses the proposed algorithm \ref{proAlg}.
+Suppose, $\mathcal{R}_{{s}}^{min}$, and $\mathcal{R}_{{s}}^{max}$ are the minimum data rate and maximum data rate of each UE in slice s, respectively.
+Firstly, we need to find the average PRB number used by UEs in each service. Since mMTC and URLLC transmit a short packet, each UE in mMTC and URLLC requires 1 PRB. So if slice s serves mMTC or URLLC services, with $U_s$ UEs, it requires $K_s = U_s \times 1$ PRBs. For eMBB, assume the average rate of each UE in slice s serving eMBB UEs is $\bar{R}_s = Blog_2(1 + \bar{\rho_s})$, where, $\bar{\rho_s}$ is the average SNR of UEs in slice s. (eMBB slice)
+So, the minimum number of PRB that slice s with $U_s$ UEs requires is $K_s^{min} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{max}}}\rceil$. $K_s^{min} $ is the minimum number of PRBs needed for slice s, and K is the total number of PRBs in the system.  
+Moreover, the maximum number of PRB that slice s with $U_s$ UEs requires is $K_s^{max} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{min}}}\rceil$. $K_s^{max} $ is the maximum number of PRBs needed for slice s, and K is the total number of PRBs in the system. Also, $K_s = (K_s^{min}+K_s^{max})/2$ is the average number of required PRB in slice s (eMBB slice).
+Our goal is to obtain the number of PRBs assigned to each slice s ($\bar{K_s}$).
 The problem can be written as follow
 \begin{subequations}\label{prob:prb}
 \begin{alignat}{4}
-\max\limits_{\boldsymbol{\bar{K_s}}} \quad &  \sum_{s=1}^{S}\delta_s \bar{\mathcal{R}}_{{s}}^{min}\log(\frac{\bar{K_s}}{K_s}) \ \\
+\max\limits_{\boldsymbol{\bar{K_s}}} \quad &  \sum_{s=1}^{S}\delta_s K_s \ln(\bar{K_s}) \ \\
 \text{subject to} \quad  & \sum_s{\bar{K_s}} \leq K
  \label{prb0} \\
-& \bar{K_s}  \leq K_s  \quad \forall s, ,\label{prb1} 
+& K_s^{min} \leq \bar{K_s}  \leq K_s^{max}  \quad \forall s \in S_1,\label{prb1} \\
+&  \bar{K_s} \leq K_s  \quad \forall s \in S_2, S_3,\label{prb2}
 \end{alignat}
 \label{constraints}
 \end{subequations}
+We used logarithms to assign PRBs to all slices to make them equally fair \cite{marabissi2019highly}.
+Equation \eqref{prb0} illustrates that the sum of PRBs of slices can not exceed the maximum number of PRBs. 
+Equation \eqref{prb1}, restrict the number of PRBs of eMBB slices and \eqref{prb2}, limit the number of PRBs of URLLC and mMTC slices. By relaxing $\bar{K_s}$, the objective function and constraints become convex and can be solved using the Lagrangian function.
 }
+\subsection{Slice Management}
+\textcolor{RedViolet}{In this subsection, we want to study the management of slices. We want to talk about the creation, management, and deletion of slices.}
+
 %\vspace*{-1em}
 \section{Proposed Algorithm}\label{proAlg}
 In this section, we first apply some simplifications to the system; Solving the problem \eqref{problem} is complicated since this is non-convex mixed-integer non-linear problem (MINLP) with a binary variable and an integer variable. 
