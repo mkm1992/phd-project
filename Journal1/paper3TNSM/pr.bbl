@@ -236,4 +236,26 @@ N.~Gholipoor, S.~Parsaeefard, M.~R. Javan, and N.~Mokari, ``Cloud-based queuing
   91st Vehicular Technology Conference (VTC2020-Spring)}, Antwerp, Belgium,
   Jun. 2020, pp. 1--6.
 
+\bibitem{3GPPTS1}
+3GPP-TS-36.104-V13.3.0, ``Evolved universal terrestrial radio access (e-utra);
+  base station (bs) radio transmission and reception (release= 13),'' 2016-03.
+
+\bibitem{3GPPTS2}
+3GPP-TR-36.931-V13.0.0, ``Evolved universal terrestrial radio access (e-utra);
+  radio frequency (rf) requirements for lte pico node b (release 13),''
+  2016-01.
+
+\bibitem{3GPPTS3}
+3GPP-TS-25.101-V4.13.0, ``User equipment (ue) radio transmission and reception
+  (fdd)(release 4),'' 2006-12.
+
+\bibitem{IMT}
+E.~Mohyeldin, ``Minimum technical performance requirements for imt-2020 radio
+  interface(s),'' 2020.
+
+\bibitem{ETSI1}
+ETSI-TR-138-913-V14.3.0, ``5g; study on scenarios and requirements for next
+  generation access technologies(3gpp tr 38.913 version 14.3.0 release 14),''
+  2017-10.
+
 \end{thebibliography}

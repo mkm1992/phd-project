@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  12 FEB 2022 18:14
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  14 FEB 2022 16:58
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -792,6 +792,7 @@ MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
 [9] [10]
 File: cell.pdf Graphic file (type pdf)
 <use cell.pdf>
+Missing character: There is no ‌ in font ptmr8t!
  [11]
 File: Arate_ue1.eps Graphic file (type eps)
 <Arate_ue1.eps>
@@ -810,20 +811,20 @@ File: priorityLast.eps Graphic file (type eps)
  [12]
 Underfull \vbox (badness 1189) has occurred while \output is active []
 
+
+Underfull \vbox (badness 2334) has occurred while \output is active []
+
+ [13]
 File: iter.eps Graphic file (type eps)
 <iter.eps>
 File: optimal1.eps Graphic file (type eps)
 <optimal1.eps>
-
-Underfull \vbox (badness 1158) has occurred while \output is active []
-
- [13]
 File: interF_new.eps Graphic file (type eps)
 <interF_new.eps>
 File: FA.eps Graphic file (type eps)
 <FA.eps>
 
-Underfull \vbox (badness 2932) has occurred while \output is active []
+Underfull \vbox (badness 1448) has occurred while \output is active []
 
  (./pr.bbl
 [14]
@@ -832,7 +833,9 @@ Underfull \hbox (badness 1852) in paragraph at lines 37--40
  []
 
 Missing character: There is no – in font ptmr8t!
-) [15] (./pr.aux)
+[15]) [16
+
+] (./pr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -841,12 +844,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8822 strings out of 492970
- 131651 string characters out of 6137298
- 233772 words of memory out of 5000000
- 12611 multiletter control sequences out of 15000+600000
+ 8827 strings out of 492970
+ 131690 string characters out of 6137298
+ 234792 words of memory out of 5000000
+ 12616 multiletter control sequences out of 15000+600000
  91586 words of font info for 125 fonts, out of 8000000 for 9000
  1352 hyphenation exceptions out of 8191
- 36i,21n,77p,1220b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,21n,77p,1336b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on pr.pdf (15 pages).
+Output written on pr.pdf (16 pages).

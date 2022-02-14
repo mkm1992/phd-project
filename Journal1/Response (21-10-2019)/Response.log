@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  12 FEB 2022 17:53
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  14 FEB 2022 18:06
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -819,9 +819,6 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 
 LaTeX Warning: Label `new_1' multiply defined.
 
-
-LaTeX Warning: Label `new_1' multiply defined.
-
 )
 \openout1 = `Response.aux'.
 
@@ -932,53 +929,45 @@ Underfull \vbox (badness 10000) detected at line 125
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--136
- []| \TU/lmr/bx/n/12 Reviewer 1| 
- []
-
-
-Overfull \hbox (0.29094pt too wide) in alignment at lines 131--141
+Overfull \hbox (0.29094pt too wide) in alignment at lines 130--136
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 141
+Underfull \vbox (badness 10000) detected at line 136
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 150--156
+Overfull \hbox (0.29094pt too wide) in alignment at lines 145--151
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 156
+Underfull \vbox (badness 10000) detected at line 151
+ []
+
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 159--165
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 165
  []
 
 [3
 
 ]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 168--187
+Overfull \hbox (0.29094pt too wide) in alignment at lines 189--195
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 187
- []
-
-[4
-
-]
-File: Gap.png Graphic file (type bmp)
-<Gap.png>
- [5
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 217--220
- []| \TU/lmr/bx/n/12 Reviewer 2| 
+Underfull \vbox (badness 10000) detected at line 195
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 215--225
+Overfull \hbox (0.29094pt too wide) in alignment at lines 200--225
  [] 
  []
 
@@ -986,51 +975,65 @@ Overfull \hbox (0.29094pt too wide) in alignment at lines 215--225
 Underfull \vbox (badness 10000) detected at line 225
  []
 
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 234--237
+ []| \TU/lmr/bx/n/12 Reviewer 2| 
+ []
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 234--240
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 232--242
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 240
+Underfull \vbox (badness 10000) detected at line 242
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 246--253
+Overfull \hbox (0.29094pt too wide) in alignment at lines 251--257
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 253
+Underfull \vbox (badness 10000) detected at line 257
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 255--262
+Overfull \hbox (0.29094pt too wide) in alignment at lines 263--270
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 262
+Underfull \vbox (badness 10000) detected at line 270
+ []
+
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 272--279
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 279
  []
 
 [6
 
 ]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 265--271
+Overfull \hbox (0.29094pt too wide) in alignment at lines 282--288
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 271
+Underfull \vbox (badness 10000) detected at line 288
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 279--298
+Overfull \hbox (0.29094pt too wide) in alignment at lines 296--315
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 298
+Underfull \vbox (badness 10000) detected at line 315
  []
 
 [7
@@ -1041,28 +1044,28 @@ File: Gap.png Graphic file (type bmp)
  [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 326--329
+Underfull \hbox (badness 10000) in paragraph at lines 343--346
  []| \TU/lmr/bx/n/12 Reviewer 4| 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 324--334
+Overfull \hbox (0.29094pt too wide) in alignment at lines 341--351
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 334
+Underfull \vbox (badness 10000) detected at line 351
  []
 
 [9
 
 ]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 348--367
+Overfull \hbox (0.29094pt too wide) in alignment at lines 365--384
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 367
+Underfull \vbox (badness 10000) detected at line 384
  []
 
 [10
@@ -1079,12 +1082,12 @@ LaTeX Warning: There were multiply-defined labels.
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 16407 strings out of 492970
- 308981 string characters out of 6137298
- 480038 words of memory out of 5000000
- 20045 multiletter control sequences out of 15000+600000
- 7136 words of font info for 34 fonts, out of 8000000 for 9000
+ 16437 strings out of 492970
+ 309296 string characters out of 6137298
+ 481076 words of memory out of 5000000
+ 20068 multiletter control sequences out of 15000+600000
+ 12630 words of font info for 55 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,7n,77p,801b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,7n,77p,1281b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Response.pdf (11 pages).
