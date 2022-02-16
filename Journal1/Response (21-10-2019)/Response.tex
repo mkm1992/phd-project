@@ -30,6 +30,7 @@
 \usepackage{multicol}
 \usepackage{amssymb}
 \usepackage{adjustbox}
+\usepackage{hyperref}
 %\usepackage[none]{hyphenat}
 %\usepackage{float}
 
@@ -88,7 +89,7 @@ provided herein will alleviate the reviewers' concerns. Below, please find our d
 \hline \hline %\hline \hline \hline
 \RaggedRight
 \cellcolor{violet!15}
-\textbf{\noindent Comment1:} ``The paper has gone through three independent reviews and also checked by myself. The topic is interesting and there are merits. But there are some major concerns on the contribution, the assumption, the model derivation, and the experimental results. I hope the review comments are useful for further improving the quality of the paper. I'd therefore recommend the Resubmission''\\
+\textbf{\noindent  Comments to the Author} ``The paper has gone through three independent reviews and also checked by myself. The topic is interesting and there are merits. But there are some major concerns on the contribution, the assumption, the model derivation, and the experimental results. I hope the review comments are useful for further improving the quality of the paper. I'd therefore recommend the Resubmission''\\
 \hline
 \end{longtable}
 
@@ -185,6 +186,8 @@ channel distance instead of using the greedy algorithm 1 (GAA algorithm ) for O-
 show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same
 priority area. We will also see that our proposed algorithm performs better than FBDR in the numerical result section.
 
+We add this response in subsection IV-A.
+
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -195,6 +198,7 @@ priority area. We will also see that our proposed algorithm performs better than
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
+
 We refer to the following list of references in our numerical result for this comment:
 
 \begin{longtable}{|p{0.975\textwidth}|}
@@ -224,7 +228,10 @@ ments for next generation access technologies(3GPP TR 38.913 version
 \hline
 \end{longtable}
 
-In [1] page 11, the amount of BW is explained. In [2], noise power is represented. In [5], the author stated the amount of delay for eMBB and URLLC in page 24 and 25. Also, in page 27, the mMTC packet size is stated. In [3], in page 13, table 6.1, the maximum power is stated. In [4], in page 4, the delay of URLLC and eMBB is stated also the spectral efficiency of eMBB is stated.
+On [1] page 11, the amount of BW is explained. In [2], the noise power is represented. In [5], the author stated the amount of delay for eMBB and URLLC on pages 24 and 25. Also, on page 26, the mMTC packet size is stated. On page 25, the URLLC packet size is stated.
+In [3], on page 13, table 6.1, the maximum power is stated. In [4], on page 4, the delay of URLLC and eMBB is and also the spectral efficiency of eMBB is noted.
+
+We add these references in IV-A (references [41]-[45]).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
@@ -252,88 +259,171 @@ this manuscript. We hope that the responses provided herein can alleviate the re
 \hline \hline
 \RaggedRight
 \cellcolor{gray!15}
-\textbf{\noindent Comment 2:} ``In Introduction, page 5, ``We consider a neuro-spike communication channel between two neurons located in the motor cortex region of the brain where the information is encoded by spike time intervals.''.  Please provide a reference for this sentence.''\\
+\textbf{\noindent Comment 1:} ``In terms of taking the actual delay in the proposed there are some concerns which might be important for some time critical applications especially in the ultra-reliable low latency communications (URLLC) but also for different applications that fall under the enhanced mobile broadband (eMBB) generic service framework. First of all, in the paper the authors only consider processing delay and ignore propagation and transmission delay. Since multiple paths in reality could be utilized the role of the above two components might play an important role. Nevertheless, the authors need to clearly mention why those two components are not considered, saying for example are constant is not a good enough reason to be ignored since as eluded those change based on routing decisions.''\\
 \hline
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Neural coding refers to the mapping from the stimulus to the configurations of the generated
-spikes by neurons. Neurons employ the spike rate coding and temporal coding to transmit information via action potentials. As we explained in the manuscript, none of the papers in the literature proposed a model for neuro-spike communication channel in the motor cortex region when temporal modulations
-are employed to convey information. However, there are some papers that assumed temporal modulations in the motor cortex region. We referred to one of these papers in the new manuscript based on the reviewer comment as
-\begin{longtable}{|p{0.975\textwidth}|}
-\hline \hline
-\RaggedRight
-\cellcolor{green!10}
-We consider a neuro-spike communication channel between two neurons located in the motor cortex region of the brain where the information is encoded by spike time intervals [30].
-\\
-\hline
-\end{longtable}
-The referred paper is
-\begin{longtable}{|p{0.975\textwidth}|}
-\hline \hline
-\RaggedRight
-\cellcolor{green!10}
-[30] Hatsopoulos N, Geman S, Amarasingham A, Bienenstock E., ``At what time scale does the nervous system operate?'', Neurocomputing, vol. 1, no. 52, pp.25-29, 2003.
-\\
-\hline
-\end{longtable}
+Considering propagation and transmission delays is straightforward to add to the system, but we do not include them for better presentation and focus on obtaining the optimal number of VNF.
+In this paper, we focus only on the processing delays to find the optimal number of VNFs, and we consider the other two delays are fixed; In the following, we describe more about these two types of delays.
 
-\clearpage
+The propagation delay is considered when each O-RU can connect to the number of O-DUs and can select to connect to which O-DU based on the route, capacity, and priority (Also, the connections of O-DUs to O-CUs is the same as O-RU to O-DU). Therefore, different routes are added to the system to solve the routing problem, but we do not consider it since it changes the model and does not fit in this model. So, the connection between O-RUs to O-DUs is fixed and transparent. As a result, the propagation delay is fixed and does not affect the optimization problem.
+The following is a brief calculation of propagation delay.
+Since the distance between the O-RU to O-DU is about 10 km and also the distance between O-DU and O-CU is about 80 km. Moreover, the distance from O-CU to the network should not exceed 200 km \cite{oranD1}. so, the propagation delay is about $T^{\text{pro}} = (10 + 80 + 200)\times 10^3 /(3\times 10^8) < 1ms $. Since fronhaul, midhaul, and backhaul are fiber optics, c is the speed of light. Also, due to the edge technique in O-DU or O-CU for users with low latency, this amount of latency is greatly reduced. But we also do not focus on edge processing in this paper. You can find more about these distances in this \href{https://blogs.keysight.com/blogs/inds.entry.html/2020/06/30/5g_testing_what_is-0nzj.html\%23:~:text=The\%20data\%20requirements\%20are\%20about,DUs\%20is\%20about\%2080\%20km.}{link}.
+The following is a brief calculation of transmission delay to show that it does not affect the optimization since it has such a small amount.
+In URLLC and mMTC, the mean packet size can be between 20 to 32 byte; Also, the minimum data rate is assume to be $46 bits/sec/Hz \times BW (180 KHz)$. So the transmission delay from O-RU to O-DU is about $T^{fr,t} = \frac{20\times 8}{46 \times 180 \times 10^3} < 2 us$. As a result, the $T^{fr,t} \approx T^{mid,t} \approx T^{b,t}$. for eMBB, the packet size can be 100 times larger and the delay is not exceed the 0.6ms.  
+
+We add this response in subsection II-D.
+
+
+
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
 \cellcolor{gray!15}
-\textbf{\noindent Comment 3:} ``In System Model, the possibility of placing nano-machines in synapses located between motor cortex neurons must be proved. This action needs invasive surgeries, which cause further damage to the neurons.''\\
+\textbf{\noindent Comment 2:} ``Also, note that for calculating processing delay requests for different services arriving at blade servers for vnf applications might get different treatment on how they access VMs or containers hence a single queue with non-priority and/or preemption (m/m/1) might not be a good approximation on the performance.''\\
 \hline
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-According to the advances in nano-technology and nano-communications, different design strategies
-for intelligent nano-devices interfaced with the neuronal tissue were proposed in the literature. The
-proposed system model in this manuscript is based on one of them. We clarify more about this issue in the following.
-We refer to the following list of references in our explanation in this comment:
+The processing delay can be considered an M/M/1; since the number of arrival packets in the system is enormous, and the packets are independent. Moreover, the impact of a single packet on the system's performance is minimal. Also, the queue discipline will be first-in, first-out (FIFO), and the arrival packet is assumed to follow a Poisson process. The system's clock is constant, and the size of the tasks is not fixed. So, we suppose that service times are exponentially distributed [36]. In addition, we assume that the arrival packets of each service have the same priority, and we consider priority between services, not between UEs of one service. Because we assumed that the UEs of a service have the same priority, their sent packets also have an equal priority. Also, the services are isolated, and this priority does not invalidate the queue assumption. Furthermore, one service's priority over another can be higher, affecting the whole optimization and not queue formulation since the UEs in each service have the same priority, and each service has its processing delay independent of other services.
+
+We add this response in subsection II-D-1.
+
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 3:} ``Also worth noting, that later on in the problem formulation there is the notion of service priority $\delta_s$ for data rate but this seems not to be used for accessing cloud resources. For example one could have changed the optimization problem and considered average allocated transmission rate and optimize with the same priorities access to cloud resources (instead of allocating equal access to vnf resources).''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+In this problem, since the priority is in the objective function of the equation (13), the priority has whole effect optimization.
+So, priority is given to the whole optimization problem, and the optimization problem obtains the number of VNFs by affecting the priority term. If we were to discuss the placement of VNFs on the data centers, the problem would become a knapsack or bin-packing problem, and here the prioritization would affect the resource allocation algorithm, including memory, RAM, CPU, and bandwidth. So the algorithm was implemented based on prioritization.
+
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 4:} ``Some form of rationalization should be given for abstracting Interference as Gaussian noise. This is important because we expect the system to be interference limited and cell edge users to experience significant different levels of performance compared to centre cell users.''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+ $I_{r,u(s,i)}^{k}$ is the sum of the power of interfering signals and quantization noise represented as follow
+%{\color{red} use paranthesis in the following equation to clear +}
+\begin{subequations}\label{eqI}
+\begin{alignat}{4}
+&I_{r,u(s,i)}^{k} =\\
+ &\underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} e^{k}_{u(s,i)}e^{k}_{u(s,l)}  p_{u(s,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(s,l)}^{k} g_{u(s,l)}^{r'}|^2}_{\text{(intra-slice interference)}}+\\
+&\underbrace{\sum_{\substack{n = 1 \\ n\neq s}}^{S}\sum_{l=1}^{{U}_s} e^{k}_{u(s,i)}e^{k}_{u(n,l)}  p_{u(n,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(n,l)}^{k} g_{u(n,l)}^{r'}|^2}_{\text{(inter-slice interference)}}\\
+&+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}^2 |\boldsymbol{h}_{r,{u(s,i)}}^k|^2 }_{\text{(quantization noise)}},
+\end{alignat}
+\end{subequations}
+%{\color{red} $\gamma_1$ is constant used instead of variable. }
+%where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}$ and $\gamma_{2} = e^{k}_{u(s,i)}e^{k}_{u(n,l)}$.
+where $e^{k}_{u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ O-RU. %($\gamma_1$ and $\gamma_2$ are two variales. You  define on variable here.)
+Furthermore, there is no inter-slice interference since slices are isolated and there is just intra-slice interference.
+
+Here we have two Gaussian noise types: additive Gaussian noise and the other is Gaussian quantization noise. The second noise is added to the interfering signal and shown with $ I_{r,u(s,i)}^{k}$ and it is different with interference.
+To obtain SNR as formulated in \eqref{eq1}, let $y_{u(s,i)} $ be the received signal of UE $i$ in $s^{th}$ service formulated as
+\begin{equation}\label{eq2}
+y_{u(s,i)} = \sum_{r = 1}^{R}\sum_{k=1}^{K_s} \boldsymbol{h}^{H \: k}_{r,u(s,i)} g_{u(s,i)}^r e^k_{r,u(s,i)}{x_Q}^k_{r,u(s,i)}+ z_{u(s,i)},
+\end{equation}
+
+%\boldsymbol{w}^k_{r,u(s,i)}p^k_{r,u(s,i)}  $\mathfrak{y}^k_{r,u(s,i)} =\boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2}}_{r,u(s,i)}} x_{u(s,i)}+ \boldsymbol{q}_{r}$
+where ${x_Q}^k_{r,u(s,i)} ={x_P}^k_{r,u(s,i)}+ \boldsymbol{q}_{r}$. Also, ${x_P}^k_{r,u(s,i)}= \boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2}}_{r,u(s,i)}} x_{u(s,i)} $, and  $ x_{u(s,i)}$ depicts the transmitted symbol vector of UE $i$ in $s^{th}$ set of service,  $z_{u(s,i)}$ is the additive Gaussian noise $z_{u(s,i)} \backsim \mathcal{N}(0,N_0)$ and $N_0$ is the noise power.
+Moreover, ${x_P}$ denotes the precoded message before compression, and ${x_Q}$ illustrates the precoded message after compression that is shown in figure \ref{fig:pq}. 
+In addition, $\boldsymbol{q}_{r} \in \mathbb{C}^{J }  $ indicates the quantization Gaussian noise 
+($\boldsymbol{q}_{r} \backsim \mathcal{N}(0,{\sigma_q}^2\boldsymbol{I_{R}} )$), which is made from signal compression in O-DU.
+\begin{figure}
+  \centering 
+  \captionsetup{justification=centering}
+    \includegraphics[scale = 0.7]{Qdiag.png}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Precoding and Quantization of Signal}
+  \label{fig:pq}
+\end{figure}
+
+We add this response in subsection II-B.
+
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 5:} ``Constraint 13n (changed to 13k in new version) is not clear - it means that there are VMs and/or containers available in the network and an operator denies service due to an energy consumption budget (which again is not very detailed to capture the actual energy consumption of each node/vnfs under different loads etc.). In general the subsection on VNF power consumption is very limited in scope. ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+{A significant issue facing the industry is reducing energy consumption. Data centers are one of the most energy-consuming. As a result, restrictions are placed on data centers' energy, including virtual machines (VMs). So, one of our goals is to limit the energy consumption of total VNFs that can be run as VM on data centers. So, by applying a custom policy on total power consumption, we can control data centers' power consumption ($\phi^{\text{\text{tot}}}  \leq \phi^{max}$).
+
+We add this response in subsection II-E.
+
+\clearpage
+\noindent
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 6:} ``Some rationalization is needed on why the packet size is considered to be 20 bytes. ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+
+We refer to the following reference in our numerical result for this comment:
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
 \cellcolor{green!10}
-[1] F. Patolsky, B. P. Timko, G. Yu, Y. Fang, A. B. Greytak, G. Zheng, and C. M. Lieber, ``Detection, stimulation, and inhibition of neuronal signals with high-density nanowire transistor arrays,'' Science, vol. 313, no. 5790, pp. 1100-1104, 2006.
+[1]  ETSI-TR-138-913-V14.3.0, “5G; study on scenarios and require-
+ments for next generation access technologies(3GPP TR 38.913 version
+14.3.0 release 14),” 2017-10.
 
-[2] N. Sakai, J. Mareda, and S. Matile, ``Ion channels and pores, made from scratch,'' Molecular BioSyst., vol. 3, pp. 658-666, 2007.
-
-[3] P. Gorostiza and E. Isacoff, ``Optical switches and triggers for the manipulation of ion channels and pores,'' Molecular BioSyst., vol. 3, pp. 686-704, 2007.
-
-[4] Mesiti, Fabio, and Ilangko Balasingham. ``Nanomachine-to-neuron communication interfaces for neuronal stimulation at nanoscale.'', IEEE Journal on Selected Areas in Communications, vol. 31, no. 12, pp. 695-704, 2013.
-
-[5] N. Rouach, E. Avignone, W. Même, A. Koulakoff, L. Venance, F. Blomstrand, and C. Giaume, ``Gap junctions and connexin expression in the normal and pathological central nervous system,'' Biology Cell, vol. 94, no. 7-8, pp. 457-475, 2002.
-
-[6] J. Hjorth, K. T. Blackwell, and J. Hellgren Kotaleski, ``Gap junctions between striatal fast-spiking interneurons regulate spiking activity and synchronization as a function of cortical activity'', J. Neuroscience, vol. 29, no. 16, pp. 5276-5286, 2009.
-
-[7] R. D. Traub, M. A. Whittington, E. H. Buhl, F. E. N. LeBeau, A. Bibbig, S. Boyd, H. Cross, and T. Baldeweg, ``A possible role for gap junctions in generation of very fast EEG oscillations preceding the onset of, and perhaps initiating, seizures,'' Epilepsia, vol. 42, no. 2, pp. 153-170, 2001.
 \\
 \hline
 \end{longtable}
 
+On [1], on page 25, the URLLC packet size is stated to be 32 bytes, and on page 26, the packet size of mMTC is stated to be 20 bytes. We have changed the URLLC packet size to 32, but it has very little impact on the simulation result. 
 
-\clearpage
-In [1], the authors described the successful attempt to interface nano-wire (NW) FET transistors (SiNW-neurons) with soma, dendrites and axon, allowing high precision measurement and
-stimulation with an array of 50 NW connections per neuron. The synthesis of ion channels and pores, assembled artificially by chemical composition were reported in [2], whereas synthetic nano-scale actuators (nano-toggles, nano-keys and nano-tweezers) to manipulate ion channels were proposed in [3].
-Hence, the advances in the molecular manipulation of the matter can allow the fabrication of bio-inspired SnM interfaces.
-Upon these considerations and the available nano-technology, the authors in [4] identified a set of possible SnM interface implementations. We employed one type of these interfaces in our system model according to [4] which is denoted as Gap Junction Interface.
+We add this reference in IV-A (reference [45]).
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 7:} ``Comparison with [18] might not be fair since that work also considers BBU capacity and also performs admission control functionalities, also there are different tenants that have different users with variable required QoS. ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+We use a method which is similar to the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in [18]. In this work, we have services with different QoS that contain UEs, which is similar to tenants with different QoS that is introduced in [18].
+ So, we used an algorithm similar to FBDR adapted to our conditions for comparison.  
+Instead of BBU in C-RAN, we have O-DU and O-CU in O-RAN. To use the FBDR method, we should consider the fixed BBU capacity. We assume that O-DU and O-CU have fixed sufficient capacity in our system model. Also, our mid-haul link (F1 link) has adequate capacity, so there will be no issue using the FBDR method by separating ‌BBU to O-DU and O-CU with this assumption.
+In this method, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm 1 (GAA algorithm ) for O-RU assignment.
+
+We add this response in subsection IV-A.
 
 
-\textbf{Gap Junction Interface [4]}:
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 8:} ``Also, interference is measured in a more detailed manner (maximum interference per UE) and hence when this relaxed (Guassian noise) the performance expected to slightly increase. Hence, some more detailed discussion on what has been assumed is needed. ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+Here we have two Gaussian noise types: additive Gaussian noise and the other is Gaussian quantization noise which is shown in Fig \ref{fig:pq}. We offer the sum of interference and the Gaussian quantization noise with $ I_{r,u(s,i)}^{k}$. Also, the Gaussian quantization noise is independent of interference and related to channel gain of UEs.
 
-With gap junctions, two cellular membranes in direct contact are separated by only 3 nm and for each side, clusters of \textit{connexine} (Cx36) proteins [5], combine to form a channel with diameter 1-2 nm, the \textit{connexine}, allowing bidirectional flows of ions (currents) between cells. Synthetic connexines assembled \textit{in-situ} by SnMs could allow the opening of additional ion channels on the membrane, enhancing the neuronal activity. In the following figure [4], a sample scenario with multiple SnMs attached to the target neuron is depicted. This method is motivated and supported by neuro-scientific studies [6], [7] reporting the important role of gap junctions in \textit{oscillatory behaviors} and \textit{synchronization} phenomena between neurons.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.78\textwidth,height=.3\textheight]{Gap.png}
-\caption{ Diagram of a SnM based on gap junctions. The neuronal membrane is in contact with each SnM, establishing additional connexone channels which allow the flow of ions and currents [4].}
-\label{new_1}
-\end{figure}
-
-
+We add this response in subsection II-B.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
