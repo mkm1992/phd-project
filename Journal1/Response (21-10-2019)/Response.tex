@@ -432,11 +432,11 @@ We add this response in subsection II-B.
 \hline \hline
 \Centering
 \cellcolor{gray!45}
-\textbf{Reviewer 4} \\
+\textbf{Reviewer 3} \\
 \hline \hline
 \RaggedRight
 \cellcolor{gray!15}
-\textbf{\noindent Comment 1:} ``The description of  ``unhealthy neuron'' or ``neurons that have lost their ability to communicate'' and the nano-machines to connect them seems to provide a possible future application to the communication channel model proposed. What the manuscript is not fully analyzing in the opinion of this reviewer is exactly how the nano-machines could utilize this model from an engineering perspective. If this connection is not considered to be the focus and therefore was not researched, then the consideration should be made to remove the concept of nano-machines from the ``System Model'' section (and subsequent sections) and use it merely for motivating the model.''\\
+\textbf{\noindent Comments to the Author} ``The authors propose a resource allocation scheme for network slicing in an Open RAN scenario. They consider three network slice types namely eMBB, URLLC and mMTC and provide a solution for end-to-end slicing considering resource allocation over the RAN domain following the proposed ORAN architecture, as well as VNF allocation. In general, the paper is well written, however some parts need to be rephrased and restructured.''\\
 \hline
 \end{longtable}
 \vspace*{-1\baselineskip}
@@ -446,60 +446,134 @@ the thoughtful comments and constructive suggestions, which helped us to improve
 the quality of this manuscript. We hope that the modifications that we have made to the manuscript, and the
 responses that we have provided herein will alleviate the reviewer concerns.
 
-In recent years, engineering applications of nano-technology have also been investigated with increasing interest
-for the design of bio-inspired intelligent nano-devices or nano-machines connected in a network. In this manuscript, we considered the concept of nano-machines in the proposed system model according to the reported efforts to interface the neuron's body
-with synthetic nano-scale materials in the literature. We provide a brief explanation in the following. We refer to the following list of references in our explanation in this comment:
 
 
-\clearpage
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
-\cellcolor{green!10}
-[1] F. Patolsky, B. P. Timko, G. Yu, Y. Fang, A. B. Greytak, G. Zheng, and C. M. Lieber, ``Detection, stimulation, and inhibition of neuronal signals with high-density nanowire transistor arrays,'' Science, vol. 313, no. 5790, pp. 1100-1104, 2006.
-
-[2] N. Sakai, J. Mareda, and S. Matile, ``Ion channels and pores, made from scratch,'' Molecular BioSyst., vol. 3, pp. 658-666, 2007.
-
-[3] P. Gorostiza and E. Isacoff, ``Optical switches and triggers for the manipulation of ion channels and pores,'' Molecular BioSyst., vol. 3, pp. 686-704, 2007.
-
-[4] Mesiti, Fabio, and Ilangko Balasingham. ``Nanomachine-to-neuron communication interfaces for neuronal stimulation at nanoscale.'', IEEE Journal on Selected Areas in Communications, vol. 31, no. 12, pp. 695-704, 2013.
-
-[5] N. Rouach, E. Avignone, W. Même, A. Koulakoff, L. Venance, F. Blomstrand, and C. Giaume, ``Gap junctions and connexin expression in the normal and pathological central nervous system,'' Biology Cell, vol. 94, no. 7-8, pp. 457-475, 2002.
-
-[6] J. Hjorth, K. T. Blackwell, and J. Hellgren Kotaleski, ``Gap junctions between striatal fast-spiking interneurons regulate spiking activity and synchronization as a function of cortical activity'', J. Neuroscience, vol. 29, no. 16, pp. 5276-5286, 2009.
-
-[7] R. D. Traub, M. A. Whittington, E. H. Buhl, F. E. N. LeBeau, A. Bibbig, S. Boyd, H. Cross, and T. Baldeweg, ``A possible role for gap junctions in generation of very fast EEG oscillations preceding the onset of, and perhaps initiating, seizures,'' Epilepsia, vol. 42, no. 2, pp. 153-170, 2001.
-\\
+\cellcolor{gray!15}
+\textbf{\noindent Comment 1:} ``The paper presents an interesting solution and an extremely well formulated mathematical problem; however, the main contribution of the paper is hard to grasp. For instance, the introduction of the paper is very generic. There are a lot of concepts and methods explained, nonetheless not related to the proposed solution. The main issue lies in the structure of the work. The main contribution only appears at the end of page 2, where after an extensive reading the interest of the reader starts to vanish. I would definitely suggest a restructuring here. For instance, directly hint the main objectives and motivation of the work to prepare the reader for what is following. Moreover, the Related work could be a section of its own. In that way, the organization of the paper is clearer and easier to read.  ''\\
 \hline
 \end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+Thank you for helping me to change my introduction.
+I have changed the introduction of my paper.
 
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 2:} ``Finally, a better distinction of the current proposal from the state-of-the-art is mandatory, otherwise it is hard to understand how the proposed algorithm differs from existing works in the literature which seem to provide solution to a similar problem.''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+The purposes of this paper are twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system. 
+In this paper, we want to optimize baseband resource allocation, i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform. 
+We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms to achieve these purposes.
+Unlike other papers, we concentrate more on the multiservice resource management of the RAN slicing in the openness and flexible O-RAN architecture.
+The novelty of this paper is to enhance the resource utilization of the overall wireless O-RAN system in the presence of the three generic service types introduced in 5G using RAN slicing. We also convexify and solve complex problems using mathematical concepts and obtain optimal resources.
 
-\clearpage
-In [1], the authors described the successful attempt to interface nano-wire (NW) FET transistors (SiNW-neurons) with soma, dendrites and axon, allowing high precision measurement and
-stimulation with an array of 50 NW connections per neuron. The synthesis of ion channels and pores, assembled artificially by chemical composition were reported in [2], whereas synthetic nano-scale actuators (nano-toggles, nano-keys and nano-tweezers) to manipulate ion channels were proposed in [3].
-Hence, the advances in the molecular manipulation of the matter can allow the fabrication of bio-inspired SnM interfaces.
-Upon these considerations and the available nano-technology, the authors in [4] identified a set of possible SnM interface implementations. We employed one type of these interfaces in our system model according to [4] which is denoted as Gap Junction Interface.
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 3:} ``Furthermore, while the math introduced in the paper is solid, it is also hard to follow for a reader if illustrations are not presented. It would be easier if a Figure is introduced for instance to explain equations from 3a -3d, where a lot of variables are presented. Especially, for the concepts of inter and intra slice isolation, which are very crucial. Following, that logic more elaboration especially with respect to inter slice isolation and why it needs to be considered in the equation, is important, as one could say that a careful scheduling has to definitely avoid distribution of the same resources within a slice to different users i.e., (orthogonality constraint).''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+I have add this part in the system model. 
+Assume we have $K$ physical resource blocks (PRBs) in this system. Suppose each slice s consists of $\bar{K}_s$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs). Therefore, we have $\sum_s \bar{K}_s \leq K$.
 
-
-\textbf{Gap Junction Interface [4]}:
-
-With gap junctions, two cellular membranes in direct contact are separated by only 3 nm and for each side, clusters of \textit{connexine} (Cx36) proteins [5], combine to form a channel with diameter 1-2 nm, the \textit{connexine}, allowing bidirectional flows of ions (currents) between cells. Synthetic connexines assembled \textit{in-situ} by SnMs could allow the opening of additional ion channels on the membrane, enhancing the neuronal activity. In the following figure [4], a sample scenario with multiple SnMs attached to the target neuron is depicted. This method is motivated and supported by neuro-scientific studies [6], [7] reporting the important role of gap junctions in \textit{oscillatory behaviors} and \textit{synchronization} phenomena between neurons.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.78\textwidth,height=.3\textheight]{Gap.png}
-\caption{ Diagram of a SnM based on gap junctions. The neuronal membrane is in contact with each SnM, establishing additional connexone channels which allow the flow of ions and currents [4].}
-\label{new_1}
+Interference occurs when a UE in O-RU $r$ using PRB $k$ experiences an interference signal from other O-RUs in the set of $r' \in R \not\in
+ r$. UEs in each slice interfere in two ways in the technique of network slicing: the first is inter-slice interference between UEs of different slices, and the second is intra-slice interference between UEs of the same slice that is shown in figure \ref{fig:intf}.
+Network Slicing methods significantly reduce inter-service interference.
+There are some techniques to remove inter-slice interference. One of these techniques is to have two-time scale scheduling. The PRB scheduling to the slices is performed on the first time scale, and in the second time scale, the PRB scheduling to the UEs of slices is carried out. Since there are limited resources, inter-service interference cannot be eliminated entirely. The other method is to allocate part of the RB of eMBB services to URLLC and mMTC  [2], [6], [34]. In this paper, we assume that the PRB scheduling is performed. Also, in subsection II-F1, we briefly study the PRB scheduling between slices.
+\begin{figure}
+  \centering 
+  \captionsetup{justification=centering}
+    \includegraphics[scale = 0.35]{Interference.png}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Type of Interference Signal}
+  \label{fig:intf}
 \end{figure}
+$I_{r,u(s,i)}^{k}$ is the sum of the power of interfering signals and quantization noise represented as follow
+%{\color{red} use paranthesis in the following equation to clear +}
+\begin{subequations}\label{eqI}
+\begin{alignat}{4}
+&I_{r,u(s,i)}^{k} =\\
+ &\underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} e^{k}_{u(s,i)}e^{k}_{u(s,l)}  p_{u(s,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(s,l)}^{k} g_{u(s,l)}^{r'}|^2}_{\text{(intra-slice interference)}}+\\
+&\underbrace{\sum_{\substack{n = 1 \\ n\neq s}}^{S}\sum_{l=1}^{{U}_s} e^{k}_{u(s,i)}e^{k}_{u(n,l)}  p_{u(n,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{H \: k}} \bold{w}_{r',u(n,l)}^{k} g_{u(n,l)}^{r'}|^2}_{\text{(inter-slice interference)}}\\
+&+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}^2 |\boldsymbol{h}_{r,{u(s,i)}}^k|^2 }_{\text{(quantization noise)}},
+\end{alignat}
+\end{subequations}
+%{\color{red} $\gamma_1$ is constant used instead of variable. }
+%where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}$ and $\gamma_{2} = e^{k}_{u(s,i)}e^{k}_{u(n,l)}$.
+where $e^{k}_{u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ O-RU. %($\gamma_1$ and $\gamma_2$ are two variales. You  define on variable here.)
+Furthermore, there is no inter-slice interference since slices are isolated and there is just intra-slice interference.
+
+We add this response in subsection II-B.
 
 
+ In this section, we have a brief study on the problem of PRB scheduling to eliminate  the inter-slice interference and guarantee the isolation of slices [37].
+We need to have an algorithm to remove the inter-slice interference before solving the problem \ref{problem}. Firstly, we should assign PRBs to slices, and in the second step, the assignment of PRBs of each slice to each UEs of a specific slice is performed. So, the assignment of PRB can be completed in two steps to remove inter-slice interference and isolate the slices. Firstly we assign PRBs to slices. Secondly, we allocate power of UEs, assign PRBs of slices to UEs, find the optimal number of VNFs for each slice and assign O-RU to UEs, which uses the proposed algorithm \ref{proAlg}.
+Suppose, $\mathcal{R}_{{s}}^{min}$, and $\mathcal{R}_{{s}}^{max}$ are the minimum data rate and maximum data rate of each UE in slice s, respectively.
+Firstly, we need to find the average PRB number used by UEs in each service. Since mMTC and URLLC transmit a short packet, each UE in mMTC and URLLC requires 1 PRB. So if slice s serves mMTC or URLLC services, with $U_s$ UEs, it requires $K_s = U_s \times 1$ PRBs. For eMBB, assume the average rate of each UE in slice s serving eMBB UEs is $\bar{R}_s = Blog_2(1 + \bar{\rho_s})$, where, $\bar{\rho_s}$ is the average SNR of UEs in slice s. (eMBB slice)
+So, the minimum number of PRB that slice s with $U_s$ UEs requires is $K_s^{min} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{max}}}\rceil$. $K_s^{min} $ is the minimum number of PRBs needed for slice s, and K is the total number of PRBs in the system.  
+Moreover, the maximum number of PRB that slice s with $U_s$ UEs requires is $K_s^{max} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{min}}}\rceil$. $K_s^{max} $ is the maximum number of PRBs needed for slice s, and K is the total number of PRBs in the system. Also, $K_s = (K_s^{min}+K_s^{max})/2$ is the average number of required PRB in slice s (eMBB slice).
+Our goal is to obtain the number of PRBs assigned to each slice s ($\bar{K_s}$).
+The problem can be written as follow
+\begin{subequations}\label{prob:prb}
+\begin{alignat}{4}
+\max\limits_{\boldsymbol{\bar{K_s}}} \quad &  \sum_{s=1}^{S}\delta_s K_s \ln(\bar{K_s}) \ \\
+\text{subject to} \quad  & \sum_s{\bar{K_s}} \leq K
+ \label{prb0} \\
+& K_s^{min} \leq \bar{K_s}  \leq K_s^{max}  \quad \forall s \in S_1,\label{prb1} \\
+&  \bar{K_s} \leq K_s  \quad \forall s \in S_2, S_3,\label{prb2}
+\end{alignat}
+\label{constraints}
+\end{subequations}
+We used logarithms to assign PRBs to all slices to make
+them equally fair [37]. Equation (14b) illustrates that the
+sum of PRBs of slices can not exceed the maximum number
+of PRBs. Equation (14c), restrict the number of PRBs
+of eMBB slices and (14d), limit the number of PRBs of
+URLLC and mMTC slices By relaxing $\bar{K_s}$, the objective function and constraints become convex and can be solved using the Lagrangian function.
 
+Also, I add a new subsection II-E-1 about PRB scheduling for this question.
 
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 4:} ``Additionally, since the authors claim their novelty on the introduction of ORAN architecture, it becomes of utmost importance to consider concepts such as the creation of a slice, management of a slice and well as deletion, which bridge the mathematical framework to the practical one. For instance, how is a network slice created in the proposed work? How are the requirements of a slice fed to the algorithm? How is the monitoring of a slice performed?''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+This subsection aims to examine slice management, including creating, managing, and deleting slices. Network slices generally have four life cycle stages: preparation, commissioning, operation, and decommissioning [38]. 
+\begin{itemize}
+\item Preparation phase: The network slice instance (NSI) does not exist in the preparation phase. In this phase, operators plan to create an NSI, such as designing the NSI template, onboarding users, and preparing the environment. Also, the evaluation of requirements is performed in this step.
+\item Commissioning phase: In the commissioning phase, the creation of the NSI is done. In this phase, the requirements are considered and allocated to the slice. 
+\item Operation phase: During the Operation phase, NSIs are activated, managed, monitored (e.g., KPIs), modified, and deactivated. As the slice enters the activated phase, it is ready to support services, and as the slice exits the de-activated phase, the slice is inactive, and communication services are stopped.
+\item Decommissioning phase: A NSI that is decommissioned no longer exists after the decommissioning phase.
+\end{itemize}
 
+I add a new subsection II-G about Slice management for this question.
 
-
-
-
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment 5:} ``Finally, the authors propose an interesting solution, however in none of the results information with respect to the convergence time of the algorithm were presented. This becomes extremely crucial when considering the real deployment of such a solution. In that regard, some findings with regard to this aspect need to be definitely included in the work.''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+It is shown in Fig. 11 and subsection III-C-1 and III-C-2.
 
 \end{document}
 

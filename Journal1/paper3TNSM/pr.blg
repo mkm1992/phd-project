@@ -13,52 +13,53 @@ Database file #1: ref.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty author in ORANArch
 Warning--empty author and editor in QS
+Warning--empty journal in ETSI2
+Warning--empty journal in ETSI1
 Warning--empty journal in 3GPPTS1
 Warning--empty journal in 3GPPTS2
 Warning--empty journal in 3GPPTS3
 Warning--empty journal in IMT
-Warning--empty journal in ETSI1
 
 Done.
-You've used 45 entries,
+You've used 46 entries,
             4087 wiz_defined-function locations,
-            1058 strings with 16018 characters,
-and the built_in function-call counts, 37180 in all, are:
-= -- 2997
-> -- 960
+            1063 strings with 16170 characters,
+and the built_in function-call counts, 37490 in all, are:
+= -- 3020
+> -- 964
 < -- 343
-+ -- 568
-- -- 212
-* -- 1855
-:= -- 5368
-add.period$ -- 91
-call.type$ -- 45
-change.case$ -- 44
++ -- 570
+- -- 213
+* -- 1866
+:= -- 5428
+add.period$ -- 93
+call.type$ -- 46
+change.case$ -- 45
 chr.to.int$ -- 801
-cite$ -- 52
-duplicate$ -- 2628
-empty$ -- 2780
-format.name$ -- 199
-if$ -- 8612
+cite$ -- 54
+duplicate$ -- 2658
+empty$ -- 2811
+format.name$ -- 200
+if$ -- 8679
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 445
-newline$ -- 160
-num.names$ -- 43
-pop$ -- 989
+int.to.str$ -- 46
+missing$ -- 450
+newline$ -- 163
+num.names$ -- 44
+pop$ -- 1004
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2752
+skip$ -- 2776
 stack$ -- 0
-substring$ -- 2060
-swap$ -- 2330
+substring$ -- 2061
+swap$ -- 2343
 text.length$ -- 76
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 45
-warning$ -- 7
-while$ -- 164
-width$ -- 47
-write$ -- 454
-(There were 7 warnings)
+type$ -- 46
+warning$ -- 8
+while$ -- 165
+width$ -- 48
+write$ -- 461
+(There were 8 warnings)

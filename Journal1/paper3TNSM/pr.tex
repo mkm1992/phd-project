@@ -104,30 +104,30 @@ Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slici
 \end{IEEEkeywords}
 \section{Introduction} 
 \subsection{State Of The Arts}
-\textcolor{blue}{To achieve the desired level of QoS (quality, delay, power, etc.) and isolate different services, network slicing is the most effective solution for 5G wireless cellular networks. There are several implementations of network slicing, including core slicing, RAN slicing, and both. 
+\textcolor{MidnightBlue}{To achieve the desired level of QoS (quality, delay, power, etc.) and isolate different services, network slicing is the most effective solution for 5G wireless cellular networks. There are several implementations of network slicing, including core slicing, RAN slicing, and both. 
 Recent discussion of 5G wireless systems has been around three services, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Depending on QoS, each service requires its slice of the network.
 The eMBB service fulfills the demand for high capacity and throughput. The URLLC also offers autonomous vehicles, tactile internet, remote surgery services, and other services of high quality and low latency. mMTC comprises many low-power internet of things (IoT) devices that transmit small payloads to a typical receiver, including sensors for sensing, metering, and monitoring
 \cite{shen2020ai,setayesh2020joint,popovski20185g,dogra2020survey,kassab2018coexistence,alsenwi2021intelligent}.
 }
 
-\textcolor{blue}{This paper considers various user equipments (UEs) requesting one of these types of services with different QoS. We want to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.}
+\textcolor{MidnightBlue}{This paper considers various user equipments (UEs) requesting one of these types of services with different QoS. We want to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.}
 
-\textcolor{blue}{O-RAN is driven by two pillars of openness and RAN intelligence as the next generation of radio access networks. O-RAN was developed due to integrating virtual RAN (vRAN) and cloud RAN (CRAN), and it takes advantage of both. With RAN virtualization, operators can improve flexibility, reduce CAPEX and OPEX, and add new capabilities to the network more quickly. The CRAN divides the radio remote head (RRH) and baseband unit (BBU) into two major parts. Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike CRAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).}
+\textcolor{MidnightBlue}{O-RAN is driven by two pillars of openness and RAN intelligence as the next generation of radio access networks. O-RAN was developed due to integrating virtual RAN (vRAN) and cloud RAN (CRAN), and it takes advantage of both. With RAN virtualization, operators can improve flexibility, reduce CAPEX and OPEX, and add new capabilities to the network more quickly. The CRAN divides the radio remote head (RRH) and baseband unit (BBU) into two major parts. Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike CRAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).}
 
-\textcolor{blue}{O-RU is a logical node that contains RF and lowers PHY. Moreover, the O-DU expresses another logical node with higher PHY, MAC, and RLC.
+\textcolor{MidnightBlue}{O-RU is a logical node that contains RF and lowers PHY. Moreover, the O-DU expresses another logical node with higher PHY, MAC, and RLC.
 In addition, the O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). O-CU-UP hosts PDCP-UP and SDAP, and O-CU-CP hosts PDCP-CP and RRC.
 O-DU and O-CU are connected via an open and well-defined interface $F_1$.
 Moreover, O-DU is connected to a radio unit (O-RU) with an open fronthaul interface.
 The architecture of O-RAN contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud\cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML,lin2021toward}.}
 
-\textcolor{blue}{This paper aims to design a RAN slicing technology in O-RAN architecture. }
+\textcolor{MidnightBlue}{This paper aims to design a RAN slicing technology in O-RAN architecture. }
 %O-RAN offers machine learning techniques based on the requirement for an intelligent wireless network for the next generation of RAN systems. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC-Near Real-Time, implement the algorithms for network intelligence 
 
 
 Network function virtualization (NFV) is referred to the separation of network software and hardware elements such that network function can run on commodity hardware. Virtual network functions (VNF) are system function blocks in NFV systems. The NFV technology offers to execute VNFs as virtual machines or containers on a cloud environment \cite{mijumbi2015network, luo2020online}.
 As a result, some O-RAN components, such as user plane function (UPF), O-CU, O-DU, and RAN Intelligent Controller (RIC)-near real-time, are being virtualized and implemented as VNFs that can be run as virtual machines (VMs) or containers.
 
-\textcolor{blue}{This study presents a technique for creating isolated network slices outlines in O-RAN architecture to provide the specific QoS for eMBB, URLLC, and mMTC. As well as baseband resources, the optimal number of VNFs is also taken into account to reduce latency for URLLC services.}
+\textcolor{MidnightBlue}{This study presents a technique for creating isolated network slices outlines in O-RAN architecture to provide the specific QoS for eMBB, URLLC, and mMTC. As well as baseband resources, the optimal number of VNFs is also taken into account to reduce latency for URLLC services.}
 \subsection{Related Literature}
 The problem of resource allocation for network slicing in multi-tenant cellular networks has received attention recently \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
 In \cite{lee2018dynamic}, dynamic network slicing in multi-tenant heterogeneous CRAN (H-CRAN) is considered. The network slicing scheme includes a higher level and the lower level. The higher level manages user acceptance control, user communication that provides for radio unit association (RRH association to maximize user rates and allocate baseband resource capacity), the allocation of BBU capacity. Also, the allocation of power and physical resource blocks (PRB) is performed in the lower level.
@@ -200,7 +200,7 @@ The VNFs of O-DU, O-CU-UP, and UPF are interconnected, defined as the Service Fu
 
 
 %All $K$ PRBs can be assigned to all UEs in each service. 
-\textcolor{Sepia}{ Assume we have $K$ physical resource blocks (PRBs) in this system. Suppose each slice s consists of $\bar{K}_s$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs). Therefore, we have $\sum_s \bar{K}_s \leq K$.
+\textcolor{MidnightBlue}{ Assume we have $K$ physical resource blocks (PRBs) in this system. Suppose each slice s consists of $\bar{K}_s$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs). Therefore, we have $\sum_s \bar{K}_s \leq K$.
 }
 In addition, there are $R$ multi-antenna O-RUs that are shared between slices. O-RU $r \in \{1,2,...,R \}$ has $J$ antennas for transmitting and receiving data. Also $\mathcal{R} = \{ r \ | \ r\in 1,2,...,R \}$ depicts the set of O-RUs. Moreover, all O-RUs have access to all PRBs.
 
@@ -227,7 +227,7 @@ Moreover, $g_{u(s,i)}^r \in \{0,1\}$ is the binary variable that illustrates whe
 %Here, it is assumed that each UE is served by the nearest o-RU
 Also, $BN_0$ denotes the power of Gaussian additive noise.
 
-\textcolor{Sepia}{Interference occurs when a UE in O-RU $r$ using PRB $k$ experiences an interference signal from other O-RUs in the set of $r' \in R \not\in
+\textcolor{MidnightBlue}{Interference occurs when a UE in O-RU $r$ using PRB $k$ experiences an interference signal from other O-RUs in the set of $r' \in R \not\in
  r$. UEs in each slice interfere in two ways in the technique of network slicing: the first is inter-slice interference between UEs of different slices, and the second is intra-slice interference between UEs of the same slice that is shown in figure \ref{fig:intf}.
 Network Slicing methods significantly reduce inter-service interference.
 There are some techniques to remove inter-slice interference. One of these techniques is to have two-time scale scheduling. The PRB scheduling to the slices is performed on the first time scale, and in the second time scale, the PRB scheduling to the UEs of slices is carried out. Since there are limited resources, inter-service interference cannot be eliminated entirely. The other method is to allocate part of the RB of eMBB services to URLLC and mMTC \cite{alsenwi2021intelligent, setayesh2020joint, mei2021intelligent}.} In this paper, we assume that the PRB scheduling is performed. Also, in subsection \ref{prb}, we briefly study the PRB scheduling between slices.
@@ -240,7 +240,7 @@ There are some techniques to remove inter-slice interference. One of these techn
   \caption{Type of Interference Signal}
   \label{fig:intf}
 \end{figure}
-\textcolor{teal}{ $I_{r,u(s,i)}^{k}$ is the sum of the power of interfering signals and quantization noise represented as follow}
+\textcolor{MidnightBlue}{ $I_{r,u(s,i)}^{k}$ is the sum of the power of interfering signals and quantization noise represented as follow}
 %{\color{red} use paranthesis in the following equation to clear +}
 \begin{subequations}\label{eqI}
 \begin{alignat}{4}
@@ -253,16 +253,16 @@ There are some techniques to remove inter-slice interference. One of these techn
 %{\color{red} $\gamma_1$ is constant used instead of variable. }
 %where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}$ and $\gamma_{2} = e^{k}_{u(s,i)}e^{k}_{u(n,l)}$.
 where $e^{k}_{u(s,i)}$ is the binary variable to show whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ O-RU. %($\gamma_1$ and $\gamma_2$ are two variales. You  define on variable here.)
-\textcolor{Sepia}{Furthermore, there is no inter-slice interference since slices are isolated and there is just intra-slice interference.}
+\textcolor{MidnightBlue}{Furthermore, there is no inter-slice interference since slices are isolated and there is just intra-slice interference.}
 
-\textcolor{NavyBlue}{Here we have two Gaussian noise types: additive Gaussian noise and the other is Gaussian quantization noise. The second noise is added to the interfering signal and shown with $ I_{r,u(s,i)}^{k}$ and it is different with interference.}
-\textcolor{teal}{To obtain SNR as formulated in \eqref{eq1}, let $y_{u(s,i)} $ be the received signal of UE $i$ in $s^{th}$ service formulated as
+\textcolor{MidnightBlue}{Here we have two Gaussian noise types: additive Gaussian noise and the other is Gaussian quantization noise. The second noise is added to the interfering signal and shown with $ I_{r,u(s,i)}^{k}$ and it is different with interference.}
+\textcolor{MidnightBlue}{To obtain SNR as formulated in \eqref{eq1}, let $y_{u(s,i)} $ be the received signal of UE $i$ in $s^{th}$ service formulated as
 \begin{equation}\label{eq2}
 y_{u(s,i)} = \sum_{r = 1}^{R}\sum_{k=1}^{K_s} \boldsymbol{h}^{H \: k}_{r,u(s,i)} g_{u(s,i)}^r e^k_{r,u(s,i)}{x_Q}^k_{r,u(s,i)}+ z_{u(s,i)},
 \end{equation}
 }
 %\boldsymbol{w}^k_{r,u(s,i)}p^k_{r,u(s,i)}  $\mathfrak{y}^k_{r,u(s,i)} =\boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2}}_{r,u(s,i)}} x_{u(s,i)}+ \boldsymbol{q}_{r}$
-\textcolor{teal}{where ${x_Q}^k_{r,u(s,i)} ={x_P}^k_{r,u(s,i)}+ \boldsymbol{q}_{r}$. Also, ${x_P}^k_{r,u(s,i)}= \boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2}}_{r,u(s,i)}} x_{u(s,i)} $, and  $ x_{u(s,i)}$ depicts the transmitted symbol vector of UE $i$ in $s^{th}$ set of service,  $z_{u(s,i)}$ is the additive Gaussian noise $z_{u(s,i)} \backsim \mathcal{N}(0,N_0)$ and $N_0$ is the noise power.
+\textcolor{MidnightBlue}{where ${x_Q}^k_{r,u(s,i)} ={x_P}^k_{r,u(s,i)}+ \boldsymbol{q}_{r}$. Also, ${x_P}^k_{r,u(s,i)}= \boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2}}_{r,u(s,i)}} x_{u(s,i)} $, and  $ x_{u(s,i)}$ depicts the transmitted symbol vector of UE $i$ in $s^{th}$ set of service,  $z_{u(s,i)}$ is the additive Gaussian noise $z_{u(s,i)} \backsim \mathcal{N}(0,N_0)$ and $N_0$ is the noise power.
 Moreover, ${x_P}$ denotes the precoded message before compression, and ${x_Q}$ illustrates the precoded message after compression that is shown in figure \ref{fig:pq}. 
 In addition, $\boldsymbol{q}_{r} \in \mathbb{C}^{J }  $ indicates the quantization Gaussian noise 
 ($\boldsymbol{q}_{r} \backsim \mathcal{N}(0,{\sigma_q}^2\boldsymbol{I_{R}} )$), which is made from signal compression in O-DU.}
@@ -337,10 +337,10 @@ Moreover, it can formulated as
 $T = \frac{\mathcal{\alpha}}{R}$, where $R$ is the data-rate of the packet transmission in each link and $\mathcal{\alpha}$ is the mean packet size transmitting in each link.
 So the total transmission delay ($T^{tr}$) is the sum of the transmission delay in the fronthaul $T^{fr,t}$, the midhaul $T^{\text{mid},t}$, and the backhaul $T^{b,t}$.
 
-\textcolor{Violet}{Considering propagation and transmission delays is straightforward to add to the system, but we do not include them for better presentation and focus on obtaining the optimal number of VNF.
+\textcolor{MidnightBlue}{Considering propagation and transmission delays is straightforward to add to the system, but we do not include them for better presentation and focus on obtaining the optimal number of VNF.
 In this paper, we focus only on the processing delays to find the optimal number of VNFs, and we consider the other two delays are fixed; In the following, we describe more about these two types of delays.}
 
-\textcolor{Violet}{The propagation delay is considered when each O-RU can connect to the number of O-DUs and can select to connect to which O-DU based on the route, capacity, and priority (Also, the connections of O-DUs to O-CUs is the same as O-RU to O-DU). Therefore, different routes are added to the system to solve the routing problem, but we do not consider it since it changes the model and does not fit in this model. So, the connection between O-RUs to O-DUs is fixed and transparent. As a result, the propagation delay is fixed and does not affect the optimization problem.
+\textcolor{MidnightBlue}{The propagation delay is considered when each O-RU can connect to the number of O-DUs and can select to connect to which O-DU based on the route, capacity, and priority (Also, the connections of O-DUs to O-CUs is the same as O-RU to O-DU). Therefore, different routes are added to the system to solve the routing problem, but we do not consider it since it changes the model and does not fit in this model. So, the connection between O-RUs to O-DUs is fixed and transparent. As a result, the propagation delay is fixed and does not affect the optimization problem.
 The following is a brief calculation of propagation delay.
 Since the distance between the O-RU to O-DU is about 10 km and also the distance between O-DU and O-CU is about 80 km. Moreover, the distance from O-CU to the network should not exceed 200 km \cite{oranD1}. so, the propagation delay is about $T^{\text{pro}} = (10 + 80 + 200)\times 10^3 /(3\times 10^8) < 1ms $. Since fronhaul, midhaul, and backhaul are fiber optics, c is the speed of light. Also, due to the edge technique in O-DU or O-CU for users with low latency, this amount of latency is greatly reduced. But we also do not focus on edge processing in this paper.
 The following is a brief calculation of transmission delay to show that it does not affect the optimization since it has such a small amount.
@@ -393,7 +393,7 @@ So, the mean processing delay for UE $i$ in slice $s$ is $T^{\text{proc}}_{u(s,i
 Hence, for the simplification and focusing on the processing delay, we assume $T^{\text{\text{tot}}}_{u(s,i)} \approx T^{\text{proc}}_{u(s,i)} $. %{\color{red} what results in this approximation?}
 %Furthermore, the mean arrival data rate of the each link ($\textstyle \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$) is approximately equal to others ($\textstyle \alpha_{s} \approx \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$). 
 
-\textcolor{olive}{The processing delay can be considered an M/M/1; since the number of arrival packets in the system is enormous, and the packets are independent. Moreover, the impact of a single packet on the system's performance is minimal. Also, the queue discipline will be first-in, first-out (FIFO), and the arrival packet is assumed to follow a Poisson process. The system's clock is constant, and the size of the tasks is not fixed. So, we suppose that service times are exponentially distributed \cite{QS}. In addition, we assume that the arrival packets of each service have the same priority, and we consider priority between services, not between UEs of one service. Because we assumed that the UEs of a service have the same priority, their sent packets also have an equal priority. Also, the services are isolated, and this priority does not invalidate the queue assumption. Furthermore, one service's priority over another can be higher, affecting the whole optimization and not queue formulation since the UEs in each service have the same priority, and each service has its processing delay independent of other services.} 
+\textcolor{MidnightBlue}{The processing delay can be considered an M/M/1; since the number of arrival packets in the system is enormous, and the packets are independent. Moreover, the impact of a single packet on the system's performance is minimal. Also, the queue discipline will be first-in, first-out (FIFO), and the arrival packet is assumed to follow a Poisson process. The system's clock is constant, and the size of the tasks is not fixed. So, we suppose that service times are exponentially distributed \cite{QS}. In addition, we assume that the arrival packets of each service have the same priority, and we consider priority between services, not between UEs of one service. Because we assumed that the UEs of a service have the same priority, their sent packets also have an equal priority. Also, the services are isolated, and this priority does not invalidate the queue assumption. Furthermore, one service's priority over another can be higher, affecting the whole optimization and not queue formulation since the UEs in each service have the same priority, and each service has its processing delay independent of other services.} 
 \subsection{VNF Power}
 %{\color{red} Assume the power consumption of the baseband processing, the VNFs cost of a slice $s$ is depicted as $\phi_{s}$. Sentence has no meaning.} 
 Assume the power consumption of each VNF in each logical node (the O-DU, the O-CU, and the UPF) in the slice s, is depicted as $\phi_{s}^d$, $\phi_{s}^c$, and $\phi_{s}^u$, respectively. 
@@ -408,7 +408,7 @@ where $\phi_{s}$ is obtained from $\phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M
 %\end{equation}
 Moreover, $\phi_s^u$, $\phi_s^c$, and $\phi_s^d$ are the fixed cost of energy in UPF, O-CU, and O-DU, respectively. 
 
-\textcolor{gray}{A significant issue facing the industry is reducing energy consumption. Data centers are one of the most energy-consuming. As a result, restrictions are placed on data centers' energy, including virtual machines (VMs). So, one of our goals is to limit the energy consumption of total VNFs that can be run as VM on data centers. So, by applying a custom policy on total power consumption, we can control data centers' power consumption ($\phi^{\text{\text{tot}}}  \leq \phi^{max}$).}
+\textcolor{MidnightBlue}{A significant issue facing the industry is reducing energy consumption. Data centers are one of the most energy-consuming. As a result, restrictions are placed on data centers' energy, including virtual machines (VMs). So, one of our goals is to limit the energy consumption of total VNFs that can be run as VM on data centers. So, by applying a custom policy on total power consumption, we can control data centers' power consumption ($\phi^{\text{\text{tot}}}  \leq \phi^{max}$).}
 \subsection{Problem Statement}
 Suppose slice $s$ (which is assigned to service s) has the priority factor $\delta_s$ (based on the priority of its hosting service) where $\sum_{s=1}^S \delta_s =1$.
 The priority factor of each slice is obtained according to the service level agreement (SLA) of that service to have a fairness in the system. 
@@ -451,7 +451,7 @@ Also, \eqref{c18} ensures that each PRB can not be assigned to more than one UE 
 In addition, \eqref{c19} indicates that the fixed cost of energy of VNFs in each slice does not exceed the threshold. 
 Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsymbol{G}$ are matrix of binary variables.
 \subsubsection{PRB Scheduling}\label{prb}
-\textcolor{Sepia}{ In this section, we have a brief study on the problem of PRB scheduling to eliminate  the inter-slice interference and guarantee the isolation of slices \cite{marabissi2019highly}.
+\textcolor{MidnightBlue}{ In this section, we have a brief study on the problem of PRB scheduling to eliminate  the inter-slice interference and guarantee the isolation of slices \cite{marabissi2019highly}.
 We need to have an algorithm to remove the inter-slice interference before solving the problem \ref{problem}. Firstly, we should assign PRBs to slices, and in the second step, the assignment of PRBs of each slice to each UEs of a specific slice is performed. So, the assignment of PRB can be completed in two steps to remove inter-slice interference and isolate the slices. Firstly we assign PRBs to slices. Secondly, we allocate power of UEs, assign PRBs of slices to UEs, find the optimal number of VNFs for each slice and assign O-RU to UEs, which uses the proposed algorithm \ref{proAlg}.
 Suppose, $\mathcal{R}_{{s}}^{min}$, and $\mathcal{R}_{{s}}^{max}$ are the minimum data rate and maximum data rate of each UE in slice s, respectively.
 Firstly, we need to find the average PRB number used by UEs in each service. Since mMTC and URLLC transmit a short packet, each UE in mMTC and URLLC requires 1 PRB. So if slice s serves mMTC or URLLC services, with $U_s$ UEs, it requires $K_s = U_s \times 1$ PRBs. For eMBB, assume the average rate of each UE in slice s serving eMBB UEs is $\bar{R}_s = Blog_2(1 + \bar{\rho_s})$, where, $\bar{\rho_s}$ is the average SNR of UEs in slice s. (eMBB slice)
@@ -474,7 +474,7 @@ Equation \eqref{prb0} illustrates that the sum of PRBs of slices can not exceed 
 Equation \eqref{prb1}, restrict the number of PRBs of eMBB slices and \eqref{prb2}, limit the number of PRBs of URLLC and mMTC slices. By relaxing $\bar{K_s}$, the objective function and constraints become convex and can be solved using the Lagrangian function.
 }
 \subsection{Slice Management}
-\textcolor{RedViolet}{This subsection aims to examine slice management, including creating, managing, and deleting slices. Network slices generally have four life cycle stages: preparation, commissioning, operation, and decommissioning. 
+\textcolor{MidnightBlue}{This subsection aims to examine slice management, including creating, managing, and deleting slices. Network slices generally have four life cycle stages: preparation, commissioning, operation, and decommissioning \cite{ETSI2}. 
 \begin{itemize}
 \item Preparation phase: The network slice instance (NSI) does not exist in the preparation phase. In this phase, operators plan to create an NSI, such as designing the NSI template, onboarding users, and preparing the environment. Also, the evaluation of requirements is performed in this step.
 \item Commissioning phase: In the commissioning phase, the creation of the NSI is done. In this phase, the requirements are considered and allocated to the slice. 
@@ -530,7 +530,7 @@ $T^{\text{proc}}_{s}=  T^{RU}_{s} + 3\times T^{DU}_{s}.$
 %\end{split}
 %\end{equation}
 
-\textcolor{violet}{The problem \ref{problem} is feasible and has feasibility points that are discussed in subsection \ref{fr}, and we introduce a fast algorithm (algorithm\ref{alg3}) for feasibility points. Although the problem is feasible, it is not convex and difficult to solve. Since problem \eqref{problem} is mixed-integer nonlinear programming with two integer constraints which are a binary variable ($e$ shows the PRB assignment) and an integer variable ($M_s$ indicate the number of VNFs in slice s), the problem is NP-hard. Solving the problem is complex. To solve the problem by inspiring Stackelberg, we reformulate the equation \eqref{c16} to reduce one of the variables ($M_s$) that can be solved after obtaining the rate of UEs ($M_s$ is similar to followers in Stackelberg Competition and power and PRB assignment is similar to leader). So, the new problem has two variables of power and PRB assignment. This new problem is convex by relaxing the binary variable (PRB assignment) and estimating the lower bounds in equation \eqref{lb1} because the objective function and constraints of the problem are convex and can be solved by the Lagrangian function. After obtaining the power of UEs and PRB assignment, we can obtain the achievable rate of each UE so we can find the optimal number of VNFs.}
+\textcolor{MidnightBlue}{The problem \ref{problem} is feasible and has feasibility points that are discussed in subsection \ref{fr}, and we introduce a fast algorithm (algorithm\ref{alg3}) for feasibility points. Although the problem is feasible, it is not convex and difficult to solve. Since problem \eqref{problem} is mixed-integer nonlinear programming with two integer constraints which are a binary variable ($e$ shows the PRB assignment) and an integer variable ($M_s$ indicate the number of VNFs in slice s), the problem is NP-hard. Solving the problem is complex. To solve the problem by inspiring Stackelberg, we reformulate the equation \eqref{c16} to reduce one of the variables ($M_s$) that can be solved after obtaining the rate of UEs ($M_s$ is similar to followers in Stackelberg Competition and power and PRB assignment is similar to leader). So, the new problem has two variables of power and PRB assignment. This new problem is convex by relaxing the binary variable (PRB assignment) and estimating the lower bounds in equation \eqref{lb1} because the objective function and constraints of the problem are convex and can be solved by the Lagrangian function. After obtaining the power of UEs and PRB assignment, we can obtain the achievable rate of each UE so we can find the optimal number of VNFs.}
 
 In the following, we define a lemma to find the upper and lower bound for the optimal number of VNFs based on the achievable rates. Afterward, we obtain the formula to attain the optimal number of VNFs.  
 \begin{lemma}\label{lemma1}
@@ -857,11 +857,11 @@ Assume we have six 4-antenna O-RU (MISO) located in a place with a diameter of 5
 \end{figure}
 Here, the channel vector from the O-RU $r$ to the UE $i$ in service $s$ is set as $\bold{h}_{r,u(s,i)}^{k}=d_{r,u(s,i)}^{-\mathcal{L}} \Omega_{r,u(s,i)}^{k} $, where $d_{r,u(s,i)}^{-\mathcal{L}} $ is the distance between the O-RU $r$ and UE $i$ in service $s$ and $\mathcal{L} = 3.8$ is the path-loss exponent \cite{gholipoor2020cloud}.
 Also, $\Omega_{r,u(s,i)}^{k}$ is the random variable that is generated by the Rayleigh distribution and it is the Rayleigh fading channel between the UE and O-RU.
-\textcolor{Violet}{We consider 25 PRBs are used in the network and the packet size for mMTC is equal to 20 bytes, and for URLLC is equal to 32 bytes \cite{ETSI1}.}
+\textcolor{MidnightBlue}{We consider 25 PRBs are used in the network and the packet size for mMTC is equal to 20 bytes, and for URLLC is equal to 32 bytes \cite{ETSI1}.}
 The maximum number of VNF for each slice is 25 and the mean arrival data rate for the eMBB service is $\lambda  = 3Mbps$ and for the mMTC service and the URLLC  service is $\lambda  = 0.2Mbps$. 
 Also, the quantization noise is assumed to be $10^{-13}$.
 Moreover, we set $\mathfrak{h}_{u_{(s,i)}} = \eta_{u_{(s,i)}}/200$, $\mathfrak{m}_{r} = \zeta_r/10$
-and $\mathfrak{q}^k_{r,u(s,i)} = P_{s}^{max}/100$. \textcolor{Violet}{The other parameters of these simulations are depicted in Table \ref{table:1a} \cite{3GPPTS1, 3GPPTS2, 3GPPTS3, IMT, ETSI1}.}
+and $\mathfrak{q}^k_{r,u(s,i)} = P_{s}^{max}/100$. \textcolor{MidnightBlue}{The other parameters of these simulations are depicted in Table \ref{table:1a} \cite{3GPPTS1, 3GPPTS2, 3GPPTS3, IMT, ETSI1}.}
 \begin{table}[H]
  \caption {Simulation Parameters} \label{table:1a}
  \begin{center}
@@ -897,9 +897,9 @@ Parameter & Value \\ [0.5ex]
  \end{table} 
 Finding a feasible initial value is almost tricky. To overcome this challenge, we use a fast method that is discussed in \ref{fr}. If the fast method converges and has a feasible solution, so our algorithm (IABV) can be converged too.
 Two different methods are used to compare with the performance of the proposed method (IABV) and show the optimality of our approach.
-\textcolor{red}{ The first one is a baseline scheme, which uses random PRB allocation. 
+\textcolor{MidnightBlue}{ The first one is a baseline scheme, which uses random PRB allocation. 
 So, the allocation of PRB  to each UE is random when we have low interference, but in figures with high interference, we randomly assign just one RB to each UE. Also, the association of O-RU is carried out based on distance. It means that each UE is assigned to the nearest O-RU. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method since the problem is convex. After achieving power and other parameters, the achievable rate will be obtained and the optimal number of VNF is achieved from the lemma \eqref{lemma1}.}
-\textcolor{brown}{The second one is similar to the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic}. In this work, we have services with different QoS that contain UEs, which is similar to tenants with different QoS that is introduced in \cite{lee2018dynamic}.
+\textcolor{MidnightBlue}{The second one is similar to the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic}. In this work, we have services with different QoS that contain UEs, which is similar to tenants with different QoS that is introduced in \cite{lee2018dynamic}.
  So, we used an algorithm similar to FBDR adapted to our conditions for comparison.  
 Instead of BBU in C-RAN, we have O-DU and O-CU in O-RAN. To use the FBDR method, we should consider the fixed BBU capacity. We assume that O-DU and O-CU have fixed sufficient capacity in our system model. Also, our mid-haul link (F1 link) has adequate capacity, so there will be no issue using the FBDR method by separating ‌BBU to O-DU and O-CU with this assumption.
 In this method, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm \ref{alg1} (GAA algorithm ) for O-RU assignment.

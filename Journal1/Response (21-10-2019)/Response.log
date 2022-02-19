@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  16 FEB 2022 18:04
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  19 FEB 2022 14:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -922,7 +922,11 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box77
 \enitdp@description=\count163
 )
-(./Response.aux)
+(./Response.aux
+
+LaTeX Warning: Label `eqI' multiply defined.
+
+)
 \openout1 = `Response.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
@@ -1229,7 +1233,7 @@ Underfull \vbox (badness 10000) detected at line 421
 
 ] [11]
 Underfull \hbox (badness 10000) in paragraph at lines 433--436
- []| \TU/lmr/bx/n/12 Reviewer 4| 
+ []| \TU/lmr/bx/n/12 Reviewer 3| 
  []
 
 
@@ -1241,37 +1245,78 @@ Overfull \hbox (0.29094pt too wide) in alignment at lines 431--441
 Underfull \vbox (badness 10000) detected at line 441
  []
 
-[12
 
-]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 455--474
+Overfull \hbox (0.29094pt too wide) in alignment at lines 451--457
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 474
+Underfull \vbox (badness 10000) detected at line 457
  []
 
-[13
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 463--469
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 469
+ []
+
+[12
 
 ]
-File: Gap.png Graphic file (type bmp)
-<Gap.png>
- [14
+Overfull \hbox (0.29094pt too wide) in alignment at lines 478--484
+ [] 
+ []
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 504.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 504.
+
+Underfull \vbox (badness 10000) detected at line 484
+ []
+
+File: Interference.png Graphic file (type bmp)
+<Interference.png>
+[13]
+
+LaTeX Warning: Reference `problem' on page 14 undefined on input line 522.
+
+
+LaTeX Warning: Reference `proAlg' on page 14 undefined on input line 522.
+
+[14]
+Overfull \hbox (0.29094pt too wide) in alignment at lines 548--554
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 554
+ []
+
+[15]
+Overfull \hbox (0.29094pt too wide) in alignment at lines 567--573
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 573
+ []
+
+[16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 578.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 578.
  (./Response.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 504.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 504.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 578.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 578.
 Package rerunfilecheck Info: File `Response.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 504.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 578.
  )
 (\end occurred inside a group at level 1)
 
@@ -1279,12 +1324,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 504.
 ### bottom level
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 23295 strings out of 492970
- 406255 string characters out of 6137298
- 588655 words of memory out of 5000000
- 26862 multiletter control sequences out of 15000+600000
- 16609 words of font info for 70 fonts, out of 8000000 for 9000
+ 23303 strings out of 492970
+ 406305 string characters out of 6137298
+ 589759 words of memory out of 5000000
+ 26872 multiletter control sequences out of 15000+600000
+ 16601 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,21n,77p,1281b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,21n,77p,1281b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Response.pdf (14 pages).
+Output written on Response.pdf (16 pages).

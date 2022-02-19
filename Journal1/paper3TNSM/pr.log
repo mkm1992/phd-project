@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  16 FEB 2022 17:51
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  19 FEB 2022 14:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -844,12 +844,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8827 strings out of 492970
- 131690 string characters out of 6137298
- 234792 words of memory out of 5000000
- 12616 multiletter control sequences out of 15000+600000
+ 8828 strings out of 492970
+ 131697 string characters out of 6137298
+ 234796 words of memory out of 5000000
+ 12617 multiletter control sequences out of 15000+600000
  91586 words of font info for 125 fonts, out of 8000000 for 9000
  1352 hyphenation exceptions out of 8191
- 36i,21n,77p,1336b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,21n,77p,1348b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on pr.pdf (16 pages).

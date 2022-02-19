@@ -219,6 +219,10 @@ D.~Marabissi and R.~Fantacci, ``Highly flexible ran slicing approach to manage
   isolation, priority, efficiency,'' \emph{IEEE Access}, vol.~7, pp.
   97\,130--97\,142, 2019.
 
+\bibitem{ETSI2}
+ETSI-TS-128-530-V15.0.0, ``5g;management and orchestration; concepts, use cases
+  and requirements (3gpp ts 28.530 version 15.0.0 release 15),'' 2018-10.
+
 \bibitem{akccay2007greedy}
 Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
   multidimensional knapsack problem,'' \emph{Annals of Operations Research},
@@ -236,6 +240,11 @@ N.~Gholipoor, S.~Parsaeefard, M.~R. Javan, and N.~Mokari, ``Cloud-based queuing
   91st Vehicular Technology Conference (VTC2020-Spring)}, Antwerp, Belgium,
   Jun. 2020, pp. 1--6.
 
+\bibitem{ETSI1}
+ETSI-TR-138-913-V14.3.0, ``5g; study on scenarios and requirements for next
+  generation access technologies(3gpp tr 38.913 version 14.3.0 release 14),''
+  2017-10.
+
 \bibitem{3GPPTS1}
 3GPP-TS-36.104-V13.3.0, ``Evolved universal terrestrial radio access (e-utra);
   base station (bs) radio transmission and reception (release= 13),'' 2016-03.
@@ -252,10 +261,5 @@ N.~Gholipoor, S.~Parsaeefard, M.~R. Javan, and N.~Mokari, ``Cloud-based queuing
 \bibitem{IMT}
 E.~Mohyeldin, ``Minimum technical performance requirements for imt-2020 radio
   interface(s),'' 2020.
-
-\bibitem{ETSI1}
-ETSI-TR-138-913-V14.3.0, ``5g; study on scenarios and requirements for next
-  generation access technologies(3gpp tr 38.913 version 14.3.0 release 14),''
-  2017-10.
 
 \end{thebibliography}
