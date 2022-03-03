@@ -304,7 +304,7 @@ $\mathfrak{C}_{u(s_j,i)}^{k} = 1 - \frac{1}{(1+\rho_{u(s_j,i)}^{k})^2}$ depicts 
 $N_{u(s_j,i)}^{k}$ represents the blocklength of it. 
 $\mathcal{R}_{u(s_j,i)}^{e,r}$ is the achievable data rate that is transmitted by O-RU $r$ to UE $i$ requesting service $s_j$.
 
-If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{s}^{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$. Therefore, $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , i$ is derived by using $\bar{I}_{r,u(s,i)}^{k}$ instead of $I_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3}.
+If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{s}^\text{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$. Therefore, $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , i$ is derived by using $\bar{I}_{r,u(s,i)}^{k}$ instead of $I_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3}.
 \subsection{Power of the O-RU and the Fronthaul Capacity}
 Let $P_r$ denote the power of the transmitted signal from the $r^{th}$ O-RU to all the UEs served by it. From \eqref{eq2}, the power of each O-RU $r$ is obtained as follows, 
 %{\color{red} is this the sum rate of all users?}
@@ -408,7 +408,7 @@ where $\phi_{s}$ is obtained from $\phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M
 %\end{equation}
 Moreover, $\phi_s^u$, $\phi_s^c$, and $\phi_s^d$ are the fixed cost of energy in UPF, O-CU, and O-DU, respectively. 
 
-\textcolor{MidnightBlue}{A significant issue facing the industry is reducing energy consumption. Data centers are one of the most energy-consuming. As a result, restrictions are placed on data centers' energy, including virtual machines (VMs). So, one of our goals is to limit the energy consumption of total VNFs that can be run as VM on data centers. So, by applying a custom policy on total power consumption, we can control data centers' power consumption ($\phi^{\text{\text{tot}}}  \leq \phi^{max}$).}
+\textcolor{MidnightBlue}{A significant issue facing the industry is reducing energy consumption. Data centers are one of the most energy-consuming. As a result, restrictions are placed on data centers' energy, including virtual machines (VMs). So, one of our goals is to limit the energy consumption of total VNFs that can be run as VM on data centers. So, by applying a custom policy on total power consumption, we can control data centers' power consumption ($\phi^{\text{\text{tot}}}  \leq \phi^\text{max}$).}
 \subsection{Problem Statement}
 Suppose slice $s$ (which is assigned to service s) has the priority factor $\delta_s$ (based on the priority of its hosting service) where $\sum_{s=1}^S \delta_s =1$.
 The priority factor of each slice is obtained according to the service level agreement (SLA) of that service to have a fairness in the system. 
@@ -417,18 +417,18 @@ This paper aims to maximize the sum-rate of all UEs with the presence of constra
 \begin{subequations}\label{problem}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}} \ \\
-\text{subject to} \quad  &  P_r \leq P^{max}_{r} \quad \forall r
+\text{subject to} \quad  &  P_r \leq P^\text{max}_{r} \quad \forall r
  \label{c11} \\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
-&p_{r,u(s,i)}^{k}  \leq P_{s}^{max}  \quad \forall i,\forall r,\forall s, \forall k,\label{c12-1} \\
-&\bar{\mathcal{R}}_{u_{(s,i)}} \geq \mathcal{R}_{{s}}^{min} \quad \forall s, \label{c13} \\
+&p_{r,u(s,i)}^{k}  \leq P_{s}^\text{max}  \quad \forall i,\forall r,\forall s, \forall k,\label{c12-1} \\
+&\bar{\mathcal{R}}_{u_{(s,i)}} \geq \mathcal{R}_{{s}}^{\min} \quad \forall s, \label{c13} \\
 %&\mathcal{R}_{u_{(s_2,i)}}^u \geq  \mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
-& C_r \leq C^{max}_r \quad \forall r, \label{c15}\\ 
-&T^{\text{\text{tot}}}_{u(s,i)}  \leq T^{max}_{s} \quad \forall i,\forall s,\label{c16} \\
+& C_r \leq C^\text{max}_r \quad \forall r, \label{c15}\\ 
+&T^{\text{\text{tot}}}_{u(s,i)}  \leq T^\text{max}_{s} \quad \forall i,\forall s,\label{c16} \\
 & \mu_s \geq \alpha_s/M_s \quad \forall s,\label{c16-1} \\
 & \bar{\mathcal{R}}_{u_{(s,i)}} \geq {\lambda}_{u_{(s,i)}} \quad \forall i,\forall s,\label{c16-2} \\
-& 0 \leq M_s \leq M^{max}_s  \quad \forall s,\label{c16-3}\\
-& \phi^{\text{\text{tot}}}  \leq \phi^{max}, \label{c19} \\
+& 0 \leq M_s \leq M^\text{max}_s  \quad \forall s,\label{c16-3}\\
+& \phi^{\text{\text{tot}}}  \leq \phi^\text{max}, \label{c19} \\
 %& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
 & \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s,\forall i, \label{c17}  \\
 & \sum_{k =1}^{K_s} g^r_{u(s,i)} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r \label{c18-1} \\
@@ -453,10 +453,10 @@ Moreover, \eqref{c20} and \eqref{c21} depict that $\boldsymbol{E}$ and $\boldsym
 \subsubsection{PRB Scheduling}\label{prb}
 \textcolor{MidnightBlue}{ In this section, we have a brief study on the problem of PRB scheduling to eliminate  the inter-slice interference and guarantee the isolation of slices \cite{marabissi2019highly}.
 We need to have an algorithm to remove the inter-slice interference before solving the problem \ref{problem}. Firstly, we should assign PRBs to slices, and in the second step, the assignment of PRBs of each slice to each UEs of a specific slice is performed. So, the assignment of PRB can be completed in two steps to remove inter-slice interference and isolate the slices. Firstly we assign PRBs to slices. Secondly, we allocate power of UEs, assign PRBs of slices to UEs, find the optimal number of VNFs for each slice and assign O-RU to UEs, which uses the proposed algorithm \ref{proAlg}.
-Suppose, $\mathcal{R}_{{s}}^{min}$, and $\mathcal{R}_{{s}}^{max}$ are the minimum data rate and maximum data rate of each UE in slice s, respectively.
+Suppose, $\mathcal{R}_{{s}}^{\min}$, and $\mathcal{R}_{{s}}^\text{max}$ are the minimum data rate and maximum data rate of each UE in slice s, respectively.
 Firstly, we need to find the average PRB number used by UEs in each service. Since mMTC and URLLC transmit a short packet, each UE in mMTC and URLLC requires 1 PRB. So if slice s serves mMTC or URLLC services, with $U_s$ UEs, it requires $K_s = U_s \times 1$ PRBs. For eMBB, assume the average rate of each UE in slice s serving eMBB UEs is $\bar{R}_s = Blog_2(1 + \bar{\rho_s})$, where, $\bar{\rho_s}$ is the average SNR of UEs in slice s. (eMBB slice)
-So, the minimum number of PRB that slice s with $U_s$ UEs requires is $K_s^{min} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{max}}}\rceil$. $K_s^{min} $ is the minimum number of PRBs needed for slice s, and K is the total number of PRBs in the system.  
-Moreover, the maximum number of PRB that slice s with $U_s$ UEs requires is $K_s^{max} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{min}}}\rceil$. $K_s^{max} $ is the maximum number of PRBs needed for slice s, and K is the total number of PRBs in the system. Also, $K_s = (K_s^{min}+K_s^{max})/2$ is the average number of required PRB in slice s (eMBB slice).
+So, the minimum number of PRB that slice s with $U_s$ UEs requires is $K_s^{\min} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^\text{max}}}\rceil$. $K_s^{\min} $ is the minimum number of PRBs needed for slice s, and K is the total number of PRBs in the system.  
+Moreover, the maximum number of PRB that slice s with $U_s$ UEs requires is $K_s^\text{max} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{\min}}}\rceil$. $K_s^\text{max} $ is the maximum number of PRBs needed for slice s, and K is the total number of PRBs in the system. Also, $K_s = (K_s^{\min}+K_s^\text{max})/2$ is the average number of required PRB in slice s (eMBB slice).
 Our goal is to obtain the number of PRBs assigned to each slice s ($\bar{K_s}$).
 The problem can be written as follow
 \begin{subequations}\label{prob:prb}
@@ -464,7 +464,7 @@ The problem can be written as follow
 \max\limits_{\boldsymbol{\bar{K_s}}} \quad &  \sum_{s=1}^{S}\delta_s K_s \ln(\bar{K_s}) \ \\
 \text{subject to} \quad  & \sum_s{\bar{K_s}} \leq K
  \label{prb0} \\
-& K_s^{min} \leq \bar{K_s}  \leq K_s^{max}  \quad \forall s \in S_1,\label{prb1} \\
+& K_s^{\min} \leq \bar{K_s}  \leq K_s^\text{max}  \quad \forall s \in S_1,\label{prb1} \\
 &  \bar{K_s} \leq K_s  \quad \forall s \in S_2, S_3,\label{prb2}
 \end{alignat}
 \label{constraints}
@@ -483,6 +483,7 @@ Equation \eqref{prb1}, restrict the number of PRBs of eMBB slices and \eqref{prb
 \end{itemize}
 }
 
+In the preparation phase, the evaluation of requirements is considered. After that, we use our algorithm to find the optimal number of VNFs for each slice and PRB assignment and power allocation. Therefore, in the preparation phase, we estimate our resource of slices, and in the commission phase, we allocate our resources to the slices.
 %\vspace*{-1em}
 \section{Proposed Algorithm}\label{proAlg}
 In this section, we first apply some simplifications to the system; Solving the problem \eqref{problem} is complicated since this is non-convex mixed-integer non-linear problem (MINLP) with a binary variable and an integer variable. 
@@ -501,11 +502,11 @@ We repeat this procedure until the algorithm converges.
 \subsection{Sub-Problem 1}\label{sub1}
 Suppose that $\boldsymbol{G}$ is fixed, we want to obtain $\boldsymbol{P}, \boldsymbol{E}$ and $\boldsymbol{M}$.
 Here, we first simplify and relax the parameters to convexify the problem.
-As we mentioned before, by replacing $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} with $P^{max}_s$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$, and also the lower bound $\bar{\rho}_{u(s,i)}^{k}$ is achieved
+As we mentioned before, by replacing $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} with $P^\text{max}_s$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$, and also the lower bound $\bar{\rho}_{u(s,i)}^{k}$ is achieved
 for $\rho_{u(s,i)}^{k}$. 
 Moreover, the lower bound $\bar{\mathcal{R}}_{u_{(s,i)}}, \forall s , \forall i$ for  ${\mathcal{R}}_{u_{(s,i)}}$ is obtained by replacing $I_{r,u(s,i)}^{k}$ with $\bar{I}_{r,u(s,i)}^{k}$ in \eqref{eq11} and \eqref{eq3} and make these equations become concave functions.
 
-Suppose $\hat{\rho}_{r,u(s,i)}^{k} =  \frac{|P_{s}^{max}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0}$. 
+Suppose $\hat{\rho}_{r,u(s,i)}^{k} =  \frac{|P_{s}^\text{max}{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0}$. 
 we replace ${\rho}_{r,u(s,i)}^{k}$ with $\hat{\rho}_{r,u(s,i)}^{k}$ in \eqref{shortPacket}, to convexify the \eqref{eq11} for the URLLC and mMTC services that have the short packet transmission.
 So, a lower bound for \eqref{eq11} is given that is a concave function.
 \begin{subequations}\label{lb1}
@@ -536,7 +537,7 @@ In the following, we define a lemma to find the upper and lower bound for the op
 \begin{lemma}\label{lemma1}
 The optimal number of VNFs in each slice s can be achieved by the 
 $M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s$.
-where, $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
+where, $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^\text{max}_s R_{u(s,i)}-T^\text{max}_s\lambda_{u(s,i)} -1)}{(T^\text{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
 \end{lemma}
 %{\color{red} add one sentence before lemma to motivate why you need this lemma. The whole part is a lemma? It is too long. Where is the proof?}
 \begin{proof}
@@ -552,22 +553,22 @@ Also from equations in \eqref{c19}, \eqref{c16-1} and \eqref{c16-3}, we have
 \begin{equation}
 \alpha_s/\mu_s\leq M_s \leq \min\{M^{\max}, \phi_{\max}/{3\phi_s}\}
 \end{equation}
-We denote $ \mathfrak{M}_s= \min\{M^{max}, \phi_{max}/{3\phi_s}\}$.
+We denote $ \mathfrak{M}_s= \min\{M^\text{max}, \phi_{\max}/{3\phi_s}\}$.
 Thus, if we restrict constraint \eqref{c16} to equality, constraint \eqref{c16} is still valid.
 Also, we have the following inequality.
 \begin{equation}\label{eqDelay}
-\alpha_s/\mu_s\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
+\alpha_s/\mu_s\leq \frac{\alpha_s(T^{\max}_s R_{u(s,i)}-T^{\max}_s\lambda_{u(s,i)} -1)}{(T^{\max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
 \end{equation}
-In equation \eqref{eqDelay}, $0\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ is established due to the fact that 
+In equation \eqref{eqDelay}, $0\leq \frac{\alpha_s(T^{\max}_s R_{u(s,i)}-T^{\max}_s\lambda_{u(s,i)} -1)}{(T^{\max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ is established due to the fact that 
 the numerator and the denominator will both have the same sign.
 In the numerator, according to the \eqref{c16-2}, $ R_{u(s,i)}-\lambda_{u(s,i)} \geq 0$, and as we know that $\alpha_s \geq 0$, we have $ \alpha_s (R_{u(s,i)}-\lambda_{u(s,i)}) \geq 0 $.
-If we assume that the $(R_{u(s,i)}-\lambda_{u(s,i)})T^{max}_s \geq 1$, the numerator will be positive.
-$(R_{u(s,i)}-\lambda_{u(s,i)})T^{max}_s \geq 1$ since the order of $T^{max}_s$ is about milli second and the difference between achievable rate and packet rate can be more than $1/T^{max}_s$.
-Therefore, to ensure that this constraint will be valid, we restrict constraint \eqref{c16-2} to $R_{u(s,i)} \geq \lambda_{u(s,i)} + 1/T^{max}_s$.
+If we assume that the $(R_{u(s,i)}-\lambda_{u(s,i)})T^{\max}_s \geq 1$, the numerator will be positive.
+$(R_{u(s,i)}-\lambda_{u(s,i)})T^{\max}_s \geq 1$ since the order of $T^{\max}_s$ is about milli second and the difference between achievable rate and packet rate can be more than $1/T^{\max}_s$.
+Therefore, to ensure that this constraint will be valid, we restrict constraint \eqref{c16-2} to $R_{u(s,i)} \geq \lambda_{u(s,i)} + 1/T^{\max}_s$.
 So the numerator will be positive.
-In the denominator, we can say that $(T^{max}_s\mu_s)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s \geq 0 $, since,  
+In the denominator, we can say that $(T^{\max}_s\mu_s)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s \geq 0 $, since,  
 $\mu_s \geq 0$ and
-$(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T^{max}_s$ as mentioned above.
+$(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T^{\max}_s$ as mentioned above.
 %Therefore, we need to have the constraint below.
 %\begin{equation}\label{constraint16}
 %\alpha_s/\mu_s\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
@@ -585,11 +586,11 @@ For the right side, by reformulating the equation \eqref{eqDelay}, we have a new
 \begin{subequations}\label{RM}
 \begin{alignat}{4}
 \mathcal{R}_{u(s,i)} &\geq \varpi_{u(s,i)}. \\
-\varpi_{u(s,i)} &= \lambda_{u(s,i)} + \frac{1}{T^{max}_s}\\
-& + \frac{3}{T^{max}_s\mu_s-\alpha_s T^{max}_s/\mathfrak{M}_s-3}
+\varpi_{u(s,i)} &= \lambda_{u(s,i)} + \frac{1}{T^{\max}_s}\\
+& + \frac{3}{T^{\max}_s\mu_s-\alpha_s T^{\max}_s/\mathfrak{M}_s-3}
 \end{alignat}
 \end{subequations}
-In addition, we denote $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
+In addition, we denote $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{\max}_s R_{u(s,i)}-T^{\max}_s\lambda_{u(s,i)} -1)}{(T^{\max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
 So to obtain, the optimal number of activated VNF in each slice, we need to find the maximum of the
 $\mathtt{M}_{u(s,i)}$ in each slice as $M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s $.
 %\begin{equation}
@@ -602,11 +603,11 @@ Furthermore, the problem can be solved using the Lagrangian function and iterati
 
 In order to make \eqref{problem} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cr} to $P_r = \sigma_{q_r}^2\times 2^{C^r}$ so the constraint 
 \eqref{c15} is changed to
- $P_r \leq \sigma_{q_r}^2\times 2^{C^r_{max}}$.
+ $P_r \leq \sigma_{q_r}^2\times 2^{C^r_{\max}}$.
 The combination of equations \eqref{c11} and \eqref{c15} leads to the following equation
 \begin{equation} \label{pr11}
 \begin{split}
-\zeta_{r}&= min\{P_{max}, \sigma_{q_r}^2\times 2^{C^r_{max}} \}, \\
+\zeta_{r}&= \min\{P_{\max}, \sigma_{q_r}^2\times 2^{C^r_{\max}} \}, \\
 P_r &\leq  \zeta_{r}.\\
 \end{split}
 \end{equation} 
@@ -624,7 +625,7 @@ Assume $\boldsymbol{\mathfrak{v}}$, $\boldsymbol{\mathfrak{m}}$, $\boldsymbol{\m
 &+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathfrak{h}_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\eta_{u_{(s,i)}})\\
 &-  \sum\limits_{r=1}^{R} \mathfrak{m}_{r} (P_{r}- \zeta_r)\\
 &+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\kappa^k_{r,u(s,i)}  p^k_{r,u(s,i)}\\
-&+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\mathfrak{q}^k_{r,u(s,i)} (P^{max}_{s}- p^k_{r,u(s,i)})\\
+&+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\mathfrak{q}^k_{r,u(s,i)} (P^{\max}_{s}- p^k_{r,u(s,i)})\\
 &+ \sum\limits_{r=1}^{R}\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\chi_{r,u(s,i)}(\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} -1)\\
 &-  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\mathfrak{v}^{k}_{r,u(s,i)} (e^{k}_{r,u(s,i)} -1)\\
 &+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R} \xi^{k}_{r,u(s,i)} e^{k}_{r,u(s,i)}.
@@ -763,9 +764,9 @@ The complexity order of this algorithm is about $O(Slog(S)) + O(R\times \mathfra
  \small
 \caption{Iterative algorithm for the baseband resource allocation and VNF activation (IABV)}\label{alg2}
 \begin{algorithmic}[1]
-\State  Set the maximum number of iterations ${Iter}_{max}$, convergence condition $\epsilon > 0$ \label{a21}
+\State  Set the maximum number of iterations ${Iter}_{\max}$, convergence condition $\epsilon > 0$ \label{a21}
 \State  Assign Users to O-RU randomly (Initialize $\boldsymbol{G}$) \label{a22}
-\For {$i \gets 1$ to $Iter_{max}$}\label{23}
+\For {$i \gets 1$ to $Iter_{\max}$}\label{23}
 \State Acquire $\boldsymbol{P}^{(i)}$, $\boldsymbol{E}^{(i)}$ and $\boldsymbol{M}^{(i)}$ using Lagrangian function and sub-gradient method based on \eqref{sub1}
 \State Update $\boldsymbol{G}^{(i)}$   based on algorithm GAAOU \eqref{alg1} in  \eqref{sub2}
 \If {the algorithm converged with the tolerence of $\epsilon$}
@@ -807,7 +808,7 @@ for all the feasible resource allocation solutions of $\{\bold{P},\bold{E},\bold
 So, $\mathcal{T}^*(\bold{P}^{*},\bold{E}^*,\bold{G}^{*}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i})$ and thus in each iteration, the aggregate throughput can not be larger than the optimal solution.
 So the the aggregate throughput is ascending function concerning the number of iterations and it will converge to the sub-optimal solution.
 In addition, if we assume that the interference is set to be zero ${I}_{r,u_{(s,i)}}^{k}=0$,
-and we suppose that each UE has the maximum power $p_{r,u_{(s,i)}}^k = P_{s}^{max}$,
+and we suppose that each UE has the maximum power $p_{r,u_{(s,i)}}^k = P_{s}^{\max}$,
 and we consider that all PRB is assigned to all UE $e_{r,u_{(s,i)}}^k = 1 \forall s,\forall i$
 and each UE is assigned to the nearest O-RU with the best channel quality. So, the solution of this allocation, is the upper bound 
 for the aggregate throughput. Thus,
@@ -861,7 +862,7 @@ Also, $\Omega_{r,u(s,i)}^{k}$ is the random variable that is generated by the Ra
 The maximum number of VNF for each slice is 25 and the mean arrival data rate for the eMBB service is $\lambda  = 3Mbps$ and for the mMTC service and the URLLC  service is $\lambda  = 0.2Mbps$. 
 Also, the quantization noise is assumed to be $10^{-13}$.
 Moreover, we set $\mathfrak{h}_{u_{(s,i)}} = \eta_{u_{(s,i)}}/200$, $\mathfrak{m}_{r} = \zeta_r/10$
-and $\mathfrak{q}^k_{r,u(s,i)} = P_{s}^{max}/100$. \textcolor{MidnightBlue}{The other parameters of these simulations are depicted in Table \ref{table:1a} \cite{3GPPTS1, 3GPPTS2, 3GPPTS3, IMT, ETSI1}.}
+and $\mathfrak{q}^k_{r,u(s,i)} = P_{s}^{\max}/100$. \textcolor{MidnightBlue}{The other parameters of these simulations are depicted in Table \ref{table:1a} \cite{3GPPTS1, 3GPPTS2, 3GPPTS3, IMT, ETSI1}.}
 \begin{table}[H]
  \caption {Simulation Parameters} \label{table:1a}
  \begin{center}
