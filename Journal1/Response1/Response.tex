@@ -126,7 +126,7 @@ The paper proposes resolving the problem of resource allocation to network slice
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We would like to thank the reviewer for the careful and thorough reading of this manuscript. We hope that the responses provided herein can alleviate the reviewer's concerns.
+We would like to thank the reviewer for this manuscript's careful and thorough reading. We hope that the responses provided will ease the reviewer's concerns.
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -137,7 +137,7 @@ We would like to thank the reviewer for the careful and thorough reading of this
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-According to this comment, we have changed the introduction and checked the entire text. We have shortened the state of the arts and introduced our goal briefly before the main contribution section. We removed additional information and talked more about our work. Also, we add some figures to describe incomprehensible parts. In addition, we provide further explanations.  
+According to this comment, we have modified the introduction and checked the entire text and correct mistakes. We have shortened the state of the arts and introduced our goal briefly before the main contribution section. We removed additional information and talked more about our work. Also, we add some figures to describe incomprehensible parts. In addition, we provide further explanations.   
 
 
 
@@ -152,7 +152,9 @@ According to this comment, we have changed the introduction and checked the enti
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-The problem in (13) is feasible and has feasibility points that are discussed in subsection  IV-B, and we introduce a fast algorithm (i.e., Algorithm 3) for feasibility points. Although the problem is feasible, it is not convex and difficult to solve. Since problem in (13) is mixed-integer nonlinear programming with two integer variables, the PRB assignment, $e$, and the number of VNFs in slice $s$, $M_s$, and the problem is NP-hard. Solving the problem is not trivial. To solve the problem by inspiring Stackelberg, we reformulate the equation in (13g) to reduce one of the variables (i.e., $M_s$) that can be solved after obtaining the rate of UEs. WE notice that $M_s$ is similar to the followers in Stackelberg Competition and power and PRB assignment is similar to leader. So, the new problem has two variables of power and PRB assignment. This new problem is convex by relaxing the binary variable, the PRB assignment, and estimating the lower bounds in (15) because the objective function and constraints of the problem are convex and can be solved by the Lagrangian function. After obtaining the power of UEs and PRB assignment, we can obtain the achievable rate of each UE so we can find the optimal number of VNFs. We made changes in Subsection III-A, accordingly.
+I would appreciate your comments to enhance and clarify this section of the paper.
+
+The problem (13) is feasible and has feasibility points discussed in Subsection IV-B, and we introduce a fast algorithm (i.e., Algorithm 3 in Subsection IV-B) for feasibility points. Although the problem is feasible, it is not convex and challenging to solve. Since problem (13) is mixed-integer nonlinear programming with two integer variables, the PRB assignment, $e$, and the number of VNFs in slice $s$, $M_s$, and by relaxing the variables, the problem is also non-convex; therefore, this problem is NP-hard. Solving the problem is not trivial. To solve the problem by inspiring Stackelberg, we reformulate the equation in (13g) to reduce one of the variables (i.e., $M_s$) that can be solved after obtaining the rate of UEs. We notice that $M_s$ is similar to the followers in Stackelberg Competition, and power and PRB assignment are identical to the leader. So, the new problem has two variables: power and PRB assignment. This new problem is convex by relaxing the binary variable, the PRB assignment, and estimating the lower bounds (15). The objective function and constraints of the problem are convex and can be solved by the Lagrangian function. After obtaining the power of UEs and PRB assignment, we can obtain the achievable rate of each UE so we can find the optimal number of VNFs in each slice ($M_s$). We made changes in Subsection III-A, accordingly.
 
 
 \begin{longtable}{|p{0.975\textwidth}|}
@@ -164,26 +166,17 @@ The problem in (13) is feasible and has feasibility points that are discussed in
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We would like to thank the reviewer to emphasis this point and to help us for a better presentation. 
-  Two different methods are used to compare with the performance of the proposed method (IABV) and show the optimality of our approach. The first one is a baseline scheme, which uses random PRB allocation. Therefore, the allocation of PRB to each UE is random when we have low interference, but in figures with high interference, we randomly assign just one RB to each UE. Also, the association of O-RU is carried out based on distance. It means that each UE is assigned to the nearest O-RU. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method since the problem is convex.
-After achieving power and other parameters, the achievable rate will be obtained and the optimal number of VNF is
-achieved from Lemma (1). The second one is similar
-to the fixed BBU capacity and dynamic resource allocation
-(FBDR) algorithm proposed in [18]. In this work, we have services with different QoS that
-contain UEs, which is similar to tenants with different QoS
-that is introduced in [18]. Therefore, we used an algorithm similar
-to FBDR adapted to our conditions for comparison. Instead
-of BBU in C-RAN, we have O-DU and O-CU in O-RAN.
-To use the FBDR method, we should consider the fixed
-BBU capacity. We assume that O-DU and O-CU have fixed
-sufficient capacity in our system model. Also, our mid-haul
-link (F1 link) has adequate capacity, so there will be no
-issue using the FBDR method by separating BBU to O-DU
-and O-CU with this assumption. In this method, PRB and power are dynamically allocated. The number of VNFs is
-obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the
-channel distance instead of using the greedy algorithm 1 (GAA algorithm ) for O-RU assignment. The figures in [18]
-show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same
-priority area. We will also see that our proposed algorithm performs better than FBDR in the numerical result section.
+We would like to thank the reviewer for emphasizing this point and helping us with a better exhibition. 
+
+ Two different methods are used to compare with the performance of the proposed method (IABV) and show the optimality of our approach.
+
+ The first one is a baseline scheme, which uses random PRB allocation. Therefore, the allocation of PRB to each UE is random when we have low interference, but in figures with high interference, we randomly assign just one RB to each UE. Also, the association of O-RU is carried out based on distance. It means that each UE is assigned to the nearest O-RU. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method since the problem is convex.
+After achieving power and other parameters, the achievable rate will be obtained, and the optimal number of VNF is achieved from Lemma (1). 
+
+For the second one, we use the idea of the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in [18] and named it the dynamic resource allocation scheme (DR scheme). 
+ We have services with different QoS in this work, similar to tenants with different QoS introduced in [18]. Therefore, we can use the DR scheme similar to the FBDR method adapted to our conditions for comparison. Instead of BBU in C-RAN, we have O-DU and O-CU in O-RAN.
+ Since we do not talk about O-DU and O-CU capacity, we use the dynamic resource allocation scheme (DR scheme) algorithm and do not consider BBU capacity.
+But also, we can assume that O-DU and O-CU have fixed sufficient capacity in our system model. Also, our mid-haul link (F1 link) has adequate capacity, so there will be no issue using the idea of the FBDR method with this assumption and using the DR scheme. In the DR scheme, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm 1 (GAA algorithm) for O-RU assignment. The figures in [18] show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same priority area. The numerical results section also indicates that our proposed algorithm performs better than the DR scheme.
 
 We add this response in subsection IV-A.
 
@@ -248,9 +241,8 @@ We add these references in IV-A (references [41]-[45]).
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We would like to thank the reviewer for careful and thorough reading of this manuscript and
-for the thoughtful comments and constructive suggestions, which help us to improve the quality of
-this manuscript. We hope that the responses provided herein can alleviate the reviewer concerns.
+It is our pleasure to thank the reviewer for the careful reading of this manuscript, providing thoughtful comments, and offering constructive suggestions that strengthened and enhanced its quality. We hope that the responses provided herein can alleviate the reviewer's concerns.
+
 
 
 
@@ -263,11 +255,14 @@ this manuscript. We hope that the responses provided herein can alleviate the re
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Taking propagation and transmission delays into formulations is straightforward, but we avoided that for the sake of better presentation. However, they can be added to the system model easily. In this paper, we focus only on the processing delay to find the optimal number of VNFs, and we consider the other two delays are fixed; In the following, we describe more about these two types of delays.
+We would like to thank the reviewer for this comment to add more detail to our paper regarding end-to-end delays.
 
-The propagation delay is considered when each O-RU can connect to the number of O-DUs and can select to connect to which O-DU based on the route, capacity, and priority. Also, the connections of O-DUs to O-CUs is the same as O-RU to O-DU. Therefore, different routes are added to the system to solve the routing problem. However, it provides a new system model. So, the connection between O-RUs to O-DUs is fixed and transparent. As a result, the propagation delay is fixed and does not affect the optimization problem.
-The following is a brief calculation of propagation delay.
-Since the distance between the O-RU to O-DU is about 10 km and also the distance between O-DU and O-CU is about 80 Km. Moreover, the distance from O-CU to the network should not exceed 200 Km [35]. so, the propagation delay is about $T^{\text{pro}} = (10 + 80 + 200)\times 10^3 /(3\times 10^8) < 1ms $. Since fronhaul, midhaul, and backhaul are fiber optics, c is the speed of light. Also, due to the edge technique in O-DU or O-CU for users with low latency, this amount of latency is greatly reduced. But we also do not focus on edge processing in this paper. You can find more about these distances in this \href{https://blogs.keysight.com/blogs/inds.entry.html/2020/06/30/5g_testing_what_is-0nzj.html\%23:~:text=The\%20data\%20requirements\%20are\%20about,DUs\%20is\%20about\%2080\%20km.}{link}.
+Taking propagation and transmission delays into formulations is straightforward, but we avoided that for the sake of better presentation. However, they can be added to the system model easily. In this paper, we focus only on the processing delay to find the optimal number of VNFs, and we consider the other two delays are fixed. We discuss these two types of delay in detail below and explain why we do not consider them in our work.
+
+The propagation delay is considered when each O-RU can connect to the number of O-DUs and can select to connect to which O-DU based on the route, capacity, and priority. Also, the connections of O-DUs to O-CUs are the same as O-RU to O-DU. Therefore, different routes will be added to the system to solve the routing problem. Also, for URLLC and mMTC, edge processing can reduce the delay that is not considered here.
+However, it provides a new problem formulation and can be added to our system model to extend our paper in the future. Thus, this paper assumes that the connection between O-RUs and O-DUs is fixed and transparent, and we do not consider the problem of edge processing. As a result, the propagation delay is fixed and does not affect the optimization problem. The following is a brief calculation of propagation and transmission delay.
+Since the distance between the O-RU and O-DU is about 10 km and also the distance between O-DU and O-CU is about 80 km. Moreover, the distance from O-CU to the network should not exceed 200 Km [35]. so, the propagation delay is about $T^{\text{pro}} = (10 + 80 + 200)\times 10^3 /(3\times 10^8) < 1ms $. Since fronhaul, midhaul, and backhaul are fiber optics, c is the speed of light. Also, due to the edge technique in O-DU or O-CU for users with low latency, this amount of latency is greatly reduced. But we also do not focus on edge processing in this paper. You can find more about these distances in this \href{https://blogs.keysight.com/blogs/inds.entry.html/2020/06/30/5g_testing_what_is-0nzj.html\%23:~:text=The\%20data\%20requirements\%20are\%20about,DUs\%20is\%20about\%2080\%20km.}{link}.
+
 The following is a brief calculation of transmission delay to show that it does not affect the optimization since it has a small amount.
 In URLLC and mMTC, the mean packet size can be between 20 to 32 byte; Also, the minimum data rate is assume to be $46 \frac{bit}{\frac{sec}{Hz}} \times BW (180 KHz)$. So the transmission delay from O-RU to O-DU is about $T^{fr,t} = \frac{20\times 8}{46 \times 180 \times 10^3} < 2 us$. As a result, the $T^{fr,t} \approx T^{mid,t} \approx T^{b,t}$. for eMBB, the packet size can be 100 times larger and the delay is not exceed the 0.6ms.  
 
@@ -284,7 +279,7 @@ We add this response in subsection II-D.
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-The processing delay can be modeled as an M/M/1 queue; since the number of arrival packets in the system are from a large number of independent sources. Moreover, the impact of a single packet on the system's performance is minimal. Also, the queue discipline will be first-in first-out (FIFO), and the arrival packet is assumed to follow a Poisson process. The system's clock is constant, and the size of the tasks is not fixed. So, we suppose that service times are exponentially distributed [36]. In addition, we assume that the arrival packets of each service have the same priority, and we consider priority between services, not between UEs of one service. Because we assume that the UEs of a service have the same priority, their sent packets also have an equal priority. Also, the services are isolated, and this priority does not invalidate the queue assumption. Furthermore, one service's priority over another can be higher, affecting the whole optimization and not queue formulation since the UEs in each service have the same priority, and each service has its processing delay independent of other services.
+The processing delay can be modeled as an M/M/1 queue; since the system's arrival packets are from many independent sources. Moreover, the impact of a single packet on the system's performance is minimal. Also, the queue discipline will be first-in, first-out (FIFO), and the arrival packet is assumed to follow a Poisson process. The system's clock is constant, and the size of the tasks is not fixed. So, we suppose that service times are exponentially distributed [36]. In addition, we assume that the arrival packets of each service have the same priority (in subsection II-F, we will talk about priority), and we consider priority between services, not between UEs of one service. As we assume that the UEs of a service have the same priority, their sent packets also have an equal priority. In addition, since the services are isolated, the UEs in each service have the same priority, and the processing delays of each service are independent of the other services; if we assume service priority, this priority does not invalidate the queueing theory. Therefore, one service could have a higher priority, affecting the whole optimization, and the M/M/1 queue theory is still validated.
 
 We add this response in subsection II-D-1.
 
@@ -299,8 +294,8 @@ We add this response in subsection II-D-1.
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
 We would like to thank the reviewer for the great suggestion they gave us.
-Since the priority is in the objective function of the equation (13), the priority has whole effect optimization.
-Therefore, priority is given to the whole optimization problem, and the optimization problem obtains the number of VNFs by affecting the priority term. If we were to discuss the placement of VNFs on the data centers, the problem would become a knapsack or bin-packing problem, and here the prioritization would affect the resource allocation algorithm, including memory, RAM, CPU, and bandwidth. Therefore, the algorithm was implemented based on prioritization.
+Since the priority is in the objective function of the equation (13), the priority has affected the whole optimization problem.
+Therefore, priority is given to the whole optimization problem, and the optimization problem obtains the number of VNFs by affecting the priority term. If we were to discuss the placement of VNFs on the data centers, the problem would become a knapsack or bin-packing problem, and here the prioritization would affect the resource allocation algorithm, including memory, RAM, CPU, and bandwidth of VNFs. Therefore, the algorithm was implemented based on prioritization. But, in this paper, we consider priority more generally. This is an excellent suggestion for extending this paper in the future. Hence, in the extension of the paper, we would talk about VNF placement, and the priority will be more different from here, and the access of VNF resources will be based on the priority.
 
 
 \begin{longtable}{|p{0.975\textwidth}|}
@@ -404,10 +399,12 @@ We add this reference in IV-A (reference [45]).
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We use a method which is similar to the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in [18]. In this work, we have services with different QoS that contain UEs, which is similar to tenants with different QoS that is introduced in [18].
- Therefore, we used an algorithm similar to FBDR adapted to our conditions for comparison.  
-Instead of BBU in C-RAN, we have O-DU and O-CU in O-RAN. To use the FBDR method, we should consider the fixed BBU capacity. We assume that O-DU and O-CU have fixed sufficient capacity in our system model. Also, our mid-haul link (F1 link) has adequate capacity, so there will be no issue using the FBDR method by separating ‌BBU to O-DU and O-CU with this assumption.
-In this method, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm 1 (GAA algorithm ) for O-RU assignment.
+We appreciate the reviewer emphasizing this point and providing us with tips on how to improve our paper.
+ 
+For the second one, we use the idea of the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in [18] and named it the dynamic resource allocation scheme (DR scheme). 
+ We have services with different QoS in this work, similar to tenants with different QoS introduced in [18]. Therefore, we can use the DR scheme similar to the FBDR method adapted to our conditions for comparison. Instead of BBU in C-RAN, we have O-DU and O-CU in O-RAN.
+ Since we do not talk about O-DU and O-CU capacity, we use the dynamic resource allocation scheme (DR scheme) algorithm and do not consider BBU capacity.
+But also, we can assume that O-DU and O-CU have fixed sufficient capacity in our system model. Also, our mid-haul link (F1 link) has adequate capacity, so there will be no issue using the idea of the FBDR method with this assumption and using the DR scheme. In the DR scheme, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm 1 (GAA algorithm) for O-RU assignment. The figures in [18] show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same priority area. The numerical results section also indicates that our proposed algorithm performs better than the DR scheme.
 
 We add this response in subsection IV-A.
 
@@ -435,7 +432,7 @@ We add this response in subsection II-B.
 \textbf{Reviewer 3} \\
 \hline \hline
 \RaggedRight
-\cellcolor{gray!15}
+\cellcolor{violet!15}
 \textbf{\noindent Comments to the Author} ``The authors propose a resource allocation scheme for network slicing in an Open RAN scenario. They consider three network slice types namely eMBB, URLLC and mMTC and provide a solution for end-to-end slicing considering resource allocation over the RAN domain following the proposed ORAN architecture, as well as VNF allocation. In general, the paper is well written, however some parts need to be rephrased and restructured.''\\
 \hline
 \end{longtable}
@@ -457,7 +454,7 @@ responses that we have provided herein will alleviate the reviewer concerns.
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Thank you for the comment.  According to this comment, We modified the introduction of the paper. We have shortened the state of the arts and related literature and introduced our goal briefly before the main contribution section. We removed additional information and talked more about our work. We released non-related parts to clarify our goal. We hint at our motivation in the second paragraph of our first page and discuss our aim in the introduction.
+Thank you for the comment.  The introduction of the paper has been modified based on this comment. We have shortened the description of the state of the arts and the literature and briefly explained our goal before the main contribution section. We removed additional information and talked more about our work. We released non-related parts to clarify our goal. We hint at our motivation in the second paragraph of our first page and discuss our aim in the introduction.
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -468,11 +465,26 @@ Thank you for the comment.  According to this comment, We modified the introduct
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-The purpose of this paper is twofold. First and foremost, it is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.
+The purpose of this paper is twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.
 In this paper, we would like to optimize baseband resource allocation, i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
 We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms to achieve these purposes.
 Unlike other papers, we concentrate more on the multiservice resource management of the RAN slicing in the openness and flexible O-RAN architecture.
 The novelty of this paper is to enhance the resource utilization of the overall wireless O-RAN system in the presence of the three generic service types introduced in 5G using RAN slicing. We also convexify and solve complex problems using mathematical concepts and obtain optimal resources.
+
+In this paper, the downlink of the O-RAN system is studied. The main contributions of this paper are summarized as follows:
+\begin{itemize}
+\item This paper depicts a network slicing model for three different services introduced in 5G, i.e., eMBB, mMTC, and URLLC. Within the O-RAN architecture, the problem of radio resource allocation and VNF activation is explored.
+Based on different types of services with different QoS and service priorities, we formulate a problem for the allocation of baseband resources to maximize the weighted throughput of O-RAN.
+\item We have carefully considered the processing delay and the VNF resources needed for the slice compared to other papers. Therefore, we focus on obtaining the optimal number of VNFs in each layer of the O-RAN architecture. 
+\item Different services need to consider varying QoS conditions, including delay, power, and throughput. According to the number of activated VNFs and the throughput of the users, we calculate the end-to-end processing delay of the system.
+Assuming a limited fronthaul capacity, we calculate each O-RU's actual power and capacity. Depending on the service type, we model the interference of neighboring O-RUs and determine the actual throughput. Our model accounts for the short packet transmission of URLLC, and mMTC, which cannot be modeled by the Shannon capacity theorem.
+\item The main problem is mixed-integer non-linear programming that is extremely difficult to solve.
+We perform a two-step iterative algorithm to solve it.
+The two-step iterative algorithm is presented for the resource management framework with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
+\item We reformulated and simplified the main problem for the first step to find an upper and lower bound for the number of activated VNFs and use lagrangian function and KKT conditions to find optimal power and PRB allocation.
+For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.
+\item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
+\end{itemize}
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -483,13 +495,15 @@ The novelty of this paper is to enhance the resource utilization of the overall 
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
+It is my pleasure to thank you for your comment, which helped me display and rectify the system model.
 We added this part in the system model.
+
 Assume there are $K$ physical resource blocks (PRBs) in the system. Suppose each slice $s$ consists of $\bar{K}_s$ preallocated virtual resource blocks that are mapped to Physical Resource Blocks (PRBs). Therefore, we have $\sum_s \bar{K}_s \leq K$.
 
-Interference occurs when a UE in O-RU $r$ using PRB $k$ experiences an interference signal from other O-RUs in the set of $r' \in R \not\in
- r$. UEs in each slice interfere in two ways in the technique of network slicing: the first is inter-slice interference between UEs of different slices, and the second is intra-slice interference between UEs of the same slice that is shown in figure \ref{fig:intf}.
-Network Slicing methods significantly reduce inter-service interference.
-There are some techniques to remove inter-slice interference. One of these techniques is to have two-time scale scheduling. The PRB scheduling to the slices is performed on the first time scale, and in the second time scale, the PRB scheduling to the UEs of slices is carried out. Since there are limited resources, inter-service interference cannot be eliminated entirely. The other method is to allocate part of the RB of eMBB services to URLLC and mMTC  [2], [6], [34]. In this paper, we assume that the PRB scheduling is performed. Also, in subsection II-F1, we briefly study the PRB scheduling between slices.
+A UE in an O-RU $r$ using PRB $k$ receives interference from other O-RUs in the set of $r' \in R \not\in r$ that are using the same PRB $k$. Two types of interference occur between UEs in each slice; the first is inter-slice interference between UEs of different slices, and the second is intra-slice interference between UEs of the same slice that is shown in figure \ref{fig:intf}.
+
+Network Slicing techniques significantly reduce inter-service interference.
+Some methods apply the network slicing technique in PRB scheduling to isolate PRBs in slices and remove inter-slice interference. One of these methods is to have two-time scale scheduling. The PRB scheduling to the slices is performed on the first time scale, and on the second time scale, the PRB scheduling to the UEs of slices is carried out. Since there are limited resources, inter-service interference cannot be eliminated entirely. The other method is to allocate part of the RB of eMBB services to URLLC and mMTC  [2], [6], [34]. In this paper, we assume that the PRB scheduling is performed. Also, in subsection II-F1, we briefly study the PRB scheduling between slices.
 \begin{figure}
   \centering 
   \captionsetup{justification=centering}
@@ -553,7 +567,10 @@ Also, we added a new subsection II-E-1 discyussing PRB scheduling for this quest
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-This subsection aims to examine slice management, including creating, managing, and deleting slices. Network slices generally have four life cycle stages: preparation, commissioning, operation, and decommissioning [38]. 
+I am grateful for this comment that makes the paper more practical.
+
+In this subsection, we will look at the life cycle of network slicing on a practical level. 
+The goal is to examine slice management, which includes creating, managing, and deleting slices. Network slices generally have four life cycle stages: preparation, commissioning, operation, and decommissioning [38]. 
 \begin{itemize}
 \item Preparation phase: The network slice instance (NSI) does not exist in the preparation phase. In this phase, operators plan to create an NSI, such as designing the NSI template, onboarding users, and preparing the environment. Also, the evaluation of requirements is performed in this step.
 \item Commissioning phase: In the commissioning phase, the creation of the NSI is done. In this phase, the requirements are considered and allocated to the slice. 
