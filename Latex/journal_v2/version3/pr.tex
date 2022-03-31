@@ -29,7 +29,7 @@
 \setlength{\columnsep}{11mm}
 \begin{document}
 
-\title{Network Slicing and Resource Allocation in an Open RAN System \vspace{-.1cm}
+\title{RB scheduling for different slices of eMBB and URLLC in the O-RAN system \vspace{-.1cm}
 }
 %
 %\author{\IEEEauthorblockN{1\textsuperscript{st} Mojdeh Karbalaee Motalleb}
@@ -86,21 +86,8 @@ Virtual network functions (VNFs) are functional blocks of the system. Each VNF i
 Moreover, we assume there is a cell with one multi-antenna O-RU that serves UEs.
 \subsection{The Achievable Rate}
 The eMBB services typically use more than a one-time slot. But URLLC services use part of a time slot (mini-slot) since it has short packet transmission. In addition, the URLLC must be punctured as soon as it has requested service as it requires very low latency.
+Our current work allocates RBs to eMBB users at the beginning of each time slot using the PF principle, a scheduling strategy that balances throughput with fairness \cite{shi2022risk}.
 
-
-%The SNR of $i^{th}$ UE requesting served at slice $ss \in \{1, 2\}$ is obtained from
-%\begin{equation}\label{eq2}
-%\rho_{u(s,i)} =  \frac{\sum_{k=1}^{K_{s}}e_{u(s,i)}^k p_{u(s,i)}^{k}|{\bold{h}_{R,u(s,i)}^{H \: k}}|^2}{BN_0},
-%\end{equation} 
-%where $p_{u(s,i)}^{k}$ represents the transmission power allocated by O-RUs to $i^{th}$ UE served at slice $s$ on PRB $k$.
-%${\bold{h}_{R,u(s,i)}^{k}} \in \mathbb{C}^{R}$ is the vector of channel gain of a wireless link from 
-%O-RUs to the $i^{th}$ UE in $s^{th}$ slice. 
-%Moreover, $e_{u(s,i)}^k \in \{0,1\}$ is a binary variable that illustrates whether PRB $k$ is assigned to the $i^{th}$ UE allocated to $s^{th}$ slice or not. 
-%Also, $BN_0$ denotes the power of Gaussian additive noise.
-%Moreover, we assume that each PRB is assigned to no more than one UEs. So we have
-%\begin{equation}
-%\sum_{s=1}^S \sum_{u=1}^{U_s} e_{u(s,i)}^k = 1
-%\end{equation} 
 The achievable data rate for the $i^{th}$ UE request eMBB slice can be written as $\mathcal{R}_{i}^{e}(t)$.
 \begin{equation}\label{eq1}
 \mathcal{R}_{i}^e(t) = \sum_{k = 1}^K e^k_i(t) B (1-\frac{n^k_i(t)}{S}) \log_2({1+\frac{p^k_i(t)h^k_i(t)}{B \times N_0}}),
@@ -110,7 +97,10 @@ Moreover, $e^k_i(t)\in \{0,1\}$ is a binary variable that illustrates whether PR
 $p^k_i(t)$ represents the transmission power allocated by O-RU to $i^{th}$ UE of eMBB using PRB $k$.
 $h^k_i(t)$ is the channel gain of a wireless link from 
 O-RU to the $i^{th}$ eMBB UE using $k^{th}$ PRB. In addition, $S$ is the total number of mini-slots of a PRB. 
-Furthermore, $n^k_i(t)$ is the number of URLLC punctured slots. 
+Furthermore, $n^k_i(t)$ is the number of URLLC punctured slots that is denoted as follow,
+\begin{equation}
+n^k_i(t) = \sum_{j=1}^{U_2}{\zeta}_j(t)\tau \mathfrak{N} 
+\end{equation} 
 
 Since the blocklength in URLLC is finite, the achievable data rate for the $j^{th}$ UE request in the URLLC service, is not achieved from Shannon Capacity formula. So, for the short packet transmission the achievable data rate is approximated as follow
 \begin{equation}\label{eq11}

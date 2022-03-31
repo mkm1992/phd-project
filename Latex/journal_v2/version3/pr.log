@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  25 MAR 2022 11:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  31 MAR 2022 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -790,7 +790,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 83.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (9.34885pt too wide) detected at line 118
+LaTeX Font Info:    Try loading font information for U+euf on input line 102.
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Overfull \hbox (9.34885pt too wide) detected at line 108
 \OMS/cmsy/m/n/10 R[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = [] [
 ] []\OML/cmm/m/it/10 B [][]\OT1/cmr/m/n/10 ([]) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m
 /it/10 ^^P[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))\OML/cmm/m/it/
@@ -817,11 +822,11 @@ Before submitting the final camera ready copy, remember to:
 
 [2 <./finalDraw.pdf, page is rotated 90 degrees>] (./pr.aux) ) 
 Here is how much of TeX's memory you used:
- 8126 strings out of 492649
- 120308 string characters out of 6133384
- 211661 words of memory out of 5000000
- 11860 multiletter control sequences out of 15000+600000
- 109331 words of font info for 120 fonts, out of 8000000 for 9000
+ 8138 strings out of 492649
+ 120522 string characters out of 6133384
+ 209664 words of memory out of 5000000
+ 11866 multiletter control sequences out of 15000+600000
+ 110039 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,17n,42p,921b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2018/
@@ -835,15 +840,16 @@ live/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/texlive
 f-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msam10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/t
-exlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf
--dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
-urw/times/utmri8a.pfb>
-Output written on pr.pdf (2 pages, 215729 bytes).
+nts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/
+eufm10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
+10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive
+/2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/
+fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/ti
+mes/utmri8a.pfb>
+Output written on pr.pdf (2 pages, 217919 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
