@@ -183,7 +183,7 @@ an exponential distribution with mean $1/R_{j}^u(t)$ and can be modeled as a M/M
  
 Therefore, the mean delay of the transmission layer for UE $j$ in URLLC slice is
 \begin{equation}
- T_{j}^{RU}(t) = \frac{1}{\bar{\mathcal{R}}_{j}^u(t) - \lambda_{j}(t)}.
+ T_{j}^{RU}(t) = \frac{1}{{\mathcal{R}}_{j}^u(t) - \lambda_{j}(t)}.
 \end{equation}
 
 
@@ -191,7 +191,7 @@ Therefore, the mean delay of the transmission layer for UE $j$ in URLLC slice is
 As we know, UEs request URLLC services, require services with low latency.
 For the M/M/1 system, the probability of the delay for URLLC service in the O-RU is as follow, 
 \begin{equation}
-P_r\{T_{j}^{RU} \geq T_{RU}^{max}\} = e^{-(\bar{R}_{j}^u - \alpha)T_{RU}^{max}}
+P_r\{T_{j}^{RU} \geq T_{RU}^{max}\} = e^{-({R}_{j}^u - \alpha)T_{RU}^{max}}
 \end{equation} 
 Also, we do not consider the reliability for O-CU and O-DU.
 
