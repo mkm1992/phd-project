@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  6 APR 2022 10:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  11 MAY 2022 14:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,10 +794,10 @@ LaTeX Warning: No \author given.
 
 LaTeX Warning: No \author given.
 
-<finalDraw.pdf, id=1, 731.73375pt x 406.51875pt>
-File: finalDraw.pdf Graphic file (type pdf)
-<use finalDraw.pdf>
-Package pdftex.def Info: finalDraw.pdf  used on input line 70.
+<finalDraw1.pdf, id=1, 731.73375pt x 406.51875pt>
+File: finalDraw1.pdf Graphic file (type pdf)
+<use finalDraw1.pdf>
+Package pdftex.def Info: finalDraw1.pdf  used on input line 70.
 (pdftex.def)             Requested size: 365.86598pt x 203.25887pt.
 LaTeX Font Info:    Try loading font information for U+msa on input line 81.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -825,7 +825,7 @@ Non-PDF special ignored!
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2 <./finalDraw.pdf, page is rotated 90 degrees> <./EU.pdf>] (./pr.bbl [3])
+ [2 <./finalDraw1.pdf> <./EU.pdf>] (./pr.bbl [3])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -846,7 +846,7 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  8156 strings out of 492649
- 120500 string characters out of 6133384
+ 120505 string characters out of 6133384
  229948 words of memory out of 5000000
  11889 multiletter control sequences out of 15000+600000
  109331 words of font info for 120 fonts, out of 8000000 for 9000
@@ -867,10 +867,10 @@ c/amsfonts/symbols/msbm10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/t
 exlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2018/texmf-
 dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (4 pages, 247036 bytes).
+Output written on pr.pdf (4 pages, 276700 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 133 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
