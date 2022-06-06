@@ -224,7 +224,7 @@ The optimization problem is formulated as follow,
 &e^k_i(t)\in \{0,1\}  \quad \forall i,k, \label{p6} \\
 & x^k_i(t)\in \{0,1,...,L\}  \quad \forall i,k, \label{p7} \\
 & \mu^l_s \geq \alpha_s/M^l_s \quad l \in \{c,d\}, s\in\{e,u\}, \label{p8} \\
-& {\mathcal{R}}^s(t) \geq {\lambda}_{\mathfrak{i},s}^u(t) \quad \forall \mathfrak{i} \in \mathcal{U}_s, s\in \{e,u\}\label{p9} \\
+& {\mathcal{R}_{\mathfrak{i}}}^s(t) \geq {\lambda}_{\mathfrak{i},s}(t) \quad \forall \mathfrak{i} \in \mathcal{U}_s, s\in \{e,u\}\label{p9} \\
 & 0 \leq M^l_e  + M^l_u \leq M_{max}^l  \quad l \in \{c,d\},\label{p10}\\
 & 0 \leq M^l_e, M^l_u  \quad l \in \{c,d\},\label{p011}
 \end{alignat}
@@ -240,7 +240,7 @@ Furthermore, eMBB RB allocation constraint is indicated by \eqref{p5}, and \eqre
 
 \section{Proposed Algorithm}
 In this section, we are talking about our proposed algorithm to solve the problem \eqref{mainP}.
-Since this problem is mixed-integer nonlinear programming (MINLP) with binary and integer variables, it is complicated to solve. Also, this is a two-time scale problem.
+Since this problem is mixed-integer nonlinear programming (MINLP) with binary and integer variables, it is NP-hard and complicated to solve. Also, this is a two-time scale problem.
 Therefore, We need to solve this problem on a two-time scale. On a large time scale, the problem of assigning RB to eMBB service is obtained and then the power allocation is performed. 
 Moreover, in this time scale, we can estimate the optimal number of VNFs for each service, and in the small time scale, the problem of URLLC puncturing is solved. 
 \subsection{Large time scale}
@@ -251,17 +251,10 @@ The problem \eqref{mainP}, is altered to the following problem
 
 \begin{subequations} \label{mainP1}
 \begin{alignat}{4}
-\max\limits_{ \boldsymbol{E},\boldsymbol{M}, \boldsymbol{P}} &  \sum_i {\mathcal{R}}_{i}^e(t) - \eta T^{\text{proc}, u}(t)       \ \\
-\text{subject to} \quad  & {\mathcal{R}}_{i}^e(t) \geq  \mathcal{R}_{min}^e \quad \forall i \in \mathcal{U}_e, \label{p11} \\
-& \sum_k^K \sum_i^{U_e} p^k_i(t) \leq P_{\text{max}},  \label{p11-1} \\
-& Pr\{{\mathcal{R}}_{i}^e(t) \leq {R}_{min}^e\}  \leq \epsilon,\quad \forall i \in \mathcal{U}_e, \label{p12}\\
-&T^{\text{tot}, e}_i(t)  \leq T_{min}^e  \quad \forall i \in \mathcal{U}_e, \label{p12-1} \\
-&T^{\text{proc}, u}_i(t)  \leq T_{\text{proc,min}}^u  \quad \forall i \in \mathcal{U}_u, \label{p12-2} \\
-&\sum_{i=1}^{U_1}e^k_i(t)\leq 1 \quad \forall k \in \{1,...,K\},\label{p15} \\
-&e^k_i(t)\in \{0,1\}  \quad \forall i,k, \label{p16} \\
-& \mu^l_s \geq \alpha_s/M^l_s \quad l \in \{c,d\}, s\in\{e,u\},\label{p18} \\
-& 0 \leq M^l_e  + M^l_u \leq M_{max}^l  \quad l \in \{c,d\},\label{p110} \\
-& 0 \leq M^l_e, M^l_u  \quad l \in \{c,d\},\label{p120}
+\max\limits_{ \boldsymbol{E},\boldsymbol{M}, \boldsymbol{P}} &  \sum_i {\mathcal{R}}_{i}^e(t) - \eta T^{\text{proc}, u}(t)       \\
+\text{subject to} \quad  &\eqref{p1}, \eqref{p1-1}, \eqref{p2}, \eqref{p2-1}, \eqref{p5}, \eqref{p6}, \eqref{p8},\\
+& {\mathcal{R}}^e(t) \geq {\lambda}_{\mathfrak{i},e}(t) \quad \forall \mathfrak{i} \in \mathcal{U}_e,\\
+& \eqref{p10}, \eqref{p011},
 \end{alignat}
 \label{constraints}
 \end{subequations}
@@ -272,8 +265,8 @@ Consequently, we have $\mu = \mu^c \approx \mu^d $. Additionally, the mean arriv
 Accordingly, we can have $M^d(t) = M^c(t)$. Therefore, $T^{DU} = T^{CU}$, and $T^{proc} =2\times T^{DU}$.
 
 The problem \eqref{mainP1}, is still mixed integer non-linear programming (MINP). Here, the problem \eqref{mainP1}
-can also be decomposed into two sub-problems which is depicted as follow. In this first sub-problem, we assume that the channel gain is not known, and we aim to obtain the optimal number of VNFs and RB allocation to the eMBB service. In the second sub-problem, we know the channel gain with error ($h = h + \Delta h$), and we want to obtain the power allocation.
-\subsubsection{sub-problem 1}
+can be decomposed into two sub-problems which is depicted as follow. In this first sub-problem, we assume that the channel gain is not known, and we aim to obtain the optimal number of VNFs and RB allocation to the eMBB service. In the second sub-problem, we know the channel gain with error ($h = h + \Delta h$), and we want to obtain the power allocation.
+\subsubsection{eMBB RB Allocation and VNF Assignment}
 In this section, we want to solve the sub-problem of RB allocation of eMBB service and find the optimal number of VNFs for each service.
 The problem can be written as follow.
 \begin{subequations} \label{mainP11}
@@ -281,7 +274,7 @@ The problem can be written as follow.
 \max\limits_{ \boldsymbol{E}, \boldsymbol{M} } &  \sum_i \bar{\mathcal{R}}_{i}^e(t) -T^{\text{proc}, u}(t)      \ \\
 \text{subject to} \quad  & \bar{\mathcal{R}}_{i}^e(t) \geq  \mathcal{R}_{min}^e \quad \forall i \in \mathcal{U}_e, \label{pp11} \\
 &\bar{T}^{\text{tot}, e}_i(t)  \leq T_{min}^e  \quad \forall i \in \mathcal{U}_e, \label{p112-1} \\
-&T^{\text{proc}, u}_j(t)  \leq T_{\text{proc,min}}^u  \quad \forall j \in \mathcal{U}_u, \label{p112-2} \\
+%&T^{\text{proc}, u}_j(t)  \leq T_{\text{proc,min}}^u  \quad \forall j \in \mathcal{U}_u, \label{p112-2} \\
 &\sum_{i=1}^{U_e}e^k_i(t)\leq 1 \quad \forall k \in \{1,...,K\},\label{p115} \\
 &e^k_i(t)\in \{0,1\}  \quad \forall i,k, \label{p116} \\
 & \mu^l_s \geq \alpha_s/M^l_s \quad l \in \{c,d\}, s\in\{e,u\},\label{p118} \\
@@ -290,27 +283,32 @@ The problem can be written as follow.
 \end{alignat}
 \label{constraints}
 \end{subequations}
-The problem \eqref{mainP11}, can be decomposed into two problems using primal decomposition. $\boldsymbol{E}$
+The problem \eqref{mainP11}, can be decomposed into two subproblems using primal decomposition. $\boldsymbol{E}$
 is the private variable and $\boldsymbol{M}$ is the decoupling variable.
-Therefore, the master problem is 
+Therefore, the first subproblem is 
 \begin{subequations}
 \begin{alignat}{4}
-\max\limits_{ \boldsymbol{E}, \boldsymbol{M} } &  \sum_i \bar{\mathcal{R}}_{i}^e(t) \\
-\text{subject to} \quad  & \eqref{p11},\eqref{p112-1}, \eqref{p115}, \eqref{p116},\\
-& \mu^l_s \geq \alpha_s/M^l_e \quad l \in \{c,d\},\label{pp118} \\
+\max\limits_{ \boldsymbol{E}, M_e} &  \sum_i \bar{\mathcal{R}}_{i}^e(t) \\
+\text{subject to} \quad  & \eqref{pp11},\eqref{p112-1}, \eqref{p115}, \eqref{p116},\\
+& \mu^l_e \geq \alpha_e/M^l_e \quad l \in \{c,d\},\label{pp118} \\
 & 0 \leq M^l_e \leq \tau
 \end{alignat}
 \end{subequations}
- 
-\subsubsection{sub-problem 2}
+Moreover, the second subproblem is 
+\begin{subequations}
+\begin{alignat}{4}
+\min\limits_{ M_u } &  T^{\text{proc}, u}(t) \\
+\text{subject to} \quad & \mu^l_u \geq \alpha_s/M^l_u \quad l \in \{c,d\},\label{pp118} \\
+& 0 \leq M^l_u \leq M_{max}^l -\tau
+\end{alignat}
+\end{subequations} 
+\subsubsection{eMBB Power Allocation}
 In this section, we want to solve the sub-problem of power allocation for eMBB UEs.
 The problem is formulated as follow.
 \begin{subequations} \label{mainP12}
 \begin{alignat}{4}
 \max\limits_{ \boldsymbol{P} } &  \sum_i {\mathcal{R}}_{i}^e(t)       \ \\
-\text{subject to} \quad  & Pr\{{\mathcal{R}}_{i}^e(t) \leq {R}_{min}^e\}  \leq \epsilon,\quad \forall i \in \mathcal{U}_e,\label{p28} \\
-& Pr\{T^{\text{tot}, e}_i(t)  \geq T_{min}^e\} \leq \epsilon_1  \quad \forall i \in \mathcal{U}_e, \label{p122-1} \\
-& \sum_k^K \sum_i^{U_e} p^k_i(t) \leq P_{\text{max}},  \label{p11-1} 
+\text{subject to} \quad  & \eqref{p1-1}, \eqref{p2}, \eqref{p2-1},
 \end{alignat}
 \label{constraints}
 \end{subequations}
@@ -322,7 +320,7 @@ In the small time scale, we assume that the eMBB RB allocation is performed and 
 \text{subject to} \quad & Pr\{{\mathcal{R}}_{i}^e(t) \leq {R}_{min}^e\}  \leq \epsilon_2,\quad \forall i \in \mathcal{U}_e, \label{p32}\\
 &Pr\{T^{\text{tot}, u}_j(t) \geq T_{min}^u - T^{\text{proc}}\} \leq \epsilon_3  \quad \forall j \in \mathcal{U}_u, \label{p34} \\
 & x^k_i(t)\in \{0,1,...,L\}  \label{p37} \\
-& {\mathcal{R}}^u(t) \geq {\lambda}_{j}^u(t) \quad \forall j \in \mathcal{U}_u,\label{p39} 
+& {\mathcal{R}_j}^u(t) \geq {\lambda}_{j}^u(t) \quad \forall j \in \mathcal{U}_u,\label{p39} 
 \end{alignat}
 \label{constraints}
 \end{subequations}

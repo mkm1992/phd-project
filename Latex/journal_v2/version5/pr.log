@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  27 MAY 2022 11:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  30 MAY 2022 22:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -604,13 +604,10 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 LaTeX Warning: Label `constraints' multiply defined.
 
 
-LaTeX Warning: Label `p110' multiply defined.
-
-
 LaTeX Warning: Label `constraints' multiply defined.
 
 
-LaTeX Warning: Label `p11-1' multiply defined.
+LaTeX Warning: Label `pp118' multiply defined.
 
 
 LaTeX Warning: Label `constraints' multiply defined.
@@ -813,10 +810,7 @@ Non-PDF special ignored!
 {c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2]
-Underfull \vbox (badness 1048) has occurred while \output is active []
-
- (./pr.bbl)
+] [2] (./pr.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -834,10 +828,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8167 strings out of 492649
- 120593 string characters out of 6133384
- 237059 words of memory out of 5000000
- 11895 multiletter control sequences out of 15000+600000
+ 8155 strings out of 492649
+ 120520 string characters out of 6133384
+ 233939 words of memory out of 5000000
+ 11883 multiletter control sequences out of 15000+600000
  111117 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,17n,42p,921b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -858,7 +852,7 @@ symbols/msbm10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2018
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2018/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (3 pages, 172562 bytes).
+Output written on pr.pdf (3 pages, 173210 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
