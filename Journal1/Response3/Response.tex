@@ -146,7 +146,7 @@ We have changed the paper's introduction and checked the text entirely according
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We have changed the paper's introduction and checked the text entirely according to this comment.
+Thank you for this comment. We changed the paper's figures totally according to this comment.
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -156,9 +156,59 @@ We have changed the paper's introduction and checked the text entirely according
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We have changed the paper's introduction and checked the text entirely according to this comment.
+We thank the reviewer for adding clarity to our paper and reducing ambiguity in this condition.  We changed the contribution in a better way based on this comment. We have removed some sentences and rewritten the contribution in order to our paper's section.
+Below we write the whole contribution section.
 
 
+The purpose of this paper is twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.
+
+In this paper, we would like to enhance the resource utilization of the overall wireless O-RAN system and optimize baseband resource allocation, i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
+We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms to achieve these purposes.
+
+Unlike other papers, we concentrate more on the multiservice resource management of the RAN slicing in the openness and flexible O-RAN architecture. We also convexify and solve complex problems using mathematical concepts and obtain optimal resources.
+
+In this paper, as depicted in Figure 1, the downlink of the O-RAN system is studied. The main contributions of this paper are summarized as follows:
+\begin{itemize}
+\item The paper presents a network slicing model for three 5G services: eMBB, mMTC, and URLLC. We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
+Based on different types of services with different QoS and service priorities, we formulate a problem for allocating baseband resources to maximize the weighted throughput of O-RAN.
+\item The focus of our paper is on the multi-service resource management of the RAN, slicing in the flexibility, openness, and openness of the O-RAN architecture.
+\item We propose an algorithm for resource management in a two-step, with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
+In the first step, we reformulate and simplify the problem to find an upper and lower bound for the number of activated VNFs and use the Lagrangian function and KKT conditions to find optimal power and PRB allocation. For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.
+\item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
+\item We perform numerical experiments to analyze the performance of the proposed algorithm, which proves to have a higher data rate than both the baseline scheme and data-driven method. Interestingly, our results show that this algorithm performs close to the optimal solution in low interference.
+\end{itemize}
+
+% % % % % % % % % % % % % % % Reviewer 2 % % % % % % % % % % % % % % % % % % % %
+\clearpage
+\noindent
+\begin{longtable}{|p{.975\textwidth}|}
+\hline \hline %\hline \hline \hline
+\Centering
+\cellcolor{gray!60}
+\textbf{Reviewer 2} \\
+\hline \hline %\hline \hline \hline
+\RaggedRight
+\cellcolor{violet!15}
+\textbf{\noindent Comments to the Author} ``
+The Reviewer would like to thank the authors for their revision of the paper with respect to the comments and suggestions in the previous submission. Whereas the authors have considered parts of the suggestions and improved specific areas of the work, there are still a lot of remaining issues of concern in the current version of the paper. ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+It is our pleasure to thank the reviewer for the careful reading of this manuscript, providing
+thoughtful comments, and offering constructive suggestions that strengthened and enhanced its
+quality. We hope that the responses provided herein can alleviate the reviewer’s concerns.
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment1:} ``While the authors have taken into consideration the Reviewer’s comments about the re-structuring of the Introduction, I am afraid that the current version is not in the adequate state for publication. Initially, the paragraphs of the Introduction have no logical connection among them. It seems that until the Related Literature subsection all paragraphs are disconnected and only introduce concepts. However, there is no smooth transitioning between them and it gives the impression that those paragraphs are disconnected from each other. Moreover, I find the ORAN explanation in the Introduction very lengthy and unnecessary. I would definitely suggest to move that as a background Section. Furthermore, it is surprising how the Introduction does not contain a single research challenge. Why is the problem relevant at all? Why do you even need to study this problem and why is it hard to solve? ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+We would like to thank the reviewer for the careful and thorough reading of our manuscript and the thoughtful comment and constructive suggestions that helped us improve the quality of this manuscript and make it more readable. 
 
 
 

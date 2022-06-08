@@ -103,33 +103,53 @@ The proposed method is validated via simulations that illustrate a higher data r
 Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slicing.
 \end{IEEEkeywords}
 \section{Introduction}
-\subsection{State Of The Arts}
-\textcolor{MidnightBlue}{Network slicing is the most effective solution for 5G wireless cellular networks to achieve the desired level of QoS (i.e., quality, delay, power, etc.). Network slicing can provide resource isolation for different services, increasing the system's efficiency. This architecture has various implementations, including core slicing, RAN slicing, and both.}
+%\subsection{State Of The Arts}
+\textcolor{MidnightBlue}{Network slicing is the most effective solution for 5G wireless cellular networks to achieve the desired level of QoS (i.e., quality, delay, power, etc.). Network slicing can provide resource isolation for various services, increasing the system's efficiency. This architecture has several implementations, including core slicing, radio access network (RAN) slicing, and both for different 5G services. The network slicing concept has the potential to serve multiple services with varying architectures and quality of service (QoS) requirements.}
 
 Recent discussion of 5G wireless systems has been around three services, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Depending on QoS, each service requires its slice of the network.
-The eMBB service fulfills the demand for high capacity and throughput. Moreover, the URLLC service offers autonomous vehicles, tactile internet, remote surgery services, and high quality and low latency services. However, mMTC comprises a large number of internet of things (IoT) devices that transmit small payloads
+The eMBB service fulfills the demand for high capacity and throughput. Moreover, the URLLC service offers autonomous vehicles, tactile internet, remote surgery services, and other high-quality and low latency services. However, mMTC comprises a large number of internet of things (IoT) devices that transmit small payloads
 \cite{shen2020ai,setayesh2020joint,popovski20185g,dogra2020survey,kassab2018coexistence,alsenwi2021intelligent}.
-
-
-This paper considers several user equipments (UEs) requesting one of these types of services with different QoS. We would like to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.
-
-O-RAN is driven by two pillars of openness and RAN intelligence as the next generation of radio access networks. O-RAN was developed to jointly benefit the advantages of virtual RAN (vRAN) and cloud RAN (C-RAN). With RAN virtualization, operators can improve flexibility, reduce CAPEX and OPEX, and add new capabilities to the network more quickly. The C-RAN architecture divides the radio remote head (RRH) and baseband unit (BBU) into two major parts. Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike C-RAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
-
-O-RU is a logical node that contains RF and lowers PHY. Moreover, the O-DU expresses a logical node with higher PHY, MAC, and RLC.
-In addition, the O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). O-CU-UP hosts PDCP-UP and SDAP, and O-CU-CP hosts PDCP-CP and RRC.
-O-DU and O-CU are connected via an open and well-defined interface $F_1$.
-Moreover, O-DU is connected to a radio unit (O-RU) with an open fronthaul interface.
-The architecture of O-RAN contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud\cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML,lin2021toward}.
-
-This paper aims to design a RAN slicing technology for the O-RAN architecture. 
+\textcolor{MidnightBlue}{Nevertheless, the existing radio access network (RAN) architecture lacks adequate flexibility and openness to manage these demands for various services simultaneously. Therefore, development in RAN architecture is needed to support these requirements for different services simultaneously. Open radio access network (O-RAN) is the new RAN generation introduced to deal with these issues.}
+%This paper considers several user equipments (UEs) requesting one of these types of services with different QoS in the O-RAN architecture. We want to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.
+%This paper aims to design a RAN slicing technology for the O-RAN architecture. 
 %O-RAN offers machine learning techniques based on the requirement for an intelligent wireless network for the next generation of RAN systems. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC-Near Real-Time, implement the algorithms for network intelligence
 
-
-\textcolor{MidnightBlue}{The concept of network function virtualization (NFV) refers to the separation of network software and hardware elements. Therefore network functions can run on commodity hardware.} Virtual network functions (VNF) are system function blocks in NFV systems. The NFV technology offers to execute VNFs as virtual machines or containers on a cloud environment \cite{mijumbi2015network, luo2020online}.
-\textcolor{MidnightBlue}{As a result, some O-RAN components, such as user plane function (UPF), O-CU, O-DU, and RAN Intelligent Controller (RIC)-near real-time, are virtualized and implemented as VNFs. VNFs can also be deployed as virtual machines (VMs) or containers.}
+\textcolor{MidnightBlue}{The hardware is decoupled from the software in the O-RAN architecture, and each component is implemented as a virtual network function (VNF) that can be deployed on a virtual machine (VM) or container. }
+\textcolor{MidnightBlue}{Virtual network functions (VNF) are system function blocks in network function virtualization (NFV) systems. The concept of NFV refers to the separation of network software and hardware elements. Therefore network functions can run on commodity hardware. The NFV technology offers to execute VNFs as VMs or containers on a cloud environment \cite{mijumbi2015network, luo2020online}.}
+\textcolor{MidnightBlue}{As a result, some O-RAN components defined in section \ref{BG}, such as user plane function (UPF), O-RAN central unit (O-CU), O-RAN distributed unit O-DU, and RAN Intelligent Controller (RIC)-near real-time, are near real-time virtualized and implemented as VNFs. VNFs can also be deployed as virtual machines (VMs) or containers.}
 
 This study presents a technique for creating isolated network slices outlines in O-RAN architecture to provide the specific QoS for eMBB, URLLC, and mMTC. As well as baseband resources, the number of VNFs is also taken into account to reduce latency, especially for URLLC services.
-\subsection{Related Literature}
+
+\subsection{Motivations}
+
+\subsection{Main Contributions}
+The purpose of this paper is twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.
+
+\textcolor{MidnightBlue}{In this paper, we would like to enhance the resource utilization of the overall wireless O-RAN system and optimize baseband resource allocation, i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
+We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms to achieve these purposes.}
+
+\textcolor{MidnightBlue}{Unlike other papers, we concentrate more on the multiservice resource management of the RAN slicing in the openness and flexible O-RAN architecture. We also convexify and solve complex problems using mathematical concepts and obtain optimal resources.}
+
+In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied. The main contributions of this paper are summarized as follows:
+\begin{itemize}
+\item \textcolor{MidnightBlue}{The paper presents a network slicing model for three 5G services: eMBB, mMTC, and URLLC. We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
+Based on different types of services with different QoS and service priorities, we formulate a problem for allocating baseband resources to maximize the weighted throughput of O-RAN.}
+
+%\item \textcolor{MidnightBlue}{Various QoS conditions is considered, including delay, power, and throughput. According to the number of activated VNFs and the throughput of the UEs, we calculate the end-to-end processing delay of the system.
+%Assuming a limited fronthaul capacity, we calculate each O-RU's power and capacity. Depending on the service type, we model the interference of neighboring O-RUs and determine the throughput. The Shannon capacity theorem cannot account for URLLC and mMTC because they are short packet transmissions.}
+%\item The main problem is mixed-integer non-linear programming that is difficult to solve.
+%We perform a two-step iterative algorithm to solve it.
+\item \textcolor{MidnightBlue}{The focus of our paper is on the multi-service resource management of the RAN, slicing in the flexibility, openness, and openness of the O-RAN architecture.}
+\item \textcolor{MidnightBlue}{We propose an algorithm for resource management in a two-step, with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
+In the first step, we reformulate and simplify the problem to find an upper and lower bound for the number of activated VNFs and use the Lagrangian function and KKT conditions to find optimal power and PRB allocation. For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.}
+\item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
+\item \textcolor{MidnightBlue}{We perform numerical experiments to analyze the performance of the proposed algorithm, which proves to have a higher data rate than both the baseline scheme and data-driven method. Interestingly, our results show that this algorithm performs close to the optimal solution in low interference.}
+\end{itemize}
+
+The rest of this paper is organized as follows. The related literature is presented in Section \ref{RL}. In Section \ref{BG}, the background is explained.
+The system model and the problem formulation are described in Section \ref{systemmodel}. The details of our proposed resource management algorithm are introduced in Section \ref{proAlg}. In Section \ref{NE}, numerical results are provided to evaluate the performance of the proposed algorithm. Section \ref{conc} concludes the paper.
+
+\section{Related Literature}\label{RL}
 The problem of resource allocation for network slicing in multi-tenant cellular networks has received attention recently \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
 In \cite{lee2018dynamic}, dynamic network slicing in multi-tenant heterogeneous CRAN (H-CRAN) is considered. The network slicing scheme includes a higher level and the lower level. The higher level manages user acceptance control, user communication that provides for radio unit association (RRH association to maximize user rates and allocate baseband resource capacity), and the allocation of BBU capacity. Also, the allocation of power and physical resource blocks (PRB) is performed at the lower level.
 In \cite{xiang2020realization}, network slicing in the radio section is considered for the fog RAN (F-RAN) system, and a deep reinforcement learning algorithm is proposed for it. In \cite{elayoubi20195g,d2020toward}, the implementation of RAN level slicing is discussed in mobile network operator (MNO).
@@ -146,28 +166,16 @@ In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing 
 
 In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power allocation and RRH association in the H-CRAN system is considered to maximize energy efficiency.
 In \cite{amani2019power}, optimum power is obtained in massive MIMO aided C-RAN. Also, the problem of RRH to BBU and the RRH to UE association is obtained. Moreover, the author discussed the feasible region to make the initial values possible.
-\subsection{Main Contributions}
-The purpose of this paper is twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.
+\section{Background}\label{BG}
+\textcolor{MidnightBlue}{The Open Radio Access Network (O-RAN) is an appropriate alternative to the next generation of radio access networks due to its flexible operations, openness, lower operational costs, and intelligence.}
 
-\textcolor{MidnightBlue}{In this paper, we would like to enhance the resource utilization of the overall wireless O-RAN system and optimize baseband resource allocation, i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
-We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms to achieve these purposes.}
+O-RAN is driven by two pillars of openness and RAN intelligence as the next generation of radio access networks. O-RAN was developed to jointly benefit the advantages of virtual RAN (vRAN) and cloud RAN (C-RAN). With RAN virtualization, operators can improve flexibility, reduce capital expenditures (CAPEX) and operating expenses (OPEX), and add new capabilities to the network more quickly. The C-RAN architecture divides the radio remote head (RRH) and baseband unit (BBU) into two major parts. Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike C-RAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
 
-\textcolor{MidnightBlue}{Unlike other papers, we concentrate more on the multiservice resource management of the RAN slicing in the openness and flexible O-RAN architecture. We also convexify and solve complex problems using mathematical concepts and obtain optimal resources.}
-
-In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied. The main contributions of this paper are summarized as follows:
-\begin{itemize}
-\item \textcolor{MidnightBlue}{The paper presents a network slicing model for three 5G services: eMBB, mMTC, and URLLC. We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
-Based on different types of services with different QoS and service priorities, we formulate a problem for allocating baseband resources to maximize the weighted throughput of O-RAN.}
-\item We consider the processing delay and the VNF resources needed for the slice compared to other papers. Therefore, we focus on obtaining the optimal number of VNFs in each layer of the O-RAN architecture. 
-\item \textcolor{MidnightBlue}{Various QoS conditions is considered, including delay, power, and throughput. According to the number of activated VNFs and the throughput of the UEs, we calculate the end-to-end processing delay of the system.
-Assuming a limited fronthaul capacity, we calculate each O-RU's power and capacity. Depending on the service type, we model the interference of neighboring O-RUs and determine the throughput. The Shannon capacity theorem cannot account for URLLC and mMTC because they are short packet transmissions.}
-\item The main problem is mixed-integer non-linear programming that is difficult to solve.
-We perform a two-step iterative algorithm to solve it.
-The algorithm is presented for resource management with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
-\item We reformulate and simplify the main problem for the first step of finding an upper and lower bound for the number of activated VNFs and using lagrangian function and KKT conditions to find optimal power and PRB allocation.
-For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.
-\item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
-\end{itemize}
+O-RU is a logical node that contains RF and lowers PHY. Moreover, the O-DU expresses a logical node with higher PHY, MAC, and RLC.
+In addition, the O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). O-CU-UP hosts PDCP-UP and SDAP, and O-CU-CP hosts PDCP-CP and RRC.
+O-DU and O-CU are connected via an open and well-defined interface $F_1$.
+Moreover, O-DU is connected to a radio unit (O-RU) with an open fronthaul interface.
+The architecture of O-RAN contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud\cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML,lin2021toward}. 
 \begin{figure*}
   \centering
   \captionsetup{justification=centering}
@@ -177,7 +185,6 @@ For the second step, the problem of O-RU association can be converted to a multi
   \caption{Network sliced o-ran system}
   \label{fig:c11}
 \end{figure*}
-The rest of this paper is organized as follows. The system model and the problem formulation are described in Section \ref{systemmodel}. The details of our proposed resource management algorithm are introduced in Section \ref{proAlg}. In Section \ref{NE}, numerical results are provided to evaluate the performance of the proposed algorithm. Section \ref{conc} concludes the  paper.
 \section{System Model and Problem Formulation}\label{systemmodel}
 In this section, we describe the downlink system in the O-RAN architecture using RAN slicing as depicted in Figure \ref{fig:c11}.
 Firstly, we present the system model. Then, we obtain achievable data rates, power of O-RU, and the fronthaul capacity for the downlink (DL) of the o-ran system. Afterward, we discuss the mean delay and the power of VNFs.
@@ -932,23 +939,23 @@ If the number of UEs is more than the PRBs, each UE is given exactly one PRB wit
 In Fig. \ref{fig:1}, the aggregate throughput is demonstrated versus the different number of UEs in each service for these three methods. Suppose we have one service instance for each type of service, so we have three various services in this figure. Also, we have between 6 to 48 UEs in the system.
 Here, we did not consider the priority. The figure presented that the proposed method, IABV, is $18.6\%$ higher throughput than the baseline scheme.
 As the number of UEs increases in each service, the aggregated throughput initially increases. Still, due to the interference and the power constraint, it will be saturated from 12 UEs in each service.
-\begin{figure*}%[!tbp]
+\begin{figure}%[!tbp]
   \centering
   \captionsetup{justification=centering}
-  \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[scale = 0.3]{Arate_ue1_1.eps}
+    \includegraphics[width=7cm,height=4cm]{Arate_ue1_1.eps}
     \caption{Aggregate throughput vs. number of UEs in each service}% in the presence of three services}
     \label{fig:1}
-  \end{minipage}
-  \qquad
-  \begin{minipage}[b]{0.4\textwidth}
-       \includegraphics[scale = 0.30]{vnfNum1.eps}
+\end{figure}
+
+\begin{figure}
+\centering
+  \captionsetup{justification=centering}
+       \includegraphics[width=7cm,height=4cm]{vnfNum1.eps}
     %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
     %\includegraphics[width=\textwidth]{finalDraw.pdf}
   \caption{Number of activated VNF in each Service vs. Mean Arrival Rate(Mbps)}
   \label{fig:4}
-  \end{minipage}
-\end{figure*}
+\end{figure}
 %%%%%%%%%
 %\begin{figure}
 %  \centering
@@ -992,21 +999,20 @@ Figure \ref{fig:4} depicts the number of activated VNFs for five different mean 
 %%%%%%%%%%%%
 In figure \ref{fig:5}, the aggregate throughput is depicted vs. the maximum power of UE for three different instances of eMBB service using proposed method (IABV), DR scheme and the baseline scheme. Here, we suppose that we have 12 UEs in each service.  We assume that these three services require 5bits/sec/Hz, 10bits/sec/Hz, and 15bits/sec/Hz.
 In addition, We suppose that each O-RU can transmit three times of the maximum power of the UEs. As you can see in the figure, increasing the maximum power increases the aggregate throughput. Moreover, the proposed method (IABV), gives higher aggregate rates in compared to the DR scheme and the baseline scheme.
-\begin{figure*}%[!tbp]
+\begin{figure}%[!tbp]
   \centering
   \captionsetup{justification=centering}
-  \begin{minipage}[b]{0.45\textwidth}
-    \includegraphics[scale = 0.3]{RatePower1.eps}
+    \includegraphics[width=7cm,height=4cm]{RatePower1.eps}
     \caption{Aggregate Throughput for eMBB vs. Maximum Transmit power for various number of UEs }
   \label{fig:5}
-  \end{minipage}
-  \qquad
-  \begin{minipage}[b]{0.45\textwidth}
-      \includegraphics[scale = 0.3]{delay_new.eps}
+\end{figure}
+\begin{figure}
+  \centering
+  \captionsetup{justification=centering}
+      \includegraphics[width=7cm,height=4cm]{delay_new.eps}
   \caption{Mean Total Delay of a URLLC Service vs. the Mean Arrival Rate of a UE in the Service}
   \label{fig:6}
-  \end{minipage}
-\end{figure*}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}
 %  \centering
@@ -1046,17 +1052,16 @@ Figure \ref{fig:7} is the same as figure \ref{fig:6} that presented the mean tot
 \begin{figure}%[!tbp]
   \centering
   \captionsetup{justification=centering}
-  \begin{minipage}[b]{0.45\textwidth}
-    \includegraphics[scale = 0.3]{delay1_new.eps}
+    \includegraphics[width=7cm,height=4cm]{delay1_new.eps}
     \caption{Mean Total Delay of a URLLC Service vs. the Mean Arrival Rate of a UE in the Service}
   \label{fig:7}
-  \end{minipage}
-  \quad
-  \begin{minipage}[b]{0.45\textwidth}
-       \includegraphics[scale = 0.3]{AmmTCpower.eps}
+\end{figure}
+\begin{figure}%[!tbp]
+  \centering
+  \captionsetup{justification=centering}
+       \includegraphics[width=7cm,height=4cm]{AmmTCpower.eps}
   \caption{Aggregate Throughput vs. Number of UEs in each Service for three different mMTC services}
   \label{fig:8}
-  \end{minipage}
 \end{figure}
 Figure \ref{fig:8}, represents the aggregate throughput concerning the number of UEs in each service and the maximum power for three different mMTC service instances. mMTC service includes a large number of UEs with low data rates and low power.
 Assume each UE in each mMTC service instance requires 0.1 bits/sec/Hz data rate and is not sensitive to the end-to-end delay. There is no restriction on fronthaul link capacity and the number of VNFs.
@@ -1079,7 +1084,7 @@ The figure \ref{fig:9} presented that by increasing the priority factor for one 
 \begin{figure}%[!tbp]
   \centering
   \captionsetup{justification=centering}
-        \includegraphics[scale = 0.3]{priorityLast.eps}
+        \includegraphics[width=7cm,height=4cm]{priorityLast.eps}
   \caption{Aggregate Throughput for two eMBB service instances vs. Priority of the first service instance }
   \label{fig:9}
 
@@ -1139,17 +1144,16 @@ Our solution is close to the optimal value in a small number of UEs.
 \begin{figure}%[tbp]
   \centering
   \captionsetup{justification=centering}
-  \begin{minipage}[b]{0.4\textwidth}
-     \includegraphics[scale = 0.31]{iter.eps}
+     \includegraphics[width=7cm,height=4cm]{iter.eps}
   \caption{Aggregate Throughput vs. Number of Iterations}
   \label{fig:11}
-  \end{minipage}
-    \qquad
-  \begin{minipage}[b]{0.4\textwidth}
-   \includegraphics[scale = 0.3]{optimal1.eps}
+\end{figure}
+\begin{figure}%[tbp]
+  \centering
+  \captionsetup{justification=centering}
+   \includegraphics[width=7cm,height=4cm]{optimal1.eps}
   \caption{Aggregate Throughput vs. Number of UEs in one Service}
   \label{fig:12}
-  \end{minipage}
 \end{figure}
 
 %\begin{figure}
@@ -1172,17 +1176,17 @@ The aggregate throughput first increases with the number of UEs and at the same 
 \begin{figure}%[tbp]
   \centering
   \captionsetup{justification=centering}
-  \begin{minipage}[b]{0.4\textwidth}
-   \includegraphics[scale = 0.3]{interF_new.eps}
+   \includegraphics[width=7cm,height=4cm]{interF_new.eps}
   \caption{\small Aggregate Throughput vs. Maximum Interference }
   \label{fig:13}
-  \end{minipage}
-    \qquad
-  \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[scale = 0.3]{FA.eps}
+\end{figure}
+\begin{figure}%[tbp]
+  \centering
+  \captionsetup{justification=centering}
+    \includegraphics[width=7cm,height=4cm]{FA.eps}
   \caption{\small Aggregate Throughput vs. the Number of UEs in one Service }
   \label{fig:14}
-  \end{minipage}
+
 \end{figure}
 %\begin{figure}
 %  \centering
