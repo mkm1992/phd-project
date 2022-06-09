@@ -67,6 +67,22 @@ Z.~Luo and C.~Wu, ``An online algorithm for vnf service chain scaling in
   datacenters,'' \emph{IEEE/ACM Transactions on Networking}, vol.~28, no.~3,
   pp. 1061--1073, Mar. 2020.
 
+\bibitem{yue2021beamforming}
+X.~Yue, K.~Sun, W.~Huang, X.~Liu, and H.~Zhang, ``Beamforming design and bbu
+  computation resource allocation for power minimization in green c-ran,'' in
+  \emph{ICC 2021-IEEE International Conference on Communications}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, 2021, pp. 1--6.
+
+\bibitem{moosavi2021delay}
+N.~Moosavi, M.~Sinaie, P.~Azmi, and J.~Huusko, ``Delay aware resource
+  allocation with radio remote head cooperation in user-centric c-ran,''
+  \emph{IEEE Communications Letters}, vol.~25, no.~7, pp. 2343--2347, 2021.
+
+\bibitem{ali2019energy}
+S.~Ali, A.~Ahmad, and A.~Khan, ``Energy-efficient resource allocation and rrh
+  association in multitier 5g h-crans,'' \emph{Transactions on Emerging
+  Telecommunications Technologies}, vol.~30, no.~1, p. e3521, Jan. 2019.
+
 \bibitem{feng2020dynamic}
 L.~Feng, Y.~Zi, W.~Li, F.~Zhou, P.~Yu, and M.~Kadoch, ``Dynamic resource
   allocation with ran slicing and scheduling for urllc and embb hybrid
@@ -139,11 +155,6 @@ P.~Luong, C.~Despins, F.~Gagnon, and L.-N. Tran, ``A novel energy-efficient
   resource allocation approach in limited fronthaul virtualized c-rans,'' in
   \emph{2018 IEEE 87th Vehicular Technology Conference (VTC Spring)}, Jun.
   2018, pp. 1--6.
-
-\bibitem{ali2019energy}
-S.~Ali, A.~Ahmad, and A.~Khan, ``Energy-efficient resource allocation and rrh
-  association in multitier 5g h-crans,'' \emph{Transactions on Emerging
-  Telecommunications Technologies}, vol.~30, no.~1, p. e3521, Jan. 2019.
 
 \bibitem{ali2019energy1}
 S.~Ali, A.~Ahmad, Y.~Faheem, M.~Altaf, and H.~Ullah, ``Energy-efficient
