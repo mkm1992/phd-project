@@ -83,6 +83,11 @@ S.~Ali, A.~Ahmad, and A.~Khan, ``Energy-efficient resource allocation and rrh
   association in multitier 5g h-crans,'' \emph{Transactions on Emerging
   Telecommunications Technologies}, vol.~30, no.~1, p. e3521, Jan. 2019.
 
+\bibitem{kazemifard2021minimum}
+N.~Kazemifard and V.~Shah-Mansouri, ``Minimum delay function placement and
+  resource allocation for open ran (o-ran) 5g networks,'' \emph{Computer
+  Networks}, vol. 188, p. 107809, Apr. 2021.
+
 \bibitem{feng2020dynamic}
 L.~Feng, Y.~Zi, W.~Li, F.~Zhou, P.~Yu, and M.~Kadoch, ``Dynamic resource
   allocation with ran slicing and scheduling for urllc and embb hybrid
@@ -185,11 +190,6 @@ L.~Gavrilovska, V.~Rakovic, and D.~Denkovski, ``From cloud ran to open ran,''
 S.~Niknam, A.~Roy, H.~S. Dhillon, S.~Singh, R.~Banerji, J.~H. Reed, N.~Saxena,
   and S.~Yoon, ``Intelligent o-ran for beyond 5g and 6g wireless networks,''
   \emph{arXiv preprint arXiv:2005.08374}, May 2020.
-
-\bibitem{kazemifard2021minimum}
-N.~Kazemifard and V.~Shah-Mansouri, ``Minimum delay function placement and
-  resource allocation for open ran (o-ran) 5g networks,'' \emph{Computer
-  Networks}, vol. 188, p. 107809, Apr. 2021.
 
 \bibitem{both2021system}
 C.~B. Both, J.~Borges, L.~Gon{\c{c}}alves, C.~Nahum, C.~Macedo, A.~Klautau, and
