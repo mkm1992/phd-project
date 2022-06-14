@@ -501,7 +501,11 @@ The goal is to examine slice management, which includes creating, managing, and 
 \item Operation phase: during the Operation phase, NSIs are activated, managed, monitored (e.g., KPIs), modified, and deactivated. As the slice enters the activated phase, it is ready to support services, and as the slice exits the de-activated phase, the slice is inactive, and communication services are stopped.
 \item Decommissioning phase: an NSI that is decommissioned no longer exists after this phase.
 \end{itemize}
-In the preparation phase, the evaluation of requirements is considered. After that, we use our algorithm to find the optimal number of VNFs for each slice and PRB assignment and power allocation. Therefore, in the preparation phase, we estimate our resource of slices, and in the commission phase, we allocate our resources to the slices.
+\textcolor{MidnightBlue}{In the preparation phase, firstly, the evaluation of requirements is considered. Therefore, In this phase, we need an algorithm to estimate the number of UEs and UE traffic in the system at different times. Moreover, based on this estimation, we need to evaluate resources, including the optimal number of VNFs for each slice, the optimal number of PRBs for each slice, and the analysis of power allocation. In this phase, we can use our algorithm after estimating the system's traffic.
+As shown in figure 1, we have three different slices for eMBB, URLLC, and mMTC. For each slice, the system must prepare MAC/RLC protocols for O-DU, PDCP/SDAP protocols for O-CU, UPF, SMF, and AMF. Moreover, O-RU, high PHY in O-DU, and O-CU-CP are shared between slices. Thus, we do not require estimating and preparing for the share environments and platforms in the network slicing cycles.  
+After evaluating, assessing, and preparing the resources and environments for each slice, the commissioning phase is started. In this phase, the slices are created based on the previous phase. If the evaluation changes, the slice's resources can be modified.
+We can use our algorithm to assign resources to the services in the operation phase.
+If we need to remove a slice or any service is not used in a zone, and we need to remove the corresponding slice, the unshared resources are removed in the decommissioning phase.}
 %\vspace*{-1em}
 \section{Proposed Algorithm}\label{proAlg}
 In this section, we first apply some simplifications to the system; Solving the problem \eqref{problem} is complicated since this is non-convex mixed-integer non-linear problem (MINLP) with a binary variable and an integer variable.

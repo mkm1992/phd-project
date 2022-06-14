@@ -313,6 +313,24 @@ I changed the background from sub-section to the section part.
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
+We add the following part to the slice management section.
+
+In the preparation phase, firstly, the evaluation of requirements is considered. Therefore, In this phase, we need an algorithm to estimate the number of UEs and UE traffic in the system at different times. Moreover, based on this estimation, we need to evaluate resources, including the optimal number of VNFs for each slice, the optimal number of PRBs for each slice, and the analysis of power allocation. In this phase, we can use our algorithm after estimating the system's traffic.
+ As shown in figure 1, we have three different slices for eMBB, URLLC, and mMTC. For each slice, the system must prepare MAC/RLC protocols for O-DU, PDCP/SDAP protocols for O-CU, UPF, SMF, and AMF. Moreover, O-RU, high PHY in O-DU, and O-CU-CP are shared between slices. Thus, we do not require estimating and preparing for the share environments and platforms in the network slicing cycles. 
+After evaluating, assessing, and preparing the resources and environments for each slice, the commissioning phase is started. In this phase, the slices are created based on the previous phase. If the evaluation changes, the slice's resources can be modified.
+We can use our algorithm to assign resources to the services in the operation phase.
+If we need to remove a slice or any service is not used in a zone, and we need to remove the corresponding slice, the unshared resources are removed in the decommissioning phase.
+
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment6:} ``With respect to the convergence time of the algorithm, the Reviewer had made a suggestion to the authors to include it in the current version of the manuscript, yet the authors do not seem to have done that. The authors’ response points to Fig. 11. However if one looks at Fig.11 carefully, understands that only the Aggregate throughput is shown there. Even if one considers the Section III-C1 and III-C2 that the authors demonstrate as their convergence analysis and proof, there is no evidence or clarification of any delay value with respect to their algorithm’s convergence. On the one hand it is very beneficial to have a mathematical proof that the algorithm converges. On the other hand, it is equally important to portray these findings with numerical values. In any case, this is not applicable in the current version of the manuscript. ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
 
 \end{document}
 
