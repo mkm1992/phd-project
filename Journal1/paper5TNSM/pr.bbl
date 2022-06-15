@@ -43,18 +43,18 @@ A.~Dogra, R.~K. Jha, and S.~Jain, ``A survey on beyond 5g network with the
   advent of 6g: Architecture and emerging technologies,'' \emph{IEEE Access},
   vol.~9, pp. 67\,512--67\,547, Oct. 2020.
 
-\bibitem{kassab2018coexistence}
-R.~Kassab, O.~Simeone, and P.~Popovski, ``Coexistence of urllc and embb
-  services in the c-ran uplink: An information-theoretic study,'' in \emph{2018
-  IEEE Global Communications Conference (GLOBECOM)}, Abu Dhabi, United Arab
-  Emirates, Dec. 2018, pp. 1--6.
-
 \bibitem{alsenwi2021intelligent}
 M.~Alsenwi, N.~H. Tran, M.~Bennis, S.~R. Pandey, A.~K. Bairagi, and C.~S. Hong,
   ``Intelligent resource slicing for embb and urllc coexistence in 5g and
   beyond: A deep reinforcement learning based approach,'' \emph{IEEE
   Transactions on Wireless Communications}, vol.~20, no.~7, pp. 4585 -- 4600,
   Feb. 2021.
+
+\bibitem{SL}
+S.~Riolo, D.~Panno, and L.~Miuccio, ``Modeling and analysis of tagged preamble
+  transmissions in random access procedure for {mMTC} scenarios,'' \emph{IEEE
+  Transactions on Wireless Communications}, vol.~20, no.~7, pp. 4296--4312,
+  2021.
 
 \bibitem{mijumbi2015network}
 R.~Mijumbi, J.~Serrat, J.-L. Gorricho, N.~Bouten, F.~De~Turck, and R.~Boutaba,
@@ -72,11 +72,6 @@ X.~Yue, K.~Sun, W.~Huang, X.~Liu, and H.~Zhang, ``Beamforming design and bbu
   computation resource allocation for power minimization in green c-ran,'' in
   \emph{ICC 2021-IEEE International Conference on Communications}.\hskip 1em
   plus 0.5em minus 0.4em\relax IEEE, 2021, pp. 1--6.
-
-\bibitem{moosavi2021delay}
-N.~Moosavi, M.~Sinaie, P.~Azmi, and J.~Huusko, ``Delay aware resource
-  allocation with radio remote head cooperation in user-centric c-ran,''
-  \emph{IEEE Communications Letters}, vol.~25, no.~7, pp. 2343--2347, 2021.
 
 \bibitem{ali2019energy}
 S.~Ali, A.~Ahmad, and A.~Khan, ``Energy-efficient resource allocation and rrh
@@ -235,18 +230,6 @@ Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
   multidimensional knapsack problem,'' \emph{Annals of Operations Research},
   vol. 150, no.~1, pp. 17--29, Dec. 2007.
 
-\bibitem{gholipoor2020resource}
-N.~Gholipoor, S.~Parsaeefard, M.~R. Javan, N.~Mokari, H.~Saeedi, and
-  H.~Pishro-Nik, ``Resource management and admission control for tactile
-  internet in next generation of radio access network,'' \emph{IEEE Access},
-  vol.~8, pp. 136\,261--136\,277, Jul. 2020.
-
-\bibitem{gholipoor2020cloud}
-N.~Gholipoor, S.~Parsaeefard, M.~R. Javan, and N.~Mokari, ``Cloud-based queuing
-  model for tactile internet in next generation of ran,'' in \emph{2020 IEEE
-  91st Vehicular Technology Conference (VTC2020-Spring)}, Antwerp, Belgium,
-  Jun. 2020, pp. 1--6.
-
 \bibitem{ETSI1}
 ETSI-TR-138-913-V14.3.0, ``5g; study on scenarios and requirements for next
   generation access technologies(3gpp tr 38.913 version 14.3.0 release 14),''
@@ -260,10 +243,6 @@ ETSI-TR-138-913-V14.3.0, ``5g; study on scenarios and requirements for next
 3GPP-TR-36.931-V13.0.0, ``Evolved universal terrestrial radio access (e-utra);
   radio frequency (rf) requirements for lte pico node b (release 13),''
   2016-01.
-
-\bibitem{3GPPTS3}
-3GPP-TS-25.101-V4.13.0, ``User equipment (ue) radio transmission and reception
-  (fdd)(release 4),'' 2006-12.
 
 \bibitem{IMT}
 E.~Mohyeldin, ``Minimum technical performance requirements for imt-2020 radio
