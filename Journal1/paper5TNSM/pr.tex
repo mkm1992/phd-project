@@ -126,11 +126,10 @@ For instance, the eMBB service demands high capacity and throughput,  e.g., 8K v
   \label{fig:c11}
 \end{figure*}
 \subsection{Motivation}
-\textcolor{MidnightBlue}{Many researchers in the RAN field have been investigating the problem of finding the optimal resource allocation in a different generation of RAN technology to reduce the cost of the system and improve the QoS of the UEs. The studies in \cite{yue2021beamforming, ali2019energy} have investigated resource allocation in C-RAN by considering the limitation on power and delay, respectively. However, this architecture is inefficient whenever we have different services with different QoS simultaneously. Additionally, RAN slicing requires a more flexible and open architecture. Therefore, we need a new architecture that supports slicing to implement RAN slicing for various services. O-RAN architecture has emerged as
-a new architecture that can serve different services simultaneously using RAN slicing. In \cite{setayesh2020joint}, the RAN slicing is considered for C-RAN architecture for eMBB and URLLC. Nevertheless, the authors did not consider latency for URLLC, which is the main property of the URLLC. 
-Moreover, the authors did not consider the weakness of C-RAN architecture.
-In \cite{kazemifard2021minimum}, the authors examine the total delay of the UE in the O-RAN architecture. However, the paper did not consider the different services and other QoS. 
-}
+\textcolor{MidnightBlue}{The problem of finding the optimal resource allocation in a different generation of RAN technology is vital to reduce the cost of the system and improve the QoS of the UEs. The allocation of resources in 5G faces many significant challenges such as interference alignment, limited capacity of fronthaul links, energy restrictions on virtual machines, etc.} 
+
+\textcolor{MidnightBlue}{Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering one service's power, data rate, and delay limitations. Due to the need to serve services with different QoS simultaneously, this architectural model is inefficient. Therefore, we need a new architecture that supports RAN slicing for various services. O-RAN architecture has emerged as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges. 
+One of the fundamental problems is creating a balance between different services with different QoS, resource requirements, and priorities.  }
 
 \textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
 Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
