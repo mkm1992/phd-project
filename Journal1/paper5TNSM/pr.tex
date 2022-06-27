@@ -155,7 +155,43 @@ In the first step, we reformulate and simplify the problem to find an upper and 
 The rest of this paper is organized as follows.
 Relevant literature related to our work is discussed in Section~\ref{RL}, while Section~\ref{BG} briefly overviews the O-RAN architecture.
 The system model and the problem formulation are described in Section \ref{systemmodel}. The details of our proposed resource management algorithm are introduced in Section \ref{proAlg}. In Section \ref{NE}, numerical results are provided to evaluate the performance of the proposed algorithm. Finally, Section \ref{conc} concludes the paper.
-
+\begin{table}[H]
+ \caption {List of Acronyms} \label{table:1a}
+ \begin{center}
+ \scalebox{0.8}{
+  \begin{tabular}{||c | c ||}
+  \hline
+Abbreviation & Explanation \\ [0.5ex]
+  \hline\hline
+  VNF & Virtual Network Function\\
+  \hline
+  VM & Virtual Machine  \\
+  \hline
+ O-RAN & Open RAN  \\
+  \hline
+  RAN &  Radio Access Network \\
+  \hline
+   QoS &  Quality of service \\
+  \hline
+  PRB &  Physical Resource Block \\
+  \hline
+  eMBB & enhanced Mobile BroadBand \\
+  \hline
+  URLLC  & Ultra-Reliable Low Latency Communication \\
+   \hline
+  mMTC &  massive Machine-To-Machine Communications \\
+  \hline
+  O-RU &  O-RAN Radio Unit \\
+  \hline
+   O-DU &  O-RAN Distributed Unit \\ [.5ex]
+  \hline
+   O-CU &  O-RAN Central Unit \\ [.5ex]
+  \hline
+  UPF &  User Plane Function \\ [.5ex]
+  \hline
+ \end{tabular}}
+ \end{center}
+ \end{table}
 \section{Related Literature}\label{RL}
 The problem of resource allocation for network slicing in multi-tenant cellular networks has received attention recently \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
 In \cite{lee2018dynamic}, dynamic network slicing in multi-tenant heterogeneous CRAN (H-CRAN) is considered. The network slicing scheme includes a higher level and the lower level. The higher level manages user acceptance control, user communication that provides for radio unit association (RRH association to maximize user rates and allocate baseband resource capacity), and the allocation of BBU capacity. Also, the allocation of power and physical resource blocks (PRB) is performed at the lower level.
@@ -173,6 +209,7 @@ In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing 
 
 In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power allocation and RRH association in the H-CRAN system is considered to maximize energy efficiency.
 In \cite{amani2019power}, optimum power is obtained in massive MIMO aided C-RAN. Also, the problem of RRH to BBU and the RRH to UE association is obtained. Moreover, the author discussed the feasible region to make the initial values possible.
+
 \section{Background}\label{BG}
 \textcolor{MidnightBlue}{The Open Radio Access Network (O-RAN) is an appropriate alternative to the next generation of radio access networks due to its flexible operations, openness, lower operational costs, and intelligence.}
 
