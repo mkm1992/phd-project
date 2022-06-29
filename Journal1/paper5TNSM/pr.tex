@@ -108,7 +108,7 @@ Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slici
 For instance, the eMBB service demands high capacity and throughput,  e.g., 8K video streaming and immersive gaming. Meanwhile, the URLLC service, leveraged, e.g., by autonomous vehicles, Tactile Internet, and remote surgery services, is concerned with providing ultra-reliable and low-latency connectivity. Finally, mMTC services require connectivity for a large number of Internet of Things (IoT) devices that transmit small payloads \cite{dogra2020survey,alsenwi2021intelligent,SL}.}
 %\cite{dogra2020survey,kassab2018coexistence,alsenwi2021intelligent,SL}.}
 
-\textcolor{MidnightBlue}{Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is shown in Fig \ref{fig:c11}, is introduced to deal with these issues.}
+\textcolor{MidnightBlue}{Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is shown in figure \ref{fig:c11}, is introduced to deal with these issues.}
 %This paper considers several user equipments (UEs) requesting one of these types of services with different QoS in the O-RAN architecture. We want to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.
 %This paper aims to design a RAN slicing technology for the O-RAN architecture. 
 %O-RAN offers machine learning techniques based on the requirement for an intelligent wireless network for the next generation of RAN systems. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC-Near Real-Time, implement the algorithms for network intelligence
@@ -139,17 +139,18 @@ We investigate the problem of resource allocation in the O-RAN architecture for 
 
 \subsection{Main Contributions}
 
-\textcolor{MidnightBlue}{In this paper, we aim to enhance the resource utilization of a downlink O-RAN system and optimize the baseband resource allocation to develop an isolated network slicing outline for different types of services in an O-RAN platform.
-We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms to achieve these purposes.}
-
-In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied. The main contributions of this paper are summarized as follows:
+\textcolor{MidnightBlue}{In this paper, we aim to enhance the resource utilization of a downlink O-RAN system and optimize the baseband resource allocation to develop an isolated network slicing outline for the three 5G service classes.
+We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms.
+Our paper focuses on the multi-service resource management of the RAN slicing in an open and flexible O-RAN architecture.}
+%In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied.
+ The main contributions of this paper are summarized as follows:
 \begin{itemize}
 \item \textcolor{MidnightBlue}{We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
 Based on the three types of 5G service classes, i.e., eMBB, URLLC and mMTC, and their corresponding QoS requirements and service priorities, we formulate a problem for allocating baseband resources such as power, physical resource blocks (PRBs), O-RUs association, and VNF activation to maximize the weighted throughput of the O-RAN.}
-\item \textcolor{MidnightBlue}{We propose an algorithm for resource management in a two-step, with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
-In the first step, we reformulate and simplify the problem to find an upper and lower bound for the number of activated VNFs and use the Lagrangian function and KKT conditions to find optimal power and PRB allocation. For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.}
-\item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
-\item \textcolor{MidnightBlue}{We perform numerical experiments to analyze the performance of the proposed algorithm, which proves to have a higher data rate than both the baseline scheme and data-driven method. Interestingly, our results show that this algorithm performs close to the optimal solution in low interference.}
+\item \textcolor{MidnightBlue}{We propose a two-step resource management algorithm for solving the optimization problem.
+In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.}
+\item \textcolor{MidnightBlue}{We provide insights into the complexity of our algorithms. Moreover, we analyze and guarantee the convergence of the algorithms. Additionally, we demonstrate the feasibility region of our system using a fast algorithm.}
+\item \textcolor{MidnightBlue}{We show via numerical results that the proposed algorithm outperforms two baseline schemes, i.e., the DR scheme and the baseline scheme, in terms of achievable data rate. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.}
 \end{itemize}
 
 The rest of this paper is organized as follows.
@@ -186,8 +187,10 @@ Abbreviation & Explanation \\ [0.5ex]
    O-DU &  O-RAN Distributed Unit \\ [.5ex]
   \hline
    O-CU &  O-RAN Central Unit \\ [.5ex]
+   \hline
+     UPF &  User Plane Function \\ [.5ex]
   \hline
-  UPF &  User Plane Function \\ [.5ex]
+  KKT &  Karush-Kuhn-Tucker \\ [.5ex]
   \hline
  \end{tabular}}
  \end{center}
@@ -499,7 +502,7 @@ This paper aims to maximize the sum-rate of all UEs with the presence of constra
 \begin{subequations}\label{problem}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}} \ \\
-\text{subject to} \quad  &  P_r \leq P^{max}_{r} \quad \forall r
+\text{subject to} \quad  &  P_r \leq P^{max}_{r} \quad \forall r,
  \label{c11} \\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i,\forall r,\forall s, \forall k,\label{c12} \\
 &p_{r,u(s,i)}^{k}  \leq P_{s}^{max}  \quad \forall i,\forall r,\forall s, \forall k,\label{c12-1} \\
@@ -513,10 +516,10 @@ This paper aims to maximize the sum-rate of all UEs with the presence of constra
 & \phi^{\text{\text{tot}}}  \leq \phi^{max}, \label{c19} \\
 %& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
 & \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s,\forall i, \label{c17}  \\
-& \sum_{k =1}^{K_s} g^r_{u(s,i)} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r \label{c18-1} \\
-& \sum_{s =1}^{S}\sum_{i=1}^{U_s}g^r_{u(s,i)} e^{k}_{r,u(s,i)} \leq 1  \quad \forall s,\forall i ,\forall r \label{c18} \\
+& \sum_{k =1}^{K_s} g^r_{u(s,i)} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s,\forall i ,\forall r, \label{c18-1} \\
+& \sum_{s =1}^{S}\sum_{i=1}^{U_s}g^r_{u(s,i)} e^{k}_{r,u(s,i)} \leq 1  \quad \forall s,\forall i ,\forall r, \label{c18} \\
 & g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c20}  \\
-& e^k_{r,u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{c21}
+& e^k_{r,u(s,i)} \in \{0,1\} \quad \forall s,\forall i. \label{c21}
 \end{alignat}
 \label{constraints}
 \end{subequations}
@@ -597,7 +600,7 @@ So, a lower bound for \eqref{eq11} is given that is a concave function.
 \begin{alignat}{4}
 \bar{\mathcal{R}}_{u(s_j,i)}^{r} &= \sum_{k=1}^{K_{s_j}} B (\log_2({1+ \bar{\rho}_{u(s_2,i)}^{k}})- \hat{\zeta}_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k}\\
 \bar{\mathcal{R}}_{u(s_j,i)} &= \sum_{r=1}^{R}\bar{\mathcal{R}}_{u(s_j,i)}^{r}\\
- \hat{\zeta}_{u(s_j,i)}^{k} =& log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{\hat{\mathfrak{C}}_{u(s_j,i)}^{k}}{N_{u(s_j,i)}^{k}}})\\
+ \hat{\zeta}_{u(s_j,i)}^{k} =& \log_2({e})Q^{-1}(\epsilon) \sqrt{\frac{\hat{\mathfrak{C}}_{u(s_j,i)}^{k}}{N_{u(s_j,i)}^{k}}})\\
  \hat{\mathfrak{C}}_{u(s_j,i)}^{k} =& 1 - \frac{1}{(1+\hat{\rho}_{u(s_j,i)}^{k})^2}.
 \end{alignat}
 \end{subequations}
@@ -626,22 +629,22 @@ where, $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lamb
 %{\color{red} add one sentence before lemma to motivate why you need this lemma. The whole part is a lemma? It is too long. Where is the proof?}
 \begin{proof}
 In problem \eqref{problem}, the constraint \eqref{c16} can be reformulated as
-$ \forall i,\forall s$
-\begin{equation}
-\begin{split}
+%$ \forall i,\forall s$
+\begin{subequations}
+\begin{alignat}{4}
 &T^{\max}_s \geq\frac{1}{R_{u(s,i)} - \lambda_{u(s,i)}} + \frac{3}{\mu_s - \alpha_{s}/{M_s}}  \\
-&M_s \geq \frac{\alpha_s(T^{\max}_s R_{u(s,i)}-T^{\max}_s\lambda_{u(s,i)} -1)}{(T^{\max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }\\
-\end{split}
-\end{equation}
+&M_s \geq \frac{\alpha_s(T^{\max}_s R_{u(s,i)}-T^{\max}_s\lambda_{u(s,i)} -1)}{(T^{\max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }
+\end{alignat}
+\end{subequations}
 Also from equations in \eqref{c19}, \eqref{c16-1} and \eqref{c16-3}, we have
 \begin{equation}
-\alpha_s/\mu_s\leq M_s \leq \min\{M^{\max}, \phi_{\max}/{3\phi_s}\}
+\alpha_s/\mu_s\leq M_s \leq \min\{M^{\max}, \phi_{\max}/{3\phi_s}\}.
 \end{equation}
 We denote $ \mathfrak{M}_s= \min\{M^{max}, \phi_{max}/{3\phi_s}\}$.
 Thus, if we restrict constraint \eqref{c16} to equality, constraint \eqref{c16} is still valid.
 Also, we have the following inequality.
 \begin{equation}\label{eqDelay}
-\alpha_s/\mu_s\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
+\alpha_s/\mu_s\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s.
 \end{equation}
 In equation \eqref{eqDelay}, $0\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ is established due to the fact that
 the numerator and the denominator will both have the same sign.
@@ -658,7 +661,7 @@ $(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T^{max}_s$ as mentioned above.
 %\alpha_s/\mu_s\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
 %\end{equation}
 The left side of the equation \eqref{eqDelay}, leads to $R_{u(s,i)} \geq \lambda_{u(s,i)}$ that is the constraint \eqref{c16-2}.
-For the right side, by reformulating the equation \eqref{eqDelay}, we have a new constraint $\forall i, \forall s$ as below,
+For the right side, by reformulating the equation \eqref{eqDelay}, we have a new constraint $\forall i, \forall s$ given by
 %\begin{equation}\label{RM}
 %\begin{split}
 %\mathcal{R}_{u(s,i)} &\geq \frac{\mathfrak{M}_s \mathit{\langle}_{u(s,i)} - \alpha_s(T^{max}_s\lambda_{u(s,i)} +1) }{\mathfrak{M}_s (T^{max}_s\mu_s-3)-\alpha_s T^{max}_s},\\
@@ -669,9 +672,9 @@ For the right side, by reformulating the equation \eqref{eqDelay}, we have a new
 %\end{equation}
 \begin{subequations}\label{RM}
 \begin{alignat}{4}
-\mathcal{R}_{u(s,i)} &\geq \varpi_{u(s,i)}. \\
-\varpi_{u(s,i)} &= \lambda_{u(s,i)} + \frac{1}{T^{max}_s}\\
-& + \frac{3}{T^{max}_s\mu_s-\alpha_s T^{max}_s/\mathfrak{M}_s-3}
+\mathcal{R}_{u(s,i)} &\geq \varpi_{u(s,i)}, \\
+\varpi_{u(s,i)} &= \lambda_{u(s,i)} + \frac{1}{T^{max}_s},\\
+& + \frac{3}{T^{max}_s\mu_s-\alpha_s T^{max}_s/\mathfrak{M}_s-3}.
 \end{alignat}
 \end{subequations}
 In addition, we denote $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
@@ -690,21 +693,15 @@ In order to make \eqref{problem} as a standard form of a convex optimization pro
  $P_r \leq \sigma_{q_r}^2\times 2^{C^r_{max}}$.
 The combination of equations \eqref{c11} and \eqref{c15} leads to the following equation
 \begin{equation} \label{pr11}
-\begin{split}
-\zeta_{r}&= min\{P_{max}, \sigma_{q_r}^2\times 2^{C^r_{max}} \}, \\
-P_r &\leq  \zeta_{r}.\\
-\end{split}
+P_r\leq \zeta_r= min\{P_{max}, \sigma_{q_r}^2\times 2^{C^r_{max}} \}. 
 \end{equation}
 Moreover, the combination of equations in \eqref{c13}, \eqref{c16-2} and \eqref{RM} leads to the following equation
 \begin{equation}\label{RConstr}
-\begin{split}
-\eta_{u_{(s,i)}}&= \max\{\mathcal{R}_{u_{(s,i)}}^{\min}, \lambda_{u_{(s,i)}}+1/T^s_{\max}, \varpi_{u(s,i)} \}, \\
-\mathcal{\bar{R}}_{u_{(s,i)}} &\geq  \eta_{u_{(s,i)}}.\\
-\end{split}
+\mathcal{\bar{R}}_{u_{(s,i)}} \geq\eta_{u_{(s,i)}}= \max\{\mathcal{R}_{u_{(s,i)}}^{\min}, \lambda_{u_{(s,i)}}+1/T^s_{\max}, \varpi_{u(s,i)} \}. 
 \end{equation}
 Assume $\boldsymbol{\mathfrak{v}}$, $\boldsymbol{\mathfrak{m}}$, $\boldsymbol{\mathfrak{h}}$, $\boldsymbol{\xi}$, $\boldsymbol{\chi}$, $\boldsymbol{\mathfrak{q}}$ and $\boldsymbol{ \kappa}$ are the matrix of Lagrangian multipliers that have non-zero positive elements. The Lagrangian function is written as
-\begin{subequations}\label{lagrang}
-\begin{alignat}{4}
+\begin{equation}\label{lagrang}
+\begin{split}
 &\mathcal{L}(\boldsymbol{P},\boldsymbol{E}; \boldsymbol{\mathfrak{v}}, \boldsymbol{\chi}, \boldsymbol{\mathfrak{h}}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}, \boldsymbol{\mathfrak{m}})  = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\delta_s\mathcal{\bar{R}}_{u_{(s,i)}}\\
 &+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathfrak{h}_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\eta_{u_{(s,i)}})\\
 &-  \sum\limits_{r=1}^{R} \mathfrak{m}_{r} (P_{r}- \zeta_r)\\
@@ -713,11 +710,11 @@ Assume $\boldsymbol{\mathfrak{v}}$, $\boldsymbol{\mathfrak{m}}$, $\boldsymbol{\m
 &+ \sum\limits_{r=1}^{R}\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\chi_{r,u(s,i)}(\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} -1)\\
 &-  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\mathfrak{v}^{k}_{r,u(s,i)} (e^{k}_{r,u(s,i)} -1)\\
 &+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R} \xi^{k}_{r,u(s,i)} e^{k}_{r,u(s,i)}.
-\end{alignat}
-\end{subequations}
+\end{split}
+\end{equation}
 %{\color{red} Motivate the lemma. separate proof and lemma}
 \begin{lemma}
-The derivatives of the Lagrangian function \eqref{lagrang} with respect to the $\boldsymbol{P}$ and $\boldsymbol{E}$ give the Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal value of these two variables \cite{lee2018dynamic,ali2018joint}.
+The derivatives of the Lagrangian function \eqref{lagrang} with respect to the $\boldsymbol{P}$ and $\boldsymbol{E}$ give the KKT conditions to obtain the optimal value of these two variables \cite{lee2018dynamic,ali2018joint}.
 \end{lemma}
 \begin{proof}
 Assume UE $i$ in slice $s$, associated with O-RU $r$, is allocated to PRB $k$  (i.e., $e_{r,u(s,i)}^{k} = 1$). Therefore, we have the following KKT condition
@@ -786,13 +783,13 @@ The problem can be reformulated as follow
 \begin{subequations}\label{problem2}
 \begin{alignat}{4}
 \max\limits_{ \boldsymbol{G} }   \quad &  \sum_{s=1}^S\sum_{i=1}^{U_s}\sum_{r=1}^{R} \delta_s g^r_{u(s,i)}\bar{\mathcal{R}}^r_{u_{(s,k)}} \ \\
-\text{subject to} \quad  & \sum_{s=1}^{S}\sum_{i=1}^{U_s} g_{u(s,i)}^r \psi_{r,u(s,i)}\leq \mathfrak{t}_r \quad \forall r
+\text{subject to} \quad  & \sum_{s=1}^{S}\sum_{i=1}^{U_s} g_{u(s,i)}^r \psi_{r,u(s,i)}\leq \mathfrak{t}_r \quad \forall r,
  \label{p11} \\
 & \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s,\forall i, \label{p12}\\
  & g^r_{u(s,i)} \in \{0,1\} \quad \forall s,\forall i, \label{p13}
 \end{alignat}
 \end{subequations}
-Where $ \psi_{r,u(s,i)}=\sum_{k=1}^{K_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k}  e^k_{r,u(s,i)}$
+where $ \psi_{r,u(s,i)}=\sum_{k=1}^{K_s}|\bold{w}_{r,u(s,i)}^{k}|^2 p_{r,u(s,i)}^{k}  e^k_{r,u(s,i)}$
 and $\mathfrak{t}_r = \zeta_r- \sigma_r$  because of the equations \eqref{pr11} and \eqref{pr}.
 Since we obtained \eqref{RConstr} in \eqref{sub1}, we can ignore this constraint in \eqref{problem2}.
 %The problem \eqref{problem2} is an integer linear programming.
@@ -871,11 +868,11 @@ Afterward, $\boldsymbol{G}$ is updated using the GAA algorithm. This process is 
 The whole algorithm (IABV method) is depicted as follows (Algorithm \ref{alg2}).
 
 \subsubsection{Complexity Order}
-The number of UEs are $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_S}1$.
+The number of UEs are $\mathfrak{N} = \sum_{s=1}^{S}U_S$.
 Also, assume that the algorithm converges after $T_{conv}$ times.
 As we mentioned before, the complexity order of the first sub-problem is about $O(T_{conv} \times \mathfrak{N} \times K)$
-and the complexity order of the second sub-problem is about $O(Slog(S)) + O(R\times \mathfrak{N})$.
-So the complexity of the main problem \eqref{problem} is $O(T_{conv} \times \mathfrak{N} \times K \times (Slog(S)+R\mathfrak{N}))$.
+and the complexity order of the second sub-problem is about $O(S\log(S)) + O(R\times \mathfrak{N})$.
+So the complexity of the main problem \eqref{problem} is $O(T_{conv} \times \mathfrak{N} \times K \times (S\log(S)+R\mathfrak{N}))$.
 \subsubsection{Convergence Analysis}
 We can guarantee the convergence of the iterative algorithm if the objective function is the strictly ascending function concerning the number of iterations.% \cite{gholipoor2020resource}.
 Consider the aggregate throughput as $\mathcal{T(\bold{P},\bold{E},\bold{G})} =\sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}}$.

@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.6.30)  29 JUN 2022 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  30 JUN 2022 02:08
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **pr.tex
 (./pr.tex
@@ -17,30 +17,67 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmpcountB=\count81
 \@IEEEtrantmpcountC=\count82
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for TU+ptm on input line 503.
-LaTeX Font Info:    No file TUptm.fd. on input line 503.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
 
-LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 503.
-
+(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
 -- Using 8.5in x 11in (letter) paper.
--- Using DVI output.
+-- Using PDF output.
 \@IEEEnormalsizeunitybaselineskip=\dimen105
 -- This is a 10 point document.
 \CLASSINFOnormalsizebaselineskip=\dimen106
 \CLASSINFOnormalsizeunitybaselineskip=\dimen107
 \IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
-LaTeX Font Warning: Font shape `TU/ptm/bx/n' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
-LaTeX Font Warning: Font shape `TU/ptm/m/it' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
-LaTeX Font Warning: Font shape `TU/ptm/bx/it' undefined
-(Font)              using `TU/ptm/bx/n' instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
 \IEEEquantizedlength=\dimen109
 \IEEEquantizedlengthdiff=\dimen110
@@ -301,10 +338,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: xetex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen151
 \Gin@req@width=\dimen152
@@ -380,7 +417,82 @@ Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
-)
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
 LaTeX Info: Redefining \oldstylenums on input line 334.
 Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
 Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
@@ -451,8 +563,9 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: xetex.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
@@ -465,7 +578,6 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
 (c:/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
@@ -561,10 +673,10 @@ Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \tc@lly=\dimen167
 \tc@urx=\dimen168
 \tc@ury=\dimen169
-Package trimclip Info: Using driver 'tc-xetex.def'.
+Package trimclip Info: Using driver 'tc-pdftex.def'.
 
-(c:/texlive/2018/texmf-dist/tex/latex/adjustbox/tc-xetex.def
-File: tc-xetex.def 2018/04/08 v2.1 Clipping driver for xetex
+(c:/texlive/2018/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
 ))
 \adjbox@Width=\dimen170
 \adjbox@Height=\dimen171
@@ -607,8 +719,6 @@ LaTeX Font Info:    ... okay on input line 52.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
@@ -666,10 +776,75 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
+(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count160
+\scratchdimen=\dimen180
+\scratchbox=\box38
+\nofMPsegments=\count161
+\nofMParguments=\count162
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count163
+\MPscratchDim=\dimen181
+\MPnumerator=\count164
+\makeMPintoPDFobject=\count165
+\everyMPtoPDFconversion=\toks34
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 *geometry* driver: auto-detecting
-*geometry* detected driver: xetex
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: xetex
+* driver: pdftex
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -682,11 +857,11 @@ Package caption Info: End \AtBeginDocument code.
 * \textheight=693.79243pt
 * \oddsidemargin=-21.68121pt
 * \evensidemargin=-21.68121pt
-* \topmargin=-55.08522pt
+* \topmargin=-55.02321pt
 * \headheight=12.0pt
-* \headsep=21.404pt
+* \headsep=21.342pt
 * \topskip=12.0pt
-* \footskip=25.77849pt
+* \footskip=25.80774pt
 * \marginparwidth=20.0pt
 * \marginparsep=10.0pt
 * \columnsep=31.29802pt
@@ -709,51 +884,60 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 89.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+<finalDraw.pdf, id=1, 731.73375pt x 406.51875pt>
 File: finalDraw.pdf Graphic file (type pdf)
 <use finalDraw.pdf>
+Package pdftex.def Info: finalDraw.pdf  used on input line 122.
+(pdftex.def)             Requested size: 329.27715pt x 182.93173pt.
  [1
+Non-PDF special ignored!
+<special> header=psfrag.pro
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2] [3]
+] [2 <./finalDraw.pdf, page is rotated 90 degrees>] [3]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 292.
+d on input line 295.
 
-File: Interference.png Graphic file (type bmp)
-<Interference.png>
+<Interference.png, id=41, 584.1825pt x 268.75406pt>
+File: Interference.png Graphic file (type png)
+<use Interference.png>
+Package pdftex.def Info: Interference.png  used on input line 321.
+(pdftex.def)             Requested size: 204.46693pt x 94.06532pt.
 
-Overfull \hbox (1.93713pt too wide) detected at line 332
+Overfull \hbox (1.93713pt too wide) detected at line 335
 []
  []
 
-File: Qdiag.png Graphic file (type bmp)
-<Qdiag.png>
+<Qdiag.png, id=43, 345.29pt x 121.45375pt>
+File: Qdiag.png Graphic file (type png)
+<use Qdiag.png>
+Package pdftex.def Info: Qdiag.png  used on input line 356.
+(pdftex.def)             Requested size: 155.37904pt x 54.65367pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4]
-LaTeX Font Info:    Try loading font information for U+euf on input line 380.
-
-(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
+ [4 <./Interference.png>]
+LaTeX Font Info:    Try loading font information for U+euf on input line 383.
+ (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [5]
-Missing character: There is no ’ in font ptmr8t!
- [6]
+) [5 <./Qdiag.png>] [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 622--625
+Underfull \hbox (badness 10000) in paragraph at lines 625--628
 []\T1/ptm/b/n/10 Lemma 1. []\T1/ptm/m/it/10 The op-ti-mal num-ber of VNFs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--625
+Underfull \hbox (badness 10000) in paragraph at lines 625--628
 \T1/ptm/m/it/10 in each slice s can be achieved by the
  []
 
 
-Underfull \hbox (badness 4647) in paragraph at lines 622--625
+Underfull \hbox (badness 4647) in paragraph at lines 625--628
 \OML/cmm/m/it/10 M[] \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 f\OT1/cmtt/m/n/10 M[]
 \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 1\OML/c
 mm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; :::; U[]\OMS/cmsy/m/n/10 g 8\O
@@ -761,81 +945,267 @@ ML/cmm/m/it/10 s$\T1/ptm/m/it/10 . where,
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 622--625
+Underfull \hbox (badness 1466) in paragraph at lines 625--628
 \OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/10 = []$ \T1/ptm/m/it/10 for each UE
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--683
+Underfull \hbox (badness 10000) in paragraph at lines 678--686
 \T1/ptm/m/n/10 In ad-di-tion, we de-note $\OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/10 
 =
  []
 
 
-Underfull \hbox (badness 1902) in paragraph at lines 675--683
+Underfull \hbox (badness 1902) in paragraph at lines 678--686
 []$ \T1/ptm/m/n/10 for each UE $\OML/cmm/m/it/10 i$ \T1/ptm/m/n/10 in slice
  []
 
 
-Underfull \vbox (badness 2111) has occurred while \output is active []
+Underfull \vbox (badness 1742) has occurred while \output is active []
+
+
+Underfull \vbox (badness 3068) has occurred while \output is active []
 
  [9]
-Underfull \hbox (badness 10000) in paragraph at lines 772--774
+Underfull \hbox (badness 10000) in paragraph at lines 769--771
 \T1/ptm/m/n/10 where $\U/euf/m/n/10 Z[] \OT1/cmr/m/n/10 = (\U/euf/m/n/10 F[] \O
 MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
  []
 
 [10]
+<cell.pdf, id=81, 463.7325pt x 406.3983pt>
 File: cell.pdf Graphic file (type pdf)
 <use cell.pdf>
- [11] [12]
-File: Arate_ue1_1.eps Graphic file (type eps)
-<Arate_ue1_1.eps>
-File: vnfNum1.eps Graphic file (type eps)
-<vnfNum1.eps>
-File: RatePower1.eps Graphic file (type eps)
-<RatePower1.eps>
-File: delay_new.eps Graphic file (type eps)
-<delay_new.eps>
-File: delay1_new.eps Graphic file (type eps)
-<delay1_new.eps>
-File: AmmTCpower.eps Graphic file (type eps)
-<AmmTCpower.eps>
-File: priorityLast.eps Graphic file (type eps)
-<priorityLast.eps>
- [13]
-File: iter.eps Graphic file (type eps)
-<iter.eps>
-File: optimal1.eps Graphic file (type eps)
-<optimal1.eps>
-File: interF_new.eps Graphic file (type eps)
-<interF_new.eps>
-File: FA.eps Graphic file (type eps)
-<FA.eps>
- [14] (./pr.bbl
-Underfull \hbox (badness 1852) in paragraph at lines 37--40
-\T1/ptm/m/n/8 ``5g wire-less net-work slic-ing for embb, urllc, and mmtc: A
- []
+Package pdftex.def Info: cell.pdf  used on input line 934.
+(pdftex.def)             Requested size: 139.12082pt x 121.92043pt.
+ [11] [12 <./cell.pdf>]
+Package epstopdf Info: Source file: <Arate_ue1_1.eps>
+(epstopdf)                    date: 2022-06-07 12:35:51
+(epstopdf)                    size: 25690 bytes
+(epstopdf)             Output file: <Arate_ue1_1-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-07 12:36:21
+(epstopdf)                    size: 15577 bytes
+(epstopdf)             Command: <repstopdf --outfile=Arate_ue1_1-eps-converted-
+to.pdf Arate_ue1_1.eps>
+(epstopdf)             \includegraphics on input line 1018.
+Package epstopdf Info: Output file is already uptodate.
+<Arate_ue1_1-eps-converted-to.pdf, id=116, 660.4675pt x 414.54875pt>
+File: Arate_ue1_1-eps-converted-to.pdf Graphic file (type pdf)
+<use Arate_ue1_1-eps-converted-to.pdf>
+Package pdftex.def Info: Arate_ue1_1-eps-converted-to.pdf  used on input line 1
+018.
+(pdftex.def)             Requested size: 199.16972pt x 113.80832pt.
+Package epstopdf Info: Source file: <vnfNum1.eps>
+(epstopdf)                    date: 2022-06-06 17:48:43
+(epstopdf)                    size: 26946 bytes
+(epstopdf)             Output file: <vnfNum1-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 17:49:11
+(epstopdf)                    size: 15099 bytes
+(epstopdf)             Command: <repstopdf --outfile=vnfNum1-eps-converted-to.p
+df vnfNum1.eps>
+(epstopdf)             \includegraphics on input line 1026.
+Package epstopdf Info: Output file is already uptodate.
+<vnfNum1-eps-converted-to.pdf, id=117, 702.625pt x 436.63126pt>
+File: vnfNum1-eps-converted-to.pdf Graphic file (type pdf)
+<use vnfNum1-eps-converted-to.pdf>
+Package pdftex.def Info: vnfNum1-eps-converted-to.pdf  used on input line 1026.
 
-[15]
-Missing character: There is no – in font ptmr8t!
-) [16
+(pdftex.def)             Requested size: 199.16736pt x 113.80792pt.
+Package epstopdf Info: Source file: <RatePower1.eps>
+(epstopdf)                    date: 2022-06-06 17:44:43
+(epstopdf)                    size: 23207 bytes
+(epstopdf)             Output file: <RatePower1-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 17:45:15
+(epstopdf)                    size: 13289 bytes
+(epstopdf)             Command: <repstopdf --outfile=RatePower1-eps-converted-t
+o.pdf RatePower1.eps>
+(epstopdf)             \includegraphics on input line 1078.
+Package epstopdf Info: Output file is already uptodate.
+<RatePower1-eps-converted-to.pdf, id=118, 954.56625pt x 432.61626pt>
+File: RatePower1-eps-converted-to.pdf Graphic file (type pdf)
+<use RatePower1-eps-converted-to.pdf>
+Package pdftex.def Info: RatePower1-eps-converted-to.pdf  used on input line 10
+78.
+(pdftex.def)             Requested size: 199.1685pt x 113.811pt.
+Package epstopdf Info: Source file: <delay_new.eps>
+(epstopdf)                    date: 2022-06-06 17:39:09
+(epstopdf)                    size: 27424 bytes
+(epstopdf)             Output file: <delay_new-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 17:39:36
+(epstopdf)                    size: 13975 bytes
+(epstopdf)             Command: <repstopdf --outfile=delay_new-eps-converted-to
+.pdf delay_new.eps>
+(epstopdf)             \includegraphics on input line 1085.
+Package epstopdf Info: Output file is already uptodate.
+<delay_new-eps-converted-to.pdf, id=119, 954.56625pt x 432.61626pt>
+File: delay_new-eps-converted-to.pdf Graphic file (type pdf)
+<use delay_new-eps-converted-to.pdf>
+Package pdftex.def Info: delay_new-eps-converted-to.pdf  used on input line 108
+5.
+(pdftex.def)             Requested size: 199.1685pt x 113.811pt.
+Package epstopdf Info: Source file: <delay1_new.eps>
+(epstopdf)                    date: 2022-06-06 17:34:56
+(epstopdf)                    size: 23707 bytes
+(epstopdf)             Output file: <delay1_new-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 17:35:59
+(epstopdf)                    size: 13005 bytes
+(epstopdf)             Command: <repstopdf --outfile=delay1_new-eps-converted-t
+o.pdf delay1_new.eps>
+(epstopdf)             \includegraphics on input line 1128.
+Package epstopdf Info: Output file is already uptodate.
+<delay1_new-eps-converted-to.pdf, id=120, 947.54pt x 447.6725pt>
+File: delay1_new-eps-converted-to.pdf Graphic file (type pdf)
+<use delay1_new-eps-converted-to.pdf>
+Package pdftex.def Info: delay1_new-eps-converted-to.pdf  used on input line 11
+28.
+(pdftex.def)             Requested size: 199.16277pt x 113.81001pt.
+Package epstopdf Info: Source file: <AmmTCpower.eps>
+(epstopdf)                    date: 2022-06-06 16:53:32
+(epstopdf)                    size: 25716 bytes
+(epstopdf)             Output file: <AmmTCpower-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 16:53:57
+(epstopdf)                    size: 12913 bytes
+(epstopdf)             Command: <repstopdf --outfile=AmmTCpower-eps-converted-t
+o.pdf AmmTCpower.eps>
+(epstopdf)             \includegraphics on input line 1135.
+Package epstopdf Info: Output file is already uptodate.
+<AmmTCpower-eps-converted-to.pdf, id=121, 947.54pt x 589.20125pt>
+File: AmmTCpower-eps-converted-to.pdf Graphic file (type pdf)
+<use AmmTCpower-eps-converted-to.pdf>
+Package pdftex.def Info: AmmTCpower-eps-converted-to.pdf  used on input line 11
+35.
+(pdftex.def)             Requested size: 199.16277pt x 113.81042pt.
+Package epstopdf Info: Source file: <priorityLast.eps>
+(epstopdf)                    date: 2022-06-06 14:47:17
+(epstopdf)                    size: 24013 bytes
+(epstopdf)             Output file: <priorityLast-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 14:48:06
+(epstopdf)                    size: 13068 bytes
+(epstopdf)             Command: <repstopdf --outfile=priorityLast-eps-converted
+-to.pdf priorityLast.eps>
+(epstopdf)             \includegraphics on input line 1160.
+Package epstopdf Info: Output file is already uptodate.
+<priorityLast-eps-converted-to.pdf, id=122, 947.54pt x 589.20125pt>
+File: priorityLast-eps-converted-to.pdf Graphic file (type pdf)
+<use priorityLast-eps-converted-to.pdf>
+Package pdftex.def Info: priorityLast-eps-converted-to.pdf  used on input line 
+1160.
+(pdftex.def)             Requested size: 199.16277pt x 113.81042pt.
+ [13 <./Arate_ue1_1-eps-converted-to.pdf> <./vnfNum1-eps-converted-to.pdf> <./R
+atePower1-eps-converted-to.pdf> <./delay_new-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <iter.eps>
+(epstopdf)                    date: 2022-06-06 14:36:08
+(epstopdf)                    size: 29018 bytes
+(epstopdf)             Output file: <iter-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 14:36:31
+(epstopdf)                    size: 13318 bytes
+(epstopdf)             Command: <repstopdf --outfile=iter-eps-converted-to.pdf 
+iter.eps>
+(epstopdf)             \includegraphics on input line 1220.
+Package epstopdf Info: Output file is already uptodate.
+<iter-eps-converted-to.pdf, id=162, 947.54pt x 589.20125pt>
+File: iter-eps-converted-to.pdf Graphic file (type pdf)
+<use iter-eps-converted-to.pdf>
+Package pdftex.def Info: iter-eps-converted-to.pdf  used on input line 1220.
+(pdftex.def)             Requested size: 199.16277pt x 113.81042pt.
+Package epstopdf Info: Source file: <optimal1.eps>
+(epstopdf)                    date: 2022-06-06 14:13:40
+(epstopdf)                    size: 21033 bytes
+(epstopdf)             Output file: <optimal1-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 14:14:07
+(epstopdf)                    size: 13085 bytes
+(epstopdf)             Command: <repstopdf --outfile=optimal1-eps-converted-to.
+pdf optimal1.eps>
+(epstopdf)             \includegraphics on input line 1227.
+Package epstopdf Info: Output file is already uptodate.
+<optimal1-eps-converted-to.pdf, id=163, 947.54pt x 589.20125pt>
+File: optimal1-eps-converted-to.pdf Graphic file (type pdf)
+<use optimal1-eps-converted-to.pdf>
+Package pdftex.def Info: optimal1-eps-converted-to.pdf  used on input line 1227
+.
+(pdftex.def)             Requested size: 199.16277pt x 113.81042pt.
+Package epstopdf Info: Source file: <interF_new.eps>
+(epstopdf)                    date: 2022-06-06 14:09:40
+(epstopdf)                    size: 25580 bytes
+(epstopdf)             Output file: <interF_new-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 14:10:02
+(epstopdf)                    size: 13584 bytes
+(epstopdf)             Command: <repstopdf --outfile=interF_new-eps-converted-t
+o.pdf interF_new.eps>
+(epstopdf)             \includegraphics on input line 1252.
+Package epstopdf Info: Output file is already uptodate.
+<interF_new-eps-converted-to.pdf, id=164, 947.54pt x 589.20125pt>
+File: interF_new-eps-converted-to.pdf Graphic file (type pdf)
+<use interF_new-eps-converted-to.pdf>
+Package pdftex.def Info: interF_new-eps-converted-to.pdf  used on input line 12
+52.
+(pdftex.def)             Requested size: 199.16277pt x 113.81042pt.
+Package epstopdf Info: Source file: <FA.eps>
+(epstopdf)                    date: 2022-06-06 14:07:29
+(epstopdf)                    size: 21845 bytes
+(epstopdf)             Output file: <FA-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-06-06 14:07:49
+(epstopdf)                    size: 12366 bytes
+(epstopdf)             Command: <repstopdf --outfile=FA-eps-converted-to.pdf FA
+.eps>
+(epstopdf)             \includegraphics on input line 1259.
+Package epstopdf Info: Output file is already uptodate.
+<FA-eps-converted-to.pdf, id=165, 836.12375pt x 521.95pt>
+File: FA-eps-converted-to.pdf Graphic file (type pdf)
+<use FA-eps-converted-to.pdf>
+Package pdftex.def Info: FA-eps-converted-to.pdf  used on input line 1259.
+(pdftex.def)             Requested size: 199.16832pt x 113.80992pt.
+ [14 <./delay1_new-eps-converted-to.pdf> <./AmmTCpower-eps-converted-to.pdf> <.
+/priorityLast-eps-converted-to.pdf> <./iter-eps-converted-to.pdf> <./optimal1-e
+ps-converted-to.pdf>] (./pr.bbl [15 <./interF_new-eps-converted-to.pdf> <./FA-e
+ps-converted-to.pdf>]) [16
 
 ] (./pr.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8826 strings out of 492970
- 131636 string characters out of 6137298
- 235794 words of memory out of 5000000
- 12615 multiletter control sequences out of 15000+600000
- 91586 words of font info for 125 fonts, out of 8000000 for 9000
- 1352 hyphenation exceptions out of 8191
- 36i,21n,77p,1398b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 9820 strings out of 492649
+ 147111 string characters out of 6133384
+ 248528 words of memory out of 5000000
+ 13443 multiletter control sequences out of 15000+600000
+ 124626 words of font info for 166 fonts, out of 8000000 for 9000
+ 1145 hyphenation exceptions out of 8191
+ 41i,21n,77p,1398b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2018/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2018/texmf-dist
+/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/texlive/2018/texmf-dist/fonts/t
+ype1/public/amsfonts/cmextra/cmmib9.pfb><c:/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2018/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy9.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
+10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufb10.pfb
+><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2018/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type
+1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8
+a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on pr.pdf (16 pages, 678844 bytes).
+PDF statistics:
+ 333 PDF objects out of 1000 (max. 8388607)
+ 225 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on pr.pdf (16 pages).
