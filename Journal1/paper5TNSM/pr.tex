@@ -133,13 +133,13 @@ One of the fundamental problems is creating a balance between different services
 
 \textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
 Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
-We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously. 
-Therefore, we want to study the problem of obtaining the optimal number of VNF, RB assignments, and power allocation to maximize the system's throughput and guarantee the QoS of services. This problem is mixed-integer non-linear programming. Hence, it is difficult to solve and requires some relaxation, convexification, and other methods for obtaining the sub-optimal solution presented in the following sections.}
+We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously.}
+
+\textcolor{MidnightBlue}{The purpose of this paper is twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.}
 
 \subsection{Main Contributions}
-The purpose of this paper is twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.
 
-\textcolor{MidnightBlue}{In this paper, we would like to enhance the resource utilization of the overall wireless O-RAN system and optimize baseband resource allocation, i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
+\textcolor{MidnightBlue}{In this paper, we aim to enhance the resource utilization of a downlink O-RAN system and optimize the baseband resource allocation to develop an isolated network slicing outline for different types of services in an O-RAN platform.
 We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms to achieve these purposes.}
 
 In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied. The main contributions of this paper are summarized as follows:
@@ -220,43 +220,43 @@ In addition, the O-CU contains two parts: the O-CU user plane (O-CU-UP) and the 
 O-DU and O-CU are connected via an open and well-defined interface $F_1$.
 Moreover, O-DU is connected to a radio unit (O-RU) with an open fronthaul interface.
 The architecture of O-RAN contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud\cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML,lin2021toward}. 
-\begin{table}[H]
- \caption {List OF Notation} \label{table:1a}
- \begin{center}
- \scalebox{0.8}{
-  \begin{tabular}{||c | c ||}
-  \hline
-Notation & Description \\ [0.5ex]
-  \hline\hline
-  $S$ & Total number of slices\\
-  \hline
-  $S1$ & Number of eMBB slices  \\
-  \hline
- $S2$ & Number of URLLC slices  \\
-  \hline
-  $S3$ & Number of mMTC slices \\
-  \hline
-   $S$ & Total number of slices \\
-  \hline
-  PRB &  Physical Resource Block \\
-  \hline
-  eMBB & enhanced Mobile BroadBand \\
-  \hline
-  URLLC  & Ultra-Reliable Low Latency Communication \\
-   \hline
-  mMTC &  massive Machine-To-Machine Communications \\
-  \hline
-  O-RU &  O-RAN Radio Unit \\
-  \hline
-   O-DU &  O-RAN Distributed Unit \\ [.5ex]
-  \hline
-   O-CU &  O-RAN Central Unit \\ [.5ex]
-  \hline
-  UPF &  User Plane Function \\ [.5ex]
-  \hline
- \end{tabular}}
- \end{center}
- \end{table}
+%\begin{table}[H]
+% \caption {List OF Notation} \label{table:1a}
+% \begin{center}
+% \scalebox{0.8}{
+%  \begin{tabular}{||c | c ||}
+%  \hline
+%Notation & Description \\ [0.5ex]
+%  \hline\hline
+%  $S$ & Total number of slices\\
+%  \hline
+%  $S1$ & Number of eMBB slices  \\
+%  \hline
+% $S2$ & Number of URLLC slices  \\
+%  \hline
+%  $S3$ & Number of mMTC slices \\
+%  \hline
+%   $\bar{K}_s$ & pre-allocated PRB to each slice \\
+%  \hline
+%  PRB &  Physical Resource Block \\
+%  \hline
+%  eMBB & enhanced Mobile BroadBand \\
+%  \hline
+%  URLLC  & Ultra-Reliable Low Latency Communication \\
+%   \hline
+%  mMTC &  massive Machine-To-Machine Communications \\
+%  \hline
+%  O-RU &  O-RAN Radio Unit \\
+%  \hline
+%   O-DU &  O-RAN Distributed Unit \\ [.5ex]
+%  \hline
+%   O-CU &  O-RAN Central Unit \\ [.5ex]
+%  \hline
+%  UPF &  User Plane Function \\ [.5ex]
+%  \hline
+% \end{tabular}}
+% \end{center}
+% \end{table}
 \section{System Model and Problem Formulation}\label{systemmodel}
 In this section, we describe the downlink system in the O-RAN architecture using RAN slicing as depicted in Figure \ref{fig:c11}.
 Firstly, we present the system model. Then, we obtain achievable data rates, power of O-RU, and the fronthaul capacity for the downlink (DL) of the o-ran system. Afterward, we discuss the mean delay and the power of VNFs.
