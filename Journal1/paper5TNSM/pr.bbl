@@ -67,16 +67,34 @@ Z.~Luo and C.~Wu, ``An online algorithm for {VNF} service chain scaling in
   datacenters,'' \emph{IEEE/ACM Transactions on Networking}, vol.~28, no.~3,
   pp. 1061--1073, Mar. 2020.
 
-\bibitem{feng2020dynamic}
-L.~Feng, Y.~Zi, W.~Li, F.~Zhou, P.~Yu, and M.~Kadoch, ``Dynamic resource
-  allocation with {RAN} slicing and scheduling for {uRLLC} and {eMBB} hybrid
-  services,'' \emph{IEEE Access}, vol.~8, pp. 34\,538--34\,551, Feb. 2020.
-
 \bibitem{lee2018dynamic}
 Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
   multitenant heterogeneous cloud radio access networks,'' \emph{IEEE
   Transactions on Wireless Communications}, vol.~17, no.~4, pp. 2146--2161,
   Apr. 2018.
+
+\bibitem{SystemCostMinimization}
+J.~Tang, W.~P. Tay, T.~Q. Quek, and B.~Liang, ``System cost minimization in
+  cloud {RAN} with limited fronthaul capacity,'' \emph{IEEE Transactions on
+  Wireless Communications}, vol.~16, no.~5, pp. 3371--3384, May 2017.
+
+\bibitem{ORANArch}
+``{O-RAN} architecture description,'' O-RAN Alliance, Tech. Rep., 2020.
+
+\bibitem{gavrilovska2020cloud}
+L.~Gavrilovska, V.~Rakovic, and D.~Denkovski, ``From {Cloud} {RAN} to {Open}
+  {RAN},'' \emph{Wirel. Pers. Commun.}, vol. 113, no.~3, pp. 1523--1539, Mar.
+  2020.
+
+\bibitem{kazemifard2021minimum}
+N.~Kazemifard and V.~Shah-Mansouri, ``Minimum delay function placement and
+  resource allocation for open ran (o-ran) {5G} networks,'' \emph{Computer
+  Networks}, vol. 188, p. 107809, Apr. 2021.
+
+\bibitem{feng2020dynamic}
+L.~Feng, Y.~Zi, W.~Li, F.~Zhou, P.~Yu, and M.~Kadoch, ``Dynamic resource
+  allocation with {RAN} slicing and scheduling for {uRLLC} and {eMBB} hybrid
+  services,'' \emph{IEEE Access}, vol.~8, pp. 34\,538--34\,551, Feb. 2020.
 
 \bibitem{lee2016new}
 Y.~L. Lee, J.~Loo, and T.~C. Chuah, ``A new network slicing framework for
@@ -116,11 +134,6 @@ P.~Korrai, E.~Lagunas, S.~K. Sharma, S.~Chatzinotas, A.~Bandi, and
   B.~Ottersten, ``A ran resource slicing mechanism for multiplexing of embb and
   urllc services in ofdma based {5G} wireless networks,'' \emph{IEEE Access},
   vol.~8, pp. 45\,674--45\,688, Mar. 2020.
-
-\bibitem{SystemCostMinimization}
-J.~Tang, W.~P. Tay, T.~Q. Quek, and B.~Liang, ``System cost minimization in
-  cloud {RAN} with limited fronthaul capacity,'' \emph{IEEE Transactions on
-  Wireless Communications}, vol.~16, no.~5, pp. 3371--3384, May 2017.
 
 \bibitem{guo2016exploiting}
 K.~Guo, M.~Sheng, J.~Tang, T.~Q. Quek, and Z.~Qiu, ``Exploiting hybrid
@@ -167,29 +180,16 @@ B.~Han, L.~Liu, J.~Zhang, C.~Tao, C.~Qiu, T.~Zhou, Z.~Li, and Z.~Piao,
   radio access network for {HSR} scenarios,'' \emph{IEEE Access}, vol.~7, pp.
   108\,542--108\,550, Aug. 2019.
 
-\bibitem{gavrilovska2020cloud}
-L.~Gavrilovska, V.~Rakovic, and D.~Denkovski, ``From {Cloud} {RAN} to {Open}
-  {RAN},'' \emph{Wirel. Pers. Commun.}, vol. 113, no.~3, pp. 1523--1539, Mar.
-  2020.
-
 \bibitem{niknam2020intelligent}
 S.~Niknam, A.~Roy, H.~S. Dhillon, S.~Singh, R.~Banerji, J.~H. Reed, N.~Saxena,
   and S.~Yoon, ``Intelligent {O-RAN} for beyond {5G} and {6G} wireless
   networks,'' \emph{arXiv preprint arXiv:2005.08374}, May 2020.
-
-\bibitem{kazemifard2021minimum}
-N.~Kazemifard and V.~Shah-Mansouri, ``Minimum delay function placement and
-  resource allocation for open ran (o-ran) {5G} networks,'' \emph{Computer
-  Networks}, vol. 188, p. 107809, Apr. 2021.
 
 \bibitem{both2021system}
 C.~B. Both, J.~Borges, L.~Gon{\c{c}}alves, C.~Nahum, C.~Macedo, A.~Klautau, and
   K.~Cardoso, ``System intelligence for uav-based mission critical with
   challenging {5G}/b{5G} connectivity,'' \emph{arXiv preprint
   arXiv:2102.02318}, Feb. 2021.
-
-\bibitem{ORANArch}
-``{O-RAN} architecture description,'' O-RAN Alliance, Tech. Rep., 2020.
 
 \bibitem{ORANML}
 O.-R. W.~G. 2, ``{AI/ML} workflow description and requirements,'' O-RAN

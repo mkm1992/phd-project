@@ -91,16 +91,16 @@
 %\vspace*{-4em}
 \begin{abstract}
 %\vspace*{-1.5em}
-Taking advantage of virtual radio access networks (v-RAN) and Cloud RAN (C-RAN), Open RAN (O-RAN) is introduced as the next generation of RAN systems. Due to O-RAN, flexibility, openness, and lower operational costs will be possible. O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
-In this paper, we study the problem of service-aware baseband resource allocation and virtual network function (VNF) activation in O-RAN systems using network slicing to isolate different types of services.
+The next radio access network (RAN) generation, open RAN (O-RAN), aims to enable more flexibility and openness, including efficient service slicing, and to lower the operational costs in 5G and beyond wireless networks. Nevertheless, strictly satisfying quality-of-service requirements, while establishing priorities and promoting balance between the significantly heterogeneous services remains as key research problem.
+In this paper, we study the problem of service-aware baseband resource allocation and virtual network function (VNF) activation in O-RAN systems using network slicing.
 The limited fronthaul capacity and the restriction of end-to-end delay are considered at the same time.
-The optimization of baseband resources includes O-RU assignment, physical resource block (PRB), and power allocation. The main problem is a mixed-integer non-linear programming problem that is non-trivial to solve numerically.
-Nevertheless, we break it down into two different steps where an iterative algorithm finds a near-optimal solution.
-In the first step, we reformulate and simplify the problem to find the power allocation, PRB assignment, and the number of VNFs. In the second step, the O-RU association is achieved.
-The proposed method is validated via simulations that illustrate a higher data rate and lower end-to-end delay than existing methods.
+The optimization of baseband resources includes O-RAN radio unit (O-RU),and physical resource block (PRB) assignment, and power allocation. The main problem is a mixed-integer non-linear programming problem that is non-trivial to solve.
+Nevertheless, we break it down into two different steps and propose an iterative algorithm that finds a near-optimal solution.
+In the first step, we reformulate and simplify the problem to find the power allocation, PRB assignment, and the number of VNFs. In the second step, the O-RU association is resolved.
+The proposed method is validated via simulations ,which evince the achievement of a higher data rate and lower end-to-end delay than existing methods.
 \end{abstract}
 \begin{IEEEkeywords}
-Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slicing.
+Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slicing, Knapsack Problem, Greedy Algorithm, Karush-Kuhn-Tucker (KKT) Conditions.
 \end{IEEEkeywords}
 \section{Introduction}
 %\subsection{State Of The Arts}
@@ -108,34 +108,33 @@ Open Radio Access Network (O-RAN), Virtual Network Function (VNF), Network Slici
 For instance, the eMBB service demands high capacity and throughput,  e.g., 8K video streaming and immersive gaming. Meanwhile, the URLLC service, leveraged, e.g., by autonomous vehicles, Tactile Internet, and remote surgery services, is concerned with providing ultra-reliable and low-latency connectivity. Finally, mMTC services require connectivity for a large number of Internet of Things (IoT) devices that transmit small payloads \cite{dogra2020survey,alsenwi2021intelligent,SL}.}
 %\cite{dogra2020survey,kassab2018coexistence,alsenwi2021intelligent,SL}.}
 
-\textcolor{MidnightBlue}{Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is shown in figure \ref{fig:c11}, is introduced to deal with these issues.}
+\textcolor{MidnightBlue}{Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is schematically represented in Figure \ref{fig:c11}, is introduced to deal with these issues.}
 %This paper considers several user equipments (UEs) requesting one of these types of services with different QoS in the O-RAN architecture. We want to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.
 %This paper aims to design a RAN slicing technology for the O-RAN architecture. 
 %O-RAN offers machine learning techniques based on the requirement for an intelligent wireless network for the next generation of RAN systems. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC-Near Real-Time, implement the algorithms for network intelligence
 
-\textcolor{MidnightBlue}{A key feature of the O-RAN architecture is that the hardware is decoupled from the software, indicating the concept of network function virtualization (NFV). Additionally, each component is implemented as a virtual network function (VNF), the system function block in NFV, that can be deployed on a virtual machine (VM) or container \cite{mijumbi2015network, luo2020online}.}
+\textcolor{MidnightBlue}{A key feature of the O-RAN architecture is that the hardware is disaggregated from the software, indicating the concept of network function virtualization (NFV). Additionally, each component is implemented as a virtual network function (VNF), the system function block in NFV, that can be deployed on a virtual machine (VM) or container \cite{mijumbi2015network, luo2020online}.}
 \textcolor{MidnightBlue}{As a result, some O-RAN components defined in Section \ref{BG}, such as user plane function (UPF), O-RAN central unit (O-CU), O-RAN distributed unit (O-DU), and RAN intelligent controller (RIC)-near real-time, are virtualized and implemented as VNFs.}
 
-\begin{figure*}
+\begin{figure}
   \centering
   \captionsetup{justification=centering}
-    \includegraphics[scale = 0.45]{finalDraw.pdf}
-    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[scale = 0.45]{finalDraw.pdf}
+    \includegraphics[width=9.5cm,height=6cm]{finalDraw1.pdf}
     %\includegraphics[width=\textwidth]{finalDraw.pdf}
   \caption{Network sliced O-RAN system}
   \label{fig:c11}
-\end{figure*}
+\end{figure}
 \subsection{Motivation}
-\textcolor{MidnightBlue}{The problem of finding the optimal resource allocation in a different generation of RAN technology is vital to reduce the cost of the system and improve the QoS of the UEs. The allocation of resources in 5G faces many significant challenges such as interference alignment, limited capacity of fronthaul links, energy restrictions on virtual machines, etc.} 
+\textcolor{MidnightBlue}{The problem of finding the optimal resource allocation, independently of the specific RAN technology, is vital for reducing the cost of the system and improving the QoS of the user equipments (UEs). In case of 5G systems, there are many related significant challenges such as interference alignment, limited capacity of fronthaul links, energy restrictions on virtual machines, etc \cite{lee2018dynamic,SystemCostMinimization, setayesh2020joint}.} 
 
-\textcolor{MidnightBlue}{Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering one service's power, data rate, and delay limitations. Due to the need to serve services with different QoS simultaneously, this architectural model is inefficient. Therefore, we need a new architecture that supports RAN slicing for various services. O-RAN architecture has emerged as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges. 
-One of the fundamental problems is creating a balance between different services with different QoS, resource requirements, and priorities.  }
+\textcolor{MidnightBlue}{Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering the power, data rate and delay limitations of a single service. Due to the contemporary need to serve services with different QoS simultaneously, e.g., as in 5G and beyond, this architectural model is inefficient. In this regard, the O-RAN architecture has emerged as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges. 
+One of the fundamental problems lies in attaining a balance between different services with different QoS, resource requirements, and priorities \cite{ORANArch, gavrilovska2020cloud, kazemifard2021minimum, shen2020ai}.  }
+%\textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
+%Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
+%We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously.}
 
-\textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
-Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
-We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously.}
-
-\textcolor{MidnightBlue}{The purpose of this paper is twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.}
+\textcolor{MidnightBlue}{The purpose of this paper is to design a system in the O-RAN architecture to support three types of 5G services, namely, eMBB, URLLC, and mMTC via network slicing and resource allocation. Specifically, we aim to maximize the total achievable data rate and satisfy the minimum achievable data rate for eMBB services while meeting the URLLC requirements in the presence of numerous low-power IoT devices.}
 
 \subsection{Main Contributions}
 
@@ -189,6 +188,8 @@ Abbreviation & Explanation \\ [0.5ex]
    O-CU &  O-RAN Central Unit \\ [.5ex]
    \hline
      UPF &  User Plane Function \\ [.5ex]
+  \hline
+  UE &  User Equipment \\ [.5ex]
   \hline
   KKT &  Karush-Kuhn-Tucker \\ [.5ex]
   \hline
@@ -311,7 +312,7 @@ Moreover, $g_{u(s,i)}^r \in \{0,1\}$ is the binary variable that illustrates whe
 %Here, it is assumed that each UE is served by the nearest o-RU
 Also, $BN_0$ denotes the power of Gaussian additive noise.
 
-A UE in an O-RU $r$ using PRB $k$ receives interference from other O-RUs in the set of $r' \in R \not\in r$ that are using the same PRB $k$. Two types of interference occur between UEs in each slice; the first is inter-slice interference between UEs of different slices, and the second is intra-slice interference between UEs of the same slice that is shown in figure \ref{fig:intf}.
+A UE in an O-RU $r$ using PRB $k$ receives interference from other O-RUs in the set of $r' \in R \not\in r$ that are using the same PRB $k$. Two types of interference occur between UEs in each slice; the first is inter-slice interference between UEs of different slices, and the second is intra-slice interference between UEs of the same slice that is shown in Figure \ref{fig:intf}.
  
 Network Slicing techniques significantly reduce inter-service interference.
 Some methods apply the network slicing technique in PRB scheduling to isolate PRBs in slices and remove inter-slice interference. One of these methods is to have two-time scale scheduling. The PRB scheduling to the slices is performed on the first time scale, and on the second time scale, the PRB scheduling to the UEs of slices is carried out. Since there are limited resources, inter-service interference cannot be eliminated entirely. The other method is to allocate part of the RB of eMBB services to URLLC, and mMTC \cite{alsenwi2021intelligent, setayesh2020joint, mei2021intelligent}. In this paper, we assume that the PRB scheduling is performed. Also, in subsection \ref{prb}, we briefly study the PRB scheduling between slices.
@@ -344,7 +345,6 @@ To obtain SNR as formulated in \eqref{eq1}, let $y_{u(s,i)} $ be the received si
 \begin{equation}\label{eq2}
 y_{u(s,i)} = \sum_{r = 1}^{R}\sum_{k=1}^{K_s} \boldsymbol{h}^{H \: k}_{r,u(s,i)} g_{u(s,i)}^r e^k_{r,u(s,i)}{x_Q}^k_{r,u(s,i)}+ z_{u(s,i)},
 \end{equation}
-
 %\boldsymbol{w}^k_{r,u(s,i)}p^k_{r,u(s,i)}  $\mathfrak{y}^k_{r,u(s,i)} =\boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2}}_{r,u(s,i)}} x_{u(s,i)}+ \boldsymbol{q}_{r}$
 where ${x_Q}^k_{r,u(s,i)} ={x_P}^k_{r,u(s,i)}+ \boldsymbol{q}_{r}$. Also, ${x_P}^k_{r,u(s,i)}= \boldsymbol{w}^k_{r,u(s,i)}{p^{k \: \frac{1}{2}}_{r,u(s,i)}} x_{u(s,i)} $, and  $ x_{u(s,i)}$ depicts the transmitted symbol vector of UE $i$ in $s^{th}$ set of service,  $z_{u(s,i)}$ is the additive Gaussian noise $z_{u(s,i)} \backsim \mathcal{N}(0,N_0)$ and $N_0$ is the noise power.
 Moreover, ${x_P}$ denotes the precoded message before compression, and ${x_Q}$ illustrates the precoded message after compression shown in Figure \ref{fig:pq}.
@@ -550,7 +550,7 @@ The problem can be written as follow
 \text{subject to} \quad  & \sum_s{\bar{K_s}} \leq K
  \label{prb0} \\
 & K_s^{min} \leq \bar{K_s}  \leq K_s^{max}  \quad \forall s \in S_1,\label{prb1} \\
-&  \bar{K_s} \leq K_s  \quad \forall s \in S_2, S_3,\label{prb2}
+&  \bar{K_s} \leq K_s  \quad \forall s \in S_2, S_3.\label{prb2}
 \end{alignat}
 \label{constraints}
 \end{subequations}
@@ -738,7 +738,7 @@ We denote $ \mathfrak{j}_{r,u(s,i)}^{k} = g_{u(s,i)}^r e_{r,u(s,i)}^{k}$.
 The optimal power is as follow.
 \begin{subequations}
 \begin{alignat}{4}
-p_{r,u(s,i)}^{k} &= [\frac{(\delta_s + \mathfrak{h}_{u_{(s,i)}})B \mathfrak{j}_{r,u(s,i)}^{k}}{ Ln2 \times (-\mathfrak{s}^k_{r,u(s,i)} +\mathfrak{D}_{r,u(s,i)}^{k})}\\
+p_{r,u(s,i)}^{k} &= [\frac{(\delta_s + \mathfrak{h}_{u_{(s,i)}})B \mathfrak{j}_{r,u(s,i)}^{k}}{ \text{Ln2} \times (-\mathfrak{s}^k_{r,u(s,i)} +\mathfrak{D}_{r,u(s,i)}^{k})}\\
  &-\frac{BN_0 + I_{r,u(s,i)}^{k}}{{|\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k}|^2\mathfrak{j}_{r,u(s,i)}^{k}}]^+.
 \end{alignat}
 \end{subequations}
@@ -804,9 +804,9 @@ Next, we sort all the slices based on their priority.
 Afterward, based on the sorting of the UEs,
 we assign the O-RU that provides the highest achievable data rate for each UE on the condition that the value of the desired UE ($\psi_{r,u(s,i)}$) does not exceed the knapsack capacity of each O-RU ($ \mathfrak{C}_r$).
 If it exceeds the capacity of the desired O-RU, we remove the specific O-RU from the set of O-RUs that can be assigned to that UE (${\mathfrak{B}}^{rem}_{u_{(s,i)}} = {\mathfrak{B}}^{rem}_{u_{(s,i)}} \setminus \{{r^*}\} $). Then, the O-RU with the highest achievable data rate from the new set of O-RUs ${\mathfrak{B}}^{rem}_{u_{(s,i)}}$ is selected.
-The complexity of sorting S slices based on their priority is $O(Slog(S))$.
+The complexity of sorting S slices based on their priority is $O(S\log(S))$.
 Depict $\mathfrak{N} =  \sum_{s=1}^S\sum_{i=1}^{U_s} 1$ as the whole number of UEs in the system.
-The complexity order of this algorithm is about $O(Slog(S)) + O(R\times \mathfrak{N})$.
+The complexity order of this algorithm is about $O(S\log(S)) + O(R\times \mathfrak{N})$.
 %$O(N\times \mathfrak{N})$
 \begin{algorithm}
 \small
