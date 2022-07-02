@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  1 JUL 2022 18:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  2 JUL 2022 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -916,20 +916,23 @@ Overfull \hbox (1.93713pt too wide) detected at line 336
 []
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 <Qdiag.png, id=56, 345.29pt x 121.45375pt>
 File: Qdiag.png Graphic file (type png)
 <use Qdiag.png>
 Package pdftex.def Info: Qdiag.png  used on input line 356.
 (pdftex.def)             Requested size: 155.37904pt x 54.65367pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [4 <./Interference.png> <./Qdiag.png>]
 LaTeX Font Info:    Try loading font information for U+euf on input line 383.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [5] [6] [7]
+) [5] [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
 Underfull \hbox (badness 10000) in paragraph at lines 625--628
 []\T1/ptm/b/n/10 Lemma 1. []\T1/ptm/m/it/10 The op-ti-mal num-ber of VNFs
  []
@@ -966,9 +969,6 @@ Underfull \hbox (badness 1902) in paragraph at lines 678--686
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [9]
 Underfull \hbox (badness 10000) in paragraph at lines 769--771
 \T1/ptm/m/n/10 where $\U/euf/m/n/10 Z[] \OT1/cmr/m/n/10 = (\U/euf/m/n/10 F[] \O
@@ -976,14 +976,17 @@ MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
  []
 
 [10]
-Underfull \vbox (badness 5302) has occurred while \output is active []
-
-<cell.pdf, id=97, 463.7325pt x 406.3983pt>
+<cell.pdf, id=98, 463.7325pt x 406.3983pt>
 File: cell.pdf Graphic file (type pdf)
 <use cell.pdf>
 Package pdftex.def Info: cell.pdf  used on input line 934.
 (pdftex.def)             Requested size: 139.12082pt x 121.92043pt.
+
+Underfull \vbox (badness 4859) has occurred while \output is active []
+
  [11 <./cell.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Package epstopdf Info: Source file: <Arate_ue1_1.eps>
 (epstopdf)                    date: 2022-06-07 12:35:51
 (epstopdf)                    size: 25690 bytes
@@ -1000,7 +1003,6 @@ File: Arate_ue1_1-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: Arate_ue1_1-eps-converted-to.pdf  used on input line 1
 018.
 (pdftex.def)             Requested size: 199.16972pt x 113.80832pt.
- [12]
 Package epstopdf Info: Source file: <vnfNum1.eps>
 (epstopdf)                    date: 2022-06-06 17:48:43
 (epstopdf)                    size: 26946 bytes
@@ -1011,7 +1013,7 @@ Package epstopdf Info: Source file: <vnfNum1.eps>
 df vnfNum1.eps>
 (epstopdf)             \includegraphics on input line 1026.
 Package epstopdf Info: Output file is already uptodate.
-<vnfNum1-eps-converted-to.pdf, id=127, 702.625pt x 436.63126pt>
+<vnfNum1-eps-converted-to.pdf, id=124, 702.625pt x 436.63126pt>
 File: vnfNum1-eps-converted-to.pdf Graphic file (type pdf)
 <use vnfNum1-eps-converted-to.pdf>
 Package pdftex.def Info: vnfNum1-eps-converted-to.pdf  used on input line 1026.
@@ -1027,7 +1029,7 @@ Package epstopdf Info: Source file: <RatePower1.eps>
 o.pdf RatePower1.eps>
 (epstopdf)             \includegraphics on input line 1078.
 Package epstopdf Info: Output file is already uptodate.
-<RatePower1-eps-converted-to.pdf, id=128, 954.56625pt x 432.61626pt>
+<RatePower1-eps-converted-to.pdf, id=125, 954.56625pt x 432.61626pt>
 File: RatePower1-eps-converted-to.pdf Graphic file (type pdf)
 <use RatePower1-eps-converted-to.pdf>
 Package pdftex.def Info: RatePower1-eps-converted-to.pdf  used on input line 10
@@ -1043,7 +1045,7 @@ Package epstopdf Info: Source file: <delay_new.eps>
 .pdf delay_new.eps>
 (epstopdf)             \includegraphics on input line 1085.
 Package epstopdf Info: Output file is already uptodate.
-<delay_new-eps-converted-to.pdf, id=129, 954.56625pt x 432.61626pt>
+<delay_new-eps-converted-to.pdf, id=126, 954.56625pt x 432.61626pt>
 File: delay_new-eps-converted-to.pdf Graphic file (type pdf)
 <use delay_new-eps-converted-to.pdf>
 Package pdftex.def Info: delay_new-eps-converted-to.pdf  used on input line 108
@@ -1059,7 +1061,7 @@ Package epstopdf Info: Source file: <delay1_new.eps>
 o.pdf delay1_new.eps>
 (epstopdf)             \includegraphics on input line 1128.
 Package epstopdf Info: Output file is already uptodate.
-<delay1_new-eps-converted-to.pdf, id=130, 947.54pt x 447.6725pt>
+<delay1_new-eps-converted-to.pdf, id=127, 947.54pt x 447.6725pt>
 File: delay1_new-eps-converted-to.pdf Graphic file (type pdf)
 <use delay1_new-eps-converted-to.pdf>
 Package pdftex.def Info: delay1_new-eps-converted-to.pdf  used on input line 11
@@ -1075,7 +1077,7 @@ Package epstopdf Info: Source file: <AmmTCpower.eps>
 o.pdf AmmTCpower.eps>
 (epstopdf)             \includegraphics on input line 1135.
 Package epstopdf Info: Output file is already uptodate.
-<AmmTCpower-eps-converted-to.pdf, id=131, 947.54pt x 589.20125pt>
+<AmmTCpower-eps-converted-to.pdf, id=128, 947.54pt x 589.20125pt>
 File: AmmTCpower-eps-converted-to.pdf Graphic file (type pdf)
 <use AmmTCpower-eps-converted-to.pdf>
 Package pdftex.def Info: AmmTCpower-eps-converted-to.pdf  used on input line 11
@@ -1091,15 +1093,16 @@ Package epstopdf Info: Source file: <priorityLast.eps>
 -to.pdf priorityLast.eps>
 (epstopdf)             \includegraphics on input line 1160.
 Package epstopdf Info: Output file is already uptodate.
-<priorityLast-eps-converted-to.pdf, id=132, 947.54pt x 589.20125pt>
+<priorityLast-eps-converted-to.pdf, id=129, 947.54pt x 589.20125pt>
 File: priorityLast-eps-converted-to.pdf Graphic file (type pdf)
 <use priorityLast-eps-converted-to.pdf>
 Package pdftex.def Info: priorityLast-eps-converted-to.pdf  used on input line 
 1160.
 (pdftex.def)             Requested size: 199.16277pt x 113.81042pt.
- [13 <./Arate_ue1_1-eps-converted-to.pdf> <./vnfNum1-eps-converted-to.pdf> <./R
-atePower1-eps-converted-to.pdf> <./delay_new-eps-converted-to.pdf> <./delay1_ne
-w-eps-converted-to.pdf> <./AmmTCpower-eps-converted-to.pdf>]
+ [12]
+[13 <./Arate_ue1_1-eps-converted-to.pdf> <./vnfNum1-eps-converted-to.pdf> <./Ra
+tePower1-eps-converted-to.pdf> <./delay_new-eps-converted-to.pdf> <./delay1_new
+-eps-converted-to.pdf> <./AmmTCpower-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <iter.eps>
 (epstopdf)                    date: 2022-06-06 14:36:08
 (epstopdf)                    size: 29018 bytes
@@ -1162,13 +1165,10 @@ File: FA-eps-converted-to.pdf Graphic file (type pdf)
 <use FA-eps-converted-to.pdf>
 Package pdftex.def Info: FA-eps-converted-to.pdf  used on input line 1259.
 (pdftex.def)             Requested size: 199.16832pt x 113.80992pt.
-
-(./pr.bbl
-Underfull \vbox (badness 3724) has occurred while \output is active []
-
  [14 <./priorityLast-eps-converted-to.pdf> <./iter-eps-converted-to.pdf> <./opt
-imal1-eps-converted-to.pdf> <./interF_new-eps-converted-to.pdf>] [15 <./FA-eps-
-converted-to.pdf>]) [16
+imal1-eps-converted-to.pdf> <./interF_new-eps-converted-to.pdf> <./FA-eps-conve
+rted-to.pdf>]
+(./pr.bbl [15]) [16
 
 ] (./pr.aux)
 
@@ -1178,7 +1178,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  9820 strings out of 492649
  147116 string characters out of 6133384
- 251528 words of memory out of 5000000
+ 248528 words of memory out of 5000000
  13443 multiletter control sequences out of 15000+600000
  124626 words of font info for 166 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
@@ -1212,7 +1212,7 @@ exlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/
 mf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type
 1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (16 pages, 646463 bytes).
+Output written on pr.pdf (16 pages, 645927 bytes).
 PDF statistics:
  343 PDF objects out of 1000 (max. 8388607)
  243 compressed objects within 3 object streams
