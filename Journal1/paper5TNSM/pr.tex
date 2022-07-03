@@ -30,6 +30,7 @@
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \usepackage{balance}
+\usepackage{booktabs}
 \allowdisplaybreaks
 \newtheorem{remark}{Remark}
 \newtheorem{theorem}{Theorem}
@@ -48,6 +49,9 @@
 \newcommand{\abstractnamefont}{\normalfont\small\bfseries}
 \newcommand{\abstracttextfont}{\normalfont\small}
 \setlength{\belowcaptionskip}{-10pt}
+\def\hlinewd#1{%
+\noalign{\ifnum0=`}\fi\hrule \@height #1 %
+\futurelet\reserved@a\@xhline} 
 %\setlength{\dbltextfloatsep}{-20pt}
 \begin{document}
 
@@ -149,7 +153,7 @@ Based on the three types of 5G service classes, i.e., eMBB, URLLC and mMTC, and 
 \item \textcolor{MidnightBlue}{We propose a two-step resource management algorithm for solving the optimization problem.
 In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.}
 \item \textcolor{MidnightBlue}{We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of our problem and introduce a fast algorithm to check its feasibility numerically.}
-\item \textcolor{MidnightBlue}{We show via numerical results that the proposed algorithm outperforms two baseline schemes, i.e., the DR scheme and the baseline scheme, in terms of achievable data rate. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.}
+\item \textcolor{MidnightBlue}{We show via numerical results that the proposed algorithm outperforms two baseline schemes, in terms of achievable data rate. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.}
 \end{itemize}
 
 The rest of this paper is organized as follows.
@@ -158,50 +162,49 @@ The system model and the problem formulation are described in Section \ref{syste
 \begin{table}[H]
  \caption {List of Acronyms} \label{table:1a}
  \begin{center}
- \scalebox{0.8}{
-  \begin{tabular}{||c | c ||}
-  \hline
-Abbreviation & Explanation \\ [0.5ex]
-  \hline\hline
-  VNF & Virtual Network Function\\
-  \hline
-  VM & Virtual Machine  \\
-  \hline
- O-RAN & Open RAN  \\
-  \hline
-  RAN &  Radio Access Network \\
-  \hline
-   QoS &  Quality of service \\
-  \hline
-  PRB &  Physical Resource Block \\
-  \hline
-  eMBB & enhanced Mobile BroadBand \\
-  \hline
-  URLLC  & Ultra-Reliable Low Latency Communication \\
-   \hline
-  mMTC &  massive Machine-To-Machine Communications \\
-  \hline
-  O-RU &  O-RAN Radio Unit \\
-  \hline
-   O-DU &  O-RAN Distributed Unit \\ [.5ex]
-  \hline
-   O-CU &  O-RAN Central Unit \\ [.5ex]
-   \hline
-     UPF &  User Plane Function \\ [.5ex]
-  \hline
-  UE &  User Equipment \\ [.5ex]
-  \hline
+ \scalebox{1}{
+  \begin{tabular}{c  c }
+  \toprule
+\textbf{Acronym} & \textbf{Definition} \\ [0.5ex]
+   \toprule
+  VNF & virtual network function\\[.5ex]
+  
+  VM & virtual machine  \\[.5ex]
+  RAN &  radio access network \\[.5ex]
+ O-RAN & open RAN  \\[.5ex]
+ vRAN & virtual RAN \\[.5ex]
+ CRAN & cloud RAN \\[.5ex]
+   QoS &  quality of service \\[.5ex]
+  MIMO & multiple input multiple output \\[.5ex]
+  PRB &  physical resource block \\[.5ex]
+  
+  eMBB & enhanced mobile broadBand \\[.5ex]
+  
+  URLLC  & ultra-reliable low latency communication \\[.5ex]
+   
+  mMTC &  massive machine-to-machine communications \\[.5ex]
+  
+  O-RU &  O-RAN radio unit \\[.5ex]
+ 
+   O-DU &  O-RAN distributed unit \\ [.5ex]
+  
+   O-CU &  O-RAN central unit \\ [.5ex]
+  
+     UPF &  user plane function \\ [.5ex]
+  
+  UE &  user equipment \\ [.5ex]
+  
   KKT &  Karush-Kuhn-Tucker \\ [.5ex]
-  \hline
+ \toprule
  \end{tabular}}
  \end{center}
  \end{table}
 \section{Related Literature}\label{RL}
-The problem of resource allocation for network slicing in multi-tenant cellular networks has received attention recently \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
-In \cite{lee2018dynamic}, dynamic network slicing in multi-tenant heterogeneous CRAN (H-CRAN) is considered. The network slicing scheme includes a higher level and the lower level. The higher level manages user acceptance control, user communication that provides for radio unit association (RRH association to maximize user rates and allocate baseband resource capacity), and the allocation of BBU capacity. Also, the allocation of power and physical resource blocks (PRB) is performed at the lower level.
-In \cite{xiang2020realization}, network slicing in the radio section is considered for the fog RAN (F-RAN) system, and a deep reinforcement learning algorithm is proposed for it. In \cite{elayoubi20195g,d2020toward}, the implementation of RAN level slicing is discussed in mobile network operator (MNO).
+The problem of network slicing in multi-tenant cellular networks has received significant attention recently, e.g.,  \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
+In \cite{lee2018dynamic}, dynamic network slicing in heterogeneous C-RAN (H-CRAN) is considered in two levels. The higher level manages user acceptance control, radio remote head (RRH) association, and the allocation of BBU capacity. Meanwhile, the allocation of power and physical resource blocks (PRB) is performed at the lower level.
+In \cite{xiang2020realization}, RAN slicing is considered for the fog RAN (F-RAN) system, and executed using deep reinforcement learning algorithm. In \cite{elayoubi20195g,d2020toward}, the implementation of RAN level slicing is discussed for the mobile network operator.
 
-Multiplexing eMBB and URLLC services on the same RAN and sharing the resources of these services is challenging, and many researchers pay attention to this issue.
+Multiplexing eMBB and URLLC services on the same RAN is particularly challenging, which has motivated some recent works.
 In \cite{setayesh2020joint,yang2020should,saggese2021power}, the problem of resource allocation in the coexistence of URLLC and eMBB services is considered based on their QoS.
 In \cite{alsenwi2021intelligent}, the problem of resource allocation for joint eMBB and URLLC services is formulated and solved by deep reinforcement learning.
  In \cite{korrai2020ran}, the authors proposed to allocate RAN resources for the network slicing system in the coexistence of eMBB and URLLC services. The system guarantees latency, service rate, and reliability maintenance.
@@ -212,7 +215,7 @@ Also, transmission and processing delays are modeled based on M/M/1 queueing the
 In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing resource allocation with beamforming is formulated; Also, the association of RRH to the UE is considered and solved using innovative methods.
 
 In \cite{ali2019energy,ali2019energy1,ali2018joint}, the problem of joint power allocation and RRH association in the H-CRAN system is considered to maximize energy efficiency.
-In \cite{amani2019power}, optimum power is obtained in massive MIMO aided C-RAN. Also, the problem of RRH to BBU and the RRH to UE association is obtained. Moreover, the author discussed the feasible region to make the initial values possible.
+In \cite{amani2019power}, optimum power is obtained in massive MIMO aided C-RAN. Also, the problem of RRH to BBU and the RRH to UE association is obtained. 
 
 \section{Background}\label{BG}
 \textcolor{MidnightBlue}{The Open Radio Access Network (O-RAN) is an appropriate alternative to the next generation of radio access networks due to its flexible operations, openness, lower operational costs, and intelligence.}
