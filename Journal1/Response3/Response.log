@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  17 JUN 2022 15:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  6 JUL 2022 20:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1091,116 +1091,115 @@ Overfull \hbox (0.29094pt too wide) in alignment at lines 150--156
 Underfull \vbox (badness 10000) detected at line 156
  []
 
-[3
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 169.
 
-]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 172.
-
- (c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+(c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 172.
- [4]
-Underfull \hbox (badness 10000) in paragraph at lines 186--189
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 169.
+ [3
+
+] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 182--185
  []| \OT1/cmr/bx/n/12 Re-viewer 2| 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 184--195
+Overfull \hbox (0.29094pt too wide) in alignment at lines 180--191
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 195
+Underfull \vbox (badness 10000) detected at line 191
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 202--208
+Overfull \hbox (0.29094pt too wide) in alignment at lines 198--204
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 208
+Underfull \vbox (badness 10000) detected at line 204
  []
 
 [5
 
 ]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 231--237
+Overfull \hbox (0.29094pt too wide) in alignment at lines 227--233
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 237
+Underfull \vbox (badness 10000) detected at line 233
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 241--247
+Overfull \hbox (0.29094pt too wide) in alignment at lines 237--243
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 247
+Underfull \vbox (badness 10000) detected at line 243
  []
 
 [6]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 263--274
+Overfull \hbox (0.29094pt too wide) in alignment at lines 259--270
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 274
+Underfull \vbox (badness 10000) detected at line 270
  []
 
 
-LaTeX Warning: Reference `fig:c11' on page 7 undefined on input line 286.
+LaTeX Warning: Reference `fig:c11' on page 7 undefined on input line 282.
 
 [7]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 297--303
+Overfull \hbox (0.29094pt too wide) in alignment at lines 293--299
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 303
+Underfull \vbox (badness 10000) detected at line 299
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 307--313
+Overfull \hbox (0.29094pt too wide) in alignment at lines 303--309
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 313
+Underfull \vbox (badness 10000) detected at line 309
  []
 
 [8]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 325--331
+Overfull \hbox (0.29094pt too wide) in alignment at lines 321--327
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 331
+Underfull \vbox (badness 10000) detected at line 327
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
 [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 335.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 335.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 331.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 331.
  (./Response.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 335.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 335.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 331.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 331.
 Package rerunfilecheck Info: File `Response.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 335.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 331.
  ) 
 Here is how much of TeX's memory you used:
  20167 strings out of 492649
@@ -1213,7 +1212,7 @@ Here is how much of TeX's memory you used:
 <c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Response.pdf (9 pages, 62886 bytes).
+Output written on Response.pdf (9 pages, 61910 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream

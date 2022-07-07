@@ -160,22 +160,18 @@ We thank the reviewer for adding clarity to our paper and reducing ambiguity in 
 Below we write the whole contribution section.
 
 
-The purpose of this paper is twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.
-
-In this paper, we would like to enhance the resource utilization of the overall wireless O-RAN system and optimize baseband resource allocation, i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
-We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms to achieve these purposes.
-
-Unlike other papers, we concentrate more on the multiservice resource management of the RAN slicing in the openness and flexible O-RAN architecture. We also convexify and solve complex problems using mathematical concepts and obtain optimal resources.
-
-In this paper, as depicted in Figure 1, the downlink of the O-RAN system is studied. The main contributions of this paper are summarized as follows:
+This paper aims to optimize the resource utilization of a downlink O-RAN system to develop an isolated network slicing outline for the three 5G service classes.
+We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms.
+%Our paper focuses on the multi-service resource management of the RAN slicing in an open and flexible O-RAN architecture.}
+%In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied.
+ The main contributions of this paper are summarized as follows:
 \begin{itemize}
-\item The paper presents a network slicing model for three 5G services: eMBB, mMTC, and URLLC. We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
-Based on different types of services with different QoS and service priorities, we formulate a problem for allocating baseband resources to maximize the weighted throughput of O-RAN.
-\item The focus of our paper is on the multi-service resource management of the RAN, slicing in the flexibility, openness, and openness of the O-RAN architecture.
-\item We propose an algorithm for resource management in a two-step, with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
-In the first step, we reformulate and simplify the problem to find an upper and lower bound for the number of activated VNFs and use the Lagrangian function and KKT conditions to find optimal power and PRB allocation. For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.
-\item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
-\item We perform numerical experiments to analyze the performance of the proposed algorithm, which proves to have a higher data rate than both the baseline scheme and data-driven method. Interestingly, our results show that this algorithm performs close to the optimal solution in low interference.
+\item We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
+Based on the three types of 5G service classes, i.e., eMBB, URLLC and mMTC, and their corresponding QoS requirements and service priorities, we formulate a problem for allocating baseband resources such as power, physical resource blocks (PRBs), O-RUs, and activating VNFs to maximize the weighted throughput of the O-RAN.
+\item We propose a two-step resource management algorithm for solving the optimization problem.
+In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.
+\item We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of our problem and introduce a fast algorithm to check its feasibility numerically.
+\item We show via numerical results that the proposed algorithm outperforms two baseline schemes, in terms of achievable data rate. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.
 \end{itemize}
 
 % % % % % % % % % % % % % % % Reviewer 2 % % % % % % % % % % % % % % % % % % % %

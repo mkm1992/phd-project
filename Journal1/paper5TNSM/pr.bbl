@@ -40,8 +40,8 @@ P.~Popovski, K.~F. Trillingsgaard, O.~Simeone, and G.~Durisi, ``{5G} wireless
 
 \bibitem{dogra2020survey}
 A.~Dogra, R.~K. Jha, and S.~Jain, ``A survey on beyond {{5G}} network with the
-  advent of {6G}: Architecture and emerging technologies,'' \emph{IEEE Access},
-  vol.~9, pp. 67\,512--67\,547, Oct. 2020.
+  advent of {6G}: Architecture and emerging technologies,'' \emph{{IEEE}
+  Access}, vol.~9, pp. 67\,512--67\,547, Oct. 2020.
 
 \bibitem{alsenwi2021intelligent}
 M.~Alsenwi, N.~H. Tran, M.~Bennis, S.~R. Pandey, A.~K. Bairagi, and C.~S. Hong,
@@ -52,7 +52,7 @@ M.~Alsenwi, N.~H. Tran, M.~Bennis, S.~R. Pandey, A.~K. Bairagi, and C.~S. Hong,
 
 \bibitem{SL}
 S.~Riolo, D.~Panno, and L.~Miuccio, ``Modeling and analysis of tagged preamble
-  transmissions in random access procedure for {mMTC} scenarios,'' \emph{IEEE
+  transmissions in random access procedure for {mMTC} scenarios,'' \emph{{IEEE}
   Transactions on Wireless Communications}, vol.~20, no.~7, pp. 4296--4312,
   2021.
 
@@ -75,7 +75,7 @@ Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
 
 \bibitem{SystemCostMinimization}
 J.~Tang, W.~P. Tay, T.~Q. Quek, and B.~Liang, ``System cost minimization in
-  cloud {RAN} with limited fronthaul capacity,'' \emph{IEEE Transactions on
+  cloud {RAN} with limited fronthaul capacity,'' \emph{{IEEE} Transactions on
   Wireless Communications}, vol.~16, no.~5, pp. 3371--3384, May 2017.
 
 \bibitem{ORANArch}
@@ -88,8 +88,8 @@ L.~Gavrilovska, V.~Rakovic, and D.~Denkovski, ``From {Cloud} {RAN} to {Open}
 
 \bibitem{kazemifard2021minimum}
 N.~Kazemifard and V.~Shah-Mansouri, ``Minimum delay function placement and
-  resource allocation for open ran (o-ran) {5G} networks,'' \emph{Computer
-  Networks}, vol. 188, p. 107809, Apr. 2021.
+  resource allocation for {Open} {RAN} {(O-RAN)} {5G} networks,''
+  \emph{Computer Networks}, vol. 188, p. 107809, Apr. 2021.
 
 \bibitem{feng2020dynamic}
 L.~Feng, Y.~Zi, W.~Li, F.~Zhou, P.~Yu, and M.~Kadoch, ``Dynamic resource
@@ -119,7 +119,7 @@ S.~D'Oro, F.~Restuccia, and T.~Melodia, ``Toward operator-to-waveform {5G}
   no.~4, pp. 18--23, Apr. 2020.
 
 \bibitem{yang2020should}
-P.~Yang, X.~Xi, T.~Q. Quek, J.~Chen, X.~Cao, and D.~Wu, ``How should i
+P.~Yang, X.~Xi, T.~Q. Quek, J.~Chen, X.~Cao, and D.~Wu, ``How should {I}
   orchestrate resources of my slices for bursty {URLLC} service provision?''
   \emph{IEEE Transactions on Communications}, vol.~69, no.~2, pp. 1134--1146,
   Nov. 2020.
@@ -128,12 +128,6 @@ P.~Yang, X.~Xi, T.~Q. Quek, J.~Chen, X.~Cao, and D.~Wu, ``How should i
 F.~Saggese, M.~Moretti, and P.~Popovski, ``Power minimization of downlink
   spectrum slicing for {eMBB} and {URLLC} users,'' \emph{arXiv preprint
   arXiv:2106.08847}, Jun. 2021.
-
-\bibitem{korrai2020ran}
-P.~Korrai, E.~Lagunas, S.~K. Sharma, S.~Chatzinotas, A.~Bandi, and
-  B.~Ottersten, ``A ran resource slicing mechanism for multiplexing of embb and
-  urllc services in ofdma based {5G} wireless networks,'' \emph{IEEE Access},
-  vol.~8, pp. 45\,674--45\,688, Mar. 2020.
 
 \bibitem{guo2016exploiting}
 K.~Guo, M.~Sheng, J.~Tang, T.~Q. Quek, and Z.~Qiu, ``Exploiting hybrid
@@ -160,7 +154,7 @@ S.~Ali, A.~Ahmad, and A.~Khan, ``Energy-efficient resource allocation and {RRH}
 
 \bibitem{ali2019energy1}
 S.~Ali, A.~Ahmad, Y.~Faheem, M.~Altaf, and H.~Ullah, ``Energy-efficient
-  {RRH-association} and resource allocation in d2d enabled multi-tier {5G}
+  {RRH-association} and resource allocation in {D2D} enabled multi-tier {5G}
   {C-RAN},'' \emph{Telecommunication Systems}, vol.~74, no.~2, pp. 1--15, Jun.
   2019.
 
@@ -176,7 +170,7 @@ N.~Amani, S.~Parsaeefard, H.~Taheri, and H.~Pedram, ``{Power-Efficient}
 
 \bibitem{han2019research}
 B.~Han, L.~Liu, J.~Zhang, C.~Tao, C.~Qiu, T.~Zhou, Z.~Li, and Z.~Piao,
-  ``Research on resource migration based on novel rrh-bbu mapping in cloud
+  ``Research on resource migration based on novel {RRH-BBU} mapping in cloud
   radio access network for {HSR} scenarios,'' \emph{IEEE Access}, vol.~7, pp.
   108\,542--108\,550, Aug. 2019.
 
@@ -187,7 +181,7 @@ S.~Niknam, A.~Roy, H.~S. Dhillon, S.~Singh, R.~Banerji, J.~H. Reed, N.~Saxena,
 
 \bibitem{both2021system}
 C.~B. Both, J.~Borges, L.~Gon{\c{c}}alves, C.~Nahum, C.~Macedo, A.~Klautau, and
-  K.~Cardoso, ``System intelligence for uav-based mission critical with
+  K.~Cardoso, ``System intelligence for {UAV-Based} mission critical with
   challenging {5G}/b{5G} connectivity,'' \emph{arXiv preprint
   arXiv:2102.02318}, Feb. 2021.
 
@@ -196,7 +190,7 @@ O.-R. W.~G. 2, ``{AI/ML} workflow description and requirements,'' O-RAN
   Alliance, Tech. Rep., Mar. 2020.
 
 \bibitem{lin2021toward}
-B.-S. Lin, ``Toward an {AI-Enabled} {O-RAN-based} and {SDN/NFV-driven} {5G}\&
+B.-S. Lin, ``Toward an {AI-Enabled} {O-RAN-based} and {SDN/NFV-driven} {5G} and
   {IoT} network era,'' \emph{Network and Communication Technologies}, vol.~6,
   no.~1, pp. 6--15, Jun. 2021.
 
@@ -208,7 +202,7 @@ J.~Mei, X.~Wang, K.~Zheng, G.~Boudreau, A.~B. Sediq, and H.~Abou-Zeid,
 
 \bibitem{oranD1}
 \BIBentryALTinterwordspacing
-J.~Cavazos. (2020) {{5G}} testing: What is o-ran? – part 2. [Online].
+J.~Cavazos. (2020) {{5G}} testing: What is {O-RAN}? – part 2. [Online].
   Available: \url{https://blogs.keysight.com/blogs/inds.entry.html}
 \BIBentrySTDinterwordspacing
 
@@ -218,8 +212,9 @@ D.~Marabissi and R.~Fantacci, ``Highly flexible {RAN} slicing approach to
   97\,130--97\,142, 2019.
 
 \bibitem{ETSI2}
-ETSI-TS-128-530-V15.0.0, ``{5G};management and orchestration; concepts, use
-  cases and requirements (3gpp ts 28.530 version 15.0.0 release 15),'' 2018-10.
+ETSI-TS-128-530-V15.0.0, ``{5G} management and orchestration; concepts, use
+  cases and requirements ({3GPP} ts 28.530 version 15.0.0 release 15),''
+  2018-10.
 
 \bibitem{akccay2007greedy}
 Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
@@ -228,20 +223,21 @@ Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
 
 \bibitem{ETSI1}
 ETSI-TR-138-913-V14.3.0, ``{5G}; study on scenarios and requirements for next
-  generation access technologies(3gpp tr 38.913 version 14.3.0 release 14),''
+  generation access technologies({3GPP} tr 38.913 version 14.3.0 release 14),''
   2017-10.
 
 \bibitem{3GPPTS1}
-3GPP-TS-36.104-V13.3.0, ``Evolved universal terrestrial radio access (e-utra);
-  base station (bs) radio transmission and reception (release= 13),'' 2016-03.
+{3GPP}-TS-36.104-V13.3.0, ``Evolved universal terrestrial radio access
+  ({E-UTRA}); base station ({BS}) radio transmission and reception (release=
+  13),'' 2016-03.
 
 \bibitem{3GPPTS2}
-3GPP-TR-36.931-V13.0.0, ``Evolved universal terrestrial radio access (e-utra);
-  radio frequency (rf) requirements for lte pico node b (release 13),''
-  2016-01.
+{3GPP}-TR-36.931-V13.0.0, ``Evolved universal terrestrial radio access
+  ({E-UTRA}); radio frequency ({RF}) requirements for {LTE} pico {Node} {B}
+  (release 13),'' 2016-01.
 
 \bibitem{IMT}
-E.~Mohyeldin, ``Minimum technical performance requirements for imt-2020 radio
+E.~Mohyeldin, ``Minimum technical performance requirements for {IMT}-2020 radio
   interface(s),'' 2020.
 
 \end{thebibliography}
