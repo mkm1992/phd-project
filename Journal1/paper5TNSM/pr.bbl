@@ -62,11 +62,6 @@ R.~Mijumbi, J.~Serrat, J.-L. Gorricho, N.~Bouten, F.~De~Turck, and R.~Boutaba,
   challenges,'' \emph{IEEE Communications surveys \& tutorials}, vol.~18,
   no.~1, pp. 236--262, Sep. 2015.
 
-\bibitem{luo2020online}
-Z.~Luo and C.~Wu, ``An online algorithm for {VNF} service chain scaling in
-  datacenters,'' \emph{IEEE/ACM Transactions on Networking}, vol.~28, no.~3,
-  pp. 1061--1073, Mar. 2020.
-
 \bibitem{lee2018dynamic}
 Y.~L. Lee, J.~Loo, T.~C. Chuah, and L.-C. Wang, ``Dynamic network slicing for
   multitenant heterogeneous cloud radio access networks,'' \emph{IEEE
@@ -159,7 +154,7 @@ S.~Ali, A.~Ahmad, Y.~Faheem, M.~Altaf, and H.~Ullah, ``Energy-efficient
   2019.
 
 \bibitem{ali2018joint}
-S.~Ali, A.~Ahmad, R.~Iqbal, S.~Saleem, and T.~Umer, ``Joint rrh-association,
+S.~Ali, A.~Ahmad, R.~Iqbal, S.~Saleem, and T.~Umer, ``Joint {RRH}-association,
   sub-channel assignment and power allocation in multi-tier {{5G}} {C-RANs},''
   \emph{IEEE Access}, vol.~6, pp. 34\,393--34\,402, Jun. 2018.
 
@@ -194,6 +189,11 @@ B.-S. Lin, ``Toward an {AI-Enabled} {O-RAN-based} and {SDN/NFV-driven} {5G} and
   {IoT} network era,'' \emph{Network and Communication Technologies}, vol.~6,
   no.~1, pp. 6--15, Jun. 2021.
 
+\bibitem{huang2013user}
+S.~Huang, H.~Yin, J.~Wu, and V.~C. Leung, ``User selection for multiuser mimo
+  downlink with zero-forcing beamforming,'' \emph{IEEE Transactions on
+  Vehicular Technology}, vol.~62, no.~7, pp. 3084--3097, 2013.
+
 \bibitem{mei2021intelligent}
 J.~Mei, X.~Wang, K.~Zheng, G.~Boudreau, A.~B. Sediq, and H.~Abou-Zeid,
   ``Intelligent radio access network slicing for service provisioning in {6G}:
@@ -212,8 +212,8 @@ D.~Marabissi and R.~Fantacci, ``Highly flexible {RAN} slicing approach to
   97\,130--97\,142, 2019.
 
 \bibitem{ETSI2}
-ETSI-TS-128-530-V15.0.0, ``{5G} management and orchestration; concepts, use
-  cases and requirements ({3GPP} ts 28.530 version 15.0.0 release 15),''
+ETSI-{TS}-128-530-V15.0.0, ``{5G} management and orchestration; concepts, use
+  cases and requirements ({3GPP} {TS} 28.530 version 15.0.0 release 15),''
   2018-10.
 
 \bibitem{akccay2007greedy}
@@ -222,17 +222,17 @@ Y.~Ak{\c{c}}ay, H.~Li, and S.~H. Xu, ``Greedy algorithm for the general
   vol. 150, no.~1, pp. 17--29, Dec. 2007.
 
 \bibitem{ETSI1}
-ETSI-TR-138-913-V14.3.0, ``{5G}; study on scenarios and requirements for next
-  generation access technologies({3GPP} tr 38.913 version 14.3.0 release 14),''
-  2017-10.
+ETSI-{TR}-138-913-V14.3.0, ``{5G}; study on scenarios and requirements for next
+  generation access technologies({3GPP} {TR} 38.913 version 14.3.0 release
+  14),'' 2017-10.
 
 \bibitem{3GPPTS1}
-{3GPP}-TS-36.104-V13.3.0, ``Evolved universal terrestrial radio access
+{3GPP}-{TS}-36.104-V13.3.0, ``Evolved universal terrestrial radio access
   ({E-UTRA}); base station ({BS}) radio transmission and reception (release=
   13),'' 2016-03.
 
 \bibitem{3GPPTS2}
-{3GPP}-TR-36.931-V13.0.0, ``Evolved universal terrestrial radio access
+{3GPP}-{TR}-36.931-V13.0.0, ``Evolved universal terrestrial radio access
   ({E-UTRA}); radio frequency ({RF}) requirements for {LTE} pico {Node} {B}
   (release 13),'' 2016-01.
 

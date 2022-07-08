@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  6 JUL 2022 20:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  8 JUL 2022 14:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1126,34 +1126,44 @@ Underfull \vbox (badness 10000) detected at line 204
 [5
 
 ]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 227--233
+Overfull \hbox (0.29094pt too wide) in alignment at lines 223--229
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 233
+Underfull \vbox (badness 10000) detected at line 229
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 237--243
+Overfull \hbox (0.29094pt too wide) in alignment at lines 233--239
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 243
+Underfull \vbox (badness 10000) detected at line 239
+ []
+
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 253--264
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 264
  []
 
 [6]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 259--270
+Overfull \hbox (0.29094pt too wide) in alignment at lines 283--289
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 270
+Underfull \vbox (badness 10000) detected at line 289
  []
 
 
-LaTeX Warning: Reference `fig:c11' on page 7 undefined on input line 282.
+Overfull \vbox (4.06578pt too high) has occurred while \output is active []
+
 
 [7]
 Overfull \hbox (0.29094pt too wide) in alignment at lines 293--299
@@ -1165,54 +1175,41 @@ Underfull \vbox (badness 10000) detected at line 299
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 303--309
+Overfull \hbox (0.29094pt too wide) in alignment at lines 311--317
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 309
- []
-
-[8]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 321--327
- [] 
+Underfull \vbox (badness 10000) detected at line 317
  []
 
 
-Underfull \vbox (badness 10000) detected at line 327
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
 
  []
 
-[9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 331.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 331.
+[8] [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 321.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 321.
  (./Response.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 331.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 331.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 321.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 321.
 Package rerunfilecheck Info: File `Response.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 331.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 321.
  ) 
 Here is how much of TeX's memory you used:
- 20167 strings out of 492649
- 365958 string characters out of 6133384
+ 20166 strings out of 492649
+ 365949 string characters out of 6133384
  554861 words of memory out of 5000000
- 23622 multiletter control sequences out of 15000+600000
+ 23621 multiletter control sequences out of 15000+600000
  8556 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,7n,59p,920b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,7n,59p,920b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Response.pdf (9 pages, 61910 bytes).
+Output written on Response.pdf (9 pages, 59922 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  7 JUL 2022 23:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  9 JUL 2022 02:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -726,9 +726,6 @@ LaTeX Warning: Unused global option(s):
 
 LaTeX Warning: Label `constraints' multiply defined.
 
-
-LaTeX Warning: Label `table:1a' multiply defined.
-
 )
 \openout1 = `pr.aux'.
 
@@ -908,9 +905,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: finalDraw1.pdf Graphic file (type pdf)
 <use finalDraw1.pdf>
 Package pdftex.def Info: finalDraw1.pdf  used on input line 126.
-(pdftex.def)             Requested size: 285.37502pt x 158.54167pt.
+(pdftex.def)             Requested size: 263.42395pt x 146.34663pt.
 
-Overfull \hbox (44.4653pt too wide) in paragraph at lines 126--129
+Overfull \hbox (22.51424pt too wide) in paragraph at lines 126--129
  [][] 
  []
 
@@ -923,47 +920,42 @@ Non-PDF special ignored!
  <./finalDraw1.pdf>] [2]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 300.
+d on input line 316.
 
 [3]
-<Interference.png, id=54, 584.1825pt x 268.75406pt>
-File: Interference.png Graphic file (type png)
-<use Interference.png>
-Package pdftex.def Info: Interference.png  used on input line 326.
-(pdftex.def)             Requested size: 204.46693pt x 94.06532pt.
-
-Overfull \hbox (1.93713pt too wide) detected at line 341
+Overfull \hbox (1.93713pt too wide) detected at line 352
 []
  []
 
-<Qdiag.png, id=56, 345.29pt x 121.45375pt>
+
+Underfull \vbox (badness 3260) has occurred while \output is active []
+
+<Qdiag.png, id=57, 345.29pt x 121.45375pt>
 File: Qdiag.png Graphic file (type png)
 <use Qdiag.png>
-Package pdftex.def Info: Qdiag.png  used on input line 362.
+Package pdftex.def Info: Qdiag.png  used on input line 364.
 (pdftex.def)             Requested size: 155.37904pt x 54.65367pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <./Interference.png> <./Qdiag.png>]
-LaTeX Font Info:    Try loading font information for U+euf on input line 389.
+LaTeX Font Info:    Try loading font information for U+euf on input line 390.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [5] [6]
+) [4 <./Qdiag.png>]
+[5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-Underfull \hbox (badness 10000) in paragraph at lines 631--634
+ [6]
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 632--635
 []\T1/ptm/b/n/10 Lemma 1. []\T1/ptm/m/it/10 The op-ti-mal num-ber of VNFs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--634
+Underfull \hbox (badness 10000) in paragraph at lines 632--635
 \T1/ptm/m/it/10 in each slice s can be achieved by the
  []
 
 
-Underfull \hbox (badness 4647) in paragraph at lines 631--634
+Underfull \hbox (badness 4647) in paragraph at lines 632--635
 \OML/cmm/m/it/10 M[] \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 f\OT1/cmtt/m/n/10 M[]
 \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 1\OML/c
 mm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; :::; U[]\OMS/cmsy/m/n/10 g 8\O
@@ -971,39 +963,33 @@ ML/cmm/m/it/10 s$\T1/ptm/m/it/10 . where,
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 631--634
+Underfull \hbox (badness 1466) in paragraph at lines 632--635
 \OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/10 = []$ \T1/ptm/m/it/10 for each UE
  []
 
-
-Underfull \vbox (badness 3128) has occurred while \output is active []
-
- [8]
-Underfull \hbox (badness 10000) in paragraph at lines 684--692
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 685--693
 \T1/ptm/m/n/10 In ad-di-tion, we de-note $\OT1/cmtt/m/n/10 M[] \OT1/cmr/m/n/10 
 =
  []
 
 
-Underfull \hbox (badness 1902) in paragraph at lines 684--692
+Underfull \hbox (badness 1902) in paragraph at lines 685--693
 []$ \T1/ptm/m/n/10 for each UE $\OML/cmm/m/it/10 i$ \T1/ptm/m/n/10 in slice
  []
 
 
-Underfull \vbox (badness 1226) has occurred while \output is active []
-
- [9]
-Underfull \hbox (badness 10000) in paragraph at lines 768--770
+Underfull \hbox (badness 10000) in paragraph at lines 767--769
 \T1/ptm/m/n/10 where $\U/euf/m/n/10 Z[] \OT1/cmr/m/n/10 = (\U/euf/m/n/10 F[] \O
 MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
  []
 
-[10]
-<cell.pdf, id=98, 463.7325pt x 406.3983pt>
+[9] [10]
+<cell.pdf, id=96, 463.7325pt x 406.3983pt>
 File: cell.pdf Graphic file (type pdf)
 <use cell.pdf>
 Package pdftex.def Info: cell.pdf  used on input line 933.
-(pdftex.def)             Requested size: 185.4897pt x 162.55644pt.
+(pdftex.def)             Requested size: 171.57832pt x 150.365pt.
  [11 <./cell.pdf>]
 Package epstopdf Info: Source file: <fig/Arate_ue1_1n.eps>
 (epstopdf)                    date: 2022-07-06 23:32:50
@@ -1013,13 +999,13 @@ Package epstopdf Info: Source file: <fig/Arate_ue1_1n.eps>
 (epstopdf)                    size: 11269 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/Arate_ue1_1n-eps-conve
 rted-to.pdf fig/Arate_ue1_1n.eps>
-(epstopdf)             \includegraphics on input line 1017.
+(epstopdf)             \includegraphics on input line 1019.
 Package epstopdf Info: Output file is already uptodate.
-<fig/Arate_ue1_1n-eps-converted-to.pdf, id=123, 420.57124pt x 280.04625pt>
+<fig/Arate_ue1_1n-eps-converted-to.pdf, id=121, 420.57124pt x 280.04625pt>
 File: fig/Arate_ue1_1n-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/Arate_ue1_1n-eps-converted-to.pdf>
 Package pdftex.def Info: fig/Arate_ue1_1n-eps-converted-to.pdf  used on input l
-ine 1017.
+ine 1019.
 (pdftex.def)             Requested size: 210.28511pt x 140.02277pt.
 Package epstopdf Info: Source file: <fig/vnfNum1n.eps>
 (epstopdf)                    date: 2022-07-06 23:40:38
@@ -1029,13 +1015,13 @@ Package epstopdf Info: Source file: <fig/vnfNum1n.eps>
 (epstopdf)                    size: 11570 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/vnfNum1n-eps-converted
 -to.pdf fig/vnfNum1n.eps>
-(epstopdf)             \includegraphics on input line 1025.
+(epstopdf)             \includegraphics on input line 1027.
 Package epstopdf Info: Output file is already uptodate.
-<fig/vnfNum1n-eps-converted-to.pdf, id=124, 420.57124pt x 280.04625pt>
+<fig/vnfNum1n-eps-converted-to.pdf, id=122, 420.57124pt x 280.04625pt>
 File: fig/vnfNum1n-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/vnfNum1n-eps-converted-to.pdf>
 Package pdftex.def Info: fig/vnfNum1n-eps-converted-to.pdf  used on input line 
-1025.
+1027.
 (pdftex.def)             Requested size: 210.28511pt x 140.02277pt.
 Package epstopdf Info: Source file: <fig/RatePower1n.eps>
 (epstopdf)                    date: 2022-07-06 23:47:16
@@ -1045,13 +1031,13 @@ Package epstopdf Info: Source file: <fig/RatePower1n.eps>
 (epstopdf)                    size: 9138 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/RatePower1n-eps-conver
 ted-to.pdf fig/RatePower1n.eps>
-(epstopdf)             \includegraphics on input line 1078.
+(epstopdf)             \includegraphics on input line 1080.
 Package epstopdf Info: Output file is already uptodate.
-<fig/RatePower1n-eps-converted-to.pdf, id=125, 417.56pt x 279.0425pt>
+<fig/RatePower1n-eps-converted-to.pdf, id=123, 417.56pt x 279.0425pt>
 File: fig/RatePower1n-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/RatePower1n-eps-converted-to.pdf>
 Package pdftex.def Info: fig/RatePower1n-eps-converted-to.pdf  used on input li
-ne 1078.
+ne 1080.
 (pdftex.def)             Requested size: 208.77948pt x 139.5209pt.
 Package epstopdf Info: Source file: <fig/delay_newn.eps>
 (epstopdf)                    date: 2022-07-07 00:06:14
@@ -1061,13 +1047,13 @@ Package epstopdf Info: Source file: <fig/delay_newn.eps>
 (epstopdf)                    size: 9996 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/delay_newn-eps-convert
 ed-to.pdf fig/delay_newn.eps>
-(epstopdf)             \includegraphics on input line 1085.
+(epstopdf)             \includegraphics on input line 1087.
 Package epstopdf Info: Output file is already uptodate.
-<fig/delay_newn-eps-converted-to.pdf, id=126, 417.56pt x 286.06876pt>
+<fig/delay_newn-eps-converted-to.pdf, id=124, 417.56pt x 286.06876pt>
 File: fig/delay_newn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/delay_newn-eps-converted-to.pdf>
 Package pdftex.def Info: fig/delay_newn-eps-converted-to.pdf  used on input lin
-e 1085.
+e 1087.
 (pdftex.def)             Requested size: 208.77948pt x 143.03403pt.
 Package epstopdf Info: Source file: <fig/delay1_newn.eps>
 (epstopdf)                    date: 2022-07-07 15:35:39
@@ -1077,30 +1063,30 @@ Package epstopdf Info: Source file: <fig/delay1_newn.eps>
 (epstopdf)                    size: 9739 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/delay1_newn-eps-conver
 ted-to.pdf fig/delay1_newn.eps>
-(epstopdf)             \includegraphics on input line 1128.
+(epstopdf)             \includegraphics on input line 1130.
 Package epstopdf Info: Output file is already uptodate.
-<fig/delay1_newn-eps-converted-to.pdf, id=127, 420.57124pt x 285.065pt>
+<fig/delay1_newn-eps-converted-to.pdf, id=125, 420.57124pt x 285.065pt>
 File: fig/delay1_newn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/delay1_newn-eps-converted-to.pdf>
 Package pdftex.def Info: fig/delay1_newn-eps-converted-to.pdf  used on input li
-ne 1128.
+ne 1130.
 (pdftex.def)             Requested size: 210.28511pt x 142.53215pt.
 Package epstopdf Info: Source file: <fig/AmmTCpowern.eps>
-(epstopdf)                    date: 2022-07-07 22:32:17
-(epstopdf)                    size: 21185 bytes
+(epstopdf)                    date: 2022-07-09 02:16:50
+(epstopdf)                    size: 21051 bytes
 (epstopdf)             Output file: <fig/AmmTCpowern-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-07-07 22:32:45
-(epstopdf)                    size: 9407 bytes
+(epstopdf)                    date: 2022-07-09 02:17:12
+(epstopdf)                    size: 9371 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/AmmTCpowern-eps-conver
 ted-to.pdf fig/AmmTCpowern.eps>
-(epstopdf)             \includegraphics on input line 1135.
+(epstopdf)             \includegraphics on input line 1137.
 Package epstopdf Info: Output file is already uptodate.
-<fig/AmmTCpowern-eps-converted-to.pdf, id=128, 422.57875pt x 278.03876pt>
+<fig/AmmTCpowern-eps-converted-to.pdf, id=126, 415.5525pt x 276.03125pt>
 File: fig/AmmTCpowern-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/AmmTCpowern-eps-converted-to.pdf>
 Package pdftex.def Info: fig/AmmTCpowern-eps-converted-to.pdf  used on input li
-ne 1135.
-(pdftex.def)             Requested size: 211.28885pt x 139.01903pt.
+ne 1137.
+(pdftex.def)             Requested size: 207.77574pt x 138.01527pt.
 Package epstopdf Info: Source file: <fig/priorityLastn.eps>
 (epstopdf)                    date: 2022-07-07 22:40:33
 (epstopdf)                    size: 20121 bytes
@@ -1109,17 +1095,18 @@ Package epstopdf Info: Source file: <fig/priorityLastn.eps>
 (epstopdf)                    size: 8797 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/priorityLastn-eps-conv
 erted-to.pdf fig/priorityLastn.eps>
-(epstopdf)             \includegraphics on input line 1160.
+(epstopdf)             \includegraphics on input line 1162.
 Package epstopdf Info: Output file is already uptodate.
-<fig/priorityLastn-eps-converted-to.pdf, id=129, 420.57124pt x 280.04625pt>
+<fig/priorityLastn-eps-converted-to.pdf, id=127, 420.57124pt x 280.04625pt>
 File: fig/priorityLastn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/priorityLastn-eps-converted-to.pdf>
 Package pdftex.def Info: fig/priorityLastn-eps-converted-to.pdf  used on input 
-line 1160.
+line 1162.
 (pdftex.def)             Requested size: 210.28511pt x 140.02277pt.
- [12] [13 <./fig/Arate_ue1_1n-eps-converted-to.pdf> <./fig/vnfNum1n-eps-convert
-ed-to.pdf> <./fig/RatePower1n-eps-converted-to.pdf> <./fig/delay_newn-eps-conve
-rted-to.pdf> <./fig/delay1_newn-eps-converted-to.pdf>]
+ [12 <./fig/Arate_ue1_1n-eps-converted-to.pdf>]
+[13 <./fig/vnfNum1n-eps-converted-to.pdf> <./fig/RatePower1n-eps-converted-to.p
+df> <./fig/delay_newn-eps-converted-to.pdf> <./fig/delay1_newn-eps-converted-to
+.pdf> <./fig/AmmTCpowern-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/itern.eps>
 (epstopdf)                    date: 2022-07-07 22:49:30
 (epstopdf)                    size: 27351 bytes
@@ -1128,13 +1115,13 @@ Package epstopdf Info: Source file: <fig/itern.eps>
 (epstopdf)                    size: 9524 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/itern-eps-converted-to
 .pdf fig/itern.eps>
-(epstopdf)             \includegraphics on input line 1220.
+(epstopdf)             \includegraphics on input line 1222.
 Package epstopdf Info: Output file is already uptodate.
-<fig/itern-eps-converted-to.pdf, id=165, 422.57875pt x 277.035pt>
+<fig/itern-eps-converted-to.pdf, id=168, 422.57875pt x 277.035pt>
 File: fig/itern-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/itern-eps-converted-to.pdf>
 Package pdftex.def Info: fig/itern-eps-converted-to.pdf  used on input line 122
-0.
+2.
 (pdftex.def)             Requested size: 211.28885pt x 138.51715pt.
 Package epstopdf Info: Source file: <fig/optimal1n.eps>
 (epstopdf)                    date: 2022-07-07 22:53:34
@@ -1144,13 +1131,13 @@ Package epstopdf Info: Source file: <fig/optimal1n.eps>
 (epstopdf)                    size: 9204 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/optimal1n-eps-converte
 d-to.pdf fig/optimal1n.eps>
-(epstopdf)             \includegraphics on input line 1227.
+(epstopdf)             \includegraphics on input line 1229.
 Package epstopdf Info: Output file is already uptodate.
-<fig/optimal1n-eps-converted-to.pdf, id=166, 422.57875pt x 277.035pt>
+<fig/optimal1n-eps-converted-to.pdf, id=169, 422.57875pt x 277.035pt>
 File: fig/optimal1n-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/optimal1n-eps-converted-to.pdf>
 Package pdftex.def Info: fig/optimal1n-eps-converted-to.pdf  used on input line
- 1227.
+ 1229.
 (pdftex.def)             Requested size: 211.28885pt x 138.51715pt.
 Package epstopdf Info: Source file: <fig/interF_newn.eps>
 (epstopdf)                    date: 2022-07-07 22:59:35
@@ -1160,38 +1147,33 @@ Package epstopdf Info: Source file: <fig/interF_newn.eps>
 (epstopdf)                    size: 9602 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/interF_newn-eps-conver
 ted-to.pdf fig/interF_newn.eps>
-(epstopdf)             \includegraphics on input line 1252.
+(epstopdf)             \includegraphics on input line 1254.
 Package epstopdf Info: Output file is already uptodate.
-<fig/interF_newn-eps-converted-to.pdf, id=167, 421.575pt x 278.03876pt>
+<fig/interF_newn-eps-converted-to.pdf, id=170, 421.575pt x 278.03876pt>
 File: fig/interF_newn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/interF_newn-eps-converted-to.pdf>
 Package pdftex.def Info: fig/interF_newn-eps-converted-to.pdf  used on input li
-ne 1252.
+ne 1254.
 (pdftex.def)             Requested size: 210.78697pt x 139.01903pt.
 Package epstopdf Info: Source file: <fig/FAn.eps>
 (epstopdf)                    date: 2022-07-07 23:02:11
 (epstopdf)                    size: 19658 bytes
 (epstopdf)             Output file: <fig/FAn-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-07-07 23:02:30
+(epstopdf)                    size: 8904 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FAn-eps-converted-to.p
 df fig/FAn.eps>
-(epstopdf)             \includegraphics on input line 1259.
-runsystem(repstopdf --outfile=fig/FAn-eps-converted-to.pdf fig/FAn.eps)...execu
-ted safely (allowed).
-
-Package epstopdf Info: Result file: <fig/FAn-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-07-07 23:02:30
-(epstopdf)                    size: 8904 bytes.
-<fig/FAn-eps-converted-to.pdf, id=168, 415.5525pt x 276.03125pt>
+(epstopdf)             \includegraphics on input line 1261.
+Package epstopdf Info: Output file is already uptodate.
+<fig/FAn-eps-converted-to.pdf, id=171, 415.5525pt x 276.03125pt>
 File: fig/FAn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/FAn-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FAn-eps-converted-to.pdf  used on input line 1259.
+Package pdftex.def Info: fig/FAn-eps-converted-to.pdf  used on input line 1261.
 
 (pdftex.def)             Requested size: 207.77574pt x 138.01527pt.
-
-[14 <./fig/AmmTCpowern-eps-converted-to.pdf> <./fig/priorityLastn-eps-converted
--to.pdf> <./fig/itern-eps-converted-to.pdf> <./fig/optimal1n-eps-converted-to.p
-df>] (./pr.bbl [15 <./fig/interF_newn-eps-converted-to.pdf> <./fig/FAn-eps-conv
-erted-to.pdf>]) [16
+ [14 <./fig/priorityLastn-eps-converted-to.pdf> <./fig/itern-eps-converted-to.p
+df> <./fig/optimal1n-eps-converted-to.pdf> <./fig/interF_newn-eps-converted-to.
+pdf> <./fig/FAn-eps-converted-to.pdf>] (./pr.bbl [15]) [16
 
 ] (./pr.aux)
 
@@ -1199,13 +1181,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9880 strings out of 492649
- 148106 string characters out of 6133384
- 246315 words of memory out of 5000000
- 13497 multiletter control sequences out of 15000+600000
+ 9875 strings out of 492649
+ 148008 string characters out of 6133384
+ 246314 words of memory out of 5000000
+ 13493 multiletter control sequences out of 15000+600000
  125733 words of font info for 167 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 41i,21n,77p,1398b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,21n,77p,1398b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
@@ -1235,10 +1217,10 @@ exlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/
 mf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type
 1/urw/times/utmbi8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (16 pages, 609674 bytes).
+Output written on pr.pdf (16 pages, 549934 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
+ 308 PDF objects out of 1000 (max. 8388607)
  221 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

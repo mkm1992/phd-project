@@ -208,22 +208,18 @@ We would like to thank the reviewer for the careful and thorough reading of our 
 We changed the introduction and add it below
 
 
-Network slicing is the most effective solution for 5G wireless cellular networks to achieve the desired level of QoS (i.e., quality, delay, power, etc.). Network slicing can provide resource isolation for various services, increasing the system's efficiency. This architecture has several implementations, including core slicing, radio access network (RAN) slicing, and both for different 5G services. The network slicing concept has the potential to serve multiple services with varying architectures and quality of service (QoS) requirements.
+%\subsection{State Of The Arts}
+Network slicing is a key technology in 5G wireless systems. Specifically, network slicing provides the isolation of network resources into slices, e.g., via core slicing and/or radio access network (RAN) slicing, for serving multiple and heterogeneous service classes [1]–[3]. There are three main service classes in 5G, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Depending on their corresponding quality of service (QoS) requirements, each service is assigned to a slice of the network.
+For instance, the eMBB service demands high capacity and throughput,  e.g., 8K video streaming and immersive gaming. Meanwhile, the URLLC service, leveraged, e.g., by autonomous vehicles, Tactile Internet, and remote surgery services, is concerned with providing ultra-reliable and low-latency connectivity. Finally, mMTC services require connectivity for a large number of Internet of Things (IoT) devices that transmit small payloads [4]–[6].
+%\cite{dogra2020survey,kassab2018coexistence,alsenwi2021intelligent,SL}.}
 
-Recent discussion of 5G wireless systems has been around three services, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Depending on QoS, each service requires its slice of the network.
-The eMBB service fulfills the demand for high capacity and throughput. Moreover, the URLLC service offers autonomous vehicles, tactile internet, remote surgery services, and other high-quality and low latency services. However, mMTC comprises a large number of internet of things (IoT) devices that transmit small payloads
-[1]–[6].
-Nevertheless, the existing radio access network (RAN) architecture lacks adequate flexibility and openness to manage these demands for various services simultaneously. Therefore, development in RAN architecture is needed to support these requirements for different services simultaneously. Open radio access network (O-RAN) is the new RAN generation introduced to deal with these issues.
+Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is schematically represented in Fig. 1, is introduced to deal with these issues.
 %This paper considers several user equipments (UEs) requesting one of these types of services with different QoS in the O-RAN architecture. We want to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.
 %This paper aims to design a RAN slicing technology for the O-RAN architecture. 
 %O-RAN offers machine learning techniques based on the requirement for an intelligent wireless network for the next generation of RAN systems. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC-Near Real-Time, implement the algorithms for network intelligence
 
-The hardware is decoupled from the software in the O-RAN architecture, and each component is implemented as a virtual network function (VNF) that can be deployed on a virtual machine (VM) or container. 
-Virtual network functions (VNF) are system function blocks in network function virtualization (NFV) systems. The concept of NFV refers to the separation of network software and hardware elements. Therefore network functions can run on commodity hardware. The NFV technology offers to execute VNFs as VMs or containers on a cloud environment [7], [8].
-As a result, some O-RAN components defined in section III, such as user plane function (UPF), O-RAN central unit (O-CU), O-RAN distributed unit O-DU, and RAN Intelligent Controller (RIC)-near real-time, are near real-time virtualized and implemented as VNFs. VNFs can also be deployed as virtual machines (VMs) or containers.
-
-This study presents a technique for creating isolated network slices outlines in O-RAN architecture to provide the specific QoS for eMBB, URLLC, and mMTC. As well as baseband resources, the number of VNFs is also taken into account to reduce latency, especially for URLLC services.
-
+A key feature of the O-RAN architecture is that the hardware is disaggregated from the software, leading to network function virtualization (NFV). Additionally, each component is implemented as a virtual network function (VNF), the system function block in NFV, that can be deployed on a virtual machine (VM) or container [7],[8].
+As a result, some O-RAN components defined in Section III, such as user plane function (UPF), O-RAN central unit (O-CU), O-RAN distributed unit (O-DU), and RAN intelligent controller (RIC)-near real-time, are virtualized and implemented as VNFs.
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -245,17 +241,15 @@ I would appreciate your comments to enhance and clarify this section of the pape
 \noindent \textbf{Response:\\}
 We add the motivation subsection and answer these questions in it. Below we rewrite this section.
 
+The problem of finding the optimal resource allocation, independently of the specific RAN technology, is vital for reducing the cost of the system and improving the QoS of the user equipments (UEs). In case of 5G systems, there are many related significant challenges such as interference alignment, limited capacity of fronthaul links, energy restrictions on virtual machines, etc [2],[9],[10]. 
 
-The studies in  [9]–[11] have investigated resource allocation in C-RAN by considering the limitation on power and delay, respectively. However, this architecture is inefficient whenever we have different services with different QoS simultaneously. Additionally, RAN slicing requires a more flexible and open architecture. Therefore, we need a new architecture that supports slicing to implement RAN slicing for various services. O-RAN architecture has emerged as
-a new architecture that can serve different services simultaneously using RAN slicing. In [2], the RAN slicing is considered for C-RAN architecture for eMBB and URLLC. Nevertheless, the authors did not consider latency for URLLC, which is the main property of the URLLC. 
-Moreover, the authors did not consider the weakness of C-RAN architecture.
-In [12], the authors examine the total delay of the UE in the O-RAN architecture. However, the paper did not consider the different services and other QoS. 
+Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering the power, data rate and delay limitations of a single service. Due to the contemporary need to serve services with different QoS simultaneously, e.g., as in 5G and beyond, this architectural model is inefficient. In this regard, the O-RAN architecture has emerged as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges. 
+One of the fundamental problems lies in attaining a balance between different services with different QoS, resource requirements, and priorities [1],[11]–[13].  
+%\textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
+%Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
+%We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously.}
 
-
-Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
-Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
-We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously. 
-Therefore, we want to study the problem of obtaining the optimal number of VNF, RB assignments, and power allocation to maximize the system's throughput and guarantee the QoS of services. This problem is mixed-integer non-linear programming. Hence, it is difficult to solve and requires some relaxation, convexification, and other methods for obtaining the sub-optimal solution presented in the following sections.
+The purpose of this paper is to design a system in the O-RAN architecture to support the three types of 5G services, namely, eMBB, URLLC, and mMTC via network slicing and resource allocation. Specifically, we aim to maximize the total achievable data rate and satisfy the minimum achievable data rate for eMBB services while meeting the URLLC requirements in the presence of numerous low-power IoT devices.
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -270,24 +264,20 @@ Therefore, we want to study the problem of obtaining the optimal number of VNF, 
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We removed these sentences and rewrite the contribution. Below we write the changes.
+We removed these sentences and rewrite the main contribution. Below we write the modified main contribution.
 
-The purpose of this paper is twofold. First and foremost, our goal is to design a system in the O-RAN structure with three types of services, namely, eMBB, URLLC, and mMTC. Simultaneously, it maximizes the total achievable data rate and meets the conditions of URLLC service low latency in the presence of numerous IoT devices requiring low power, leading to RAN slicing. Second, to model the delay for URLLC systems, we deal with the problem of obtaining the optimal number of VNFs in different layers of the O-RAN system.
-
-In this paper, we would like to enhance the resource utilization of the overall wireless O-RAN system and optimize baseband resource allocation, i.e., power allocation, PRB allocation, O-RUs association, and VNF activation, to develop an isolated network slicing outline for different types of services in an O-RAN platform.
-We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms to achieve these purposes.
-
-Unlike other papers, we concentrate more on the multiservice resource management of the RAN slicing in the openness and flexible O-RAN architecture. We also convexify and solve complex problems using mathematical concepts and obtain optimal resources.
-
-In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied. The main contributions of this paper are summarized as follows:
+This paper aims to optimize the resource utilization of a downlink O-RAN system to develop an isolated network slicing outline for the three 5G service classes.
+We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms.
+%Our paper focuses on the multi-service resource management of the RAN slicing in an open and flexible O-RAN architecture.}
+%In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied.
+ The main contributions of this paper are summarized as follows:
 \begin{itemize}
-\item The paper presents a network slicing model for three 5G services: eMBB, mMTC, and URLLC. We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
-Based on different types of services with different QoS and service priorities, we formulate a problem for allocating baseband resources to maximize the weighted throughput of O-RAN.
-\item The focus of our paper is on the multi-service resource management of the RAN, slicing in the flexibility, openness, and openness of the O-RAN architecture.
-\item We propose an algorithm for resource management in a two-step, with the first-step VNF activation, power allocation, PRB association, and the second-step O-RU association.
-In the first step, we reformulate and simplify the problem to find an upper and lower bound for the number of activated VNFs and use the Lagrangian function and KKT conditions to find optimal power and PRB allocation. For the second step, the problem of O-RU association can be converted to a multiple knapsack problem and solved by the Greedy algorithm.
-\item We talk about the initial point and the feasible region for the numerical results and introduce a fast algorithm that is less complex than our method to realize the feasible region for our problem.
-\item We perform numerical experiments to analyze the performance of the proposed algorithm, which proves to have a higher data rate than both the baseline scheme and data-driven method. Interestingly, our results show that this algorithm performs close to the optimal solution in low interference.
+\item We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
+Based on the three types of 5G service classes, i.e., eMBB, URLLC and mMTC, and their corresponding QoS requirements and service priorities, we formulate a problem for allocating baseband resources such as power, physical resource blocks (PRBs), O-RUs, and activating VNFs to maximize the weighted throughput of the O-RAN.
+\item We propose a two-step resource management algorithm for solving the optimization problem.
+In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.
+\item We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of our problem and introduce a fast algorithm to check its feasibility numerically.
+\item We show via numerical results that the proposed algorithm outperforms two baseline schemes, in terms of achievable data rate and mean total delay. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.
 \end{itemize}
 
 \begin{longtable}{|p{0.975\textwidth}|}
@@ -299,7 +289,9 @@ In the first step, we reformulate and simplify the problem to find an upper and 
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-I changed the background from sub-section to the section part.
+Thank you for this comment. We moved the background from sub-section to the section part and modified it as below.
+
+
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
