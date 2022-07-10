@@ -7,9 +7,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: IEEEabrv.bib
-Database file #2: conf_short.bib
-Database file #3: ref.bib
+Database file #1: ref.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -23,37 +21,37 @@ Warning--empty journal in IMT
 Done.
 You've used 41 entries,
             4087 wiz_defined-function locations,
-            1743 strings with 30229 characters,
-and the built_in function-call counts, 33860 in all, are:
-= -- 2755
-> -- 875
+            1039 strings with 13822 characters,
+and the built_in function-call counts, 29892 in all, are:
+= -- 2593
+> -- 423
 < -- 315
-+ -- 513
-- -- 186
-* -- 1686
-:= -- 4930
++ -- 301
+- -- 80
+* -- 1388
+:= -- 4609
 add.period$ -- 83
 call.type$ -- 41
 change.case$ -- 41
 chr.to.int$ -- 726
 cite$ -- 47
-duplicate$ -- 2398
-empty$ -- 2487
-format.name$ -- 182
-if$ -- 7834
+duplicate$ -- 2158
+empty$ -- 2275
+format.name$ -- 48
+if$ -- 6905
 int.to.chr$ -- 0
 int.to.str$ -- 41
-missing$ -- 406
+missing$ -- 300
 newline$ -- 148
 num.names$ -- 40
-pop$ -- 884
+pop$ -- 538
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2519
+skip$ -- 2309
 stack$ -- 0
 substring$ -- 1850
-swap$ -- 2133
+swap$ -- 1893
 text.length$ -- 73
 text.prefix$ -- 0
 top$ -- 5

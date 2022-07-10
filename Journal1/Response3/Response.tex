@@ -136,7 +136,7 @@ We would like to thank the reviewer for the careful and thorough reading of this
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We have changed the paper's introduction and checked the text entirely according to this comment.
+We revised the whole paper and checked the text entirely according to this comment.
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -146,7 +146,7 @@ We have changed the paper's introduction and checked the text entirely according
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Thank you for this comment. We changed the paper's figures totally according to this comment.
+Thank you for this comment. We modified all the paper's figures entirely concerning this comment.
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -170,8 +170,8 @@ We use mathematical methods to decompose and convexify the problem and solve it 
 Based on the three types of 5G service classes, i.e., eMBB, URLLC and mMTC, and their corresponding QoS requirements and service priorities, we formulate a problem for allocating baseband resources such as power, physical resource blocks (PRBs), O-RUs, and activating VNFs to maximize the weighted throughput of the O-RAN.
 \item We propose a two-step resource management algorithm for solving the optimization problem.
 In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.
-\item We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of our problem and introduce a fast algorithm to check its feasibility numerically.
-\item We show via numerical results that the proposed algorithm outperforms two baseline schemes, in terms of achievable data rate. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.
+\item We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of the problem under consideration and introduce a fast algorithm to check its feasibility numerically.
+\item We show via numerical results that the proposed algorithm outperforms two baseline schemes in terms of achievable data rate and mean total delay. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.
 \end{itemize}
 
 % % % % % % % % % % % % % % % Reviewer 2 % % % % % % % % % % % % % % % % % % % %
@@ -205,12 +205,13 @@ quality. We hope that the responses provided herein can alleviate the reviewer�
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
 We would like to thank the reviewer for the careful and thorough reading of our manuscript and the thoughtful comment and constructive suggestions that helped us improve the quality of this manuscript and make it more readable. 
-We changed the introduction and add it below
+We modified the introduction completely and add it below
 
 
+\section{Introduction}
 %\subsection{State Of The Arts}
 Network slicing is a key technology in 5G wireless systems. Specifically, network slicing provides the isolation of network resources into slices, e.g., via core slicing and/or radio access network (RAN) slicing, for serving multiple and heterogeneous service classes [1]–[3]. There are three main service classes in 5G, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Depending on their corresponding quality of service (QoS) requirements, each service is assigned to a slice of the network.
-For instance, the eMBB service demands high capacity and throughput,  e.g., 8K video streaming and immersive gaming. Meanwhile, the URLLC service, leveraged, e.g., by autonomous vehicles, Tactile Internet, and remote surgery services, is concerned with providing ultra-reliable and low-latency connectivity. Finally, mMTC services require connectivity for a large number of Internet of Things (IoT) devices that transmit small payloads [4]–[6].
+For instance, the eMBB service demands high capacity and throughput,  e.g., 8K video streaming and immersive gaming. Meanwhile, the URLLC service, leveraged, e.g., by autonomous vehicles, Tactile Internet, and remote surgery services, is concerned with providing ultra-reliable and low-latency connectivity. Finally, mMTC services require connectivity for a large number of Internet of Things (IoT) devices that transmit small payloads  [4]–[6].
 %\cite{dogra2020survey,kassab2018coexistence,alsenwi2021intelligent,SL}.}
 
 Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is schematically represented in Fig. 1, is introduced to deal with these issues.
@@ -218,8 +219,41 @@ Unfortunately, the existing radio access network (RAN) architecture still lacks 
 %This paper aims to design a RAN slicing technology for the O-RAN architecture. 
 %O-RAN offers machine learning techniques based on the requirement for an intelligent wireless network for the next generation of RAN systems. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC-Near Real-Time, implement the algorithms for network intelligence
 
-A key feature of the O-RAN architecture is that the hardware is disaggregated from the software, leading to network function virtualization (NFV). Additionally, each component is implemented as a virtual network function (VNF), the system function block in NFV, that can be deployed on a virtual machine (VM) or container [7],[8].
+A key feature of the O-RAN architecture is that the hardware is disaggregated from the software, leading to network function virtualization (NFV). Additionally, each component is implemented as a virtual network function (VNF), the system function block in NFV, that can be deployed on a virtual machine (VM) or container [7].
 As a result, some O-RAN components defined in Section III, such as user plane function (UPF), O-RAN central unit (O-CU), O-RAN distributed unit (O-DU), and RAN intelligent controller (RIC)-near real-time, are virtualized and implemented as VNFs.
+
+\subsection{Motivation}
+The problem of finding the optimal resource allocation, independently of the specific RAN technology, is vital for reducing the cost of the system and improving the QoS of the user equipments (UEs). In case of 5G systems, there are many related significant challenges such as interference alignment, limited capacity of fronthaul links, energy restrictions on virtual machines, etc [2], [8], [9]. 
+
+Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering the power, data rate and delay limitations of a single service. Due to the contemporary need to serve services with different QoS simultaneously, e.g., as in 5G and beyond, this architectural model is inefficient. In this regard, the O-RAN architecture has emerged as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges. 
+One of the fundamental problems lies in attaining a balance between different services with different QoS, resource requirements, and priorities [1], [10]–[12].  
+%\textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
+%Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
+%We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously.}
+
+The purpose of this paper is to design a system in the O-RAN architecture to support the three types of 5G services, namely, eMBB, URLLC, and mMTC via network slicing and resource allocation. Specifically, we aim to maximize the total achievable data rate and satisfy the minimum achievable data rate for eMBB services while meeting the URLLC requirements in the presence of numerous low-power IoT devices.
+
+\subsection{Main Contributions}
+
+This paper aims to optimize the resource utilization of a downlink O-RAN system to develop an isolated network slicing outline for the three 5G service classes.
+We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms.
+%Our paper focuses on the multi-service resource management of the RAN slicing in an open and flexible O-RAN architecture.}
+%In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied.
+ The main contributions of this paper are summarized as follows:
+\begin{itemize}
+\item We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
+Based on the three types of 5G service classes, i.e., eMBB, URLLC and mMTC, and their corresponding QoS requirements and service priorities, we formulate a problem for allocating baseband resources such as power, physical resource blocks (PRBs), O-RUs, and activating VNFs to maximize the weighted throughput of the O-RAN.
+\item We propose a two-step resource management algorithm for solving the optimization problem.
+In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.
+\item We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of the problem under consideration and introduce a fast algorithm to check its feasibility numerically.
+\item We show via numerical results that the proposed algorithm outperforms two baseline schemes in terms of achievable data rate and mean total delay. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.
+\end{itemize}
+
+Table I lists the acronyms used throughout this paper, which is organized as follows.
+Relevant literature related to our work is discussed in Section II, while Section III briefly overviews the O-RAN architecture.
+The system model and the problem formulation are described in Section IV, V, respectively. The details of our proposed resource management algorithm are introduced in Section VI. In Section VII, numerical results are provided to evaluate the performance of the proposed algorithm. Finally, Section VIII concludes the paper.
+
+ \vspace*{-2em}
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -229,7 +263,18 @@ As a result, some O-RAN components defined in Section III, such as user plane fu
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-I would appreciate your comments to enhance and clarify this section of the paper. I moved the background as a section.
+I would appreciate your comments to enhance and clarify this section of the paper. I moved the background as a section and modified it even as follow.
+
+
+O-RAN is an appropriate alternative to the next generation of radio access networks due to its flexibility, openness, low operational costs, and intelligence. O-RAN was developed to jointly benefit from the advantages of virtual RAN (vRAN) and cloud RAN (C-RAN). With RAN virtualization, operators can improve flexibility, reduce capital expenditures (CAPEX) and operating expenses (OPEX), and add new capabilities to the network more quickly. The C-RAN architecture divides the RAN into two major parts: the radio remote head (RRH) and the baseband unit (BBU). Several distributed RRHs can be connected to a centralized BBU, called BBU-pool [27]. Unlike C-RAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
+ Most real-time baseband processing is performed in the O-DU layer, while non-real-time baseband processing is mostly executed in the O-CU layer.
+
+In the O-RAN architecture, the PHY is divided into low and high PHY, unlike C-RAN. As shown in Fig. 1, O-RU is a logical node that contains RF and low PHY. The former transmits or receives radio signals, while the latter includes digital beamforming. Typically, the O-DU constitutes a logical node with high PHY, MAC, and RLC. It contains a subfunction of the eNodeB and is deployed near the O-RU.
+Moreover, O-DU is connected to an O-RU with an open fronthaul interface.
+In addition to supporting the lower layers of the protocol stack, O-CU also provides support for the higher layers.
+The O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). The former hosts the packet data convergence protocol (PDCP)-UP and the service data adaption protocol (SDAP), while the latter hosts PDCP-CP and radio resource control (RRC).
+O-DU and O-CU are connected via an open and well-defined interface $\text{F}_1$.
+The O-RAN architecture contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud. Orchestration and Automation include functions such as RIC Non-Real-Time. RIC is responsible for machine learning methods and making the system more intelligent  [10]–[12], [28]–[31].
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -239,12 +284,13 @@ I would appreciate your comments to enhance and clarify this section of the pape
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We add the motivation subsection and answer these questions in it. Below we rewrite this section.
+We added the motivation subsection and answer these questions in it.
 
-The problem of finding the optimal resource allocation, independently of the specific RAN technology, is vital for reducing the cost of the system and improving the QoS of the user equipments (UEs). In case of 5G systems, there are many related significant challenges such as interference alignment, limited capacity of fronthaul links, energy restrictions on virtual machines, etc [2],[9],[10]. 
+
+The problem of finding the optimal resource allocation, independently of the specific RAN technology, is vital for reducing the cost of the system and improving the QoS of the user equipments (UEs). In case of 5G systems, there are many related significant challenges such as interference alignment, limited capacity of fronthaul links, energy restrictions on virtual machines, etc [2], [8], [9]. 
 
 Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering the power, data rate and delay limitations of a single service. Due to the contemporary need to serve services with different QoS simultaneously, e.g., as in 5G and beyond, this architectural model is inefficient. In this regard, the O-RAN architecture has emerged as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges. 
-One of the fundamental problems lies in attaining a balance between different services with different QoS, resource requirements, and priorities [1],[11]–[13].  
+One of the fundamental problems lies in attaining a balance between different services with different QoS, resource requirements, and priorities [1], [10]–[12].  
 %\textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
 %Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
 %We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously.}
@@ -264,7 +310,7 @@ The purpose of this paper is to design a system in the O-RAN architecture to sup
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We removed these sentences and rewrite the main contribution. Below we write the modified main contribution.
+We removed these sentences and rewrite the main contribution. Below we present the modified main contribution.
 
 This paper aims to optimize the resource utilization of a downlink O-RAN system to develop an isolated network slicing outline for the three 5G service classes.
 We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms.
@@ -276,8 +322,8 @@ We use mathematical methods to decompose and convexify the problem and solve it 
 Based on the three types of 5G service classes, i.e., eMBB, URLLC and mMTC, and their corresponding QoS requirements and service priorities, we formulate a problem for allocating baseband resources such as power, physical resource blocks (PRBs), O-RUs, and activating VNFs to maximize the weighted throughput of the O-RAN.
 \item We propose a two-step resource management algorithm for solving the optimization problem.
 In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.
-\item We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of our problem and introduce a fast algorithm to check its feasibility numerically.
-\item We show via numerical results that the proposed algorithm outperforms two baseline schemes, in terms of achievable data rate and mean total delay. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.
+\item We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of the problem under consideration and introduce a fast algorithm to check its feasibility numerically.
+\item We show via numerical results that the proposed algorithm outperforms two baseline schemes in terms of achievable data rate and mean total delay. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.
 \end{itemize}
 
 \begin{longtable}{|p{0.975\textwidth}|}
@@ -291,7 +337,15 @@ In the first step, we reformulate and simplify the problem so as to find an uppe
 \noindent \textbf{Response:\\}
 Thank you for this comment. We moved the background from sub-section to the section part and modified it as below.
 
+O-RAN is an appropriate alternative to the next generation of radio access networks due to its flexibility, openness, low operational costs, and intelligence. O-RAN was developed to jointly benefit from the advantages of virtual RAN (vRAN) and cloud RAN (C-RAN). With RAN virtualization, operators can improve flexibility, reduce capital expenditures (CAPEX) and operating expenses (OPEX), and add new capabilities to the network more quickly. The C-RAN architecture divides the RAN into two major parts: the radio remote head (RRH) and the baseband unit (BBU). Several distributed RRHs can be connected to a centralized BBU, called BBU-pool [27]. Unlike C-RAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
+ Most real-time baseband processing is performed in the O-DU layer, while non-real-time baseband processing is mostly executed in the O-CU layer.
 
+In the O-RAN architecture, the PHY is divided into low and high PHY, unlike C-RAN. As shown in Fig. 1, O-RU is a logical node that contains RF and low PHY. The former transmits or receives radio signals, while the latter includes digital beamforming. Typically, the O-DU constitutes a logical node with high PHY, MAC, and RLC. It contains a subfunction of the eNodeB and is deployed near the O-RU.
+Moreover, O-DU is connected to an O-RU with an open fronthaul interface.
+In addition to supporting the lower layers of the protocol stack, O-CU also provides support for the higher layers.
+The O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). The former hosts the packet data convergence protocol (PDCP)-UP and the service data adaption protocol (SDAP), while the latter hosts PDCP-CP and radio resource control (RRC).
+O-DU and O-CU are connected via an open and well-defined interface $\text{F}_1$.
+The O-RAN architecture contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud. Orchestration and Automation include functions such as RIC Non-Real-Time. RIC is responsible for machine learning methods and making the system more intelligent  [10]–[12], [28]–[31].
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -301,24 +355,122 @@ Thank you for this comment. We moved the background from sub-section to the sect
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We add the following part to the slice management section.
+Thank you for this comment. We modified and clarified this section as below
 
-In the preparation phase, firstly, the evaluation of requirements is considered. Therefore, In this phase, we need an algorithm to estimate the number of UEs and UE traffic in the system at different times. Moreover, based on this estimation, we need to evaluate resources, including the optimal number of VNFs for each slice, the optimal number of PRBs for each slice, and the analysis of power allocation. In this phase, we can use our algorithm after estimating the system's traffic.
- As shown in figure 1, we have three different slices for eMBB, URLLC, and mMTC. For each slice, the system must prepare MAC/RLC protocols for O-DU, PDCP/SDAP protocols for O-CU, UPF, SMF, and AMF. Moreover, O-RU, high PHY in O-DU, and O-CU-CP are shared between slices. Thus, we do not require estimating and preparing for the share environments and platforms in the network slicing cycles. 
-After evaluating, assessing, and preparing the resources and environments for each slice, the commissioning phase is started. In this phase, the slices are created based on the previous phase. If the evaluation changes, the slice's resources can be modified.
-We can use our algorithm to assign resources to the services in the operation phase.
-If we need to remove a slice or any service is not used in a zone, and we need to remove the corresponding slice, the unshared resources are removed in the decommissioning phase.
-
+In this subsection, we will look at the life cycle of network slicing on a practical level. 
+The goal is to examine slice management, which includes creating, managing, and deleting slices. Network slices generally have four life cycle stages [36];
+\begin{itemize}
+\item Preparation phase: the operator plans to create a network slice instance (NSI) by designing the its template, onboarding users, and preparing the environment. Also, the evaluation of requirements is performed in this step.
+\item Commissioning phase: the NSI is created, and the requirements are considered and allocated to the slice.
+\item Operation phase: the NSIs are activated, managed, monitored (e.g., KPIs), modified, and deactivated. As the slice enters the activated phase, it is ready to support services, and as the slice exits the de-activated phase, the slice is inactive, and communication services are stopped.
+\item Decommissioning phase: an NSI that is decommissioned no longer exists after this phase.
+\end{itemize}
+Since the requirements evaluation is considered in the preparation phase, we need an algorithm to estimate the UE traffic in the system at different times. Moreover, based on this estimation, we need to evaluate resources, including the optimal number of VNFs, PRB assignment of UEs for each slice, and the total power requirements. In this phase, we use our algorithm to calculate resources after estimating the system's traffic.
+As shown in Fig. 1, we have three different slices for eMBB, URLLC, and mMTC. The system must prepare VNFs for MAC/RLC functions in O-DU, PDCP/SDAP functions in O-CU, UPF, SMF, and AMF functionality layers for each slice. Moreover, O-RU, high PHY in O-DU, and O-CU-CP are shared between slices. Thus, we do not require evaluating and preparing for the share environments and platforms in the network slicing cycles. Moreover, the estimation of PRB and power is needed based on the proposed algorithm. 
+After evaluating, assessing, and preparing the resources and environments for each slice, the commissioning phase is started. In this phase, the slices are created based on the previous phase estimation. These created slices are activated in the operation phase, and the actual resources are assigned based on the proposed algorithm.
+It is possible to modify the slice's resources even when the evaluation changes during the operation phase. 
+If we need to remove a slice or any service not used in a zone, the unshared resources are released in the decommissioning phase.
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
 \cellcolor{gray!15}
-\textbf{\noindent Comment6:} ``With respect to the convergence time of the algorithm, the Reviewer had made a suggestion to the authors to include it in the current version of the manuscript, yet the authors do not seem to have done that. The authors’ response points to Fig. 11. However if one looks at Fig.11 carefully, understands that only the Aggregate throughput is shown there. Even if one considers the Section III-C1 and III-C2 that the authors demonstrate as their convergence analysis and proof, there is no evidence or clarification of any delay value with respect to their algorithm’s convergence. On the one hand it is very beneficial to have a mathematical proof that the algorithm converges. On the other hand, it is equally important to portray these findings with numerical values. In any case, this is not applicable in the current version of the manuscript. ''\\
+\textbf{\noindent Comment7:} ``With respect to the convergence time of the algorithm, the Reviewer had made a suggestion to the authors to include it in the current version of the manuscript, yet the authors do not seem to have done that. The authors’ response points to Fig. 11. However if one looks at Fig.11 carefully, understands that only the Aggregate throughput is shown there. Even if one considers the Section III-C1 and III-C2 that the authors demonstrate as their convergence analysis and proof, there is no evidence or clarification of any delay value with respect to their algorithm’s convergence. On the one hand it is very beneficial to have a mathematical proof that the algorithm converges. On the other hand, it is equally important to portray these findings with numerical values. In any case, this is not applicable in the current version of the manuscript. ''\\
 \hline
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment8:} `As a final remark, the structure of the paper needs major re-construction. Several Sections are very lengthy and could be reduced while creating additional Sections. In the current format it is very hard to follow. ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+Thank you for this comment to make our paper more readable. We modified the entire paper based on this comment.
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment9:} `Moreover, there are some typos in the manuscript. For instance, user equipements: user equipment.  ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+We appreciate your comment about troubleshooting our paper and removing mistakes. Using this comment as a guide, we modified the entire paper.
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment10:} `Furthermore, some acronyms are not explained in the text e.g., Quality of Service (QoS). ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+Based on this comment, we added a acronym table I to our paper as follow
+
+\begin{table}[H]
+\vspace*{-0em}
+ \caption {List of Acronyms} \label{table:11a}
+ \vspace*{-1em}
+ \begin{center}
+ \scalebox{1}{
+  \begin{tabular}{l  l }
+  \toprule
+  \vspace*{-0.2em}
+\textbf{Acronym} & \textbf{Definition} \\ [0.5ex]
+   \toprule
+  VNF & virtual network function\\[.5ex]
+  
+  VM & virtual machine  \\[.5ex]
+  RAN &  radio access network \\[.5ex]
+ O-RAN & open RAN  \\[.5ex]
+ vRAN & virtual RAN \\[.5ex]
+ CRAN & cloud RAN \\[.5ex]
+   QoS &  quality of service \\[.5ex]
+  MIMO & multiple input multiple output \\[.5ex]
+  PRB &  physical resource block \\[.5ex]
+  SINR & signal to interference and noise ratio  \\[.5ex]
+  eMBB & enhanced mobile broadBand \\[.5ex]
+  
+  URLLC  & ultra-reliable low latency communication \\[.5ex]
+   
+  mMTC &  massive machine-to-machine communications \\[.5ex]
+  
+  O-RU &  O-RAN radio unit \\[.5ex]
+ 
+   O-DU &  O-RAN distributed unit \\ [.5ex]
+  
+   O-CU &  O-RAN central unit \\ [.5ex]
+  
+     UPF &  user plane function \\ [.5ex]
+  
+  UE &  user equipment \\ [.5ex]
+  SINR & signal-to-noise-plus-interference ratio \\ [.5ex]
+  CAPEX & capital expenditures  \\ [.5ex]
+  OPEX & operating expenses  \\ [.5ex]
+  
+  KKT &  Karush-Kuhn-Tucker \\ [.5ex]
+ \toprule
+ \end{tabular}}
+ \end{center}
+ \end{table}
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment11:} `Finally, the figures in the current version of the manuscript are very small and extremely hard to read. Therefore, re-formatting is necessary. ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+We modified all figures to make it more readable.
 
 \end{document}
 

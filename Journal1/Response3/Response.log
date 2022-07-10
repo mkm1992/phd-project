@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  8 JUL 2022 14:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  11 JUL 2022 01:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1125,94 +1125,133 @@ Underfull \vbox (badness 10000) detected at line 204
 
 [5
 
-]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 223--229
+] [6]
+Overfull \hbox (0.29094pt too wide) in alignment at lines 257--263
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 229
+Underfull \vbox (badness 10000) detected at line 263
  []
-
-
-Overfull \hbox (0.29094pt too wide) in alignment at lines 233--239
- [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 239
- []
-
-
-Overfull \hbox (0.29094pt too wide) in alignment at lines 253--264
- [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 264
- []
-
-[6]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 283--289
- [] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 289
- []
-
-
-Overfull \vbox (4.06578pt too high) has occurred while \output is active []
-
 
 [7]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 293--299
+Overfull \hbox (0.29094pt too wide) in alignment at lines 278--284
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 299
+Underfull \vbox (badness 10000) detected at line 284
  []
 
-
-Overfull \hbox (0.29094pt too wide) in alignment at lines 311--317
+[8]
+Overfull \hbox (0.29094pt too wide) in alignment at lines 299--310
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 317
+Underfull \vbox (badness 10000) detected at line 310
+ []
+
+[9]
+Overfull \hbox (0.29094pt too wide) in alignment at lines 329--335
+ [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \vbox (badness 10000) detected at line 335
+ []
+
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 349--355
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 355
+ []
+
+[10] [11]
+Overfull \hbox (0.29094pt too wide) in alignment at lines 374--380
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 380
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
 
  []
 
-[8] [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 321.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 321.
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 384--390
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 390
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 397--400
+[]| \OT1/cmr/bx/n/12 Com-ment9: \OT1/cmr/m/n/12 `More-over, there are some ty-p
+os in the manuscript. For in-stance, user 
+ []
+
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 395--401
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 401
+ []
+
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 406--412
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 412
+ []
+
+[12]
+Overfull \hbox (0.29094pt too wide) in alignment at lines 464--470
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 470
+ []
+
+[13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 475.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 475.
  (./Response.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 321.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 321.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 475.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 475.
 Package rerunfilecheck Info: File `Response.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 321.
+(rerunfilecheck)             Checksum: 65D32DDA1D2DC8F47B90891E8211F695;173.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 475.
  ) 
 Here is how much of TeX's memory you used:
- 20166 strings out of 492649
- 365949 string characters out of 6133384
- 554861 words of memory out of 5000000
- 23621 multiletter control sequences out of 15000+600000
- 8556 words of font info for 33 fonts, out of 8000000 for 9000
+ 20230 strings out of 492649
+ 366640 string characters out of 6133384
+ 558965 words of memory out of 5000000
+ 23666 multiletter control sequences out of 15000+600000
+ 14408 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,7n,59p,920b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,77p,920b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Response.pdf (9 pages, 59922 bytes).
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Response.pdf (13 pages, 81116 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 23 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 120 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
+ 35 named destinations out of 1000 (max. 500000)
+ 37 words of extra memory for PDF output out of 10000 (max. 10000000)
 
