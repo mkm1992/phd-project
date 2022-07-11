@@ -168,45 +168,45 @@ The system model and the problem formulation are described in Section \ref{syste
  \scalebox{1}{
   \begin{tabular}{l  l }
   \toprule
-  \vspace*{-0.2em}
-\textbf{Acronym} & \textbf{Definition} \\ [0.5ex]
+  \vspace*{-0.3em}
+\textbf{Acronym} & \textbf{Definition} \\ [0.3ex]
    \toprule
-  VNF & virtual network function\\[.5ex]
+  VNF & virtual network function\\[.3ex]
   
-  VM & virtual machine  \\[.5ex]
-  RAN &  radio access network \\[.5ex]
- O-RAN & open RAN  \\[.5ex]
- vRAN & virtual RAN \\[.5ex]
- CRAN & cloud RAN \\[.5ex]
-   QoS &  quality of service \\[.5ex]
-  MIMO & multiple input multiple output \\[.5ex]
-  PRB &  physical resource block \\[.5ex]
-  SINR & signal to interference and noise ratio  \\[.5ex]
-  eMBB & enhanced mobile broadBand \\[.5ex]
+  VM & virtual machine  \\[.3ex]
+  RAN &  radio access network \\[.3ex]
+ O-RAN & open RAN  \\[.3ex]
+ vRAN & virtual RAN \\[.3ex]
+ CRAN & cloud RAN \\[.3ex]
+   QoS &  quality of service \\[.3ex]
+  MIMO & multiple input multiple output \\[.3ex]
+  PRB &  physical resource block \\[.3ex]
+  SINR & signal to interference and noise ratio  \\[.3ex]
+  eMBB & enhanced mobile broadBand \\[.3ex]
   
-  URLLC  & ultra-reliable low latency communication \\[.5ex]
+  URLLC  & ultra-reliable low latency communication \\[.3ex]
    
-  mMTC &  massive machine-to-machine communications \\[.5ex]
+  mMTC &  massive machine-to-machine communications \\[.3ex]
   
-  O-RU &  O-RAN radio unit \\[.5ex]
+  O-RU &  O-RAN radio unit \\[.3ex]
  
-   O-DU &  O-RAN distributed unit \\ [.5ex]
+   O-DU &  O-RAN distributed unit \\ [.3ex]
   
-   O-CU &  O-RAN central unit \\ [.5ex]
+   O-CU &  O-RAN central unit \\ [.3ex]
   
-     UPF &  user plane function \\ [.5ex]
+     UPF &  user plane function \\ [.3ex]
   
-  UE &  user equipment \\ [.5ex]
-  SINR & signal-to-noise-plus-interference ratio \\ [.5ex]
-  CAPEX & capital expenditures  \\ [.5ex]
-  OPEX & operating expenses  \\ [.5ex]
+  UE &  user equipment \\ [.43ex]
+  SINR & signal-to-noise-plus-interference ratio \\ [.3ex]
+  CAPEX & capital expenditures  \\ [.3ex]
+  OPEX & operating expenses  \\ [.3ex]
   
   KKT &  Karush-Kuhn-Tucker \\ [.5ex]
  \toprule
  \end{tabular}}
  \end{center}
  \end{table}
- \vspace*{-2em}
+ \vspace*{-3em}
 \section{Related Literature}\label{RL}
 The network slicing problem in multi-tenant cellular networks has received significant attention recently, e.g.,  \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
 In \cite{lee2018dynamic}, dynamic network slicing in heterogeneous C-RAN (H-CRAN) is considered in two levels. The higher level manages user acceptance control, radio remote head (RRH) association, and the allocation of BBU capacity. Meanwhile, the allocation of power and PRB is performed at the lower level.
@@ -323,8 +323,9 @@ Therefore, the SINR of the $i^{th}$ UE served at slice $s$ on PRB $k$ is given b
 
 A UE in an O-RU $r$ using PRB $k$ receives interference from other O-RUs in the set $\mathcal{R}\backslash r$ that are using the same PRB $k$. Two types of interference occur between UEs in each slice: i) inter-slice interference between signals transmitted over different slices, and ii) intra-slice interference between signals transmitted over the same slice.%that is shown in Fig. \ref{fig:intf}.
  
-Network slicing techniques significantly reduce inter-service interference.
-One way consists in leveraging a two-time scale PRB scheduling to isolate PRBs in slices (in the first time scale) and schedule the PRBs to the UEs of the slices (in the second time scale). Since there are limited resources, inter-service interference cannot be eliminated entirely. Another method consists of allocating part of the PRBs of eMBB services to URLLC, and mMTC \cite{alsenwi2021intelligent, setayesh2020joint, mei2021intelligent}. In this paper, we assume that the PRB scheduling is performed. Also, in Section \ref{prb}, we briefly study the PRB scheduling between slices.
+\textcolor{MidnightBlue}{Network slicing techniques significantly reduce inter-service (inter-slice) interference.
+One way consists in leveraging a two-time scale PRB scheduling to isolate PRBs in slices (in the first time scale) and schedule the PRBs to the UEs of the slices (in the second time scale). Another method consists of allocating part of the PRBs of eMBB services to URLLC and mMTC \cite{alsenwi2021intelligent, setayesh2020joint, mei2021intelligent}. In this paper, we assume that the PRB scheduling is performed. Also, in Section \ref{prb}, we briefly study the PRB scheduling between slices.
+Since there are limited resources, inter-service interference cannot be eliminated entirely. Nevertheless, isolating the slices reduces inter-service interference considerably and allows us to ignore it mathematically.}
 %\begin{figure}
 %  \centering
 %  \captionsetup{justification=centering}
@@ -335,22 +336,26 @@ One way consists in leveraging a two-time scale PRB scheduling to isolate PRBs i
 %  \label{fig:intf}
 %\end{figure}
 
-Back to \eqref{eq1}, $I_{r,u(s,i)}^{k}$ is the sum of the power of interfering signals and quantization, and can be represented as 
+\textcolor{MidnightBlue}{Back to \eqref{eq1}, $I_{r,u(s,i)}^{k}$ is the sum of the power of interfering signals and quantization noise, and can be represented as }
 %{\color{red} use paranthesis in the following equation to clear +}
 %\begin{subequations}\label{eqI}
 %\begin{alignat}{4}
-\begin{align}\label{eqI}
-&I_{r,u(s,i)}^{k} =\nonumber\\
- &\underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} e^{k}_{u(s,i)}e^{k}_{u(s,l)}  p_{u(s,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{k \: H}} \bold{w}_{r',u(s,l)}^{k} g_{u(s,l)}^{r'}|^2}_{\text{(intra-slice interference)}}+\nonumber\\
-&\underbrace{\sum_{\substack{n = 1 \\ n\neq s}}^{S}\sum_{l=1}^{{U}_s} e^{k}_{u(s,i)}e^{k}_{u(n,l)}  p_{u(n,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{k \: H}} \bold{w}_{r',u(n,l)}^{k} g_{u(n,l)}^{r'}|^2}_{\text{(inter-slice interference)}}\nonumber\\
-&+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}^2 |\boldsymbol{h}_{r,{u(s,i)}}^k|^2 }_{\text{(quantization noise)}},
-\end{align}
+%\begin{align}\label{eqI}
+%&I_{r,u(s,i)}^{k} =\nonumber\\
+% &\underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} e^{k}_{u(s,i)}e^{k}_{u(s,l)}  p_{u(s,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{k \: H}} \bold{w}_{r',u(s,l)}^{k} g_{u(s,l)}^{r'}|^2}_{\text{(intra-slice interference)}}+\nonumber\\
+%&\underbrace{\sum_{\substack{n = 1 \\ n\neq s}}^{S}\sum_{l=1}^{{U}_s} e^{k}_{u(s,i)}e^{k}_{u(n,l)}  p_{u(n,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{k \: H}} \bold{w}_{r',u(n,l)}^{k} g_{u(n,l)}^{r'}|^2}_{\text{(inter-slice interference)}}\nonumber\\
+%&+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}^2 |\boldsymbol{h}_{r,{u(s,i)}}^k|^2 }_{\text{(quantization noise)}},
+%\end{align}
 %\end{alignat}
 %\end{subequations}
 %{\color{red} $\gamma_1$ is constant used instead of variable. }
+\begin{align}\label{eqI}
+&I_{r,u(s,i)}^{k} =+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}^2 |\boldsymbol{h}_{r,{u(s,i)}}^k|^2 }_{\text{(quantization noise)}}\nonumber\\
+ &\underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} e^{k}_{u(s,i)}e^{k}_{u(s,l)}  p_{u(s,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{k \: H}} \bold{w}_{r',u(s,l)}^{k} g_{u(s,l)}^{r'}|^2}_{\text{(intra-slice interference)}},
+\end{align}
 %where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}$ and $\gamma_{2} = e^{k}_{u(s,i)}e^{k}_{u(n,l)}$.
 where $e^{k}_{u(s,i)}$ is a binary variable that indicates whether the $k^{th}$ PRB is allocated to the UE $i$ in slice $s$, assigned to $r^{th}$ O-RU, or not. %($\gamma_1$ and $\gamma_2$ are two variales. You  define on variable here.)
-Furthermore, there is no inter-slice interference, only intra-slice interference, slices are assumed to be isolated. 
+Furthermore, there is no inter-slice interference, only intra-slice interference, since slices are assumed to be isolated. 
 
 %To obtain SNR as formulated in \eqref{eq1}, 
 %\begin{figure}
@@ -370,6 +375,7 @@ Furthermore, there is no inter-slice interference, only intra-slice interference
 \noindent where $\bold{h}_{r,u(s,i)}^{k}$ is the channel estimate, which is assumed imperfect. Mathematically,
 $\hat{\boldsymbol{h}}_{r,u(s,i)} = \boldsymbol{h}_{r,u(s,i)} + \Delta \boldsymbol{h}_{r,u(s,i)}$, where
 $\Delta \boldsymbol{h}_{r,u(s,i)}\sim \mathcal{N}(0,\boldsymbol{\phi}_{r,u(s,i)}^2)$ indicates the estimating error vector with a Gaussian distribution and $\boldsymbol{\phi}_{r,u(s,i)} = \text{diag}(\phi_{r,u(s,i)},\ldots,\phi_{r,u(s,i)}).$
+\vspace*{-.8em}
 \subsection{Achievable Data Rate}
 The achievable data rate for the $i^{th}$ UE request in the $s_{1}^{th}$ application of service type 1 (eMBB) can be written as 
 \begin{equation}\label{eq3}
@@ -420,7 +426,7 @@ $\mathfrak{C}_{u(s_j,i)}^{k} = 1 - \frac{1}{(1+\rho_{u(s_j,i)}^{k})^2}$ depicts 
 $N_{u(s_j,i)}^{k}$ represents the corresponding transmit blocklength.
 $\mathcal{R}_{r,u(s_j,i)}$ is the achievable data rate that is transmitted by O-RU $r$ to UE $i$ requesting service $s_j$.
 
-If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{s}^{max}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$. Therefore, $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , i$ is derived by using $\bar{I}_{r,u(s,i)}^{k}$ instead of $I_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3}.
+If we replace $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} by $P_{s}^{\text{max}}$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$. Therefore, $\bar{\mathcal{R}}_{u_{(s,i)}} \forall s , i$ is derived by using $\bar{I}_{r,u(s,i)}^{k}$ instead of $I_{r,u(s,i)}^{k}$ in  \eqref{eq11} and \eqref{eq3}.
 \subsection{Power of the O-RU and the Fronthaul Capacity}
 Let $P_r$ denote the power of the transmitted signal from the $r^{th}$ O-RU to all the UEs served by it. From \eqref{eq2}, the power of each O-RU $r$ is obtained as follows,
 %{\color{red} is this the sum rate of all users?}
@@ -440,9 +446,9 @@ The total delay ($T^{\text{\text{tot}}}$), is the sum of the processing delay ($
 \begin{subequations}
 \begin{alignat}{4}
 T^{\text{\text{tot}}} &=  T^{\text{proc}} + T^{tr} + T^{\text{pro}},\\
-T^{\text{\text{proc}}} &=  T^{RU} + T^{DU} + T^{CU} + T^{UPF},\\
-T^{tr} &= T^{fr,t} + T^{\text{mid},t} + T^{b,t},  \\
-T^{\text{pro}} &= T^{fr,p} + T^{\text{mid},p} + T^{b,p}.
+T^{\text{\text{proc}}} &=  T^{\text{RU}} + T^{\text{DU}} + T^{\text{CU}} + T^{\text{UPF}},\\
+T^{\text{tr}} &= T^{\text{fr},t} + T^{\text{mid},t} + T^{\text{b},t},  \\
+T^{\text{pro}} &= T^{\text{fr},p} + T^{\text{mid},p} + T^{b,p}.
 \end{alignat}
 \end{subequations}
 %{\color{red} I made a mistake and replaced pro with proc. Please correct them. Also, explain in more details the processing delay in this paragraph.}
@@ -452,9 +458,9 @@ Meanwhile, the total transmission delay ($T^{tr}$) is the sum of the transmissio
 In each link, the transmission delay is the amount of time required to push all the packets into the transmission medium, and can formulated as
 $T = \frac{\mathcal{\alpha}}{R}$, where $R$ is the data-rate of the packet and $\mathcal{\alpha}$ is the mean packet size.
 Notice that taking the propagation and transmission delays into account in the formulation is straightforward, but we have avoided it for the sake of succinctness and simplicity.
-
-It is worth highlighting that propagation delay must be specially considered when each O-RU can connect to several number of O-DUs and depending on the route, capacity, and priority. 
-However, this would provide a new problem formulation, which could be added to our system model to extend our paper in the future. In the current paper, we assume that the connection between O-RUs and O-DUs is fixed and transparent, and we do not consider the problem of edge processing. As a result, the propagation delay is fixed and does not affect the optimization problem. 
+%It is worth highlighting that propagation delay must be specially considered when each O-RU can connect to several number of O-DUs and depending on the route, capacity, and priority. 
+%However, this would provide a new problem formulation, which could be added to our system model to extend our paper in the future. In the current paper, we assume that the connection between O-RUs and O-DUs is fixed and transparent, and we do not consider the problem of edge processing. 
+Therefore, the propagation delay is fixed and does not affect the optimization problem. 
 
 Next, we present a brief calculation of propagation delay.
 Assume a distance between the O-RU and O-DU around 10 km, the distance between O-DU and O-CU around 80 km, not greater than the distance from O-CU to the network around 200 km \cite{oranD1}. Then, assuming the fronthaul, midhaul and backhaul are connected with fiber optics and $c$ is the speed of like, the propagation delay is about $T^{\text{pro}} = (10 + 80 + 200)\times 10^3 /(3\times 10^8) < 1$ ms.
@@ -475,12 +481,12 @@ Assume the mean arrival data rate of the UPF layer for slice $s$ ($\alpha_{s}^U$
 In fact, according to Burke’s theorem, the mean arrival data rate of the second and third layers, which are processed in the first layer, is still Poisson with rate $\alpha_{s}$.
 It is assumed that there are load balancers in each layer for each service to divide equally the incoming traffic to VNFs. %\cite{frdl,luong2018novel,luong2018novel1}.
 Suppose the baseband processing of each VNF is modeled by an M/M/1 processing queue.
-Since the system's arrival packets are from many independent sources. Moreover, the impact of a single packet on the system's performance is minimal. Also, the queue discipline will be first-in, first-out (FIFO), and the arrival packet is assumed to follow a Poisson process. Therefore, we suppose that service times are exponentially distributed [36]. In addition, since the services are isolated, the UEs in each service have the same priority, and the processing delays of each service are independent of the other services; Therefore, one service could have a higher priority, affecting the whole optimization, and the M/M/1 queue theory is still validated.
+%Since the system's arrival packets are from many independent sources. Moreover, the impact of a single packet on the system's performance is minimal. Also, the queue discipline will be first-in, first-out (FIFO), and the arrival packet is assumed to follow a Poisson process. Therefore, we suppose that service times are exponentially distributed [36]. In addition, since the services are isolated, the UEs in each service have the same priority, and the processing delays of each service are independent of the other services; Therefore, one service could have a higher priority, affecting the whole optimization, and the M/M/1 queue theory is still validated.
 Each packet is processed by one of the VNFs of the corresponding slice. Therefor, the mean delay for the $s^{th}$ slice in the O-DU, the O-CU, and the UPF is modeled as M/M/1 queue, and can be respectively \cite{SystemCostMinimization,luong2018joint,luong2018novel},
 \begin{align}
-T_{s}^{DU} &= \frac{1}{\mu_s^d - \alpha_{s}/{M_s^{d}}},\\
-T_{s}^{CU} &= \frac{1}{\mu_s^c - \alpha_{s}/{M_s^{c}}},\\
-T_{s}^{UPF} &= \frac{1}{\mu_s^u - \alpha_{s}/{M_s^{u}}},
+T_{s}^{\text{DU}} &= \frac{1}{\mu_s^d - \alpha_{s}/{M_s^{d}}},\\
+T_{s}^{\text{CU}} &= \frac{1}{\mu_s^c - \alpha_{s}/{M_s^{c}}},\\
+T_{s}^{\text{UPF}} &= \frac{1}{\mu_s^u - \alpha_{s}/{M_s^{u}}},
 \end{align}
 where $M_s^{d}$, $M_s^{c}$ and
 $M_s^{u}$ represent the number of VNFs in O-DU, O-CU-UP and UPF, respectively.
@@ -492,7 +498,7 @@ Moreover, the service time of transmission queue for UE $i$ requesting service $
 an exponential distribution with mean $1/R_{u(s,i)}$ and can be modeled as a M/M/1 queue \cite{SystemCostMinimization,luong2018joint,luong2018novel}.
 Therefore, the mean delay of the transmission layer for UE $i$ in slice $s$ is
 \begin{equation}
- T_{u(s,i)}^{RU} = \frac{1}{R_{u(s,i)} - \lambda_{u(s,i)}}.
+ T_{u(s,i)}^{\text{RU}} = \frac{1}{R_{u(s,i)} - \lambda_{u(s,i)}}.
 \end{equation}
 we assume $T^{\text{\text{tot}}}_{u(s,i)} \approx T^{\text{proc}}_{u(s,i)} $. %{\color{red} what results in this approximation?}
 %Furthermore, the mean arrival data rate of the each link ($\textstyle \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$) is approximately equal to others ($\textstyle \alpha_{s} \approx \alpha_{s}^i$ , $i \in \{RU,DU,CU,UPF\}$).
@@ -507,7 +513,7 @@ Then, the system's total cost of energy of all the slices can be represented as 
 %\phi_{s} = M_s^u \phi_s^u + M_s^c \phi_s^c+ M_s^d \phi_s^d.
 %\end{equation}
 
-A significant issue facing the industry is reducing energy consumption. Data centers are one of the most energy-consuming. As a result, restrictions are placed on data centers' energy, including VMs. So, one of our goals is to limit the energy consumption of total VNFs that can be run as VM on data centers. So, by applying a custom policy on total power consumption, we can control data centers' power consumption ($\phi^{\text{\text{tot}}}  \leq \phi^{max}$).
+A significant issue facing the industry is reducing energy consumption. Data centers are one of the most energy-consuming. As a result, restrictions are placed on data centers' energy, including VMs. So, one of our goals is to limit the energy consumption of total VNFs that can be run as VM on data centers. So, by applying a custom policy on total power consumption, we can control data centers' power consumption ($\phi^{\text{\text{tot}}}  \leq \phi^{\text{max}}$).
 \section{Problem Statement} \label{prS}
 Suppose the slice $s$ (which is assigned to service s) has a priority factor $\delta_s$ (based on the priority of its hosting service) where $\sum_{s=1}^S \delta_s =1$.
 The priority factor of each slice is obtained according to the service level agreement to promote a fairness in the system.
@@ -516,18 +522,18 @@ This paper aims to maximize the sum-rate of all UEs subject to QoS constraints a
 \begin{subequations}\label{problem}
 \begin{alignat}{4}
 \max\limits_{\boldsymbol{P}, \boldsymbol{E}, \boldsymbol{M}, \boldsymbol{G} }   \quad &  \sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}} \ \\
-\text{subject to} \quad  &  P_r \leq P^{max}_{r} \quad \forall r,
+\text{subject to} \quad  &  P_r \leq P^{\text{max}}_{r} \quad \forall r,
  \label{c11} \\
 &p_{r,u(s,i)}^{k}  \geq 0  \quad \forall i, r, s, k,\label{c12} \\
-&p_{r,u(s,i)}^{k}  \leq P_{s}^{max}  \quad \forall i, r, s, k,\label{c12-1} \\
-&\bar{\mathcal{R}}_{u_{(s,i)}} \geq \mathcal{R}_{{s}}^{min} \quad \forall s, \label{c13} \\
+&p_{r,u(s,i)}^{k}  \leq P_{s}^{\text{max}}  \quad \forall i, r, s, k,\label{c12-1} \\
+&\bar{\mathcal{R}}_{u_{(s,i)}} \geq \mathcal{R}_{{s}}^{\min} \quad \forall s, \label{c13} \\
 %&\mathcal{R}_{u_{(s_2,i)}}^u \geq  \mathcal{R}_{min}^{s_2,u} \quad \forall s_2, \label{c14} \\
-& C_r \leq C^{max}_r \quad \forall r, \label{c15}\\
-&T^{\text{\text{tot}}}_{u(s,i)}  \leq T^{max}_{s} \quad \forall i, s,\label{c16} \\
+& C_r \leq C^{\text{max}}_r \quad \forall r, \label{c15}\\
+&T^{\text{\text{tot}}}_{u(s,i)}  \leq T^{\text{max}}_{s} \quad \forall i, s,\label{c16} \\
 & \mu_s \geq \alpha_s/M_s \quad \forall s,\label{c16-1} \\
 & \bar{\mathcal{R}}_{u_{(s,i)}} \geq {\lambda}_{u_{(s,i)}} \quad \forall i, s,\label{c16-2} \\
-& 0 \leq M_s \leq M^{max}_s  \quad \forall s,\label{c16-3}\\
-& \phi^{\text{\text{tot}}}  \leq \phi^{max}, \label{c19} \\
+& 0 \leq M_s \leq M^{\text{max}}_s  \quad \forall s,\label{c16-3}\\
+& \phi^{\text{\text{tot}}}  \leq \phi^{\text{max}}, \label{c19} \\
 %& P_r\{E_1, E_2, E_3, E_4\} \leq \epsilon_s \quad \forall s_2, \label{c166}\\
 & \sum_{r}g^r_{u(s,i)} = 1  \quad \forall s, i, \label{c17}  \\
 & \sum_{k =1}^{K_s} g^r_{u(s,i)} e^{k}_{r,u(s,i)} \geq 1  \quad \forall s, i , r, \label{c18-1} \\
@@ -550,10 +556,10 @@ Also, \eqref{c18} ensures that each PRB can not be assigned to more than one UE 
 \subsection{PRB Scheduling}\label{prb}
 \textcolor{MidnightBlue}{In this section, we provide a brief study on the problem of PRB scheduling which can be completed in two steps to eliminate the inter-slice interference and guarantee the isolation of slices \cite{marabissi2019highly}.
 For this, firstly, we should assign the PRBs to the slices. Secondly, we assign PRBs of slices to UEs, find the optimal number of VNFs for each slice, allocate power of UEs, and assign O-RU to UEs, which uses the proposed Algorithm \ref{proAlg}.}
-Suppose, $\mathcal{R}_{{s}}^{min}$, and $\mathcal{R}_{{s}}^{max}$ are the minimum data rate and maximum data rate of each UE in slice s, respectively.
+Suppose, $\mathcal{R}_{{s}}^{\min}$, and $\mathcal{R}_{{s}}^{\text{max}}$ are the minimum data rate and maximum data rate of each UE in slice s, respectively.
 Firstly, we need to find the average PRB number used by the UEs in each service. Since mMTC and URLLC require usually short packet transmissions, each UE in mMTC and URLLC requires 1 PRB. So if slice s serves mMTC or URLLC services, with $U_s$ UEs, it requires $K_s = U_s \times 1$ PRBs. For eMBB, assume the average rate of each UE in slice s serving eMBB UEs is $\bar{R}_s = B\log_2(1 + \bar{\rho_s})$, where, $\bar{\rho_s}$ is the average SINR of UEs in slice s. 
-Therefore, the minimum number of PRBs that slice s with $U_s$ UEs requires is $K_s^{min} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{max}}}\rceil$. 
-Moreover, the maximum number of PRB that the slice s with $U_s$ UEs requires is $K_s^{max} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{min}}}\rceil$. Also, $K_s = (K_s^{min}+K_s^{max})/2$ is the average number of required PRBs in slice s.
+Therefore, the minimum number of PRBs that slice s with $U_s$ UEs requires is $K_s^{\min} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{\text{max}}}}\rceil$. 
+Moreover, the maximum number of PRB that the slice s with $U_s$ UEs requires is $K_s^{\text{max}} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{\min}}}\rceil$. Also, $K_s = (K_s^{\min}+K_s^{\text{max}})/2$ is the average number of required PRBs in slice s.
 Our goal is to obtain the number of PRBs assigned to each slice s ($\bar{K_s}$).
 The problem can be written as
 \begin{subequations}\label{prob:prb}
@@ -561,7 +567,7 @@ The problem can be written as
 \max\limits_{\boldsymbol{\bar{K_s}}} \quad &  \sum_{s=1}^{S}\delta_s K_s \ln(\bar{K_s}) \ \\
 \text{subject to} \quad  & \sum_s{\bar{K_s}} \leq K
  \label{prb0} \\
-& K_s^{min} \leq \bar{K_s}  \leq K_s^{max}  \quad \forall s \in S_1,\label{prb1} \\
+& K_s^{\min} \leq \bar{K_s}  \leq K_s^{\text{max}}  \quad \forall s \in S_1,\label{prb1} \\
 &  \bar{K_s} \leq K_s  \quad \forall s \in S_2, S_3.\label{prb2}
 \end{alignat}
 \label{constraints}
@@ -601,11 +607,11 @@ We repeat this procedure until the algorithm converges.
 \subsection{Sub-Problem 1}\label{sub1}
 Suppose that $\boldsymbol{G}$ is fixed, we want to obtain $\boldsymbol{P}, \boldsymbol{E}$ and $\boldsymbol{M}$.
 Here, we first simplify and relax the parameters to convexify the problem.
-As we mentioned before, by replacing $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} with $P^{max}_s$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$, and also the lower bound $\bar{\rho}_{u(s,i)}^{k}$ is achieved
+As we mentioned before, by replacing $p_{u(s,l)}^{k}$ and $p_{u(n,l)}^{k}$ in \eqref{eqI} with $P^{\text{max}}_s$, an upper bound $\bar{I}_{r,u(s,i)}^{k}$ is obtained for $I_{r,u(s,i)}^{k}$, and also the lower bound $\bar{\rho}_{u(s,i)}^{k}$ is achieved
 for $\rho_{u(s,i)}^{k}$.
 Moreover, the lower bound $\bar{\mathcal{R}}_{u_{(s,i)}}, \forall s , \forall i$ for  ${\mathcal{R}}_{u_{(s,i)}}$ is obtained by replacing $I_{r,u(s,i)}^{k}$ with $\bar{I}_{r,u(s,i)}^{k}$ in \eqref{eq11} and \eqref{eq3} and make these equations become concave functions.
 
-Suppose $\hat{\rho}_{r,u(s,i)}^{k} =  \frac{P_{s}^{max}|{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0}$.
+Suppose $\hat{\rho}_{r,u(s,i)}^{k} =  \frac{P_{s}^{\text{max}}|{\bold{h}_{r,u(s,i)}^{H \: k}} \bold{w}_{r,u(s,i)}^{k} g_{u(s,i)}^r|^2}{BN_0}$.
 we replace ${\rho}_{r,u(s,i)}^{k}$ with $\hat{\rho}_{r,u(s,i)}^{k}$ in \eqref{shortPacket}, to convexify the \eqref{eq11} for the URLLC and mMTC services that have the short packet transmission.
 So, a lower bound for \eqref{eq11} is given that is a concave function.
 \begin{subequations}\label{lb1}
@@ -620,9 +626,9 @@ Without loss of generality, assume that UPF, O-CU and O-DU use the processors wi
 the mean arrival data rate of the UPF layer for a service $s$ ($\alpha_{s}^U$) is equal to the mean arrival data rate of the O-CU-UP layer ($\alpha_{s}^C$) and O-DU ($\alpha_{s}^D$). So $\alpha_{s} =\alpha_{s}^U \approx \alpha_{s}^C \approx \alpha_{s}^D$. Again, this assumption only simplifies the notations and loosing it does not make the solution inefficient.
 These assumptions lead to having the same processing power for each layer $\phi_s^u = \phi_s^c =\phi_s^d $.
 As a result, we have $M_s = M_s^u = M_s^c = M_s^d $.
-Using the above assumption, we have $T^{DU}_{s} = T^{CU}_{s} = T^{UPF}_{s}$ and we have
-$T^{\text{proc}}_{s} =  T^{RU}_{s} + T^{DU}_{s} + T^{CU}_{s} + T^{UPF}_{s}$. So,
-$T^{\text{proc}}_{s}=  T^{RU}_{s} + 3\times T^{DU}_{s}.$
+Using the above assumption, we have $T^{\text{DU}}_{s} = T^{\text{CU}}_{s} = T^{\text{UPF}}_{s}$ and we have
+$T^{\text{proc}}_{s} =  T^{\text{RU}}_{s} + T^{\text{DU}}_{s} + T^{\text{CU}}_{s} + T^{\text{UPF}}_{s}$. So,
+$T^{\text{proc}}_{s}=  T^{\text{RU}}_{s} + 3\times T^{\text{DU}}_{s}.$
 %\begin{equation}
 %\begin{split}
 %T^{\text{proc}}_{s} &=  T^{RU}_{s} + T^{DU}_{s} + T^{CU}_{s} + T^{UPF}_{s} \\
@@ -636,7 +642,7 @@ In the following, we define a lemma to find the upper and lower bounds for the o
 \begin{lemma}\label{lemma1}
 The optimal number of VNFs in each slice s can be achieved by the
 $M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s$.
-where, $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
+where, $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{\text{max}}_s R_{u(s,i)}-T^{\text{max}}_s\lambda_{u(s,i)} -1)}{(T^{\text{max}}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
 \end{lemma}
 %{\color{red} add one sentence before lemma to motivate why you need this lemma. The whole part is a lemma? It is too long. Where is the proof?}
 \begin{proof}
@@ -652,22 +658,22 @@ Also from equations in \eqref{c19}, \eqref{c16-1} and \eqref{c16-3}, we have
 \begin{equation}
 \alpha_s/\mu_s\leq M_s \leq \min\{M^{\max}, \phi_{\max}/{3\phi_s}\}.
 \end{equation}
-We denote $ \mathfrak{M}_s= \min\{M^{max}, \phi_{max}/{3\phi_s}\}$.
+We denote $ \mathfrak{M}_s= \min\{M^{\max}, \phi_{\max}/{3\phi_s}\}$.
 Thus, if we restrict constraint \eqref{c16} to equality, constraint \eqref{c16} is still valid.
 Also, we have the following inequality.
 \begin{equation}\label{eqDelay}
-\frac{\alpha_s}{\mu_s} \leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s.
+\frac{\alpha_s}{\mu_s} \leq \frac{\alpha_s(T^{\max}_s R_{u(s,i)}-T^{\max}_s\lambda_{u(s,i)} -1)}{(T^{\max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s.
 \end{equation}
-In equation \eqref{eqDelay}, $0\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ is established due to the fact that
+In equation \eqref{eqDelay}, $0\leq \frac{\alpha_s(T^{\max}_s R_{u(s,i)}-T^{\max}_s\lambda_{u(s,i)} -1)}{(T^{\max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ is established due to the fact that
 the numerator and the denominator will both have the same sign.
 In the numerator, according to the \eqref{c16-2}, $ R_{u(s,i)}-\lambda_{u(s,i)} \geq 0$, and as we know that $\alpha_s \geq 0$, we have $ \alpha_s (R_{u(s,i)}-\lambda_{u(s,i)}) \geq 0 $.
-If we assume that the $(R_{u(s,i)}-\lambda_{u(s,i)})T^{max}_s \geq 1$, the numerator will be positive.
-$(R_{u(s,i)}-\lambda_{u(s,i)})T^{max}_s \geq 1$ since the order of $T^{max}_s$ is about milli second and the difference between achievable rate and packet rate can be more than $1/T^{max}_s$.
-Therefore, to ensure that this constraint will be valid, we restrict constraint \eqref{c16-2} to $R_{u(s,i)} \geq \lambda_{u(s,i)} + 1/T^{max}_s$.
+If we assume that the $(R_{u(s,i)}-\lambda_{u(s,i)})T^{\max}_s \geq 1$, the numerator will be positive.
+$(R_{u(s,i)}-\lambda_{u(s,i)})T^{\max}_s \geq 1$ since the order of $T^{\max}_s$ is about milli second and the difference between achievable rate and packet rate can be more than $1/T^{\max}_s$.
+Therefore, to ensure that this constraint will be valid, we restrict constraint \eqref{c16-2} to $R_{u(s,i)} \geq \lambda_{u(s,i)} + 1/T^{\max}_s$.
 So the numerator will be positive.
-In the denominator, we can say that $(T^{max}_s\mu_s)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s \geq 0 $, since,
+In the denominator, we can say that $(T^{\max}_s\mu_s)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s \geq 0 $, since,
 $\mu_s \geq 0$ and
-$(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T^{max}_s$ as mentioned above.
+$(R_{u(s,i)}-\lambda_{u(s,i)}) \geq 1/T^{\max}_s$ as mentioned above.
 %Therefore, we need to have the constraint below.
 %\begin{equation}\label{constraint16}
 %\alpha_s/\mu_s\leq \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s } \leq \mathfrak{M}_s
@@ -685,10 +691,10 @@ For the right side, by reformulating the equation \eqref{eqDelay}, we have a new
 %\begin{subequations}\label{RM}
 \begin{align}\label{RM}
 \mathcal{R}_{u(s,i)} &\geq \varpi_{u(s,i)}, \\
-\varpi_{u(s,i)} &= \lambda_{u(s,i)} + \frac{1}{T^{max}_s}+ \frac{3}{T^{max}_s\mu_s-\alpha_s \frac{T^{max}_s}{\mathfrak{M}_s}-3}.
+\varpi_{u(s,i)} &= \lambda_{u(s,i)} + \frac{1}{T^{\max}_s}+ \frac{3}{T^{\max}_s\mu_s-\alpha_s \frac{T^{\max}_s}{\mathfrak{M}_s}-3}.
 \end{align}
 %\end{subequations}
-In addition, we denote $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{max}_s R_{u(s,i)}-T^{max}_s\lambda_{u(s,i)} -1)}{(T^{max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
+In addition, we denote $\mathtt{M}_{u(s,i)} = \frac{\alpha_s(T^{\max}_s R_{u(s,i)}-T^{\max}_s\lambda_{u(s,i)} -1)}{(T^{\max}_s\mu_s-3)(R_{u(s,i)}-\lambda_{u(s,i)}) - \mu_s }$ for each UE $i$ in slice $s$.
 So to obtain, the optimal number of activated VNF in each slice, we need to find the maximum of the
 $\mathtt{M}_{u(s,i)}$ in each slice as $M_s = \max\{\mathtt{M}_{u(s,i)} | i \in 1,2,..., U_s\} \quad \forall s $.
 %\begin{equation}
@@ -701,10 +707,10 @@ Furthermore, the problem can be solved using the Lagrangian function and iterati
 
 In order to make \eqref{problem} as a standard form of a convex optimization problem, it is required to change the variable of equations \eqref{cr} to $P_r = \sigma_{q_r}^2\times 2^{C^r}$ so the constraint
 \eqref{c15} is changed to
- $P_r \leq \sigma_{q_r}^2\times 2^{C^r_{max}}$.
+ $P_r \leq \sigma_{q_r}^2\times 2^{C^r_{\max}}$.
 The combination of equations \eqref{c11} and \eqref{c15} leads to the following equation
 \begin{equation} \label{pr11}
-P_r\leq \zeta_r= min\{P_{max}, \sigma_{q_r}^2\times 2^{C^r_{max}} \}. 
+P_r\leq \zeta_r= \min\{P_{\max}, \sigma_{q_r}^2\times 2^{C^r_{\max}} \}. 
 \end{equation}
 Moreover, the combination of equations in \eqref{c13}, \eqref{c16-2} and \eqref{RM} leads to the following equation
 \begin{equation}\label{RConstr}
@@ -715,7 +721,7 @@ Assume $\boldsymbol{\mathfrak{v}}$, $\boldsymbol{\mathfrak{m}}$, $\boldsymbol{\m
 &\mathcal{L}(\boldsymbol{P},\boldsymbol{E}; \boldsymbol{\mathfrak{v}}, \boldsymbol{\chi}, \boldsymbol{\mathfrak{h}}, \boldsymbol{ \xi}, \boldsymbol{ \kappa}, \boldsymbol{\mathfrak{m}})  = \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\delta_s\mathcal{\bar{R}}_{u_{(s,i)}}\nonumber\\
 &+\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\mathfrak{h}_{u_{(s,i)}} (\mathcal{\bar{R}}_{u_{(s,i)}}-\eta_{u_{(s,i)}})-  \sum\limits_{r=1}^{R} \mathfrak{m}_{r} (P_{r}- \zeta_r)\nonumber\\
 &+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\kappa^k_{r,u(s,i)}  p^k_{r,u(s,i)}\nonumber\\
-&+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\mathfrak{q}^k_{r,u(s,i)} (P^{max}_{s}- p^k_{r,u(s,i)})\nonumber\\
+&+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\mathfrak{q}^k_{r,u(s,i)} (P^{\max}_{s}- p^k_{r,u(s,i)})\nonumber\\
 &+ \sum\limits_{r=1}^{R}\sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\chi_{r,u(s,i)}(\sum_{k =1}^{K_s} e^{k}_{r,u(s,i)} -1)\nonumber\\
 &-  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R}\mathfrak{v}^{k}_{r,u(s,i)} (e^{k}_{r,u(s,i)} -1)\nonumber\\
 &+  \sum\limits_{s=1}^{S} \sum\limits_{i=1}^{U_s}\sum\limits_{k=1}^{K} \sum\limits_{r=1}^{R} \xi^{k}_{r,u(s,i)} e^{k}_{r,u(s,i)}.
@@ -846,9 +852,9 @@ The complexity order of this algorithm is about $O(S\log(S)) + O(R\times \mathfr
  \small
 \caption{Iterative algorithm for the baseband resource allocation and VNF activation (IABV)}\label{alg2}
 \begin{algorithmic}[1]
-\State  Set the maximum number of iterations ${Iter}_{max}$, convergence condition $\epsilon > 0$ \label{a21}
+\State  Set the maximum number of iterations ${Iter}_{\max}$, convergence condition $\epsilon > 0$ \label{a21}
 \State  Assign Users to O-RU randomly (Initialize $\boldsymbol{G}$) \label{a22}
-\For {$i \gets 1$ to $Iter_{max}$}\label{23}
+\For {$i \gets 1$ to $Iter_{\max}$}\label{23}
 \State Acquire $\boldsymbol{P}^{(i)}$, $\boldsymbol{E}^{(i)}$ and $\boldsymbol{M}^{(i)}$ using Lagrangian function and sub-gradient method based on \eqref{sub1}
 \State Update $\boldsymbol{G}^{(i)}$   based on algorithm GAAOU \eqref{alg1} in  \eqref{sub2}
 \If {the algorithm converged with the tolerence of $\epsilon$}
@@ -933,7 +939,7 @@ Assume we have six 4-antenna O-RU (MISO) located in a place with a diameter of 5
 
 \begin{figure}
   \centering
-    \includegraphics[scale = 0.37]{cell.pdf}
+    \includegraphics[scale = 0.35]{cell.pdf}
     %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
     %\includegraphics[width=\textwidth]{finalDraw.pdf}
   \caption{O-RU placement in a cell}
@@ -982,25 +988,24 @@ and $\mathfrak{q}^k_{r,u(s,i)} = P_{s}^{max}/100$. The other parameters of these
  \end{center}
  \end{table}
  
-Finding a feasible initial value is almost tricky. To overcome this challenge, we use a fast method that is discussed in \ref{fr}. If the fast method converges and has a feasible solution, so our algorithm (IABV) can be converged too.
-Two different methods are used to compare with the performance of the proposed method (IABV) and show the optimality of our approach.
+\textcolor{MidnightBlue}{Finding a feasible initial value is almost tricky. We use a fast method discussed in \ref{fr} to overcome this challenge. 
+Two different methods are used to compare the performance of the proposed method (IABV) and show the optimality of our approach.
 The first one is a baseline scheme, which uses random PRB allocation. Therefore, the allocation of PRB to each UE is random when we have low interference, but in figures with high interference, we randomly assign just one RB to each UE. Also, the association of O-RU is carried out based on distance. It means that each UE is assigned to the nearest O-RU. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method since the problem is convex.
-After achieving power and other parameters, the achievable rate will be obtained, and the optimal number of VNF is achieved from Lemma \eqref{lemma1}.
+After achieving power and other parameters, the achievable rate will be obtained, and the optimal number of VNF is achieved from Lemma \eqref{lemma1}.}
 
-For the second one, we use the idea of the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic} and named it the dynamic resource allocation scheme (DR scheme). 
+\textcolor{MidnightBlue}{For the second one, we use the idea of the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic} and named it the dynamic resource allocation scheme (DR scheme). 
  We have services with different QoS in this work, similar to tenants with different QoS introduced in \cite{lee2018dynamic}. Therefore, we can use the DR scheme similar to the FBDR method adapted to our conditions for comparison. Instead of BBU in C-RAN, we have O-DU and O-CU in O-RAN.
  Since we do not talk about O-DU and O-CU capacity, we use the dynamic resource allocation scheme (DR scheme) algorithm and do not consider BBU capacity.
-But also, we can assume that O-DU and O-CU have fixed sufficient capacity in our system model. Also, our mid-haul link (F1 link) has adequate capacity, so there will be no issue using the idea of the FBDR method with this assumption and using the DR scheme. In the DR scheme, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm \ref{alg1} (GAA algorithm) for O-RU assignment. The figures in \cite{lee2018dynamic} show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same priority area. The numerical results section also indicates that our proposed algorithm performs better than the DR scheme.
+ In the DR scheme, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm \ref{alg1} (GAA algorithm) for O-RU assignment. The figures in \cite{lee2018dynamic} show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same priority area. The numerical results section also indicates that our proposed algorithm performs better than the DR scheme.}
 
 \subsection{Feasible Region}\label{fr}
-Applying the correct initial point to make the system feasible is a significant step in our work.
-During the simulations, it can be noted that sometimes the algorithm does not converge for some of the iterations with fixed initial values.
-To solve this problem, we investigated the non-converging and converging simulation for models with fixed initial parameters (such as number of UEs, the threshold of power and rate,... ) and random channel gains of UEs.
-By comparing convergent and non-convergent simulations, we experimentally found that in cases where convergence does not occur, there are UEs at the edge of the boundaries or far away from the O-RU and have a weak channel gain. One solution is to eliminate UEs who undermine system convergence.
-For a large number of UEs with a fixed number of PRBs, the probability of having an infeasible solution increases due to a large number of UE interference.
+\textcolor{MidnightBlue}{Applying the correct initial point to make the system feasible and converge is a significant step in our work.
+To solve this problem, we investigated the non-converging and converging simulation for models with fixed initial parameters and random channel gains of UEs.
+We experimentally found that in non-converged simulations, there are UEs at the edge of the boundaries or far away from the O-RU and have a weak channel gain. One solution is to eliminate UEs who undermine system convergence.
+For a large number of UEs with a fixed number of PRBs, the probability of having an infeasible solution increases due to a large number of UE interference.}
 Another solution is to remove the simulations in the Monte-Carlo that do not converge.
 In the simulation part, if more than half of the iterations have a feasible solution for the initial condition, the simulation can be displayed as a feasible model.
-To remove non-converging simulations, we need to use a fast algorithm (FA) to check the convergence before
+To remove non-converging simulations, we use a fast algorithm (FA) to check the convergence before
 the proposed algorithm (IABV).
 If the conditions in \eqref{RConstr}, \eqref{pr11}, \eqref{c12-1} and \eqref{c12} are met in the fast algorithm (FA), the given algorithm will converge.
 Assume, the number of UEs is $\mathfrak{N} = \sum_{s=1}^{S}\sum_{i=1}^{U_s}1$,
@@ -1010,101 +1015,49 @@ The complexity order of this algorithm is $O(R\times \mathfrak{N})$ which is rem
 In the FA algorithm, the O-RU association is based on the distance of the UE to the O-RU.
 Each UE is associated with the nearest O-RU. Also, the power of each UE is set to be the minimum of the maximum power of each UE and the maximum power of each O-RU divided by the total number of UEs ($\min\{P_s^{\max}, P_r^{\max}/\mathfrak{N}\}$).
 Moreover, the allocation of PRBs to UEs is based on dividing the number of UEs by the total number of PRBs.
-If the number of UEs is more than the PRBs, each UE is given exactly one PRB without interference. Otherwise, the amount of interference will not be high but more than one UE will use same PRBs.
-%\vspace*{-1.7em}
+\vspace*{-1.5em}
 \subsection{Numerical Results}
-In Fig. \ref{fig:1}, the aggregate throughput is demonstrated versus the different number of UEs in each service for these three methods. Suppose we have one service instance for each type of service, so we have three various services in this figure. Also, we have between 6 to 48 UEs in the system.
+In Fig. 3, the aggregate throughput is demonstrated versus the different number of UEs in each service for these three methods. Suppose we have one service instance for each type of service, so we have three various services in this figure. Also, we have between 6 to 48 UEs in the system.
 Here, we did not consider the priority. The figure presented that the proposed method, IABV, is $18.6\%$ higher throughput than the baseline scheme.
 As the number of UEs increases in each service, the aggregated throughput initially increases. Still, due to the interference and the power constraint, it will be saturated from 12 UEs in each service.
-\begin{figure}%[!tbp]
-  \centering
-  \captionsetup{justification=centering}
-    \includegraphics[scale = 0.5]{fig/Arate_ue1_1n.eps}
-    \caption{Aggregate throughput vs. number of UEs in each service}% in the presence of three services}
-    \label{fig:1}
-\end{figure}
 
-\begin{figure}
-\centering
-  %\captionsetup{justification=centering}
-  \includegraphics[scale = 0.5]{fig/vnfNum1n.eps}
-       %\includegraphics[width=7cm,height=4cm]{vnfNum1.eps}
-    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-  \caption{Number of activated VNF in each service vs. mean arrival rate(Mbps)}
-  \label{fig:4}
-\end{figure}
-%%%%%%%%%
-%\begin{figure}
-%  \centering
-%    \includegraphics[scale = 0.47]{Arate_ue1.eps}
-%    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-%    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-%  \caption{Aggregate throughput vs. number of UEs for each service in the presence of three services}
-%  \label{fig:1}
-%\end{figure}
-%%%%%%%%%%%%%%
-%Assume we have two type of services (URLLC and mMTC). In figure \ref{fig:2} and \ref{fig:3}, the aggregate throughput (by considering the priority factor
-%($\sum_s \sum_i \delta_s \bar{R}_{{u(s,i)}}$)) is depicted for two services URLLC and mMTC. Here we consider 4 UEs in each service. The other parameter is shown in table \ref{table:1a}.
-%The figure \ref{fig:2}, presented that by increasing the priority factor for URLLC, more resources is allocated to this service and the aggregate throughput of this service is increased and vice verse.
-%\begin{figure}
-%  \centering
-%    \includegraphics[scale = 0.4]{mmtcURLLC.eps}
-%    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-%    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-%  \caption{Aggregate Throughput for mMTC and URLLC vs. Priority of URLLC }
-%  \label{fig:2}
-%\end{figure}
-%In figure \ref{fig:3}, the total sum rate of URLLC and mMTC is shown vs. priority of URLLC. It is shown that the proposed method is much better than the baseline scheme.
-%\begin{figure}
-%  \centering
-%    \includegraphics[scale = 0.4]{sumRatePri.eps}
-%    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-%    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-%  \caption{Aggregate Throughput of all services vs. Priority of URLLC}
-%  \label{fig:3}
-%\end{figure}
-Fig. \ref{fig:4} depicts the number of activated VNFs for five different mean service times of one URLLC service vs. the mean arrival time for 12 UEs. This figure presents that as the mean arrival rate increases, the number of activated VNF increases. Moreover, the number of activated VNFs decreases when the mean service rate increases.
-%%%%%%%%%%%%%%
-%\begin{figure}
-%  \centering
-%    \includegraphics[scale = 0.47]{vnfNum1.eps}
-%    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-%    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-%  \caption{Number of activated VNF in each Service vs. Mean Arrival Rate(Mbps)}
-%  \label{fig:4}
-%\end{figure}
-%%%%%%%%%%%%
-In Fig. \ref{fig:5}, the aggregate throughput is depicted vs. the maximum power of UE for three different instances of eMBB service using proposed method (IABV), DR scheme and the baseline scheme. Here, we suppose that we have 12 UEs in each service.  We assume that these three services require 5bits/sec/Hz, 10bits/sec/Hz, and 15bits/sec/Hz.
+
+\begin{figure*}[!htb]
+	\centerline{%
+		\begin{tabular}{c@{}c@{}c}			
+			\includegraphics[scale = 0.42]{fig/Arate_ue1_1n.eps} &
+			\includegraphics[scale = 0.42]{fig/vnfNum1n.eps} &
+			\includegraphics[scale = 0.42]{fig/RatePower1n.eps} \\
+			\scriptsize(3)~~Aggregate throughput vs. number of UEs in each service & \scriptsize(4)~~Number of  VNFs in each service vs. mean arrival rate & \scriptsize(5)~~Aggregate throughput for eMBB vs. maximum  power 
+	\end{tabular}}
+	%\caption{Global caption.}
+	\label{label}
+\end{figure*}
+
+Fig. 4 depicts the number of activated VNFs for five different mean service times of one URLLC service vs. the mean arrival time for 12 UEs. This figure presents that as the mean arrival rate increases, the number of activated VNF increases. Moreover, the number of activated VNFs decreases when the mean service rate increases.
+
+
+In Fig. 5, the aggregate throughput is depicted vs. the maximum power of UE for three different instances of eMBB service using proposed method (IABV), DR scheme and the baseline scheme. Here, we suppose that we have 12 UEs in each service.  We assume that these three services require 5bits/sec/Hz, 10bits/sec/Hz, and 15bits/sec/Hz.
 In addition, We suppose that each O-RU can transmit three times of the maximum power of the UEs. As you can see in the figure, increasing the maximum power increases the aggregate throughput. Moreover, the proposed method (IABV), gives higher aggregate rates in compared to the DR scheme and the baseline scheme.
-\begin{figure}%[!tbp]
-  \centering
-  %\captionsetup{justification=centering}
-    \includegraphics[scale = 0.5]{fig/RatePower1n.eps}
-    \caption{Aggregate throughput for eMBB vs. maximum transmit power for various number of UEs }
-  \label{fig:5}
-\end{figure}
-\begin{figure}
-  \centering
-  %\captionsetup{justification=centering}
-      \includegraphics[scale = 0.5]{fig/delay_newn.eps}
-  \caption{Mean total delay of a URLLC Service vs. the mean arrival rate of a UE in the service}
-  \label{fig:6}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}
-%  \centering
-%    \includegraphics[scale = 0.47]{RatePower1.eps}
-%    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-%    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-%  \caption{Aggregate Throughput for eMBB vs. Maximum Transmit power for various number of UEs }
-%  \label{fig:5}
-%\end{figure}
+
+\begin{figure*}[!htb]
+	\centerline{%
+		\begin{tabular}{c@{}c@{}c}			
+			\includegraphics[scale = 0.42]{fig/delay_newn.eps} &
+			\includegraphics[scale = 0.42]{fig/delay1_newn.eps} &
+			\includegraphics[scale = 0.42]{fig/AmmTCpowern.eps} \\
+			\scriptsize(6)~~Mean delay of a URLLC Service vs. the arrival rate of a UE  & \scriptsize(7)~~Mean delay of a URLLC  vs. the arrival rate of a UE  & \scriptsize(8)~~Aggregate throughput vs. number of UEs in mMTC services
+	\end{tabular}}
+	%\caption{Global caption.}
+	\label{label}
+\end{figure*}
+
 %%%%%%%%%%%%%%%%%%%%
-Fig. \ref{fig:6} illustrates the mean total delay of a UE in a URLLC service regarding the mean arrival rate of the UE and the number of UEs in the service for the proposed method (IABV).
+Fig. 6 illustrates the mean total delay of a UE in a URLLC service regarding the mean arrival rate of the UE and the number of UEs in the service for the proposed method (IABV).
 It is shown that the delay is an ascending function of the mean arrival rate (when the mean service time is fixed) and the number of UEs in the service. In this figure, we assume that the maximum number of VNF for each slice is 50 and the maximum delay of each UE in a URLLC service is $0.5ms$. Also, the maximum number of PRB is considered to be 50.
  Moreover, we can see that the mean delay of a URLLC service
 does not reach the maximum threshold of the delay.
+
 %Moreover, we can see that the mean delay of a URLLC service increases almost linearly with the mean arrival rate of the packet transmission.
 %%%%%%%%%%%%%%%%%
 %\begin{figure}
@@ -1116,37 +1069,15 @@ does not reach the maximum threshold of the delay.
 %  \label{fig:6}
 %\end{figure}
 %%%%%%%%%%%%%%%%%%%%5
-Fig. \ref{fig:7} is the same as Fig. \ref{fig:6} that presented the mean total delay of a UE in a URLLC service regarding the mean arrival rate of the UE for 20 UEs using three different methods. As you can see, the proposed method (IABV) outperforms the other scenarios.
-%%%%%%%%%%%%%
-%\begin{figure}
-%  \centering
-%    \includegraphics[scale = 0.47]{delay1_new.eps}
-%    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
-%    %\includegraphics[width=\textwidth]{finalDraw.pdf}
-%  \caption{Mean Total Delay of a URLLC Service vs. the Mean Arrival Rate of a UE in the Service for different methods}
-%  \label{fig:7}
-%\end{figure}
-%%%%%%%%%%%%%
-\begin{figure}%[!tbp]
-  \centering
-  %\captionsetup{justification=centering}
-    \includegraphics[scale = 0.5]{fig/delay1_newn.eps}
-    \caption{Mean total delay of a URLLC service vs. the mean arrival rate of a UE in the service}
-  \label{fig:7}
-\end{figure}
-\begin{figure}%[!tbp]
-  \centering
-  %\captionsetup{justification=centering}
-       \includegraphics[scale = 0.5]{fig/AmmTCpowern.eps}
-  \caption{Aggregate throughput vs. number of UEs in each service for three different mMTC services}
-  \label{fig:8}
-\end{figure}
-Fig. \ref{fig:8}, represents the aggregate throughput concerning the number of UEs in each service and the maximum power for three different mMTC service instances. mMTC service includes a large number of UEs with low data rates and low power.
+Fig. 7 is the same as Fig. 6 that presented the mean total delay of a UE in a URLLC service regarding the mean arrival rate of the UE for 20 UEs using three different methods. As you can see, the proposed method (IABV) outperforms the other scenarios.
+
+Fig. 8, represents the aggregate throughput concerning the number of UEs in each service and the maximum power for three different mMTC service instances. mMTC service includes a large number of UEs with low data rates and low power.
 Assume each UE in each mMTC service instance requires 0.1 bits/sec/Hz data rate and is not sensitive to the end-to-end delay. There is no restriction on fronthaul link capacity and the number of VNFs.
 %Moreover, to make the simulation feasible, we assume that the number of PRBs is as large as the system has low interference.
 %so we suppose there is a fixed  PRB allocation in the simulation that each UE is allocated to one PRB. There is no PRB with more than one UE allocation.
 The figure depicts that by increasing the number of UEs in each instance of the service, the aggregate throughput increases.
 Also, by increasing the maximum power of each UE in each instance of mMTC service, the aggregate throughput rises too.
+
 %%%%%%%%%%%%
 %\begin{figure}
 %  \centering
@@ -1157,16 +1088,21 @@ Also, by increasing the maximum power of each UE in each instance of mMTC servic
 %  \label{fig:8}
 %\end{figure}
 %%%%%%%%%%%%
-Assume we have two types of eMBB service instances. In Fig. \ref{fig:9}, the aggregate throughput (by considering the priority factor $\delta_s$) is depicted for two eMBB service instances. Here we consider 4 UEs in each service. We assume that the the fronthaul link and the end-to-end delay have no restrictions.
-The Fig. \ref{fig:9} presented that by increasing the priority factor for one service instance, more resources are allocated to this service instance, and the aggregate throughput of this service is increased and vice versa. Also, we can realize from this figure that the aggregate throughput has the most significant value at the same priority.
-\begin{figure}%[!tbp]
-  \centering
-  %\captionsetup{justification=centering}
-        \includegraphics[scale = 0.5]{fig/priorityLastn.eps}
-  \caption{Aggregate throughput for two eMBB service instances vs. priority of the first service instance }
-  \label{fig:9}
+Assume we have two types of eMBB service instances. In Fig. 9, the aggregate throughput (by considering the priority factor $\delta_s$) is depicted for two eMBB service instances. Here we consider 4 UEs in each service. We assume that the the fronthaul link and the end-to-end delay have no restrictions.
+The Fig. 9 presented that by increasing the priority factor for one service instance, more resources are allocated to this service instance, and the aggregate throughput of this service is increased and vice versa. Also, we can realize from this figure that the aggregate throughput has the most significant value at the same priority.
 
-\end{figure}
+\begin{figure*}[!htb]
+	\centerline{%
+		\begin{tabular}{c@{}c@{}c}			
+			\includegraphics[scale = 0.42]{fig/priorityLastn.eps} &
+			\includegraphics[scale = 0.42]{fig/itern.eps} &
+			\includegraphics[scale = 0.42]{fig/optimal1n.eps} \\
+			\scriptsize(9)~~Throughput of eMBB services vs. priority of the first one  & \scriptsize(10)~~Aggregate throughput vs. number of iterations  & \scriptsize(11)~~Aggregate throughput vs. number of UEs 
+	\end{tabular}}
+	%\caption{Global caption.}
+	\label{label}
+\end{figure*}
+
 %%%%%%%%%%5
 %\begin{figure}
 %  \centering
@@ -1195,7 +1131,7 @@ The Fig. \ref{fig:9} presented that by increasing the priority factor for one se
 %  \caption{Aggregate Throughput vs. Number of UEs in a Service}
 %  \label{fig:10}
 %\end{figure}
-In Fig. \ref{fig:11}, the aggregate throughput is shown according to the number of iteration (outer loop) of the
+In Fig. 11, the aggregate throughput is shown according to the number of iteration (outer loop) of the
 proposed algorithm (IABV) for different numbers of UEs for one service. In this figure, the convergence of the IABV method is illustrated. The minimum data rate for each UE is assumed to be 2 Mbps.
 After four iterations, IABV converges to the fixed value.
 
@@ -1211,7 +1147,7 @@ After four iterations, IABV converges to the fixed value.
 %\end{figure}
 %%%%%%%%%%%%%%%%%5
 %\subsection{Summary of Simulation Results}
-In Fig. \ref{fig:12}, the aggregate throughput is shown according to the number of UEs for two different methods, namely the
+In Fig. 12, the aggregate throughput is shown according to the number of UEs for two different methods, namely the
 proposed algorithm (IABV) and the optimal method for URLLC service for the low interference.
 The minimum data rate is 5bits/sec/Hz for each UE and the maximum delay is $0.1$ms.
 Also the mean arrival rate is set to be $0.2$Mbps and the mean service rate is $0.5$Mbps.
@@ -1219,21 +1155,19 @@ The other parameters are depicted in Table \ref{table:1a}.
 The optimal approach is obtained from the two-step joint exhaustive search and using CVX.
 In each iteration in the first step, the PRB allocation and O-RU association are obtained from brute force, and in the second step, we use CVX to get optimal power.
 Our solution is close to the optimal value in a small number of UEs.
-\begin{figure}%[tbp]
-  \centering
-  %\captionsetup{justification=centering}
-     \includegraphics[scale = 0.5]{fig/itern.eps}
-  \caption{Aggregate throughput vs. number of iterations}
-  \label{fig:11}
-\end{figure}
-\begin{figure}%[tbp]
-  \centering
-  %\captionsetup{justification=centering}
-   \includegraphics[scale = 0.5]{fig/optimal1n.eps}
-  \caption{Aggregate throughput vs. number of UEs in one service}
-  \label{fig:12}
-\end{figure}
 
+
+\begin{figure*}[!htb]
+	\centerline{%
+		\begin{tabular}{c@{}c@{}c}			
+			\includegraphics[scale = 0.42]{fig/interF_newn.eps} &
+			\includegraphics[scale = 0.42]{fig/FAn.eps} &
+			\includegraphics[scale = 0.42]{fig/exec.eps} \\
+			\scriptsize(13)~~Aggregate throughput vs. maximum interference  & \scriptsize(14)~~Aggregate throughput vs. the number of UEs in a service   & \scriptsize(15)~~Execution time vs. number of UEs
+	\end{tabular}}
+	%\caption{Global caption.}
+	\label{label}
+\end{figure*}
 %\begin{figure}
 %  \centering
 %    \includegraphics[scale = 0.4]{optimal1.eps}
@@ -1243,7 +1177,7 @@ Our solution is close to the optimal value in a small number of UEs.
 %  \label{fig:12}
 %\end{figure}
 
-In Fig. \ref{fig:13}, the aggregate throughput is depicted vs. the maximum interference for two different maximum power thresholds of O-RU. We suppose that the maximum power threshold of UEs is one-third of the maximum power of O-RU.
+In Fig. 13, the aggregate throughput is depicted vs. the maximum interference for two different maximum power thresholds of O-RU. We suppose that the maximum power threshold of UEs is one-third of the maximum power of O-RU.
 %The minimum data bit rate is assumed to be 0.2Mbps for each UE.
 Here we assume that with the increase of every ten dBm of interference power, it is assumed that ten users have been added to the system. In -105 dBm, we have 5 UEs, and at the end, we have 55 UEs in the system.
 Since the amount of interference in the system is entered as a fixed value,
@@ -1251,21 +1185,7 @@ the allocation of PRBs is not considered.
 The higher maximum power threshold leads to a greater aggregate throughput.
 The aggregate throughput first increases with the number of UEs and at the same time the amount of the maximum interference, then it becomes almost fixed and finally decreases so much. When the aggregate throughput decreases, the maximum interference is so high that it takes the system out of feasibility.
 %The aggregate throughput rises with the increases of UEs and the maximum interference and then remains almost constant.
-\begin{figure}%[tbp]
-  \centering
-  %\captionsetup{justification=centering}
-   \includegraphics[scale = 0.5]{fig/interF_newn.eps}
-  \caption{\small Aggregate throughput vs. maximum interference }
-  \label{fig:13}
-\end{figure}
-\begin{figure}%[tbp]
-  \centering
-  %\captionsetup{justification=centering}
-    \includegraphics[scale = 0.5]{fig/FAn.eps}
-  \caption{\small Aggregate throughput vs. the number of UEs in one service }
-  \label{fig:14}
 
-\end{figure}
 %\begin{figure}
 %  \centering
 %    \includegraphics[scale = 0.4]{interF_new.eps}
@@ -1274,7 +1194,8 @@ The aggregate throughput first increases with the number of UEs and at the same 
 %  \caption{Aggregate Throughput vs. Maximum Interference }
 %  \label{fig:13}
 %\end{figure}
-In Fig. \ref{fig:14}, the aggregate throughput is shown versus
+
+In Fig. 14, the aggregate throughput is shown versus
 the different number of UEs for an eMBB service with low interference for the IABV and FA methods in the feasible region.
 The minimum data rate for each UE is 1Mb/s/Hz.
 The maximum power for each O-RU is 34dBm, and the maximum power for each UE is 30dBm. We assume that the system is not sensitive to fronhaul capacity and end-to-end delay and has enough VNF resources.
@@ -1288,20 +1209,21 @@ And we can see that the IABV method is better than the FA method.
 %  \caption{Aggregate Throughput vs. the Number of UEs }
 %  \label{fig:14}
 %\end{figure}
-\vspace*{-1.em}
+
+In Fig. 15, the execution time is represented versus the number of the UEs for one service. It is noted that the execution time is rising by increasing the number of UEs in the system.
+\vspace*{-1.8em}
 \section{Conclusion}\label{conc}
-In this  paper, we modeled the downlink of the O-RAN system using network slicing for different 5G services, i.e., eMBB, mMTC, and URLLC.
-The isolation of various services, i.e., eMBB, mMTC, and URLLC in the O-DU, the O-CU, and the UPF, is accomplished.
-Also, the paper aims to obtain the number of activated VNFs in each service, RU association, power, and PRB allocation to maximize the aggregate throughput. The limited fronthaul capacity and the mean end-to-end delay for each service are considered.
+\textcolor{MidnightBlue}{In this paper, we modeled the downlink of the O-RAN system using isolated network slicing for different 5G services, i.e., eMBB, mMTC, and URLLC.
+We aim to obtain the number of activated VNFs in each service, RU association, power, and PRB allocation to maximize the aggregate throughput.} The limited fronthaul capacity and the mean end-to-end delay for each service are considered.
 The problem is mixed-integer non-linear programming that is solved by a two-step iterative algorithm.
 In the first step, we reformulated the problem to achieve the number of activated VNFs as a function of data rate. Then, we obtained PRB association and power allocation using the Lagrangian method.
 In the second step, the O-RU association is carried out.
 The performance of our proposed method (i.e., IABV) is compared with the baseline scheme and DR scheme in \cite{lee2018dynamic}.
 In addition, the feasible region is discussed, and the FA algorithm is introduced to check the feasibility of the initial values.
-Also, we assume distinct scenarios for each service, i.e., eMBB, mMTC, and, URLLC based on their requirement QoS.
+Also, we assume distinct scenarios for each service, i.e., eMBB, mMTC, and URLLC, based on their requirement QoS.
 Simulation results show that the proposed method (i.e., IABV) achieves $18.6\%$ higher data rate than the baseline scheme.
 Moreover, simulation results illustrate more minor delays for the proposed method (IABV) than DR scheme and the baseline scheme.
-\vspace*{-0.7em}
+\vspace*{-0.9em}
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
 %\bibliography{IEEEabrv,conf_short,ref}

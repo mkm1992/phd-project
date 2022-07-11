@@ -5,7 +5,7 @@ count_min1 = 5;
 count_step1 = 5;
 count_max1 = 25;
 numvar = length(count_min1:count_step1:count_max1);
-iter_max = 500;
+iter_max = 100;
 sumRate = zeros(numvar,iter_max);
 sumRate1= zeros(numvar,iter_max);
 time_simul = zeros(2, numvar, iter_max);
@@ -54,9 +54,10 @@ for i_count = count_min1:count_step1:count_max1
          run checkFeasibility
          sumRate(number_check,iter) = sum(rate_UE_1);
          A_final
+         time_2 = datetime('now');
+         diff_time(number_check,iter)= datenum(time_2 -time_1);
     end
-    time_2 = datetime('now');
-    diff_time(number_check,iter)= datenum(time_2 -time_1);
+    
 end
 UE_num = count_min1:count_step1:count_max1;
 
@@ -76,7 +77,7 @@ end
 
 plot( UE_num , sumRB1/1e6,'-*')
 
-plot(UE_num, mean(diff_time,2)*1e5)
+plot(UE_num, mean(diff_time,2))
 xlabel('Number of UEs')
 ylabel('delay')
 title('delay vs. Number of UEs')
