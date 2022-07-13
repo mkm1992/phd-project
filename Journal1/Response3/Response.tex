@@ -74,6 +74,7 @@
 \maketitle
 We would like to thank the editor and reviewers for their constructive comments on our manuscript. They have been beneficial in revising this paper, and we have improved the technical content and presentation quality through their assistance. We greatly appreciate their generous help. In addition, we would like to acknowledge the assistance of Dr. Onel Luis Alcaraz López in this revision.
 Moreover, we have reviewed and incorporated all the comments and suggestions.
+Additionally, we removed two figures of Fig. 2 and Fig. 3 since they don't add much to what is already written in words after revision. Even after this revision (comment 2 of reviewer 3), Fig. 2 makes the paper vaguer. We also aim for a more concise manuscript.
 We hope that the modifications we have made to the manuscript and the responses we have provided herein will alleviate the reviewers' concerns. Below, please find our detailed responses to the editor and reviewers' comments and suggestions.
 \\ [-3.ex]
 % % % % % % % % % % % % % % % Editor % % % % % % % % % % % % % % % % % % % %
@@ -95,7 +96,7 @@ We hope that the modifications we have made to the manuscript and the responses 
 
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We would like to thank the Editor for his comments and for giving us this opportunity to improve our paper. We have used the comments to improve our paper and eliminate problems.
+We would like to thank the Editor for his comments and for giving us this opportunity to improve our paper. We have used the comments to improve our paper and eliminate problems. We are confident that we were able to address the reviewers’ and editor’s suggestions.
 
 %\begin{longtable}{|p{0.975\textwidth}|}
 %\hline \hline
@@ -337,6 +338,7 @@ In the first step, we reformulate and simplify the problem so as to find an uppe
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
+We apologize for not considering this comment correctly in the previous version.
 Thank you for this comment. We moved the related works from sub-section to the section part and modified it as below.
 
 The network slicing problem in multi-tenant cellular networks has received significant attention recently, e.g., [8],
@@ -355,8 +357,8 @@ Paper [9] aims to minimize the energy cost with the system delay, fronthaul capa
 Also, transmission and processing delays are modeled based on M/M/1 queueing theory to guarantee UE delays.
 In  [21], [22], the problem of joint virtual computing resource allocation with beamforming is formulated. Also, the association of RRH to the UE is considered and solved using innovative methods.
 
-In  [23]–[25], the problem of joint power allocation and RRH association in a H-CRAN system is considered to maximize the energy efficiency.
-Finally, in [26], the optimum power is obtained in the massive MIMO aided C-RAN system, and the problem of RRH to BBU and RRH to UE association is formulated and solved.
+In  [23],[24], the problem of joint power allocation and RRH association in a H-CRAN system is considered to maximize the energy efficiency.
+Finally, in [25], the optimum power is obtained in the massive MIMO aided C-RAN system, and the problem of RRH to BBU and RRH to UE association is formulated and solved.
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -391,10 +393,13 @@ If we need to remove a slice or any service not used in a zone, the unshared res
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Based on this comment, we added Fig. 11 and Table III to the reported manuscript below.
+We apologize for wrongly responding to this comment in the previous version of the response letter.
+Based on this comment, we added Fig. 11 and Table III to our manuscript.
+Below, we reported these changes. 
+
 In Fig. 11,  the mean total delay is indicated according to the number of iterations. In Table III, we reported the execution delay time according to the number of UEs in the system to investigate the full consideration of the reviewer.
 
-In Fig. 1, the mean total delay is indicated according to the number of iterations of the
+In Fig. \ref{fig:2}, the mean total delay is indicated according to the number of iterations of the
 proposed algorithm (IABV) for different numbers of UEs for one service. This figure shows that the algorithm converged to the fixed value after four iterations.
 \begin{figure}[H]
   \centering
@@ -405,11 +410,21 @@ proposed algorithm (IABV) for different numbers of UEs for one service. This fig
   \label{fig:2}
 \end{figure}
 
-Table I shows the execution time versus the number of UEs for one service. We run our simulation on the system with configures (RAM = 8 GB, CPU = Core i5, SSD Hard Disk). 
+Table III shows the execution delay time versus the number of UEs for one service. We run our simulation on the system with configures (RAM = 8 GB, CPU = Core i5, SSD Hard Disk). 
  As the number of UEs in the system increases, the execution time increases polynomially. 
+Moreover, we added Fig. \ref{fig:3} to the response letter, which is equal to Table III, but for space reasons, we reported Table III instead of Fig. \ref{fig:3}.
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale = 0.5]{exec.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Execution Time vs. Number of UEs}
+  \label{fig:3}
+\end{figure} 
+ 
 \begin{table}[H]
 \captionsetup{labelformat=empty}
- \caption {Table(I) Execution Time vs. Number of UEs} 
+ \caption {Table(III) Execution Time vs. Number of UEs} 
 \begin{center}
  \scalebox{0.9}{
 \begin{tabular}{|| l || l| l |l |l |l ||}
@@ -454,7 +469,7 @@ We appreciate your comment about troubleshooting our paper and removing mistakes
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Based on this comment, we added a Table I reporting the list of acronyms to our paper as follow
+Based on this comment, we added Table I reporting the list of acronyms to our paper as follows to relieve the reviewer's concern.
 
 \begin{table}[H]
 \vspace*{-0em}
@@ -542,7 +557,7 @@ We are pleased to thank the reviewer for his/her detailed and thorough reading o
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Based on this comment, we added a Table I reporting the list of acronyms to the paper that is shown as below
+Based on this comment, we added Table I reporting the list of acronyms to the paper shown below to address the reviewer's concern.
 
 \begin{table}[H]
 \vspace*{-0em}
@@ -600,7 +615,7 @@ Based on this comment, we added a Table I reporting the list of acronyms to the 
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\} 
 We thank the reviewer for reporting this ambiguity.
-We revised this section, rewrote the equation (3), by removing the inter-slice interference to clarify this equation. Moreover, we removed two figures of Fig. 2 and Fig. 3 since they don't add much to what is already written in words, and even Fig. 2 makes the paper vaguer, and we also aim for a more concise manuscript.
+We revised this section and rewrote equation (3) by removing the inter-slice interference to clarify this equation. Moreover, we removed two figures of Fig. 2 and Fig. 3 since they don't add much to what is already written in words after revision, and even after this revision, Fig. 2 makes the paper vaguer. We also aim for a more concise manuscript.
 Below we report the revised sentences.
  
 Network slicing techniques significantly reduce inter-service (inter-slice) interference.

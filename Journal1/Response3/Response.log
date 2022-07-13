@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  13 JUL 2022 00:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.10.3)  13 JUL 2022 13:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -915,7 +915,11 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box76
 \enitdp@description=\count160
 )
-(./Response.aux)
+(./Response.aux
+
+LaTeX Warning: Label `table:11a' multiply defined.
+
+)
 \openout1 = `Response.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
@@ -1022,167 +1026,167 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \author given.
 
 
-Overfull \hbox (8.60794pt too wide) in paragraph at lines 75--80
+Overfull \hbox (8.60794pt too wide) in paragraph at lines 75--81
 []\OT1/cmr/m/n/12 We would like to thank the ed-i-tor and re-view-ers for their
  con-struc-tive com-ments on our manuscript.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 75--81
 
  []
 
 [1
 
 {c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 86--89
+Underfull \hbox (badness 10000) in paragraph at lines 87--90
  []| \OT1/cmr/bx/n/12 Ed-i-tor| 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 84--94
+Overfull \hbox (0.29094pt too wide) in alignment at lines 85--95
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 94
+Underfull \vbox (badness 10000) detected at line 95
  []
 
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 117--120
+Underfull \hbox (badness 10000) in paragraph at lines 118--121
  []| \OT1/cmr/bx/n/12 Re-viewer 1| 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 115--126
+Overfull \hbox (0.29094pt too wide) in alignment at lines 116--127
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 126
+Underfull \vbox (badness 10000) detected at line 127
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 131--137
+Overfull \hbox (0.29094pt too wide) in alignment at lines 132--138
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 137
+Underfull \vbox (badness 10000) detected at line 138
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 141--147
+Overfull \hbox (0.29094pt too wide) in alignment at lines 142--148
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 147
+Underfull \vbox (badness 10000) detected at line 148
  []
 
 
-Overfull \hbox (9.2172pt too wide) in paragraph at lines 149--152
+Overfull \hbox (9.2172pt too wide) in paragraph at lines 150--153
 \OT1/cmr/m/n/12 Thank you for this com-ment. We think that these changes im-pro
 ve the read-abil-ity of the manuscripts.
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 152--158
+Overfull \hbox (0.29094pt too wide) in alignment at lines 153--159
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 158
+Underfull \vbox (badness 10000) detected at line 159
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 171.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 172.
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 171.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 172.
  [3
 
 ] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 184--187
+Underfull \hbox (badness 10000) in paragraph at lines 185--188
  []| \OT1/cmr/bx/n/12 Re-viewer 2| 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 182--193
+Overfull \hbox (0.29094pt too wide) in alignment at lines 183--194
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 193
+Underfull \vbox (badness 10000) detected at line 194
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 200--206
+Overfull \hbox (0.29094pt too wide) in alignment at lines 201--207
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 206
+Underfull \vbox (badness 10000) detected at line 207
  []
 
 [5
 
 ] [6]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 258--264
+Overfull \hbox (0.29094pt too wide) in alignment at lines 259--265
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 264
+Underfull \vbox (badness 10000) detected at line 265
  []
 
 [7]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 279--285
+Overfull \hbox (0.29094pt too wide) in alignment at lines 280--286
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 285
+Underfull \vbox (badness 10000) detected at line 286
  []
 
 [8]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 301--312
+Overfull \hbox (0.29094pt too wide) in alignment at lines 302--313
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 312
+Underfull \vbox (badness 10000) detected at line 313
  []
 
 [9]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 331--337
+Overfull \hbox (0.29094pt too wide) in alignment at lines 332--338
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 337
- []
-
-
-Overfull \hbox (0.29094pt too wide) in alignment at lines 360--366
- [] 
+Underfull \vbox (badness 10000) detected at line 338
  []
 
 [10]
-Underfull \vbox (badness 10000) detected at line 366
- []
-
-[11]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 385--391
+Overfull \hbox (0.29094pt too wide) in alignment at lines 362--368
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 391
+Underfull \vbox (badness 10000) detected at line 368
+ []
+
+[11]
+Overfull \hbox (0.29094pt too wide) in alignment at lines 387--393
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 393
  []
 
 Package epstopdf Info: Source file: <iterD.eps>
@@ -1193,130 +1197,150 @@ Package epstopdf Info: Source file: <iterD.eps>
 (epstopdf)                    size: 8516 bytes
 (epstopdf)             Command: <repstopdf --outfile=iterD-eps-converted-to.pdf
  iterD.eps>
-(epstopdf)             \includegraphics on input line 401.
+(epstopdf)             \includegraphics on input line 406.
 Package epstopdf Info: Output file is already uptodate.
-<iterD-eps-converted-to.pdf, id=81, 483.8075pt x 334.24875pt>
+<iterD-eps-converted-to.pdf, id=82, 483.8075pt x 334.24875pt>
 File: iterD-eps-converted-to.pdf Graphic file (type pdf)
 <use iterD-eps-converted-to.pdf>
-Package pdftex.def Info: iterD-eps-converted-to.pdf  used on input line 401.
+Package pdftex.def Info: iterD-eps-converted-to.pdf  used on input line 406.
 (pdftex.def)             Requested size: 241.90315pt x 167.12396pt.
 [12]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 425--431
+Package epstopdf Info: Source file: <exec.eps>
+(epstopdf)                    date: 2022-07-12 01:16:46
+(epstopdf)                    size: 17928 bytes
+(epstopdf)             Output file: <exec-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-07-12 21:46:23
+(epstopdf)                    size: 7436 bytes
+(epstopdf)             Command: <repstopdf --outfile=exec-eps-converted-to.pdf 
+exec.eps>
+(epstopdf)             \includegraphics on input line 418.
+Package epstopdf Info: Output file is already uptodate.
+<exec-eps-converted-to.pdf, id=91, 449.68pt x 276.03125pt>
+File: exec-eps-converted-to.pdf Graphic file (type pdf)
+<use exec-eps-converted-to.pdf>
+Package pdftex.def Info: exec-eps-converted-to.pdf  used on input line 418.
+(pdftex.def)             Requested size: 224.83945pt x 138.01527pt.
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 440--446
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 431
+Underfull \vbox (badness 10000) detected at line 446
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 439--442
+Overfull \vbox (6.10815pt too high) has occurred while \output is active []
+
+
+[13 <./iterD-eps-converted-to.pdf> <./exec-eps-converted-to.pdf>]
+Underfull \hbox (badness 1038) in paragraph at lines 454--457
 []| \OT1/cmr/bx/n/12 Com-ment9: \OT1/cmr/m/n/12 `More-over, there are some ty-p
 os in the manuscript. For in-stance, user 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 437--443
+Overfull \hbox (0.29094pt too wide) in alignment at lines 452--458
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 443
+Underfull \vbox (badness 10000) detected at line 458
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 448--454
- [] 
- []
-
-[13 <./iterD-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) detected at line 454
- []
-
-
-Overfull \hbox (0.29094pt too wide) in alignment at lines 506--512
+Overfull \hbox (0.29094pt too wide) in alignment at lines 463--469
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 512
+Underfull \vbox (badness 10000) detected at line 469
  []
 
-[14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 522--525
+[14]
+Overfull \hbox (0.29094pt too wide) in alignment at lines 521--527
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 527
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 537--540
  []| \OT1/cmr/bx/n/12 Re-viewer 3| 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 520--531
+Overfull \hbox (0.29094pt too wide) in alignment at lines 535--546
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 531
+Underfull \vbox (badness 10000) detected at line 546
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 536--542
+Overfull \hbox (0.29094pt too wide) in alignment at lines 551--557
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 542
+Underfull \vbox (badness 10000) detected at line 557
  []
 
 [16
 
 ]
-Overfull \hbox (0.29094pt too wide) in alignment at lines 593--599
+Overfull \hbox (0.29094pt too wide) in alignment at lines 608--614
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 599
+Underfull \vbox (badness 10000) detected at line 614
  []
 
 
-LaTeX Warning: Reference `eq:eq1' on page 17 undefined on input line 609.
+LaTeX Warning: Reference `eq:eq1' on page 17 undefined on input line 624.
 
 [17]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 625.
+d on input line 640.
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 629--635
+Overfull \hbox (0.29094pt too wide) in alignment at lines 644--650
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 635
+Underfull \vbox (badness 10000) detected at line 650
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 640--646
+Overfull \hbox (0.29094pt too wide) in alignment at lines 655--661
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 646
+Underfull \vbox (badness 10000) detected at line 661
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 651--657
+Overfull \hbox (0.29094pt too wide) in alignment at lines 666--672
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 657
+Underfull \vbox (badness 10000) detected at line 672
  []
 
 [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 661.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 661.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 676.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 676.
  (./Response.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 661.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 661.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 676.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 676.
 Package rerunfilecheck Info: File `Response.out' has not changed.
 (rerunfilecheck)             Checksum: 65D32DDA1D2DC8F47B90891E8211F695;173.
 
@@ -1324,15 +1348,15 @@ Package rerunfilecheck Info: File `Response.out' has not changed.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 661.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 676.
  ) 
 Here is how much of TeX's memory you used:
- 20284 strings out of 492649
- 367244 string characters out of 6133384
- 555508 words of memory out of 5000000
- 23693 multiletter control sequences out of 15000+600000
+ 20291 strings out of 492649
+ 367418 string characters out of 6133384
+ 557327 words of memory out of 5000000
+ 23698 multiletter control sequences out of 15000+600000
  17704 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,21n,77p,920b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1346,10 +1370,10 @@ ts/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
 .pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/
 texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Response.pdf (18 pages, 157309 bytes).
+Output written on Response.pdf (18 pages, 163244 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
- 42 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 200 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 47 words of extra memory for PDF output out of 10000 (max. 10000000)
 
