@@ -32,7 +32,7 @@ for count = 1: counter_max
         %Popt(i) = min(Pmax, Popt(i));
     end
     run PRB_Alloc
-    Popt
+    %Popt
     
     run Rate_PRB
     H_PRB = zeros(N_PRB, N_UE);

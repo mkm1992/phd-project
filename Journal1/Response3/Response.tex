@@ -72,7 +72,8 @@
 %\vspace*{-10ex}
 %\sloppy
 \maketitle
-We would like to thank the editor and reviewers for their constructive comments on our manuscript. They have been beneficial in revising this paper, and we have improved both the technical content and presentation quality through their assistance. We greatly appreciate their generous help. Moreover, we have reviewed and incorporated all the comments and suggestions.
+We would like to thank the editor and reviewers for their constructive comments on our manuscript. They have been beneficial in revising this paper, and we have improved the technical content and presentation quality through their assistance. We greatly appreciate their generous help. In addition, we would like to acknowledge the assistance of Dr. Onel Luis Alcaraz López in this revision.
+Moreover, we have reviewed and incorporated all the comments and suggestions.
 We hope that the modifications we have made to the manuscript and the responses we have provided herein will alleviate the reviewers' concerns. Below, please find our detailed responses to the editor and reviewers' comments and suggestions.
 \\ [-3.ex]
 % % % % % % % % % % % % % % % Editor % % % % % % % % % % % % % % % % % % % %
@@ -205,8 +206,7 @@ quality. We hope that the responses provided herein can alleviate the reviewer�
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We would like to thank the reviewer for the careful and thorough reading of our manuscript and the thoughtful comment and constructive suggestions that helped us improve the quality of this manuscript and make it more readable. 
-We modified the introduction completely and add it below
+As suggested by the reviewer, we modified the introduction completely. The final version is reported below.
 
 
 \section{Introduction}
@@ -264,7 +264,7 @@ The system model and the problem formulation are described in Section IV, V, res
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-I would appreciate your comments to enhance and clarify this section of the paper. I moved the background as a section and modified it even as follow.
+We would appreciate your comments to enhance and clarify this paper section. We updated the manuscript by moving the background as a Section and modifying it to present it better. Below we report it.
 
 
 O-RAN is an appropriate alternative to the next generation of radio access networks due to its flexibility, openness, low operational costs, and intelligence. O-RAN was developed to jointly benefit from the advantages of virtual RAN (vRAN) and cloud RAN (C-RAN). With RAN virtualization, operators can improve flexibility, reduce capital expenditures (CAPEX) and operating expenses (OPEX), and add new capabilities to the network more quickly. The C-RAN architecture divides the RAN into two major parts: the radio remote head (RRH) and the baseband unit (BBU). Several distributed RRHs can be connected to a centralized BBU, called BBU-pool [27]. Unlike C-RAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
@@ -285,7 +285,8 @@ The O-RAN architecture contains other principal logical nodes called Orchestrati
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We added the motivation subsection and answer these questions in it.
+We agree with the reviewer that explaining the research challenges is of value to allow the reader to understand the difficulties encountered in proposing the submitted work. For this reason, 
+we added the motivation subsection and answer these questions in it. We rewrite it as follow.
 
 
 The problem of finding the optimal resource allocation, independently of the specific RAN technology, is vital for reducing the cost of the system and improving the QoS of the user equipments (UEs). In case of 5G systems, there are many related significant challenges such as interference alignment, limited capacity of fronthaul links, energy restrictions on virtual machines, etc [2], [8], [9]. 
@@ -311,7 +312,7 @@ The purpose of this paper is to design a system in the O-RAN architecture to sup
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We removed these sentences and rewrite the main contribution. Below we present the modified main contribution.
+We updated the manuscript by modifying Section I-B's "main contribution."  We removed these sentences that the reviewer mentioned and altered the main contribution. Below we present the revised "main contribution."
 
 This paper aims to optimize the resource utilization of a downlink O-RAN system to develop an isolated network slicing outline for the three 5G service classes.
 We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms.
@@ -336,17 +337,26 @@ In the first step, we reformulate and simplify the problem so as to find an uppe
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Thank you for this comment. We moved the background from sub-section to the section part and modified it as below.
+Thank you for this comment. We moved the related works from sub-section to the section part and modified it as below.
 
-O-RAN is an appropriate alternative to the next generation of radio access networks due to its flexibility, openness, low operational costs, and intelligence. O-RAN was developed to jointly benefit from the advantages of virtual RAN (vRAN) and cloud RAN (C-RAN). With RAN virtualization, operators can improve flexibility, reduce capital expenditures (CAPEX) and operating expenses (OPEX), and add new capabilities to the network more quickly. The C-RAN architecture divides the RAN into two major parts: the radio remote head (RRH) and the baseband unit (BBU). Several distributed RRHs can be connected to a centralized BBU, called BBU-pool [27]. Unlike C-RAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
- Most real-time baseband processing is performed in the O-DU layer, while non-real-time baseband processing is mostly executed in the O-CU layer.
+The network slicing problem in multi-tenant cellular networks has received significant attention recently, e.g., [8],
+[13], [14].
+In [8], dynamic network slicing in heterogeneous C-RAN (H-CRAN) is considered in two levels. The higher level manages user acceptance control, radio remote head (RRH) association, and the allocation of BBU capacity. Meanwhile, the allocation of power and PRB is performed at the lower level.
+In  [15], RAN slicing is considered for the fog RAN (F-RAN) system, and executed using deep reinforcement learning. In  [16], [17], the implementation of RAN level slicing is discussed among multiple mobile network operators with the specific physical network resources infrastructure.
 
-In the O-RAN architecture, the PHY is divided into low and high PHY, unlike C-RAN. As shown in Fig. 1, O-RU is a logical node that contains RF and low PHY. The former transmits or receives radio signals, while the latter includes digital beamforming. Typically, the O-DU constitutes a logical node with high PHY, MAC, and RLC. It contains a subfunction of the eNodeB and is deployed near the O-RU.
-Moreover, O-DU is connected to an O-RU with an open fronthaul interface.
-In addition to supporting the lower layers of the protocol stack, O-CU also provides support for the higher layers.
-The O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). The former hosts the packet data convergence protocol (PDCP)-UP and the service data adaption protocol (SDAP), while the latter hosts PDCP-CP and radio resource control (RRC).
-O-DU and O-CU are connected via an open and well-defined interface $\text{F}_1$.
-The O-RAN architecture contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud. Orchestration and Automation include functions such as RIC Non-Real-Time. RIC is responsible for machine learning methods and making the system more intelligent  [10]–[12], [28]–[31].
+Multiplexing eMBB and URLLC services on the same RAN is particularly challenging, which has motivated some recent works.
+In [2], the sum rate of the eMBB, and URLLC, is optimized by ensuring that each user's traffic load demand is met and the slice isolation is guaranteed, thus promoting an amicable service coexistence.
+In [18], a RAN slicing is considered in a coordinated multipoint system to guarantee the QoS requirements of eMBB and URLLC services. Moreover, [19] investigates the minimization of the system's power for the  RAN slicing of eMBB and URLLC downlink services using non-orthogonal multiple access techniques.
+In  [5], the problem of resource allocation for the coexistence of eMBB and URLLC services is formulated and solved by deep reinforcement learning.
+% In \cite{korrai2020ran}, the authors proposed to allocate RAN resources for the network slicing system in the coexistence of eMBB and URLLC services. The system guarantees latency, service rate, and reliability maintenance.
+ 
+In [9], [20], the authors address the issue of beamforming and VMs activation (using virtualization) in a C-RAN system with limited fronthaul capacity.
+Paper [9] aims to minimize the energy cost with the system delay, fronthaul capacity, and rate constraint.
+Also, transmission and processing delays are modeled based on M/M/1 queueing theory to guarantee UE delays.
+In  [21], [22], the problem of joint virtual computing resource allocation with beamforming is formulated. Also, the association of RRH to the UE is considered and solved using innovative methods.
+
+In  [23]–[25], the problem of joint power allocation and RRH association in a H-CRAN system is considered to maximize the energy efficiency.
+Finally, in [26], the optimum power is obtained in the massive MIMO aided C-RAN system, and the problem of RRH to BBU and RRH to UE association is formulated and solved.
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -356,7 +366,7 @@ The O-RAN architecture contains other principal logical nodes called Orchestrati
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Thank you for this comment. We modified and clarified this section as below
+We thank the reviewer for the given remark. We modified and clarified the description of the life cycle of a network slice. We report the relation between Fig. 1 and the network slice management and explain more about our algorithm in the related subsection below
 
 In this subsection, we will look at the life cycle of network slicing on a practical level. 
 The goal is to examine slice management, which includes creating, managing, and deleting slices. Network slices generally have four life cycle stages [36];
@@ -381,6 +391,36 @@ If we need to remove a slice or any service not used in a zone, the unshared res
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
+Based on this comment, we added Fig. 11 and Table III to the reported manuscript below.
+In Fig. 11,  the mean total delay is indicated according to the number of iterations. In Table III, we reported the execution delay time according to the number of UEs in the system to investigate the full consideration of the reviewer.
+
+In Fig. 1, the mean total delay is indicated according to the number of iterations of the
+proposed algorithm (IABV) for different numbers of UEs for one service. This figure shows that the algorithm converged to the fixed value after four iterations.
+\begin{figure}[H]
+  \centering
+    \includegraphics[scale = 0.5]{iterD.eps}
+    %\includegraphics[max height=30cm,max width=9.5cm]{Drawing15.eps}
+    %\includegraphics[width=\textwidth]{finalDraw.pdf}
+  \caption{Mean Total Delay (usec) vs. Number of iterations}
+  \label{fig:2}
+\end{figure}
+
+Table I shows the execution time versus the number of UEs for one service. We run our simulation on the system with configures (RAM = 8 GB, CPU = Core i5, SSD Hard Disk). 
+ As the number of UEs in the system increases, the execution time increases polynomially. 
+\begin{table}[H]
+\captionsetup{labelformat=empty}
+ \caption {Table(I) Execution Time vs. Number of UEs} 
+\begin{center}
+ \scalebox{0.9}{
+\begin{tabular}{|| l || l| l |l |l |l ||}
+ \hline
+Number of UEs & 5 & 10 & 15 & 20 & 25 \\ 
+Execution Time (usec)& 12.156 & 19.156 &  29.140 & 44.573 & 67.912 \\
+ \hline
+\end{tabular}}
+\end{center}
+\end{table}
+
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -392,6 +432,7 @@ If we need to remove a slice or any service not used in a zone, the unshared res
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
 Thank you for this comment to make our paper more readable. We modified the entire paper based on this comment.
+We updated the manuscript while creating additional Sections such as "background" and "related literature" Sections. Moreover, we modified and shortened the unnecessary paragraphs, for instance, in the "introduction," "system model," and "numerical results." Our paper was modified totally to satisfy the reviewer's concerns.
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -402,7 +443,7 @@ Thank you for this comment to make our paper more readable. We modified the enti
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We appreciate your comment about troubleshooting our paper and removing mistakes. Using this comment as a guide, we modified the entire paper.
+We appreciate your comment about troubleshooting our paper and removing mistakes. Using this comment as a guide, we modified the entire paper. We revised semantic and grammar problems. We reread our paper and tried to correct mistakes the same as this.
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -413,7 +454,7 @@ We appreciate your comment about troubleshooting our paper and removing mistakes
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Based on this comment, we added a acronym table I to our paper as follow
+Based on this comment, we added a Table I reporting the list of acronyms to our paper as follow
 
 \begin{table}[H]
 \vspace*{-0em}
@@ -471,7 +512,7 @@ Based on this comment, we added a acronym table I to our paper as follow
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We modified all figures to make it more readable.
+We modified all figures to make them more readable due to this comment. We enlarge the texts of the figures, bold the lines and markers, and re-formatting all the figures.
 
 
 \clearpage

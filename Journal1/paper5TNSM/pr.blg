@@ -19,45 +19,45 @@ Warning--empty journal in 3GPPTS2
 Warning--empty journal in IMT
 
 Done.
-You've used 41 entries,
+You've used 40 entries,
             4087 wiz_defined-function locations,
-            1040 strings with 13606 characters,
-and the built_in function-call counts, 31152 in all, are:
-= -- 2678
-> -- 537
-< -- 315
-+ -- 359
-- -- 109
-* -- 1502
-:= -- 4726
-add.period$ -- 83
-call.type$ -- 41
-change.case$ -- 41
-chr.to.int$ -- 726
-cite$ -- 47
-duplicate$ -- 2274
-empty$ -- 2333
-format.name$ -- 105
-if$ -- 7191
+            1035 strings with 13461 characters,
+and the built_in function-call counts, 30388 in all, are:
+= -- 2609
+> -- 524
+< -- 307
++ -- 352
+- -- 107
+* -- 1463
+:= -- 4602
+add.period$ -- 81
+call.type$ -- 40
+change.case$ -- 40
+chr.to.int$ -- 711
+cite$ -- 46
+duplicate$ -- 2217
+empty$ -- 2278
+format.name$ -- 102
+if$ -- 7015
 int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 329
-newline$ -- 148
-num.names$ -- 40
-pop$ -- 623
+int.to.str$ -- 40
+missing$ -- 320
+newline$ -- 145
+num.names$ -- 39
+pop$ -- 610
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2335
+skip$ -- 2278
 stack$ -- 0
-substring$ -- 1850
-swap$ -- 1979
-text.length$ -- 73
+substring$ -- 1815
+swap$ -- 1928
+text.length$ -- 70
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 41
+type$ -- 40
 warning$ -- 6
-while$ -- 148
-width$ -- 43
-write$ -- 421
+while$ -- 143
+width$ -- 42
+write$ -- 410
 (There were 6 warnings)
