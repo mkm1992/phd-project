@@ -95,13 +95,13 @@
 %\vspace*{-4em}
 \begin{abstract}
 %\vspace*{-1.5em}
-The next radio access network (RAN) generation, open RAN (O-RAN), aims to enable more flexibility and openness, including efficient service slicing, and to lower the operational costs in 5G and beyond wireless networks. Nevertheless, strictly satisfying quality-of-service requirements, while establishing priorities and promoting balance between the significantly heterogeneous services, remains as a key research problem.
-In this paper, we study the service-aware baseband resource allocation and virtual network function (VNF) activation in O-RAN systems using network slicing.
+The next radio access network (RAN) generation, open RAN (O-RAN), aims to enable more flexibility and openness, including efficient service slicing, and to lower the operational costs in 5G and beyond wireless networks. Nevertheless, strictly satisfying quality-of-service requirements while establishing priorities and promoting balance between the significantly heterogeneous services remains a key research problem.
+In this paper, we use network slicing to study the service-aware baseband resource allocation and virtual network function (VNF) activation in O-RAN systems.
 The limited fronthaul capacity and end-to-end delay constraints are simultaneously considered.
-The optimization of baseband resources includes O-RAN radio unit (O-RU) and physical resource block (PRB) assignment, and power allocation. The main problem is a mixed-integer non-linear programming problem that is non-trivial to solve.
+Optimizing baseband resources includes O-RAN radio unit (O-RU), physical resource block (PRB) assignment, and power allocation. The main problem is a mixed-integer non-linear programming problem that is non-trivial to solve.
 Consequently, we break it down into two different steps and propose an iterative algorithm that finds a near-optimal solution.
 In the first step, we reformulate and simplify the problem to find the power allocation, PRB assignment, and the number of VNFs. In the second step, the O-RU association is resolved.
-The proposed method is validated via simulations which evince the achievement of a higher data rate and lower end-to-end delay than existing methods.
+The proposed method is validated via simulations, which achieve a higher data rate and lower end-to-end delay than existing methods.
 \end{abstract}
 \begin{IEEEkeywords}
 open radio access network (O-RAN), virtual network function (VNF), network slicing, knapsack problem, greedy algorithm, Karush-Kuhn-Tucker (KKT) Conditions.
@@ -324,7 +324,7 @@ Therefore, the SINR of the $i^{th}$ UE served at slice $s$ on PRB $k$ is given b
 A UE in an O-RU $r$ using PRB $k$ receives interference from other O-RUs in the set $\mathcal{R}\backslash r$ that are using the same PRB $k$. Two types of interference occur between UEs in each slice: i) inter-slice interference between signals transmitted over different slices, and ii) intra-slice interference between signals transmitted over the same slice.%that is shown in Fig. \ref{fig:intf}.
  
 \textcolor{MidnightBlue}{Network slicing techniques significantly reduce inter-service (inter-slice) interference.
-One way consists in leveraging a two-time scale PRB scheduling to isolate PRBs in slices (in the first time scale) and schedule the PRBs to the UEs of the slices (in the second time scale). Another method consists of allocating part of the PRBs of eMBB services to URLLC and mMTC \cite{alsenwi2021intelligent, setayesh2020joint, mei2021intelligent}. In this paper, we assume that the PRB scheduling is performed. Also, in Section \ref{prb}, we briefly study the PRB scheduling between slices.
+One way to leverage a two-time scale PRB scheduling is to isolate PRBs in slices (in the first time scale) and schedule the PRBs to the UEs of the slices (in the second time scale). Another method consists of allocating part of the PRBs of eMBB services to URLLC and mMTC \cite{alsenwi2021intelligent, setayesh2020joint, mei2021intelligent}. In this paper, we assume that the PRB scheduling is performed. Also, in Section \ref{prb}, we briefly study the PRB scheduling between slices.
 Since there are limited resources, inter-service interference cannot be eliminated entirely. Nevertheless, isolating the slices reduces inter-service interference considerably and allows us to ignore it mathematically.}
 %\begin{figure}
 %  \centering
@@ -368,7 +368,7 @@ Furthermore, there is no inter-slice interference, only intra-slice interference
 %  \label{fig:pq}
 %\end{figure}
 
- Herein, we consider a zero forcing beamforming vector, which minimizes the experienced interference, and is given by \cite{huang2013user}
+ Herein, we consider a zero forcing beamforming vector, which minimizes the experienced intra-slice interference, and is given by \cite{huang2013user}
 \begin{equation}
 \bold{w}_{r,u(s,i)}^{k} = \hat{\bold{h}}_{r,u(s,i)}^{k}(\hat{\bold{h}}_{r,u(s,i)}^{k \: H} \hat{\bold{h}}_{r,u(s,i)}^{k})^{-1}.
 \end{equation}
@@ -1095,7 +1095,7 @@ The Fig. 9 presented that by increasing the priority factor for one service inst
 			\includegraphics[scale = 0.41]{fig/priorityLastn.eps} &
 			\includegraphics[scale = 0.41]{fig/itern.eps} &
 			\includegraphics[scale = 0.41]{fig/iterD.eps} \\
-			\scriptsize Fig. 9~~Throughput of eMBB services vs. priority of the first one  & \scriptsize Fig. 10~~Aggregate throughput vs. number of iterations  & \scriptsize Fig. 11~~Mean Delay (usec) vs. number of iterations 
+			\scriptsize Fig. 9~~Throughput of eMBB services vs. priority of the first one  & \scriptsize Fig. 10~~Aggregate throughput vs. number of iterations  & \scriptsize Fig. 11~~Mean Delay time vs. number of iterations 
 	\end{tabular}}
 	%\caption{Global caption.}
 	\label{label}
@@ -1133,8 +1133,8 @@ In Fig. 10, the aggregate throughput is shown according to the number of iterati
 proposed algorithm (IABV) for different numbers of UEs for one service. In this figure, the convergence of the IABV method is illustrated. The minimum data rate for each UE is assumed to be 2 Mbps.
 After four iterations, IABV converges to the fixed value.
 
-\textcolor{MidnightBlue}{In Fig. 11, the mean total delay is indicated according to the number of iterations of the
-proposed algorithm (IABV) for different numbers of UEs for one service. This figure shows that the algorithm converged to the fixed value after four iterations.}
+\textcolor{MidnightBlue}{In Fig. 11, the mean total delay of URLLC service is indicated according to the number of iterations of the
+proposed algorithm (IABV) for different numbers of UEs for one URLLC service. This figure shows that the algorithm converged to the fixed value after four iterations.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%55
 %\begin{figure}
