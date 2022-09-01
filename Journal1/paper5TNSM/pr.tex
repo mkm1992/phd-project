@@ -107,18 +107,20 @@ The proposed method is validated via simulations, which achieve a higher data ra
 open radio access network (O-RAN), virtual network function (VNF), network slicing, knapsack problem, greedy algorithm, Karush-Kuhn-Tucker (KKT) Conditions.
 \end{IEEEkeywords}
 \section{Introduction}
-%\subsection{State Of The Arts}
-\textcolor{MidnightBlue}{Network slicing is a key technology in 5G wireless systems. Specifically, network slicing provides the isolation of network resources into slices, e.g., via core slicing and/or radio access network (RAN) slicing, for serving multiple and heterogeneous service classes \cite{shen2020ai,setayesh2020joint,popovski20185g}. There are three main service classes in 5G, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Depending on their corresponding quality of service (QoS) requirements, each service is assigned to a slice of the network.
-For instance, the eMBB service demands high capacity and throughput,  e.g., 8K video streaming and immersive gaming. Meanwhile, the URLLC service, leveraged, e.g., by autonomous vehicles, Tactile Internet, and remote surgery services, is concerned with providing ultra-reliable and low-latency connectivity. Finally, mMTC services require connectivity for a large number of Internet of Things (IoT) devices that transmit small payloads \cite{dogra2020survey,alsenwi2021intelligent,SL}.}
+%\subsection{State Of The Arts} \textcolor{MidnightBlue}{}
+Network slicing is a key technology in 5G wireless systems. \textcolor{MidnightBlue}{Network slicing isolates network resources into slices, e.g., via core slicing and/or radio access network (RAN) slicing, for serving various service classes.} \cite{shen2020ai,setayesh2020joint,popovski20185g}. 
+
+There are three main service classes in 5G, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). \textcolor{MidnightBlue}{Each service is assigned to a network slice depending on its corresponding quality of service (QoS) requirements.}
+For instance, the eMBB service demands high capacity and throughput,  e.g., 8K video streaming and immersive gaming. \textcolor{MidnightBlue}{Meanwhile, the URLLC service provides ultra-reliable and low-latency connectivity, e.g., for autonomous vehicles, Tactile Internet, and remote surgeries.} Finally, mMTC services require connectivity for a large number of Internet of Things (IoT) devices that transmit small payloads \cite{dogra2020survey,alsenwi2021intelligent,SL}.
 %\cite{dogra2020survey,kassab2018coexistence,alsenwi2021intelligent,SL}.}
 
-\textcolor{MidnightBlue}{Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is schematically represented in Fig. \ref{fig:c11}, is introduced to deal with these issues.}
+\textcolor{MidnightBlue}{Radio access networks (RANs) currently lack adequate flexibility and openness to handle these simultaneous service demands. Given this, a new RAN paradigm, called open RAN (O-RAN), schematically represented in Fig. \ref{fig:c11}, is introduced to deal with these issues.}
 %This paper considers several user equipments (UEs) requesting one of these types of services with different QoS in the O-RAN architecture. We want to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.
 %This paper aims to design a RAN slicing technology for the O-RAN architecture. 
 %O-RAN offers machine learning techniques based on the requirement for an intelligent wireless network for the next generation of RAN systems. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC-Near Real-Time, implement the algorithms for network intelligence
 
-\textcolor{MidnightBlue}{A key feature of the O-RAN architecture is that the hardware is disaggregated from the software, leading to network function virtualization (NFV). Additionally, each component is implemented as a virtual network function (VNF), the system function block in NFV, that can be deployed on a virtual machine (VM) or container \cite{mijumbi2015network}.}
-\textcolor{MidnightBlue}{As a result, some O-RAN components defined in Section \ref{BG}, such as user plane function (UPF), O-RAN central unit (O-CU), O-RAN distributed unit (O-DU), and RAN intelligent controller (RIC)-near real-time, are virtualized and implemented as VNFs.}
+\textcolor{MidnightBlue}{The O-RAN architecture separates hardware and software, enabling network function virtualization (NFV).} Additionally, each component is implemented as a virtual network function (VNF), the system function block in NFV, that can be deployed on a virtual machine (VM) or container \cite{mijumbi2015network}.
+\textcolor{MidnightBlue}{As a result, some O-RAN components defined in Section \ref{BG} are virtualized and implemented as VNFs.}
 
 \begin{figure}
   \centering
@@ -130,37 +132,36 @@ For instance, the eMBB service demands high capacity and throughput,  e.g., 8K v
   \label{fig:c11}
 \end{figure}
 \subsection{Motivation}
-\textcolor{MidnightBlue}{The problem of finding the optimal resource allocation, independently of the specific RAN technology, is vital for reducing the cost of the system and improving the QoS of the user equipment (UE). In case of 5G systems, there are many related significant challenges such as interference alignment, limited capacity of fronthaul links, energy restrictions on virtual machines, etc \cite{lee2018dynamic,SystemCostMinimization, setayesh2020joint}.} 
+\textcolor{MidnightBlue}{The optimal resource allocation for the 5G and 6G systems is crucial to reducing costs and improving user equipment (UE). Significant challenges face these systems, including interference alignment, limited capacity of the fronthaul links, energy restrictions on VMs, etc \cite{lee2018dynamic,SystemCostMinimization}.}
 
-\textcolor{MidnightBlue}{Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering the power, data rate and delay limitations of a single service. Due to the contemporary need to serve services with different QoS simultaneously, e.g., as in 5G and beyond, this architectural model is inefficient. In this regard, the O-RAN architecture has emerged as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges. 
-One of the fundamental problems lies in attaining a balance between different services with different QoS, resource requirements, and priorities \cite{ORANArch, gavrilovska2020cloud, kazemifard2021minimum, shen2020ai}.  }
+\textcolor{MidnightBlue}{Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering a single service's power, data rate, and delay limitations. This architectural model is inefficient in 5G and 6G since it needs to serve services with different QoS simultaneously. Therefore, O-RAN can simultaneously support multiple services at a lower cost by being flexible, layered, and modular.  
+Balancing different services with different QoS, resource requirements, and priorities is a fundamental problem \cite{ORANArch, gavrilovska2020cloud, kazemifard2021minimum, shen2020ai}.}  
 %\textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
 %Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
 %We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously.}
 
-\textcolor{MidnightBlue}{The purpose of this paper is to design a system in the O-RAN architecture to support the three types of 5G services, namely, eMBB, URLLC, and mMTC via network slicing and resource allocation. Specifically, we aim to maximize the total achievable data rate and satisfy the minimum achievable data rate for eMBB services while meeting the URLLC requirements in the presence of numerous low-power IoT devices.}
+\textcolor{MidnightBlue}{This paper aims to design an O-RAN architecture to support the three types of 5G services, namely, eMBB, URLLC, and mMTC, via network slicing and resource allocation.} Specifically, we intend to maximize the total achievable data rate and satisfy the minimum achievable data rate for eMBB services while meeting the URLLC requirements in the presence of numerous low-power IoT devices.
 
 \subsection{Main Contributions}
 
-\textcolor{MidnightBlue}{This paper aims to optimize the resource utilization of a downlink O-RAN system to develop an isolated network slicing outline for the three 5G service classes.
-We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms.}
+\textcolor{MidnightBlue}{This paper studies the resource utilization of a downlink O-RAN system to develop an isolated network slicing outline for the three 5G services.}
+We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms.
 %Our paper focuses on the multi-service resource management of the RAN slicing in an open and flexible O-RAN architecture.}
 %In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied.
  The main contributions of this paper are summarized as follows:
 \begin{itemize}
-\item \textcolor{MidnightBlue}{We examine the problem of radio resource allocation and VNF activation within the O-RAN architecture.
-Based on the three types of 5G service classes, i.e., eMBB, URLLC and mMTC, and their corresponding QoS requirements and service priorities, we formulate a problem for allocating baseband resources such as power, physical resource blocks (PRBs), O-RUs, and activating VNFs to maximize the weighted throughput of the O-RAN.}
-\item \textcolor{MidnightBlue}{We propose a two-step resource management algorithm for solving the optimization problem.
-In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.}
-\item \textcolor{MidnightBlue}{We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of the problem under consideration and introduce a fast algorithm to check its feasibility numerically.}
-\item \textcolor{MidnightBlue}{We show via numerical results that the proposed algorithm outperforms two baseline schemes in terms of achievable data rate and mean total delay. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.}
+\item \textcolor{MidnightBlue}{We formulate a problem for allocating baseband resources such as power, physical resource blocks (PRBs), O-RUs, and activating VNFs to maximize the weighted throughput of the O-RAN architecture. The three types of 5G service classes, i.e., eMBB, URLLC, and mMTC, are considered in this system. We take into account their corresponding QoS requirements and service priorities.}
+\item We propose a two-step resource management algorithm for solving the optimization problem.
+In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.
+\item We provide insights into the complexity of the proposed algorithms and demonstrate their convergence. \textcolor{MidnightBlue}{Additionally, we analyze the feasibility region of the problem and introduce a fast algorithm to check it numerically.}
+\item We show via numerical results that the proposed algorithm outperforms two baseline schemes in terms of achievable data rate and mean total delay. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.
 \end{itemize}
 
 Table \ref{table:11a} lists the acronyms used throughout this paper, which is organized as follows.
 Relevant literature related to our work is discussed in Section~\ref{RL}, while Section~\ref{BG} briefly overviews the O-RAN architecture.
 The system model and the problem formulation are described in Section \ref{systemmodel}, \ref{prS}, respectively. The details of our proposed resource management algorithm are introduced in Section \ref{proAlg}. In Section \ref{NE}, numerical results are provided to evaluate the performance of the proposed algorithm. Finally, Section \ref{conc} concludes the paper.
 
-\begin{table}[H]
+\begin{table}%[H]
 \vspace*{-0em}
  \caption {List of Acronyms} \label{table:11a}
  \vspace*{-1em}
@@ -178,10 +179,12 @@ The system model and the problem formulation are described in Section \ref{syste
  O-RAN & open RAN  \\[.3ex]
  vRAN & virtual RAN \\[.3ex]
  CRAN & cloud RAN \\[.3ex]
+  RRH & radio remote head \\[.3ex]
+   BBU & baseband unit \\[.3ex]
    QoS &  quality of service \\[.3ex]
   MIMO & multiple input multiple output \\[.3ex]
   PRB &  physical resource block \\[.3ex]
-  SINR & signal to interference and noise ratio  \\[.3ex]
+  %SINR & signal to interference and noise ratio  \\[.3ex]
   eMBB & enhanced mobile broadBand \\[.3ex]
   
   URLLC  & ultra-reliable low latency communication \\[.3ex]
@@ -205,37 +208,43 @@ The system model and the problem formulation are described in Section \ref{syste
  \toprule
  \end{tabular}}
  \end{center}
+ \vspace*{-2.5em}
  \end{table}
- \vspace*{-3em}
+% \vspace*{-3em}
 \section{Related Literature}\label{RL}
 The network slicing problem in multi-tenant cellular networks has received significant attention recently, e.g.,  \cite{feng2020dynamic,lee2018dynamic,lee2016new}.
-In \cite{lee2018dynamic}, dynamic network slicing in heterogeneous C-RAN (H-CRAN) is considered in two levels. The higher level manages user acceptance control, radio remote head (RRH) association, and the allocation of BBU capacity. Meanwhile, the allocation of power and PRB is performed at the lower level.
-In \cite{xiang2020realization}, RAN slicing is considered for the fog RAN (F-RAN) system, and executed using deep reinforcement learning. In \cite{elayoubi20195g,d2020toward}, the implementation of RAN level slicing is discussed among multiple mobile network operators with the specific physical network resources infrastructure.
+\textcolor{MidnightBlue}{Two levels of dynamic network slicing in heterogeneous C-RAN (H-CRAN) are examined in \cite{lee2018dynamic}. The higher level manages user acceptance control, RRH association, and the allocation of BBU capacity. Meanwhile, PRB and power are allocated at lower levels.}
+In \cite{xiang2020realization}, RAN slicing is considered for the fog RAN (F-RAN) system and executed using deep reinforcement learning. \textcolor{MidnightBlue}{In \cite{elayoubi20195g,d2020toward}, the implementation of RAN level slicing is discussed among multiple mobile network operators.}
 
-Multiplexing eMBB and URLLC services on the same RAN is particularly challenging, which has motivated some recent works.
-\textcolor{MidnightBlue}{In \cite{setayesh2020joint}, the sum rate of the eMBB, and URLLC, is optimized by ensuring that each user's traffic load demand is met and the slice isolation is guaranteed, thus promoting an amicable service coexistence.
-In \cite{yang2020should}, a RAN slicing is considered in a coordinated multipoint system to guarantee the QoS requirements of eMBB and URLLC services.} Moreover, \cite{saggese2021power} investigates the minimization of the system's power for the  RAN slicing of eMBB and URLLC downlink services using non-orthogonal multiple access techniques.
-In \cite{alsenwi2021intelligent}, the problem of resource allocation for the coexistence of eMBB and URLLC services is formulated and solved by deep reinforcement learning.
+\textcolor{MidnightBlue}{Multiplexing eMBB and URLLC services on the same RAN is particularly challenging, which has motivated some recent work.}
+\textcolor{MidnightBlue}{
+%In \cite{setayesh2020joint}, the sum rate of the eMBB, and URLLC, is optimized by ensuring that each user's traffic load demand is met and the slice isolation is guaranteed.
+In \cite{yang2020should}, a RAN slicing is considered in a coordinated multipoint system to ensure eMBB and URLLC QoS requirements.
+}Moreover, \cite{saggese2021power} investigates the minimization of the system's power for the  RAN slicing of eMBB and URLLC downlink services using non-orthogonal multiple access techniques.
+\textcolor{MidnightBlue}{In \cite{alsenwi2021intelligent}, a deep reinforcement learning algorithm is used to solve the resource allocation problem for eMBB and URLLC services.}
 % In \cite{korrai2020ran}, the authors proposed to allocate RAN resources for the network slicing system in the coexistence of eMBB and URLLC services. The system guarantees latency, service rate, and reliability maintenance.
  
-In \cite{SystemCostMinimization,guo2016exploiting}, the authors address the issue of beamforming and VMs activation (using virtualization) in a C-RAN system with limited fronthaul capacity.
-Paper \cite{SystemCostMinimization} aims to minimize the energy cost with the system delay, fronthaul capacity, and rate constraint.
-Also, transmission and processing delays are modeled based on M/M/1 queueing theory to guarantee UE delays.
+\textcolor{MidnightBlue}{In \cite{SystemCostMinimization,guo2016exploiting}, VMs activation and beamforming allocation are discussed in C-RAN systems.
+Paper \cite{SystemCostMinimization} minimizes energy cost with system delay, fronthaul capacity, and rate constraints.
+To guarantee UE delays, M/M/1 queueing theory is used for transmission and processing delays.}
 In \cite{luong2018joint,luong2018novel}, the problem of joint virtual computing resource allocation with beamforming is formulated. Also, the association of RRH to the UE is considered and solved using innovative methods.
 
 In \cite{ali2019energy,ali2018joint}, the problem of joint power allocation and RRH association in a H-CRAN system is considered to maximize the energy efficiency.
-Finally, in \cite{amani2019power}, the optimum power is obtained in the massive MIMO aided C-RAN system, and the problem of RRH to BBU and RRH to UE association is formulated and solved. 
-%\vspace*{-1.8em}
+\textcolor{MidnightBlue}{Finally, in \cite{amani2019power}, the optimum power and association of RRH to BBU and RRH to UE are obtained in the massive MIMO-aided C-RAN system.}
+\vspace*{-.8em}
 \section{Background}\label{BG}
-\textcolor{MidnightBlue}{O-RAN is an appropriate alternative to the next generation of radio access networks due to its flexibility, openness, low operational costs, and intelligence. O-RAN was developed to jointly benefit from the advantages of virtual RAN (vRAN) and cloud RAN (C-RAN).} With RAN virtualization, operators can improve flexibility, reduce capital expenditures (CAPEX) and operating expenses (OPEX), and add new capabilities to the network more quickly. The C-RAN architecture divides the RAN into two major parts: the radio remote head (RRH) and the baseband unit (BBU). Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}. Unlike C-RAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
-\textcolor{MidnightBlue}{ Most real-time baseband processing is performed in the O-DU layer, while non-real-time baseband processing is mostly executed in the O-CU layer.}
+\textcolor{MidnightBlue}{The O-RAN architecture is a flexible, open, low-cost, and intelligent alternative to future RANs. O-RAN combines features of virtual RAN (vRAN) and cloud RAN (C-RAN).
+ By virtualizing RANs, operators can improve flexibility, reduce CAPEX and OPEX, and add new capabilities to their networks more quickly. The C-RAN architecture consists of two parts: the radio remote head (RRH) and the baseband unit (BBU). Several distributed RRHs can be connected to a centralized BBU, called BBU-pool \cite{han2019research}.} Unlike C-RAN, O-RAN separates RAN into three different units, namely Radio Unit (O-RU), Distributed Unit (O-DU), and Central Unit (O-CU).
+ \textcolor{MidnightBlue}{Mostly non-real-time baseband processing occurs in the O-CU layer, while real-time baseband processing occurs in the O-DU layer.}
 
-\textcolor{MidnightBlue}{In the O-RAN architecture, the PHY is divided into low and high PHY, unlike C-RAN. As shown in Fig. \ref{fig:c11}, O-RU is a logical node that contains RF and low PHY. The former transmits or receives radio signals, while the latter includes digital beamforming. Typically, the O-DU constitutes a logical node with high PHY, MAC, and RLC. It contains a subfunction of the eNodeB and is deployed near the O-RU.
+In the O-RAN architecture, the PHY is divided into low and high PHY, unlike C-RAN. As shown in Fig. \ref{fig:c11}, O-RU is a logical node that contains RF and low PHY. The former transmits or receives radio signals, while the latter includes digital beamforming. Typically, the O-DU constitutes a logical node with high PHY, MAC, and RLC. It contains a subfunction of the eNodeB and is deployed near the O-RU.
 Moreover, O-DU is connected to an O-RU with an open fronthaul interface.
 In addition to supporting the lower layers of the protocol stack, O-CU also provides support for the higher layers.
-The O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). The former hosts the packet data convergence protocol (PDCP)-UP and the service data adaption protocol (SDAP), while the latter hosts PDCP-CP and radio resource control (RRC).}
+The O-CU contains two parts: the O-CU user plane (O-CU-UP) and the O-CU control plane (O-CU-CP). The former hosts the packet data convergence protocol (PDCP)-UP and the service data adaption protocol (SDAP), while the latter hosts PDCP-CP and radio resource control (RRC).
 O-DU and O-CU are connected via an open and well-defined interface $\text{F}_1$.
-The O-RAN architecture contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud. \textcolor{MidnightBlue}{Orchestration and Automation include functions such as RIC Non-Real-Time. RIC is responsible for machine learning methods and making the system more intelligent}
+Moreover, O-CU-UP is connected to user plane function (UPF) via O-backhaul link.
+The O-RAN architecture contains other principal logical nodes called Orchestration and Automation, RAN Intelligent Controller (RIC)- Near Real-Time, and O-Cloud. Orchestration and Automation include functions such as RIC Non-Real-Time. RIC is responsible for machine learning methods and making the system more intelligent.
+\textcolor{MidnightBlue}{Furthermore, as shown in Fig \ref{fig:c11},  some O-RAN components, such as UPF, O-CU, O-DU, and RIC-near real-time, are virtualized and implemented as VNFs.}
 \cite{gavrilovska2020cloud,niknam2020intelligent,kazemifard2021minimum,both2021system,ORANArch,ORANML,lin2021toward}. 
 %\begin{table}[H]
 % \caption {List OF Notation} \label{table:1a}
@@ -303,7 +312,7 @@ In addition, there are $R$ multi-antenna O-RUs that are shared between the slice
 %Coordinated multipoint (CoMP) system is considered here.
 %\subsection{The Achievable Rate}
 \subsection{Signal Model}
-\textcolor{MidnightBlue}{Let $y_{u(s,i)} $ be the received signal of UE $i$ in the $s^{th}$ service such that
+Let $y_{u(s,i)} $ be the received signal of UE $i$ in the $s^{th}$ service such that
 \begin{equation}\label{eq2}
 y_{u(s,i)} = \sum_{r = 1}^{R}\sum_{k=1}^{K_s} \boldsymbol{h}^{H \: k}_{r,u(s,i)} g_{u(s,i)}^r e^k_{r,u(s,i)}{x_Q}^k_{r,u(s,i)}+ z_{u(s,i)},
 \end{equation}
@@ -314,7 +323,7 @@ In addition, $\boldsymbol{q}_{r} \sim \backsim \mathcal{CN}(0,{\sigma_q}^2\bolds
 Furthermore, $g_{u(s,i)}^r \in \{0,1\}$ is a binary variable that illustrates whether O-RU $r$ serves the $i^{th}$ UE that is allocated to the $s^{th}$ slice or not.
 Furthermore, $p_{r,u(s,i)}^{k}$ represents the transmission power of the O-RU $r$ serve the $i^{th}$ UE in slice $s$ and PRB $k$, while
 ${\bold{h}_{r,u(s,i)}^{k}} \in \mathbb{C}^{J}$ corresponding channel vector.
-In addition, $\bold{w}_{r,u(s,i)}^{k} \in \mathbb{C}^{J}$ depicts the associated transmit beamforming vector.}
+In addition, $\bold{w}_{r,u(s,i)}^{k} \in \mathbb{C}^{J}$ depicts the associated transmit beamforming vector.
 %Here, it is assumed that each UE is served by the nearest o-RU
 Therefore, the SINR of the $i^{th}$ UE served at slice $s$ on PRB $k$ is given by
 \begin{equation}\label{eq1}
@@ -323,9 +332,9 @@ Therefore, the SINR of the $i^{th}$ UE served at slice $s$ on PRB $k$ is given b
 
 A UE in an O-RU $r$ using PRB $k$ receives interference from other O-RUs in the set $\mathcal{R}\backslash r$ that are using the same PRB $k$. Two types of interference occur between UEs in each slice: i) inter-slice interference between signals transmitted over different slices, and ii) intra-slice interference between signals transmitted over the same slice.%that is shown in Fig. \ref{fig:intf}.
  
-\textcolor{MidnightBlue}{Network slicing techniques significantly reduce inter-service (inter-slice) interference.
+Network slicing techniques significantly reduce inter-service (inter-slice) interference.
 One way to leverage a two-time scale PRB scheduling is to isolate PRBs in slices (in the first time scale) and schedule the PRBs to the UEs of the slices (in the second time scale). Another method consists of allocating part of the PRBs of eMBB services to URLLC and mMTC \cite{alsenwi2021intelligent, setayesh2020joint, mei2021intelligent}. In this paper, we assume that the PRB scheduling is performed. Also, in Section \ref{prb}, we briefly study the PRB scheduling between slices.
-Since there are limited resources, inter-service interference cannot be eliminated entirely. Nevertheless, isolating the slices reduces inter-service interference considerably and allows us to ignore it mathematically.}
+Since there are limited resources, inter-service interference cannot be eliminated entirely. Nevertheless, isolating the slices reduces inter-service interference considerably and allows us to ignore it mathematically.
 %\begin{figure}
 %  \centering
 %  \captionsetup{justification=centering}
@@ -336,7 +345,7 @@ Since there are limited resources, inter-service interference cannot be eliminat
 %  \label{fig:intf}
 %\end{figure}
 
-\textcolor{MidnightBlue}{Back to \eqref{eq1}, $I_{r,u(s,i)}^{k}$ is the sum of the power of interfering signals and quantization noise, and can be represented as }
+Back to \eqref{eq1}, $I_{r,u(s,i)}^{k}$ is the sum of the power of interfering signals and quantization noise, and can be represented as 
 %{\color{red} use paranthesis in the following equation to clear +}
 %\begin{subequations}\label{eqI}
 %\begin{alignat}{4}
@@ -350,7 +359,7 @@ Since there are limited resources, inter-service interference cannot be eliminat
 %\end{subequations}
 %{\color{red} $\gamma_1$ is constant used instead of variable. }
 \begin{align}\label{eqI}
-&I_{r,u(s,i)}^{k} =+\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}^2 |\boldsymbol{h}_{r,{u(s,i)}}^k|^2 }_{\text{(quantization noise)}}\nonumber\\
+&I_{r,u(s,i)}^{k} =\underbrace{  \sum_{j=1}^{{R}} {\sigma_q}^2 |\boldsymbol{h}_{r,{u(s,i)}}^k|^2 }_{\text{(quantization noise)}} + \nonumber\\
  &\underbrace{\sum_{\substack{l=1 \\ l\neq i}}^{{U}_{s}} e^{k}_{u(s,i)}e^{k}_{u(s,l)}  p_{u(s,l)}^{k}\sum_{\substack{r'=1 \\ r'\neq r}}^{R}|{\bold{h}_{r',u(s,i)}^{k \: H}} \bold{w}_{r',u(s,l)}^{k} g_{u(s,l)}^{r'}|^2}_{\text{(intra-slice interference)}},
 \end{align}
 %where $\gamma_{1} = e^{k}_{u(s,i)}e^{k}_{u(s,l)}$ and $\gamma_{2} = e^{k}_{u(s,i)}e^{k}_{u(n,l)}$.
@@ -554,8 +563,8 @@ Also, \eqref{c13} constrains the rate of each UE requesting each type of service
 \eqref{c17} and \eqref{c18-1} guarantee that the O-RU and PRB are associated with the UE, respectively.
 Also, \eqref{c18} ensures that each PRB can not be assigned to more than one UE associated with the same O-RU, \eqref{c19} indicates that the fixed cost of energy of VNFs in each slice does not exceed the threshold, while \eqref{c20} and \eqref{c21} constrain $\boldsymbol{E}$ and $\boldsymbol{G}$ to be binary matrices.
 \subsection{PRB Scheduling}\label{prb}
-\textcolor{MidnightBlue}{In this section, we provide a brief study on the problem of PRB scheduling which can be completed in two steps to eliminate the inter-slice interference and guarantee the isolation of slices \cite{marabissi2019highly}.
-For this, firstly, we should assign the PRBs to the slices. Secondly, we assign PRBs of slices to UEs, find the optimal number of VNFs for each slice, allocate power of UEs, and assign O-RU to UEs, which uses the proposed Algorithm \ref{proAlg}.}
+In this section, we provide a brief study on the problem of PRB scheduling which can be completed in two steps to eliminate the inter-slice interference and guarantee the isolation of slices \cite{marabissi2019highly}.
+For this, firstly, we should assign the PRBs to the slices. Secondly, we assign PRBs of slices to UEs, find the optimal number of VNFs for each slice, allocate power of UEs, and assign O-RU to UEs, which uses the proposed Algorithm \ref{proAlg}.
 Suppose, $\mathcal{R}_{{s}}^{\min}$, and $\mathcal{R}_{{s}}^{\text{max}}$ are the minimum data rate and maximum data rate of each UE in slice s, respectively.
 Firstly, we need to find the average PRB number used by the UEs in each service. Since mMTC and URLLC require usually short packet transmissions, each UE in mMTC and URLLC requires 1 PRB. So if slice s serves mMTC or URLLC services, with $U_s$ UEs, it requires $K_s = U_s \times 1$ PRBs. For eMBB, assume the average rate of each UE in slice s serving eMBB UEs is $\bar{R}_s = B\log_2(1 + \bar{\rho_s})$, where, $\bar{\rho_s}$ is the average SINR of UEs in slice s. 
 Therefore, the minimum number of PRBs that slice s with $U_s$ UEs requires is $K_s^{\min} = \lceil{U_s \times \frac{\bar{R}_s}{\mathcal{R}_{{s}}^{\text{max}}}}\rceil$. 
@@ -585,11 +594,11 @@ The goal is to examine slice management, which includes creating, managing, and 
 \item Operation phase: the NSIs are activated, managed, monitored (e.g., KPIs), modified, and deactivated. As the slice enters the activated phase, it is ready to support services, and as the slice exits the de-activated phase, the slice is inactive, and communication services are stopped.
 \item Decommissioning phase: an NSI that is decommissioned no longer exists after this phase.
 \end{itemize}
-\textcolor{MidnightBlue}{Since the requirements evaluation is considered in the preparation phase, we need an algorithm to estimate the UE traffic in the system at different times. Moreover, based on this estimation, we need to evaluate resources, including the optimal number of VNFs, PRB assignment of UEs for each slice, and the total power requirements. In this phase, we use our algorithm to calculate resources after estimating the system's traffic.
+Since the requirements evaluation is considered in the preparation phase, we need an algorithm to estimate the UE traffic in the system at different times. Moreover, based on this estimation, we need to evaluate resources, including the optimal number of VNFs, PRB assignment of UEs for each slice, and the total power requirements. In this phase, we use our algorithm to calculate resources after estimating the system's traffic.
 As shown in Fig. 1, we have three different slices for eMBB, URLLC, and mMTC. The system must prepare VNFs for MAC/RLC functions in O-DU, PDCP/SDAP functions in O-CU, UPF, SMF, and AMF functionality layers for each slice. Moreover, O-RU, high PHY in O-DU, and O-CU-CP are shared between slices. Thus, we do not require evaluating and preparing for the share environments and platforms in the network slicing cycles. Moreover, the estimation of PRB and power is needed based on the proposed algorithm. 
 After evaluating, assessing, and preparing the resources and environments for each slice, the commissioning phase is started. In this phase, the slices are created based on the previous phase estimation. These created slices are activated in the operation phase, and the actual resources are assigned based on the proposed algorithm.
 It is possible to modify the slice's resources even when the evaluation changes during the operation phase. 
-If we need to remove a slice or any service not used in a zone, the unshared resources are released in the decommissioning phase.}
+If we need to remove a slice or any service not used in a zone, the unshared resources are released in the decommissioning phase.
 %\vspace*{-1em}
 \section{Proposed Algorithm}\label{proAlg}
 In this section, we first apply some simplifications to the system; Solving the problem \eqref{problem} is complicated since this is non-convex mixed-integer non-linear problem (MINLP) with a binary variable and an integer variable.
@@ -879,7 +888,8 @@ As we mentioned before, the complexity order of the first sub-problem is about $
 and the complexity order of the second sub-problem is about $O(S\log(S)) + O(R\times \mathfrak{N})$.
 So the complexity of the main problem \eqref{problem} is $O(T_{conv} \times \mathfrak{N} \times K \times (S\log(S)+R\mathfrak{N}))$.
 \subsubsection{Convergence Analysis}
-We can guarantee the convergence of the iterative algorithm if the objective function is the strictly ascending function concerning the number of iterations.% \cite{gholipoor2020resource}.
+ \textcolor{MidnightBlue}{Due to limited resources in power, the number of PRBs, and the number of activated VNFs and restrictions based on this limitation on power, energy, fronthaul capacity, etc., the objective function that is the summation of the achievable rates of UEs cannot exceed its optimal value and become infinite. Therefore, we can guarantee the convergence of the iterative algorithm if the objective function is the strictly ascending function concerning the number of iterations. Consequently, it converges to the optimum value.}
+% \cite{gholipoor2020resource}.
 Consider the aggregate throughput as $\mathcal{T(\bold{P},\bold{E},\bold{G})} =\sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}}$.
 In the first step of the iteration i of the algorithm \ref{alg2} (IABV), we have $\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1})$.
 In this step, optimal power and PRB allocation are obtained for the fixed O-RU association, so we have
@@ -984,21 +994,21 @@ and $\mathfrak{q}^k_{r,u(s,i)} = P_{s}^{max}/100$. The other parameters of these
  \end{tabular}}
  \end{center}
  \end{table}
-\textcolor{MidnightBlue}{Finding a feasible initial value is almost tricky. We use a fast method discussed in \ref{fr} to overcome this challenge. 
+Finding a feasible initial value is almost tricky. We use a fast method discussed in \ref{fr} to overcome this challenge. 
 Two different methods are used to compare the performance of the proposed method (IABV) and show the optimality of our approach.
 The first one is a baseline scheme, which uses random PRB allocation. Therefore, the allocation of PRB to each UE is random when we have low interference, but in figures with high interference, we randomly assign just one RB to each UE. Also, the association of O-RU is carried out based on distance. It means that each UE is assigned to the nearest O-RU. The optimal power is obtained using the CVX of Matlab, which uses the successive convex approximation (SCA) method since the problem is convex.
-After achieving power and other parameters, the achievable rate will be obtained, and the optimal number of VNF is achieved from Lemma \eqref{lemma1}.}
+After achieving power and other parameters, the achievable rate will be obtained, and the optimal number of VNF is achieved from Lemma \eqref{lemma1}.
 
-\textcolor{MidnightBlue}{For the second one, we use the idea of the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic} and named it the dynamic resource allocation scheme (DR scheme). 
+For the second one, we use the idea of the fixed BBU capacity and dynamic resource allocation (FBDR) algorithm proposed in \cite{lee2018dynamic} and named it the dynamic resource allocation scheme (DR scheme). 
  We have services with different QoS in this work, similar to tenants with different QoS introduced in \cite{lee2018dynamic}. Therefore, we can use the DR scheme similar to the FBDR method adapted to our conditions for comparison. Instead of BBU in C-RAN, we have O-DU and O-CU in O-RAN.
  Since we do not talk about O-DU and O-CU capacity, we use the dynamic resource allocation scheme (DR scheme) algorithm and do not consider BBU capacity.
- In the DR scheme, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm \ref{alg1} (GAA algorithm) for O-RU assignment. The figures in \cite{lee2018dynamic} show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same priority area. The numerical results section also indicates that our proposed algorithm performs better than the DR scheme.}
+ In the DR scheme, PRB and power are dynamically allocated. The number of VNFs is obtained from the simulation. The UEs are associated with the O-RU based on the quality of their channels and the channel distance instead of using the greedy algorithm \ref{alg1} (GAA algorithm) for O-RU assignment. The figures in \cite{lee2018dynamic} show that dynamic BBU capacity and dynamic resource allocation (DBDR) perform better than FBDR for the same priority area. The numerical results section also indicates that our proposed algorithm performs better than the DR scheme.
 \vspace*{-0.9em}
 \subsection{Feasible Region}\label{fr}
-\textcolor{MidnightBlue}{Applying the correct initial point to make the system feasible and converge is a significant step in our work.
+Applying the correct initial point to make the system feasible and converge is a significant step in our work.
 To solve this problem, we investigated the non-converging and converging simulation for models with fixed initial parameters and random channel gains of UEs.
 We experimentally found that in non-converged simulations, there are UEs at the edge of the boundaries or far away from the O-RU and have a weak channel gain. One solution is to eliminate UEs who undermine system convergence.
-For a large number of UEs with a fixed number of PRBs, the probability of having an infeasible solution increases due to a large number of UE interference.}
+For a large number of UEs with a fixed number of PRBs, the probability of having an infeasible solution increases due to a large number of UE interference.
 Another solution is to remove the simulations in the Monte-Carlo that do not converge using the fast algorithm (FA) to check the convergence before
 the proposed algorithm (IABV).
 Therefore, if more than half of the iterations have a feasible solution for the initial condition, the simulation can be displayed as a feasible model.
@@ -1133,8 +1143,8 @@ In Fig. 10, the aggregate throughput is shown according to the number of iterati
 proposed algorithm (IABV) for different numbers of UEs for one service. In this figure, the convergence of the IABV method is illustrated. The minimum data rate for each UE is assumed to be 2 Mbps.
 After four iterations, IABV converges to the fixed value.
 
-\textcolor{MidnightBlue}{In Fig. 11, the mean total delay of URLLC service is indicated according to the number of iterations of the
-proposed algorithm (IABV) for different numbers of UEs for one URLLC service. This figure shows that the algorithm converged to the fixed value after four iterations.}
+In Fig. 11, the mean total delay of URLLC service is indicated according to the number of iterations of the
+proposed algorithm (IABV) for different numbers of UEs for one URLLC service. This figure shows that the algorithm converged to the fixed value after four iterations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%55
 %\begin{figure}
@@ -1211,8 +1221,8 @@ And we can see that the IABV method is better than the FA method.
 %  \label{fig:14}
 %\end{figure}
 
-\textcolor{MidnightBlue}{Table III shows the execution time versus the number of UEs for one service. We run our simulation on the system with configures (RAM = 8 GB, CPU = Core i5, SSD Hard Disk). 
- As the number of UEs in the system increases, the execution time increases polynomially.} 
+Table III shows the execution time versus the number of UEs for one service. We run our simulation on the system with configures (RAM = 8 GB, CPU = Core i5, SSD Hard Disk). 
+ As the number of UEs in the system increases, the execution time increases polynomially. 
 
  
 \begin{table}[H]
@@ -1240,8 +1250,8 @@ Execution Time (usec)& 12.156 & 19.156 &  29.140 & 44.573 & 67.912 \\
 %\end{figure}
 \vspace*{-1.8em}
 \section{Conclusion}\label{conc}
-\textcolor{MidnightBlue}{In this paper, we modeled the downlink of the O-RAN system using isolated network slicing for different 5G services, i.e., eMBB, mMTC, and URLLC.
-We aim to obtain the number of activated VNFs in each service, RU association, power, and PRB allocation to maximize the aggregate throughput.} The limited fronthaul capacity and the mean end-to-end delay for each service are considered.
+In this paper, we modeled the downlink of the O-RAN system using isolated network slicing for different 5G services, i.e., eMBB, mMTC, and URLLC.
+We aim to obtain the number of activated VNFs in each service, RU association, power, and PRB allocation to maximize the aggregate throughput. The limited fronthaul capacity and the mean end-to-end delay for each service are considered.
 The problem is mixed-integer non-linear programming that is solved by a two-step iterative algorithm.
 In the first step, we reformulated the problem to achieve the number of activated VNFs as a function of data rate. Then, we obtained PRB association and power allocation using the Lagrangian method.
 In the second step, the O-RU association is carried out.
