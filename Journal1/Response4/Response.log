@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.21)  1 SEP 2022 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.21)  1 SEP 2022 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1160,44 +1160,51 @@ Overfull \hbox (0.29094pt too wide) in alignment at lines 187--193
  [] 
  []
 
+
+Overfull \hbox (0.29094pt too wide) in alignment at lines 201--207
+ [] 
+ []
+
 [4
 
-] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 205--208
+]
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 216--219
  []| \OT1/cmr/bx/n/12 Re-viewer 3| 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 203--214
+Overfull \hbox (0.29094pt too wide) in alignment at lines 214--225
  [] 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 219--225
+Overfull \hbox (0.29094pt too wide) in alignment at lines 230--236
  [] 
  []
 
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 232.
+d on input line 243.
 
 [6
 
 ] (./Response.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Response.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26310 strings out of 478268
- 491515 string characters out of 5850345
- 885832 words of memory out of 5000000
- 44010 multiletter control sequences out of 15000+600000
+ 26312 strings out of 478268
+ 491527 string characters out of 5850345
+ 886832 words of memory out of 5000000
+ 44011 multiletter control sequences out of 15000+600000
  482410 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,21n,106p,554b,325s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,21n,106p,554b,424s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2022/texmf-di
@@ -1208,10 +1215,10 @@ ts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
 .pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/
 texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/20
 22/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Response.pdf (6 pages, 121961 bytes).
+Output written on Response.pdf (6 pages, 122540 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 500000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
