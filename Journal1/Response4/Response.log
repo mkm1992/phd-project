@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.21)  5 SEP 2022 05:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.21)  5 SEP 2022 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1089,12 +1089,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \author given.
 
 
-Overfull \hbox (8.60794pt too wide) in paragraph at lines 76--80
-[]\OT1/cmr/m/n/12 We would like to thank the ed-i-tor and re-view-ers for their
- con-struc-tive com-ments on our manuscript.
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 76--80
 
  []
@@ -1158,7 +1152,7 @@ Overfull \hbox (0.29094pt too wide) in alignment at lines 232--238
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 246--252
+Overfull \hbox (0.29094pt too wide) in alignment at lines 247--253
  [] 
  []
 
@@ -1183,17 +1177,17 @@ Overfull \hbox (0.29094pt too wide) in alignment at lines 297--303
  []
 
 [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 312--315
+Underfull \hbox (badness 10000) in paragraph at lines 313--316
  []| \OT1/cmr/bx/n/12 Re-viewer 3| 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 310--321
+Overfull \hbox (0.29094pt too wide) in alignment at lines 311--322
  [] 
  []
 
 
-Overfull \hbox (0.29094pt too wide) in alignment at lines 326--332
+Overfull \hbox (0.29094pt too wide) in alignment at lines 327--333
  [] 
  []
 
@@ -1204,13 +1198,13 @@ Package rerunfilecheck Info: File `Response.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26328 strings out of 478268
- 491714 string characters out of 5850345
- 887907 words of memory out of 5000000
- 44021 multiletter control sequences out of 15000+600000
+ 26326 strings out of 478268
+ 491676 string characters out of 5850345
+ 887908 words of memory out of 5000000
+ 44019 multiletter control sequences out of 15000+600000
  482410 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,21n,106p,732b,444s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,21n,106p,539b,350s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2022/texmf-di
@@ -1221,7 +1215,7 @@ ts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
 .pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/
 texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/20
 22/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Response.pdf (8 pages, 131664 bytes).
+Output written on Response.pdf (8 pages, 131174 bytes).
 PDF statistics:
  120 PDF objects out of 1000 (max. 8388607)
  87 compressed objects within 1 object stream

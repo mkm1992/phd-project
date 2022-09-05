@@ -897,7 +897,8 @@ So the complexity of the main problem \eqref{problem} is $O(T_{conv} \times \mat
 \end{algorithmic}
 \end{algorithm}
 \subsubsection{Convergence Analysis}
- \textcolor{MidnightBlue}{Due to limited resources in power, the number of PRBs, and the number of activated VNFs and restrictions based on this limitation on power, energy, fronthaul capacity, etc., the objective function that is the summation of the achievable rates of UEs cannot exceed its optimal value and become infinite. Therefore, we can guarantee the convergence of the iterative algorithm if the objective function is the strictly ascending function in the non-optimal set of variables concerning the number of iterations. Consequently, it converges to the optimum global value. Meanwhile, if the objective function is the non-monotonically ascending function, we can prove the local convergence of the algorithm. }
+ \textcolor{MidnightBlue}{Due to limited system resources, we have limits on VNFs' power, UE or O-RU power, fronthaul capacity, etc. As a result, the objective function, which is the aggregate throughput, cannot exceed its optimal value and become infinite. Therefore, if the aggregate throughput is infinite and increases without limit, the resources must also be unlimited. Hence, the system has an optimal solution: its maximum aggregate throughput in the feasible region.
+Consequently, we can guarantee the convergence of the iterative algorithm if the objective function is the ascending function concerning the number of iterations. Thus, it will converge to its optimum value if it is a strictly ascending function and to its local optimum if it is a non-monotonically ascending function. }
 % \cite{gholipoor2020resource}.
 Consider the aggregate throughput as $\mathcal{T(\bold{P},\bold{E},\bold{G})} =\sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}}$.
 In the first step of the iteration i of the algorithm \ref{alg2} (IABV), we have $\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1})$.
@@ -1207,7 +1208,7 @@ And we can see that the IABV method is better than the FA method.
 %  \label{fig:14}
 %\end{figure}
 
-\textcolor{MidnightBlue}{Table III shows the execution time versus the number of UEs for one service for the three methods. We run our simulation on the system with configures (RAM = 8 GB, CPU = Core i5, SSD Hard Disk). 
+\textcolor{MidnightBlue}{Table III shows the execution time given a number of UEs for one service for the three methods. We run our simulation on the system with configuration (RAM = 8 GB, CPU = Core i5, SSD Hard Disk). 
  As the number of UEs in the system increases, the execution time increases polynomially for all three algorithms.
 Since the baseline scheme is a simpler algorithm, with random PRB allocation and O-RU association based on distance, the execution time is less than the two other algorithms. Power and PRB are allocated in the DR scheme, but O-RUs are associated based on distance. Therefore the execution time is less than the proposed algorithm.}
 \begin{table}%[H]
@@ -1224,9 +1225,9 @@ Since the baseline scheme is a simpler algorithm, with random PRB allocation and
 \hline
 5 & 12.156 &8.9546 &6.6436\\
 10 & 19.156   & 12.3112& 8.7870\\
-15 &29.140 & 17.4778 &9.5648 \\
-20    &44.573 &  24.5342 &14.8334 \\
-25 & 67.912  & 36.7926 &21.5510 \\
+15 &29.140 & 15.4778 &9.5648 \\
+20    &44.573 &  21.5342 &14.8334 \\
+25 & 67.912  & 30.7926 &21.5510 \\
 \hline
 \end{tabular}}
 \vspace*{-1.6em}

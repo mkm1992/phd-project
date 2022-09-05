@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.21)  5 SEP 2022 05:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.21)  5 SEP 2022 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -791,10 +791,10 @@ MS/cmsy/m/n/10 ^^@ \U/euf/m/n/10 v[] \OMS/cmsy/m/n/10 ^^@
 <cell.pdf, id=93, 463.7325pt x 406.3983pt>
 File: cell.pdf Graphic file (type pdf)
 <use cell.pdf>
-Package pdftex.def Info: cell.pdf  used on input line 934.
+Package pdftex.def Info: cell.pdf  used on input line 935.
 (pdftex.def)             Requested size: 139.12082pt x 121.92043pt.
 
-Overfull \hbox (5.77744pt too wide) in paragraph at lines 984--986
+Overfull \hbox (5.77744pt too wide) in paragraph at lines 985--987
  [] 
  []
 
@@ -807,13 +807,13 @@ Package epstopdf Info: Source file: <fig/Arate_ue1_1n.eps>
 (epstopdf)                    size: 11269 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/Arate_ue1_1n-eps-conve
 rted-to.pdf fig/Arate_ue1_1n.eps>
-(epstopdf)             \includegraphics on input line 1023.
+(epstopdf)             \includegraphics on input line 1024.
 Package epstopdf Info: Output file is already uptodate.
 <fig/Arate_ue1_1n-eps-converted-to.pdf, id=118, 420.57124pt x 280.04625pt>
 File: fig/Arate_ue1_1n-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/Arate_ue1_1n-eps-converted-to.pdf>
 Package pdftex.def Info: fig/Arate_ue1_1n-eps-converted-to.pdf  used on input l
-ine 1023.
+ine 1024.
 (pdftex.def)             Requested size: 168.22551pt x 112.0165pt.
 Package epstopdf Info: Source file: <fig/vnfNum1n.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -823,13 +823,13 @@ Package epstopdf Info: Source file: <fig/vnfNum1n.eps>
 (epstopdf)                    size: 11570 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/vnfNum1n-eps-converted
 -to.pdf fig/vnfNum1n.eps>
-(epstopdf)             \includegraphics on input line 1023.
+(epstopdf)             \includegraphics on input line 1024.
 Package epstopdf Info: Output file is already uptodate.
 <fig/vnfNum1n-eps-converted-to.pdf, id=119, 420.57124pt x 280.04625pt>
 File: fig/vnfNum1n-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/vnfNum1n-eps-converted-to.pdf>
 Package pdftex.def Info: fig/vnfNum1n-eps-converted-to.pdf  used on input line 
-1023.
+1024.
 (pdftex.def)             Requested size: 168.22551pt x 112.0165pt.
 Package epstopdf Info: Source file: <fig/RatePower1n.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -839,13 +839,13 @@ Package epstopdf Info: Source file: <fig/RatePower1n.eps>
 (epstopdf)                    size: 9138 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/RatePower1n-eps-conver
 ted-to.pdf fig/RatePower1n.eps>
-(epstopdf)             \includegraphics on input line 1023.
+(epstopdf)             \includegraphics on input line 1024.
 Package epstopdf Info: Output file is already uptodate.
 <fig/RatePower1n-eps-converted-to.pdf, id=120, 417.56pt x 279.0425pt>
 File: fig/RatePower1n-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/RatePower1n-eps-converted-to.pdf>
 Package pdftex.def Info: fig/RatePower1n-eps-converted-to.pdf  used on input li
-ne 1023.
+ne 1024.
 (pdftex.def)             Requested size: 167.02103pt x 111.615pt.
 Package epstopdf Info: Source file: <fig/delay_newn.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -855,13 +855,13 @@ Package epstopdf Info: Source file: <fig/delay_newn.eps>
 (epstopdf)                    size: 9996 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/delay_newn-eps-convert
 ed-to.pdf fig/delay_newn.eps>
-(epstopdf)             \includegraphics on input line 1042.
+(epstopdf)             \includegraphics on input line 1043.
 Package epstopdf Info: Output file is already uptodate.
 <fig/delay_newn-eps-converted-to.pdf, id=121, 417.56pt x 286.06876pt>
 File: fig/delay_newn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/delay_newn-eps-converted-to.pdf>
 Package pdftex.def Info: fig/delay_newn-eps-converted-to.pdf  used on input lin
-e 1042.
+e 1043.
 (pdftex.def)             Requested size: 167.02103pt x 114.42546pt.
 Package epstopdf Info: Source file: <fig/delay1_newn.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -871,13 +871,13 @@ Package epstopdf Info: Source file: <fig/delay1_newn.eps>
 (epstopdf)                    size: 9739 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/delay1_newn-eps-conver
 ted-to.pdf fig/delay1_newn.eps>
-(epstopdf)             \includegraphics on input line 1042.
+(epstopdf)             \includegraphics on input line 1043.
 Package epstopdf Info: Output file is already uptodate.
 <fig/delay1_newn-eps-converted-to.pdf, id=122, 420.57124pt x 285.065pt>
 File: fig/delay1_newn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/delay1_newn-eps-converted-to.pdf>
 Package pdftex.def Info: fig/delay1_newn-eps-converted-to.pdf  used on input li
-ne 1042.
+ne 1043.
 (pdftex.def)             Requested size: 168.22551pt x 114.02397pt.
 Package epstopdf Info: Source file: <fig/AmmTCpowern.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -887,13 +887,13 @@ Package epstopdf Info: Source file: <fig/AmmTCpowern.eps>
 (epstopdf)                    size: 9371 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/AmmTCpowern-eps-conver
 ted-to.pdf fig/AmmTCpowern.eps>
-(epstopdf)             \includegraphics on input line 1042.
+(epstopdf)             \includegraphics on input line 1043.
 Package epstopdf Info: Output file is already uptodate.
 <fig/AmmTCpowern-eps-converted-to.pdf, id=123, 415.5525pt x 276.03125pt>
 File: fig/AmmTCpowern-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/AmmTCpowern-eps-converted-to.pdf>
 Package pdftex.def Info: fig/AmmTCpowern-eps-converted-to.pdf  used on input li
-ne 1042.
+ne 1043.
 (pdftex.def)             Requested size: 166.21805pt x 110.41054pt.
 Package epstopdf Info: Source file: <fig/priorityLastn.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -903,13 +903,13 @@ Package epstopdf Info: Source file: <fig/priorityLastn.eps>
 (epstopdf)                    size: 8797 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/priorityLastn-eps-conv
 erted-to.pdf fig/priorityLastn.eps>
-(epstopdf)             \includegraphics on input line 1095.
+(epstopdf)             \includegraphics on input line 1096.
 Package epstopdf Info: Output file is already uptodate.
 <fig/priorityLastn-eps-converted-to.pdf, id=124, 420.57124pt x 280.04625pt>
 File: fig/priorityLastn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/priorityLastn-eps-converted-to.pdf>
 Package pdftex.def Info: fig/priorityLastn-eps-converted-to.pdf  used on input 
-line 1095.
+line 1096.
 (pdftex.def)             Requested size: 168.22551pt x 112.0165pt.
 Package epstopdf Info: Source file: <fig/itern.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -919,13 +919,13 @@ Package epstopdf Info: Source file: <fig/itern.eps>
 (epstopdf)                    size: 9524 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/itern-eps-converted-to
 .pdf fig/itern.eps>
-(epstopdf)             \includegraphics on input line 1095.
+(epstopdf)             \includegraphics on input line 1096.
 Package epstopdf Info: Output file is already uptodate.
 <fig/itern-eps-converted-to.pdf, id=125, 422.57875pt x 277.035pt>
 File: fig/itern-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/itern-eps-converted-to.pdf>
 Package pdftex.def Info: fig/itern-eps-converted-to.pdf  used on input line 109
-5.
+6.
 (pdftex.def)             Requested size: 169.0285pt x 110.81203pt.
 Package epstopdf Info: Source file: <fig/iterD.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -935,13 +935,13 @@ Package epstopdf Info: Source file: <fig/iterD.eps>
 (epstopdf)                    size: 8500 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/iterD-eps-converted-to
 .pdf fig/iterD.eps>
-(epstopdf)             \includegraphics on input line 1095.
+(epstopdf)             \includegraphics on input line 1096.
 Package epstopdf Info: Output file is already uptodate.
 <fig/iterD-eps-converted-to.pdf, id=126, 420.57124pt x 279.0425pt>
 File: fig/iterD-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/iterD-eps-converted-to.pdf>
 Package pdftex.def Info: fig/iterD-eps-converted-to.pdf  used on input line 109
-5.
+6.
 (pdftex.def)             Requested size: 168.22551pt x 111.615pt.
 Package epstopdf Info: Source file: <fig/optimal1n.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -951,13 +951,13 @@ Package epstopdf Info: Source file: <fig/optimal1n.eps>
 (epstopdf)                    size: 9204 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/optimal1n-eps-converte
 d-to.pdf fig/optimal1n.eps>
-(epstopdf)             \includegraphics on input line 1163.
+(epstopdf)             \includegraphics on input line 1164.
 Package epstopdf Info: Output file is already uptodate.
 <fig/optimal1n-eps-converted-to.pdf, id=127, 422.57875pt x 277.035pt>
 File: fig/optimal1n-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/optimal1n-eps-converted-to.pdf>
 Package pdftex.def Info: fig/optimal1n-eps-converted-to.pdf  used on input line
- 1163.
+ 1164.
 (pdftex.def)             Requested size: 169.0285pt x 110.81203pt.
 Package epstopdf Info: Source file: <fig/interF_newn.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -967,13 +967,13 @@ Package epstopdf Info: Source file: <fig/interF_newn.eps>
 (epstopdf)                    size: 9602 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/interF_newn-eps-conver
 ted-to.pdf fig/interF_newn.eps>
-(epstopdf)             \includegraphics on input line 1163.
+(epstopdf)             \includegraphics on input line 1164.
 Package epstopdf Info: Output file is already uptodate.
 <fig/interF_newn-eps-converted-to.pdf, id=128, 421.575pt x 278.03876pt>
 File: fig/interF_newn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/interF_newn-eps-converted-to.pdf>
 Package pdftex.def Info: fig/interF_newn-eps-converted-to.pdf  used on input li
-ne 1163.
+ne 1164.
 (pdftex.def)             Requested size: 168.627pt x 111.21352pt.
 Package epstopdf Info: Source file: <fig/FAn.eps>
 (epstopdf)                    date: 2022-08-08 20:52:55
@@ -983,12 +983,12 @@ Package epstopdf Info: Source file: <fig/FAn.eps>
 (epstopdf)                    size: 8904 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig/FAn-eps-converted-to.p
 df fig/FAn.eps>
-(epstopdf)             \includegraphics on input line 1163.
+(epstopdf)             \includegraphics on input line 1164.
 Package epstopdf Info: Output file is already uptodate.
 <fig/FAn-eps-converted-to.pdf, id=129, 415.5525pt x 276.03125pt>
 File: fig/FAn-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/FAn-eps-converted-to.pdf>
-Package pdftex.def Info: fig/FAn-eps-converted-to.pdf  used on input line 1163.
+Package pdftex.def Info: fig/FAn-eps-converted-to.pdf  used on input line 1164.
 
 (pdftex.def)             Requested size: 166.21805pt x 110.41054pt.
  [12]
@@ -1059,7 +1059,7 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><c:/texlive/
 mf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type
 1/urw/times/utmbi8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pr.pdf (15 pages, 571197 bytes).
+Output written on pr.pdf (15 pages, 571293 bytes).
 PDF statistics:
  340 PDF objects out of 1000 (max. 8388607)
  222 compressed objects within 3 object streams
