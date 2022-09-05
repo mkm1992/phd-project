@@ -1,4 +1,3 @@
-%\documentclass[12pt, draftclsnofoot, onecolumn,letterpaper]{IEEEtran}
 \documentclass[12pt, letterpaper]{article}
 %\documentclass[12pt, letterpaper]{IEEEtran}
 \usepackage{ multirow }
@@ -67,6 +66,8 @@
 \def\Rcoopj{R_\text{coop}^j}
 \title{\bf \vspace*{-4ex} Statement of Responses to the Editor and the Reviewers of Paper-TNSM \\[-6ex]}
 \date{}
+
+
 
 \begin{document}
 %\vspace*{-10ex}
@@ -159,8 +160,7 @@ In this response, we hope to alleviate the reviewer's concerns.
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-Based on this comment, we have read several TNSM papers, rewritten the introduction's paragraph, removed the additional parts, and tried to enhance it as much as possible. 
-
+Based on this comment, we have read several TNSM papers, rewritten the introduction's paragraph, removed the additional parts, and tried to enhance it as much as possible. We also shortened the introduction. We added an organization subsection and revised the whole of the introduction. Moreover, we modified the related literature, removed additional parts, and added more related literature reviews. Additionally, we modified the background section, removed some sentences from the introduction, and added them to this section. Also, we removed some additional parts from this section.
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -171,7 +171,7 @@ Based on this comment, we have read several TNSM papers, rewritten the introduct
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
 We have rewritten the introduction and literature review section, removed the additional part, and put it in the correct sections.
-We have shortened long paragraphs and sentences in this paper in order to make it easier to read.
+We have shortened long paragraphs and sentences in this paper in order to make it easier to read. Furthermore, we modified the literature review and background too. We shortened the long paragraphs in the introduction, literature review, and background sections and added some additional literature reviews to make the paper more useful.
 
 
 \begin{longtable}{|p{0.975\textwidth}|}
@@ -183,6 +183,51 @@ We have shortened long paragraphs and sentences in this paper in order to make i
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
+Based on this comment, we added the results for the baseline scheme and the DR methods in Table  III in Section VII-C. Table I shows the execution time versus the number of UEs for one service for the three methods. We run our simulation on the system with configures (RAM = 8 GB, CPU = Core i5, SSD Hard Disk). 
+ As the number of UEs in the system increases, the execution time increases polynomially for all three algorithms.
+Since the baseline scheme is a simpler algorithm, with random PRB allocation and O-RU association based on distance, the execution time is less than the two other algorithms. Power and PRB are allocated in the DR scheme, but O-RUs are associated based on distance. Therefore the execution time is less than the proposed algorithm.
+\begin{table}[H]
+ \caption {Execution Time vs. Number of UEs} 
+\begin{center}
+\begin{tabular}{ |l|l|l|l| }
+%\hline
+%\multicolumn{3}{|c|}{Country List} \\
+\hline
+\multirow{2}{*}{Number of UEs } &\multicolumn{3}{|c|}{Execution Time (usec)} \\
+\cline{2-4}
+{} &Proposed method & DR scheme & Baseline scheme \\
+\hline
+5 & 12.156 &8.9546 &6.6436\\
+10 & 19.156   & 12.3112& 8.7870\\
+15 &29.140 & 17.4778 &9.5648 \\
+20    &44.573 &  24.5342 &14.8334 \\
+25 & 67.912  & 36.7926 &21.5510 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+%\begin{table}%[H]
+%\vspace*{-0em}
+% \caption {Execution Time vs. Number of UEs} \label{table:2}
+% \vspace*{-1em}
+% \begin{center}
+% \scalebox{0.9}{
+%  \begin{tabular}{|l| l| l| l| l| l|}
+%   \hline 
+%  Number of UEs & 5 & 10 & 15 & 20 & 25 \\
+%  \hline 
+%  Execution Time(usec) &  &  &  &  &  \\
+%  Proposed Method & 12.156 & 19.156 &  29.140 & 44.573 & 67.912  \\ [.3ex]
+%
+%  DR method &  9.9546 & 13.3112 &  15.4778 & 17.5342 & 30.7926 \\ [.3ex]
+%  Baseline scheme &  6.6436 &   7.7870  &  8.5648  & 9.8334 &  14.5510 \\ [.3ex]
+%   \hline 
+% \end{tabular}}
+% \end{center}
+% \vspace*{-2.5em}
+% \end{table}
+
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -196,7 +241,7 @@ We have shortened long paragraphs and sentences in this paper in order to make i
 We thank the reviewer for reporting this ambiguity. We revised this vague statement and added it to section VI-C-2. Below we reported the revised sentences.
 
 
-Due to limited resources in power, the number of PRBs, and the number of activated VNFs and restrictions based on this limitation on power, energy, fronthaul capacity, etc., the objective function that is the summation of the achievable rates of UEs cannot exceed its optimal value and become infinite. Therefore, we can guarantee the convergence of the iterative algorithm if the objective function is the strictly ascending function concerning the number of iterations. Consequently, it converges to the optimum value.
+Due to limited resources in power, the number of PRBs, and the number of activated VNFs and restrictions based on this limitation on power, energy, fronthaul capacity, etc., the objective function that is the summation of the achievable rates of UEs cannot exceed its optimal value and become infinite. Therefore, we can guarantee the convergence of the iterative algorithm if the objective function is the strictly ascending function in the non-optimal set of variables concerning the number of iterations. Consequently, it converges to the optimum global value. Meanwhile, if the objective function is the non-monotonically ascending function, we can prove the local convergence of the algorithm.
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -207,7 +252,58 @@ Due to limited resources in power, the number of PRBs, and the number of activat
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
+We agree with the reviewer that we only talked about the convergence of the proposed algorithm, and we do not talk about the global and local convergence. Based on our proof, the algorithm is converged to the local convergence.
+But we do not provide global convergence of our algorithm.
 
+Moreover, Fig. 12 shows the aggregate throughput vs. the number of UEs for the optimal solution and proposed algorithm. Therefore, there is a low interference comparison between the proposed method and the optimal solution for the system. In this figure, the proposed solution is near the optimal solution. Thus, the simulation demonstrates that it almost reaches the global optimum. Hence, Fig. 12 numerically illustrates the global convergence of the algorithm.
+
+In addition, to extend our solution to the global optimum, we must prove that the algorithm monotonically increases in the non-optimal set of solutions.
+
+ Moreover, in the low interference system, in which the PRB and VNF assignment is obtained straightforward, and the whole problem of the first step is about power allocation, in the first step of our algorithm that the optimal power and PRB allocation are obtained for the fixed O-RU association; we have
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1}) > \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$ (strictly increase).
+ Since the PRB assignment is straightforward and we used the KKT condition for power allocation, the problem is a convex optimization. The KKT condition problem has a global convergence and achieves the optimal solution in convex optimization. Accordingly, the algorithm monotonically increases to reach its optimum solution. However, in the second step of the algorithm, we can prove that the algorithm is increased, but we can not talk about monotonically increases.
+Hence we have
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^{i},\bold{G}^{i-1})$.
+Therefore, we have 
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) > \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$.
+Consequently, the algorithm converges to the 
+global optimum solution in low interference.
+
+
+Meanwhile, Zangwill's global convergence theory of iterative algorithms is a standard theory for providing the global convergence of an iterative algorithm. We need to use this theory to prove our algorithm in a standard way which is not straightforward in this paper.
+
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment6:} ``In general, the paper must clarify to "what" is the algorithm converging or the global maximum can be understood by the reader and it can be confusing. ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+We agree with the reviewer that we must clarify "what" the algorithm converges. As mentioned in the previous question, we prove that the algorithm can converge to a global convergence in low interference.
+Moreover, in Fig. 12, we numerically demonstrate our algorithm's global convergence in low interference.
+ However, we can not talk about the global convergence of the algorithm in other states. We still will not prove that our algorithm converged to global convergence. However, we verified the local convergence of our algorithm in any condition.
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment7:} ``Regarding presentation, there are some grammar typos, such as "reformulated as follow" in Section VI.B, second paragraph.  ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+We are pleased to thank the reviewer for improving the grammar in our paper. We have read the paper one more time and tried to fix any grammar problems in the paper.
+\begin{longtable}{|p{0.975\textwidth}|}
+\hline \hline
+\RaggedRight
+\cellcolor{gray!15}
+\textbf{\noindent Comment8:} ``Finally, according to IEEE style, tables and algorithms must be placed at top of the page, in addition to figures, which have already been correctly placed.  ''\\
+\hline
+\end{longtable}
+\vspace*{-1\baselineskip}
+\noindent \textbf{Response:\\}
+It is our pleasure to thank the reviewer for this comment. We agree with the reviewer that the tables and algorithms need to be moved. As a result, all these mistakes were corrected, and the wrong ones were moved to the top.
 
 \clearpage
 \noindent

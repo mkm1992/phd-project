@@ -53,11 +53,6 @@ S.{Riolo} \emph{et~al.}, ``Modeling and analysis of tagged preamble
   Transactions on Wireless Communications}, vol.~20, no.~7, pp. 4296--4312,
   2021.
 
-\bibitem{mijumbi2015network}
-R.~Mijumbi \emph{et~al.}, ``Network function virtualization: State-of-the-art
-  and research challenges,'' \emph{{IEEE} Communications surveys \& tutorials},
-  vol.~18, no.~1, pp. 236--262, Sep. 2015.
-
 \bibitem{lee2018dynamic}
 Y.{Lee} \emph{et~al.}, ``Dynamic network slicing for multitenant heterogeneous
   cloud radio access networks,'' \emph{{IEEE} Transactions on Wireless
@@ -69,7 +64,7 @@ J.{Tang} \emph{et~al.}, ``System cost minimization in cloud {RAN} with limited
   vol.~16, no.~5, pp. 3371--3384, May 2017.
 
 \bibitem{ORANArch}
-``{O-RAN} architecture description,'' {O-RAN} {Alliance}, Tech. Rep., 2020.
+``{O-RAN} architecture description,'' {O-RAN}{Alliance}, Tech. Rep., 2020.
 
 \bibitem{gavrilovska2020cloud}
 L.{Gavrilovska} \emph{et~al.}, ``From {Cloud} {RAN} to {Open} {RAN},''
@@ -106,6 +101,17 @@ S.E.{Elayoubi} \emph{et~al.}, ``{5G} {RAN} slicing for verticals: Enablers and
 S.{D'Oro} \emph{et~al.}, ``Toward operator-to-waveform {5G} radio access
   network slicing,'' \emph{IEEE Communications Magazine}, vol.~58, no.~4, pp.
   18--23, Apr. 2020.
+
+\bibitem{singh2022joint}
+A.~K. Singh and K.~K. Nguyen, ``Joint selection of local trainers and resource
+  allocation for federated learning in open ran intelligent controllers,'' in
+  \emph{2022 IEEE Wireless Communications and Networking Conference
+  (WCNC)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2022, pp. 1874--1879.
+
+\bibitem{zhang2022federated}
+H.~Zhang, H.~Zhou, and M.~Erol-Kantarci, ``Federated deep reinforcement
+  learning for resource allocation in o-ran slicing,'' \emph{arXiv preprint
+  arXiv:2208.01736}, 2022.
 
 \bibitem{yang2020should}
 P.{Yang} \emph{et~al.}, ``How should {I} orchestrate resources of my slices for
@@ -144,13 +150,17 @@ S.{Ali} \emph{et~al.}, ``Energy-efficient resource allocation and {RRH}
 
 \bibitem{amani2019power}
 N.{Amani} \emph{et~al.}, ``{Power-Efficient} resource allocation in massive
-  {MIMO} aided {Cloud} {RANs},'' \emph{{arXiv} preprint {arXiv}:1908.07568},
-  Aug. 2019.
+  {MIMO} aided {Cloud} {RANs},'' \emph{{arXiv} preprint:1908.07568}, Aug. 2019.
 
 \bibitem{han2019research}
 B.~Han, L.~Liu \emph{et~al.}, ``Research on resource migration based on novel
   {RRH-BBU} mapping in cloud radio access network for {HSR} scenarios,''
   \emph{{IEEE} Access}, vol.~7, pp. 108\,542--108\,550, Aug. 2019.
+
+\bibitem{mijumbi2015network}
+R.~Mijumbi \emph{et~al.}, ``Network function virtualization: State-of-the-art
+  and research challenges,'' \emph{{IEEE} Communications surveys \& tutorials},
+  vol.~18, no.~1, pp. 236--262, Sep. 2015.
 
 \bibitem{niknam2020intelligent}
 S.{Niknam} \emph{et~al.}, ``Intelligent {O-RAN} for beyond {5G} and {6G}
