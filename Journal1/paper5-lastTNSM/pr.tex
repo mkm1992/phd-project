@@ -109,7 +109,7 @@ open radio access network (O-RAN), virtual network function (VNF), network slici
 \end{IEEEkeywords}
 \section{Introduction}
 %\subsection{State Of The Arts}
-Network slicing is a key technology in 5G wireless systems. \textcolor{MidnightBlue}{Specifically, it isolates network resources into slices, e.g., via core slicing and/or radio access network (RAN) slicing, for serving various services.} \cite{shen2020ai,setayesh2020joint,popovski20185g}. 
+Network slicing is a key technology in 5G wireless systems. \textcolor{MidnightBlue}{Specifically, it isolates network resources into slices, e.g., via core slicing and/or radio access network (RAN) slicing, for serving various services} \cite{shen2020ai,setayesh2020joint,popovski20185g}. 
 
 There are three main service classes in 5G, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). \textcolor{MidnightBlue}{Each service is assigned to a network slice depending on its corresponding quality of service (QoS) requirements.}
 For instance, the eMBB service demands high capacity and throughput,  e.g., 8K video streaming and immersive gaming. \textcolor{MidnightBlue}{Meanwhile, the URLLC service provides ultra-reliable and low-latency connectivity, e.g., for autonomous vehicles, Tactile Internet, and remote surgeries.} Finally, mMTC services require connectivity for a large number of Internet of Things (IoT) devices that transmit small payloads \cite{dogra2020survey,alsenwi2021intelligent,SL}.
@@ -127,15 +127,15 @@ For instance, the eMBB service demands high capacity and throughput,  e.g., 8K v
 
 
 \subsection{Motivation}
-\textcolor{MidnightBlue}{The optimal resource allocation for the 5G systems is crucial to reducing costs and improving user equipment (UE). Significant challenges face these systems, including interference alignment, limited capacity of the fronthaul links, energy restrictions on virtual machines (VMs), etc }\cite{lee2018dynamic,SystemCostMinimization, setayesh2020joint}.
+\textcolor{MidnightBlue}{The optimal resource allocation for the 5G systems is crucial to reducing costs and improving user equipment (UE). Significant challenges face these systems, including interference alignment, limited capacity of the fronthaul links, energy restrictions on virtual machines (VMs), etc. }\cite{lee2018dynamic,SystemCostMinimization, setayesh2020joint}.
 
 \textcolor{MidnightBlue}{Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering a single service's power, data rate, and delay limitations.}
 %Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is schematically represented in Fig. \ref{fig:c11}, is introduced to deal with these issues.
 \textcolor{MidnightBlue}{Unfortunately, the existing radio access networks (RANs) currently lack adequate flexibility and openness to handle these simultaneous service demands. 
 Hence, a new RAN paradigm, called open RAN (O-RAN) architecture, has emerged.
-% as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges.} 
+% as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges. 
 Therefore, O-RAN can simultaneously support multiple services at a lower cost by being flexible, layered, and modular.  
-One of the fundamental problems lies in balancing services with different QoS, resource requirements, and priorities in O-RAN architecture.}
+One of the fundamental problems lies in balancing services with different QoS, resource requirements, and priorities in O-RAN architecture}
  \cite{ORANArch, gavrilovska2020cloud, kazemifard2021minimum, shen2020ai}.  
 %\textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
 %Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
@@ -897,9 +897,11 @@ So the complexity of the main problem \eqref{problem} is $O(T_{conv} \times \mat
 \end{algorithmic}
 \end{algorithm}
 \subsubsection{Convergence Analysis}
- \textcolor{MidnightBlue}{Due to limited system resources, we have limits on VNFs' power, UE or O-RU power, fronthaul capacity, etc. As a result, the objective function, which is the aggregate throughput, cannot exceed its optimal value and become infinite. Therefore, if the aggregate throughput is infinite and increases without limit, the resources must also be unlimited. Hence, the system has an optimal solution: its maximum aggregate throughput in the feasible region.
-Consequently, we can guarantee the convergence of the iterative algorithm if the objective function is the ascending function concerning the number of iterations. Thus, it will converge to its optimum value if it is a strictly ascending function and to its local optimum if it is a non-monotonically ascending function. }
+ \textcolor{MidnightBlue}{Due to limited system resources, we have limits on VNFs' power, UE or O-RU power, fronthaul capacity, etc. As a result, the objective function, which is the aggregate throughput, cannot exceed its optimal value and become infinite. Therefore, if the aggregate throughput is infinite and increases without limit, the resources must also be unlimited. Hence, the system has an optimal solution: its maximum aggregate throughput in the feasible region.}
+ 
+ \textcolor{MidnightBlue}{Consequently, we can guarantee the convergence of the iterative algorithm if the objective function is the ascending function concerning the number of iterations and has an upper bound. Thus, it will converge to its optimum value if it is a strictly ascending function and to its local optimum if it is a non-monotonically ascending function. }
 % \cite{gholipoor2020resource}.
+
 Consider the aggregate throughput as $\mathcal{T(\bold{P},\bold{E},\bold{G})} =\sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}}$.
 In the first step of the iteration i of the algorithm \ref{alg2} (IABV), we have $\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1})$.
 In this step, optimal power and PRB allocation are obtained for the fixed O-RU association, so we have
@@ -912,15 +914,33 @@ Hence, in each step of the iteration, the aggregate throughput increased.
 Note that $\mathcal{T}^*(\bold{P}^{*},\bold{E}^*,\bold{G}^{*})$ is the achieved aggregate throughput
 for all the feasible resource allocation solutions of $\{\bold{P},\bold{E},\bold{G}\}$.
 So, $\mathcal{T}^*(\bold{P}^{*},\bold{E}^*,\bold{G}^{*}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i})$ and thus in each iteration, the aggregate throughput can not be larger than the optimal solution.
-So the the aggregate throughput is ascending function concerning the number of iterations and it will converge to the sub-optimal solution.
+ 
 In addition, if we assume that the interference is set to be zero ${I}_{r,u_{(s,i)}}^{k}=0$,
 and we suppose that each UE has the maximum power $p_{r,u_{(s,i)}}^k = P_{s}^{max}$,
 and we consider that all PRB is assigned to all UE $e_{r,u_{(s,i)}}^k = 1 \forall s,\forall i$
 and each UE is assigned to the nearest O-RU with the best channel quality. So, the solution of this allocation, is the upper bound
-for the aggregate throughput. Thus,
-we can guarantee the convergence of our iterative algorithm since the objective function $\mathcal{T}$ is the ascending function concerning the number of iterations
- and it has the upper bound.
+for the aggregate throughput.
 
+\textcolor{MidnightBlue}{ Thus,
+we can guarantee the local convergence of our iterative algorithm since the objective function $\mathcal{T}$ is the ascending function concerning the number of iterations
+ and it has the upper bound which is not infinite.}
+
+ \textcolor{MidnightBlue}{In addition, to extend our solution to the global optimum, we must prove that the algorithm monotonically increases in the non-optimal set of solutions and is Lipschitz monotone contraction mapping. Here, we briefly discussed our algorithm's global convergence for a low interference system.}
+ 
+  \textcolor{MidnightBlue}{ In the low interference system, the PRB and VNF assignment is obtained straightforwardly, and the first step's problem is power allocation. In the first step of our algorithm with the fixed O-RU association, we have
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1}) > \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$ (strictly increase). 
+Because in this step, the problem is reformulated to the power allocation, and the objective function is convex, and the convex functions are Lipschitz monotone contractions. 
+However, in the second step of the algorithm, we can show as before that the algorithm is increased, but we can not talk about monotonically increases.
+Hence we have
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^{i},\bold{G}^{i-1})$.
+Nevertheless, the objective function is still Lipschitz monotone mapping. 
+Accordingly, we have 
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) > \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$.
+Therefore the objective function is the strictly ascending
+function concerning the number of iterations and has an
+upper bound.
+Consequently, the algorithm converges to the 
+global optimum solution in low interference.}
 %\vspace*{-2em}
 \section{Numerical Results and The Feasible Region}\label{NE}
 In this section, firstly, we describe the initial points and the comparison algorithms.
@@ -1152,6 +1172,7 @@ Also the mean arrival rate is set to be $0.2$Mbps and the mean service rate is $
 The optimal approach is obtained from the two-step joint exhaustive search and using CVX.
 In each iteration in the first step, the PRB allocation and O-RU association are obtained from brute force, and in the second step, we use CVX to get optimal power.
 Our solution is close to the optimal value in a small number of UEs.
+\textcolor{MidnightBlue}{Therefore, this figure numerically demonstrates that the proposed algorithm converges to the global optimal in low interference.}
 
 
 \begin{figure*}[!htb]
@@ -1227,7 +1248,7 @@ Since the baseline scheme is a simpler algorithm, with random PRB allocation and
 10 & 19.156   & 12.3112& 8.7870\\
 15 &29.140 & 15.4778 &9.5648 \\
 20    &44.573 &  21.5342 &14.8334 \\
-25 & 67.912  & 30.7926 &21.5510 \\
+25 & 67.912  & 32.7926 &21.5510 \\
 \hline
 \end{tabular}}
 \vspace*{-1.6em}

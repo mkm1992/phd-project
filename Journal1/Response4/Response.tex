@@ -161,6 +161,63 @@ In this response, we hope to alleviate the reviewer's concerns.
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
 Based on this comment, we have read several TNSM papers and reorganized the Introduction section accordingly. As a result, we shortened the Introduction section. Specifically, we revised it thoroughly and included an additional subsection about the organization of our paper. We trimmed extra parts and added more related literature reviews in the related literature. Additionally, we modified the background section by including some sentences/ideas that were originally in the Introduction section and reallocating others.
+Below we report the Introduction section.
+
+\section{Introduction}
+%\subsection{State Of The Arts}
+Network slicing is a key technology in 5G wireless systems. Specifically, it isolates network resources into slices, e.g., via core slicing and/or radio access network (RAN) slicing, for serving various services [1]–[3]. 
+
+There are three main service classes in 5G, namely enhanced mobile broadband (eMBB), ultra-reliable low latency communications (URLLC), and massive machine-to-machine communications (mMTC). Each service is assigned to a network slice depending on its corresponding quality of service (QoS) requirements.
+For instance, the eMBB service demands high capacity and throughput,  e.g., 8K video streaming and immersive gaming. Meanwhile, the URLLC service provides ultra-reliable and low-latency connectivity, e.g., for autonomous vehicles, Tactile Internet, and remote surgeries. Finally, mMTC services require connectivity for a large number of Internet of Things (IoT) devices that transmit small payloads [4]–[6].
+%\cite{dogra2020survey,kassab2018coexistence,alsenwi2021intelligent,SL}.}
+
+%Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is schematically represented in Fig. \ref{fig:c11}, is introduced to deal with these issues.
+
+
+%This paper considers several user equipments (UEs) requesting one of these types of services with different QoS in the O-RAN architecture. We want to study RAN slicing technology and the isolation between slices in this system to evaluate the performance of various services.
+%This paper aims to design a RAN slicing technology for the O-RAN architecture. 
+%O-RAN offers machine learning techniques based on the requirement for an intelligent wireless network for the next generation of RAN systems. The two logical nodes, RIC-Non Real-Time (which is placed in Orchestration and Automation node) and RIC-Near Real-Time, implement the algorithms for network intelligence
+
+%A key feature of the O-RAN architecture is that the hardware is disaggregated from the software, leading to network function virtualization (NFV). Additionally, each component is implemented as a virtual network function (VNF), the system function block in NFV, that can be deployed on a virtual machine (VM) or container \cite{mijumbi2015network}.
+%As a result, some O-RAN components defined in Section \ref{BG}, such as user plane function (UPF), O-RAN central unit (O-CU), O-RAN distributed unit (O-DU), and RAN intelligent controller (RIC)-near real-time, are virtualized and implemented as VNFs.
+
+
+\subsection{Motivation}
+The optimal resource allocation for the 5G systems is crucial to reducing costs and improving user equipment (UE). Significant challenges face these systems, including interference alignment, limited capacity of the fronthaul links, energy restrictions on virtual machines (VMs), etc [2], [7], [8].
+
+Many studies have investigated resource allocation in cloud RAN (C-RAN) by considering a single service's power, data rate, and delay limitations.
+%Unfortunately, the existing radio access network (RAN) architecture still lacks adequate flexibility and openness to manage these demands for various services simultaneously. In view of this, a new RAN paradigm, called open RAN (O-RAN), which is schematically represented in Fig. \ref{fig:c11}, is introduced to deal with these issues.
+Unfortunately, the existing radio access networks (RANs) currently lack adequate flexibility and openness to handle these simultaneous service demands. 
+Hence, a new RAN paradigm, called open RAN (O-RAN) architecture, has emerged.
+% as a flexible, layered, and modular design architecture that can simultaneously support multiple services at a lower cost. Nevertheless, RAN slicing in the O-RAN architecture still faces various challenges. 
+Therefore, O-RAN can simultaneously support multiple services at a lower cost by being flexible, layered, and modular.  
+One of the fundamental problems lies in balancing services with different QoS, resource requirements, and priorities in O-RAN architecture [1], [9]–[11]. 
+%\textcolor{MidnightBlue}{Since 5G defines different services with different QoS, we need to analyze the resource allocation for each 5G service, using RAN slicing to guarantee the QoS for them.
+%Consequently, we consider the O-RAN architecture, the new generation of RAN architecture that can implement RAN slicing for different 5G services. 
+%We investigate the problem of resource allocation in the O-RAN architecture for the three services defined in the 5G with different QoS serving simultaneously.}
+
+The purpose of this paper is to design a system in the O-RAN architecture to support the three types of 5G services, namely, eMBB, URLLC, and mMTC via network slicing and resource allocation.
+% Specifically, we aim to maximize the total achievable data rate and satisfy the minimum achievable data rate for eMBB services while meeting the URLLC requirements in the presence of numerous low-power IoT devices.
+
+\subsection{Main Contributions}
+This paper studies the resource utilization of a downlink O-RAN system to develop an isolated network slicing outline for the three 5G services.
+We use mathematical methods to decompose and convexify the problem and solve it using hierarchical algorithms.
+%Our paper focuses on the multi-service resource management of the RAN slicing in an open and flexible O-RAN architecture.}
+%In this paper, as depicted in Figure \ref{fig:c11}, the downlink of the O-RAN system is studied.
+ The main contributions of this paper are summarized as follows:
+\begin{itemize}
+\item We examine the problem of baseband resource allocation, such as power, physical resource blocks (PRBs), O-RUs, and activating VNFs to maximize the weighted throughput of the O-RAN architecture. The three types of 5G service classes, i.e., eMBB, URLLC, and mMTC, are considered in this system. We take into account their corresponding QoS requirements and service priorities.
+\item We propose a two-step resource management algorithm for solving the optimization problem.
+In the first step, we reformulate and simplify the problem so as to find an upper and lower bound for the number of activated VNFs. Moreover, we use the Lagrangian function and Karush-Kuhn-Tucker (KKT) conditions to obtain the optimal power and PRB allocation. In the second step, the problem of O-RU association is converted to a multiple knapsack problem and solved by a greedy algorithm.
+\item We analyze the complexity of the proposed algorithms and demonstrate their convergence. Additionally, we analyze the feasibility region of the problem and introduce a fast algorithm to check it numerically.
+\item We show via numerical results that the proposed algorithm outperforms two baseline schemes in terms of achievable data rate and mean total delay. Remarkably, the proposed algorithm performs close to the optimal solution in low-interference conditions.
+\end{itemize}
+
+\subsection{Organization}
+%Table \ref{table:11a} lists the acronyms used throughout this paper, which
+This paper is organized as follows.
+Relevant literature related to our work is discussed in Section~II, while Section~III briefly overviews the O-RAN architecture.
+The system model and the problem formulation are described in Section IV and Section V, respectively. The details of our proposed resource management algorithm are introduced in Section VI. In Section VII, numerical results are provided to evaluate the performance of the proposed algorithm. Finally, Section VIII concludes the paper. For clarity, Table I lists the main acronyms used throughout the paper.
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
@@ -201,7 +258,7 @@ Since the baseline scheme is a simpler algorithm, with random PRB allocation and
 10 & 19.156   & 12.3112& 8.7870\\
 15 &29.140 & 15.4778 &9.5648 \\
 20    &44.573 &  21.5342 &14.8334 \\
-25 & 67.912  & 30.7926 &21.5510 \\
+25 & 67.912  & 32.7926 &21.5510 \\
 \hline
 \end{tabular}
 \end{center}
@@ -238,11 +295,37 @@ Since the baseline scheme is a simpler algorithm, with random PRB allocation and
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We thank the reviewer for reporting this ambiguity. We revised this vague statement and added it to section VI-C-2. Below we reported the revised sentences.
+We thank the reviewer for reporting this ambiguity. We revised this vague statement and added it to section VI-C-2.
+ Below we reported the revised sentences.
 
 
 Due to limited system resources, we have limits on VNFs' power, UE or O-RU power, fronthaul capacity, etc. As a result, the objective function, which is the aggregate throughput, cannot exceed its optimal value and become infinite. Therefore, if the aggregate throughput is infinite and increases without limit, the resources must also be unlimited. Hence, the system has an optimal solution: its maximum aggregate throughput in the feasible region.
-Consequently, we can guarantee the convergence of the iterative algorithm if the objective function is the ascending function concerning the number of iterations. Thus, it will converge to its optimum value if it is a strictly ascending function and to its local optimum if it is a non-monotonically ascending function.
+
+Consequently, we can guarantee the convergence of the iterative algorithm if the objective function is the ascending function concerning the number of iterations and has an upper bound. Thus, it will converge to its optimum value if it is a strictly ascending function and to its local optimum if it is a non-monotonically ascending function. 
+
+% \cite{gholipoor2020resource}.
+Consider the aggregate throughput as $\mathcal{T(\bold{P},\bold{E},\bold{G})} =\sum_{s=1}^{S}\sum_{i=1}^{U_s}\delta_s \bar{\mathcal{R}}_{u_{(s,i)}}$.
+In the first step of the iteration i of the algorithm \ref{alg2} (IABV), we have $\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1})$.
+In this step, optimal power and PRB allocation are obtained for the fixed O-RU association, so we have
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1}) \geq \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$.
+In the second step of the iteration i, the optimal O-RU association is achieved to maximize the aggregate throughput. So we have this inequality
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^{i},\bold{G}^{i-1})$.
+As a result, we have
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) \geq \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$.
+Hence, in each step of the iteration, the aggregate throughput increased.
+Note that $\mathcal{T}^*(\bold{P}^{*},\bold{E}^*,\bold{G}^{*})$ is the achieved aggregate throughput
+for all the feasible resource allocation solutions of $\{\bold{P},\bold{E},\bold{G}\}$.
+So, $\mathcal{T}^*(\bold{P}^{*},\bold{E}^*,\bold{G}^{*}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i})$ and thus in each iteration, the aggregate throughput can not be larger than the optimal solution.
+ 
+In addition, if we assume that the interference is set to be zero ${I}_{r,u_{(s,i)}}^{k}=0$,
+and we suppose that each UE has the maximum power $p_{r,u_{(s,i)}}^k = P_{s}^{max}$,
+and we consider that all PRB is assigned to all UE $e_{r,u_{(s,i)}}^k = 1 \forall s,\forall i$
+and each UE is assigned to the nearest O-RU with the best channel quality. So, the solution of this allocation, is the upper bound
+for the aggregate throughput.
+
+Thus,
+we can guarantee the local convergence of our iterative algorithm since the objective function $\mathcal{T}$ is the ascending function concerning the number of iterations
+ and it has the upper bound which is not infinite.
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -255,22 +338,30 @@ Consequently, we can guarantee the convergence of the iterative algorithm if the
 \noindent \textbf{Response:\\}
 We agree with the reviewer that we only talked about the convergence of the proposed algorithm, and we do not talk about the global and local convergence. 
 
-Moreover, Fig. 12 shows the aggregate throughput vs. the number of UEs for the optimal solution and proposed algorithm. Therefore, there is a low interference comparison between the proposed method and the optimal solution for the system. In this figure, the proposed solution is near the optimal solution. Thus, the simulation demonstrates that it almost reaches the global optimum. Hence, Fig. 12 numerically illustrates the global convergence of the algorithm.
+Moreover, Fig. 12 shows the aggregate throughput vs. the number of UEs for the optimal solution and proposed algorithm. Therefore, there is a low interference comparison between the proposed method and the optimal solution for the system. In this figure, the proposed solution is near the optimal solution. Thus, the simulation demonstrates that it almost reaches the global optimum. Hence, Fig. 12 numerically illustrates the global convergence of the algorithm. 
 
-In addition, to extend our solution to the global optimum, we must prove that the algorithm monotonically increases in the non-optimal set of solutions.
+Meanwhile, Zangwill's global convergence theory of iterative algorithms is a standard theory for providing the global convergence of an iterative algorithm. We can use this theory in future extention of our work to prove our algorithm in a standard way, which is not straightforward in this paper.
 
- Moreover, in the low interference system, in which the PRB and VNF assignment is obtained straightforward, and the whole problem of the first step is about power allocation, in the first step of our algorithm that the optimal power and PRB allocation are obtained for the fixed O-RU association; we have
-$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1}) > \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$ (strictly increase).
- Since the PRB assignment is straightforward and we used the KKT condition for power allocation, the problem is a convex optimization. The KKT condition problem has a global convergence and achieves the optimal solution in convex optimization. Accordingly, the algorithm monotonically increases to reach its optimum solution. However, in the second step of the algorithm, we can prove that the algorithm is increased, but we can not talk about monotonically increases.
+Also, we added a short description of extending local convergence to the global convergence in the low interference system with low number of UEs. We added it in the Section VI-2 and below we reported it.
+
+In addition, to extend our solution to the global optimum, we must prove that the algorithm monotonically increases in the non-optimal set of solutions and is Lipschitz monotone contraction mapping. Here, we briefly discussed our algorithm's global convergence for a low interference system.
+
+In the low interference system, the PRB and VNF assignment is obtained straightforwardly, and the first step's problem is power allocation. In the first step of our algorithm with the fixed O-RU association, we have
+$\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i-1}) > \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$ (strictly increase). 
+Because in this step, the problem is reformulated to the power allocation, and the objective function is convex, and the convex functions are Lipschitz monotone contractions. 
+However, in the second step of the algorithm, we can show as before that the algorithm is increased, but we can not talk about monotonically increases.
 Hence we have
 $\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) \geq \mathcal{T}(\bold{P}^{i},\bold{E}^{i},\bold{G}^{i-1})$.
-Therefore, we have 
+Nevertheless, the objective function is still Lipschitz monotone mapping. 
+Accordingly, we have 
 $\mathcal{T}(\bold{P}^{i},\bold{E}^i,\bold{G}^{i}) > \mathcal{T}(\bold{P}^{i-1},\bold{E}^{i-1},\bold{G}^{i-1})$.
+Therefore the objective function is the strictly ascending
+function concerning the number of iterations and has an
+upper bound.
 Consequently, the algorithm converges to the 
 global optimum solution in low interference.
 
 
-Meanwhile, Zangwill's global convergence theory of iterative algorithms is a standard theory for providing the global convergence of an iterative algorithm. We need to use this theory to prove our algorithm in a standard way which is not straightforward in this paper.
 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
@@ -281,9 +372,12 @@ Meanwhile, Zangwill's global convergence theory of iterative algorithms is a sta
 \end{longtable}
 \vspace*{-1\baselineskip}
 \noindent \textbf{Response:\\}
-We agree with the reviewer that we must clarify "what" the algorithm converges. As mentioned in the previous question, we prove that the algorithm can converge to a global convergence in low interference.
-Moreover, in Fig. 12, we numerically demonstrate our algorithm's global convergence in low interference.
+We agree with the reviewer that we must clarify "what" the algorithm converges. 
+In Section VI-C-2, we revised the convergence proved of the system and described that the algorithm converged to the local convergence.
+Moreover, as mentioned in the previous question, we briefly show that the algorithm can converge to a global convergence in the low interference system.
+Moreover, in Fig. 12, we numerically demonstrate our algorithm's global convergence in low interference and describe it in Section VII-C.
 Nevertheless, although we didn't demonstrate the unconditional global convergence of our algorithm, we did verify its unconditional local convergence. 
+ 
 \begin{longtable}{|p{0.975\textwidth}|}
 \hline \hline
 \RaggedRight
