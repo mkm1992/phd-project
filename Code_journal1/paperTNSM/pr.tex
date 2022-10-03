@@ -402,7 +402,7 @@ is the achievable data rate of RU $r$ to UE $i$ in slice $s_1$, which depends on
 %\end{subequations}
 Since the blocklength in URLLC and mMTC is finite, the achievable data rate for the $i^{th}$ UE request in the application of service type 2 (URLLC) and 3 (mMTC) is not achieved from the Shannon capacity formula. Instead, in a short packet transmission, the achievable data rate is approximated as \cite{setayesh2020joint}
 \begin{equation}\label{eq11}
-\mathcal{R}_{u(s_j,i)} = \sum_{r=1}^{R}\mathcal{R}_{u(s_j,i)}^{r} g^r_{u(s_j,i)},
+\mathcal{R}_{u(s_j,i)} = \sum_{r=1}^{R}\mathcal{R}_{r,u(s_j,i)} g^r_{u(s_j,i)},
 \end{equation}
 where
 \begin{equation}
@@ -410,7 +410,7 @@ where
 \end{equation}
 is the achievable data rate of RU $r$ to UE $i$ in slice $s_1$, which depends on the achievable data rate per PRB, i.e.,
 \begin{equation}
-\mathcal{{R}}_{r,u(s_j,i)}^{k} = B \log_2({1+ \rho_{r,u(s_j,i)}^{k}} - \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k},
+\mathcal{{R}}_{r,u(s_j,i)}^{k} = B (\log_2({1+ \rho_{r,u(s_j,i)}^{k}}) - \zeta_{u(s_j,i)}^{k}){e}_{u(s_j,i)}^{k},
 \end{equation}
 %\begin{subequations}\label{eq11}
 %\begin{alignat}{4}
